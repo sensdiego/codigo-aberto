@@ -29,9 +29,11 @@ WORKFLOW_SKILLS = {
 }
 PUBLIC_SKILLS = WORKFLOW_SKILLS | {"assinatura-silo", "pesquisa-silo"}
 PUBLIC_ROOT_ENTRIES = {
-    ".claude-plugin", ".git", ".gitignore", "CHANGELOG.md",
+    ".changes", ".claude-plugin", ".git", ".github", ".gitignore", ".ruff_cache",
+    ".release-policy.toml", "CHANGELOG.md",
     "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "LICENSE", "QUICKSTART.md",
-    "README.md", "dist", "references", "scripts", "skills", "tests",
+    "Makefile", "README.md", "RELEASING.md", "dist", "references", "scripts",
+    "skills", "tests",
 }
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 CPC_REFERENCE_RE = re.compile(r"CPC:[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*(?::[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)*")
@@ -325,7 +327,10 @@ def main():
     for name in sorted(existing_skills - PUBLIC_SKILLS):
         errors.append(f"skill não prevista na distribuição pública: {name}")
 
-    link_sources = {ROOT / name for name in ("README.md", "QUICKSTART.md", "CONTRIBUTING.md")}
+    link_sources = {
+        ROOT / name
+        for name in ("README.md", "QUICKSTART.md", "CONTRIBUTING.md", "RELEASING.md")
+    }
     link_sources.update(ROOT.rglob("SKILL.md"))
     for references in ROOT.rglob("references"):
         if references.is_dir():

@@ -1,0 +1,35 @@
+schema = 1
+adapter = "codigo-aberto-release-python-v1"
+manifest = ".claude-plugin/plugin.json"
+manifest_kind = "json"
+package_name = "silo-legal"
+changelog = "CHANGELOG.md"
+fragments_dir = ".changes"
+tag_prefix = "v"
+current_version_source = "version"
+
+# Mudanças que alteram o produto ou sua distribuição exigem fragmento.
+# Documentação de uso e governança não publica versão por si só. Caminhos que
+# não aparecem em nenhuma lista são ambíguos e também exigem fragmento.
+[paths]
+non_release = [
+  ".changes/README.md",
+  ".gitignore",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "QUICKSTART.md",
+  "README.md",
+  "RELEASING.md",
+]
+release = [
+  ".changes/*.json",
+  ".claude-plugin/**",
+  ".github/**",
+  ".release-policy.toml",
+  "CHANGELOG.md",
+  "Makefile",
+  "references/**",
+  "scripts/**",
+  "skills/**",
+  "tests/**",
+]

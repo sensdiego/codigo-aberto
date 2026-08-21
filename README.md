@@ -52,4 +52,5 @@ jurisprudencial e validações externas usam o conector autenticado do Silo quan
 disponível; a base, a API e o servidor do Silo não integram este repositório.
 
 Skills e código estão sob a licença [Apache-2.0](LICENSE). Para contribuir,
-consulte [CONTRIBUTING.md](CONTRIBUTING.md).
+consulte [CONTRIBUTING.md](CONTRIBUTING.md). Versões publicadas ficam no
+[changelog](CHANGELOG.md); o protocolo está em [RELEASING.md](RELEASING.md).

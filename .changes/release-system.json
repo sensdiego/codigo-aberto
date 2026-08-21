@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "kind": "minor",
+  "category": "Added",
+  "summary": "Adota changelog por fragmentos, versionamento semântico e GitHub Releases ancoradas em tags imutáveis.",
+  "areas": ["release", "github"]
+}

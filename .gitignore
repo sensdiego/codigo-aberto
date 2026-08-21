@@ -17,12 +17,15 @@ Thumbs.db
 node_modules/
 __pycache__/
 *.pyc
+.ruff_cache/
 .venv/
 venv/
 
 # Build artifacts
 dist/
 build/
+release-notes.md
+release-plan.json
 
 # Local config (nunca commitar)
 config/
