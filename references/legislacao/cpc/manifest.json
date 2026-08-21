@@ -1,0 +1,3730 @@
+{
+  "schema_version": "1.0",
+  "title": "Código de Processo Civil — Lei nº 13.105/2015",
+  "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+  "updated_at": "2026-08-20",
+  "scope": "Artigos integrais selecionados para o workflow inicial de direito civil e processo civil.",
+  "verification_note": "Texto e estrutura conferidos contra o HTML compilado oficial. Essa conferência não equivale, isoladamente, a certidão de vigência.",
+  "entries": [
+    {
+      "id": "CPC:art-291",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-291",
+      "label": "Art. 291"
+    },
+    {
+      "id": "CPC:art-292",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Art. 292"
+    },
+    {
+      "id": "CPC:art-292:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso I"
+    },
+    {
+      "id": "CPC:art-292:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso II"
+    },
+    {
+      "id": "CPC:art-292:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso III"
+    },
+    {
+      "id": "CPC:art-292:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso IV"
+    },
+    {
+      "id": "CPC:art-292:inc-V",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso V"
+    },
+    {
+      "id": "CPC:art-292:inc-VI",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso VI"
+    },
+    {
+      "id": "CPC:art-292:inc-VII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso VII"
+    },
+    {
+      "id": "CPC:art-292:inc-VIII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Inciso VIII"
+    },
+    {
+      "id": "CPC:art-292:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Parágrafo 1º"
+    },
+    {
+      "id": "CPC:art-292:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Parágrafo 2º"
+    },
+    {
+      "id": "CPC:art-292:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-292",
+      "label": "Parágrafo 3º"
+    },
+    {
+      "id": "CPC:art-293",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-293",
+      "label": "Art. 293"
+    },
+    {
+      "id": "CPC:art-9",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-9",
+      "label": "Art. 9º"
+    },
+    {
+      "id": "CPC:art-9:par-unico",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-9",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-9:par-unico:inc-I",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-9",
+      "label": "I - à tutela provisória de urgência;"
+    },
+    {
+      "id": "CPC:art-9:par-unico:inc-II",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-9",
+      "label": "II - às hipóteses de tutela da evidência previstas no art"
+    },
+    {
+      "id": "CPC:art-9:par-unico:inc-III",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-9",
+      "label": "III - à decisão prevista no art"
+    },
+    {
+      "id": "CPC:art-10",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-10",
+      "label": "Art. 10."
+    },
+    {
+      "id": "CPC:art-218",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-218",
+      "label": "Art. 218."
+    },
+    {
+      "id": "CPC:art-218:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-218",
+      "label": "§ 1º Quando a lei for omissa, o juiz determinará os prazos em consideração à complexidade do ato"
+    },
+    {
+      "id": "CPC:art-218:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-218",
+      "label": "§ 2º Quando a lei ou o juiz não determinar prazo, as intimações somente obrigarão a comparecimento após decorridas 48 (quarenta e oito) horas"
+    },
+    {
+      "id": "CPC:art-218:par-3",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-218",
+      "label": "§ 3º Inexistindo preceito legal ou prazo determinado pelo juiz, será de 5 (cinco) dias o prazo para a prática de ato processual a cargo da parte"
+    },
+    {
+      "id": "CPC:art-218:par-4",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-218",
+      "label": "§ 4º Será considerado tempestivo o ato praticado antes do termo inicial do prazo"
+    },
+    {
+      "id": "CPC:art-219",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-219",
+      "label": "Art. 219."
+    },
+    {
+      "id": "CPC:art-219:par-unico",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-219",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-220",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-220",
+      "label": "Art. 220."
+    },
+    {
+      "id": "CPC:art-220:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-220",
+      "label": "§ 1º Ressalvadas as férias individuais e os feriados instituídos por lei, os juízes, os membros do Ministério Público, da Defensoria Pública e da Advocacia Pública e os auxiliares da Justiça exercerão suas atribuições durante o período previsto no caput "
+    },
+    {
+      "id": "CPC:art-220:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-220",
+      "label": "§ 2º Durante a suspensão do prazo, não se realizarão audiências nem sessões de julgamento"
+    },
+    {
+      "id": "CPC:art-221",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-221",
+      "label": "Art. 221."
+    },
+    {
+      "id": "CPC:art-221:par-unico",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-221",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-222",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-222",
+      "label": "Art. 222."
+    },
+    {
+      "id": "CPC:art-222:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-222",
+      "label": "§ 1º Ao juiz é vedado reduzir prazos peremptórios sem anuência das partes"
+    },
+    {
+      "id": "CPC:art-222:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-222",
+      "label": "§ 2º Havendo calamidade pública, o limite previsto no caput para prorrogação de prazos poderá ser excedido"
+    },
+    {
+      "id": "CPC:art-223",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-223",
+      "label": "Art. 223."
+    },
+    {
+      "id": "CPC:art-223:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-223",
+      "label": "§ 1º Considera-se justa causa o evento alheio à vontade da parte e que a impediu de praticar o ato por si ou por mandatário"
+    },
+    {
+      "id": "CPC:art-223:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-223",
+      "label": "§ 2º Verificada a justa causa, o juiz permitirá à parte a prática do ato no prazo que lhe assinar"
+    },
+    {
+      "id": "CPC:art-224",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-224",
+      "label": "Art. 224."
+    },
+    {
+      "id": "CPC:art-224:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-224",
+      "label": "§ 1º Os dias do começo e do vencimento do prazo serão protraídos para o primeiro dia útil seguinte, se coincidirem com dia em que o expediente forense for encerrado antes ou iniciado depois da hora normal ou houver indisponibilidade da comunicação eletrônica"
+    },
+    {
+      "id": "CPC:art-224:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-224",
+      "label": "§ 2º Considera-se como data de publicação o primeiro dia útil seguinte ao da disponibilização da informação no Diário da Justiça eletrônico"
+    },
+    {
+      "id": "CPC:art-224:par-3",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-224",
+      "label": "§ 3º A contagem do prazo terá início no primeiro dia útil que seguir ao da publicação"
+    },
+    {
+      "id": "CPC:art-229",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-229",
+      "label": "Art. 229."
+    },
+    {
+      "id": "CPC:art-229:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-229",
+      "label": "§ 1º Cessa a contagem do prazo em dobro se, havendo apenas 2 (dois) réus, é oferecida defesa por apenas um deles"
+    },
+    {
+      "id": "CPC:art-229:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-229",
+      "label": "§ 2º Não se aplica o disposto no caput aos processos em autos eletrônicos"
+    },
+    {
+      "id": "CPC:art-231",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "Art. 231."
+    },
+    {
+      "id": "CPC:art-231:inc-I",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "I - a data de juntada aos autos do aviso de recebimento, quando a citação ou a intimação for pelo correio;"
+    },
+    {
+      "id": "CPC:art-231:inc-II",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "II - a data de juntada aos autos do mandado cumprido, quando a citação ou a intimação for por oficial de justiça;"
+    },
+    {
+      "id": "CPC:art-231:inc-III",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "III - a data de ocorrência da citação ou da intimação, quando ela se der por ato do escrivão ou do chefe de secretaria;"
+    },
+    {
+      "id": "CPC:art-231:inc-IV",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "IV - o dia útil seguinte ao fim da dilação assinada pelo juiz, quando a citação ou a intimação for por edital;"
+    },
+    {
+      "id": "CPC:art-231:inc-V",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "V - o dia útil seguinte à consulta ao teor da citação ou da intimação ou ao término do prazo para que a consulta se dê, quando a citação ou a intimação for eletrônica;"
+    },
+    {
+      "id": "CPC:art-231:inc-VI",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "VI - a data de juntada do comunicado de que trata o art"
+    },
+    {
+      "id": "CPC:art-231:inc-VII",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "VII - a data de publicação, quando a intimação se der pelo Diário da Justiça impresso ou eletrônico;"
+    },
+    {
+      "id": "CPC:art-231:inc-VIII",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "VIII - o dia da carga, quando a intimação se der por meio da retirada dos autos, em carga, do cartório ou da secretaria"
+    },
+    {
+      "id": "CPC:art-231:inc-IX",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "IX - o quinto dia útil seguinte à confirmação, na forma prevista na mensagem de citação, do recebimento da citação realizada por meio eletrônico"
+    },
+    {
+      "id": "CPC:art-231:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "§ 1º Quando houver mais de um réu, o dia do começo do prazo para contestar corresponderá à última das datas a que se referem os incisos I a VI do caput "
+    },
+    {
+      "id": "CPC:art-231:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "§ 2º Havendo mais de um intimado, o prazo para cada um é contado individualmente"
+    },
+    {
+      "id": "CPC:art-231:par-3",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "§ 3º Quando o ato tiver de ser praticado diretamente pela parte ou por quem, de qualquer forma, participe do processo, sem a intermediação de representante judicial, o dia do começo do prazo para cumprimento da determinação judicial corresponderá à data em que se der a comunicação"
+    },
+    {
+      "id": "CPC:art-231:par-4",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-231",
+      "label": "§ 4º Aplica-se o disposto no inciso II do caput à citação com hora certa"
+    },
+    {
+      "id": "CPC:art-272",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "Art. 272."
+    },
+    {
+      "id": "CPC:art-272:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 1º Os advogados poderão requerer que, na intimação a eles dirigida, figure apenas o nome da sociedade a que pertençam, desde que devidamente registrada na Ordem dos Advogados do Brasil"
+    },
+    {
+      "id": "CPC:art-272:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 2º Sob pena de nulidade, é indispensável que da publicação constem os nomes das partes e de seus advogados, com o respectivo número de inscrição na Ordem dos Advogados do Brasil, ou, se assim requerido, da sociedade de advogados"
+    },
+    {
+      "id": "CPC:art-272:par-3",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 3º A grafia dos nomes das partes não deve conter abreviaturas"
+    },
+    {
+      "id": "CPC:art-272:par-4",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 4º A grafia dos nomes dos advogados deve corresponder ao nome completo e ser a mesma que constar da procuração ou que estiver registrada na Ordem dos Advogados do Brasil"
+    },
+    {
+      "id": "CPC:art-272:par-5",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 5º Constando dos autos pedido expresso para que as comunicações dos atos processuais sejam feitas em nome dos advogados indicados, o seu desatendimento implicará nulidade"
+    },
+    {
+      "id": "CPC:art-272:par-6",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 6º A retirada dos autos do cartório ou da secretaria em carga pelo advogado, por pessoa credenciada a pedido do advogado ou da sociedade de advogados, pela Advocacia Pública, pela Defensoria Pública ou pelo Ministério Público implicará intimação de qualquer decisão contida no processo retirado, ainda que pendente de publicação"
+    },
+    {
+      "id": "CPC:art-272:par-7",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 7º O advogado e a sociedade de advogados deverão requerer o respectivo credenciamento para a retirada de autos por preposto"
+    },
+    {
+      "id": "CPC:art-272:par-8",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 8º A parte arguirá a nulidade da intimação em capítulo preliminar do próprio ato que lhe caiba praticar, o qual será tido por tempestivo se o vício for reconhecido"
+    },
+    {
+      "id": "CPC:art-272:par-9",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-272",
+      "label": "§ 9º Não sendo possível a prática imediata do ato diante da necessidade de acesso prévio aos autos, a parte limitar-se-á a arguir a nulidade da intimação, caso em que o prazo será contado da intimação da decisão que a reconheça"
+    },
+    {
+      "id": "CPC:art-274",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-274",
+      "label": "Art. 274."
+    },
+    {
+      "id": "CPC:art-274:par-unico",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-274",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-275",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-275",
+      "label": "Art. 275."
+    },
+    {
+      "id": "CPC:art-275:par-1",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-275",
+      "label": "§ 1º A certidão de intimação deve conter:"
+    },
+    {
+      "id": "CPC:art-275:par-1:inc-I",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-275",
+      "label": "I - a indicação do lugar e a descrição da pessoa intimada, mencionando, quando possível, o número de seu documento de identidade e o órgão que o expediu;"
+    },
+    {
+      "id": "CPC:art-275:par-1:inc-II",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-275",
+      "label": "II - a declaração de entrega da contrafé;"
+    },
+    {
+      "id": "CPC:art-275:par-1:inc-III",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-275",
+      "label": "III - a nota de ciente ou a certidão de que o interessado não a apôs no mandado"
+    },
+    {
+      "id": "CPC:art-275:par-2",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-275",
+      "label": "§ 2º Caso necessário, a intimação poderá ser efetuada com hora certa ou por edital"
+    },
+    {
+      "id": "CPC:art-1070",
+      "file": "parte-geral-e-prazos.md",
+      "anchor": "cpc-art-1070",
+      "label": "Art. 1.070."
+    },
+    {
+      "id": "CPC:art-294",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-294",
+      "label": "Art. 294."
+    },
+    {
+      "id": "CPC:art-294:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-294",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-300",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-300",
+      "label": "Art. 300."
+    },
+    {
+      "id": "CPC:art-300:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-300",
+      "label": "§ 1 o Para a concessão da tutela de urgência, o juiz pode, conforme o caso, exigir caução real ou fidejussória idônea para ressarcir os danos que a outra parte possa vir a sofrer, podendo a caução ser dispensada se a parte economicamente hipossuficiente não puder oferecê-la"
+    },
+    {
+      "id": "CPC:art-300:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-300",
+      "label": "§ 2º A tutela de urgência pode ser concedida liminarmente ou após justificação prévia"
+    },
+    {
+      "id": "CPC:art-300:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-300",
+      "label": "§ 3º A tutela de urgência de natureza antecipada não será concedida quando houver perigo de irreversibilidade dos efeitos da decisão"
+    },
+    {
+      "id": "CPC:art-301",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-301",
+      "label": "Art. 301."
+    },
+    {
+      "id": "CPC:art-311",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-311",
+      "label": "Art. 311."
+    },
+    {
+      "id": "CPC:art-311:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-311",
+      "label": "I - ficar caracterizado o abuso do direito de defesa ou o manifesto propósito protelatório da parte;"
+    },
+    {
+      "id": "CPC:art-311:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-311",
+      "label": "II - as alegações de fato puderem ser comprovadas apenas documentalmente e houver tese firmada em julgamento de casos repetitivos ou em súmula vinculante;"
+    },
+    {
+      "id": "CPC:art-311:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-311",
+      "label": "III - se tratar de pedido reipersecutório fundado em prova documental adequada do contrato de depósito, caso em que será decretada a ordem de entrega do objeto custodiado, sob cominação de multa;"
+    },
+    {
+      "id": "CPC:art-311:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-311",
+      "label": "IV - a petição inicial for instruída com prova documental suficiente dos fatos constitutivos do direito do autor, a que o réu não oponha prova capaz de gerar dúvida razoável"
+    },
+    {
+      "id": "CPC:art-311:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-311",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-319",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "Art. 319."
+    },
+    {
+      "id": "CPC:art-319:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "I - o juízo a que é dirigida;"
+    },
+    {
+      "id": "CPC:art-319:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "II - os nomes, os prenomes, o estado civil, a existência de união estável, a profissão, o número de inscrição no Cadastro de Pessoas Físicas ou no Cadastro Nacional da Pessoa Jurídica, o endereço eletrônico, o domicílio e a residência do autor e do réu;"
+    },
+    {
+      "id": "CPC:art-319:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "III - o fato e os fundamentos jurídicos do pedido;"
+    },
+    {
+      "id": "CPC:art-319:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "IV - o pedido com as suas especificações;"
+    },
+    {
+      "id": "CPC:art-319:inc-V",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "V - o valor da causa;"
+    },
+    {
+      "id": "CPC:art-319:inc-VI",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "VI - as provas com que o autor pretende demonstrar a verdade dos fatos alegados;"
+    },
+    {
+      "id": "CPC:art-319:inc-VII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "VII - a opção do autor pela realização ou não de audiência de conciliação ou de mediação"
+    },
+    {
+      "id": "CPC:art-319:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "§ 1º Caso não disponha das informações previstas no inciso II, poderá o autor, na petição inicial, requerer ao juiz diligências necessárias a sua obtenção"
+    },
+    {
+      "id": "CPC:art-319:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "§ 2º A petição inicial não será indeferida se, a despeito da falta de informações a que se refere o inciso II, for possível a citação do réu"
+    },
+    {
+      "id": "CPC:art-319:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-319",
+      "label": "§ 3º A petição inicial não será indeferida pelo não atendimento ao disposto no inciso II deste artigo se a obtenção de tais informações tornar impossível ou excessivamente oneroso o acesso à justiça"
+    },
+    {
+      "id": "CPC:art-320",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-320",
+      "label": "Art. 320."
+    },
+    {
+      "id": "CPC:art-321",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-321",
+      "label": "Art. 321."
+    },
+    {
+      "id": "CPC:art-321:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-321",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-322",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-322",
+      "label": "Art. 322."
+    },
+    {
+      "id": "CPC:art-322:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-322",
+      "label": "§ 1º Compreendem-se no principal os juros legais, a correção monetária e as verbas de sucumbência, inclusive os honorários advocatícios"
+    },
+    {
+      "id": "CPC:art-322:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-322",
+      "label": "§ 2º A interpretação do pedido considerará o conjunto da postulação e observará o princípio da boa-fé"
+    },
+    {
+      "id": "CPC:art-323",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-323",
+      "label": "Art. 323."
+    },
+    {
+      "id": "CPC:art-324",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-324",
+      "label": "Art. 324."
+    },
+    {
+      "id": "CPC:art-324:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-324",
+      "label": "§ 1º É lícito, porém, formular pedido genérico:"
+    },
+    {
+      "id": "CPC:art-324:par-1:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-324",
+      "label": "I - nas ações universais, se o autor não puder individuar os bens demandados;"
+    },
+    {
+      "id": "CPC:art-324:par-1:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-324",
+      "label": "II - quando não for possível determinar, desde logo, as consequências do ato ou do fato;"
+    },
+    {
+      "id": "CPC:art-324:par-1:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-324",
+      "label": "III - quando a determinação do objeto ou do valor da condenação depender de ato que deva ser praticado pelo réu"
+    },
+    {
+      "id": "CPC:art-324:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-324",
+      "label": "§ 2º O disposto neste artigo aplica-se à reconvenção"
+    },
+    {
+      "id": "CPC:art-325",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-325",
+      "label": "Art. 325."
+    },
+    {
+      "id": "CPC:art-325:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-325",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-326",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-326",
+      "label": "Art. 326."
+    },
+    {
+      "id": "CPC:art-326:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-326",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-327",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "Art. 327."
+    },
+    {
+      "id": "CPC:art-327:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "§ 1º São requisitos de admissibilidade da cumulação que:"
+    },
+    {
+      "id": "CPC:art-327:par-1:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "I - os pedidos sejam compatíveis entre si;"
+    },
+    {
+      "id": "CPC:art-327:par-1:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "II - seja competente para conhecer deles o mesmo juízo;"
+    },
+    {
+      "id": "CPC:art-327:par-1:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "III - seja adequado para todos os pedidos o tipo de procedimento"
+    },
+    {
+      "id": "CPC:art-327:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "§ 2º Quando, para cada pedido, corresponder tipo diverso de procedimento, será admitida a cumulação se o autor empregar o procedimento comum, sem prejuízo do emprego das técnicas processuais diferenciadas previstas nos procedimentos especiais a que se sujeitam um ou mais pedidos cumulados, que não forem incompatíveis com as disposições sobre o procedimento comum"
+    },
+    {
+      "id": "CPC:art-327:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-327",
+      "label": "§ 3º O inciso I do § 1º não se aplica às cumulações de pedidos de que trata o art"
+    },
+    {
+      "id": "CPC:art-328",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-328",
+      "label": "Art. 328."
+    },
+    {
+      "id": "CPC:art-329",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-329",
+      "label": "Art. 329."
+    },
+    {
+      "id": "CPC:art-329:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-329",
+      "label": "I - até a citação, aditar ou alterar o pedido ou a causa de pedir, independentemente de consentimento do réu;"
+    },
+    {
+      "id": "CPC:art-329:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-329",
+      "label": "II - até o saneamento do processo, aditar ou alterar o pedido e a causa de pedir, com consentimento do réu, assegurado o contraditório mediante a possibilidade de manifestação deste no prazo mínimo de 15 (quinze) dias, facultado o requerimento de prova suplementar"
+    },
+    {
+      "id": "CPC:art-329:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-329",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-330",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "Art. 330."
+    },
+    {
+      "id": "CPC:art-330:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "I - for inepta;"
+    },
+    {
+      "id": "CPC:art-330:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "II - a parte for manifestamente ilegítima;"
+    },
+    {
+      "id": "CPC:art-330:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "III - o autor carecer de interesse processual;"
+    },
+    {
+      "id": "CPC:art-330:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "IV - não atendidas as prescrições dos arts"
+    },
+    {
+      "id": "CPC:art-330:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "§ 1º Considera-se inepta a petição inicial quando:"
+    },
+    {
+      "id": "CPC:art-330:par-1:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "I - lhe faltar pedido ou causa de pedir;"
+    },
+    {
+      "id": "CPC:art-330:par-1:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "II - o pedido for indeterminado, ressalvadas as hipóteses legais em que se permite o pedido genérico;"
+    },
+    {
+      "id": "CPC:art-330:par-1:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "III - da narração dos fatos não decorrer logicamente a conclusão;"
+    },
+    {
+      "id": "CPC:art-330:par-1:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "IV - contiver pedidos incompatíveis entre si"
+    },
+    {
+      "id": "CPC:art-330:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "§ 2º Nas ações que tenham por objeto a revisão de obrigação decorrente de empréstimo, de financiamento ou de alienação de bens, o autor terá de, sob pena de inépcia, discriminar na petição inicial, dentre as obrigações contratuais, aquelas que pretende controverter, além de quantificar o valor incontroverso do débito"
+    },
+    {
+      "id": "CPC:art-330:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "label": "§ 3º Na hipótese do § 2º, o valor incontroverso deverá continuar a ser pago no tempo e modo contratados"
+    },
+    {
+      "id": "CPC:art-331",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-331",
+      "label": "Art. 331."
+    },
+    {
+      "id": "CPC:art-331:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-331",
+      "label": "§ 1º Se não houver retratação, o juiz mandará citar o réu para responder ao recurso"
+    },
+    {
+      "id": "CPC:art-331:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-331",
+      "label": "§ 2º Sendo a sentença reformada pelo tribunal, o prazo para a contestação começará a correr da intimação do retorno dos autos, observado o disposto no art"
+    },
+    {
+      "id": "CPC:art-331:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-331",
+      "label": "§ 3º Não interposta a apelação, o réu será intimado do trânsito em julgado da sentença"
+    },
+    {
+      "id": "CPC:art-332",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "Art. 332."
+    },
+    {
+      "id": "CPC:art-332:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "I - enunciado de súmula do Supremo Tribunal Federal ou do Superior Tribunal de Justiça;"
+    },
+    {
+      "id": "CPC:art-332:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "II - acórdão proferido pelo Supremo Tribunal Federal ou pelo Superior Tribunal de Justiça em julgamento de recursos repetitivos;"
+    },
+    {
+      "id": "CPC:art-332:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "III - entendimento firmado em incidente de resolução de demandas repetitivas ou de assunção de competência;"
+    },
+    {
+      "id": "CPC:art-332:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "IV - enunciado de súmula de tribunal de justiça sobre direito local"
+    },
+    {
+      "id": "CPC:art-332:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "§ 1º O juiz também poderá julgar liminarmente improcedente o pedido se verificar, desde logo, a ocorrência de decadência ou de prescrição"
+    },
+    {
+      "id": "CPC:art-332:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "§ 2º Não interposta a apelação, o réu será intimado do trânsito em julgado da sentença, nos termos do art"
+    },
+    {
+      "id": "CPC:art-332:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "§ 3º Interposta a apelação, o juiz poderá retratar-se em 5 (cinco) dias"
+    },
+    {
+      "id": "CPC:art-332:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-332",
+      "label": "§ 4º Se houver retratação, o juiz determinará o prosseguimento do processo, com a citação do réu, e, se não houver retratação, determinará a citação do réu para apresentar contrarrazões, no prazo de 15 (quinze) dias"
+    },
+    {
+      "id": "CPC:art-335",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "label": "Art. 335."
+    },
+    {
+      "id": "CPC:art-335:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "label": "I - da audiência de conciliação ou de mediação, ou da última sessão de conciliação, quando qualquer parte não comparecer ou, comparecendo, não houver autocomposição;"
+    },
+    {
+      "id": "CPC:art-335:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "label": "II - do protocolo do pedido de cancelamento da audiência de conciliação ou de mediação apresentado pelo réu, quando ocorrer a hipótese do art"
+    },
+    {
+      "id": "CPC:art-335:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "label": "III - prevista no art"
+    },
+    {
+      "id": "CPC:art-335:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "label": "§ 1º No caso de litisconsórcio passivo, ocorrendo a hipótese do art"
+    },
+    {
+      "id": "CPC:art-335:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "label": "§ 2º Quando ocorrer a hipótese do art"
+    },
+    {
+      "id": "CPC:art-336",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-336",
+      "label": "Art. 336."
+    },
+    {
+      "id": "CPC:art-337",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "Art. 337."
+    },
+    {
+      "id": "CPC:art-337:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "I - inexistência ou nulidade da citação;"
+    },
+    {
+      "id": "CPC:art-337:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "II - incompetência absoluta e relativa;"
+    },
+    {
+      "id": "CPC:art-337:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "III - incorreção do valor da causa;"
+    },
+    {
+      "id": "CPC:art-337:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "IV - inépcia da petição inicial;"
+    },
+    {
+      "id": "CPC:art-337:inc-V",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "V - perempção;"
+    },
+    {
+      "id": "CPC:art-337:inc-VI",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "VI - litispendência;"
+    },
+    {
+      "id": "CPC:art-337:inc-VII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "VII - coisa julgada;"
+    },
+    {
+      "id": "CPC:art-337:inc-VIII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "VIII - conexão;"
+    },
+    {
+      "id": "CPC:art-337:inc-IX",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "IX - incapacidade da parte, defeito de representação ou falta de autorização;"
+    },
+    {
+      "id": "CPC:art-337:inc-X",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "X - convenção de arbitragem;"
+    },
+    {
+      "id": "CPC:art-337:inc-XI",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "XI - ausência de legitimidade ou de interesse processual;"
+    },
+    {
+      "id": "CPC:art-337:inc-XII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "XII - falta de caução ou de outra prestação que a lei exige como preliminar;"
+    },
+    {
+      "id": "CPC:art-337:inc-XIII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "XIII - indevida concessão do benefício de gratuidade de justiça"
+    },
+    {
+      "id": "CPC:art-337:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "§ 1º Verifica-se a litispendência ou a coisa julgada quando se reproduz ação anteriormente ajuizada"
+    },
+    {
+      "id": "CPC:art-337:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "§ 2º Uma ação é idêntica a outra quando possui as mesmas partes, a mesma causa de pedir e o mesmo pedido"
+    },
+    {
+      "id": "CPC:art-337:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "§ 3º Há litispendência quando se repete ação que está em curso"
+    },
+    {
+      "id": "CPC:art-337:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "§ 4º Há coisa julgada quando se repete ação que já foi decidida por decisão transitada em julgado"
+    },
+    {
+      "id": "CPC:art-337:par-5",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "§ 5º Excetuadas a convenção de arbitragem e a incompetência relativa, o juiz conhecerá de ofício das matérias enumeradas neste artigo"
+    },
+    {
+      "id": "CPC:art-337:par-6",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-337",
+      "label": "§ 6º A ausência de alegação da existência de convenção de arbitragem, na forma prevista neste Capítulo, implica aceitação da jurisdição estatal e renúncia ao juízo arbitral"
+    },
+    {
+      "id": "CPC:art-338",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-338",
+      "label": "Art. 338."
+    },
+    {
+      "id": "CPC:art-338:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-338",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-339",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-339",
+      "label": "Art. 339."
+    },
+    {
+      "id": "CPC:art-339:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-339",
+      "label": "§ 1º O autor, ao aceitar a indicação, procederá, no prazo de 15 (quinze) dias, à alteração da petição inicial para a substituição do réu, observando-se, ainda, o parágrafo único do art"
+    },
+    {
+      "id": "CPC:art-339:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-339",
+      "label": "§ 2º No prazo de 15 (quinze) dias, o autor pode optar por alterar a petição inicial para incluir, como litisconsorte passivo, o sujeito indicado pelo réu"
+    },
+    {
+      "id": "CPC:art-340",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-340",
+      "label": "Art. 340."
+    },
+    {
+      "id": "CPC:art-340:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-340",
+      "label": "§ 1º A contestação será submetida a livre distribuição ou, se o réu houver sido citado por meio de carta precatória, juntada aos autos dessa carta, seguindo-se a sua imediata remessa para o juízo da causa"
+    },
+    {
+      "id": "CPC:art-340:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-340",
+      "label": "§ 2º Reconhecida a competência do foro indicado pelo réu, o juízo para o qual for distribuída a contestação ou a carta precatória será considerado prevento"
+    },
+    {
+      "id": "CPC:art-340:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-340",
+      "label": "§ 3º Alegada a incompetência nos termos do caput , será suspensa a realização da audiência de conciliação ou de mediação, se tiver sido designada"
+    },
+    {
+      "id": "CPC:art-340:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-340",
+      "label": "§ 4º Definida a competência, o juízo competente designará nova data para a audiência de conciliação ou de mediação"
+    },
+    {
+      "id": "CPC:art-341",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-341",
+      "label": "Art. 341."
+    },
+    {
+      "id": "CPC:art-341:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-341",
+      "label": "I - não for admissível, a seu respeito, a confissão;"
+    },
+    {
+      "id": "CPC:art-341:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-341",
+      "label": "II - a petição inicial não estiver acompanhada de instrumento que a lei considerar da substância do ato;"
+    },
+    {
+      "id": "CPC:art-341:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-341",
+      "label": "III - estiverem em contradição com a defesa, considerada em seu conjunto"
+    },
+    {
+      "id": "CPC:art-341:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-341",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-342",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-342",
+      "label": "Art. 342."
+    },
+    {
+      "id": "CPC:art-342:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-342",
+      "label": "I - relativas a direito ou a fato superveniente;"
+    },
+    {
+      "id": "CPC:art-342:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-342",
+      "label": "II - competir ao juiz conhecer delas de ofício;"
+    },
+    {
+      "id": "CPC:art-342:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-342",
+      "label": "III - por expressa autorização legal, puderem ser formuladas em qualquer tempo e grau de jurisdição"
+    },
+    {
+      "id": "CPC:art-343",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "Art. 343."
+    },
+    {
+      "id": "CPC:art-343:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "§ 1º Proposta a reconvenção, o autor será intimado, na pessoa de seu advogado, para apresentar resposta no prazo de 15 (quinze) dias"
+    },
+    {
+      "id": "CPC:art-343:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "§ 2º A desistência da ação ou a ocorrência de causa extintiva que impeça o exame de seu mérito não obsta ao prosseguimento do processo quanto à reconvenção"
+    },
+    {
+      "id": "CPC:art-343:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "§ 3º A reconvenção pode ser proposta contra o autor e terceiro"
+    },
+    {
+      "id": "CPC:art-343:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "§ 4º A reconvenção pode ser proposta pelo réu em litisconsórcio com terceiro"
+    },
+    {
+      "id": "CPC:art-343:par-5",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "§ 5º Se o autor for substituto processual, o reconvinte deverá afirmar ser titular de direito em face do substituído, e a reconvenção deverá ser proposta em face do autor, também na qualidade de substituto processual"
+    },
+    {
+      "id": "CPC:art-343:par-6",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-343",
+      "label": "§ 6º O réu pode propor reconvenção independentemente de oferecer contestação"
+    },
+    {
+      "id": "CPC:art-344",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-344",
+      "label": "Art. 344."
+    },
+    {
+      "id": "CPC:art-345",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-345",
+      "label": "Art. 345."
+    },
+    {
+      "id": "CPC:art-345:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-345",
+      "label": "I - havendo pluralidade de réus, algum deles contestar a ação;"
+    },
+    {
+      "id": "CPC:art-345:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-345",
+      "label": "II - o litígio versar sobre direitos indisponíveis;"
+    },
+    {
+      "id": "CPC:art-345:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-345",
+      "label": "III - a petição inicial não estiver acompanhada de instrumento que a lei considere indispensável à prova do ato;"
+    },
+    {
+      "id": "CPC:art-345:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-345",
+      "label": "IV - as alegações de fato formuladas pelo autor forem inverossímeis ou estiverem em contradição com prova constante dos autos"
+    },
+    {
+      "id": "CPC:art-346",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-346",
+      "label": "Art. 346."
+    },
+    {
+      "id": "CPC:art-346:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-346",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-347",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-347",
+      "label": "Art. 347."
+    },
+    {
+      "id": "CPC:art-348",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-348",
+      "label": "Art. 348."
+    },
+    {
+      "id": "CPC:art-349",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-349",
+      "label": "Art. 349."
+    },
+    {
+      "id": "CPC:art-350",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-350",
+      "label": "Art. 350."
+    },
+    {
+      "id": "CPC:art-351",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-351",
+      "label": "Art. 351."
+    },
+    {
+      "id": "CPC:art-352",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-352",
+      "label": "Art. 352."
+    },
+    {
+      "id": "CPC:art-353",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-353",
+      "label": "Art. 353."
+    },
+    {
+      "id": "CPC:art-354",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-354",
+      "label": "Art. 354."
+    },
+    {
+      "id": "CPC:art-354:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-354",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-355",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-355",
+      "label": "Art. 355."
+    },
+    {
+      "id": "CPC:art-355:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-355",
+      "label": "I - não houver necessidade de produção de outras provas;"
+    },
+    {
+      "id": "CPC:art-355:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-355",
+      "label": "II - o réu for revel, ocorrer o efeito previsto no art"
+    },
+    {
+      "id": "CPC:art-356",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "Art. 356."
+    },
+    {
+      "id": "CPC:art-356:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "I - mostrar-se incontroverso;"
+    },
+    {
+      "id": "CPC:art-356:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "II - estiver em condições de imediato julgamento, nos termos do art"
+    },
+    {
+      "id": "CPC:art-356:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "§ 1º A decisão que julgar parcialmente o mérito poderá reconhecer a existência de obrigação líquida ou ilíquida"
+    },
+    {
+      "id": "CPC:art-356:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "§ 2º A parte poderá liquidar ou executar, desde logo, a obrigação reconhecida na decisão que julgar parcialmente o mérito, independentemente de caução, ainda que haja recurso contra essa interposto"
+    },
+    {
+      "id": "CPC:art-356:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "§ 3º Na hipótese do § 2º, se houver trânsito em julgado da decisão, a execução será definitiva"
+    },
+    {
+      "id": "CPC:art-356:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "§ 4º A liquidação e o cumprimento da decisão que julgar parcialmente o mérito poderão ser processados em autos suplementares, a requerimento da parte ou a critério do juiz"
+    },
+    {
+      "id": "CPC:art-356:par-5",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-356",
+      "label": "§ 5º A decisão proferida com base neste artigo é impugnável por agravo de instrumento"
+    },
+    {
+      "id": "CPC:art-357",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "Art. 357."
+    },
+    {
+      "id": "CPC:art-357:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "I - resolver as questões processuais pendentes, se houver;"
+    },
+    {
+      "id": "CPC:art-357:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "II - delimitar as questões de fato sobre as quais recairá a atividade probatória, especificando os meios de prova admitidos;"
+    },
+    {
+      "id": "CPC:art-357:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "III - definir a distribuição do ônus da prova, observado o art"
+    },
+    {
+      "id": "CPC:art-357:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "IV - delimitar as questões de direito relevantes para a decisão do mérito;"
+    },
+    {
+      "id": "CPC:art-357:inc-V",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "V - designar, se necessário, audiência de instrução e julgamento"
+    },
+    {
+      "id": "CPC:art-357:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 1º Realizado o saneamento, as partes têm o direito de pedir esclarecimentos ou solicitar ajustes, no prazo comum de 5 (cinco) dias, findo o qual a decisão se torna estável"
+    },
+    {
+      "id": "CPC:art-357:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 2º As partes podem apresentar ao juiz, para homologação, delimitação consensual das questões de fato e de direito a que se referem os incisos II e IV, a qual, se homologada, vincula as partes e o juiz"
+    },
+    {
+      "id": "CPC:art-357:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 3º Se a causa apresentar complexidade em matéria de fato ou de direito, deverá o juiz designar audiência para que o saneamento seja feito em cooperação com as partes, oportunidade em que o juiz, se for o caso, convidará as partes a integrar ou esclarecer suas alegações"
+    },
+    {
+      "id": "CPC:art-357:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 4º Caso tenha sido determinada a produção de prova testemunhal, o juiz fixará prazo comum não superior a 15 (quinze) dias para que as partes apresentem rol de testemunhas"
+    },
+    {
+      "id": "CPC:art-357:par-5",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 5º Na hipótese do § 3º, as partes devem levar, para a audiência prevista, o respectivo rol de testemunhas"
+    },
+    {
+      "id": "CPC:art-357:par-6",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 6º O número de testemunhas arroladas não pode ser superior a 10 (dez), sendo 3 (três), no máximo, para a prova de cada fato"
+    },
+    {
+      "id": "CPC:art-357:par-7",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 7º O juiz poderá limitar o número de testemunhas levando em conta a complexidade da causa e dos fatos individualmente considerados"
+    },
+    {
+      "id": "CPC:art-357:par-8",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 8º Caso tenha sido determinada a produção de prova pericial, o juiz deve observar o disposto no art"
+    },
+    {
+      "id": "CPC:art-357:par-9",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-357",
+      "label": "§ 9º As pautas deverão ser preparadas com intervalo mínimo de 1 (uma) hora entre as audiências"
+    },
+    {
+      "id": "CPC:art-485",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "Art. 485."
+    },
+    {
+      "id": "CPC:art-485:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "I - indeferir a petição inicial;"
+    },
+    {
+      "id": "CPC:art-485:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "II - o processo ficar parado durante mais de 1 (um) ano por negligência das partes;"
+    },
+    {
+      "id": "CPC:art-485:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "III - por não promover os atos e as diligências que lhe incumbir, o autor abandonar a causa por mais de 30 (trinta) dias;"
+    },
+    {
+      "id": "CPC:art-485:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "IV - verificar a ausência de pressupostos de constituição e de desenvolvimento válido e regular do processo;"
+    },
+    {
+      "id": "CPC:art-485:inc-V",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "V - reconhecer a existência de perempção, de litispendência ou de coisa julgada;"
+    },
+    {
+      "id": "CPC:art-485:inc-VI",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "VI - verificar ausência de legitimidade ou de interesse processual;"
+    },
+    {
+      "id": "CPC:art-485:inc-VII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "VII - acolher a alegação de existência de convenção de arbitragem ou quando o juízo arbitral reconhecer sua competência;"
+    },
+    {
+      "id": "CPC:art-485:inc-VIII",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "VIII - homologar a desistência da ação;"
+    },
+    {
+      "id": "CPC:art-485:inc-IX",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "IX - em caso de morte da parte, a ação for considerada intransmissível por disposição legal; e"
+    },
+    {
+      "id": "CPC:art-485:inc-X",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "X - nos demais casos prescritos neste Código"
+    },
+    {
+      "id": "CPC:art-485:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 1º Nas hipóteses descritas nos incisos II e III, a parte será intimada pessoalmente para suprir a falta no prazo de 5 (cinco) dias"
+    },
+    {
+      "id": "CPC:art-485:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 2º No caso do § 1º, quanto ao inciso II, as partes pagarão proporcionalmente as custas, e, quanto ao inciso III, o autor será condenado ao pagamento das despesas e dos honorários de advogado"
+    },
+    {
+      "id": "CPC:art-485:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 3º O juiz conhecerá de ofício da matéria constante dos incisos IV, V, VI e IX, em qualquer tempo e grau de jurisdição, enquanto não ocorrer o trânsito em julgado"
+    },
+    {
+      "id": "CPC:art-485:par-4",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 4º Oferecida a contestação, o autor não poderá, sem o consentimento do réu, desistir da ação"
+    },
+    {
+      "id": "CPC:art-485:par-5",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 5º A desistência da ação pode ser apresentada até a sentença"
+    },
+    {
+      "id": "CPC:art-485:par-6",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 6º Oferecida a contestação, a extinção do processo por abandono da causa pelo autor depende de requerimento do réu"
+    },
+    {
+      "id": "CPC:art-485:par-7",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-485",
+      "label": "§ 7º Interposta a apelação em qualquer dos casos de que tratam os incisos deste artigo, o juiz terá 5 (cinco) dias para retratar-se"
+    },
+    {
+      "id": "CPC:art-487",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "Art. 487."
+    },
+    {
+      "id": "CPC:art-487:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "I - acolher ou rejeitar o pedido formulado na ação ou na reconvenção;"
+    },
+    {
+      "id": "CPC:art-487:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "II - decidir, de ofício ou a requerimento, sobre a ocorrência de decadência ou prescrição;"
+    },
+    {
+      "id": "CPC:art-487:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "III - homologar:"
+    },
+    {
+      "id": "CPC:art-487:inc-III:al-a",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "a) o reconhecimento da procedência do pedido formulado na ação ou na reconvenção;"
+    },
+    {
+      "id": "CPC:art-487:inc-III:al-b",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "b) a transação;"
+    },
+    {
+      "id": "CPC:art-487:inc-III:al-c",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "c) a renúncia à pretensão formulada na ação ou na reconvenção"
+    },
+    {
+      "id": "CPC:art-487:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-487",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-489",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "Art. 489."
+    },
+    {
+      "id": "CPC:art-489:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "I - o relatório, que conterá os nomes das partes, a identificação do caso, com a suma do pedido e da contestação, e o registro das principais ocorrências havidas no andamento do processo;"
+    },
+    {
+      "id": "CPC:art-489:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "II - os fundamentos, em que o juiz analisará as questões de fato e de direito;"
+    },
+    {
+      "id": "CPC:art-489:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "III - o dispositivo, em que o juiz resolverá as questões principais que as partes lhe submeterem"
+    },
+    {
+      "id": "CPC:art-489:par-1",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "§ 1º Não se considera fundamentada qualquer decisão judicial, seja ela interlocutória, sentença ou acórdão, que:"
+    },
+    {
+      "id": "CPC:art-489:par-1:inc-I",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "I - se limitar à indicação, à reprodução ou à paráfrase de ato normativo, sem explicar sua relação com a causa ou a questão decidida;"
+    },
+    {
+      "id": "CPC:art-489:par-1:inc-II",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "II - empregar conceitos jurídicos indeterminados, sem explicar o motivo concreto de sua incidência no caso;"
+    },
+    {
+      "id": "CPC:art-489:par-1:inc-III",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "III - invocar motivos que se prestariam a justificar qualquer outra decisão;"
+    },
+    {
+      "id": "CPC:art-489:par-1:inc-IV",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "IV - não enfrentar todos os argumentos deduzidos no processo capazes de, em tese, infirmar a conclusão adotada pelo julgador;"
+    },
+    {
+      "id": "CPC:art-489:par-1:inc-V",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "V - se limitar a invocar precedente ou enunciado de súmula, sem identificar seus fundamentos determinantes nem demonstrar que o caso sob julgamento se ajusta àqueles fundamentos;"
+    },
+    {
+      "id": "CPC:art-489:par-1:inc-VI",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "VI - deixar de seguir enunciado de súmula, jurisprudência ou precedente invocado pela parte, sem demonstrar a existência de distinção no caso em julgamento ou a superação do entendimento"
+    },
+    {
+      "id": "CPC:art-489:par-2",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "§ 2º No caso de colisão entre normas, o juiz deve justificar o objeto e os critérios gerais da ponderação efetuada, enunciando as razões que autorizam a interferência na norma afastada e as premissas fáticas que fundamentam a conclusão"
+    },
+    {
+      "id": "CPC:art-489:par-3",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-489",
+      "label": "§ 3º A decisão judicial deve ser interpretada a partir da conjugação de todos os seus elementos e em conformidade com o princípio da boa-fé"
+    },
+    {
+      "id": "CPC:art-492",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-492",
+      "label": "Art. 492."
+    },
+    {
+      "id": "CPC:art-492:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-492",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-493",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-493",
+      "label": "Art. 493."
+    },
+    {
+      "id": "CPC:art-493:par-unico",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-493",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-369",
+      "file": "provas.md",
+      "anchor": "cpc-art-369",
+      "label": "Art. 369."
+    },
+    {
+      "id": "CPC:art-370",
+      "file": "provas.md",
+      "anchor": "cpc-art-370",
+      "label": "Art. 370."
+    },
+    {
+      "id": "CPC:art-370:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-370",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-371",
+      "file": "provas.md",
+      "anchor": "cpc-art-371",
+      "label": "Art. 371."
+    },
+    {
+      "id": "CPC:art-372",
+      "file": "provas.md",
+      "anchor": "cpc-art-372",
+      "label": "Art. 372."
+    },
+    {
+      "id": "CPC:art-373",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "Art. 373."
+    },
+    {
+      "id": "CPC:art-373:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "I - ao autor, quanto ao fato constitutivo de seu direito;"
+    },
+    {
+      "id": "CPC:art-373:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "II - ao réu, quanto à existência de fato impeditivo, modificativo ou extintivo do direito do autor"
+    },
+    {
+      "id": "CPC:art-373:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "§ 1º Nos casos previstos em lei ou diante de peculiaridades da causa relacionadas à impossibilidade ou à excessiva dificuldade de cumprir o encargo nos termos do caput ou à maior facilidade de obtenção da prova do fato contrário, poderá o juiz atribuir o ônus da prova de modo diverso, desde que o faça por decisão fundamentada, caso em que deverá dar à parte a oportunidade de se desincumbir do ônus que lhe foi atribuído"
+    },
+    {
+      "id": "CPC:art-373:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "§ 2º A decisão prevista no § 1º deste artigo não pode gerar situação em que a desincumbência do encargo pela parte seja impossível ou excessivamente difícil"
+    },
+    {
+      "id": "CPC:art-373:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "§ 3º A distribuição diversa do ônus da prova também pode ocorrer por convenção das partes, salvo quando:"
+    },
+    {
+      "id": "CPC:art-373:par-3:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "I - recair sobre direito indisponível da parte;"
+    },
+    {
+      "id": "CPC:art-373:par-3:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "II - tornar excessivamente difícil a uma parte o exercício do direito"
+    },
+    {
+      "id": "CPC:art-373:par-4",
+      "file": "provas.md",
+      "anchor": "cpc-art-373",
+      "label": "§ 4º A convenção de que trata o § 3º pode ser celebrada antes ou durante o processo"
+    },
+    {
+      "id": "CPC:art-374",
+      "file": "provas.md",
+      "anchor": "cpc-art-374",
+      "label": "Art. 374."
+    },
+    {
+      "id": "CPC:art-374:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-374",
+      "label": "I - notórios;"
+    },
+    {
+      "id": "CPC:art-374:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-374",
+      "label": "II - afirmados por uma parte e confessados pela parte contrária;"
+    },
+    {
+      "id": "CPC:art-374:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-374",
+      "label": "III - admitidos no processo como incontroversos;"
+    },
+    {
+      "id": "CPC:art-374:inc-IV",
+      "file": "provas.md",
+      "anchor": "cpc-art-374",
+      "label": "IV - em cujo favor milita presunção legal de existência ou de veracidade"
+    },
+    {
+      "id": "CPC:art-375",
+      "file": "provas.md",
+      "anchor": "cpc-art-375",
+      "label": "Art. 375."
+    },
+    {
+      "id": "CPC:art-376",
+      "file": "provas.md",
+      "anchor": "cpc-art-376",
+      "label": "Art. 376."
+    },
+    {
+      "id": "CPC:art-377",
+      "file": "provas.md",
+      "anchor": "cpc-art-377",
+      "label": "Art. 377."
+    },
+    {
+      "id": "CPC:art-377:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-377",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-378",
+      "file": "provas.md",
+      "anchor": "cpc-art-378",
+      "label": "Art. 378."
+    },
+    {
+      "id": "CPC:art-379",
+      "file": "provas.md",
+      "anchor": "cpc-art-379",
+      "label": "Art. 379."
+    },
+    {
+      "id": "CPC:art-379:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-379",
+      "label": "I - comparecer em juízo, respondendo ao que lhe for interrogado;"
+    },
+    {
+      "id": "CPC:art-379:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-379",
+      "label": "II - colaborar com o juízo na realização de inspeção judicial que for considerada necessária;"
+    },
+    {
+      "id": "CPC:art-379:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-379",
+      "label": "III - praticar o ato que lhe for determinado"
+    },
+    {
+      "id": "CPC:art-380",
+      "file": "provas.md",
+      "anchor": "cpc-art-380",
+      "label": "Art. 380."
+    },
+    {
+      "id": "CPC:art-380:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-380",
+      "label": "I - informar ao juiz os fatos e as circunstâncias de que tenha conhecimento;"
+    },
+    {
+      "id": "CPC:art-380:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-380",
+      "label": "II - exibir coisa ou documento que esteja em seu poder"
+    },
+    {
+      "id": "CPC:art-380:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-380",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-434",
+      "file": "provas.md",
+      "anchor": "cpc-art-434",
+      "label": "Art. 434."
+    },
+    {
+      "id": "CPC:art-434:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-434",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-435",
+      "file": "provas.md",
+      "anchor": "cpc-art-435",
+      "label": "Art. 435."
+    },
+    {
+      "id": "CPC:art-435:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-435",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-436",
+      "file": "provas.md",
+      "anchor": "cpc-art-436",
+      "label": "Art. 436."
+    },
+    {
+      "id": "CPC:art-436:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-436",
+      "label": "I - impugnar a admissibilidade da prova documental;"
+    },
+    {
+      "id": "CPC:art-436:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-436",
+      "label": "II - impugnar sua autenticidade;"
+    },
+    {
+      "id": "CPC:art-436:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-436",
+      "label": "III - suscitar sua falsidade, com ou sem deflagração do incidente de arguição de falsidade;"
+    },
+    {
+      "id": "CPC:art-436:inc-IV",
+      "file": "provas.md",
+      "anchor": "cpc-art-436",
+      "label": "IV - manifestar-se sobre seu conteúdo"
+    },
+    {
+      "id": "CPC:art-436:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-436",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-437",
+      "file": "provas.md",
+      "anchor": "cpc-art-437",
+      "label": "Art. 437."
+    },
+    {
+      "id": "CPC:art-437:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-437",
+      "label": "§ 1º Sempre que uma das partes requerer a juntada de documento aos autos, o juiz ouvirá, a seu respeito, a outra parte, que disporá do prazo de 15 (quinze) dias para adotar qualquer das posturas indicadas no art"
+    },
+    {
+      "id": "CPC:art-437:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-437",
+      "label": "§ 2º Poderá o juiz, a requerimento da parte, dilatar o prazo para manifestação sobre a prova documental produzida, levando em consideração a quantidade e a complexidade da documentação"
+    },
+    {
+      "id": "CPC:art-442",
+      "file": "provas.md",
+      "anchor": "cpc-art-442",
+      "label": "Art. 442."
+    },
+    {
+      "id": "CPC:art-443",
+      "file": "provas.md",
+      "anchor": "cpc-art-443",
+      "label": "Art. 443."
+    },
+    {
+      "id": "CPC:art-443:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-443",
+      "label": "I - já provados por documento ou confissão da parte;"
+    },
+    {
+      "id": "CPC:art-443:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-443",
+      "label": "II - que só por documento ou por exame pericial puderem ser provados"
+    },
+    {
+      "id": "CPC:art-444",
+      "file": "provas.md",
+      "anchor": "cpc-art-444",
+      "label": "Art. 444."
+    },
+    {
+      "id": "CPC:art-445",
+      "file": "provas.md",
+      "anchor": "cpc-art-445",
+      "label": "Art. 445."
+    },
+    {
+      "id": "CPC:art-455",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "Art. 455."
+    },
+    {
+      "id": "CPC:art-455:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "§ 1º A intimação deverá ser realizada por carta com aviso de recebimento, cumprindo ao advogado juntar aos autos, com antecedência de pelo menos 3 (três) dias da data da audiência, cópia da correspondência de intimação e do comprovante de recebimento"
+    },
+    {
+      "id": "CPC:art-455:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "§ 2º A parte pode comprometer-se a levar a testemunha à audiência, independentemente da intimação de que trata o § 1º, presumindo-se, caso a testemunha não compareça, que a parte desistiu de sua inquirição"
+    },
+    {
+      "id": "CPC:art-455:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "§ 3º A inércia na realização da intimação a que se refere o § 1º importa desistência da inquirição da testemunha"
+    },
+    {
+      "id": "CPC:art-455:par-4",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "§ 4º A intimação será feita pela via judicial quando:"
+    },
+    {
+      "id": "CPC:art-455:par-4:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "I - for frustrada a intimação prevista no § 1º deste artigo;"
+    },
+    {
+      "id": "CPC:art-455:par-4:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "II - sua necessidade for devidamente demonstrada pela parte ao juiz;"
+    },
+    {
+      "id": "CPC:art-455:par-4:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "III - figurar no rol de testemunhas servidor público ou militar, hipótese em que o juiz o requisitará ao chefe da repartição ou ao comando do corpo em que servir;"
+    },
+    {
+      "id": "CPC:art-455:par-4:inc-IV",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "IV - a testemunha houver sido arrolada pelo Ministério Público ou pela Defensoria Pública;"
+    },
+    {
+      "id": "CPC:art-455:par-4:inc-V",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "V - a testemunha for uma daquelas previstas no art"
+    },
+    {
+      "id": "CPC:art-455:par-5",
+      "file": "provas.md",
+      "anchor": "cpc-art-455",
+      "label": "§ 5º A testemunha que, intimada na forma do § 1º ou do § 4º, deixar de comparecer sem motivo justificado será conduzida e responderá pelas despesas do adiamento"
+    },
+    {
+      "id": "CPC:art-456",
+      "file": "provas.md",
+      "anchor": "cpc-art-456",
+      "label": "Art. 456."
+    },
+    {
+      "id": "CPC:art-456:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-456",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-457",
+      "file": "provas.md",
+      "anchor": "cpc-art-457",
+      "label": "Art. 457."
+    },
+    {
+      "id": "CPC:art-457:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-457",
+      "label": "§ 1º É lícito à parte contraditar a testemunha, arguindo-lhe a incapacidade, o impedimento ou a suspeição, bem como, caso a testemunha negue os fatos que lhe são imputados, provar a contradita com documentos ou com testemunhas, até 3 (três), apresentadas no ato e inquiridas em separado"
+    },
+    {
+      "id": "CPC:art-457:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-457",
+      "label": "§ 2º Sendo provados ou confessados os fatos a que se refere o § 1º, o juiz dispensará a testemunha ou lhe tomará o depoimento como informante"
+    },
+    {
+      "id": "CPC:art-457:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-457",
+      "label": "§ 3º A testemunha pode requerer ao juiz que a escuse de depor, alegando os motivos previstos neste Código, decidindo o juiz de plano após ouvidas as partes"
+    },
+    {
+      "id": "CPC:art-458",
+      "file": "provas.md",
+      "anchor": "cpc-art-458",
+      "label": "Art. 458."
+    },
+    {
+      "id": "CPC:art-458:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-458",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-459",
+      "file": "provas.md",
+      "anchor": "cpc-art-459",
+      "label": "Art. 459."
+    },
+    {
+      "id": "CPC:art-459:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-459",
+      "label": "§ 1º O juiz poderá inquirir a testemunha tanto antes quanto depois da inquirição feita pelas partes"
+    },
+    {
+      "id": "CPC:art-459:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-459",
+      "label": "§ 2º As testemunhas devem ser tratadas com urbanidade, não se lhes fazendo perguntas ou considerações impertinentes, capciosas ou vexatórias"
+    },
+    {
+      "id": "CPC:art-459:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-459",
+      "label": "§ 3º As perguntas que o juiz indeferir serão transcritas no termo, se a parte o requerer"
+    },
+    {
+      "id": "CPC:art-460",
+      "file": "provas.md",
+      "anchor": "cpc-art-460",
+      "label": "Art. 460."
+    },
+    {
+      "id": "CPC:art-460:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-460",
+      "label": "§ 1º Quando digitado ou registrado por taquigrafia, estenotipia ou outro método idôneo de documentação, o depoimento será assinado pelo juiz, pelo depoente e pelos procuradores"
+    },
+    {
+      "id": "CPC:art-460:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-460",
+      "label": "§ 2º Se houver recurso em processo em autos não eletrônicos, o depoimento somente será digitado quando for impossível o envio de sua documentação eletrônica"
+    },
+    {
+      "id": "CPC:art-460:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-460",
+      "label": "§ 3º Tratando-se de autos eletrônicos, observar-se-á o disposto neste Código e na legislação específica sobre a prática eletrônica de atos processuais"
+    },
+    {
+      "id": "CPC:art-461",
+      "file": "provas.md",
+      "anchor": "cpc-art-461",
+      "label": "Art. 461."
+    },
+    {
+      "id": "CPC:art-461:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-461",
+      "label": "I - a inquirição de testemunhas referidas nas declarações da parte ou das testemunhas;"
+    },
+    {
+      "id": "CPC:art-461:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-461",
+      "label": "II - a acareação de 2 (duas) ou mais testemunhas ou de alguma delas com a parte, quando, sobre fato determinado que possa influir na decisão da causa, divergirem as suas declarações"
+    },
+    {
+      "id": "CPC:art-461:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-461",
+      "label": "§ 1º Os acareados serão reperguntados para que expliquem os pontos de divergência, reduzindo-se a termo o ato de acareação"
+    },
+    {
+      "id": "CPC:art-461:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-461",
+      "label": "§ 2º A acareação pode ser realizada por videoconferência ou por outro recurso tecnológico de transmissão de sons e imagens em tempo real"
+    },
+    {
+      "id": "CPC:art-462",
+      "file": "provas.md",
+      "anchor": "cpc-art-462",
+      "label": "Art. 462."
+    },
+    {
+      "id": "CPC:art-463",
+      "file": "provas.md",
+      "anchor": "cpc-art-463",
+      "label": "Art. 463."
+    },
+    {
+      "id": "CPC:art-463:par-unico",
+      "file": "provas.md",
+      "anchor": "cpc-art-463",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-464",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "Art. 464."
+    },
+    {
+      "id": "CPC:art-464:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "§ 1º O juiz indeferirá a perícia quando:"
+    },
+    {
+      "id": "CPC:art-464:par-1:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "I - a prova do fato não depender de conhecimento especial de técnico;"
+    },
+    {
+      "id": "CPC:art-464:par-1:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "II - for desnecessária em vista de outras provas produzidas;"
+    },
+    {
+      "id": "CPC:art-464:par-1:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "III - a verificação for impraticável"
+    },
+    {
+      "id": "CPC:art-464:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "§ 2º De ofício ou a requerimento das partes, o juiz poderá, em substituição à perícia, determinar a produção de prova técnica simplificada, quando o ponto controvertido for de menor complexidade"
+    },
+    {
+      "id": "CPC:art-464:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "§ 3º A prova técnica simplificada consistirá apenas na inquirição de especialista, pelo juiz, sobre ponto controvertido da causa que demande especial conhecimento científico ou técnico"
+    },
+    {
+      "id": "CPC:art-464:par-4",
+      "file": "provas.md",
+      "anchor": "cpc-art-464",
+      "label": "§ 4 o Durante a arguição, o especialista, que deverá ter formação acadêmica específica na área objeto de seu depoimento, poderá valer-se de qualquer recurso tecnológico de transmissão de sons e imagens com o fim de esclarecer os pontos controvertidos da causa"
+    },
+    {
+      "id": "CPC:art-465",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "Art. 465."
+    },
+    {
+      "id": "CPC:art-465:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "§ 1º Incumbe às partes, dentro de 15 (quinze) dias contados da intimação do despacho de nomeação do perito:"
+    },
+    {
+      "id": "CPC:art-465:par-1:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "I - arguir o impedimento ou a suspeição do perito, se for o caso;"
+    },
+    {
+      "id": "CPC:art-465:par-1:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "II - indicar assistente técnico;"
+    },
+    {
+      "id": "CPC:art-465:par-1:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "III - apresentar quesitos"
+    },
+    {
+      "id": "CPC:art-465:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "§ 2º Ciente da nomeação, o perito apresentará em 5 (cinco) dias:"
+    },
+    {
+      "id": "CPC:art-465:par-2:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "I - proposta de honorários;"
+    },
+    {
+      "id": "CPC:art-465:par-2:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "II - currículo, com comprovação de especialização;"
+    },
+    {
+      "id": "CPC:art-465:par-2:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "III - contatos profissionais, em especial o endereço eletrônico, para onde serão dirigidas as intimações pessoais"
+    },
+    {
+      "id": "CPC:art-465:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "§ 3º As partes serão intimadas da proposta de honorários para, querendo, manifestar-se no prazo comum de 5 (cinco) dias, após o que o juiz arbitrará o valor, intimando-se as partes para os fins do art"
+    },
+    {
+      "id": "CPC:art-465:par-4",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "§ 4º O juiz poderá autorizar o pagamento de até cinquenta por cento dos honorários arbitrados a favor do perito no início dos trabalhos, devendo o remanescente ser pago apenas ao final, depois de entregue o laudo e prestados todos os esclarecimentos necessários"
+    },
+    {
+      "id": "CPC:art-465:par-5",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "§ 5º Quando a perícia for inconclusiva ou deficiente, o juiz poderá reduzir a remuneração inicialmente arbitrada para o trabalho"
+    },
+    {
+      "id": "CPC:art-465:par-6",
+      "file": "provas.md",
+      "anchor": "cpc-art-465",
+      "label": "§ 6º Quando tiver de realizar-se por carta, poder-se-á proceder à nomeação de perito e à indicação de assistentes técnicos no juízo ao qual se requisitar a perícia"
+    },
+    {
+      "id": "CPC:art-473",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "Art. 473."
+    },
+    {
+      "id": "CPC:art-473:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "I - a exposição do objeto da perícia;"
+    },
+    {
+      "id": "CPC:art-473:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "II - a análise técnica ou científica realizada pelo perito;"
+    },
+    {
+      "id": "CPC:art-473:inc-III",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "III - a indicação do método utilizado, esclarecendo-o e demonstrando ser predominantemente aceito pelos especialistas da área do conhecimento da qual se originou;"
+    },
+    {
+      "id": "CPC:art-473:inc-IV",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "IV - resposta conclusiva a todos os quesitos apresentados pelo juiz, pelas partes e pelo órgão do Ministério Público"
+    },
+    {
+      "id": "CPC:art-473:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "§ 1º No laudo, o perito deve apresentar sua fundamentação em linguagem simples e com coerência lógica, indicando como alcançou suas conclusões"
+    },
+    {
+      "id": "CPC:art-473:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "§ 2º É vedado ao perito ultrapassar os limites de sua designação, bem como emitir opiniões pessoais que excedam o exame técnico ou científico do objeto da perícia"
+    },
+    {
+      "id": "CPC:art-473:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-473",
+      "label": "§ 3º Para o desempenho de sua função, o perito e os assistentes técnicos podem valer-se de todos os meios necessários, ouvindo testemunhas, obtendo informações, solicitando documentos que estejam em poder da parte, de terceiros ou em repartições públicas, bem como instruir o laudo com planilhas, mapas, plantas, desenhos, fotografias ou outros elementos necessários ao esclarecimento do objeto da perícia"
+    },
+    {
+      "id": "CPC:art-477",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "Art. 477."
+    },
+    {
+      "id": "CPC:art-477:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "§ 1º As partes serão intimadas para, querendo, manifestar-se sobre o laudo do perito do juízo no prazo comum de 15 (quinze) dias, podendo o assistente técnico de cada uma das partes, em igual prazo, apresentar seu respectivo parecer"
+    },
+    {
+      "id": "CPC:art-477:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "§ 2º O perito do juízo tem o dever de, no prazo de 15 (quinze) dias, esclarecer ponto:"
+    },
+    {
+      "id": "CPC:art-477:par-2:inc-I",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "I - sobre o qual exista divergência ou dúvida de qualquer das partes, do juiz ou do órgão do Ministério Público;"
+    },
+    {
+      "id": "CPC:art-477:par-2:inc-II",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "II - divergente apresentado no parecer do assistente técnico da parte"
+    },
+    {
+      "id": "CPC:art-477:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "§ 3º Se ainda houver necessidade de esclarecimentos, a parte requererá ao juiz que mande intimar o perito ou o assistente técnico a comparecer à audiência de instrução e julgamento, formulando, desde logo, as perguntas, sob forma de quesitos"
+    },
+    {
+      "id": "CPC:art-477:par-4",
+      "file": "provas.md",
+      "anchor": "cpc-art-477",
+      "label": "§ 4º O perito ou o assistente técnico será intimado por meio eletrônico, com pelo menos 10 (dez) dias de antecedência da audiência"
+    },
+    {
+      "id": "CPC:art-479",
+      "file": "provas.md",
+      "anchor": "cpc-art-479",
+      "label": "Art. 479."
+    },
+    {
+      "id": "CPC:art-480",
+      "file": "provas.md",
+      "anchor": "cpc-art-480",
+      "label": "Art. 480."
+    },
+    {
+      "id": "CPC:art-480:par-1",
+      "file": "provas.md",
+      "anchor": "cpc-art-480",
+      "label": "§ 1º A segunda perícia tem por objeto os mesmos fatos sobre os quais recaiu a primeira e destina-se a corrigir eventual omissão ou inexatidão dos resultados a que esta conduziu"
+    },
+    {
+      "id": "CPC:art-480:par-2",
+      "file": "provas.md",
+      "anchor": "cpc-art-480",
+      "label": "§ 2º A segunda perícia rege-se pelas disposições estabelecidas para a primeira"
+    },
+    {
+      "id": "CPC:art-480:par-3",
+      "file": "provas.md",
+      "anchor": "cpc-art-480",
+      "label": "§ 3º A segunda perícia não substitui a primeira, cabendo ao juiz apreciar o valor de uma e de outra"
+    },
+    {
+      "id": "CPC:art-334",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "Art. 334."
+    },
+    {
+      "id": "CPC:art-334:par-1",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 1º O conciliador ou mediador, onde houver, atuará necessariamente na audiência de conciliação ou de mediação, observando o disposto neste Código, bem como as disposições da lei de organização judiciária"
+    },
+    {
+      "id": "CPC:art-334:par-2",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 2º Poderá haver mais de uma sessão destinada à conciliação e à mediação, não podendo exceder a 2 (dois) meses da data de realização da primeira sessão, desde que necessárias à composição das partes"
+    },
+    {
+      "id": "CPC:art-334:par-3",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 3º A intimação do autor para a audiência será feita na pessoa de seu advogado"
+    },
+    {
+      "id": "CPC:art-334:par-4",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 4º A audiência não será realizada:"
+    },
+    {
+      "id": "CPC:art-334:par-4:inc-I",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "I - se ambas as partes manifestarem, expressamente, desinteresse na composição consensual;"
+    },
+    {
+      "id": "CPC:art-334:par-4:inc-II",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "II - quando não se admitir a autocomposição"
+    },
+    {
+      "id": "CPC:art-334:par-5",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 5º O autor deverá indicar, na petição inicial, seu desinteresse na autocomposição, e o réu deverá fazê-lo, por petição, apresentada com 10 (dez) dias de antecedência, contados da data da audiência"
+    },
+    {
+      "id": "CPC:art-334:par-6",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 6º Havendo litisconsórcio, o desinteresse na realização da audiência deve ser manifestado por todos os litisconsortes"
+    },
+    {
+      "id": "CPC:art-334:par-7",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 7º A audiência de conciliação ou de mediação pode realizar-se por meio eletrônico, nos termos da lei"
+    },
+    {
+      "id": "CPC:art-334:par-8",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 8º O não comparecimento injustificado do autor ou do réu à audiência de conciliação é considerado ato atentatório à dignidade da justiça e será sancionado com multa de até dois por cento da vantagem econômica pretendida ou do valor da causa, revertida em favor da União ou do Estado"
+    },
+    {
+      "id": "CPC:art-334:par-9",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 9º As partes devem estar acompanhadas por seus advogados ou defensores públicos"
+    },
+    {
+      "id": "CPC:art-334:par-10",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 10"
+    },
+    {
+      "id": "CPC:art-334:par-11",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 11"
+    },
+    {
+      "id": "CPC:art-334:par-12",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-334",
+      "label": "§ 12"
+    },
+    {
+      "id": "CPC:art-358",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-358",
+      "label": "Art. 358."
+    },
+    {
+      "id": "CPC:art-359",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-359",
+      "label": "Art. 359."
+    },
+    {
+      "id": "CPC:art-360",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-360",
+      "label": "Art. 360."
+    },
+    {
+      "id": "CPC:art-360:inc-I",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-360",
+      "label": "I - manter a ordem e o decoro na audiência;"
+    },
+    {
+      "id": "CPC:art-360:inc-II",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-360",
+      "label": "II - ordenar que se retirem da sala de audiência os que se comportarem inconvenientemente;"
+    },
+    {
+      "id": "CPC:art-360:inc-III",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-360",
+      "label": "III - requisitar, quando necessário, força policial;"
+    },
+    {
+      "id": "CPC:art-360:inc-IV",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-360",
+      "label": "IV - tratar com urbanidade as partes, os advogados, os membros do Ministério Público e da Defensoria Pública e qualquer pessoa que participe do processo;"
+    },
+    {
+      "id": "CPC:art-360:inc-V",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-360",
+      "label": "V - registrar em ata, com exatidão, todos os requerimentos apresentados em audiência"
+    },
+    {
+      "id": "CPC:art-361",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-361",
+      "label": "Art. 361."
+    },
+    {
+      "id": "CPC:art-361:inc-I",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-361",
+      "label": "I - o perito e os assistentes técnicos, que responderão aos quesitos de esclarecimentos requeridos no prazo e na forma do art"
+    },
+    {
+      "id": "CPC:art-361:inc-II",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-361",
+      "label": "II - o autor e, em seguida, o réu, que prestarão depoimentos pessoais;"
+    },
+    {
+      "id": "CPC:art-361:inc-III",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-361",
+      "label": "III - as testemunhas arroladas pelo autor e pelo réu, que serão inquiridas"
+    },
+    {
+      "id": "CPC:art-361:par-unico",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-361",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-362",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "Art. 362."
+    },
+    {
+      "id": "CPC:art-362:inc-I",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "I - por convenção das partes;"
+    },
+    {
+      "id": "CPC:art-362:inc-II",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "II - se não puder comparecer, por motivo justificado, qualquer pessoa que dela deva necessariamente participar;"
+    },
+    {
+      "id": "CPC:art-362:inc-III",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "III - por atraso injustificado de seu início em tempo superior a 30 (trinta) minutos do horário marcado"
+    },
+    {
+      "id": "CPC:art-362:par-1",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "§ 1º O impedimento deverá ser comprovado até a abertura da audiência, e, não o sendo, o juiz procederá à instrução"
+    },
+    {
+      "id": "CPC:art-362:par-2",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "§ 2º O juiz poderá dispensar a produção das provas requeridas pela parte cujo advogado ou defensor público não tenha comparecido à audiência, aplicando-se a mesma regra ao Ministério Público"
+    },
+    {
+      "id": "CPC:art-362:par-3",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-362",
+      "label": "§ 3º Quem der causa ao adiamento responderá pelas despesas acrescidas"
+    },
+    {
+      "id": "CPC:art-363",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-363",
+      "label": "Art. 363."
+    },
+    {
+      "id": "CPC:art-364",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-364",
+      "label": "Art. 364."
+    },
+    {
+      "id": "CPC:art-364:par-1",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-364",
+      "label": "§ 1º Havendo litisconsorte ou terceiro interveniente, o prazo, que formará com o da prorrogação um só todo, dividir-se-á entre os do mesmo grupo, se não convencionarem de modo diverso"
+    },
+    {
+      "id": "CPC:art-364:par-2",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-364",
+      "label": "§ 2º Quando a causa apresentar questões complexas de fato ou de direito, o debate oral poderá ser substituído por razões finais escritas, que serão apresentadas pelo autor e pelo réu, bem como pelo Ministério Público, se for o caso de sua intervenção, em prazos sucessivos de 15 (quinze) dias, assegurada vista dos autos"
+    },
+    {
+      "id": "CPC:art-365",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-365",
+      "label": "Art. 365."
+    },
+    {
+      "id": "CPC:art-365:par-unico",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-365",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-366",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-366",
+      "label": "Art. 366."
+    },
+    {
+      "id": "CPC:art-367",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "Art. 367."
+    },
+    {
+      "id": "CPC:art-367:par-1",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "§ 1º Quando o termo não for registrado em meio eletrônico, o juiz rubricar-lhe-á as folhas, que serão encadernadas em volume próprio"
+    },
+    {
+      "id": "CPC:art-367:par-2",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "§ 2º Subscreverão o termo o juiz, os advogados, o membro do Ministério Público e o escrivão ou chefe de secretaria, dispensadas as partes, exceto quando houver ato de disposição para cuja prática os advogados não tenham poderes"
+    },
+    {
+      "id": "CPC:art-367:par-3",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "§ 3º O escrivão ou chefe de secretaria trasladará para os autos cópia autêntica do termo de audiência"
+    },
+    {
+      "id": "CPC:art-367:par-4",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "§ 4º Tratando-se de autos eletrônicos, observar-se-á o disposto neste Código, em legislação específica e nas normas internas dos tribunais"
+    },
+    {
+      "id": "CPC:art-367:par-5",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "§ 5º A audiência poderá ser integralmente gravada em imagem e em áudio, em meio digital ou analógico, desde que assegure o rápido acesso das partes e dos órgãos julgadores, observada a legislação específica"
+    },
+    {
+      "id": "CPC:art-367:par-6",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-367",
+      "label": "§ 6º A gravação a que se refere o § 5º também pode ser realizada diretamente por qualquer das partes, independentemente de autorização judicial"
+    },
+    {
+      "id": "CPC:art-368",
+      "file": "audiencia.md",
+      "anchor": "cpc-art-368",
+      "label": "Art. 368."
+    },
+    {
+      "id": "CPC:art-994",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "Art. 994."
+    },
+    {
+      "id": "CPC:art-994:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "I - apelação;"
+    },
+    {
+      "id": "CPC:art-994:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "II - agravo de instrumento;"
+    },
+    {
+      "id": "CPC:art-994:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "III - agravo interno;"
+    },
+    {
+      "id": "CPC:art-994:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "IV - embargos de declaração;"
+    },
+    {
+      "id": "CPC:art-994:inc-V",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "V - recurso ordinário;"
+    },
+    {
+      "id": "CPC:art-994:inc-VI",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "VI - recurso especial;"
+    },
+    {
+      "id": "CPC:art-994:inc-VII",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "VII - recurso extraordinário;"
+    },
+    {
+      "id": "CPC:art-994:inc-VIII",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "VIII - agravo em recurso especial ou extraordinário;"
+    },
+    {
+      "id": "CPC:art-994:inc-IX",
+      "file": "recursos.md",
+      "anchor": "cpc-art-994",
+      "label": "IX - embargos de divergência"
+    },
+    {
+      "id": "CPC:art-995",
+      "file": "recursos.md",
+      "anchor": "cpc-art-995",
+      "label": "Art. 995."
+    },
+    {
+      "id": "CPC:art-995:par-unico",
+      "file": "recursos.md",
+      "anchor": "cpc-art-995",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-996",
+      "file": "recursos.md",
+      "anchor": "cpc-art-996",
+      "label": "Art. 996."
+    },
+    {
+      "id": "CPC:art-996:par-unico",
+      "file": "recursos.md",
+      "anchor": "cpc-art-996",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-997",
+      "file": "recursos.md",
+      "anchor": "cpc-art-997",
+      "label": "Art. 997."
+    },
+    {
+      "id": "CPC:art-997:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-997",
+      "label": "§ 1º Sendo vencidos autor e réu, ao recurso interposto por qualquer deles poderá aderir o outro"
+    },
+    {
+      "id": "CPC:art-997:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-997",
+      "label": "§ 2º O recurso adesivo fica subordinado ao recurso independente, sendo-lhe aplicáveis as mesmas regras deste quanto aos requisitos de admissibilidade e julgamento no tribunal, salvo disposição legal diversa, observado, ainda, o seguinte:"
+    },
+    {
+      "id": "CPC:art-997:par-2:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-997",
+      "label": "I - será dirigido ao órgão perante o qual o recurso independente fora interposto, no prazo de que a parte dispõe para responder;"
+    },
+    {
+      "id": "CPC:art-997:par-2:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-997",
+      "label": "II - será admissível na apelação, no recurso extraordinário e no recurso especial;"
+    },
+    {
+      "id": "CPC:art-997:par-2:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-997",
+      "label": "III - não será conhecido, se houver desistência do recurso principal ou se for ele considerado inadmissível"
+    },
+    {
+      "id": "CPC:art-1000",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1000",
+      "label": "Art. 1.000."
+    },
+    {
+      "id": "CPC:art-1000:par-unico",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1000",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-1001",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1001",
+      "label": "Art. 1.001."
+    },
+    {
+      "id": "CPC:art-1002",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1002",
+      "label": "Art. 1.002."
+    },
+    {
+      "id": "CPC:art-1003",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "Art. 1.003."
+    },
+    {
+      "id": "CPC:art-1003:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "§ 1º Os sujeitos previstos no caput considerar-se-ão intimados em audiência quando nesta for proferida a decisão"
+    },
+    {
+      "id": "CPC:art-1003:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "§ 2º Aplica-se o disposto no art"
+    },
+    {
+      "id": "CPC:art-1003:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "§ 3º No prazo para interposição de recurso, a petição será protocolada em cartório ou conforme as normas de organização judiciária, ressalvado o disposto em regra especial"
+    },
+    {
+      "id": "CPC:art-1003:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "§ 4º Para aferição da tempestividade do recurso remetido pelo correio, será considerada como data de interposição a data de postagem"
+    },
+    {
+      "id": "CPC:art-1003:par-5",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "§ 5º Excetuados os embargos de declaração, o prazo para interpor os recursos e para responder-lhes é de 15 (quinze) dias"
+    },
+    {
+      "id": "CPC:art-1003:par-6",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1003",
+      "label": "§ 6º O recorrente comprovará a ocorrência de feriado local no ato de interposição do recurso, e, se não o fizer, o tribunal determinará a correção do vício formal, ou poderá desconsiderá-lo caso a informação já conste do processo eletrônico"
+    },
+    {
+      "id": "CPC:art-1004",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1004",
+      "label": "Art. 1.004."
+    },
+    {
+      "id": "CPC:art-1005",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1005",
+      "label": "Art. 1.005."
+    },
+    {
+      "id": "CPC:art-1005:par-unico",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1005",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-1006",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1006",
+      "label": "Art. 1.006."
+    },
+    {
+      "id": "CPC:art-1007",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "Art. 1.007."
+    },
+    {
+      "id": "CPC:art-1007:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 1º São dispensados de preparo, inclusive porte de remessa e de retorno, os recursos interpostos pelo Ministério Público, pela União, pelo Distrito Federal, pelos Estados, pelos Municípios, e respectivas autarquias, e pelos que gozam de isenção legal"
+    },
+    {
+      "id": "CPC:art-1007:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 2º A insuficiência no valor do preparo, inclusive porte de remessa e de retorno, implicará deserção se o recorrente, intimado na pessoa de seu advogado, não vier a supri-lo no prazo de 5 (cinco) dias"
+    },
+    {
+      "id": "CPC:art-1007:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 3º É dispensado o recolhimento do porte de remessa e de retorno no processo em autos eletrônicos"
+    },
+    {
+      "id": "CPC:art-1007:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 4º O recorrente que não comprovar, no ato de interposição do recurso, o recolhimento do preparo, inclusive porte de remessa e de retorno, será intimado, na pessoa de seu advogado, para realizar o recolhimento em dobro, sob pena de deserção"
+    },
+    {
+      "id": "CPC:art-1007:par-5",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 5º É vedada a complementação se houver insuficiência parcial do preparo, inclusive porte de remessa e de retorno, no recolhimento realizado na forma do § 4º"
+    },
+    {
+      "id": "CPC:art-1007:par-6",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 6º Provando o recorrente justo impedimento, o relator relevará a pena de deserção, por decisão irrecorrível, fixando-lhe prazo de 5 (cinco) dias para efetuar o preparo"
+    },
+    {
+      "id": "CPC:art-1007:par-7",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1007",
+      "label": "§ 7º O equívoco no preenchimento da guia de custas não implicará a aplicação da pena de deserção, cabendo ao relator, na hipótese de dúvida quanto ao recolhimento, intimar o recorrente para sanar o vício no prazo de 5 (cinco) dias"
+    },
+    {
+      "id": "CPC:art-1008",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1008",
+      "label": "Art. 1.008."
+    },
+    {
+      "id": "CPC:art-1009",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1009",
+      "label": "Art. 1.009."
+    },
+    {
+      "id": "CPC:art-1009:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1009",
+      "label": "§ 1º As questões resolvidas na fase de conhecimento, se a decisão a seu respeito não comportar agravo de instrumento, não são cobertas pela preclusão e devem ser suscitadas em preliminar de apelação, eventualmente interposta contra a decisão final, ou nas contrarrazões"
+    },
+    {
+      "id": "CPC:art-1009:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1009",
+      "label": "§ 2º Se as questões referidas no § 1º forem suscitadas em contrarrazões, o recorrente será intimado para, em 15 (quinze) dias, manifestar-se a respeito delas"
+    },
+    {
+      "id": "CPC:art-1009:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1009",
+      "label": "§ 3º O disposto no caput deste artigo aplica-se mesmo quando as questões mencionadas no art"
+    },
+    {
+      "id": "CPC:art-1010",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "Art. 1.010."
+    },
+    {
+      "id": "CPC:art-1010:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "I - os nomes e a qualificação das partes;"
+    },
+    {
+      "id": "CPC:art-1010:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "II - a exposição do fato e do direito;"
+    },
+    {
+      "id": "CPC:art-1010:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "III - as razões do pedido de reforma ou de decretação de nulidade;"
+    },
+    {
+      "id": "CPC:art-1010:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "IV - o pedido de nova decisão"
+    },
+    {
+      "id": "CPC:art-1010:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "§ 1º O apelado será intimado para apresentar contrarrazões no prazo de 15 (quinze) dias"
+    },
+    {
+      "id": "CPC:art-1010:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "§ 2º Se o apelado interpuser apelação adesiva, o juiz intimará o apelante para apresentar contrarrazões"
+    },
+    {
+      "id": "CPC:art-1010:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1010",
+      "label": "§ 3º Após as formalidades previstas nos §§ 1º e 2º, os autos serão remetidos ao tribunal pelo juiz, independentemente de juízo de admissibilidade"
+    },
+    {
+      "id": "CPC:art-1011",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1011",
+      "label": "Art. 1.011."
+    },
+    {
+      "id": "CPC:art-1011:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1011",
+      "label": "I - decidi-lo-á monocraticamente apenas nas hipóteses do art"
+    },
+    {
+      "id": "CPC:art-1011:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1011",
+      "label": "II - se não for o caso de decisão monocrática, elaborará seu voto para julgamento do recurso pelo órgão colegiado"
+    },
+    {
+      "id": "CPC:art-1012",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "Art. 1.012."
+    },
+    {
+      "id": "CPC:art-1012:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "§ 1º Além de outras hipóteses previstas em lei, começa a produzir efeitos imediatamente após a sua publicação a sentença que:"
+    },
+    {
+      "id": "CPC:art-1012:par-1:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "I - homologa divisão ou demarcação de terras;"
+    },
+    {
+      "id": "CPC:art-1012:par-1:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "II - condena a pagar alimentos;"
+    },
+    {
+      "id": "CPC:art-1012:par-1:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "III - extingue sem resolução do mérito ou julga improcedentes os embargos do executado;"
+    },
+    {
+      "id": "CPC:art-1012:par-1:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "IV - julga procedente o pedido de instituição de arbitragem;"
+    },
+    {
+      "id": "CPC:art-1012:par-1:inc-V",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "V - confirma, concede ou revoga tutela provisória;"
+    },
+    {
+      "id": "CPC:art-1012:par-1:inc-VI",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "VI - decreta a interdição"
+    },
+    {
+      "id": "CPC:art-1012:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "§ 2º Nos casos do § 1º, o apelado poderá promover o pedido de cumprimento provisório depois de publicada a sentença"
+    },
+    {
+      "id": "CPC:art-1012:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "§ 3º O pedido de concessão de efeito suspensivo nas hipóteses do § 1º poderá ser formulado por requerimento dirigido ao:"
+    },
+    {
+      "id": "CPC:art-1012:par-3:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "I - tribunal, no período compreendido entre a interposição da apelação e sua distribuição, ficando o relator designado para seu exame prevento para julgá-la;"
+    },
+    {
+      "id": "CPC:art-1012:par-3:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "II - relator, se já distribuída a apelação"
+    },
+    {
+      "id": "CPC:art-1012:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1012",
+      "label": "§ 4º Nas hipóteses do § 1º, a eficácia da sentença poderá ser suspensa pelo relator se o apelante demonstrar a probabilidade de provimento do recurso ou se, sendo relevante a fundamentação, houver risco de dano grave ou de difícil reparação"
+    },
+    {
+      "id": "CPC:art-1013",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "Art. 1.013."
+    },
+    {
+      "id": "CPC:art-1013:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "§ 1º Serão, porém, objeto de apreciação e julgamento pelo tribunal todas as questões suscitadas e discutidas no processo, ainda que não tenham sido solucionadas, desde que relativas ao capítulo impugnado"
+    },
+    {
+      "id": "CPC:art-1013:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "§ 2º Quando o pedido ou a defesa tiver mais de um fundamento e o juiz acolher apenas um deles, a apelação devolverá ao tribunal o conhecimento dos demais"
+    },
+    {
+      "id": "CPC:art-1013:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "§ 3º Se o processo estiver em condições de imediato julgamento, o tribunal deve decidir desde logo o mérito quando:"
+    },
+    {
+      "id": "CPC:art-1013:par-3:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "I - reformar sentença fundada no art"
+    },
+    {
+      "id": "CPC:art-1013:par-3:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "II - decretar a nulidade da sentença por não ser ela congruente com os limites do pedido ou da causa de pedir;"
+    },
+    {
+      "id": "CPC:art-1013:par-3:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "III - constatar a omissão no exame de um dos pedidos, hipótese em que poderá julgá-lo;"
+    },
+    {
+      "id": "CPC:art-1013:par-3:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "IV - decretar a nulidade de sentença por falta de fundamentação"
+    },
+    {
+      "id": "CPC:art-1013:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "§ 4º Quando reformar sentença que reconheça a decadência ou a prescrição, o tribunal, se possível, julgará o mérito, examinando as demais questões, sem determinar o retorno do processo ao juízo de primeiro grau"
+    },
+    {
+      "id": "CPC:art-1013:par-5",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1013",
+      "label": "§ 5º O capítulo da sentença que confirma, concede ou revoga a tutela provisória é impugnável na apelação"
+    },
+    {
+      "id": "CPC:art-1014",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1014",
+      "label": "Art. 1.014."
+    },
+    {
+      "id": "CPC:art-1015",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "Art. 1.015."
+    },
+    {
+      "id": "CPC:art-1015:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "I - tutelas provisórias;"
+    },
+    {
+      "id": "CPC:art-1015:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "II - mérito do processo;"
+    },
+    {
+      "id": "CPC:art-1015:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "III - rejeição da alegação de convenção de arbitragem;"
+    },
+    {
+      "id": "CPC:art-1015:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "IV - incidente de desconsideração da personalidade jurídica;"
+    },
+    {
+      "id": "CPC:art-1015:inc-V",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "V - rejeição do pedido de gratuidade da justiça ou acolhimento do pedido de sua revogação;"
+    },
+    {
+      "id": "CPC:art-1015:inc-VI",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "VI - exibição ou posse de documento ou coisa;"
+    },
+    {
+      "id": "CPC:art-1015:inc-VII",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "VII - exclusão de litisconsorte;"
+    },
+    {
+      "id": "CPC:art-1015:inc-VIII",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "VIII - rejeição do pedido de limitação do litisconsórcio;"
+    },
+    {
+      "id": "CPC:art-1015:inc-IX",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "IX - admissão ou inadmissão de intervenção de terceiros;"
+    },
+    {
+      "id": "CPC:art-1015:inc-X",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "X - concessão, modificação ou revogação do efeito suspensivo aos embargos à execução;"
+    },
+    {
+      "id": "CPC:art-1015:inc-XI",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "XI - redistribuição do ônus da prova nos termos do art"
+    },
+    {
+      "id": "CPC:art-1015:inc-XII",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "XII - (VETADO);"
+    },
+    {
+      "id": "CPC:art-1015:inc-XIII",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "XIII - outros casos expressamente referidos em lei"
+    },
+    {
+      "id": "CPC:art-1015:par-unico",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1015",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-1016",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1016",
+      "label": "Art. 1.016."
+    },
+    {
+      "id": "CPC:art-1016:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1016",
+      "label": "I - os nomes das partes;"
+    },
+    {
+      "id": "CPC:art-1016:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1016",
+      "label": "II - a exposição do fato e do direito;"
+    },
+    {
+      "id": "CPC:art-1016:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1016",
+      "label": "III - as razões do pedido de reforma ou de invalidação da decisão e o próprio pedido;"
+    },
+    {
+      "id": "CPC:art-1016:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1016",
+      "label": "IV - o nome e o endereço completo dos advogados constantes do processo"
+    },
+    {
+      "id": "CPC:art-1017",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "Art. 1.017."
+    },
+    {
+      "id": "CPC:art-1017:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "I - obrigatoriamente, com cópias da petição inicial, da contestação, da petição que ensejou a decisão agravada, da própria decisão agravada, da certidão da respectiva intimação ou outro documento oficial que comprove a tempestividade e das procurações outorgadas aos advogados do agravante e do agravado;"
+    },
+    {
+      "id": "CPC:art-1017:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "II - com declaração de inexistência de qualquer dos documentos referidos no inciso I, feita pelo advogado do agravante, sob pena de sua responsabilidade pessoal;"
+    },
+    {
+      "id": "CPC:art-1017:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "III - facultativamente, com outras peças que o agravante reputar úteis"
+    },
+    {
+      "id": "CPC:art-1017:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "§ 1º Acompanhará a petição o comprovante do pagamento das respectivas custas e do porte de retorno, quando devidos, conforme tabela publicada pelos tribunais"
+    },
+    {
+      "id": "CPC:art-1017:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "§ 2º No prazo do recurso, o agravo será interposto por:"
+    },
+    {
+      "id": "CPC:art-1017:par-2:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "I - protocolo realizado diretamente no tribunal competente para julgá-lo;"
+    },
+    {
+      "id": "CPC:art-1017:par-2:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "II - protocolo realizado na própria comarca, seção ou subseção judiciárias;"
+    },
+    {
+      "id": "CPC:art-1017:par-2:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "III - postagem, sob registro, com aviso de recebimento;"
+    },
+    {
+      "id": "CPC:art-1017:par-2:inc-IV",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "IV - transmissão de dados tipo fac-símile, nos termos da lei;"
+    },
+    {
+      "id": "CPC:art-1017:par-2:inc-V",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "V - outra forma prevista em lei"
+    },
+    {
+      "id": "CPC:art-1017:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "§ 3º Na falta da cópia de qualquer peça ou no caso de algum outro vício que comprometa a admissibilidade do agravo de instrumento, deve o relator aplicar o disposto no art"
+    },
+    {
+      "id": "CPC:art-1017:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "§ 4º Se o recurso for interposto por sistema de transmissão de dados tipo fac-símile ou similar, as peças devem ser juntadas no momento de protocolo da petição original"
+    },
+    {
+      "id": "CPC:art-1017:par-5",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1017",
+      "label": "§ 5º Sendo eletrônicos os autos do processo, dispensam-se as peças referidas nos incisos I e II do caput , facultando-se ao agravante anexar outros documentos que entender úteis para a compreensão da controvérsia"
+    },
+    {
+      "id": "CPC:art-1018",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1018",
+      "label": "Art. 1.018."
+    },
+    {
+      "id": "CPC:art-1018:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1018",
+      "label": "§ 1º Se o juiz comunicar que reformou inteiramente a decisão, o relator considerará prejudicado o agravo de instrumento"
+    },
+    {
+      "id": "CPC:art-1018:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1018",
+      "label": "§ 2º Não sendo eletrônicos os autos, o agravante tomará a providência prevista no caput , no prazo de 3 (três) dias a contar da interposição do agravo de instrumento"
+    },
+    {
+      "id": "CPC:art-1018:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1018",
+      "label": "§ 3º O descumprimento da exigência de que trata o § 2º, desde que arguido e provado pelo agravado, importa inadmissibilidade do agravo de instrumento"
+    },
+    {
+      "id": "CPC:art-1019",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1019",
+      "label": "Art. 1.019."
+    },
+    {
+      "id": "CPC:art-1019:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1019",
+      "label": "I - poderá atribuir efeito suspensivo ao recurso ou deferir, em antecipação de tutela, total ou parcialmente, a pretensão recursal, comunicando ao juiz sua decisão;"
+    },
+    {
+      "id": "CPC:art-1019:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1019",
+      "label": "II - ordenará a intimação do agravado pessoalmente, por carta com aviso de recebimento, quando não tiver procurador constituído, ou pelo Diário da Justiça ou por carta com aviso de recebimento dirigida ao seu advogado, para que responda no prazo de 15 (quinze) dias, facultando-lhe juntar a documentação que entender necessária ao julgamento do recurso;"
+    },
+    {
+      "id": "CPC:art-1019:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1019",
+      "label": "III - determinará a intimação do Ministério Público, preferencialmente por meio eletrônico, quando for o caso de sua intervenção, para que se manifeste no prazo de 15 (quinze) dias"
+    },
+    {
+      "id": "CPC:art-1020",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1020",
+      "label": "Art. 1.020."
+    },
+    {
+      "id": "CPC:art-1022",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "Art. 1.022."
+    },
+    {
+      "id": "CPC:art-1022:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "I - esclarecer obscuridade ou eliminar contradição;"
+    },
+    {
+      "id": "CPC:art-1022:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "II - suprir omissão de ponto ou questão sobre o qual devia se pronunciar o juiz de ofício ou a requerimento;"
+    },
+    {
+      "id": "CPC:art-1022:inc-III",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "III - corrigir erro material"
+    },
+    {
+      "id": "CPC:art-1022:par-unico",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "Parágrafo único"
+    },
+    {
+      "id": "CPC:art-1022:par-unico:inc-I",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "I - deixe de se manifestar sobre tese firmada em julgamento de casos repetitivos ou em incidente de assunção de competência aplicável ao caso sob julgamento;"
+    },
+    {
+      "id": "CPC:art-1022:par-unico:inc-II",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1022",
+      "label": "II - incorra em qualquer das condutas descritas no art"
+    },
+    {
+      "id": "CPC:art-1023",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1023",
+      "label": "Art. 1.023."
+    },
+    {
+      "id": "CPC:art-1023:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1023",
+      "label": "§ 1º Aplica-se aos embargos de declaração o art"
+    },
+    {
+      "id": "CPC:art-1023:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1023",
+      "label": "§ 2º O juiz intimará o embargado para, querendo, manifestar-se, no prazo de 5 (cinco) dias, sobre os embargos opostos, caso seu eventual acolhimento implique a modificação da decisão embargada"
+    },
+    {
+      "id": "CPC:art-1024",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1024",
+      "label": "Art. 1.024."
+    },
+    {
+      "id": "CPC:art-1024:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1024",
+      "label": "§ 1º Nos tribunais, o relator apresentará os embargos em mesa na sessão subsequente, proferindo voto, e, não havendo julgamento nessa sessão, será o recurso incluído em pauta automaticamente"
+    },
+    {
+      "id": "CPC:art-1024:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1024",
+      "label": "§ 2º Quando os embargos de declaração forem opostos contra decisão de relator ou outra decisão unipessoal proferida em tribunal, o órgão prolator da decisão embargada decidi-los-á monocraticamente"
+    },
+    {
+      "id": "CPC:art-1024:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1024",
+      "label": "§ 3º O órgão julgador conhecerá dos embargos de declaração como agravo interno se entender ser este o recurso cabível, desde que determine previamente a intimação do recorrente para, no prazo de 5 (cinco) dias, complementar as razões recursais, de modo a ajustá-las às exigências do art"
+    },
+    {
+      "id": "CPC:art-1024:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1024",
+      "label": "§ 4º Caso o acolhimento dos embargos de declaração implique modificação da decisão embargada, o embargado que já tiver interposto outro recurso contra a decisão originária tem o direito de complementar ou alterar suas razões, nos exatos limites da modificação, no prazo de 15 (quinze) dias, contado da intimação da decisão dos embargos de declaração"
+    },
+    {
+      "id": "CPC:art-1024:par-5",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1024",
+      "label": "§ 5º Se os embargos de declaração forem rejeitados ou não alterarem a conclusão do julgamento anterior, o recurso interposto pela outra parte antes da publicação do julgamento dos embargos de declaração será processado e julgado independentemente de ratificação"
+    },
+    {
+      "id": "CPC:art-1025",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1025",
+      "label": "Art. 1.025."
+    },
+    {
+      "id": "CPC:art-1026",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1026",
+      "label": "Art. 1.026."
+    },
+    {
+      "id": "CPC:art-1026:par-1",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1026",
+      "label": "§ 1º A eficácia da decisão monocrática ou colegiada poderá ser suspensa pelo respectivo juiz ou relator se demonstrada a probabilidade de provimento do recurso ou, sendo relevante a fundamentação, se houver risco de dano grave ou de difícil reparação"
+    },
+    {
+      "id": "CPC:art-1026:par-2",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1026",
+      "label": "§ 2º Quando manifestamente protelatórios os embargos de declaração, o juiz ou o tribunal, em decisão fundamentada, condenará o embargante a pagar ao embargado multa não excedente a dois por cento sobre o valor atualizado da causa"
+    },
+    {
+      "id": "CPC:art-1026:par-3",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1026",
+      "label": "§ 3º Na reiteração de embargos de declaração manifestamente protelatórios, a multa será elevada a até dez por cento sobre o valor atualizado da causa, e a interposição de qualquer recurso ficará condicionada ao depósito prévio do valor da multa, à exceção da Fazenda Pública e do beneficiário de gratuidade da justiça, que a recolherão ao final"
+    },
+    {
+      "id": "CPC:art-1026:par-4",
+      "file": "recursos.md",
+      "anchor": "cpc-art-1026",
+      "label": "§ 4º Não serão admitidos novos embargos de declaração se os 2 (dois) anteriores houverem sido considerados protelatórios"
+    }
+  ]
+}

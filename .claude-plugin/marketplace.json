@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "codigo-aberto",
+  "description": "Skills abertas para workflow cível brasileiro no Claude Cowork e ChatGPT Work: intake, análise documental e jurídica, pesquisa opcional via Silo, aprofundamento e redação confirmada.",
+  "owner": {
+    "name": "Diego Sens"
+  },
+  "plugins": [
+    {
+      "name": "silo-legal",
+      "displayName": "Silo Legal",
+      "source": "./",
+      "description": "Workflow jurídico cível para Claude Cowork e ChatGPT Work: intake, análise documental e jurídica, jurisprudência opcional via Silo, aprofundamento e redação contenciosa ou consultiva com confirmação humana.",
+      "author": {
+        "name": "Diego Sens"
+      }
+    }
+  ]
+}
