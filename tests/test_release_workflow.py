@@ -58,6 +58,12 @@ class ReleaseWorkflowTest(unittest.TestCase):
         )
         self.assertIn('anchor="$(git rev-parse HEAD)"', self.text)
 
+    def test_generated_artifacts_stay_outside_public_tree(self) -> None:
+        self.assertIn('plan_file="$RUNNER_TEMP/release-plan.json"', self.text)
+        self.assertIn('notes_file="$RUNNER_TEMP/release-notes.md"', self.text)
+        self.assertNotIn("> release-plan.json", self.text)
+        self.assertNotIn("> release-notes.md", self.text)
+
 
 if __name__ == "__main__":
     unittest.main()
