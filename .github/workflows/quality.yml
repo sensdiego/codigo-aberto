@@ -1,0 +1,38 @@
+name: Quality
+
+"on":
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Validate skills and references
+        run: python3 scripts/validate_skills.py
+
+      - name: Validate release fragments
+        run: python3 scripts/release.py validate
+
+      - name: Require release intent
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --force origin "${{ github.base_ref }}"
+          python3 scripts/release.py impact --ref-range "origin/${{ github.base_ref }}...HEAD"
+
+      - name: Test release protocol
+        run: python3 -m unittest tests.test_release tests.test_release_workflow
+
+      - name: Build upload bundles
+        run: python3 scripts/build_chatgpt_smoke_bundle.py
