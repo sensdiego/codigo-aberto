@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.2.3] - 2026-08-22
+
+### Fixed
+
+- Publica os bundles do ChatGPT e o manifesto de checksums como assets da release.
+
 ## [0.2.2] - 2026-08-22
 
 ### Fixed
