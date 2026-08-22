@@ -1,6 +1,0 @@
-{
-  "schema": 1,
-  "kind": "patch",
-  "category": "Fixed",
-  "summary": "Alinha o acesso ao Silo à validação privada e elimina confirmações de cadastro sem recibo."
-}
