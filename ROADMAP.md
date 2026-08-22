@@ -10,14 +10,20 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-21, v0.2.0)
+## Estado atual (2026-08-22, v0.2.3)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
   recorte versionado do CPC.
-- Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável
-  e GitHub Release (`v0.2.0`, workflow verde).
-- Bundles ChatGPT gerados localmente e no CI, ainda sem upload ou teste real no
-  aplicativo.
+- Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
+  GitHub Release e publicação idempotente de assets (`v0.2.3`, workflow verde).
+- Sete bundles ChatGPT e o manifesto de checksums publicados na
+  [release v0.2.3](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.2.3).
+- Instalação limpa do plugin `silo-legal` `v0.2.3` comprovada no Claude Code;
+  a leitura efetiva das referências compartilhadas ainda precisa de novo smoke
+  com as permissões corretas.
+- Três smokes substantivos concluídos no ChatGPT (`aprofundamento-juridico`,
+  `redacao-contencioso` e `redacao-consultivo`); quatro bundles ainda não foram
+  exercitados no aplicativo.
 - Doze cenários de roteamento definidos em
   [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json), sem
   execução automatizada.
@@ -49,19 +55,24 @@ Objetivo: eliminar atrito local que já demonstrou quebrar o fluxo de trabalho.
 Objetivo: fechar o ciclo aberto pela v0.2.0 — garantir que um usuário real
 consegue instalar e usar as skills nos aplicativos suportados.
 
-- [ ] Smoke test no Claude Code: instalar via marketplace
+- [~] Smoke test no Claude Code: instalar via marketplace
       (`/plugin marketplace add sensdiego/codigo-aberto`) e confirmar que as
       nove skills carregam, roteiam e leem as referências compartilhadas.
-      Registrar resultado, inclusive falhas, em issue.
-- [ ] Smoke test no ChatGPT Work: subir os sete bundles de `dist/` e repetir
+      A instalação da `v0.2.3` passou; falta repetir a execução com leitura real
+      das referências e registrar o resultado, inclusive falhas, em issue.
+- [~] Smoke test no ChatGPT Work: subir os sete bundles de `dist/` e repetir
       dois ou três cenários de `workflows.json` manualmente.
-      Critério: cada bundle instala sem erro e produz handoff válido.
-- [ ] Reescrever a seção de instalação do [`QUICKSTART.md`](QUICKSTART.md) com
+      Três cenários substantivos passaram; falta instalar e executar os quatro
+      bundles restantes. Critério: cada bundle instala sem erro e produz
+      handoff válido.
+- [~] Reescrever a seção de instalação do [`QUICKSTART.md`](QUICKSTART.md) com
       passos concretos por aplicativo (Claude Code, Claude Cowork, ChatGPT
-      Work), testados na prática.
-- [ ] Anexar os bundles como artefatos da GitHub Release no
+      Work), testados na prática. Claude Code e ChatGPT estão documentados;
+      Claude Cowork permanece sem caminho comprovado.
+- [x] Anexar os bundles como artefatos da GitHub Release no
       [`software-release.yml`](.github/workflows/software-release.yml).
-      Critério: `gh release view v0.2.1` lista os zips com checksum.
+      Critério atendido: `gh release view v0.2.3` lista os sete ZIPs e o
+      manifesto de checksums.
 
 ## Fase 2 — Avaliação de qualidade
 
