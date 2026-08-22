@@ -134,6 +134,9 @@ jobs:
           tag="v${VERSION}"
           notes_file="$RUNNER_TEMP/release-notes.md"
 
+          git checkout --detach "$ANCHOR"
+          python3 scripts/build_chatgpt_smoke_bundle.py
+
           git fetch --force origin "refs/tags/${tag}:refs/tags/${tag}" 2>/dev/null || true
           if git rev-parse --verify --quiet "refs/tags/${tag}" >/dev/null; then
             existing="$(git rev-list -n 1 "$tag")"
@@ -150,7 +153,6 @@ jobs:
           fi
 
           if ! gh release view "$tag" >/dev/null 2>&1; then
-            git checkout --detach "$ANCHOR"
             python3 scripts/release.py notes --version "$VERSION" > "$notes_file"
             for delay in 1 4 16; do
               gh release create "$tag" --verify-tag --title "$tag" --notes-file "$notes_file" && break
@@ -158,5 +160,9 @@ jobs:
             done
           fi
 
+          gh release upload "$tag" \
+            dist/chatgpt-work-smoke/*.zip \
+            dist/chatgpt-work-smoke/manifest.json \
+            --clobber
           gh release view "$tag" >/dev/null
           echo "Published $tag from exact anchor $ANCHOR" >> "$GITHUB_STEP_SUMMARY"

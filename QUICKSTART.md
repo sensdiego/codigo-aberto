@@ -32,6 +32,19 @@ capacidade, a skill informa a limitação e não apresenta pesquisa simulada.
 
 ## Instalação
 
-Abra a área de Skills do aplicativo compatível e carregue a pasta ou o arquivo
-compactado da skill desejada. Cada pasta em [`skills/`](skills/) contém seu
-`SKILL.md` e as referências específicas necessárias.
+### Claude Code
+
+```bash
+claude plugin marketplace add sensdiego/codigo-aberto
+claude plugin install silo-legal@codigo-aberto
+```
+
+### ChatGPT
+
+1. Abra a [release mais recente](https://github.com/sensdiego/codigo-aberto/releases/latest).
+2. Baixe o arquivo `.zip` da skill desejada nos assets da release.
+3. Na área de Skills do ChatGPT, carregue esse arquivo sem descompactá-lo.
+
+Os sete ZIPs são autossuficientes: cada um contém o `SKILL.md` e as referências
+necessárias àquela skill. `pesquisa-silo` e `assinatura-silo` não são bundles de
+upload; elas dependem da disponibilidade do conector autenticado.

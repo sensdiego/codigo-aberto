@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "kind": "patch",
+  "category": "Fixed",
+  "summary": "Publica os bundles do ChatGPT e o manifesto de checksums como assets da release."
+}
