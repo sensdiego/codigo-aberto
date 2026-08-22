@@ -18,6 +18,7 @@ non_release = [
   "CODE_OF_CONDUCT.md",
   "CONTRIBUTING.md",
   "QUICKSTART.md",
+  "ROADMAP.md",
   "README.md",
   "RELEASING.md",
 ]

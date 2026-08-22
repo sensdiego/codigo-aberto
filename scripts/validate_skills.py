@@ -32,8 +32,8 @@ PUBLIC_ROOT_ENTRIES = {
     ".changes", ".claude-plugin", ".git", ".github", ".gitignore", ".ruff_cache",
     ".release-policy.toml", "CHANGELOG.md",
     "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "LICENSE", "QUICKSTART.md",
-    "Makefile", "README.md", "RELEASING.md", "dist", "references", "scripts",
-    "skills", "tests",
+    "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "dist", "references",
+    "scripts", "skills", "tests",
 }
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 CPC_REFERENCE_RE = re.compile(r"CPC:[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*(?::[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)*")

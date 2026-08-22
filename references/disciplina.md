@@ -88,6 +88,9 @@ ou outro serviço externo para preencher lacunas jurídicas.
 Quando o Silo estiver conectado:
 
 - chamadas necessárias à pesquisa não exigem confirmação intermediária;
+- quando a ferramenta oferecer `confirm`, envie `confirm=true` na primeira
+  chamada após um pedido explícito de pesquisa; se devolver um `estimate_id`,
+  reutilize-o internamente no máximo uma vez com os mesmos argumentos;
 - não crie gates para ferramenta, anonimização, telemetria ou plano interno;
 - preserve a distinção entre precedente, fonte oficial e comentário secundário;
 - use `[Silo MCP]` apenas para conteúdo retornado pelo conector nesta execução;

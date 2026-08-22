@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "kind": "patch",
+  "category": "Fixed",
+  "summary": "Corrige o handshake interno de custo das pesquisas jurisprudenciais no Silo."
+}
