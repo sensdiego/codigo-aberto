@@ -15,7 +15,7 @@ aprofundar e redigir trabalho jurídico cível.
 | [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, manifestações e recursos cíveis |
 | [`redacao-consultivo`](skills/redacao-consultivo/SKILL.md) | Pareceres, relatórios, e-mails e outros documentos consultivos |
 | [`pesquisa-silo`](skills/pesquisa-silo/SKILL.md) | Consulta jurídica rápida pelo conector Silo |
-| [`assinatura-silo`](skills/assinatura-silo/SKILL.md) | Orientação para cadastro e conexão ao Silo |
+| [`assinatura-silo`](skills/assinatura-silo/SKILL.md) | Orientação para a lista de espera e conexão ao Silo |
 
 Fluxo sugerido:
 
@@ -50,6 +50,8 @@ aplicativos compatíveis com Agent Skills. Veja o [guia rápido](QUICKSTART.md).
 O corpus local contém o recorte do CPC necessário ao workflow. Pesquisa
 jurisprudencial e validações externas usam o conector autenticado do Silo quando
 disponível; a base, a API e o servidor do Silo não integram este repositório.
+O acesso externo está em validação privada e pode ser solicitado pela
+[lista de espera oficial](https://silo.legal/#waitlist).
 
 Skills e código estão sob a licença [Apache-2.0](LICENSE). Para contribuir,
 consulte [CONTRIBUTING.md](CONTRIBUTING.md). Versões publicadas ficam no

@@ -6,13 +6,15 @@ skill conflitar com este arquivo, esta disciplina controla.
 ## Produto aberto e serviço conectado
 
 O código e as skills são open source sob Apache-2.0. O serviço Silo — servidor
-MCP, base e API — é comercial por assinatura. A fronteira comercial não cria
-um segundo plugin.
+MCP, base e API — está em validação privada. O acesso externo ainda não é uma
+oferta comercial pública; eventual contratação será feita somente pelo fluxo
+oficial do produto e não cria um segundo plugin.
 
-O cadastro e a conexão são tratados pelas skills próprias. Nunca grave chave de
-API no repositório. Só declare o conector ativo depois de uma chamada real bem-
-sucedida. O uso autenticado não cria gate adicional de anonimização, telemetria
-ou aceite dentro das skills.
+A manifestação de interesse e a conexão são tratadas pelas skills próprias.
+Nunca declare cadastro, ativação ou contratação sem recibo verificável do fluxo
+oficial. Nunca grave chave de API no repositório. Só declare o conector ativo
+depois de uma chamada real bem-sucedida. O uso autenticado não cria gate
+adicional de anonimização, telemetria ou aceite dentro das skills.
 
 ## Entrada e roteamento
 
