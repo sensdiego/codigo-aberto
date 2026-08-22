@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.2.1] - 2026-08-22
+
+### Fixed
+
+- Corrige o handshake interno de custo das pesquisas jurisprudenciais no Silo.
+
 ## [0.2.0] - 2026-08-21
 
 ### Added
