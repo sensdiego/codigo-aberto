@@ -1,6 +1,6 @@
 ---
 name: pesquisa-silo
-description: Pesquisar jurisprudência brasileira diretamente via Silo MCP com verificação de fonte — consulta rápida sem o workflow completo da análise jurisprudencial. Requer assinatura ativa do Silo. Use quando o advogado pedir "pesquisa no silo", "consulta o silo", "acha isso rápido", ou "precedente sobre X" e o conector estiver ativo.
+description: Pesquisar jurisprudência brasileira diretamente via Silo MCP com verificação de fonte — consulta rápida sem o workflow completo da análise jurisprudencial. Requer acesso ativo ao Silo. Use quando o advogado pedir "pesquisa no silo", "consulta o silo", "acha isso rápido", ou "precedente sobre X" e o conector estiver ativo.
 ---
 
 # /pesquisa-silo — Consulta Direta ao Silo

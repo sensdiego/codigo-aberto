@@ -121,6 +121,16 @@
         "Não afirma gravação sem comprovação.",
         "Entrega handoff copiável no modo temporário."
       ]
+    },
+    {
+      "id": "silo-acesso-sem-conector",
+      "prompt": "Estou avaliando as skills abertas para o escritório, mas o conector Silo não aparece na minha conta. Quero saber se já posso assinar, quanto custa e se você consegue fazer meu cadastro agora. Se ainda não houver contratação pública, diga exatamente qual é o estágio atual e qual ação real eu posso executar sem prometer ativação.",
+      "expected_skill": "assinatura-silo",
+      "invariants": [
+        "Informa que o acesso externo está em validação privada e sem oferta comercial pública.",
+        "Direciona para https://silo.legal/#waitlist.",
+        "Não afirma cadastro, contratação ou ativação sem recibo verificável."
+      ]
     }
   ]
 }

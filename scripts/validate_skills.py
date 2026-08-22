@@ -37,6 +37,12 @@ PUBLIC_ROOT_ENTRIES = {
 }
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 CPC_REFERENCE_RE = re.compile(r"CPC:[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*(?::[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)*")
+SILO_WAITLIST_URL = "https://silo.legal/#waitlist"
+PROHIBITED_PUBLIC_CLAIMS = (
+    "é comercial por assinatura",
+    "o cadastro foi registrado",
+    "requer assinatura ativa",
+)
 
 def parse_frontmatter(text: str):
     """Retorna (frontmatter_dict, erro)."""
@@ -230,6 +236,27 @@ def check_new_file_placeholders():
                     errors.append(f"{path.relative_to(ROOT)}: contém [PLACEHOLDER]")
     return errors
 
+
+def check_silo_access_copy():
+    errors = []
+    paths = [
+        ROOT / ".claude-plugin" / "plugin.json",
+        ROOT / "references" / "disciplina.md",
+        ROOT / "skills" / "assinatura-silo" / "SKILL.md",
+        ROOT / "skills" / "pesquisa-silo" / "SKILL.md",
+    ]
+    for path in paths:
+        text = path.read_text(encoding="utf-8").lower()
+        for claim in PROHIBITED_PUBLIC_CLAIMS:
+            if claim in text:
+                errors.append(
+                    f"{path.relative_to(ROOT)}: claim comercial incompatível com a validação privada: {claim}"
+                )
+    access_skill = paths[2].read_text(encoding="utf-8")
+    if SILO_WAITLIST_URL not in access_skill:
+        errors.append("skill assinatura-silo não aponta para a lista de espera oficial")
+    return errors
+
 def check_skill(path: Path):
     errors = []
     text = path.read_text(encoding="utf-8")
@@ -339,6 +366,7 @@ def main():
         errors.extend(check_markdown_links(path))
 
     errors.extend(check_new_file_placeholders())
+    errors.extend(check_silo_access_copy())
     errors.extend(check_workflow_fixtures())
     errors.extend(check_cpc_manifest())
 
