@@ -56,7 +56,8 @@ Em um push elegível para `main`, o workflow
 4. valida skills, referências, bundles e o próprio protocolo;
 5. cria e envia `chore(release): vX.Y.Z`;
 6. cria a tag anotada `vX.Y.Z` no SHA exato;
-7. publica o GitHub Release com as notas extraídas do changelog.
+7. publica o GitHub Release com as notas extraídas do changelog;
+8. anexa os sete bundles do ChatGPT e o manifesto de checksums.
 
 A primeira publicação mantém a versão já declarada no manifesto (`0.2.0`). As
 seguintes aplicam o maior incremento existente nos fragmentos do lote.
@@ -70,7 +71,9 @@ seguintes aplicam o maior incremento existente nos fragmentos do lote.
 - release não comprova instalação no aplicativo, funcionamento do Silo ou uso
   humano das skills;
 - uma execução interrompida pode ser repetida: se a tag existir sem GitHub
-  Release, o workflow publica a release a partir do commit já marcado.
+  Release, o workflow publica a release a partir do commit já marcado;
+- repetir o workflow reconstrói e substitui os assets a partir do mesmo commit
+  marcado, sem mover a tag.
 
 Comandos de inspeção:
 

@@ -64,6 +64,12 @@ class ReleaseWorkflowTest(unittest.TestCase):
         self.assertNotIn("> release-plan.json", self.text)
         self.assertNotIn("> release-notes.md", self.text)
 
+    def test_release_publishes_chatgpt_bundles(self) -> None:
+        self.assertIn("python3 scripts/build_chatgpt_smoke_bundle.py", self.text)
+        self.assertIn('gh release upload "$tag"', self.text)
+        self.assertIn("dist/chatgpt-work-smoke/*.zip", self.text)
+        self.assertIn("dist/chatgpt-work-smoke/manifest.json", self.text)
+
 
 if __name__ == "__main__":
     unittest.main()
