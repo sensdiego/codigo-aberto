@@ -24,7 +24,7 @@ Estado dos itens:
 - Três smokes substantivos concluídos no ChatGPT (`aprofundamento-juridico`,
   `redacao-contencioso` e `redacao-consultivo`); quatro bundles ainda não foram
   exercitados no aplicativo.
-- Doze cenários de roteamento definidos em
+- Treze cenários de roteamento definidos em
   [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json), sem
   execução automatizada.
 
