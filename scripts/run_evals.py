@@ -376,11 +376,19 @@ def run_scenario(
     prompt = scenario.get("prompt")
     if not isinstance(prompt, str):
         raise ValueError("cenário sem prompt válido")
+    setup_files = scenario.get("setup_files")
+    if setup_files is not None and not isinstance(setup_files, dict):
+        raise ValueError("setup_files deve ser objeto de caminho para conteúdo")
     try:
         with tempfile.TemporaryDirectory(prefix="silo-legal-eval-") as temporary:
+            workdir = Path(temporary)
+            for name, content in (setup_files or {}).items():
+                target = workdir / str(name)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(str(content), encoding="utf-8")
             response = executor(
                 runner_command(prompt, model),
-                cwd=Path(temporary),
+                cwd=workdir,
                 timeout=RUNNER_TIMEOUT_SECONDS,
             )
     except (OSError, subprocess.TimeoutExpired) as exc:

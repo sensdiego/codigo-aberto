@@ -29,7 +29,12 @@
         "Classifica cada ponto afetado como confirma, complementa, contradiz, substitui ou não afeta.",
         "Preserva os achados anteriores não afetados.",
         "Submete novamente à confirmação apenas conteúdo novo ou afetado."
-      ]
+      ],
+      "setup_files": {
+        "CASO.md": "# Caso — cobrança contratual (fixture sintética)\n\n## Tipo de artefato\n\nAnálise documental confirmada pelo advogado em 20/08/2026 (handoff anterior).\n\n## Achados confirmados\n\n| ID | Achado | Estado | Fonte e localizador |\n|---|---|---|---|\n| F-01 | O contrato de fornecimento prevê parcela final de R$ 180.000,00 com vencimento em 10/06/2026. | fato documental confirmado | Contrato, cláusula 4ª, p. 7 |\n| F-02 | Não há comprovante de pagamento da parcela final no acervo examinado. | confirmado | Extratos de maio a julho de 2026 |\n| F-03 | A notificação de cobrança de 15/07/2026 permanece sem resposta formal do devedor. | confirmado | Notificação, p. 1; e-mails exportados |\n| F-04 | Não há evidência de renegociação ou parcelamento no acervo examinado. | confirmado | Acervo integral da rodada anterior |\n\n## Estado\n\nAnálise confirmada; caso aguardando documentos novos.\n",
+        "novos/comprovante-transferencia.txt": "COMPROVANTE DE TRANSFERÊNCIA (fixture sintética)\nData: 18/08/2026 14:22\nValor: R$ 60.000,00\nRemetente: Devedora Sintética Ltda.\nFavorecido: Credora Sintética S.A.\nIdentificação: pagamento parcial contrato de fornecimento\nAutenticação: 9F3A-SINT-2026\n",
+        "novos/mensagens.txt": "EXPORTAÇÃO DE MENSAGENS (fixture sintética)\n[19/08/2026 09:14] Devedora: Transferimos ontem 60 mil como sinal de boa-fé. Podemos parcelar o saldo em 4x?\n[19/08/2026 09:40] Credora: Recebido aqui. Pelo saldo de 120, consigo aprovar 4 parcelas mensais, sujeito a formalização.\n[sem data visível] Credora: Segue como combinado então, meu jurídico prepara o aditivo.\n[20/08/2026 08:02] Devedora: Combinado, aguardamos a minuta.\n"
+      }
     },
     {
       "id": "manifestacao-concordancia",

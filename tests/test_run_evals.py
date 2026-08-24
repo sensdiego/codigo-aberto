@@ -168,6 +168,31 @@ class RunEvalsTest(unittest.TestCase):
         self.assertIn("PASS", markdown)
         self.assertIn("FAIL", markdown)
 
+    def test_run_scenario_seeds_setup_files_before_execution(self) -> None:
+        from scripts.run_evals import run_scenario
+
+        seen: dict[str, str] = {}
+
+        def executor(command: list[str], *, cwd: Path, timeout: int) -> subprocess.CompletedProcess[str]:
+            seen["caso"] = (cwd / "CASO.md").read_text(encoding="utf-8")
+            seen["novo"] = (cwd / "novos" / "arquivo.txt").read_text(encoding="utf-8")
+            return subprocess.CompletedProcess(command, 0, stdout="{}", stderr="")
+
+        scenario = {
+            "prompt": "pergunta",
+            "setup_files": {
+                "CASO.md": "handoff anterior",
+                "novos/arquivo.txt": "material novo",
+            },
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            transcript_path = Path(temporary) / "t.jsonl"
+            _, error = run_scenario(scenario, "sonnet", transcript_path, executor)
+
+        self.assertIsNone(error)
+        self.assertEqual(seen["caso"], "handoff anterior")
+        self.assertEqual(seen["novo"], "material novo")
+
     def test_plugin_check_accepts_injected_executor(self) -> None:
         def executor(command: list[str], **_: object) -> subprocess.CompletedProcess[str]:
             self.assertEqual(command, ["claude", "plugin", "list"])
