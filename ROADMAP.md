@@ -22,11 +22,14 @@ Estado dos itens:
   ([#9](https://github.com/sensdiego/codigo-aberto/issues/9)): instalação limpa
   da `v0.2.3` via marketplace, nove skills carregadas, roteamento correto e
   leitura das referências compartilhadas sem negação de permissão.
-- Conteúdo dos sete bundles ChatGPT comprovado: três smokes in-app
-  (`aprofundamento-juridico`, `redacao-contencioso` e `redacao-consultivo`) e
-  os quatro restantes aprovados em proxy CLI com `gpt-5.6`, 12/12 invariantes
-  ([#11](https://github.com/sensdiego/codigo-aberto/issues/11)). Pendente
-  apenas a camada do aplicativo (upload e ativação) desses quatro.
+- Sete bundles ChatGPT comprovados no aplicativo: três smokes in-app de
+  2026-08-22 e os quatro restantes aprovados in-app em 2026-08-24 com os ZIPs
+  exatos da release v0.2.3 (checksum conferido dentro do app), 12/12
+  invariantes, além do proxy CLI com `gpt-5.6`
+  ([#11](https://github.com/sensdiego/codigo-aberto/issues/11)).
+- Mecânica real do ChatGPT documentada: não há instalação de skills de
+  terceiros no runtime; o modelo monta o ZIP anexado à conversa e segue o
+  `SKILL.md` ([QUICKSTART](QUICKSTART.md) corrigido).
 - Treze cenários de roteamento definidos em
   [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json), sem
   execução automatizada.
@@ -69,18 +72,20 @@ consegue instalar e usar as skills nos aplicativos suportados.
       referência sem negação de permissão e os três invariantes respeitados.
       Resultado registrado em
       [#9](https://github.com/sensdiego/codigo-aberto/issues/9).
-- [~] Smoke test no ChatGPT Work: subir os sete bundles de `dist/` e repetir
+- [x] Smoke test no ChatGPT Work: subir os sete bundles de `dist/` e repetir
       dois ou três cenários de `workflows.json` manualmente.
-      Três cenários in-app passaram; os quatro bundles restantes tiveram o
-      conteúdo aprovado em proxy CLI com `gpt-5.6` sobre os artefatos da
-      release, 12/12 invariantes
-      ([#11](https://github.com/sensdiego/codigo-aberto/issues/11)).
-      Critério remanescente, só provável no aplicativo: cada bundle instala e
-      ativa sem erro no ChatGPT Work.
+      Critério atendido em 2026-08-24: os quatro bundles restantes rodaram
+      in-app com os ZIPs da release v0.2.3 (SHA-256 conferido pelo próprio
+      modelo contra o manifesto), 12/12 invariantes, somando-se aos três
+      smokes de 2026-08-22. Achado registrado: o runtime não tem instalação
+      de skills de terceiros; o fluxo comprovado é montar o ZIP anexado à
+      conversa ([#11](https://github.com/sensdiego/codigo-aberto/issues/11)).
 - [~] Reescrever a seção de instalação do [`QUICKSTART.md`](QUICKSTART.md) com
       passos concretos por aplicativo (Claude Code, Claude Cowork, ChatGPT
-      Work), testados na prática. Claude Code e ChatGPT estão documentados;
-      Claude Cowork permanece sem caminho comprovado.
+      Work), testados na prática. Claude Code e ChatGPT estão documentados com
+      caminho comprovado (a seção do ChatGPT foi corrigida em 2026-08-24 para o
+      fluxo real de montagem do ZIP anexado); Claude Cowork permanece sem
+      caminho comprovado.
 - [x] Anexar os bundles como artefatos da GitHub Release no
       [`software-release.yml`](.github/workflows/software-release.yml).
       Critério atendido: `gh release view v0.2.3` lista os sete ZIPs e o
