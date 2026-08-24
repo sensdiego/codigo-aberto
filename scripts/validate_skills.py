@@ -32,7 +32,7 @@ PUBLIC_ROOT_ENTRIES = {
     ".changes", ".claude-plugin", ".git", ".github", ".gitignore", ".ruff_cache",
     ".release-policy.toml", "CHANGELOG.md",
     "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "LICENSE", "QUICKSTART.md",
-    "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "dist", "references",
+    "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "data", "dist", "references",
     "scripts", "skills", "tests",
 }
 OS_JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "ehthumbs.db"}

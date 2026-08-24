@@ -27,6 +27,9 @@ build/
 release-notes.md
 release-plan.json
 
+# Eval harness
+data/evals/*/transcripts/
+
 # Local config (nunca commitar)
 config/
 .local/

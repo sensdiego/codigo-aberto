@@ -41,18 +41,29 @@ claude plugin install silo-legal@codigo-aberto
 
 ### ChatGPT
 
-1. Abra a [release mais recente](https://github.com/sensdiego/codigo-aberto/releases/latest).
-2. Baixe o arquivo `.zip` da skill desejada nos assets da release.
-3. Anexe o `.zip` à conversa (ou a um projeto), sem descompactá-lo, e instrua o
-   modelo a usá-lo. Exemplo:
+O ChatGPT não possui área de instalação para skills de terceiros: o diretório
+de skills do runtime é somente leitura. O caminho comprovado (2026-08-24,
+inclusive com conferência do checksum dos pacotes) é o modelo montar o ZIP
+dentro da própria conversa. O menor atrito é via projeto:
 
-   > Use exclusivamente a skill contida no ZIP anexo: monte o pacote e siga o
-   > `SKILL.md` fielmente, lendo as referências internas quando necessário.
+1. Abra a [release mais recente](https://github.com/sensdiego/codigo-aberto/releases/latest)
+   e baixe os arquivos `.zip` das skills nos assets.
+2. Crie um projeto no ChatGPT e envie os ZIPs a ele uma única vez, sem
+   descompactá-los.
+3. Nas configurações do projeto, defina as instruções permanentes:
 
-   O ChatGPT não possui área de instalação para skills de terceiros: o diretório
-   de skills do runtime é somente leitura. O caminho comprovado é o modelo montar
-   o ZIP anexado dentro da própria conversa — verificado na prática em
-   2026-08-24, inclusive com conferência do checksum do pacote.
+   > Este projeto contém skills jurídicas como arquivos ZIP no acervo. Em toda
+   > conversa, identifique pela mensagem qual skill se aplica, monte o ZIP
+   > correspondente e siga o `SKILL.md` fielmente, lendo as referências
+   > internas quando necessário.
+
+4. Converse normalmente: o modelo identifica a skill, monta o pacote do acervo
+   e segue a disciplina — comprovado sem citar o nome da skill no pedido.
+
+Fora de um projeto, anexe o `.zip` à conversa e instrua explicitamente:
+
+> Use exclusivamente a skill contida no ZIP anexo: monte o pacote e siga o
+> `SKILL.md` fielmente, lendo as referências internas quando necessário.
 
 Os sete ZIPs são autossuficientes: cada um contém o `SKILL.md` e as referências
 necessárias àquela skill. `pesquisa-silo` e `assinatura-silo` não são bundles de
