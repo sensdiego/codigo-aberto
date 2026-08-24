@@ -220,6 +220,16 @@ def check_workflow_fixtures():
         invariants = scenario.get("invariants")
         if not isinstance(invariants, list) or not invariants or not all(isinstance(item, str) and item.strip() for item in invariants):
             errors.append(f"workflow {scenario_id or index}: invariants deve ser lista não vazia de textos")
+        setup_files = scenario.get("setup_files")
+        if setup_files is not None:
+            if not isinstance(setup_files, dict) or not setup_files:
+                errors.append(f"workflow {scenario_id or index}: setup_files deve ser objeto não vazio")
+            else:
+                for name, content in setup_files.items():
+                    relative = isinstance(name, str) and name.strip() and not name.startswith("/") and ".." not in name.split("/")
+                    if not relative or not isinstance(content, str):
+                        errors.append(f"workflow {scenario_id or index}: setup_files exige caminhos relativos seguros e conteúdo textual")
+                        break
 
     for skill in sorted(WORKFLOW_SKILLS | referenced):
         if skill not in existing:
