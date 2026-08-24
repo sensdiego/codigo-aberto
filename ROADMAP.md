@@ -10,14 +10,18 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-24, v0.2.3)
+## Estado atual (2026-08-24, v0.2.4)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC.
+  recorte versionado do CPC. Versão corrente `v0.2.4` (correções de roteamento
+  jurisprudencial e rótulos canônicos do delta).
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
-  GitHub Release e publicação idempotente de assets (`v0.2.3`, workflow verde).
+  GitHub Release e publicação idempotente de assets (quatro releases publicadas
+  pelo workflow, todas verdes).
 - Sete bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.2.3](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.2.3).
+  [release v0.2.4](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.2.4);
+  acervo do projeto de smoke no ChatGPT atualizado com esses ZIPs em
+  2026-08-24.
 - Smoke completo do Claude Code aprovado em 2026-08-24
   ([#9](https://github.com/sensdiego/codigo-aberto/issues/9)): instalação limpa
   da `v0.2.3` via marketplace, nove skills carregadas, roteamento correto e
