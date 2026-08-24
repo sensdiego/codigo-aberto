@@ -42,13 +42,16 @@ Estado dos itens:
 
 Objetivo: eliminar atrito local que já demonstrou quebrar o fluxo de trabalho.
 
-- [ ] Tratar arquivos de sistema operacional no validador: `validate_skills.py`
+- [x] Tratar arquivos de sistema operacional no validador: `validate_skills.py`
       deve ignorar `.DS_Store`, `Thumbs.db` e equivalentes em qualquer pasta,
-      em vez de falhar com "entrada não prevista".
-      Critério: `make validate` passa em checkout fresco no macOS e no Linux.
-- [ ] Remover o `.DS_Store` existente na raiz do workspace local.
-- [ ] Adicionar target `make lint` executando `ruff check scripts tests`.
-      Critério: CI de qualidade roda lint junto da validação atual.
+      em vez de falhar com "entrada não prevista". O gerador de bundles também
+      os exclui, em vez de empacotá-los silenciosamente.
+      Critério atendido: `make validate` passa com arquivos de sistema
+      plantados; cobertura em `tests/test_validate_skills.py`.
+- [x] Remover o `.DS_Store` existente na raiz do workspace local.
+- [x] Adicionar target `make lint` executando `ruff check scripts tests`.
+      Critério atendido: o CI de qualidade roda lint antes da validação, e
+      `make test` executa toda a suíte local.
 
 ## Fase 1 — Provar o caminho do usuário
 

@@ -35,6 +35,7 @@ PUBLIC_ROOT_ENTRIES = {
     "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "dist", "references",
     "scripts", "skills", "tests",
 }
+OS_JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "ehthumbs.db"}
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 CPC_REFERENCE_RE = re.compile(r"CPC:[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*(?::[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)*")
 SILO_WAITLIST_URL = "https://silo.legal/#waitlist"
@@ -43,6 +44,10 @@ PROHIBITED_PUBLIC_CLAIMS = (
     "o cadastro foi registrado",
     "requer assinatura ativa",
 )
+
+def is_os_junk(name: str) -> bool:
+    return name in OS_JUNK_NAMES or name.startswith("._")
+
 
 def parse_frontmatter(text: str):
     """Retorna (frontmatter_dict, erro)."""
@@ -306,7 +311,8 @@ def check_plugin(plugin_dir: Path, expected_name: str):
 def main():
     errors = []
 
-    for name in sorted({path.name for path in ROOT.iterdir()} - PUBLIC_ROOT_ENTRIES):
+    root_entries = {path.name for path in ROOT.iterdir() if not is_os_junk(path.name)}
+    for name in sorted(root_entries - PUBLIC_ROOT_ENTRIES):
         errors.append(f"entrada não prevista na distribuição pública: {name}")
 
     # Marketplace
