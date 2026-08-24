@@ -22,9 +22,11 @@ Estado dos itens:
   ([#9](https://github.com/sensdiego/codigo-aberto/issues/9)): instalação limpa
   da `v0.2.3` via marketplace, nove skills carregadas, roteamento correto e
   leitura das referências compartilhadas sem negação de permissão.
-- Três smokes substantivos concluídos no ChatGPT (`aprofundamento-juridico`,
-  `redacao-contencioso` e `redacao-consultivo`); quatro bundles ainda não foram
-  exercitados no aplicativo.
+- Conteúdo dos sete bundles ChatGPT comprovado: três smokes in-app
+  (`aprofundamento-juridico`, `redacao-contencioso` e `redacao-consultivo`) e
+  os quatro restantes aprovados em proxy CLI com `gpt-5.6`, 12/12 invariantes
+  ([#11](https://github.com/sensdiego/codigo-aberto/issues/11)). Pendente
+  apenas a camada do aplicativo (upload e ativação) desses quatro.
 - Treze cenários de roteamento definidos em
   [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json), sem
   execução automatizada.
@@ -69,9 +71,12 @@ consegue instalar e usar as skills nos aplicativos suportados.
       [#9](https://github.com/sensdiego/codigo-aberto/issues/9).
 - [~] Smoke test no ChatGPT Work: subir os sete bundles de `dist/` e repetir
       dois ou três cenários de `workflows.json` manualmente.
-      Três cenários substantivos passaram; falta instalar e executar os quatro
-      bundles restantes. Critério: cada bundle instala sem erro e produz
-      handoff válido.
+      Três cenários in-app passaram; os quatro bundles restantes tiveram o
+      conteúdo aprovado em proxy CLI com `gpt-5.6` sobre os artefatos da
+      release, 12/12 invariantes
+      ([#11](https://github.com/sensdiego/codigo-aberto/issues/11)).
+      Critério remanescente, só provável no aplicativo: cada bundle instala e
+      ativa sem erro no ChatGPT Work.
 - [~] Reescrever a seção de instalação do [`QUICKSTART.md`](QUICKSTART.md) com
       passos concretos por aplicativo (Claude Code, Claude Cowork, ChatGPT
       Work), testados na prática. Claude Code e ChatGPT estão documentados;
