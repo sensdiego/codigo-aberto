@@ -10,7 +10,7 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-22, v0.2.3)
+## Estado atual (2026-08-24, v0.2.3)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
   recorte versionado do CPC.
@@ -18,9 +18,10 @@ Estado dos itens:
   GitHub Release e publicação idempotente de assets (`v0.2.3`, workflow verde).
 - Sete bundles ChatGPT e o manifesto de checksums publicados na
   [release v0.2.3](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.2.3).
-- Instalação limpa do plugin `silo-legal` `v0.2.3` comprovada no Claude Code;
-  a leitura efetiva das referências compartilhadas ainda precisa de novo smoke
-  com as permissões corretas.
+- Smoke completo do Claude Code aprovado em 2026-08-24
+  ([#9](https://github.com/sensdiego/codigo-aberto/issues/9)): instalação limpa
+  da `v0.2.3` via marketplace, nove skills carregadas, roteamento correto e
+  leitura das referências compartilhadas sem negação de permissão.
 - Três smokes substantivos concluídos no ChatGPT (`aprofundamento-juridico`,
   `redacao-contencioso` e `redacao-consultivo`); quatro bundles ainda não foram
   exercitados no aplicativo.
@@ -58,11 +59,14 @@ Objetivo: eliminar atrito local que já demonstrou quebrar o fluxo de trabalho.
 Objetivo: fechar o ciclo aberto pela v0.2.0 — garantir que um usuário real
 consegue instalar e usar as skills nos aplicativos suportados.
 
-- [~] Smoke test no Claude Code: instalar via marketplace
+- [x] Smoke test no Claude Code: instalar via marketplace
       (`/plugin marketplace add sensdiego/codigo-aberto`) e confirmar que as
       nove skills carregam, roteiam e leem as referências compartilhadas.
-      A instalação da `v0.2.3` passou; falta repetir a execução com leitura real
-      das referências e registrar o resultado, inclusive falhas, em issue.
+      Critério atendido em 2026-08-24 com o cenário
+      `relogio-completo-condicionado`: roteamento correto, seis leituras de
+      referência sem negação de permissão e os três invariantes respeitados.
+      Resultado registrado em
+      [#9](https://github.com/sensdiego/codigo-aberto/issues/9).
 - [~] Smoke test no ChatGPT Work: subir os sete bundles de `dist/` e repetir
       dois ou três cenários de `workflows.json` manualmente.
       Três cenários substantivos passaram; falta instalar e executar os quatro
