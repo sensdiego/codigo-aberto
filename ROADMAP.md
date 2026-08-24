@@ -30,9 +30,14 @@ Estado dos itens:
 - Mecânica real do ChatGPT documentada: não há instalação de skills de
   terceiros no runtime; o modelo monta o ZIP anexado à conversa e segue o
   `SKILL.md` ([QUICKSTART](QUICKSTART.md) corrigido).
-- Treze cenários de roteamento definidos em
-  [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json), sem
-  execução automatizada.
+- Régua de qualidade operacional: `scripts/run_evals.py` executa os treze
+  cenários de [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json)
+  contra o plugin instalado, com juiz por invariante e relatório versionado.
+  Baseline v0.2.3 registrado: 10 PASS, 3 FAIL (duas fraquezas de roteamento e
+  uma lacuna de desenho de cenário), custo US$ 5,73 por rodada.
+- Fluxo de menor atrito no ChatGPT comprovado: instruções permanentes de
+  projeto fazem o modelo rotear e montar a skill certa do acervo sem o usuário
+  citá-la ([QUICKSTART](QUICKSTART.md)).
 
 ## Princípios de ordenação
 
@@ -96,16 +101,32 @@ consegue instalar e usar as skills nos aplicativos suportados.
 Objetivo: transformar os cenários sintéticos em régua objetiva para qualquer
 edição futura de skills.
 
-- [ ] Criar `scripts/run_evals.py`: executa cada cenário de
+- [x] Criar `scripts/run_evals.py`: executa cada cenário de
       `workflows.json` contra um modelo e verifica os invariantes declarados.
-- [ ] Relatório por cenário: passos observados, invariantes atendidos/violados
+      Entregue em 2026-08-24: sessão headless do Claude Code com o plugin,
+      roteamento verificado deterministicamente, juiz por invariante com
+      evidência citada, transcripts persistidos antes do julgamento e
+      `--resume` para retomar sem repagar execuções.
+- [x] Relatório por cenário: passos observados, invariantes atendidos/violados
       e veredito binário; saída em `data/evals/` com data, modelo e versão.
-- [ ] Execução manual apenas (`workflow_dispatch` ou comando local), sem gate
-      automático no CI, controlando custo.
-- [ ] Baseline registrado para as nove skills na versão corrente.
-      Critério: rodar o harness duas vezes produz resultados comparáveis.
-- [ ] Documentar como interpretar e estender os cenários em
-      [`CONTRIBUTING.md`](CONTRIBUTING.md).
+      `report.json` e `report.md` incluem skills invocadas, referências lidas,
+      custo por cenário (executor e juiz) e cobertura por skill.
+- [x] Execução manual apenas (`workflow_dispatch` ou comando local), sem gate
+      automático no CI, controlando custo. Comando local documentado no
+      CONTRIBUTING; rodada completa custou US$ 5,73.
+- [x] Baseline registrado para as nove skills na versão corrente.
+      Registrado em 2026-08-24 sobre a v0.2.3, modelo sonnet: 10 PASS, 3 FAIL,
+      0 erros de juiz, US$ 5,73
+      ([relatório](data/evals/2026-08-24-claude-sonnet-v0.2.3/report.md)).
+      Comparabilidade verificada em três cenários re-executados: dois vereditos
+      estáveis (PASS/PASS e FAIL/FAIL) e uma variância conhecida
+      (`silo-cobertura-insuficiente` alterna o roteamento entre `pesquisa-silo`
+      e `analise-jurisprudencial`) — o achado é a instabilidade, registrada em
+      issue com as demais falhas.
+- [x] Documentar como interpretar e estender os cenários em
+      [`CONTRIBUTING.md`](CONTRIBUTING.md). Seção "Cenários de avaliação"
+      cobre estrutura, uso do harness, leitura dos vereditos e regra de não
+      alterar skill e régua no mesmo pull request sem justificativa.
 
 ## Fase 3 — Expansão de conteúdo
 
