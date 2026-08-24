@@ -50,9 +50,10 @@ fontes, sem escolher tese, recurso, providência ou estratégia.
 ## Atualização documental
 
 Documento novo não reinicia automaticamente a análise. Compare cada achado
-afetado e classifique o delta como `confirma`, `complementa`, `contradiz`,
-`substitui` ou `não afeta`. Preserve o restante e devolva à confirmação humana
-somente conteúdo novo ou materialmente alterado.
+afetado e classifique o delta usando exatamente estes rótulos, sem sinônimos:
+`confirma`, `complementa`, `contradiz`, `substitui` ou `não afeta`. Preserve o
+restante e devolva à confirmação humana somente conteúdo novo ou materialmente
+alterado.
 
 ## Saída
 
