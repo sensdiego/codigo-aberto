@@ -43,7 +43,16 @@ claude plugin install silo-legal@codigo-aberto
 
 1. Abra a [release mais recente](https://github.com/sensdiego/codigo-aberto/releases/latest).
 2. Baixe o arquivo `.zip` da skill desejada nos assets da release.
-3. Na área de Skills do ChatGPT, carregue esse arquivo sem descompactá-lo.
+3. Anexe o `.zip` à conversa (ou a um projeto), sem descompactá-lo, e instrua o
+   modelo a usá-lo. Exemplo:
+
+   > Use exclusivamente a skill contida no ZIP anexo: monte o pacote e siga o
+   > `SKILL.md` fielmente, lendo as referências internas quando necessário.
+
+   O ChatGPT não possui área de instalação para skills de terceiros: o diretório
+   de skills do runtime é somente leitura. O caminho comprovado é o modelo montar
+   o ZIP anexado dentro da própria conversa — verificado na prática em
+   2026-08-24, inclusive com conferência do checksum do pacote.
 
 Os sete ZIPs são autossuficientes: cada um contém o `SKILL.md` e as referências
 necessárias àquela skill. `pesquisa-silo` e `assinatura-silo` não são bundles de
