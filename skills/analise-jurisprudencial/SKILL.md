@@ -1,6 +1,6 @@
 ---
 name: analise-jurisprudencial
-description: Pesquisar e analisar precedentes brasileiros e comentário jurídico exclusivamente pelo conector Silo, com cobertura, aderência e verificação da íntegra. Use quando o usuário aceitar pesquisa jurisprudencial ou pedir o entendimento dos tribunais sobre questão delimitada.
+description: Pesquisar e analisar precedentes brasileiros e comentário jurídico exclusivamente pelo conector Silo, com cobertura, aderência e verificação da íntegra. Use quando o usuário aceitar ou pedir pesquisa jurisprudencial estruturada — tribunais e período delimitados, comparação com os fatos do caso, distinção entre precedente e comentário — e também quando ele deliberar se vale pesquisar ("o que a pesquisa acrescentaria?", "sigo sem ela?"), inclusive para registrar a dispensa sem bloquear o fluxo.
 ---
 
 # Análise jurisprudencial

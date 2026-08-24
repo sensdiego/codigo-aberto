@@ -139,9 +139,10 @@ Nunca afirme que um arquivo ou fonte foi salvo sem evidência da gravação.
 ## Atualização incremental
 
 Documento novo não invalida automaticamente o trabalho anterior. Compare cada
-ponto afetado e classifique o delta como `confirma`, `complementa`, `contradiz`,
-`substitui` ou `não afeta`. Preserve o que não mudou. Somente conteúdo novo ou
-afetado retorna à confirmação humana.
+ponto afetado e classifique o delta usando exatamente estes rótulos, sem
+sinônimos: `confirma`, `complementa`, `contradiz`, `substitui` ou `não afeta`.
+Preserve o que não mudou. Somente conteúdo novo ou afetado retorna à
+confirmação humana.
 
 Falhas também são localizadas: OCR ruim, documento ausente, contradição ou
 capability indisponível limitam apenas as conclusões que dependem deles.

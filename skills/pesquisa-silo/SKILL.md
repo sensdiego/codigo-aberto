@@ -1,11 +1,11 @@
 ---
 name: pesquisa-silo
-description: Pesquisar jurisprudência brasileira diretamente via Silo MCP com verificação de fonte — consulta rápida sem o workflow completo da análise jurisprudencial. Requer acesso ativo ao Silo. Use quando o advogado pedir "pesquisa no silo", "consulta o silo", "acha isso rápido", ou "precedente sobre X" e o conector estiver ativo.
+description: Pesquisar jurisprudência brasileira diretamente via Silo MCP com verificação de fonte — consulta rápida e pontual, sem o workflow completo da análise jurisprudencial. Requer acesso ativo ao Silo. Use quando o advogado quiser uma busca única e objetiva ("acha isso rápido", "consulta o silo sobre X") e o conector estiver ativo. Para pesquisa estruturada por tribunal e período, comparação com o caso ou decisão de pesquisar/dispensar, use analise-jurisprudencial.
 ---
 
 # /pesquisa-silo — Consulta Direta ao Silo
 
-Consulta direta quando a velocidade importa e o advogado já sabe o que quer. Só a busca, com verificação de fonte.
+Consulta direta quando a velocidade importa e o advogado já sabe o que quer. Só a busca, com verificação de fonte. Pedido de pesquisa estruturada — janela temporal, aderência ao caso, distinção entre precedente e comentário — pertence à `analise-jurisprudencial`, mesmo quando mencionar o Silo.
 
 ## Step 0: Pré-requisito
 
