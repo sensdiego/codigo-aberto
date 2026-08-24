@@ -1,6 +1,0 @@
-{
-  "schema": 1,
-  "kind": "none",
-  "category": "Fixed",
-  "summary": "Cenários de avaliação podem semear estado prévio; suplementacao-delta ganha handoff e documentos sintéticos."
-}
