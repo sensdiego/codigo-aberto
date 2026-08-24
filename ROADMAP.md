@@ -30,11 +30,14 @@ Estado dos itens:
 - Mecânica real do ChatGPT documentada: não há instalação de skills de
   terceiros no runtime; o modelo monta o ZIP anexado à conversa e segue o
   `SKILL.md` ([QUICKSTART](QUICKSTART.md) corrigido).
-- Régua de qualidade operacional: `scripts/run_evals.py` executa os treze
-  cenários de [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json)
-  contra o plugin instalado, com juiz por invariante e relatório versionado.
-  Baseline v0.2.3 registrado: 10 PASS, 3 FAIL (duas fraquezas de roteamento e
-  uma lacuna de desenho de cenário), custo US$ 5,73 por rodada.
+- Régua de qualidade operacional e primeiro ciclo editar→medir concluído:
+  `scripts/run_evals.py` executa os treze cenários de
+  [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json) contra o
+  plugin instalado, com juiz por invariante e relatório versionado. Baseline
+  v0.2.3: 10 PASS, 3 FAIL. As três falhas foram corrigidas (v0.2.4: roteamento
+  jurisprudencial e rótulos canônicos do delta; harness semeia estado prévio) e
+  re-medidas em duas rodadas: zero falhas de roteamento em seis execuções
+  ([#15](https://github.com/sensdiego/codigo-aberto/issues/15), fechada).
 - Fluxo de menor atrito no ChatGPT comprovado: instruções permanentes de
   projeto fazem o modelo rotear e montar a skill certa do acervo sem o usuário
   citá-la ([QUICKSTART](QUICKSTART.md)).
