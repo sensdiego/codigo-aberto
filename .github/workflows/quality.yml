@@ -19,6 +19,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Lint
+        run: |
+          python3 -m pip install --quiet "ruff==0.15.4"
+          ruff check scripts tests
+
       - name: Validate skills and references
         run: python3 scripts/validate_skills.py
 
@@ -31,8 +36,8 @@ jobs:
           git fetch --force origin "${{ github.base_ref }}"
           python3 scripts/release.py impact --ref-range "origin/${{ github.base_ref }}...HEAD"
 
-      - name: Test release protocol
-        run: python3 -m unittest tests.test_release tests.test_release_workflow
+      - name: Test scripts and release protocol
+        run: python3 -m unittest discover -s tests
 
       - name: Build upload bundles
         run: python3 scripts/build_chatgpt_smoke_bundle.py

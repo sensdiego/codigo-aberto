@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "kind": "none",
+  "category": "Fixed",
+  "summary": "Validação e bundles ignoram arquivos de sistema operacional; lint entra no CI de qualidade."
+}

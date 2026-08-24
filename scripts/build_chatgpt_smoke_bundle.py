@@ -35,7 +35,12 @@ REWRITES = {
         "references/legislacao/cpc/README.md",
     "../../../references/legislacao/cpc/": "legislacao/cpc/",
 }
+OS_JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "ehthumbs.db"}
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+
+
+def is_os_junk(name: str) -> bool:
+    return name in OS_JUNK_NAMES or name.startswith("._")
 
 
 def rendered(path: Path) -> bytes:
@@ -53,7 +58,7 @@ def skill_files(name: str) -> dict[str, bytes]:
     files = {
         f"{name}/{path.relative_to(source).as_posix()}": rendered(path)
         for path in source.rglob("*")
-        if path.is_file()
+        if path.is_file() and not is_os_junk(path.name)
     }
     discipline = (PLUGIN / "references" / "disciplina.md").read_bytes()
     files[f"{name}/references/disciplina-compartilhada.md"] = discipline
@@ -63,7 +68,7 @@ def skill_files(name: str) -> dict[str, bytes]:
     if name in CPC_SKILLS:
         cpc = PLUGIN / "references" / "legislacao" / "cpc"
         for path in cpc.iterdir():
-            if path.is_file():
+            if path.is_file() and not is_os_junk(path.name):
                 files[f"{name}/references/legislacao/cpc/{path.name}"] = path.read_bytes()
     return files
 
