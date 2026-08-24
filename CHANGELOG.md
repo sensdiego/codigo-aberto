@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.2.4] - 2026-08-24
+
+### Fixed
+
+- Corrige o roteamento entre a análise jurisprudencial e a consulta rápida ao Silo e fixa os rótulos canônicos da atualização incremental.
+
 ## [0.2.3] - 2026-08-22
 
 ### Fixed

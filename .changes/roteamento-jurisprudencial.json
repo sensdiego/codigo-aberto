@@ -1,6 +1,0 @@
-{
-  "schema": 1,
-  "kind": "patch",
-  "category": "Fixed",
-  "summary": "Corrige o roteamento entre a análise jurisprudencial e a consulta rápida ao Silo e fixa os rótulos canônicos da atualização incremental."
-}
