@@ -2,6 +2,10 @@
 
 As contribuições deste repositório são licenciadas sob Apache-2.0.
 
+Antes de abrir uma contribuição, use o modelo adequado para bug, sugestão de
+skill ou problema de conteúdo jurídico. Relatos sensíveis seguem
+[`SECURITY.md`](SECURITY.md) e não devem trazer detalhes técnicos em público.
+
 ## Estrutura de uma skill
 
 - pasta `skills/<nome>/` com `SKILL.md`;
@@ -81,7 +85,8 @@ que a régua também precisava mudar.
    ```
 
 5. Abra um pull request explicando o resultado, os gatilhos de uso e como a
-   mudança foi verificada.
+   mudança foi verificada. O template do repositório registra também o escopo,
+   a intenção de release e os limites de segurança.
 
 Não inclua casos reais, dados pessoais, transcrições privadas, pesquisas
 internas, credenciais ou código do serviço Silo.

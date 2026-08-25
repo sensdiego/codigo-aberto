@@ -1,7 +1,8 @@
 # Handoff de sessão
 
 Atualizado em 2026-08-24, ao fim da sessão que concluiu as Fases 0, 1 (exceto
-Claude Cowork) e 2 do [ROADMAP](ROADMAP.md).
+Claude Cowork) e 2, além do enxoval preparatório da Fase 4 do
+[ROADMAP](ROADMAP.md).
 
 ## Onde o produto está
 
@@ -13,23 +14,25 @@ completou um ciclo inteiro: o baseline v0.2.3 encontrou três falhas, as
 correções saíram na v0.2.4 e a re-medição confirmou zero falhas de roteamento
 em seis execuções (issues #9, #11 e #15, todas fechadas com evidência).
 
-## Próxima tarefa com maior urgência: enxoval de adoção (Fase 4)
+O PR #20 integrou a política de segurança, três modelos de issue, o template de
+pull request e um exemplo sintético completo com roteiro de piloto. Essa
+integração prepara a adoção; não comprova uso externo e não publicou anúncio.
 
-Os dois pré-requisitos do anúncio público — smokes verdes e baseline de evals
-registrado — estão cumpridos. O que separa o produto de usuários externos é o
-enxoval:
+## Próxima tarefa com maior impacto: primeiro piloto externo nomeado
 
-1. `SECURITY.md` com política de reporte, escopo e expectativa de resposta.
-2. Templates de issue (bug, sugestão de skill, problema de conteúdo jurídico)
-   e template de pull request alinhado ao CONTRIBUTING.
-3. Material de apresentação: exemplo ponta a ponta (prompt → handoff → peça)
-   com caso sintético — os transcripts dos smokes de 2026-08-24 são matéria-
-   prima pronta.
-4. Só então, o anúncio.
+O próximo ganho não vem de mais conteúdo: vem de observar uma pessoa externa
+usando o caminho já documentado. Para isso:
 
-Por que é a maior urgência: cada dia entre "produto provado" e "produto
-anunciado" é adoção que não acontece, e nenhum item do enxoval depende de
-decisão externa — é executável numa sessão.
+1. Diego nomeia e convida uma pessoa que trabalhe com contencioso cível.
+2. A sessão usa somente o caso sintético do QUICKSTART por 30 minutos.
+3. Registrar aplicativo, versão, resultado, atrito e qualquer falha em uma
+   issue, sem dados reais.
+4. Só decidir anúncio amplo depois desse recibo humano e de estabelecer um
+   canal privado real para relatos de segurança.
+
+Bloqueio atual: não há pessoa piloto nomeada, e o relato privado nativo do
+GitHub continua desabilitado. O `SECURITY.md` fornece um caminho provisório sem
+detalhes públicos, mas isso não deve ser confundido com intake privado nativo.
 
 ## Alternativas na fila
 
@@ -47,6 +50,7 @@ decisão externa — é executável numa sessão.
 - O projeto "Silo Legal Skills — Smoke" no ChatGPT tem instruções permanentes
   que roteiam e montam a skill sozinhas; o acervo foi atualizado com os ZIPs
   da v0.2.4 em 2026-08-24 (usar sempre o sufixo mais alto de cada skill).
+- O anúncio público e qualquer convite efetivo continuam não executados.
 - Rodada completa de evals custa ~US$ 6 e é sempre manual:
   `python3 scripts/run_evals.py` (ver CONTRIBUTING, seção "Cenários de
   avaliação").

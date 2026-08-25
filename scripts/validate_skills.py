@@ -32,7 +32,7 @@ PUBLIC_ROOT_ENTRIES = {
     ".changes", ".claude-plugin", ".git", ".github", ".gitignore", ".ruff_cache",
     ".release-policy.toml", "CHANGELOG.md",
     "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "HANDOFF.md", "LICENSE", "QUICKSTART.md",
-    "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "data", "dist", "references",
+    "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "SECURITY.md", "data", "dist", "references",
     "scripts", "skills", "tests",
 }
 OS_JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "ehthumbs.db"}
@@ -357,7 +357,7 @@ def main():
         errors.append("subárvore silo-legal não deve existir; as skills ficam na raiz")
 
     # Arquivos raiz essenciais
-    for req in ("README.md", "QUICKSTART.md", "LICENSE", "CONTRIBUTING.md"):
+    for req in ("README.md", "QUICKSTART.md", "LICENSE", "CONTRIBUTING.md", "SECURITY.md"):
         if not (ROOT / req).exists():
             errors.append(f"falta arquivo raiz {req}")
 
@@ -372,7 +372,7 @@ def main():
 
     link_sources = {
         ROOT / name
-        for name in ("README.md", "QUICKSTART.md", "CONTRIBUTING.md", "RELEASING.md")
+        for name in ("README.md", "QUICKSTART.md", "CONTRIBUTING.md", "RELEASING.md", "SECURITY.md")
     }
     link_sources.update(ROOT.rglob("SKILL.md"))
     for references in ROOT.rglob("references"):

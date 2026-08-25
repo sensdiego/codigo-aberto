@@ -161,11 +161,11 @@ Objetivo: preparar o repositório para público externo e só então divulgar.
 
 Pré-requisito: Fases 1 e 2 concluídas.
 
-- [ ] `SECURITY.md` com política de reporte, escopo (conteúdo de skills,
+- [x] `SECURITY.md` com política de reporte, escopo (conteúdo de skills,
       scripts, protocolo) e expectativa de resposta.
-- [ ] Templates de issue (bug, sugestão de skill, problema de conteúdo
+- [x] Templates de issue (bug, sugestão de skill, problema de conteúdo
       jurídico) e template de pull request alinhado ao CONTRIBUTING.
-- [ ] Material de apresentação: exemplo ponta a ponta (prompt → handoff →
+- [x] Material de apresentação: exemplo ponta a ponta (prompt → handoff →
       peça) com caso sintético, sem dados reais.
 - [ ] Anúncio público somente após smoke tests verdes e baseline de evals
       registrado.

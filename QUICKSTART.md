@@ -68,3 +68,101 @@ Fora de um projeto, anexe o `.zip` à conversa e instrua explicitamente:
 Os sete ZIPs são autossuficientes: cada um contém o `SKILL.md` e as referências
 necessárias àquela skill. `pesquisa-silo` e `assinatura-silo` não são bundles de
 upload; elas dependem da disponibilidade do conector autenticado.
+
+## Exemplo sintético de ponta a ponta
+
+O caso abaixo é inteiramente fictício. Ele demonstra o fluxo sem ensinar a
+enviar dados reais ao modelo.
+
+### Prompt inicial
+
+> A Empresa Horizonte, fictícia, foi cobrada em R$ 18.000 por materiais de
+> escritório. A inicial está em `INI-01`, páginas 1–7. O contrato `CTR-01`,
+> cláusula 4, prevê pagamento em 30 dias. Há comprovante de R$ 12.000 em
+> `COMP-01` e o e-mail `EM-01`, mensagem 3, registra que o fornecedor aceitou a
+> devolução dos R$ 6.000 restantes. A data da juntada da citação não foi
+> informada. Organize o caso e prepare uma contestação, mas não invente o prazo.
+
+### Handoff esperado antes da redação
+
+```markdown
+# Handoff — SINT-001 / Empresa Horizonte
+
+## Tipo de artefato
+Análise documental e mapa jurídico para possível contestação.
+
+## Fontes consumidas
+INI-01 pp. 1–7; CTR-01 cláusula 4; COMP-01; EM-01 mensagem 3.
+
+## Escopo
+Existência e composição da cobrança; prazo processual excluído por falta da
+certidão de juntada.
+
+## Achados
+- Cobrança de R$ 18.000: confirmado por INI-01 pp. 2–3.
+- Pagamento de R$ 12.000: confirmado por COMP-01.
+- Aceite da devolução de R$ 6.000: inferido de EM-01 mensagem 3; confirmar o
+  alcance jurídico e a entrega efetiva.
+
+## Estado
+Dois achados confirmados documentalmente; um depende de confirmação e prova.
+
+## Confirmação humana
+Pendente: a pessoa usuária ainda deve confirmar os fatos, limites e objetivo.
+
+## Lacunas
+Certidão de juntada da citação; prova da entrega dos itens devolvidos.
+
+## Atualização
+Primeira versão.
+
+## Próximas rotas
+Confirmar o mapa; depois preparar briefing em `redacao-contencioso`.
+```
+
+Depois de a pessoa confirmar o mapa, a skill de redação ainda apresenta um
+briefing próprio: documento, destinatário, objetivo, teses, pedidos, fontes e
+lacunas. Somente uma segunda confirmação autoriza a minuta.
+
+### Trecho de peça esperado após as confirmações
+
+```markdown
+AO JUÍZO DO PROCESSO SINTÉTICO SINT-001
+
+EMPRESA HORIZONTE, no exercício exclusivamente demonstrativo deste exemplo,
+apresenta CONTESTAÇÃO.
+
+1. A cobrança afirma saldo de R$ 18.000 [INI-01, pp. 2–3]. O comprovante
+COMP-01 documenta pagamento de R$ 12.000, ponto que deve ser impugnado de forma
+específica com a juntada do documento.
+
+2. Quanto aos R$ 6.000 restantes, EM-01, mensagem 3, registra o aceite da
+devolução pelo fornecedor. A efetiva entrega dos itens permanece pendente de
+prova e não deve ser apresentada como fato confirmado.
+
+3. Requer-se o reconhecimento do pagamento comprovado e, quanto ao saldo, a
+produção da prova necessária e o julgamento conforme o que ela demonstrar.
+
+[Prazo não calculado: falta a certidão de juntada da citação.]
+```
+
+O resultado correto preserva a lacuna e não protocola, envia ou assina a peça.
+
+## Primeiro piloto
+
+Use uma sessão de 30 minutos com o exemplo acima:
+
+1. Instale ou carregue a release mais recente pelo caminho do aplicativo.
+2. Envie somente o prompt sintético, sem indicar o nome de uma skill.
+3. Confirme se houve roteamento, leitura das fontes indicadas, handoff e duas
+   barreiras de confirmação antes da minuta.
+4. Registre aplicativo, versão, data, resultado e atrito observado; use o
+   modelo de bug ou de sugestão do GitHub, sempre sem dados reais.
+
+Texto de convite, pronto para copiar quando houver uma pessoa piloto nomeada:
+
+> Estou testando um conjunto aberto de skills para trabalho jurídico cível e
+> procuro uma pessoa para uma sessão remota de 30 minutos. Usaremos apenas um
+> caso sintético fornecido no repositório; não envie documentos ou dados de
+> clientes. O objetivo é observar instalação, clareza do fluxo e limites antes
+> da redação. O teste não envolve contratação nem publicação do seu nome.

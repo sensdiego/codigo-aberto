@@ -42,6 +42,25 @@ tests/fixtures/          cenários sintéticos de roteamento
 Não fazem parte deste repositório materiais de pesquisa interna, decisões de
 desenvolvimento, transcrições de testes, casos reais ou configurações pessoais.
 
+## Origem e primeiro uso
+
+Usuário inicial: **Diego Sens**, em dogfood jurídico interno. Primeira entrega
+comprovada nos dois caminhos suportados: **24 de agosto de 2026**, no Claude
+Code e no ChatGPT.
+
+Certidão do antecessor:
+
+1. **Antecessor:** distribuição fragmentada de skills jurídicas mantidas para
+   uso interno e por aplicativo.
+2. **O que morre:** cópias públicas soltas, sem um pacote, versão e régua de
+   qualidade comuns.
+3. **O que é herdado:** disciplina jurídica, fluxo cível, handoffs e fontes,
+   reescritos sem dados ou dependências internas.
+4. **Por que sucessor:** um repositório único permite validar e distribuir a
+   mesma capacidade sem corrigir cada cópia separadamente.
+5. **Limite da sucessão:** serviço, base, pesquisa interna e casos reais do
+   Silo permanecem fora deste projeto.
+
 ## Uso
 
 As skills podem ser lidas diretamente em [`skills/`](skills/) ou carregadas em
@@ -54,6 +73,7 @@ O acesso externo está em validação privada e pode ser solicitado pela
 [lista de espera oficial](https://silo.legal/#waitlist).
 
 Skills e código estão sob a licença [Apache-2.0](LICENSE). Para contribuir,
-consulte [CONTRIBUTING.md](CONTRIBUTING.md). Versões publicadas ficam no
-[changelog](CHANGELOG.md); o protocolo está em [RELEASING.md](RELEASING.md) e
+consulte [CONTRIBUTING.md](CONTRIBUTING.md); relatos sensíveis seguem a
+[política de segurança](SECURITY.md). Versões publicadas ficam no
+[changelog](CHANGELOG.md), o protocolo está em [RELEASING.md](RELEASING.md) e
 as próximas fases estão no [roadmap](ROADMAP.md).

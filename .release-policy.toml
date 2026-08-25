@@ -21,6 +21,7 @@ non_release = [
   "ROADMAP.md",
   "README.md",
   "RELEASING.md",
+  "SECURITY.md",
 ]
 release = [
   ".changes/*.json",
