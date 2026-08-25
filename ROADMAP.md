@@ -10,7 +10,7 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-24, v0.2.4)
+## Estado atual (2026-08-25, v0.2.4)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
   recorte versionado do CPC. Versão corrente `v0.2.4` (correções de roteamento
@@ -45,6 +45,11 @@ Estado dos itens:
 - Fluxo de menor atrito no ChatGPT comprovado: instruções permanentes de
   projeto fazem o modelo rotear e montar a skill certa do acervo sem o usuário
   citá-la ([QUICKSTART](QUICKSTART.md)).
+- Dogfood interno manual no Claude Cowork executado em projeto com o acervo
+  completo. O exercício comprovou o caminho operacional, mas não uma instalação
+  limpa nem adoção externa. Também revelou dois achados de produto: gates
+  críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
+  entre receber a análise e autorizar a redação.
 
 ## Princípios de ordenação
 
@@ -96,8 +101,10 @@ consegue instalar e usar as skills nos aplicativos suportados.
       passos concretos por aplicativo (Claude Code, Claude Cowork, ChatGPT
       Work), testados na prática. Claude Code e ChatGPT estão documentados com
       caminho comprovado (a seção do ChatGPT foi corrigida em 2026-08-24 para o
-      fluxo real de montagem do ZIP anexado); Claude Cowork permanece sem
-      caminho comprovado.
+      fluxo real de montagem do ZIP anexado). No Claude Cowork, um dogfood
+      interno manual em projeto já montado comprovou leitura do acervo e
+      execução do fluxo, mas ainda falta documentar e testar o caminho limpo de
+      preparação do projeto; por isso o item continua em andamento.
 - [x] Anexar os bundles como artefatos da GitHub Release no
       [`software-release.yml`](.github/workflows/software-release.yml).
       Critério atendido: `gh release view v0.2.3` lista os sete ZIPs e o
@@ -141,6 +148,61 @@ Objetivo: cobrir as lacunas do workflow cível identificadas na análise,
 usando o eval harness como pré-condição de qualidade.
 
 Pré-requisito: Fase 2 concluída.
+
+### Hipótese a estudar — deliberação jurídica entre análise e redação
+
+Status: hipótese de produto identificada no dogfood interno; **não aprovada
+para implementação**. A próxima sessão deve primeiro comparar possibilidades,
+definir limites e decidir entre criar, adaptar, adiar ou rejeitar. Não criar uma
+skill nova no início da sessão.
+
+Problema observado: as skills de análise entregam conclusões e a redação pede
+um briefing, mas nenhuma etapa é claramente responsável por apresentar ao
+advogado o que a análise demonstrou, explicitar incertezas e alternativas e
+conduzir a decisão estratégica antes de qualquer peça.
+
+Fronteira fixada: essa função **não deve ser misturada com
+`aprofundamento-juridico`**. Aprofundamento continua sendo uma operação
+epistêmica — testar hipóteses, preencher lacunas, pesquisar, tensionar
+argumentos e simular cenários. Deliberação é uma operação decisória: traduz uma
+análise suficientemente madura em escolhas compreensíveis, entrevista o
+advogado e registra uma decisão. Ela pode concluir pela necessidade de novo
+aprofundamento e não pressupõe redação como destino.
+
+Comportamento desejado, independentemente da forma de implementação:
+
+1. apresentar conclusão, base probatória, nível de confiança, incertezas,
+   principal contra-argumento e o que mudou com a análise;
+2. mapear de duas a quatro opções reais — incluindo, quando aplicável,
+   negociar, buscar mais documentos, aprofundar, aguardar ou não agir — com
+   benefícios, riscos, reversibilidade, urgência, efeitos posteriores e
+   informação ainda necessária;
+3. formular recomendação própria, com confiança e melhor objeção à
+   recomendação;
+4. entrevistar o advogado iterativamente, com uma pergunta decisória de maior
+   valor por vez, atualizando o mapa à luz das respostas;
+5. produzir um handoff de decisão com opções escolhidas, rejeitadas ou
+   condicionais, razões, prioridades, concessões e proibições, pré-requisitos,
+   escopo, pendências e próxima rota;
+6. manter um gate separado: respostas durante a deliberação nunca autorizam
+   silenciosamente a redação, que conserva briefing e confirmação próprios.
+
+Alternativas que a próxima sessão deve estudar e comparar:
+
+- skill autônoma, provisoriamente chamada `deliberacao-juridica`;
+- protocolo/handoff reutilizável entre as skills de análise e redação, sem nova
+  skill;
+- ajuste dos contratos de saída e entrada das skills existentes, preservando a
+  etapa deliberativa como responsabilidade explícita;
+- adiamento ou rejeição, se o ganho não justificar custo cognitivo,
+  manutenção e risco de roteamento.
+
+Antes de criar, definir gatilhos de entrada e saída, relação com
+`aprofundamento-juridico`, retornos possíveis para pesquisa e documentos,
+formato mínimo do handoff e cenários sintéticos de avaliação. A solução só deve
+ser aprovada se melhorar uma decisão real em comparação com o salto direto
+para a redação, continuar útil quando a decisão for não redigir e impedir que
+briefing ou contexto sejam tratados como autorização implícita.
 
 - [ ] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
       (CPC arts. 300–310); ampliar recorte legislativo se necessário.
