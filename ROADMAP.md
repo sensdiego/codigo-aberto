@@ -10,7 +10,7 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-25, v0.2.4)
+## Estado atual (2026-08-26, v0.2.4)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
   recorte versionado do CPC. Versão corrente `v0.2.4` (correções de roteamento
@@ -50,6 +50,12 @@ Estado dos itens:
   limpa nem adoção externa. Também revelou dois achados de produto: gates
   críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
   entre receber a análise e autorizar a redação.
+- Camada deliberativa decidida em 2026-08-26: **adaptar** os contratos
+  (protocolo compartilhado, tipo de artefato `decisão`, gate determinístico),
+  sem skill nova. Estudo, comparação das quatro alternativas, revisão
+  independente e especificação em
+  [#22](https://github.com/sensdiego/codigo-aberto/issues/22). Implementação em
+  duas frentes medidas (Fase 3), com a régua antes de qualquer edição de skill.
 
 ## Princípios de ordenação
 
@@ -149,12 +155,15 @@ usando o eval harness como pré-condição de qualidade.
 
 Pré-requisito: Fase 2 concluída.
 
-### Hipótese a estudar — deliberação jurídica entre análise e redação
+### Camada deliberativa entre análise e redação — decidido: adaptar
 
-Status: hipótese de produto identificada no dogfood interno; **não aprovada
-para implementação**. A próxima sessão deve primeiro comparar possibilidades,
-definir limites e decidir entre criar, adaptar, adiar ou rejeitar. Não criar uma
-skill nova no início da sessão.
+Status: hipótese identificada no dogfood interno de 2026-08-25 e **decidida em
+2026-08-26: adaptar os contratos existentes, sem skill nova** (estudo,
+comparação das quatro alternativas, revisão independente e especificação em
+[#22](https://github.com/sensdiego/codigo-aberto/issues/22)). A implementação
+segue nas duas frentes medidas listadas ao final desta seção; a régua vem antes
+de qualquer edição de skill. *(O texto de 2026-08-25 está preservado abaixo com
+anotações inline.)*
 
 Problema observado: as skills de análise entregam conclusões e a redação pede
 um briefing, mas nenhuma etapa é claramente responsável por apresentar ao
@@ -173,36 +182,74 @@ Comportamento desejado, independentemente da forma de implementação:
 
 1. apresentar conclusão, base probatória, nível de confiança, incertezas,
    principal contra-argumento e o que mudou com a análise;
-2. mapear de duas a quatro opções reais — incluindo, quando aplicável,
-   negociar, buscar mais documentos, aprofundar, aguardar ou não agir — com
-   benefícios, riscos, reversibilidade, urgência, efeitos posteriores e
-   informação ainda necessária;
+2. mapear de duas a quatro opções reais *(ajustado em 2026-08-26: até quatro
+   opções materialmente distintas, sem fabricar pluralidade quando só há uma
+   viável)* — incluindo, quando aplicável, negociar, buscar mais documentos,
+   aprofundar, aguardar ou não agir — com benefícios, riscos, reversibilidade,
+   urgência, efeitos posteriores e informação ainda necessária;
 3. formular recomendação própria, com confiança e melhor objeção à
-   recomendação;
+   recomendação *(ajustado em 2026-08-26: a recomendação pode ser "não decidir
+   ainda; obtenha X")*;
 4. entrevistar o advogado iterativamente, com uma pergunta decisória de maior
-   valor por vez, atualizando o mapa à luz das respostas;
+   valor por vez, atualizando o mapa à luz das respostas *(ajustado em
+   2026-08-26: uma por vez quando a resposta muda a próxima; perguntas
+   independentes juntas; modo curto em urgência)*;
 5. produzir um handoff de decisão com opções escolhidas, rejeitadas ou
    condicionais, razões, prioridades, concessões e proibições, pré-requisitos,
    escopo, pendências e próxima rota;
 6. manter um gate separado: respostas durante a deliberação nunca autorizam
    silenciosamente a redação, que conserva briefing e confirmação próprios.
 
-Alternativas que a próxima sessão deve estudar e comparar:
+Alternativas comparadas em 2026-08-26 (detalhe em
+[#22](https://github.com/sensdiego/codigo-aberto/issues/22)):
 
-- skill autônoma, provisoriamente chamada `deliberacao-juridica`;
-- protocolo/handoff reutilizável entre as skills de análise e redação, sem nova
-  skill;
-- ajuste dos contratos de saída e entrada das skills existentes, preservando a
-  etapa deliberativa como responsabilidade explícita;
-- adiamento ou rejeição, se o ganho não justificar custo cognitivo,
-  manutenção e risco de roteamento.
+- skill autônoma `deliberacao-juridica` — rejeitada por ora: décima porta num
+  pacote em que o usuário não conhece nomes, descrição concorrendo com análise
+  jurídica e aprofundamento (a família de confusão que o baseline mediu) e, no
+  ChatGPT, um oitavo ZIP a descobrir; fica como cláusula de promoção medida;
+- protocolo/handoff compartilhado sem nova skill — **escolhida**, com o mínimo
+  de ajuste nos contratos existentes;
+- ajuste apenas das skills existentes — rejeitada: concentra em uma skill o que
+  nasce de qualquer análise e duplica texto;
+- adiamento ou rejeição — rejeitada: corrige o incidente do gate, não a lacuna.
 
-Antes de criar, definir gatilhos de entrada e saída, relação com
-`aprofundamento-juridico`, retornos possíveis para pesquisa e documentos,
-formato mínimo do handoff e cenários sintéticos de avaliação. A solução só deve
-ser aprovada se melhorar uma decisão real em comparação com o salto direto
-para a redação, continuar útil quando a decisão for não redigir e impedir que
+Especificação aprovada: gatilho enumerável (pedido explícito do advogado;
+decisão humana pendente que a minuta consome; ato inferido fora das opções do
+mapa); handoff de tipo `decisão` exigido só quando o gatilho dispara; gate
+como máquina de estados com pergunta fechada ao fim do briefing (resposta a
+item aberto, escolha de opção, "ok"/"prossiga" fora da pergunta e "sim, mas
+altere" não autorizam; reapresentação compacta e nova confirmação); protocolo
+carregado sob demanda em `references/deliberacao.md`; fronteira com
+`aprofundamento-juridico` mantida (ele informa a decisão; a deliberação a
+registra). Critério de manutenção: dogfood pareado (salto direto × protocolo)
+antes de qualquer anúncio. Critério original preservado: a solução só se
+mantém se melhorar uma decisão real em comparação com o salto direto para a
+redação, continuar útil quando a decisão for não redigir e impedir que
 briefing ou contexto sejam tratados como autorização implícita.
+
+- [ ] Frente 1 — régua antes das skills: `scripts/run_evals.py` com cenários
+      multi-turno e verificação mecânica (nenhum módulo de redação lido antes
+      da fala autorizadora); seis cenários novos
+      (`deliberacao-nao-redigir`, `deliberacao-nao-agir-sob-pressao`,
+      `deliberacao-entrevista-segundo-turno`,
+      `redacao-sem-decisao-registrada`, `gate-resposta-nao-autoriza`,
+      `gate-confirmacao-combinada`) e invariante novo em
+      `manifestacao-concordancia`; rodar contra a v0.2.4 como baseline da
+      lacuna. PR próprio.
+- [ ] Frente 2 — contratos (fragmento `minor` → v0.3.0): `disciplina.md`
+      (gatilho + gate), `handoff.md` (tipo `decisão`),
+      `references/deliberacao.md`, ponteiros em `analise-juridica-civel`,
+      `analise-jurisprudencial`, `aprofundamento-juridico`,
+      `redacao-contencioso` e `redacao-consultivo`, description de
+      `analise-juridica-civel` (com `aprofundamento-audiencia` como controle
+      de confusão) e gerador de bundles (`REWRITES` + cópia). Re-medir contra
+      a frente 1. PR próprio.
+- [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
+      protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
+      abandono.
+- Cláusula de promoção: se em duas rodadas o protocolo falhar por omissão ou
+  por roteamento, a skill autônoma passa a ser a recomendação — embrulhando
+  protocolo e artefato já existentes.
 
 - [ ] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
       (CPC arts. 300–310); ampliar recorte legislativo se necessário.

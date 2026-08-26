@@ -1,101 +1,83 @@
 # Handoff de sessão
 
-Atualizado em 2026-08-25, após o dogfood interno manual no Claude Cowork e o
-registro da hipótese de deliberação jurídica no [ROADMAP](ROADMAP.md).
+Atualizado em 2026-08-26, após o estudo da camada deliberativa entre análise e
+redação, a revisão independente por dois modelos e a decisão registrada no
+[ROADMAP](ROADMAP.md) e em
+[#22](https://github.com/sensdiego/codigo-aberto/issues/22).
 
 ## Onde o produto está
 
 A versão corrente continua sendo a `v0.2.4`, publicada e auditada. As nove
 skills, o recorte do CPC, os sete bundles ChatGPT e a régua de treze cenários
-permanecem inalterados nesta sessão. Nenhuma nova skill foi criada e nenhuma
-mudança de produto ou release foi aprovada.
+permanecem inalterados nesta sessão. Nenhuma skill foi criada ou editada e
+nenhuma versão foi publicada.
 
-Claude Code e ChatGPT têm caminhos de uso comprovados. No Claude Cowork, o
-dogfood foi feito manualmente em um projeto já montado com o acervo completo:
-prompts foram enviados em sequência e o fluxo conseguiu ler os materiais e
-produzir artefatos. Isso comprova viabilidade operacional nesse arranjo, mas
-não substitui um teste de instalação limpa nem constitui piloto externo.
-
-Nenhum dado, documento, número de processo, transcrição ou resultado do caso
-real foi levado para este repositório. Os artefatos e a auditoria do exercício
-permanecem fora do repositório público.
-
-## Achados do dogfood
-
-1. Um briefing respondido não equivale a autorização. Gate crítico só fecha
-   com confirmação humana explícita depois de o agente apresentar ou
-   reapresentar a ação que será executada. O desvio observado foi auditado fora
-   deste repositório; uma confirmação posterior não o autoriza retroativamente.
-2. A sequência análise → redação salta uma etapa importante. O advogado recebe
-   conclusões, mas falta uma interação dedicada a explicar os resultados,
-   comparar possibilidades e transformar preferências profissionais em uma
-   decisão estratégica registrável.
-3. Esse segundo problema não é mero aprofundamento. Mais pesquisa pode ser uma
-   das opções, mas apresentação de resultados e decisão estratégica têm outra
-   finalidade e outro contrato.
+Claude Code e ChatGPT têm caminhos de uso comprovados. No Claude Cowork há
+dogfood interno em projeto já montado, sem prova de instalação limpa.
 
 ## Decisão fixada nesta sessão
 
-A hipótese merece estudo, mas **não autoriza criar agora** uma skill
-`deliberacao-juridica` nem ampliar silenciosamente uma skill existente. A
-próxima sessão deve avaliar alternativas e só então decidir criar, adaptar,
-adiar ou rejeitar.
+A hipótese de 2026-08-25 foi estudada e decidida: **adaptar os contratos
+existentes, sem skill nova**. Foram comparadas quatro alternativas (skill
+autônoma; protocolo compartilhado; ajuste só das skills; adiar ou rejeitar)
+contra os critérios fixados no roadmap, e a posição foi submetida a duas
+revisões independentes — uma às cegas e uma com a posição — que convergiram na
+direção e corrigiram a especificação. O registro completo, com a especificação
+aprovada, está em [#22](https://github.com/sensdiego/codigo-aberto/issues/22);
+o resumo vive na seção "Camada deliberativa" do roadmap.
 
-A fronteira é obrigatória: não misturar essa função com
-`aprofundamento-juridico`.
+Pontos que a próxima sessão não deve reabrir sem motivo novo:
 
-- `aprofundamento-juridico` continua voltado a aumentar ou testar conhecimento:
-  lacunas, hipóteses, pesquisa, argumentos e cenários;
-- a camada deliberativa, se aprovada, apresenta uma análise suficientemente
-  madura, oferece opções, entrevista o advogado e registra sua decisão;
-- a deliberação pode mandar aprofundar, buscar documentos, negociar, aguardar,
-  não agir ou redigir;
-- deliberação concluída não autoriza redação. `redacao-contencioso` mantém
-  briefing e gate próprios.
+- gatilho enumerável: pedido explícito do advogado; decisão humana pendente
+  que a minuta consome; ato inferido fora das opções do mapa;
+- handoff de tipo `decisão` exigido só quando o gatilho dispara; decisão
+  registrada nunca autoriza redação;
+- gate como máquina de estados: pergunta fechada ao fim do briefing; só
+  autoriza a afirmativa a essa pergunta, sobre o briefing consolidado, sem
+  itens abertos e sem alteração material; todo o resto reapresenta compacto;
+- protocolo em `references/deliberacao.md`, carregado sob demanda; regras
+  curtas e universais (gatilho e gate) em `disciplina.md`;
+- até quatro opções materialmente distintas, sem fabricar pluralidade;
+  recomendação pode ser "não decidir ainda"; perguntas independentes juntas;
+- fronteira com `aprofundamento-juridico` mantida: ele informa a decisão; a
+  deliberação a registra.
 
-## Próxima tarefa com maior impacto: estudar a camada deliberativa
+## Próxima tarefa com maior impacto: frente 1 — a régua antes das skills
 
-Esta é a frente principal da próxima sessão. A sessão deve começar pela
-avaliação, não pela criação de arquivos ou de uma skill.
+A implementação começa pela medição, não pelos contratos. Sem esta frente, a
+frente 2 não tem contra o que ser comparada.
 
-1. Mapear os contratos atuais de saída das análises e de entrada de
-   `aprofundamento-juridico` e `redacao-contencioso`, identificando exatamente
-   onde a responsabilidade deliberativa começa e termina.
-2. Comparar pelo menos quatro alternativas: skill autônoma; protocolo/handoff
-   compartilhado sem nova skill; ajustes explícitos nos contratos das skills
-   existentes; adiamento ou rejeição.
-3. Definir gatilhos de entrada e saída, rotas de retorno para pesquisa ou
-   documentos, relação com urgência e o ponto em que uma decisão pode seguir
-   para redação.
-4. Especificar o comportamento mínimo: apresentar conclusão, evidências,
-   confiança, incertezas e contra-argumento; mapear de duas a quatro opções;
-   recomendar com confiança; entrevistar com uma pergunta de maior valor por
-   vez; e produzir um handoff de decisão.
-5. Definir o conteúdo mínimo desse handoff: opções escolhidas, rejeitadas e
-   condicionais; razões; prioridades; concessões e proibições; pré-requisitos;
-   escopo; pendências; e próxima rota.
-6. Desenhar cenários sintéticos que permitam comparar a solução com o salto
-   direto da análise para a redação, incluindo um caso em que a decisão correta
-   seja não redigir.
-7. Encerrar a sessão com decisão explícita e justificada: criar, adaptar, adiar
-   ou rejeitar. Se a decisão for criar, a implementação fica para uma frente
-   posterior, com cenário de avaliação definido antes da edição da skill.
+1. Dar a `scripts/run_evals.py` suporte a cenários multi-turno (sequência de
+   prompts na mesma sessão, transcript persistido por turno antes do
+   julgamento) e uma verificação mecânica: nenhum módulo de redação
+   (`skills/redacao-contencioso/references/modulos/*.md`) lido antes da fala
+   autorizadora, derivada das referências lidas que o harness já registra.
+2. Escrever os seis cenários novos em `tests/fixtures/workflows.json`
+   (`deliberacao-nao-redigir`, `deliberacao-nao-agir-sob-pressao`,
+   `deliberacao-entrevista-segundo-turno`, `redacao-sem-decisao-registrada`,
+   `gate-resposta-nao-autoriza`, `gate-confirmacao-combinada`) com invariantes
+   granulares por passo do protocolo, e acrescentar a
+   `manifestacao-concordancia` o invariante "não dispara deliberação nem exige
+   decisão registrada; um único turno de confirmação".
+3. Cobrir o multi-turno e a verificação mecânica em `tests/test_run_evals.py`.
+4. Rodar a rodada contra a v0.2.4 e registrar em `data/evals/`: a falha
+   esperada é o baseline da lacuna.
+5. Abrir PR próprio; a frente 2 (contratos, fragmento `minor` → v0.3.0) só
+   começa depois.
 
-Critério de aprovação: a alternativa precisa melhorar a decisão do advogado,
-continuar útil quando o destino não for uma peça, ter custo cognitivo e de
-manutenção justificável e impedir que contexto ou respostas de entrevista
-sejam tratados como autorização implícita.
+Regra do CONTRIBUTING que se aplica: não alterar skill e régua no mesmo pull
+request sem justificativa.
 
 ## Pendências secundárias
 
-- Documentar e testar a preparação limpa de um projeto no Claude Cowork; o
-  dogfood atual começou com o acervo já disponível.
-- Avaliar um cenário sintético que torne o gate explícito e determinístico sem
-  depender de interpretação de autorização implícita.
+- Documentar e testar a preparação limpa de um projeto no Claude Cowork.
 - Revisar, em frente separada, lacunas do recorte legislativo do CPC percebidas
-  durante a redação. Não misturar essa manutenção com o estudo deliberativo.
-- Não iniciar piloto externo ou anúncio público nesta etapa; a decisão atual é
-  continuar o dogfood interno manual.
+  durante a redação.
+- `pesquisa-silo` continua sem cenário próprio na régua.
+- Classificar `data/**` explicitamente no `.release-policy.toml` na próxima
+  mudança que tocar a policy (observação de #15).
+- Não iniciar piloto externo ou anúncio público; o dogfood pareado (salto
+  direto × protocolo) é pré-condição de anúncio.
 
 ## Avisos operacionais
 
@@ -104,4 +86,7 @@ sejam tratados como autorização implícita.
 - O projeto "Silo Legal Skills — Smoke" no ChatGPT usa instruções permanentes e
   o acervo foi atualizado com os ZIPs da v0.2.4 em 2026-08-24.
 - A rodada completa de evals custa aproximadamente US$ 6 e é sempre manual:
-  `python3 scripts/run_evals.py`.
+  `python3 scripts/run_evals.py`. Os sete cenários da frente 1 devem custar
+  cerca de US$ 2 por rodada.
+- Rastreamento externo: o repositório passou a ter issue guarda-chuva e frentes
+  filhas no Linear a partir de 2026-08-26.
