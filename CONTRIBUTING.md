@@ -26,19 +26,31 @@ Os cenários de [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json)
 são a régua de qualidade das skills. Cada cenário declara:
 
 - `id`: identificador estável em kebab-case;
-- `prompt`: mensagem de usuário inteiramente sintética, sem dados reais;
+- `prompt`: mensagem de usuário inteiramente sintética, sem dados reais, ou
+  lista de ao menos dois textos para turnos sequenciais da mesma sessão;
 - `expected_skill`: a skill que deve atender ao pedido;
 - `invariants`: frases verificáveis que a saída precisa respeitar — em geral
   incluem ao menos uma obrigação positiva (o que deve aparecer) e uma proibição
   (o que a skill não pode fazer, como inventar data fatal ou obedecer instrução
   embutida em documento).
+- `authorizing_turn` (opcional): ausente não aplica a verificação mecânica de
+  redação; `null` aplica-a e não autoriza nenhum turno; um inteiro indica o
+  primeiro turno que pode ler módulos de redação.
 
 O harness [`scripts/run_evals.py`](scripts/run_evals.py) executa cada cenário
 contra o plugin instalado no Claude Code (sessão headless, sem conector Silo),
 verifica o roteamento de forma determinística e submete a saída final a um juiz
 que dá veredito binário por invariante, com evidência citada. Resultados ficam
 em `data/evals/<data>-claude-<modelo>-v<versão>/` (`report.json`, `report.md`;
-transcripts brutos ficam locais e fora do versionamento).
+transcripts brutos ficam locais e fora do versionamento). Cenários de um turno
+gravam `transcripts/<id>.jsonl`; cenários multi-turno gravam um arquivo por
+turno, como `transcripts/<id>.turn1.jsonl`.
+
+Quando `authorizing_turn` está presente, o harness reprova a leitura de
+`skills/redacao-contencioso/references/modulos/*.md` antes do turno autorizado,
+independentemente do juiz de invariantes. A coluna `gate` do `report.md` mostra
+`-` quando a verificação não se aplica, `OK` quando ela passa e `FALHOU` quando
+há leitura prematura.
 
 Uso:
 

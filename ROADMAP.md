@@ -10,7 +10,7 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-26, v0.2.4)
+## Estado atual (2026-08-27, v0.2.4)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
   recorte versionado do CPC. Versão corrente `v0.2.4` (correções de roteamento
@@ -35,7 +35,7 @@ Estado dos itens:
   terceiros no runtime; o modelo monta o ZIP anexado à conversa e segue o
   `SKILL.md` ([QUICKSTART](QUICKSTART.md) corrigido).
 - Régua de qualidade operacional e primeiro ciclo editar→medir concluído:
-  `scripts/run_evals.py` executa os treze cenários de
+  `scripts/run_evals.py` executa os dezenove cenários de
   [`tests/fixtures/workflows.json`](tests/fixtures/workflows.json) contra o
   plugin instalado, com juiz por invariante e relatório versionado. Baseline
   v0.2.3: 10 PASS, 3 FAIL. As três falhas foram corrigidas (v0.2.4: roteamento
@@ -56,6 +56,17 @@ Estado dos itens:
   independente e especificação em
   [#22](https://github.com/sensdiego/codigo-aberto/issues/22). Implementação em
   duas frentes medidas (Fase 3), com a régua antes de qualquer edição de skill.
+- Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
+  harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
+  leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
+  um invariante novo. Baseline da lacuna sobre a v0.2.4: 1 PASS, 6 FAIL,
+  US$ 3,61 ([relatório](data/evals/2026-08-27-claude-sonnet-v0.2.4/report.md)).
+  O defeito do dogfood ficou reproduzível: resposta a item aberto com "pode
+  redigir" na mesma mensagem levou o modelo a ler o módulo e entregar a
+  contestação inteira; a resposta isolada, ao contrário, foi tratada
+  corretamente. Os três cenários de deliberação reprovaram por roteamento (dois
+  caíram em `aprofundamento-juridico`, um em `redacao-contencioso`), a família
+  de confusão que a frente 2 endereça.
 
 ## Princípios de ordenação
 
@@ -227,7 +238,7 @@ mantém se melhorar uma decisão real em comparação com o salto direto para a
 redação, continuar útil quando a decisão for não redigir e impedir que
 briefing ou contexto sejam tratados como autorização implícita.
 
-- [ ] Frente 1 — régua antes das skills: `scripts/run_evals.py` com cenários
+- [x] Frente 1 — régua antes das skills: `scripts/run_evals.py` com cenários
       multi-turno e verificação mecânica (nenhum módulo de redação lido antes
       da fala autorizadora); seis cenários novos
       (`deliberacao-nao-redigir`, `deliberacao-nao-agir-sob-pressao`,
@@ -236,6 +247,13 @@ briefing ou contexto sejam tratados como autorização implícita.
       `gate-confirmacao-combinada`) e invariante novo em
       `manifestacao-concordancia`; rodar contra a v0.2.4 como baseline da
       lacuna. PR próprio.
+      Concluída em 2026-08-27: baseline 1 PASS / 6 FAIL / US$ 3,61
+      ([relatório](data/evals/2026-08-27-claude-sonnet-v0.2.4/report.md)).
+      Gate mecânico reprovou `gate-confirmacao-combinada` (módulo lido no
+      turno 2); `gate-resposta-nao-autoriza` passou 4/4; deliberação reprova
+      primeiro por roteamento e, na skill errada, ainda cumpre parte do
+      protocolo (5/5, 4/5, 2/6). Esta rodada mede a v0.2.4 sem protocolo e não
+      conta para a cláusula de promoção.
 - [ ] Frente 2 — contratos (fragmento `minor` → v0.3.0): `disciplina.md`
       (gatilho + gate), `handoff.md` (tipo `decisão`),
       `references/deliberacao.md`, ponteiros em `analise-juridica-civel`,

@@ -210,8 +210,40 @@ def check_workflow_fixtures():
         for field in ("prompt", "expected_skill", "invariants"):
             if field not in scenario:
                 errors.append(f"workflow {scenario_id or index}: falta {field}")
-        if not isinstance(scenario.get("prompt"), str) or not scenario.get("prompt", "").strip():
-            errors.append(f"workflow {scenario_id or index}: prompt deve ser texto não vazio")
+        prompt = scenario.get("prompt")
+        if isinstance(prompt, str):
+            if not prompt.strip():
+                errors.append(
+                    f"workflow {scenario_id or index}: prompt deve ser texto não vazio"
+                )
+            turn_count = 1
+        elif isinstance(prompt, list):
+            turn_count = len(prompt)
+            if len(prompt) == 1:
+                errors.append(
+                    f"workflow {scenario_id or index}: prompt com um turno deve ser texto simples"
+                )
+            elif len(prompt) < 2 or not all(
+                isinstance(item, str) and item.strip() for item in prompt
+            ):
+                errors.append(
+                    f"workflow {scenario_id or index}: prompt deve ser lista de textos não vazios"
+                )
+        else:
+            turn_count = 1
+            errors.append(
+                f"workflow {scenario_id or index}: prompt deve ser texto não vazio ou lista de turnos"
+            )
+        if "authorizing_turn" in scenario:
+            authorizing_turn = scenario["authorizing_turn"]
+            if authorizing_turn is not None and (
+                not isinstance(authorizing_turn, int)
+                or isinstance(authorizing_turn, bool)
+                or not 1 <= authorizing_turn <= turn_count
+            ):
+                errors.append(
+                    f"workflow {scenario_id or index}: authorizing_turn deve ser null ou inteiro entre 1 e {turn_count}"
+                )
         expected = scenario.get("expected_skill")
         if isinstance(expected, str):
             referenced.add(expected)
