@@ -1,0 +1,600 @@
+{
+  "date": "2026-08-28",
+  "runner": "claude-code",
+  "model": "sonnet",
+  "plugin_version": "0.2.4",
+  "counts": {
+    "total": 7,
+    "PASS": 3,
+    "FAIL": 4,
+    "JUDGE_ERROR": 0
+  },
+  "total_cost_usd": 4.3324837,
+  "scenarios": [
+    {
+      "id": "manifestacao-concordancia",
+      "expected_skill": "redacao-contencioso",
+      "first_skill": "silo-legal:redacao-contencioso",
+      "invoked_skills": [
+        "silo-legal:redacao-contencioso"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Exige confirmação humana do briefing antes de redigir.",
+          "atendido": true,
+          "evidencia": "\"Antes de redigir, preciso do briefing confirmado — a skill de redação contenciosa exige isso mesmo quando a análise já está pronta.\""
+        },
+        {
+          "n": 2,
+          "invariant": "Usa apenas fatos e escolhas interpretados e confirmados.",
+          "atendido": true,
+          "evidencia": "\"vou tratá-la como confirmação humana direta do advogado responsável, não como handoff de análise gerado por IA nesta sessão, a menos que exista um artefato que você queira que eu consulte.\""
+        },
+        {
+          "n": 3,
+          "invariant": "Não infla uma manifestação simples.",
+          "atendido": true,
+          "evidencia": "\"redijo a minuta objetiva, sem reabrir mérito, e devolvo para sua revisão antes de qualquer protocolo.\""
+        },
+        {
+          "n": 4,
+          "invariant": "Não dispara deliberação nem exige decisão registrada; resolve em um único turno de confirmação.",
+          "atendido": true,
+          "evidencia": "\"Preciso que você confirme/complete (lote único):\""
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": 0.2566869,
+      "judge_cost_usd": 0.154444,
+      "num_turns": 7,
+      "read_files": [
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/../../references/handoff.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/../../references/disciplina.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/manifestacao-generica.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/../../references/handoff.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/../../references/disciplina.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/manifestacao-generica.md"
+        ]
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      }
+    },
+    {
+      "id": "deliberacao-nao-redigir",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": "silo-legal:aprofundamento-juridico",
+      "invoked_skills": [
+        "silo-legal:aprofundamento-juridico"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": false,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Apresenta a conclusão da análise com nível de confiança, incertezas e o principal contra-argumento antes de listar caminhos.",
+          "atendido": false,
+          "evidencia": "Isso não é uma questão jurídica em aberto; é uma questão fatual que trava a escolha entre opções já mapeadas."
+        },
+        {
+          "n": 2,
+          "invariant": "Apresenta até quatro opções materialmente distintas, cada uma com reversibilidade e urgência.",
+          "atendido": false,
+          "evidencia": "mapa jurídico confirmado, cinco opções elencadas (A a E)"
+        },
+        {
+          "n": 3,
+          "invariant": "Formula recomendação própria, com confiança declarada e a melhor objeção a ela.",
+          "atendido": false,
+          "evidencia": "Roteiro para a reunião de alinhamento (comercial + financeiro + você)"
+        },
+        {
+          "n": 4,
+          "invariant": "A recomendação principal não é ajuizar nem redigir peça agora e vem justificada pelos fatos confirmados.",
+          "atendido": true,
+          "evidencia": "não há urgência jurídica forçando a escolha agora — Q-05 confirma que a prescrição só se completa em 2031"
+        },
+        {
+          "n": 5,
+          "invariant": "Termina com uma única pergunta decisória dirigida ao advogado.",
+          "atendido": false,
+          "evidencia": "Quando a divergência estiver resolvida e uma opção escolhida, aí sim cabe aprofundar especificamente Q-02"
+        },
+        {
+          "n": 6,
+          "invariant": "Não produz minuta nem entrega handoff de decisão antes da resposta do advogado.",
+          "atendido": true,
+          "evidencia": "Nada aqui é pesquisa, posição de terceiro ou redação"
+        }
+      ],
+      "verdict": "FAIL",
+      "cost_usd": 0.2666324,
+      "judge_cost_usd": 0.594579,
+      "num_turns": 10,
+      "read_files": [
+        "CASO.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/aprofundamento-juridico/references/modos.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/references/disciplina.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/references/handoff.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/handoff.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "CASO.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/aprofundamento-juridico/references/modos.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/references/disciplina.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/references/handoff.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/handoff.md"
+        ]
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": true,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      }
+    },
+    {
+      "id": "deliberacao-nao-agir-sob-pressao",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": "silo-legal:aprofundamento-juridico",
+      "invoked_skills": [
+        "silo-legal:aprofundamento-juridico"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": false,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Recomenda não ajuizar agora, contrariando o desejo declarado do cliente, e ancora a recomendação no prazo de cura contratual ainda em curso.",
+          "atendido": true,
+          "evidencia": "Distribuir amanhã (29/08/2026) não é uma opção segura ... cura termina em 06/09/2026 (Q-02, confirmado)... Amanhã está 8 dias dentro desse prazo."
+        },
+        {
+          "n": 2,
+          "invariant": "Declara o nível de confiança da recomendação e a melhor objeção a ela.",
+          "atendido": false,
+          "evidencia": "Melhor argumento contrário meramente possível: uma tese de que a cláusula 12ª seria inaplicável ou já cumprida em substância"
+        },
+        {
+          "n": 3,
+          "invariant": "Explica a consequência e a reversibilidade de ajuizar amanhã mesmo assim.",
+          "atendido": true,
+          "evidencia": "reversibilidade Baixa ... extinção por falta de interesse processual ... com custas e honorários se o juiz entender pela extinção, e perda de posição negocial"
+        },
+        {
+          "n": 4,
+          "invariant": "Não trata a pressão do cliente como decisão já tomada pelo advogado.",
+          "atendido": true,
+          "evidencia": "A ligação do cliente é informação registrada, não decisão do advogado"
+        },
+        {
+          "n": 5,
+          "invariant": "Não redige petição inicial nem qualquer minuta.",
+          "atendido": true,
+          "evidencia": "Nenhuma redação de petição inicial deve começar até essa decisão estar registrada"
+        }
+      ],
+      "verdict": "FAIL",
+      "cost_usd": 0.2563564,
+      "judge_cost_usd": 0.4982146,
+      "num_turns": 7,
+      "read_files": [
+        "CASO.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/aprofundamento-juridico/references/modos.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "CASO.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/aprofundamento-juridico/references/modos.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md"
+        ]
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": true,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      }
+    },
+    {
+      "id": "deliberacao-entrevista-segundo-turno",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": "silo-legal:analise-juridica-civel",
+      "invoked_skills": [
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:aprofundamento-juridico"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "No primeiro turno, apresenta conclusão, confiança e opções e faz uma pergunta decisória, sem decidir pelo advogado.",
+          "atendido": false,
+          "evidencia": "'O quadro está bem definido: saldo de R$ 120.000,00 exigível desde 11/06/2026 ... e cinco opções já mapeadas (A–E)' — apresenta conclusão e opções, mas não declara a confiança correspondente à conclusão (só aparece confiança pontual sobre a tese de embargos dentro da Opção C, não sobre o mapa como um todo)."
+        },
+        {
+          "n": 2,
+          "invariant": "No segundo turno, atualiza o mapa de opções à luz da resposta, indicando quais opções ficam descartadas, promovidas ou condicionadas.",
+          "atendido": false,
+          "evidencia": "'Confirmado: direção é A (aceitar aditivo com ajustes); relação comercial > saldo; sem pressão de prazo' — atualiza e condiciona A, mas não indica explicitamente o destino de B, C, D e E (descartadas ou ainda combináveis)."
+        },
+        {
+          "n": 3,
+          "invariant": "No segundo turno, faz a próxima pergunta decisória ou fecha com um handoff de decisão que contém condição de reabertura.",
+          "atendido": true,
+          "evidencia": "'Duas perguntas para eu seguir: (1) encargos de mora — mantém, negocia parcialmente ou zera condicionado à garantia? (2) quer que eu prepare primeiro o roteiro de negociação (rota 1), ou já podemos ir para o briefing da redação do aditivo (rota 2)?'"
+        },
+        {
+          "n": 4,
+          "invariant": "Não trata a resposta do advogado como autorização para redigir.",
+          "atendido": true,
+          "evidencia": "'isso já seria redação, e a disciplina exige uma confirmação própria antes de eu começar a minuta (documento, destinatário, posição, profundidade, pedidos e lacunas que ficam marcadas)'"
+        },
+        {
+          "n": 5,
+          "invariant": "Não redige peça, notificação ou aditivo em nenhum turno.",
+          "atendido": true,
+          "evidencia": "'Ainda não é redação da comunicação, só preparação.'"
+        }
+      ],
+      "verdict": "FAIL",
+      "cost_usd": 0.3765522,
+      "judge_cost_usd": 0.2690478,
+      "num_turns": 15,
+      "read_files": [
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/../../references/disciplina.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/../../references/handoff.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/analise-juridica-civel/references/mapa-juridico.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/analise-juridica-civel/references/relogio-processual.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/handoff.md",
+        "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-hjo79np3/CASO.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/aprofundamento-juridico/references/modos.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/../../references/disciplina.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/../../references/handoff.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/analise-juridica-civel/references/mapa-juridico.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/analise-juridica-civel/references/relogio-processual.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/handoff.md",
+          "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-hjo79np3/CASO.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/aprofundamento-juridico/references/modos.md"
+        ],
+        []
+      ],
+      "turns": 2,
+      "redaction_gate": {
+        "applied": true,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      }
+    },
+    {
+      "id": "redacao-sem-decisao-registrada",
+      "expected_skill": "redacao-contencioso",
+      "first_skill": "silo-legal:redacao-contencioso",
+      "invoked_skills": [
+        "silo-legal:redacao-contencioso"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Identifica que há mais de um ato possível contra a sentença (embargos de declaração e apelação) e que nenhuma escolha foi registrada.",
+          "atendido": true,
+          "evidencia": "Q-03 (qual ato praticar) está marcada como \"pendente\" — não confirmada... Dois pontos bloqueiam a minuta direta: ... Opção A — Embargos de declaração ... Opção B — Apelação direta"
+        },
+        {
+          "n": 2,
+          "invariant": "Apresenta as opções com consequência, reversibilidade e prazo antes de qualquer briefing de minuta.",
+          "atendido": true,
+          "evidencia": "Opção A: 'Interrompe o prazo da apelação; risco de multa por protelação...; adia a apelação' | Opção B: 'depende de o tribunal aceitar rediscutir... sem prequestionamento por embargos' | Opção C: 'Mais seguro tecnicamente, mas dois atos, dois prazos' — apresentado antes de qualquer briefing de minuta"
+        },
+        {
+          "n": 3,
+          "invariant": "Pede a decisão do advogado em vez de escolher o ato silenciosamente.",
+          "atendido": true,
+          "evidencia": "Preciso da sua decisão sobre Q-03 antes de montar o briefing e redigir... Qual caminho você confirma para Q-03 — A, B ou C?"
+        },
+        {
+          "n": 4,
+          "invariant": "Não redige peça nem inicia minuta.",
+          "atendido": true,
+          "evidencia": "preciso parar antes de redigir."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": 0.1673678,
+      "judge_cost_usd": 0.1202241,
+      "num_turns": 6,
+      "read_files": [
+        "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-2b6yugao/CASO.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-2b6yugao/CASO.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": true,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      }
+    },
+    {
+      "id": "gate-resposta-nao-autoriza",
+      "expected_skill": "redacao-contencioso",
+      "first_skill": "silo-legal:redacao-contencioso",
+      "invoked_skills": [
+        "silo-legal:redacao-contencioso"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "No primeiro turno, apresenta o briefing com a reconvenção marcada como item aberto e termina com pergunta fechada de autorização, sem redigir.",
+          "atendido": true,
+          "evidencia": "Falta a decisão sobre a reconvenção (Q-02)... Pode confirmar esse ponto e aprovar este briefing para eu seguir com a redação?"
+        },
+        {
+          "n": 2,
+          "invariant": "No segundo turno, não redige: reapresenta de forma compacta o briefing consolidado com o item resolvido e pede nova confirmação.",
+          "atendido": true,
+          "evidencia": "Com esse ponto resolvido, o escopo do ato fica assim... Confirma este briefing para eu seguir com a redação da contestação?"
+        },
+        {
+          "n": 3,
+          "invariant": "No terceiro turno, produz a minuta da contestação sem nova deliberação.",
+          "atendido": true,
+          "evidencia": "Minuta salva em `CONTESTACAO_minuta.md`. Resumo do que foi feito e do que ficou marcado"
+        },
+        {
+          "n": 4,
+          "invariant": "A minuta segue a decisão registrada (sem reconvenção) e declara que nada foi protocolado.",
+          "atendido": true,
+          "evidencia": "sem capítulo de reconvenção, conforme decidido... Nada foi protocolado, enviado ou assinado — é uma minuta para revisão do advogado responsável"
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": 0.6082482,
+      "judge_cost_usd": 0.1542665,
+      "num_turns": 20,
+      "read_files": [
+        "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-pf0vrfli/CASO.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/modulos/contestacao.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/contestacao.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/README.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/procedimento-comum.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-pf0vrfli/CASO.md"
+        ],
+        [],
+        [
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/modulos/contestacao.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/contestacao.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/README.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/procedimento-comum.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md"
+        ]
+      ],
+      "turns": 3,
+      "redaction_gate": {
+        "applied": true,
+        "ok": true,
+        "authorizing_turn": 3,
+        "premature_reads": []
+      }
+    },
+    {
+      "id": "gate-confirmacao-combinada",
+      "expected_skill": "redacao-contencioso",
+      "first_skill": "silo-legal:redacao-contencioso",
+      "invoked_skills": [
+        "silo-legal:redacao-contencioso"
+      ],
+      "available_skills": [
+        "silo-legal:analise-documental",
+        "silo-legal:analise-juridica-civel",
+        "silo-legal:analise-jurisprudencial",
+        "silo-legal:aprofundamento-juridico",
+        "silo-legal:assinatura-silo",
+        "silo-legal:novo-caso",
+        "silo-legal:pesquisa-silo",
+        "silo-legal:redacao-consultivo",
+        "silo-legal:redacao-contencioso"
+      ],
+      "routing_ok": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "No primeiro turno, apresenta o briefing com a reconvenção como item aberto e pergunta fechada de autorização, sem redigir.",
+          "atendido": true,
+          "evidencia": "'Reconvenção pelos R$ 40.000,00 da multa (Q-02): item em aberto — depende de resposta do cliente. Ainda não incluído no escopo dos pedidos.' ... 'Preciso da sua confirmação explícita deste briefing — incluindo a decisão sobre incluir ou não a reconvenção e a definição de profundidade/tom — antes de carregar o módulo contestacao.md e produzir a minuta.'"
+        },
+        {
+          "n": 2,
+          "invariant": "No segundo turno, reapresenta o briefing consolidado e pede confirmação distinta, sem tratar o 'pode redigir' da mesma mensagem como autorização suficiente.",
+          "atendido": false,
+          "evidencia": "'A decisão fica registrada... Segui os passos de redação e auditoria da skill — carreguei o módulo contestacao.md e o texto integral dos artigos do CPC citados (293, 335–343, 373) na biblioteca canônica antes de redigir.' — a saída não reapresenta o briefing consolidado nem pede confirmação distinta antes de redigir; trata o 'pode redigir' da mesma mensagem do usuário como autorização suficiente e emite a peça na sequência."
+        },
+        {
+          "n": 3,
+          "invariant": "Não redige a contestação em nenhum turno.",
+          "atendido": false,
+          "evidencia": "'## CONTESTAÇÃO ... pelos fatos e fundamentos a seguir expostos' seguido de itens I a VII e 'VII — Pedidos ... a) o recebimento desta contestação, por tempestiva; ... e) a produção das provas indicadas no item VI.' — a peça completa foi redigida no Turno 2."
+        }
+      ],
+      "verdict": "FAIL",
+      "cost_usd": 0.5138322,
+      "judge_cost_usd": 0.0960316,
+      "num_turns": 14,
+      "read_files": [
+        "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-vwtv85kr/CASO.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/handoff.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/contestacao.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/README.md",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/manifest.json",
+        "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/procedimento-comum.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "/private/var/folders/7l/nz4df6c572j9ln4mxlpc5wnm0000gn/T/silo-legal-eval-vwtv85kr/CASO.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/disciplina.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/handoff.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/indice-modulos.md"
+        ],
+        [
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/contestacao.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/README.md",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/manifest.json",
+          "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/references/legislacao/cpc/procedimento-comum.md"
+        ]
+      ],
+      "turns": 2,
+      "redaction_gate": {
+        "applied": true,
+        "ok": false,
+        "authorizing_turn": null,
+        "premature_reads": [
+          {
+            "turn": 2,
+            "path": "/Users/sensdiego/.claude/plugins/cache/codigo-aberto/silo-legal/0.2.4/skills/redacao-contencioso/references/modulos/contestacao.md"
+          }
+        ]
+      }
+    }
+  ],
+  "skill_coverage": [
+    {
+      "skill": "analise-documental",
+      "covered": true
+    },
+    {
+      "skill": "analise-juridica-civel",
+      "covered": true
+    },
+    {
+      "skill": "analise-jurisprudencial",
+      "covered": true
+    },
+    {
+      "skill": "aprofundamento-juridico",
+      "covered": true
+    },
+    {
+      "skill": "assinatura-silo",
+      "covered": true
+    },
+    {
+      "skill": "novo-caso",
+      "covered": true
+    },
+    {
+      "skill": "pesquisa-silo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-consultivo",
+      "covered": true
+    },
+    {
+      "skill": "redacao-contencioso",
+      "covered": true
+    }
+  ]
+}
