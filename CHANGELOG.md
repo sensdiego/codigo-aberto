@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.3.0] - 2026-08-28
+
+### Added
+
+- Camada deliberativa entre análise e redação: gatilho enumerável e gate de confirmação como máquina de estados na disciplina, handoff de tipo decisão, protocolo references/deliberacao.md e ponteiros nas cinco skills de análise e redação. [22]
+
 ## [0.2.4] - 2026-08-24
 
 ### Fixed
