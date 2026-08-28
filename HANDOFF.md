@@ -9,12 +9,11 @@ guarda-chuva SEN-2381.
 
 ## Onde o produto está
 
-A versão publicada continua sendo a `v0.2.4`. A branch
-`feat/deliberacao-contratos` leva os contratos da frente 2 com fragmento
-`minor` (v0.3.0 na publicação) e ainda não foi proposta em PR ao fechar
-deste handoff. Claude Code e ChatGPT têm caminhos de uso comprovados; no
-Claude Cowork há dogfood interno em projeto já montado, sem prova de
-instalação limpa.
+A versão publicada continua sendo a `v0.2.4`. Os contratos da frente 2
+estão propostos no PR #25 (branch `feat/deliberacao-contratos`, fragmento
+`minor` → v0.3.0 na publicação), abertos à revisão do Diego. Claude Code e
+ChatGPT têm caminhos de uso comprovados; no Claude Cowork há dogfood interno
+em projeto já montado, sem prova de instalação limpa.
 
 ## O que esta sessão entregou
 
@@ -66,23 +65,71 @@ instalação limpa.
    está integralmente satisfeita (duas rodadas, falha por omissão ou
    roteamento).
 
-## Próxima tarefa com maior impacto: decidir e executar a promoção
+## Próxima tarefa com maior impacto: frente 3 — skill autônoma de deliberação
 
-A decisão registrada em #22 §4 manda recomendar a skill autônoma
-`deliberacao-juridica` (alternativa A da tabela), embrulhando
-`references/deliberacao.md` e o handoff de tipo `decisão`. Antes de
-implementar, o Diego precisa decidir: (a) propor/integrar os contratos como
-estão — ganhos medidos em três cenários, artefatos prontos para a skill
-embrulhar — e abrir a frente 3 (skill autônoma, SEN nova sob SEN-2381); ou
-(b) segurar os contratos e redesenhar já com a skill autônoma. Não iterar
-mais sobre descrições: seria ajuste a ruído (n=1) contra a cláusula
-pré-acordada.
+Decisão do Diego em 2026-08-28: os contratos seguem (PR #25 aberto; merge
+pendente da revisão dele) e a próxima sessão, com contexto limpo, executa a
+frente 3 — a skill autônoma `deliberacao-juridica`, conforme a cláusula de
+promoção de #22 §4 (duas rodadas falhando por omissão ou roteamento, ambas
+registradas em `data/evals/`). O primeiro ato da sessão é abrir a issue SEN
+da frente 3 sob SEN-2381 e atualizar SEN-2384 com o resultado das rodadas.
 
-Se a frente 3 for aberta: roteamento deixa de depender de descrição
-compartilhada, a redação passa a exigir o artefato de decisão quando o
-gatilho (b)/(c) dispara, e a régua se repete (sete cenários, ~US$ 4; régua
-completa de 19 antes de publicar, ~US$ 9). A regra do CONTRIBUTING segue:
-não alterar skill e régua no mesmo pull request sem justificativa.
+### Desenho elaborado nesta sessão (não reabrir sem evidência nova)
+
+1. **A skill embrulha o que já existe.** `references/deliberacao.md` vira a
+   referência própria da skill (mover ou apontar) e o handoff de tipo
+   `decisão` é o artefato de saída. Nada de protocolo novo; a falha medida
+   foi de roteamento e obediência, não de conteúdo.
+2. **Roteamento por porta própria, não por descrição compartilhada.** A
+   fragilidade medida: "o que eu faço?" caiu em `aprofundamento-juridico` em
+   três de quatro medições, com variância n=1 (um cenário oscilou entre
+   rodadas com texto quase idêntico). Minuta de description:
+   > Conduzir a decisão do advogado entre a análise e a ação: apresentar a
+   > conclusão com confiança, até quatro opções com reversibilidade e
+   > urgência, recomendação própria com a melhor objeção e entrevista
+   > decisória, registrando a decisão em handoff próprio. Use quando o
+   > advogado pedir caminho ("o que eu faço?", "qual caminho?", "vale a
+   > pena X?", "me ajuda a decidir") ou quando uma peça pressupuser escolha
+   > ainda não registrada (ato, tese, pedido, concessão). Não pesquisa, não
+   > aprofunda tese e não redige.
+   Ao promovê-la, **reverter** os ponteiros das outras skills: descrição de
+   `analise-juridica-civel` volta a não cobrir deliberação (oferece a rota
+   para a skill nova ao fechar); o "não use" de `aprofundamento-juridico`
+   passa a apontar para `deliberacao-juridica` pelo nome.
+3. **A redação passa a exigir o artefato, não a sugerir a rota.** Em
+   `redacao-contencioso` (e `redacao-consultivo`, proporcional): quando o
+   gatilho (b)/(c) dispara, o handoff de tipo `decisão` vira pré-requisito
+   do briefing — é a condição sob a qual a alternativa A fechava o
+   critério (d) na tabela de #22 §3. O ponteiro "conduza primeiro a
+   deliberação" vira "encaminhe para `deliberacao-juridica`".
+4. **O gate de confirmação é problema separado e continua aberto.**
+   `gate-confirmacao-combinada` resistiu a regra na disciplina **e** no
+   briefing da skill. A frente 3 não conserta isso por desenho; avaliar na
+   implementação se o briefing consolidado como estado explícito (a redação
+   só redige com briefing confirmado **e**, quando houver gatilho, decisão
+   registrada) endurece o ponto — e re-medir.
+5. **Mecânica do repositório.** Nova entrada em `skills/deliberacao-juridica/`
+   (sem CPC, como `analise-jurisprudencial`); `WORKFLOW_SKILLS` em
+   `scripts/validate_skills.py`; tupla `SKILLS` em
+   `scripts/build_chatgpt_smoke_bundle.py` (oitavo ZIP — ponto fraco
+   conhecido da alternativa A; mitigar nas instruções permanentes do
+   projeto ChatGPT); README/QUICKSTART/ROADMAP passam a dez portas;
+   `expected_skill` dos cenários `deliberacao-*` muda para a skill nova —
+   **mudança de régua no mesmo PR, com justificativa escrita** (a promoção
+   decidida), exceção prevista no CONTRIBUTING. Controle de confusão
+   obrigatório: `aprofundamento-audiencia` deve continuar indo para
+   `aprofundamento-juridico`.
+6. **Medição.** Rodada dos sete cenários (~US$ 4,30) com o mesmo harness;
+   sucesso mínimo: os três `deliberacao-*` rotear para a skill nova e
+   `gate-resposta-nao-autoriza` se manter. Régua completa (19 cenários,
+   ~US$ 9) antes de publicar. Fragmento `minor` (v0.3.0 se o PR #25 ainda
+   não tiver sido publicado; caso contrário a release seguinte).
+7. **Fora de escopo da frente 3:** anúncio público (vedado até o dogfood
+   pareado), skill no regime de deliberação do ecossistema (spec externa,
+   sem dependência), novos cenários além do ajuste de `expected_skill`.
+
+A regra do CONTRIBUTING segue fora da exceção acima: não alterar skill e
+régua no mesmo pull request sem justificativa.
 
 ## Pendências secundárias
 
@@ -96,8 +143,6 @@ não alterar skill e régua no mesmo pull request sem justificativa.
   mudança que tocar a policy (observação de #15).
 - Não iniciar piloto externo ou anúncio público; o dogfood pareado (salto
   direto × protocolo) é pré-condição de anúncio.
-- Atualizar SEN-2384 (resultado das rodadas e cláusula disparada) e abrir a
-  issue da frente 3 se o Diego confirmar a promoção.
 
 ## Avisos operacionais
 
