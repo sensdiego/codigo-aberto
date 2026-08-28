@@ -1,108 +1,118 @@
 # Handoff de sessão
 
-Atualizado em 2026-08-27, após a entrega da frente 1 da camada deliberativa
-(a régua) e o registro do baseline da lacuna sobre a v0.2.4. A decisão de
-2026-08-26 e a especificação vivem em
+Atualizado em 2026-08-28, após a frente 2 da camada deliberativa (contratos)
+e duas rodadas de avaliação sobre ela. A decisão de 2026-08-26 e a
+especificação vivem em
 [#22](https://github.com/sensdiego/codigo-aberto/issues/22); o rastreamento
-externo é SEN-2383 (frente 1) e SEN-2384 (frente 2), sob a guarda-chuva
-SEN-2381.
+externo é SEN-2383 (frente 1, Done) e SEN-2384 (frente 2), sob a
+guarda-chuva SEN-2381.
 
 ## Onde o produto está
 
-A versão corrente continua sendo a `v0.2.4`, publicada e auditada. Nenhuma
-skill, referência ou bundle foi editado nesta sessão; a PR da frente 1 leva
-fragmento `none` porque muda a régua, não o produto. Claude Code e ChatGPT têm
-caminhos de uso comprovados; no Claude Cowork há dogfood interno em projeto já
-montado, sem prova de instalação limpa.
+A versão publicada continua sendo a `v0.2.4`. A branch
+`feat/deliberacao-contratos` leva os contratos da frente 2 com fragmento
+`minor` (v0.3.0 na publicação) e ainda não foi proposta em PR ao fechar
+deste handoff. Claude Code e ChatGPT têm caminhos de uso comprovados; no
+Claude Cowork há dogfood interno em projeto já montado, sem prova de
+instalação limpa.
 
 ## O que esta sessão entregou
 
-- `scripts/run_evals.py`: `prompt` aceita lista de turnos executados na mesma
-  sessão headless (`--session-id` no primeiro turno, `--resume` nos seguintes,
-  mesmo diretório; transcript gravado por turno antes do julgamento, em
-  `<id>.turnK.jsonl`). O campo opcional `authorizing_turn` liga a verificação
-  mecânica: nenhum `skills/redacao-contencioso/references/modulos/*.md` pode
-  ser lido antes do turno autorizador (`null` = nenhum turno autoriza), e a
-  reprovação independe do juiz. O relatório ganhou a coluna `gate`. O validador
-  e o CONTRIBUTING acompanham os campos novos.
-- Seis cenários novos e o invariante "um único turno, sem deliberação" em
-  `manifestacao-concordancia`: a régua tem 19 cenários.
-- Baseline em `data/evals/2026-08-27-claude-sonnet-v0.2.4/`: 7 cenários,
-  1 PASS, 6 FAIL, US$ 3,61 (os multi-turno custam ~US$ 0,60 cada).
+- `references/deliberacao.md` (novo): protocolo em seis passos —
+  apresentação decisória, até quatro opções sem fabricar pluralidade,
+  recomendação com confiança e melhor objeção, entrevista com uma pergunta
+  decisória por vez, handoff de tipo `decisão`, rotas de saída — mais
+  fronteira com o aprofundamento e o teste "o advogado podia discordar sem
+  custo?".
+- `references/disciplina.md`: gatilho enumerável da deliberação (pedido do
+  advogado; decisão pendente nos handoffs; ato inferido fora das opções do
+  mapa) e o gate de confirmação reescrito como máquina de estados: pergunta
+  fechada, lista do que não conta como confirmação e reapresentação compacta
+  por delta.
+- `references/handoff.md`: tipo `decisão` com campos próprios (opções
+  escolhidas/rejeitadas/condicionais, razões, concessões, condição de
+  reabertura) e template.
+- Ponteiros nas cinco skills; descrições de `analise-juridica-civel` (cobre
+  deliberação) e `aprofundamento-juridico` (cede deliberação à análise);
+  `redacao-contencioso` repete o gate no próprio briefing; gerador de
+  bundles copia `deliberacao.md` e reescreve os links. Régua intocada.
+- Duas rodadas de avaliação em `data/evals/`:
+  - `2026-08-28-claude-sonnet-contratos-deliberativos/` (rodada 1): 3 PASS,
+    4 FAIL, US$ 4,33;
+  - `2026-08-28-claude-sonnet-contratos-deliberativos-r2/` (rodada 2, após
+    reforços): 0 PASS, 4 FAIL nos quatro re-medidos, US$ 2,41.
 
-## O que o baseline diz — ler antes de começar a frente 2
+## O que as rodadas dizem — ler antes de decidir o próximo passo
 
-1. **O incidente do dogfood ficou reproduzível por máquina.** Em
-   `gate-confirmacao-combinada`, "não vamos reconvir… pode redigir" na mesma
-   mensagem fez o modelo ler `contestacao.md` no turno 2 e entregar a
-   contestação inteira.
-2. **A resposta isolada já é tratada certo.** `gate-resposta-nao-autoriza`
-   passou 4/4: reapresentação por delta, espera, minuta só depois do "sim" ao
-   briefing consolidado. A frente 2 precisa fechar a confirmação combinada sem
-   quebrar esse comportamento.
-3. **Deliberação reprova primeiro por roteamento.** Os três cenários foram para
-   `aprofundamento-juridico` (2) e `redacao-contencioso` (1). Na skill errada o
-   modelo improvisa: `entrevista-segundo-turno` cumpriu 5/5 invariantes;
-   `nao-agir-sob-pressao` 4/5 (faltaram confiança e melhor objeção);
-   `nao-redigir` 2/6 (sem recomendação própria, sem confiança, "matriz de
-   perspectivas" no lugar de opções, duas perguntas em vez de uma). O que falta
-   de forma sistemática é recomendação com confiança e melhor objeção e uma
-   pergunta decisória por vez — exatamente o protocolo de
-   `references/deliberacao.md`.
-4. `redacao-sem-decisao-registrada` (3/4): identificou os dois atos, pediu a
-   decisão e não redigiu; só não expôs a reversibilidade das opções.
-5. **Achado colateral:** `manifestacao-concordancia` reprovou "não infla uma
-   manifestação simples" (exigiu lastro completo do título e handoffs de
-   análise para uma concordância já autorizada), embora tenha passado 3/3 no
-   baseline v0.2.3 de 24/08. Uma execução não separa variância de regressão;
-   re-medir antes de concluir. O invariante novo passou.
-6. Esta rodada mede a v0.2.4, sem protocolo: **não conta** para a cláusula de
-   promoção (duas rodadas com o protocolo falhando por omissão ou roteamento).
+1. **Avanço real em três frentes.** `redacao-sem-decisao-registrada` virou
+   PASS (o protocolo é executado antes do briefing),
+   `manifestacao-concordancia` virou PASS (e resolve a dúvida de oscilação ×
+   regressão de 27/08) e `gate-resposta-nao-autoriza` se manteve PASS: a
+   espera que já funcionava não quebrou.
+2. **A cláusula de promoção disparou.** Em duas rodadas consecutivas com o
+   protocolo, os cenários de deliberação falharam por omissão ou roteamento
+   — na rodada 2, os três rotearam para `aprofundamento-juridico`
+   (`deliberacao-entrevista-segundo-turno` havia roteado certo na rodada 1
+   com texto quase idêntico: variância n=1). Por #22 §4, a skill autônoma de
+   deliberação passa a ser a recomendação, embrulhando protocolo e artefato
+   já existentes.
+3. **O incidente do dogfood resiste ao texto.**
+   `gate-confirmacao-combinada` reprovou nas duas rodadas pelo gate
+   mecânico (turno 2 leu `contestacao.md` e entregou a contestação
+   inteira), mesmo com a regra na disciplina **e** no briefing da skill de
+   redação. Evidência de que regra em referência compartilhada não basta
+   para esse padrão.
+4. Esta sessão gera as duas primeiras rodadas com protocolo; a cláusula já
+   está integralmente satisfeita (duas rodadas, falha por omissão ou
+   roteamento).
 
-## Próxima tarefa com maior impacto: frente 2 — contratos (v0.3.0)
+## Próxima tarefa com maior impacto: decidir e executar a promoção
 
-Escopo em #22 §5 e §7 e em SEN-2384: `references/disciplina.md` (gatilho
-enumerável e gate como máquina de estados, com a lista do que não conta como
-confirmação), `references/handoff.md` (tipo `decisão` e template),
-`references/deliberacao.md` (carregado só quando o gatilho dispara), ponteiros
-em `analise-juridica-civel`, `analise-jurisprudencial`,
-`aprofundamento-juridico`, `redacao-contencioso` e `redacao-consultivo`,
-description de `analise-juridica-civel` (controle de confusão:
-`aprofundamento-audiencia` deve continuar indo para `aprofundamento-juridico`)
-e gerador de bundles (`REWRITES` + cópia em `skill_files()`). Fragmento
-`minor`. Re-medir primeiro os sete cenários desta rodada
-(`python3 scripts/run_evals.py --scenario …`, ~US$ 3,60) e comparar com o
-baseline de 27/08; depois a régua completa (19 cenários, ~US$ 9) antes de
-publicar.
+A decisão registrada em #22 §4 manda recomendar a skill autônoma
+`deliberacao-juridica` (alternativa A da tabela), embrulhando
+`references/deliberacao.md` e o handoff de tipo `decisão`. Antes de
+implementar, o Diego precisa decidir: (a) propor/integrar os contratos como
+estão — ganhos medidos em três cenários, artefatos prontos para a skill
+embrulhar — e abrir a frente 3 (skill autônoma, SEN nova sob SEN-2381); ou
+(b) segurar os contratos e redesenhar já com a skill autônoma. Não iterar
+mais sobre descrições: seria ajuste a ruído (n=1) contra a cláusula
+pré-acordada.
 
-Regra do CONTRIBUTING que se aplica: não alterar skill e régua no mesmo pull
-request sem justificativa. A frente 2 não deve tocar `workflows.json` salvo por
-lacuna demonstrada do baseline.
+Se a frente 3 for aberta: roteamento deixa de depender de descrição
+compartilhada, a redação passa a exigir o artefato de decisão quando o
+gatilho (b)/(c) dispara, e a régua se repete (sete cenários, ~US$ 4; régua
+completa de 19 antes de publicar, ~US$ 9). A regra do CONTRIBUTING segue:
+não alterar skill e régua no mesmo pull request sem justificativa.
 
 ## Pendências secundárias
 
-- Re-medir `manifestacao-concordancia` isoladamente para separar variância de
-  regressão no invariante "não infla".
+- ~~Re-medir `manifestacao-concordancia`~~ — resolvido na rodada 1 (PASS,
+  invariante novo incluído).
 - Documentar e testar a preparação limpa de um projeto no Claude Cowork.
-- Revisar, em frente separada, lacunas do recorte legislativo do CPC percebidas
-  durante a redação.
+- Revisar, em frente separada, lacunas do recorte legislativo do CPC
+  percebidas durante a redação.
 - `pesquisa-silo` continua sem cenário próprio na régua.
 - Classificar `data/**` explicitamente no `.release-policy.toml` na próxima
   mudança que tocar a policy (observação de #15).
 - Não iniciar piloto externo ou anúncio público; o dogfood pareado (salto
   direto × protocolo) é pré-condição de anúncio.
+- Atualizar SEN-2384 (resultado das rodadas e cláusula disparada) e abrir a
+  issue da frente 3 se o Diego confirmar a promoção.
 
 ## Avisos operacionais
 
-- O plugin local do Claude Code está na `v0.2.4`; re-medições conferem a versão
-  instalada antes de rodar (`claude plugin list`).
-- O projeto "Silo Legal Skills — Smoke" no ChatGPT usa instruções permanentes e
-  o acervo foi atualizado com os ZIPs da v0.2.4 em 2026-08-24.
-- Custos medidos: rodada dos sete cenários da camada deliberativa ≈ US$ 3,60;
-  cenário multi-turno ≈ US$ 0,60; régua completa estimada ≈ US$ 9. Sempre
-  manual: `python3 scripts/run_evals.py`.
-- `--resume` reaproveita os transcripts gravados por turno; para reexecutar um
-  cenário, apague seus arquivos em `transcripts/` antes.
+- O plugin local do Claude Code está na `v0.2.4`; a branch da frente 2 não
+  muda `plugin.json` até a publicação da v0.3.0. Re-medições conferem a
+  versão instalada antes de rodar (`claude plugin list`).
+- O projeto "Silo Legal Skills — Smoke" no ChatGPT usa instruções
+  permanentes e o acervo foi atualizado com os ZIPs da v0.2.4 em 2026-08-24;
+  os bundles da branch (com `deliberacao.md`) só sobem após publicação.
+- Custos medidos: rodada dos sete cenários ≈ US$ 4,30; re-medição de quatro
+  ≈ US$ 2,40; régua completa estimada ≈ US$ 9. Sempre manual:
+  `python3 scripts/run_evals.py`.
+- `--resume` reaproveita os transcripts gravados por turno; para reexecutar
+  um cenário, apague seus arquivos em `transcripts/` antes (ou use out-dir
+  novo). Transcripts não são versionados (`.gitignore`).
 - Rodar o harness de dentro de uma sessão do Claude Code exige `env -u
   CLAUDECODE`; o `claude -p` aninhado funciona e a sessão é retomada por
   `--resume` no mesmo diretório.
