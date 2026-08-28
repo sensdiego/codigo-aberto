@@ -41,8 +41,12 @@ Antes de redigir, apresente:
 - prazo e cabimento conforme o mapa jurídico;
 - lacunas e campos que permanecerão marcados.
 
-Pare e espere confirmação humana explícita. “Analise”, “prepare” ou “prossiga”
-em etapa anterior não confirma o briefing desta minuta.
+Pare e espere confirmação humana explícita. Termine o briefing com a pergunta
+fechada da disciplina compartilhada. Resposta a item aberto não autoriza
+redação — nem quando a mesma mensagem diz "pode redigir": nesse caso,
+reapresente o consolidado (o que mudou + a pergunta fechada) e aguarde a
+confirmação distinta. "Analise", "prepare" ou "prossiga" em etapa anterior
+não confirma o briefing desta minuta.
 
 ## Redação e auditoria
 

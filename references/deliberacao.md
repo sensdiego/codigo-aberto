@@ -9,9 +9,9 @@ briefing de redação.
 ## Passos
 
 1. **Apresentação decisória.** Abra com a conclusão da análise, a base
-   probatória que a sustenta, a confiança correspondente, as incertezas que
-   permanecem, o principal contra-argumento e o que mudou em relação à
-   posição anterior.
+   probatória que a sustenta, a confiança correspondente declarada de forma
+   explícita, as incertezas que permanecem, o principal contra-argumento e o
+   que mudou em relação à posição anterior.
 2. **Opções materialmente distintas, até quatro.** Reaproveite "Alternativas
    e providências" do mapa jurídico quando existir; inclua, conforme o caso,
    negociar, obter documento, aprofundar, aguardar ou não agir. Para cada
@@ -26,7 +26,9 @@ briefing de redação.
    a resposta mudar a próxima pergunta; agrupe perguntas independentes. Em
    urgência, use o modo curto, com a mesma proporcionalidade que veda inflar
    uma manifestação simples. O advogado pode encerrar a deliberação a
-   qualquer momento.
+   qualquer momento. A cada resposta, atualize o mapa declarando o destino de
+   todas as opções: promovida, descartada ou condicionada — nenhuma opção
+   some sem registro.
 5. **Registro.** Produza o handoff de tipo `decisão` conforme o
    [contrato de handoff](handoff.md), com opções escolhidas, rejeitadas e
    condicionais e a condição de reabertura.
