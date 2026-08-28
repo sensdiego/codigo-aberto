@@ -38,6 +38,9 @@ não equivale a inteiro teor. Comentário editorial não equivale a precedente.
 Use [resultado.md](references/resultado.md) para a saída proporcional. Uma
 questão simples pode receber resposta curta.
 
+Se a pesquisa fechar com decisão humana pendente, ofereça a rota de
+deliberação da disciplina compartilhada; nunca a inicie sem pedido.
+
 ## O que esta skill não faz
 
 - Não pesquisa fora do Silo.

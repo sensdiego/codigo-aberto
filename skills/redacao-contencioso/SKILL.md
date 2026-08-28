@@ -21,6 +21,13 @@ Infira o ato provável, mas não escolha silenciosamente. Consulte o
 [índice de módulos](references/indice-modulos.md) e carregue somente o módulo
 correspondente depois da confirmação.
 
+Se os handoffs deixarem uma decisão humana pendente que a peça precisa
+resolver (ato entre alternativas, tese, pedido, concessão), ou se o ato
+inferido não estiver entre as opções registradas no mapa jurídico, conduza
+primeiro a deliberação conforme a disciplina compartilhada e carregue o
+[protocolo de deliberação](../../references/deliberacao.md). O handoff de
+tipo `decisão` resultante é insumo do briefing e não autoriza redação.
+
 ## Briefing obrigatório
 
 Antes de redigir, apresente:
@@ -34,8 +41,12 @@ Antes de redigir, apresente:
 - prazo e cabimento conforme o mapa jurídico;
 - lacunas e campos que permanecerão marcados.
 
-Pare e espere confirmação humana explícita. “Analise”, “prepare” ou “prossiga”
-em etapa anterior não confirma o briefing desta minuta.
+Pare e espere confirmação humana explícita. Termine o briefing com a pergunta
+fechada da disciplina compartilhada. Resposta a item aberto não autoriza
+redação — nem quando a mesma mensagem diz "pode redigir": nesse caso,
+reapresente o consolidado (o que mudou + a pergunta fechada) e aguarde a
+confirmação distinta. "Analise", "prepare" ou "prossiga" em etapa anterior
+não confirma o briefing desta minuta.
 
 ## Redação e auditoria
 

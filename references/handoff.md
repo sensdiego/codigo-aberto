@@ -22,7 +22,7 @@ material deve ser registrada como lacuna; não complete por inferência silencio
 | Campo | Conteúdo mínimo |
 |---|---|
 | **Caso** | Identificador ou título inequívoco. |
-| **Tipo de artefato** | Intake, análise documental, mapa jurídico, pesquisa, aprofundamento ou redação. |
+| **Tipo de artefato** | Intake, análise documental, mapa jurídico, pesquisa, aprofundamento, decisão ou redação. |
 | **Fontes consumidas** | Documentos e artefatos usados, com identificadores e localizadores. |
 | **Escopo** | O que foi analisado e o que ficou fora. |
 | **Achados** | Resultado produzido, sem apagar divergências. |
@@ -61,6 +61,26 @@ A confirmação registra:
 Confirmação de fatos interpretados não autoriza redação. Antes de qualquer
 minuta existe uma confirmação própria do briefing de redação. Confirmação de
 redação também não autoriza ação externa.
+
+## Handoff de decisão
+
+O tipo `decisão` registra o resultado da deliberação. Além dos dez campos
+comuns, ele carrega:
+
+- opções escolhidas, rejeitadas e condicionais, com a condição de cada uma;
+- razões da escolha e das rejeições;
+- prioridades do advogado;
+- concessões admitidas e proibições expressas;
+- pré-requisitos da rota escolhida;
+- escopo da decisão;
+- pendências com dono e prazo;
+- condição de reabertura — o fato ou a verificação que devolve a decisão à
+  deliberação;
+- próxima rota.
+
+A redação consome o handoff de decisão com o mesmo checklist de recebimento
+dos demais tipos; nenhuma verificação adicional é exigida. A decisão
+registrada informa o briefing e não autoriza redação.
 
 ## Atualização por delta
 
@@ -112,6 +132,25 @@ complementado ou substituído.
 
 ## Próximas rotas
 {opções consumíveis; nenhuma ação externa presumida}
+```
+
+Quando o tipo for `decisão`, acrescente:
+
+```markdown
+## Opções
+{escolhidas, rejeitadas e condicionais, com razões e condições}
+
+## Prioridades, concessões e proibições
+{o que o advogado priorizou, admitiu ceder e vedou}
+
+## Pré-requisitos e escopo
+{o que precisa existir para a rota escolhida; limites da decisão}
+
+## Pendências
+{item, dono e prazo}
+
+## Condição de reabertura
+{fato ou verificação que reabre a deliberação}
 ```
 
 ## Recebimento por outra skill

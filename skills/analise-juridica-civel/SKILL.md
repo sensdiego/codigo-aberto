@@ -1,6 +1,6 @@
 ---
 name: analise-juridica-civel
-description: Analisar direito civil e processo civil aplicável a fatos e provas já interpretados, produzindo mapa normativo, opções e relógio processual sem pesquisar precedentes. Use para estudar o caso, delimitar consequências ou avaliar providências antes de redigir.
+description: Analisar direito civil e processo civil aplicável a fatos e provas já interpretados, produzindo mapa normativo, opções e relógio processual sem pesquisar precedentes. Use para estudar o caso, delimitar consequências ou avaliar providências antes de redigir — inclusive para conduzir a deliberação quando o advogado pedir um caminho ("o que eu faço?", "vale a pena X?") ou houver decisão pendente que uma peça pressuponha.
 ---
 
 # Análise jurídica cível
@@ -45,6 +45,11 @@ questões, bases exatas, aplicação, alternativas, consequências, riscos, opç
 
 O mapa pode ser o resultado final. Não presuma que o usuário deseja pesquisa ou
 redação.
+
+Se o mapa fechar com decisão humana pendente, ofereça a rota de deliberação
+da disciplina compartilhada; nunca a inicie sem pedido. Aceita, carregue o
+[protocolo de deliberação](../../references/deliberacao.md) e produza o
+handoff de tipo `decisão`. A decisão registrada não autoriza redação.
 
 ## O que esta skill não faz
 

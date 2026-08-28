@@ -31,6 +31,7 @@ CPC_SKILLS = {
 REWRITES = {
     "../../references/disciplina.md": "references/disciplina-compartilhada.md",
     "../../references/handoff.md": "references/handoff.md",
+    "../../references/deliberacao.md": "references/deliberacao.md",
     "../../references/legislacao/cpc/README.md":
         "references/legislacao/cpc/README.md",
     "../../../references/legislacao/cpc/": "legislacao/cpc/",
@@ -64,6 +65,9 @@ def skill_files(name: str) -> dict[str, bytes]:
     files[f"{name}/references/disciplina-compartilhada.md"] = discipline
     files[f"{name}/references/handoff.md"] = (
         PLUGIN / "references" / "handoff.md"
+    ).read_bytes()
+    files[f"{name}/references/deliberacao.md"] = (
+        PLUGIN / "references" / "deliberacao.md"
     ).read_bytes()
     if name in CPC_SKILLS:
         cpc = PLUGIN / "references" / "legislacao" / "cpc"

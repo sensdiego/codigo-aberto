@@ -24,6 +24,10 @@ Se o material relevante ainda for bruto, execute ou encaminhe somente a análise
 necessária. Não trate um e-mail simples como parecer nem reduza parecer complexo
 a opinião sem aplicação.
 
+Se houver decisão humana pendente que o documento pressuponha (posição,
+recomendação, concessão), ofereça a deliberação antes do briefing, conforme
+a disciplina compartilhada; nunca a inicie sem pedido.
+
 ## Briefing obrigatório
 
 Antes de redigir, apresente:

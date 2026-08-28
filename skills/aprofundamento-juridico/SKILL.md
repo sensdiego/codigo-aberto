@@ -1,6 +1,6 @@
 ---
 name: aprofundamento-juridico
-description: Estressar teses, explorar casos, simular perspectivas, preparar interações e planejar investigações usando material jurídico já disponível. Use para aprofundamento dinâmico, preparação de audiência, negociação, reunião ou teste adversarial sem pesquisar nem redigir.
+description: Estressar teses, explorar casos, simular perspectivas, preparar interações e planejar investigações usando material jurídico já disponível. Use para aprofundamento dinâmico, preparação de audiência, negociação, reunião ou teste adversarial sem pesquisar nem redigir. Não use quando o pedido for decidir o que fazer com a análise ("o que eu faço?", "qual caminho?"): essa deliberação é conduzida na skill de análise que produziu o mapa.
 ---
 
 # Aprofundamento jurídico
@@ -51,12 +51,18 @@ Acrescente somente o artefato próprio do modo.
 Se nova informação ainda não foi analisada documental ou juridicamente, marque
 `[verificar]` e encaminhe a etapa adequada antes de promovê-la.
 
+Ao fechar com decisões humanas pendentes, ofereça a rota de deliberação da
+disciplina compartilhada; nunca a inicie sem pedido. A deliberação também
+pode encaminhar um novo aprofundamento. Nenhuma etapa absorve a outra.
+
 ## O que esta skill não faz
 
 - Não pesquisa legislação, jurisprudência, pessoas, patrimônio ou fatos externos.
 - Não substitui `analise-documental` nem `analise-juridica-civel`.
 - Não transforma hipótese simulada em fato, prova ou posição de terceiro.
 - Não redige peça, parecer ou comunicação.
+- Não conduz a decisão do advogado sobre o que fazer com a análise; oferece
+  a rota de deliberação ao fechar.
 - Não simula que audiência, reunião, negociação ou diligência aconteceu.
 
 > Documento gerado com suporte de inteligência artificial. Conteúdo sujeito à
