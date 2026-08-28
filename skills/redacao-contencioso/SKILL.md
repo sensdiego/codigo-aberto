@@ -21,6 +21,13 @@ Infira o ato provável, mas não escolha silenciosamente. Consulte o
 [índice de módulos](references/indice-modulos.md) e carregue somente o módulo
 correspondente depois da confirmação.
 
+Se os handoffs deixarem uma decisão humana pendente que a peça precisa
+resolver (ato entre alternativas, tese, pedido, concessão), ou se o ato
+inferido não estiver entre as opções registradas no mapa jurídico, conduza
+primeiro a deliberação conforme a disciplina compartilhada e carregue o
+[protocolo de deliberação](../../references/deliberacao.md). O handoff de
+tipo `decisão` resultante é insumo do briefing e não autoriza redação.
+
 ## Briefing obrigatório
 
 Antes de redigir, apresente:

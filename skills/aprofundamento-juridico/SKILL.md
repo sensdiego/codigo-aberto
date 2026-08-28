@@ -51,6 +51,10 @@ Acrescente somente o artefato próprio do modo.
 Se nova informação ainda não foi analisada documental ou juridicamente, marque
 `[verificar]` e encaminhe a etapa adequada antes de promovê-la.
 
+Ao fechar com decisões humanas pendentes, ofereça a rota de deliberação da
+disciplina compartilhada; nunca a inicie sem pedido. A deliberação também
+pode encaminhar um novo aprofundamento. Nenhuma etapa absorve a outra.
+
 ## O que esta skill não faz
 
 - Não pesquisa legislação, jurisprudência, pessoas, patrimônio ou fatos externos.

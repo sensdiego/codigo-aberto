@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "kind": "minor",
+  "category": "Added",
+  "summary": "Camada deliberativa entre análise e redação: gatilho enumerável e gate de confirmação como máquina de estados na disciplina, handoff de tipo decisão, protocolo references/deliberacao.md e ponteiros nas cinco skills de análise e redação.",
+  "issue": "22"
+}
