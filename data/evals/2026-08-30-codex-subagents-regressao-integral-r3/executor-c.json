@@ -1,0 +1,210 @@
+{
+  "schema_version": "codex-subagent-behavior-executor-v1",
+  "source_commit": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+  "execution_base_commit": "575f31027416c670b52d01db0d9d35aad81a4502",
+  "executor_task": "/root/audit_r2_receipts",
+  "group": "c",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "redacao-cumprimento-sentenca",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base indicado é o cumprimento definitivo de sentença por quantia, mas ainda não há base para definir se a petição deve pedir a intimação para pagamento ou avançar às consequências de um prazo já encerrado. Confiança alta quanto ao módulo e moderada quanto ao estágio operativo. A expressão \"devedor intimado\" não informa, por si só, se houve intimação específica para pagamento, quando ela ocorreu nem se transcorreu sem pagamento. Nenhum módulo de redação foi lido e nenhuma minuta foi iniciada.\n\n## Briefing do cumprimento de sentença\n\n- **Ato e destinatário:** petição de cumprimento definitivo de sentença por quantia, dirigida ao juízo em que tramita o processo `[verificar juízo, vara, comarca e número]`.\n- **Módulo-base e modo:** `cumprimento-sentenca.md`, na posição do exequente; o estágio interno permanece bloqueado entre requerer a intimação para pagamento e requerer as providências posteriores ao inadimplemento.\n- **Objetivo processual:** promover a satisfação do título judicial líquido e transitado em julgado, sem acrescentar multa, penhora ou outra consequência cujo fato gerador não esteja confirmado.\n- **Parte e posição representada:** exequente `[verificar identidade, qualificação e representação]` contra executado `[verificar]`.\n- **Fatos, provas, normas e teses:** sentença líquida transitada em julgado; memória de cálculo conferida; registro de intimação do devedor. Permanecem `[verificar]` os eventos, datas, teor da intimação, valor atualizado e eventual pagamento. A aplicação dos dispositivos do CPC dependerá do estágio confirmado.\n- **Pedidos e resultado pretendido:** instauração ou prosseguimento do cumprimento e pagamento do valor confirmado. Multa, honorários da fase, penhora e atos constritivos ficam fora até a confirmação do evento controlador.\n- **Profundidade e tom:** petição objetiva, com memória discriminada e sem repetir a fase de conhecimento.\n- **Prazo e cabimento:** cabimento confirmado; data da intimação para pagamento, termo inicial, término e ocorrência de inadimplemento `[verificar]`.\n- **Lacunas:** conteúdo e finalidade da intimação já realizada; transcurso do prazo; pagamento total ou parcial; valor e data-base da memória; identificação das partes, do processo e dos localizadores.\n\n**Estado da redação: BLOQUEADA — item aberto: estágio posterior à intimação.**\n\nA intimação confirmada foi especificamente para pagamento e o respectivo prazo terminou sem pagamento, ou a petição ainda deve requerer essa intimação?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-execucao-titulo-extrajudicial",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base é uma execução de título extrajudicial na posição da exequente. Confiança alta quanto ao cabimento informado, pois a análise já confirmou contrato assinado pelas partes e por duas testemunhas, obrigação vencida, líquida e exigível e cálculo conferido. Ainda não redigi: a confirmação da análise não substitui a confirmação própria deste briefing. Nenhum módulo de redação foi lido.\n\n## Briefing consolidado\n\n- **Ato e destinatário:** petição inicial de execução de título extrajudicial, ao juízo cível competente `[verificar juízo, vara e comarca]`.\n- **Módulo-base e modo:** `execucao-titulo-extrajudicial.md`, modo exequente.\n- **Objetivo processual:** cobrar coercitivamente a obrigação vencida, líquida e exigível representada pelo contrato confirmado.\n- **Parte e posição representada:** credora/exequente `[verificar identidade, qualificação e representação]` contra devedora/executada `[verificar]`.\n- **Fatos, provas, normas e teses:** contrato assinado pelas partes e duas testemunhas; vencimento e inadimplemento confirmados; memória de cálculo conferida. Identificador do contrato, cláusulas, vencimento, notificações, valor, data-base e localizadores ficam `[verificar]`. A fundamentação normativa será limitada ao procedimento executivo aplicável após leitura do módulo e dos artigos integrais.\n- **Pedidos e resultado pretendido:** citação para pagamento e prosseguimento executivo na forma legal, sem indicar bem, medida atípica, arresto ou constrição específica não confirmados.\n- **Profundidade e tom:** inicial completa e objetiva, sem reabrir a análise do título.\n- **Prazo e cabimento:** cabimento confirmado; prescrição, competência territorial, encargos e data-base do débito permanecem `[verificar]`.\n- **Lacunas e campos marcados:** partes, foro, valor executado, datas, cláusulas, documentos anexos, bens conhecidos e pedidos sucumbenciais `[verificar]`.\n- **Ações externas:** nenhuma; nada foi distribuído, protocolado ou enviado.\n\n**Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO.**\n\nO briefing acima está correto e você autoriza iniciar agora a redação da petição inicial de execução de título extrajudicial?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-prova-pericial-laudo",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base é uma manifestação sobre o laudo, pelo módulo de prova pericial, limitada às divergências confirmadas nas respostas aos quesitos 4 e 7. Confiança alta quanto ao ato; o resultado processual pretendido ainda está aberto. Divergir do laudo não autoriza escolher silenciosamente entre pedir esclarecimentos, complementação, nova perícia ou apenas valoração crítica. Nenhum módulo de redação foi lido e nenhuma manifestação foi iniciada.\n\n## Briefing da manifestação pericial\n\n- **Ato e destinatário:** manifestação sobre laudo judicial, ao juízo do processo `[verificar]`.\n- **Módulo-base e modo:** `prova-pericial.md`, modo manifestação sobre laudo.\n- **Objetivo processual:** expor, de forma localizada, a divergência entre o laudo judicial e o parecer do assistente nos quesitos 4 e 7; a providência pedida permanece aberta.\n- **Parte e posição representada:** parte que apresentou o parecer divergente `[verificar polo, identidade e qualificação]`.\n- **Fatos, provas, normas e teses:** laudo judicial e parecer do assistente já analisados e confirmados; usar apenas o conteúdo, os trechos e os localizadores confirmados dos quesitos 4 e 7 `[verificar eventos, páginas e teor exato]`.\n- **Pedidos e resultado pretendido:** `[item aberto]` entre esclarecimentos do perito, complementação do laudo, nova perícia se já sustentada pelo mapa, ou consideração crítica das divergências no julgamento.\n- **Profundidade e tom:** manifestação técnica, pontual e respeitosa, sem atacar o perito nem ampliar a controvérsia além dos quesitos confirmados.\n- **Prazo e cabimento:** oportunidade para manifestação informada, com termo inicial e final `[verificar]`.\n- **Lacunas:** providência desejada, teor exato das divergências, localizadores, prazo e eventuais quesitos complementares.\n\n**Estado da redação: BLOQUEADA — item aberto: providência processual diante das divergências.**\n\nA manifestação pedirá apenas esclarecimentos e complementação sobre os quesitos 4 e 7, ou o mapa também confirmou fundamento para requerer nova perícia?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-producao-antecipada-prova",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base confirmado é a produção antecipada de prova pericial de engenharia, antes da demolição do imóvel vizinho, para preservar o estado atual das fissuras. Confiança alta quanto ao ato e ao objeto geral; a ação principal permanece apenas eventual e não será antecipada na petição. Nenhum módulo de redação foi lido e nenhuma minuta foi iniciada.\n\n## Briefing consolidado\n\n- **Ato e destinatário:** petição de produção antecipada de prova, ao juízo competente do local do imóvel `[verificar]`.\n- **Módulo-base e modo:** `producao-antecipada-prova.md`, modo produção de perícia antes da ação principal.\n- **Objetivo processual:** documentar tecnicamente as fissuras atuais e sua condição antes da demolição vizinha, preservando evidência para avaliar eventual ação posterior.\n- **Parte e posição representada:** proprietário ou possuidor do imóvel afetado `[verificar identidade, título e qualificação]`; interessados no imóvel vizinho e na demolição `[verificar]`.\n- **Fatos, provas, normas e teses:** existência atual de fissuras e demolição anunciada, conforme fontes e localizadores do mapa confirmado `[verificar documentos, fotografias, comunicações, endereço e data prevista]`. A petição não afirmará causalidade ainda não periciada.\n- **Pedidos e resultado pretendido:** admissão da produção antecipada, nomeação de perito de engenharia, vistoria e registro técnico do estado atual; quesitos, acesso aos imóveis e participação dos interessados somente conforme conteúdo confirmado.\n- **Profundidade e tom:** inicial técnica e conservadora, centrada na preservação da prova, sem formular desde já pretensão indenizatória.\n- **Prazo e cabimento:** urgência probatória vinculada à data da demolição `[verificar]`; não há conclusão sobre prazo da ação principal.\n- **Lacunas e campos marcados:** partes, endereços, data e autorização da demolição, descrição e localização das fissuras, assistente técnico, quesitos, documentos e valor da causa `[verificar]`.\n- **Ações externas:** nenhuma; nada foi protocolado ou enviado.\n\n**Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO.**\n\nO briefing acima está correto e você autoriza iniciar agora a redação da petição de produção antecipada de prova pericial?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-incidente-desconsideracao",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base confirmado é requerimento de desconsideração da personalidade jurídica no cumprimento de sentença, dirigido especificamente ao sócio relacionado às transferências individualizadas. Confiança alta quanto à escolha do incidente, pois o mapa já confirmou os pressupostos materiais; a minuta deverá preservar contraditório e não transformar as transferências em responsabilidade automática. Nenhum módulo de redação foi lido e nenhuma minuta foi iniciada.\n\n## Briefing consolidado\n\n- **Ato e destinatário:** requerimento de instauração do incidente de desconsideração no cumprimento de sentença, ao juízo do processo `[verificar]`.\n- **Módulo-base e modo:** `incidente-desconsideracao-personalidade-juridica.md`, modo requerimento.\n- **Objetivo processual:** obter a análise judicial da extensão da responsabilidade ao sócio individualizado, com base exclusiva nos pressupostos e transferências já confirmados.\n- **Parte e posição representada:** exequente `[verificar]`; executada e sócio atingido `[verificar identidades e qualificações]`.\n- **Fatos, provas, normas e teses:** citação da executada, transferências posteriores individualizadas e pressupostos materiais confirmados no mapa. Valores, datas, contas, documentos, localizadores e nexo de cada transferência ficam `[verificar]`.\n- **Pedidos e resultado pretendido:** instauração do incidente, citação ou intimação do sócio para contraditório e decisão sobre a desconsideração. Bloqueio, penhora, indisponibilidade ou tutela cautelar não serão incluídos sem decisão e base próprias.\n- **Profundidade e tom:** requerimento factual, individualizado e não conclusivo antes do contraditório.\n- **Prazo e cabimento:** cabimento confirmado no cumprimento; evento controlador, estado do processo e eventual urgência `[verificar]`.\n- **Lacunas e campos marcados:** partes, processo, transferências e localizadores, modalidade material de desconsideração, alcance subjetivo, valor e eventual medida cautelar `[verificar]`.\n- **Ações externas:** nenhuma; nada foi protocolado ou enviado.\n\n**Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO.**\n\nO briefing acima está correto e você autoriza iniciar agora a redação do requerimento de desconsideração da personalidade jurídica?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-agravo-interno",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base é agravo interno contra decisão individual do relator. Confiança alta quanto à espécie recursal, porque o mapa a confirmou e o regimento aplicável foi identificado; o briefing ainda não pode ser fechado sem o conteúdo exato dos dois fundamentos autônomos e da resposta confirmada a cada um. Omitir um deles criaria risco de impugnação incompleta. Nenhum módulo de redação foi lido e nenhuma minuta foi iniciada.\n\n## Briefing do agravo interno\n\n- **Ato e destinatário:** agravo interno dirigido ao órgão colegiado competente, por intermédio do relator `[verificar tribunal, órgão, processo e relator]`.\n- **Módulo-base e modo:** `agravo-interno.md`, modo agravante.\n- **Objetivo processual:** obter reconsideração ou submissão ao colegiado da decisão que negou seguimento à apelação, impugnando separadamente os dois fundamentos autônomos.\n- **Parte e posição representada:** agravante/apelante `[verificar identidade e qualificação]`.\n- **Fatos, provas, normas e teses:** decisão monocrática, mapa jurídico e regimento anexado. Permanecem `[verificar]` a transcrição fiel dos fundamentos 1 e 2, os respectivos localizadores, a resposta jurídica confirmada a cada fundamento e os dispositivos regimentais aplicáveis.\n- **Pedidos e resultado pretendido:** reconsideração da decisão ou provimento colegiado para afastar ambos os fundamentos e permitir o processamento da apelação, somente se esse resultado constar do mapa confirmado.\n- **Profundidade e tom:** recurso objetivo, com capítulos autônomos e impugnação específica de cada razão decisória.\n- **Prazo e cabimento:** cabimento confirmado; publicação, termo inicial, prazo e calendário `[verificar]`.\n- **Lacunas:** teor e localizadores dos dois fundamentos, teses confirmadas para cada um, regra regimental, prazo, peças e pedidos exatos.\n\n**Estado da redação: BLOQUEADA — item aberto: conteúdo da impugnação dos dois fundamentos autônomos.**\n\nO mapa confirmado contém uma resposta própria e completa para cada um dos dois fundamentos da decisão, com os respectivos localizadores, ou algum deles ainda depende de análise?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-acao-monitoria",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base confirmado é ação monitória, pois há prova escrita da dívida, mas o documento não possui eficácia executiva. Confiança alta quanto ao procedimento escolhido e ao cálculo informado como conferido. Ainda não redigi a inicial porque o briefing exige confirmação própria. Nenhum módulo de redação foi lido.\n\n## Briefing consolidado\n\n- **Ato e destinatário:** petição inicial de ação monitória, ao juízo cível competente `[verificar]`.\n- **Módulo-base e modo:** `acao-monitoria.md`, modo autor.\n- **Objetivo processual:** obter mandado para cumprimento da obrigação documentada e, conforme o procedimento aplicável, constituir título executivo judicial se não houver cumprimento ou defesa eficaz.\n- **Parte e posição representada:** credora/autora `[verificar identidade, qualificação e representação]` contra devedora/ré `[verificar]`.\n- **Fatos, provas, normas e teses:** dívida e inadimplemento confirmados; prova escrita sem eficácia executiva; cálculo conferido. Documento, origem da obrigação, vencimento, valor, data-base e localizadores ficam `[verificar]`.\n- **Pedidos e resultado pretendido:** expedição do mandado compatível com a obrigação e prosseguimento legal; não incluir tutela, garantia, constrição ou obrigação diversa sem análise e escolha próprias.\n- **Profundidade e tom:** inicial completa, objetiva e centrada na prova escrita confirmada.\n- **Prazo e cabimento:** procedimento confirmado; prescrição, competência e encargos `[verificar]`.\n- **Lacunas e campos marcados:** partes, juízo, documento escrito, valor, datas, origem e natureza da obrigação, memória, anexos, custas e pedido sucumbencial `[verificar]`.\n- **Ações externas:** nenhuma; nada foi distribuído, protocolado ou enviado.\n\n**Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO.**\n\nO briefing acima está correto e você autoriza iniciar agora a redação da petição inicial da ação monitória?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-recurso-especial",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base decidido é recurso especial, no modo recorrente, por violação de lei federal. Confiança alta quanto à rota, porque acórdão, embargos de declaração e mapa de admissibilidade foram confirmados. O pedido atual é de briefing, não de minuta. Sem o dispositivo federal, a questão decidida, o prequestionamento e a resposta aos óbices de admissibilidade, o conteúdo material ainda não pode ser consolidado. Nenhum módulo de redação foi lido.\n\n## Briefing do recurso especial\n\n- **Ato e destinatário:** recurso especial dirigido ao tribunal de origem para posterior remessa ao Superior Tribunal de Justiça `[verificar tribunal, órgão julgador e processo]`.\n- **Módulo-base e modo:** `recurso-especial-extraordinario.md`, modo recurso especial do recorrente.\n- **Objetivo processual:** reformar ou anular o acórdão no ponto em que o mapa confirmou violação de lei federal, sem acrescentar fundamento constitucional ou dissídio não decididos.\n- **Parte e posição representada:** recorrente `[verificar identidade, polo e qualificação]`.\n- **Fatos, provas, normas e teses:** acórdão, embargos de declaração e mapa de admissibilidade confirmados. Ficam `[verificar]` o artigo federal violado, a questão federal efetivamente decidida, os trechos do acórdão e dos embargos, o estado do prequestionamento e os óbices enfrentados.\n- **Pedidos e resultado pretendido:** conhecimento e provimento nos limites do mapa; efeito concreto pretendido `[verificar]`. Não haverá reexame de fatos ou provas nem fundamento novo.\n- **Profundidade e tom:** briefing técnico de admissibilidade e mérito federal, com capítulos separados e localizadores reproduzíveis.\n- **Prazo e cabimento:** cabimento informado como confirmado; publicação, intimação, prazo, preparo e feriados `[verificar]`.\n- **Lacunas:** dispositivo federal, questão prequestionada, trechos dos julgados, óbices, resultado pretendido, prazo, preparo e peças relevantes.\n\n**Estado da redação: BLOQUEADA — item aberto: conteúdo federal e admissibilidade a transportar do mapa.**\n\nO mapa confirmado individualiza o dispositivo federal violado, a questão prequestionada e cada óbice de admissibilidade que deverá ser enfrentado, sem incluir dissídio jurisprudencial?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-excecao-sem-jurisprudencia",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a exceção de pré-executividade não está pronta para briefing de redação. Confiança alta no bloqueio. O índice exige matéria executiva sem dilação probatória e pesquisa jurisprudencial atual; o próprio handoff não contém essa pesquisa nem decisão sobre a suficiência da prova. A prescrição alegada não pode ser promovida a tese redacional apenas porque o usuário deseja a peça. Nenhum módulo de redação foi lido e nenhuma minuta foi iniciada.\n\n## Pré-briefing bloqueado\n\n- **Ato candidato:** exceção de pré-executividade, ao juízo da execução `[verificar]`.\n- **Módulo candidato:** `excecao-pre-executividade.md`, ainda não carregado.\n- **Objetivo informado:** obter reconhecimento da prescrição.\n- **Parte e posição representada:** executada ou responsável `[verificar]`.\n- **Base disponível:** relato de prescrição e handoff incompleto quanto à jurisprudência atual e à necessidade de prova.\n- **Pré-requisitos ausentes:** cálculo documentado do prazo prescricional; eventos interruptivos ou suspensivos; fontes e localizadores; decisão jurídica sobre cognoscibilidade sem dilação; prova pré-constituída; pesquisa atual do tribunal competente.\n- **Pedidos, prazo e cabimento:** bloqueados até a conclusão desses pré-requisitos.\n- **Ações externas:** nenhuma; nada foi pesquisado externamente, redigido ou protocolado.\n\n**Estado da redação: BLOQUEADA — pré-requisitos de cabimento e prova ausentes.**\n\nA próxima rota é completar a análise da prescrição, verificar se toda a matéria pode ser demonstrada por prova pré-constituída e realizar pesquisa jurisprudencial atual no tribunal competente; somente depois uma decisão confirmará se a exceção permanece como ato escolhido."
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-jurisdicao-voluntaria-interdicao",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato-base é procedimento de jurisdição voluntária, no modo interdição, com curatela limitada. Confiança alta quanto ao modo escolhido e ao limite funcional informado. O briefing ainda não pode ser confirmado sem a enumeração dos atos patrimoniais específicos abrangidos, porque uma referência genérica não autoriza ampliar a curatela. Nenhum módulo de redação foi lido e nenhuma petição foi iniciada.\n\n## Briefing do pedido de interdição\n\n- **Ato e destinatário:** petição inicial de interdição com curatela limitada, ao juízo competente `[verificar]`.\n- **Módulo-base e modo:** `jurisdicao-voluntaria.md`, modo interdição.\n- **Objetivo processual:** obter proteção judicial proporcional às limitações clínicas e funcionais confirmadas, restrita a atos patrimoniais expressamente definidos.\n- **Parte e posição representada:** requerente, pessoa cuja curatela é pedida, curador proposto e interessados `[verificar identidades, vínculos, qualificações e concordâncias]`.\n- **Fatos, provas, normas e teses:** avaliação clínica e funcional, interessados e mapa jurídico confirmados; diagnósticos, capacidades preservadas, limitações, fontes, datas e localizadores ficam `[verificar]`. Não se presumirá incapacidade geral.\n- **Pedidos e resultado pretendido:** interdição e curatela somente sobre a lista confirmada de atos patrimoniais; preservação dos demais atos e da autonomia não afetada; curador, duração, prestação de contas, publicidade e eventual urgência somente conforme análise confirmada.\n- **Profundidade e tom:** inicial cuidadosa, proporcional e centrada na funcionalidade, sem linguagem estigmatizante nem restrição além da prova.\n- **Prazo e cabimento:** cabimento informado; competência, urgência e medidas provisórias `[verificar]`.\n- **Lacunas:** lista exata dos atos patrimoniais, pessoa indicada para curador, alcance temporal, fontes e localizadores, interessados, entrevista, perícia e eventual urgência.\n\n**Estado da redação: BLOQUEADA — item aberto: atos patrimoniais específicos abrangidos pela curatela.**\n\nQuais atos patrimoniais específicos o mapa confirmado autorizou incluir no pedido, e quais capacidades devem permanecer expressamente fora da curatela?"
+      ],
+      "error": null
+    }
+  ]
+}

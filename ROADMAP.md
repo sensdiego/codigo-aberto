@@ -10,16 +10,16 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-30, v0.3.0)
+## Estado atual (2026-08-30, v0.5.1)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.3.0`, publicada em 2026-08-28
-  com os contratos deliberativos do PR #25.
+  recorte versionado do CPC. Versão corrente `v0.5.1`, publicada em 2026-08-30
+  com os controles pré-briefing de agravo interno e interdição.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
-  GitHub Release e publicação idempotente de assets (quatro releases publicadas
-  pelo workflow, todas verdes).
+  GitHub Release e publicação idempotente de assets (nove GitHub Releases
+  publicadas, todas finais).
 - Sete bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.3.0](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.3.0).
+  [release v0.5.1](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.5.1).
   O último recibo de atualização do acervo do projeto de smoke no ChatGPT é da
   v0.2.4, em 2026-08-24; release publicada não prova atualização do projeto.
 - Smoke completo do Claude Code aprovado em 2026-08-24
@@ -57,16 +57,19 @@ Estado dos itens:
   perfil de frentes, precedência temporal e despachante de escopo. Status:
   aceita; Fases 1 e 3 e validação local A01–A14 da Fase 5 concluídas no
   `codigo-aberto`; comparação externa, Fases 2 e 4 e dogfood não autorizados.
-- Camada deliberativa decidida em 2026-08-26: **adaptar** os contratos
-  (protocolo compartilhado, tipo de artefato `decisão`, gate determinístico),
-  sem skill nova. Estudo, comparação das quatro alternativas, revisão
-  independente e especificação em
-  [#22](https://github.com/sensdiego/codigo-aberto/issues/22). Implementação em
-  duas frentes medidas (Fase 3), com a régua antes de qualquer edição de skill.
+- Camada deliberativa inicialmente decidida em 2026-08-26 como adaptação dos
+  contratos. Duas rodadas acionaram a cláusula de promoção por falha repetida
+  de roteamento; a frente 3 implementou e validou a skill autônoma sobre o
+  mesmo protocolo e handoff.
 - A cláusula de promoção da camada deliberativa disparou após duas rodadas. A
-  skill autônoma foi implementada no PR #26, mas permanece em rascunho e fora
-  da `main`; por decisão de 2026-08-30, a frente foi pausada sem nova medição,
-  merge ou publicação.
+  skill autônoma foi implementada no PR #26 e sincronizada com a `v0.5.1`. Os
+  conflitos Git foram resolvidos e a medição dirigida R3 passou 7/7, com 31/31
+  invariantes. A regressão integral registrou 22 PASS / 8 FAIL; a triagem
+  encontrou zero defeitos específicos da PR. Os dois defeitos reais da baseline
+  foram corrigidos e reexecutados 2/2 na v0.5.1: a leitura combinada fica em
+  24/24 cenários elegíveis, sem fingir uma nova passagem única dos 30. Restam
+  cinco fixtures inelegíveis e uma limitação de ambiente sem Silo. O PR ainda
+  não foi integrado nem publicado.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
   harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
   leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
@@ -177,15 +180,16 @@ usando o eval harness como pré-condição de qualidade.
 
 Pré-requisito: Fase 2 concluída.
 
-### Camada deliberativa entre análise e redação — decidido: adaptar
+### Camada deliberativa entre análise e redação — skill autônoma em validação
 
-Status: hipótese identificada no dogfood interno de 2026-08-25 e **decidida em
-2026-08-26: adaptar os contratos existentes, sem skill nova** (estudo,
-comparação das quatro alternativas, revisão independente e especificação em
-[#22](https://github.com/sensdiego/codigo-aberto/issues/22)). A implementação
-segue nas duas frentes medidas listadas ao final desta seção; a régua vem antes
-de qualquer edição de skill. *(O texto de 2026-08-25 está preservado abaixo com
-anotações inline.)*
+Status: a decisão de 2026-08-26 foi adaptar os contratos existentes e medir
+antes de promover uma nova porta. As duas rodadas da frente 2 falharam por
+omissão ou roteamento e acionaram a cláusula de promoção de
+[#22](https://github.com/sensdiego/codigo-aberto/issues/22). A frente 3 cria a
+skill autônoma reaproveitando protocolo e handoff. A rodada dirigida R3 passou
+7/7 depois que dois invariantes ambíguos foram corrigidos e os mesmos outputs
+congelados foram rejulgados; a ponte com redação não apresenta bloqueio
+comportamental reproduzível.
 
 Problema observado: as skills de análise entregam conclusões e a redação pede
 um briefing, mas nenhuma etapa é claramente responsável por apresentar ao
@@ -225,12 +229,13 @@ Comportamento desejado, independentemente da forma de implementação:
 Alternativas comparadas em 2026-08-26 (detalhe em
 [#22](https://github.com/sensdiego/codigo-aberto/issues/22)):
 
-- skill autônoma `deliberacao-juridica` — rejeitada por ora: décima porta num
+- skill autônoma `deliberacao-juridica` — rejeitada inicialmente: décima porta num
   pacote em que o usuário não conhece nomes, descrição concorrendo com análise
   jurídica e aprofundamento (a família de confusão que o baseline mediu) e, no
-  ChatGPT, um oitavo ZIP a descobrir; fica como cláusula de promoção medida;
-- protocolo/handoff compartilhado sem nova skill — **escolhida**, com o mínimo
-  de ajuste nos contratos existentes;
+  ChatGPT, um oitavo ZIP a descobrir; promovida a experimento em 2026-08-30
+  após a cláusula medida disparar, ainda sem aceitação;
+- protocolo/handoff compartilhado sem nova skill — escolhido e entregue na
+  v0.3.0; mantido como contrato da skill autônoma;
 - ajuste apenas das skills existentes — rejeitada: concentra em uma skill o que
   nasce de qualquer análise e duplica texto;
 - adiamento ou rejeição — rejeitada: corrige o incidente do gate, não a lacuna.
@@ -273,10 +278,14 @@ briefing ou contexto sejam tratados como autorização implícita.
       `analise-juridica-civel` (com `aprofundamento-audiencia` como controle
       de confusão) e gerador de bundles (`REWRITES` + cópia). Re-medir contra
       a frente 1. PR próprio. PR #25 integrado em 2026-08-28.
-- [~] Frente 3 — skill autônoma `deliberacao-juridica`: implementada no PR
-      #26 após a cláusula de promoção. A medição dirigida parcial teve 3 PASS e
-      2 FAIL; correções posteriores não foram re-medidas. Frente pausada por
-      decisão do owner, sem merge, release ou anúncio.
+- [x] Frente 3 — skill autônoma `deliberacao-juridica` (SEN-2408): porta
+      própria sobre `references/deliberacao.md`, handoff `decisão`, oitavo
+      bundle e roteamento das fixtures `deliberacao-*`. O PR #26 foi
+      sincronizado com a `v0.5.1` e não tem mais conflitos Git. A medição
+      dirigida R3 passou 7/7 e 31/31 invariantes; a regressão integral executou
+      os 30 cenários, exigiu a primeira rota correta e não encontrou falha
+      específica da frente deliberativa. Merge e publicação permanecem etapas
+      separadas.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.
@@ -284,10 +293,10 @@ briefing ou contexto sejam tratados como autorização implícita.
   por roteamento, a skill autônoma passa a ser a recomendação — embrulhando
   protocolo e artefato já existentes.
 
-- [~] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
+- [x] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
       (SEN-2413): complemento do ato-base, recorte integral dos CPC arts.
-      294–311 e cenário multi-turno com gate mecânico. A régua fica pronta no
-      PR, sem execução paga nesta frente sem orçamento separado.
+      294–311 e cenário multi-turno com gate mecânico, integrado e publicado
+      antes da `v0.5.0`.
 - [x] Módulo `cumprimento-sentenca`, corrigido para o recorte dos CPC arts.
       513–538, com modos promover, impugnar e responder à impugnação.
 - [x] Módulo `execucao-titulo-extrajudicial`, com modos promover, embargar e
@@ -314,6 +323,9 @@ briefing ou contexto sejam tratados como autorização implícita.
       interdição, sem liberar leitura prematura dos módulos. Rodada dirigida:
       2/2 cenários, 6/6 invariantes e zero violação do gate com subagentes
       Codex.
+- [ ] Tornar elegíveis as cinco fixtures que exigem handoffs, documentos e
+      localizadores que não fornecem; manter o cenário de pesquisa Silo
+      condicionado a job com conector autenticado.
 
 ### Adaptação segura de casos reais — RFC aceita
 

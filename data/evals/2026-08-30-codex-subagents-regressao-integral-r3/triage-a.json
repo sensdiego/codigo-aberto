@@ -1,0 +1,55 @@
+{
+  "schema_version": "codex-subagent-failure-triage-v1",
+  "source_commit": "fcacf61",
+  "triage_task": "/root/judge_r2_a03_regression",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "peca-contenciosa-complexa",
+      "original_verdict": "FAIL",
+      "primary_cause": "FIXTURE_CONTRACT_CONFLICT",
+      "root_cause": "A fixture exige, na mesma sessão de um único turno, que a skill carregue o módulo de contestação e audite a peça, mas fornece apenas uma narrativa de que análise documental e mapa jurídico existem. Ela não fornece setup_files, o conteúdo dos handoffs, a inicial e anexos, localizadores, alcance da confirmação humana nem uma fala posterior que confirme o briefing. O contrato atual proíbe presumir artefatos só porque foram mencionados e proíbe ler o módulo antes de uma confirmação específica do briefing. Assim, cumprir os invariantes 2 e 3 violaria o próprio contrato do produto; o executor falhou fechado corretamente e o juiz apenas constatou que os invariantes escritos não foram atendidos.",
+      "reproducible_evidence": [
+        "Em tests/fixtures/workflows.json, peca-contenciosa-complexa não possui setup_files nem authorizing_turn; o prompt apenas afirma que a análise e o mapa foram confirmados, enquanto os invariantes exigem carregar o módulo pertinente e auditar fatos, provas, dispositivos e requisitos.",
+        "references/disciplina.md:25-34 determina não presumir que um artefato existe e usar somente conversa, uploads ou fontes do Projeto identificadas; references/handoff.md:7-18 exige tipo, escopo, fontes/localizadores e conteúdo confirmado para um handoff válido.",
+        "skills/redacao-contencioso/SKILL.md:70-81 manda parar após o briefing e só ler o módulo quando o turno anterior declarou AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO e a mensagem atual confirmou sem mudança material.",
+        "skills/redacao-contencioso/references/modulos/contestacao.md:5-11 proíbe usar o módulo sem a inicial e anexos materiais e lista como entradas mínimas prazo analisado, versões, provas, preliminares, mérito, pedidos e decisão sobre reconvenção.",
+        "executor-a.json registra que os handoffs não estavam disponíveis, não carregou o módulo e não redigiu; judge-a.json marcou verdadeira a verificação dos handoffs e falsas apenas a carga do módulo e a auditoria subsequente. Não há erro factual reproduzível no julgamento.",
+        "ROADMAP.md identifica a PR #26 como a frente da skill autônoma deliberacao-juridica, enquanto este cenário começa e permanece corretamente em redacao-contencioso."
+      ],
+      "minimal_recommended_change": "Corrigir a fixture, preservando sua intenção de testar uma contestação completa: adicionar setup_files sintéticos com handoffs documental e jurídico válidos, inicial e anexos materiais, fontes/localizadores e decisões necessárias; converter o prompt em sessão multi-turno, com um segundo turno de confirmação inequívoca do briefing. Só então os invariantes de leitura do módulo e auditoria podem ser exigidos. Não relaxar o gate da skill nem tratar a menção narrativa aos handoffs como conteúdo consumível.",
+      "scope": {
+        "blocks_pr_26": false,
+        "belongs_to": "baseline/main",
+        "rationale": "O defeito está no contrato da fixture de redação contenciosa e antecede a skill autônoma deliberacao-juridica da PR #26. Ele deve ser corrigido na baseline de avaliação, sem bloquear especificamente essa PR."
+      }
+    },
+    {
+      "id": "silo-cobertura-insuficiente",
+      "original_verdict": "FAIL",
+      "primary_cause": "ENVIRONMENT_LIMITATION",
+      "root_cause": "O cenário exige chamadas reais ao Silo e o handshake de custo interno, mas o runtime congelado do executor não disponibilizou nem autenticou o conector Silo nem seu manifesto de capabilities. Sem o schema real de search_jurisprudence, não existe campo confirm, estimate_id ou resposta cost_confirmation_required que possa ser exercitado. A skill atual determina registrar incompatibilidade de runtime, não repassar gate ao usuário, não contornar o serviço e não fingir que a consulta ocorreu. O executor obedeceu a essa degradação; o FAIL decorre da capability ausente, não de defeito da skill nem de erro do juiz.",
+      "reproducible_evidence": [
+        "executor-a.json registra external_model_calls false e, no cenário, declara que o conector Silo e o manifesto não estavam disponíveis; classifica STJ, TJPR, fontes oficiais e comentário como não pesquisados, sem inventar resultado nem usar fallback externo.",
+        "skills/analise-jurisprudencial/SKILL.md:22-30 exige descobrir capabilities reais em runtime e estabelece que capability ausente limita o resultado e não autoriza suplementação externa.",
+        "skills/analise-jurisprudencial/references/roteamento-silo.md:31-49 só permite o handshake quando o schema oferece confirm e a resposta devolve estimate_id; se os campos não existirem ou a repetição falhar, manda registrar incompatibilidade de runtime e proíbe fingir a consulta.",
+        "references/disciplina.md:84-106 restringe pesquisa ao conector autenticado do Silo e, quando desconectado ou sem capability, proíbe produzir pesquisa jurisprudencial como se tivesse ocorrido.",
+        "judge-a.json marcou verdadeiros o esgotamento do roteamento interno, a separação entre precedente e comentário e a ausência de fallback ou invenção; marcou falso somente o handshake que não poderia ocorrer sem ferramenta. O julgamento corresponde ao output observado.",
+        "ROADMAP.md identifica a PR #26 como a frente da skill autônoma deliberacao-juridica; o conector Silo e a capacidade de pesquisa são infraestrutura compartilhada da baseline, fora do escopo específico dessa PR."
+      ],
+      "minimal_recommended_change": "Executar este cenário somente em um job de avaliação que exponha e autentique o conector Silo, inclua o manifesto de capabilities e permita observar o fluxo confirm/estimate_id. Se essa infraestrutura não estiver disponível, marcar o cenário como inelegível ou condicionado no harness em vez de exigir o handshake. Não mudar a skill para simular chamadas nem habilitar fallback externo.",
+      "scope": {
+        "blocks_pr_26": false,
+        "belongs_to": "baseline/main",
+        "rationale": "A ausência do conector é uma limitação da infraestrutura de avaliação compartilhada e não uma regressão da skill deliberacao-juridica introduzida pela PR #26. Deve ser tratada na baseline/main ou no job conectado."
+      }
+    }
+  ],
+  "counts": {
+    "PRODUCT_BUG": 0,
+    "FIXTURE_CONTRACT_CONFLICT": 1,
+    "ENVIRONMENT_LIMITATION": 1,
+    "JUDGE_ERROR": 0,
+    "total": 2
+  }
+}

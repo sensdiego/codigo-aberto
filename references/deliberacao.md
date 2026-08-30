@@ -1,8 +1,8 @@
 # Protocolo de deliberação
 
-Este protocolo só é carregado quando o gatilho de deliberação da disciplina
-compartilhada dispara. Fora do gatilho, siga o fluxo normal da skill em
-curso. A deliberação conduz o advogado da análise madura à decisão
+Este protocolo só é carregado por `deliberacao-juridica`, quando o gatilho da
+disciplina compartilhada dispara. Fora do gatilho, siga o fluxo normal da skill
+em curso. A deliberação conduz o advogado da análise madura à decisão
 registrada; ela não redige, não pesquisa e não substitui a confirmação do
 briefing de redação.
 
@@ -22,13 +22,14 @@ briefing de redação.
    à própria recomendação, separando o que é defensável, o que é provável, o
    que persuade e o que fazer. A recomendação pode ser "não decidir ainda;
    obtenha X".
-4. **Entrevista decisória.** Faça uma pergunta de maior valor por vez quando
-   a resposta mudar a próxima pergunta; agrupe perguntas independentes. Em
-   urgência, use o modo curto, com a mesma proporcionalidade que veda inflar
-   uma manifestação simples. O advogado pode encerrar a deliberação a
-   qualquer momento. A cada resposta, atualize o mapa declarando o destino de
-   todas as opções: promovida, descartada ou condicionada — nenhuma opção
-   some sem registro.
+4. **Entrevista decisória.** Na primeira resposta, termine com exatamente uma
+   pergunta de maior valor. Depois da resposta do advogado, continue uma por
+   vez quando ela mudar a próxima pergunta; agrupe perguntas independentes só
+   se o advogado pedir fechamento em um turno. Em urgência, use o modo curto,
+   com a mesma proporcionalidade que veda inflar uma manifestação simples. O
+   advogado pode encerrar a deliberação a qualquer momento. A cada resposta,
+   atualize o mapa declarando o destino de todas as opções: promovida,
+   descartada ou condicionada — nenhuma opção some sem registro.
 5. **Registro.** Produza o handoff de tipo `decisão` conforme o
    [contrato de handoff](handoff.md), com opções escolhidas, rejeitadas e
    condicionais e a condição de reabertura.

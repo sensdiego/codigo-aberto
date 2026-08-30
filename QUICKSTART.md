@@ -9,6 +9,8 @@
   `analise-jurisprudencial` (opcional e dependente do Silo).
 - “Estresse esta tese” ou “prepare a audiência” →
   `aprofundamento-juridico`.
+- “O que eu faço?”, “qual caminho?” ou “vale a pena?” →
+  `deliberacao-juridica`.
 - “Redija a peça” → `redacao-contencioso`.
 - “Redija parecer, relatório ou e-mail” → `redacao-consultivo`.
 
@@ -65,7 +67,7 @@ Fora de um projeto, anexe o `.zip` à conversa e instrua explicitamente:
 > Use exclusivamente a skill contida no ZIP anexo: monte o pacote e siga o
 > `SKILL.md` fielmente, lendo as referências internas quando necessário.
 
-Os sete ZIPs são autossuficientes: cada um contém o `SKILL.md` e as referências
+Os oito ZIPs são autossuficientes: cada um contém o `SKILL.md` e as referências
 necessárias àquela skill. `pesquisa-silo` e `assinatura-silo` não são bundles de
 upload; elas dependem da disponibilidade do conector autenticado.
 
@@ -120,9 +122,11 @@ Primeira versão.
 Confirmar o mapa; depois preparar briefing em `redacao-contencioso`.
 ```
 
-Depois de a pessoa confirmar o mapa, a skill de redação ainda apresenta um
-briefing próprio: documento, destinatário, objetivo, teses, pedidos, fontes e
-lacunas. Somente uma segunda confirmação autoriza a minuta.
+Depois de a pessoa confirmar o mapa, qualquer escolha pendente passa por
+`deliberacao-juridica` e gera um handoff de decisão. A skill de redação ainda
+apresenta um briefing próprio: documento, destinatário, objetivo, teses,
+pedidos, fontes e lacunas. Somente uma confirmação posterior do briefing
+consolidado autoriza a minuta.
 
 ### Trecho de peça esperado após as confirmações
 

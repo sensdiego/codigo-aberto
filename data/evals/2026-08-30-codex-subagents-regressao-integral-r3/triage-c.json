@@ -1,0 +1,162 @@
+{
+  "schema_version": "codex-subagent-failure-triage-v1",
+  "source_commit": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+  "execution_commit": "2a50dcd803ca95bc83e44fd12ad7810e969aa396",
+  "judge_commit": "fcacf6186ad706afc9380b78174dc8b3255a72bd",
+  "baseline_ref": "origin/main@8896bd73a8e760ae973e2676df899b8fdf90f759",
+  "triage_task": "/root/exec_r2_a03_regression",
+  "judged_group": "c",
+  "external_model_calls": false,
+  "method": {
+    "scope": "Triagem causal independente dos seis FAILs indicados, sem reexecução e sem alteração de produto, fixture, executor ou juiz.",
+    "decision_rule": {
+      "PRODUCT_BUG": "O contrato público do produto ou do módulo exigia comportamento que poderia ser cumprido com os dados disponíveis, mas o executor o omitiu.",
+      "FIXTURE_CONTRACT_CONFLICT": "A fixture exige uma afirmação ou localização factual que não fornece no prompt nem em setup_files; satisfazê-la exigiria inventar dados, contrariando o contrato de não fabricação.",
+      "ENVIRONMENT_LIMITATION": "Uma limitação do ambiente, e não o produto, a fixture ou o juiz, impediu o comportamento esperado.",
+      "JUDGE_ERROR": "A saída satisfaz o invariante, mas o juiz o marcou como falso, ou o juiz aplicou incorretamente a rota ou o gate."
+    },
+    "pr_26_comparison": {
+      "pr_26_source_ref": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+      "filtered_fixture_sha256_on_pr_26": "fe1cf5390532e993447d1bc565dff359661902ea72df5e5dd57ff130e5a1fcef",
+      "filtered_fixture_sha256_on_main": "fe1cf5390532e993447d1bc565dff359661902ea72df5e5dd57ff130e5a1fcef",
+      "six_fixture_contracts_equal": true,
+      "six_module_blobs_equal": true,
+      "skill_architecture_note": "O PR #26 torna o gate multi-turno mais explícito, mas origin/main já determinava briefing seguido de confirmação fechada e leitura do módulo somente depois da confirmação. Logo, nenhuma das seis causas nasceu no PR #26.",
+      "evidence": [
+        "git comparison origin/main..715f1e6: os seis cenários filtrados de tests/fixtures/workflows.json têm o mesmo SHA-256 canônico.",
+        "git comparison origin/main..715f1e6: os seis módulos aplicáveis têm object IDs idênticos em ambos os refs.",
+        "skills/redacao-contencioso/SKILL.md:41 e :77 no source_commit; a versão de origin/main já contém a mesma ordem lógica de briefing, confirmação e carga posterior do módulo.",
+        "HANDOFF.md:15, :28, :44 e :183 registra PR #26 ainda em draft, módulos/fixtures provenientes da baseline e ausência de regressão prévia dessas fixtures."
+      ]
+    }
+  },
+  "scenarios": [
+    {
+      "id": "redacao-cumprimento-sentenca",
+      "classification": "FIXTURE_CONTRACT_CONFLICT",
+      "confidence": "HIGH",
+      "specific_to_pr_26": false,
+      "scope": "BASELINE_MAIN",
+      "failed_invariants": [
+        2,
+        3
+      ],
+      "root_cause": "O prompt informa genericamente que o devedor foi intimado, mas não distingue a intimação para pagamento do art. 523 de outro ato, não fornece título/dispositivo, sujeitos, certificado, datas, localizadores nem memória de cálculo. A fixture não possui setup_files. O invariante exige verificação positiva desses elementos e confirmação fechada do briefing; preencher ou validar tais dados seria fabricação. O executor bloqueou corretamente no ponto decisivo, embora por isso não pudesse satisfazer literalmente os invariantes.",
+      "judge_assessment": "O FAIL literal é correto: sujeitos permaneceram como [verificar] e não houve pergunta fechada de autorização. Não é JUDGE_ERROR, porque a saída não contém os elementos exigidos.",
+      "minimal_fix": "Acrescentar setup sintético com partes e representação, título e dispositivo, certidão/trânsito, obrigação e exigibilidade, natureza/data/status da intimação para pagamento, ausência de pagamento, memória discriminada, data-base e localizadores. Se a intenção for testar insumo insuficiente, substituir os invariantes 2 e 3 por expectativa de estado BLOCKED e pergunta decisiva sobre a intimação do art. 523.",
+      "evidence": [
+        "tests/fixtures/workflows.json:264-271 — prompt, ausência de setup_files e invariantes 2-3.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/executor-c.json:10-29 — placeholders para sujeitos, título, datas, valor e localizadores; bloqueio sobre a natureza da intimação.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-c.json:32-40 — evidência dos dois invariantes falsos.",
+        "skills/redacao-contencioso/references/modulos/cumprimento-sentenca.md:15-26 e :38-48 — insumos e checklist que dependem dos dados ausentes."
+      ]
+    },
+    {
+      "id": "redacao-prova-pericial-laudo",
+      "classification": "FIXTURE_CONTRACT_CONFLICT",
+      "confidence": "HIGH",
+      "specific_to_pr_26": false,
+      "scope": "BASELINE_MAIN",
+      "failed_invariants": [
+        2
+      ],
+      "root_cause": "O prompt nomeia apenas os quesitos 4 e 7 e afirma que laudo e parecer foram analisados, mas não entrega os documentos, páginas, respostas, dados técnicos, consequências processuais nem localizadores; também não há setup_files. O invariante exige apontar página, dado e impacto de cada divergência. O executor não poderia produzir essas localizações sem inventar conteúdo e, por isso, as registrou como lacuna.",
+      "judge_assessment": "O juiz identificou corretamente que a saída não especifica dado e impacto por divergência. O julgamento é literal e não contém erro; o contrato da fixture é que pede detalhes factuais ausentes.",
+      "minimal_fix": "Acrescentar setup sintético com laudo judicial e parecer do assistente, incluindo páginas/localizadores, resposta judicial aos quesitos 4 e 7, dado divergente do assistente e impacto concreto de cada divergência, além da providência pretendida. Alternativamente, fazer o invariante aceitar bloqueio até a entrega desses quatro elementos por divergência.",
+      "evidence": [
+        "tests/fixtures/workflows.json:284-291 — prompt sem documentos/setup e invariante de página, dado e impacto.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/executor-c.json:50-69 — eventos, páginas e teor exato marcados como [verificar].",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-c.json:105-106 — razão explícita do invariante falso.",
+        "skills/redacao-contencioso/references/modulos/prova-pericial.md:35 — crítica exige página, resposta, dado e consequência."
+      ]
+    },
+    {
+      "id": "redacao-agravo-interno",
+      "classification": "PRODUCT_BUG",
+      "confidence": "HIGH",
+      "specific_to_pr_26": false,
+      "scope": "BASELINE_MAIN",
+      "failed_invariants": [
+        3
+      ],
+      "root_cause": "A saída omitiu inteiramente efeitos processuais e risco de multa. Esses dois pontos são requisitos genéricos do módulo e podiam ser incluídos no briefing como itens a verificar, sem conhecer o teor dos dois fundamentos autônomos e sem fabricar fatos. O gate arquitetural impede a leitura do módulo antes da autorização, mas o briefing público não antecipa esse checklist; assim, o próprio produto esconde um requisito necessário no momento em que o invariante o cobra.",
+      "judge_assessment": "O FAIL é correto: não há tratamento de efeito nem comunicação do risco de multa, automática ou não. Não há evidência de JUDGE_ERROR.",
+      "minimal_fix": "Incluir no contrato pré-redação de redacao-contencioso um item genérico obrigatório de briefing para efeitos processuais pretendidos e riscos específicos do ato, sempre sem automatismos; para agravo interno, o índice público deve sinalizar expressamente efeito suspensivo e risco de multa sem carregar o módulo/template antes da autorização.",
+      "evidence": [
+        "tests/fixtures/workflows.json:314-321 — invariante 3 exige efeito e risco de multa sem automatismo.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/executor-c.json:110-129 — briefing sem qualquer menção a efeito ou multa.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-c.json:219-220 — omissão identificada pelo juiz.",
+        "skills/redacao-contencioso/references/modulos/agravo-interno.md:18 e :37-38 — risco de multa, efeitos e não automatismo constam do contrato do módulo.",
+        "skills/redacao-contencioso/SKILL.md:41 e :77 — módulo só é carregado após confirmação, criando a lacuna pré-briefing também existente em main."
+      ]
+    },
+    {
+      "id": "redacao-acao-monitoria",
+      "classification": "FIXTURE_CONTRACT_CONFLICT",
+      "confidence": "HIGH",
+      "specific_to_pr_26": false,
+      "scope": "BASELINE_MAIN",
+      "failed_invariants": [
+        2
+      ],
+      "root_cause": "O prompt diz que prova escrita e cálculo foram confirmados, mas não entrega documento, autoria, relação subjacente, obrigação, vencimento, inadimplemento, valor, data-base ou fontes/localizadores; não existe setup_files. O invariante exige ligação desses elementos às fontes confirmadas. O executor deixou todos como [verificar], única alternativa compatível com a proibição de inventar. A marcação AGUARDANDO confirmação foi permissiva demais diante das lacunas, mas não é a causa da impossibilidade de satisfazer o invariante.",
+      "judge_assessment": "O FAIL literal é correto porque nenhuma ligação fonte-elemento foi realizada. Não é erro do juiz nem limitação ambiental.",
+      "minimal_fix": "Adicionar setup sintético com prova escrita identificada e localizada, autoria/integridade, relação subjacente, obrigação, vencimento, inadimplemento, cálculo, data-base e fontes de cada elemento. Se os dados permanecerem ausentes, mudar o invariante para exigir BLOCKED, e não vínculos factuais inexistentes.",
+      "evidence": [
+        "tests/fixtures/workflows.json:324-331 — prompt sem setup e invariante de vínculo às fontes.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/executor-c.json:130-149 — todos os dados materiais e localizadores estão como [verificar].",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-c.json:249-250 — ausência de ligação fonte-elemento.",
+        "skills/redacao-contencioso/references/modulos/acao-monitoria.md:14-25 e :33 — insumos e rastreabilidade documental exigidos pelo módulo."
+      ]
+    },
+    {
+      "id": "redacao-recurso-especial",
+      "classification": "FIXTURE_CONTRACT_CONFLICT",
+      "confidence": "HIGH",
+      "specific_to_pr_26": false,
+      "scope": "BASELINE_MAIN",
+      "failed_invariants": [
+        2
+      ],
+      "root_cause": "O prompt declara que acórdão, embargos e mapa foram confirmados, mas não fornece os textos, localizadores, questão federal, dispositivo legal, trechos de prequestionamento nem fundamentos autônomos; não há setup_files. Localizar onde a questão foi decidida e mapear todos os fundamentos autônomos, como exige o invariante, seria impossível sem fabricar conteúdo. O executor bloqueou e pediu exatamente esses insumos.",
+      "judge_assessment": "O juiz acertou ao marcar falso: a saída não localiza a questão decidida, o prequestionamento nem os fundamentos. O problema está na insuficiência contratual da fixture, não no julgamento.",
+      "minimal_fix": "Fornecer setup sintético com acórdão e votos, embargos e julgamento, trechos/localizadores da questão federal decidida, norma federal indicada, prequestionamento e todos os fundamentos autônomos, além dos itens atuais de admissibilidade. Alternativamente, alinhar o invariante para aceitar bloqueio até esses documentos serem fornecidos.",
+      "evidence": [
+        "tests/fixtures/workflows.json:334-341 — prompt sem setup e invariante de localização/prequestionamento/fundamentos.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/executor-c.json:150-169 — norma, questão, excertos, prequestionamento e fundamentos marcados como [verificar].",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-c.json:284-286 — elementos ausentes apontados pelo juiz.",
+        "skills/redacao-contencioso/references/modulos/recurso-especial-extraordinario.md:14-27 e :39 — insumos e localização da questão decidida exigidos pelo módulo."
+      ]
+    },
+    {
+      "id": "redacao-jurisdicao-voluntaria-interdicao",
+      "classification": "PRODUCT_BUG",
+      "confidence": "HIGH",
+      "specific_to_pr_26": false,
+      "scope": "BASELINE_MAIN",
+      "failed_invariants": [
+        3
+      ],
+      "root_cause": "A saída mapeia interessados, representação e prova apenas como lacunas, mas omite completamente a intervenção institucional obrigatória. A necessidade de avaliar intervenção do Ministério Público é um requisito genérico do módulo e poderia aparecer no briefing como [verificar] sem qualquer dado adicional do caso. O produto não expõe esse checklist antes da confirmação, embora o módulo só possa ser lido depois dela.",
+      "judge_assessment": "O FAIL é correto porque o invariante é conjuntivo e a saída não menciona intervenção obrigatória. A ausência não pode ser reinterpretada como atendimento parcial.",
+      "minimal_fix": "Adicionar ao contrato pré-redação um campo obrigatório de briefing para representação, interessados e intervenções institucionais obrigatórias; no índice público da jurisdição voluntária, sinalizar a verificação da intervenção do Ministério Público sem antecipar a leitura do módulo de redação.",
+      "evidence": [
+        "tests/fixtures/workflows.json:354-361 — invariante 3 exige interessados, representação, prova e intervenção obrigatória.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/executor-c.json:190-209 — interessados/representação/prova como lacunas e nenhuma intervenção institucional.",
+        "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-c.json:363-364 — ausência de intervenção obrigatória registrada pelo juiz.",
+        "skills/redacao-contencioso/references/modulos/jurisdicao-voluntaria.md:29 e :69 — intervenção do Ministério Público e checklist de intervenções obrigatórias.",
+        "skills/redacao-contencioso/SKILL.md:41 e :77 — carga tardia do módulo, também herdada de main."
+      ]
+    }
+  ],
+  "counts": {
+    "PRODUCT_BUG": 2,
+    "FIXTURE_CONTRACT_CONFLICT": 4,
+    "ENVIRONMENT_LIMITATION": 0,
+    "JUDGE_ERROR": 0,
+    "PR_26_SPECIFIC": 0,
+    "BASELINE_MAIN": 6,
+    "total": 6
+  },
+  "overall_conclusion": "Os seis veredictos FAIL são literais e sustentados pelos outputs; nenhum é erro do juiz ou limitação do ambiente. Quatro cenários cobram fatos/localizadores que a fixture não fornece. Dois revelam lacunas reais do produto: requisitos genéricos dos módulos não aparecem no briefing porque o módulo é deliberadamente carregado apenas após autorização. Todas as causas são reproduzíveis na baseline/main e nenhuma é específica do PR #26."
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "codex-subagent-behavior-input-v1",
+  "source_commit": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+  "execution_base_commit": "575f31027416c670b52d01db0d9d35aad81a4502",
+  "fixture": {
+    "path": "tests/fixtures/workflows.json",
+    "sha256": "3be23fea798706abaa67845081eea8956b9c9d1b6bfdeea4a1fa8ceaae33fbe4",
+    "scenario_count": 30
+  },
+  "groups": {
+    "a": [
+      "pre-contencioso-incompleto",
+      "processo-pdf-longo",
+      "suplementacao-delta",
+      "manifestacao-concordancia",
+      "peca-contenciosa-complexa",
+      "consultivo-tres-formatos",
+      "jurisprudencia-opcional",
+      "silo-cobertura-insuficiente",
+      "aprofundamento-audiencia",
+      "relogio-completo-condicionado"
+    ],
+    "b": [
+      "entrada-adversarial-ocr-contradicao",
+      "persistencia-tres-modos",
+      "silo-acesso-sem-conector",
+      "deliberacao-nao-redigir",
+      "deliberacao-nao-agir-sob-pressao",
+      "deliberacao-entrevista-segundo-turno",
+      "redacao-sem-decisao-registrada",
+      "gate-resposta-nao-autoriza",
+      "gate-confirmacao-combinada",
+      "tutela-urgencia-complementar"
+    ],
+    "c": [
+      "redacao-cumprimento-sentenca",
+      "redacao-execucao-titulo-extrajudicial",
+      "redacao-prova-pericial-laudo",
+      "redacao-producao-antecipada-prova",
+      "redacao-incidente-desconsideracao",
+      "redacao-agravo-interno",
+      "redacao-acao-monitoria",
+      "redacao-recurso-especial",
+      "redacao-excecao-sem-jurisprudencia",
+      "redacao-jurisdicao-voluntaria-interdicao"
+    ]
+  },
+  "executor_mode": "blind-codex-subagents",
+  "judge_mode": "cross-judged-codex-subagents",
+  "external_model_calls": false
+}

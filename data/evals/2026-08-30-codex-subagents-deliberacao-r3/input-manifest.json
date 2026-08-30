@@ -1,0 +1,26 @@
+{
+  "schema_version": "codex-subagent-behavior-input-v1",
+  "source_commit": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+  "fixture": {
+    "path": "tests/fixtures/workflows.json",
+    "sha256": "3be23fea798706abaa67845081eea8956b9c9d1b6bfdeea4a1fa8ceaae33fbe4"
+  },
+  "contract_sha256": {
+    "skills/deliberacao-juridica/SKILL.md": "a4a858639bc24ef50511ddf2cc533a7763a65a2fbb2badaf814cae3142275c25",
+    "skills/redacao-contencioso/SKILL.md": "0c12dad765f28112b7df849cb938947e207a230c19c3750af21a2a0d4c9a4221",
+    "references/disciplina.md": "5c49459c4b278a2ca9bcf8418946cb7a63d7c497c760e91a9583c372b65cdba3",
+    "references/deliberacao.md": "9ab2cb87d00951dd1fbb6758f816607b5f72094e67d94ad627ea224a95fe89c7"
+  },
+  "scenario_ids": [
+    "manifestacao-concordancia",
+    "deliberacao-nao-redigir",
+    "deliberacao-nao-agir-sob-pressao",
+    "deliberacao-entrevista-segundo-turno",
+    "redacao-sem-decisao-registrada",
+    "gate-resposta-nao-autoriza",
+    "gate-confirmacao-combinada"
+  ],
+  "executor_mode": "blind-codex-subagents",
+  "judge_mode": "independent-codex-subagent",
+  "external_model_calls": false
+}

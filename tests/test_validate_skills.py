@@ -70,7 +70,8 @@ class OsJunkToleranceTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         output = self.tree / "dist" / "chatgpt-work-smoke"
         archives = sorted(output.glob("*.zip"))
-        self.assertEqual(len(archives), 7)
+        self.assertEqual(len(archives), 8)
+        self.assertTrue((output / "deliberacao-juridica.zip").is_file())
         for archive in archives:
             with zipfile.ZipFile(archive) as bundle:
                 for member in bundle.namelist():

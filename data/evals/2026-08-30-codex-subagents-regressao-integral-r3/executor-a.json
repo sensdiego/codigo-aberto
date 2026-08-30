@@ -1,0 +1,221 @@
+{
+  "schema_version": "codex-subagent-behavior-executor-v1",
+  "source_commit": "715f1e6",
+  "execution_base_commit": "575f310",
+  "executor_task": "/root/exec_r2_a03_regression",
+  "group": "a",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "pre-contencioso-incompleto",
+      "first_skill": "novo-caso",
+      "invoked_skills": [
+        "novo-caso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/novo-caso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "skills/novo-caso/references/intake.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: ainda não é possível avaliar com segurança o risco de exclusão nem indicar uma medida jurídica específica. Confiança: alta quanto à insuficiência do intake; desconhecida quanto ao risco de mérito. O contrato social, as alterações, a participação, a administração e qualquer ato concreto de exclusão são fontes centrais ausentes. O relato do cliente permanece `informado pelo usuário`, não fato documental.\n\nModo de persistência: `temporário`. Nenhum arquivo do caso foi criado.\n\n# Handoff — intake inicial\n\n## Caso\nSócio minoritário de sociedade limitada sediada no Paraná; identidade da sociedade e das demais pessoas ainda não informada. Lente representada: sócio minoritário, conforme relato. Ciclo: `abertura`. Estado: `pré-contencioso`.\n\n## Tipo de artefato\n`intake`, destinado a organizar as fontes antes da análise documental e jurídica.\n\n## Fontes consumidas\nSomente o relato desta conversa. Não foram recebidos contrato social, alterações, notificações, convocações, atas, acusações ou documentos societários.\n\n## Escopo\nIncluídos identidade provisória, objetivo, urgência aparente e mapa documental. Excluídos mérito da exclusão, validade de eventual deliberação, direitos defensivos, providências e prognóstico.\n\n## Achados\n- `informado pelo usuário`: o cliente é sócio minoritário; a sociedade é limitada e sediada no Paraná.\n- `informado pelo usuário`: não existiria acordo de sócios e o contrato seguiria modelo padrão da Junta Comercial.\n- `pendente`: percentual exato de participação, identidade dos demais sócios, administrador e regras contratuais vigentes.\n- `pendente`: existência de convocação, notificação, acusação, reunião ou outro ato concreto.\n- `informado pelo usuário`: objetivo de compreender o risco e preservar a posição do cliente.\n\n## Estado\nIntake incompleto; cobertura insuficiente para análise de risco. Nenhuma urgência processual foi demonstrada, mas ela não pode ser descartada sem saber se houve ato ou comunicação e em que data.\n\n## Confirmação humana\nNenhum achado foi confirmado documentalmente. O alcance atual é apenas registrar o relato e as lacunas.\n\n## Lacunas e mapa documental\n1. **Essencial:** contrato social vigente e todas as alterações — detentor provável: cliente, sociedade ou Junta Comercial — define as regras documentadas e a composição.\n2. **Essencial:** participação exata, quadro societário e administração atuais — detentor provável: contrato e alterações — identifica poderes e lente.\n3. **Essencial e urgente se existir:** convocação, notificação, ata, e-mail ou mensagem sobre exclusão, com data e forma de recebimento — define se há evento concreto.\n4. **Relevante:** descrição e documentos da acusação de falta grave, se houver — delimita o objeto futuro da análise.\n5. **Relevante:** acordo de sócios ou confirmação documentada de inexistência no acervo — o relato isolado não prova ausência.\n6. **Complementar:** histórico de reuniões, conflitos, distribuições e comunicações pertinentes.\n\n## Atualização\nPrimeira versão do intake.\n\n## Próximas rotas\nReceber e inventariar primeiro os itens essenciais; depois encaminhar o material a `analise-documental` e, somente com fatos interpretados, a `analise-juridica-civel`. Se já houve comunicação sobre exclusão, envie-a primeiro com a data de recebimento.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "processo-pdf-longo",
+      "first_skill": "novo-caso",
+      "invoked_skills": [
+        "novo-caso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/novo-caso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "skills/novo-caso/references/indexacao-processo.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o trabalho correto é indexar a íntegra por unidades processuais naturais antes de analisar o mérito. Confiança: alta. A descrição informa a existência do PDF, mas o arquivo não está acessível nesta conversa; portanto, não posso afirmar páginas, completude, duplicatas concretas, ordem ou qualidade de OCR, nem simular um índice já produzido.\n\nModo de persistência: `temporário`. Nenhum arquivo foi criado.\n\n# Handoff — intake para indexação\n\n## Caso\nAção de rescisão de contrato de construção no TJPR. Partes, número, vara, comarca e lente representada: `pendentes`. Ciclo: `abertura`. Estado: `processo em andamento`.\n\n## Tipo de artefato\n`intake` preparatório para `INDICE_PROCESSO.md` e `CORPUS_PROCESSO.md`.\n\n## Fontes consumidas\nSomente o relato sobre um PDF único de aproximadamente 1.400 páginas. O PDF original não foi examinado nem recebeu hash.\n\n## Escopo\nIncluído o protocolo de endereçamento e as verificações necessárias. Excluídos conteúdo das peças, mérito, cronologia efetiva, completude e qualquer conclusão probatória ou jurídica.\n\n## Achados\n- `informado pelo usuário`: o PDF reuniria inicial, contestação, réplica, contratos, medições, fotografias, laudo, manifestações e decisões.\n- `informado pelo usuário`: os marcadores não são confiáveis e há repetição aparente de peças.\n- `pendente`: sequência real, páginas ausentes, duplicatas, versões, OCR, imagens, tabelas, assinaturas e atos mais recentes.\n\n## Estado\nFonte não examinada; indexação bloqueada pelo arquivo ausente no contexto acessível.\n\n## Confirmação humana\nConfirmado apenas o objetivo de documentar e indexar antes do mérito. Nenhum conteúdo processual foi confirmado.\n\n## Lacunas\nPDF original; identidade do processo e da parte representada; forma de numeração das páginas; eventual senha; referência da última movimentação; capacidade de extrair texto mantendo ponteiro para a página original.\n\n## Atualização\nPrimeira versão do intake.\n\n## Próximas rotas\nApós o envio do PDF: registrar hash e metadados como `F-01`; conferir início, fim e sequência; separar petições, decisões, certidões, provas e anexos em unidades `F-01/U-nnn`; criar chunks `F-01/U-nnn/C-nnn` apenas quando uma unidade extensa combinar assuntos; marcar duplicatas e versões sem apagá-las; registrar páginas, qualidade e ponteiro ao original; produzir `INDICE_PROCESSO.md` e `CORPUS_PROCESSO.md`; só então encaminhar unidades materiais a `analise-documental`. Não haverá divisão cega por número fixo de páginas.\n\nEnvie o PDF original e informe número do processo e parte representada para iniciar a indexação real.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "suplementacao-delta",
+      "first_skill": "analise-documental",
+      "invoked_skills": [
+        "analise-documental"
+      ],
+      "read_files_by_turn": [
+        [
+          "CASO.md",
+          "novos/comprovante-transferencia.txt",
+          "novos/mensagens.txt",
+          "skills/analise-documental/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/analise-documental/references/contrato-saida.md",
+          "skills/analise-documental/references/avaliacao-probatoria.md",
+          "references/legislacao/cpc/provas.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o material novo muda dois pontos de forma material e complementa um terceiro. Confiança: alta quanto ao pagamento parcial de R$ 60.000,00; moderada quanto à convergência para parcelamento; baixa quanto à mensagem sem data. A análise anterior não deve ser refeita inteira.\n\n# Handoff — atualização da análise documental\n\n## Caso\nCobrança contratual entre Credora Sintética S.A. e Devedora Sintética Ltda.; lente presumida da credora, conforme o handoff anterior.\n\n## Tipo de artefato\n`análise documental`, suplementação por documentos novos.\n\n## Fontes consumidas\n- `CASO.md`: análise anterior confirmada em 20/08/2026.\n- `novos/comprovante-transferencia.txt`: transferência de R$ 60.000,00 em 18/08/2026, autenticação `9F3A-SINT-2026`, identificada como pagamento parcial.\n- `novos/mensagens.txt`: exportação com mensagens de 19 e 20/08/2026 e uma mensagem da credora sem data visível. Autenticidade e integridade da exportação não foram verificadas fora do conteúdo fornecido.\n\n## Escopo\nComparação dos novos arquivos com F-01 a F-04. Excluídos efeitos jurídicos, novação, validade de aditivo, exigibilidade final, estratégia e redação.\n\n## Achados e delta\n- **F-01 — `não afeta`:** o contrato continua registrando parcela final de R$ 180.000,00, vencida em 10/06/2026. Os novos arquivos não alteram a cláusula 4ª, p. 7.\n- **F-02 — `substitui`:** deixa de ser correto dizer que não há comprovante de pagamento no acervo. Há suporte direto para transferência parcial de R$ 60.000,00 em 18/08/2026. O saldo nominal aritmético passa a R$ 120.000,00, também mencionado na mensagem de 19/08, sujeito a conciliação contábil e sem conclusão sobre encargos.\n- **F-03 — `complementa`:** continua não localizada resposta formal à notificação de 15/07, mas agora há comunicação material posterior entre as partes em 19 e 20/08. Portanto, “sem resposta formal” não equivale mais a silêncio total.\n- **F-04 — `substitui`:** deixa de ser correto afirmar ausência de evidência de renegociação. As mensagens documentam proposta de quatro parcelas, resposta da credora “sujeito a formalização”, mensagem sem data dizendo que o jurídico prepararia aditivo e resposta da devedora aguardando minuta. Isso demonstra negociação e aparente convergência, mas não demonstra aditivo formalizado nem seus termos finais.\n\n## Matriz fato-prova\n- Pagamento parcial de R$ 60.000,00: suporte direto no comprovante; corroborado pela mensagem da devedora e pelo saldo de R$ 120.000,00 mencionado pela credora; lacuna: conciliação com extrato da favorecida.\n- Proposta de parcelamento em quatro vezes: suporte direto nas mensagens datadas de 19/08; limitação: condicionada expressamente à formalização.\n- Acordo final: suporte indireto na mensagem sem data e na resposta de 20/08; contrapeso: ausência da minuta assinada e falta de data visível; estado `pendente`.\n\n## Cronologia\n- 18/08/2026: transferência parcial de R$ 60.000,00.\n- 19/08/2026: devedora propõe quatro parcelas; credora indica possibilidade para saldo de R$ 120.000,00, sujeita a formalização.\n- Data não visível: credora afirma que seu jurídico prepararia aditivo `[verificar]`.\n- 20/08/2026: devedora responde que aguarda a minuta.\n\n## Estado\nPagamento parcial: `fato documental` no escopo dos arquivos fornecidos. Negociação: `fato documental`. Conclusão de acordo: `pendente`. Mensagem sem data: `[verificar]`.\n\n## Confirmação humana\nA análise anterior permanece confirmada somente no alcance registrado. Os deltas acima ainda precisam de confirmação humana; essa confirmação não autoriza redação.\n\n## Lacunas\nExtrato da conta favorecida; arquivo original e metadados da exportação; data da mensagem sem marcador; minuta do aditivo; assinaturas e poderes dos interlocutores; termos finais sobre vencimentos e encargos.\n\n## Atualização\nF-01 preservado; F-02 e F-04 substituídos; F-03 complementado. Nenhum achado independente foi reaberto.\n\n## Próximas rotas\nConfirmar os deltas e obter os documentos faltantes. Depois, `analise-juridica-civel` pode examinar os efeitos jurídicos sem presumir que a negociação equivale a acordo formal.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "manifestacao-concordancia",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a rota é uma manifestação intermediária simples de concordância integral, sem reabrir a análise já confirmada. Confiança: alta quanto ao ato e ao resultado pretendido; dados de identificação e prazo permanecem para conferência. Ainda não redigi a minuta, porque a autorização do cliente para concordar não substitui a confirmação específica deste briefing.\n\n## Briefing consolidado\n\n- **Ato e destinatário:** manifestação de concordância integral com o cálculo adverso, dirigida ao juízo do cumprimento de sentença no TJPR. Juízo, vara, comarca e processo: `[verificar]`.\n- **Módulo-base:** `manifestacao-generica`, pois concordância simples não justifica inflar o ato com módulo de cumprimento; o módulo ainda não foi carregado.\n- **Objetivo:** informar concordância integral com R$ 186.420,37 e requerer recebimento do cálculo, com prosseguimento compatível com o estágio dos autos.\n- **Parte e posição:** parte intimada a se manifestar sobre o cálculo; polo e qualificação: `[verificar]`.\n- **Base confirmada:** principal, correção, juros e honorários coincidem com o título segundo análise documental e conferência contábil já confirmadas; cliente autorizou concordância integral. Evento, data-base e localizadores: `[verificar]`.\n- **Conteúdo material:** concordância sem impugnação, ressalva ou reabertura dos componentes conferidos.\n- **Pedidos:** recebimento da concordância, adoção do cálculo e regular prosseguimento, sem acrescentar providência não confirmada.\n- **Profundidade e tom:** curta, objetiva e cooperativa.\n- **Prazo:** informado como encerrando depois de amanhã; data exata, termo inicial, evento de intimação e contagem: `[verificar]`. Não houve validação externa.\n- **Lacunas marcadas:** endereçamento, processo, partes, polos, eventos, data-base e providência subsequente exata.\n- **Ações externas:** nenhuma; nada foi protocolado, enviado ou assinado.\n\n**Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO.**\n\nO briefing acima está correto e você autoriza iniciar agora a redação da manifestação de concordância integral com os cálculos?"
+      ],
+      "error": null
+    },
+    {
+      "id": "peca-contenciosa-complexa",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a primeira rota é `redacao-contencioso`, com módulo-base provável `contestacao`, mas a minuta completa está bloqueada porque os handoffs confirmados não estão disponíveis nesta conversa. Confiança: alta. A afirmação de que análise e mapa existem não permite inventar suas teses, fontes, localizadores, estados, pontos de prova ou escolhas. O módulo não foi carregado e nenhuma contestação foi redigida.\n\n## Briefing preliminar\n\n- **Ato e destinatário:** contestação perante o juízo do TJPR em que tramita a ação indenizatória; vara, comarca, número e evento da citação: `[verificar]`.\n- **Módulo-base provável:** `contestacao`; confirmação depende do mapa e do estágio processual.\n- **Objetivo:** defender a fabricante contra pedido indenizatório de R$ 2,4 milhões por alegada ruptura imotivada e perda de clientela.\n- **Parte representada:** fabricante de equipamentos, ré. Identidade e qualificação: `[verificar]`.\n- **Material referido, mas não acessível:** três notificações, cláusula de rescisão com aviso prévio, histórico de inadimplementos e planilhas unilaterais de dano; fontes e localizadores precisam vir dos handoffs.\n- **Teses, preliminares e pedidos:** `BLOQUEADOS` até receber o mapa confirmado. Não presumirei validade da rescisão, inadimplemento, causalidade, impugnação do dano, reconvenção, prova ou pedido subsidiário.\n- **Provas:** `BLOQUEADAS` até receber matriz fato-prova, contradições, pontos dependentes de prova e decisões humanas registradas.\n- **Profundidade e tom:** contestação completa, técnica e proporcional, sem jurisprudência inventada.\n- **Prazo:** a citação foi juntada, mas faltam certidão, data, forma de citação, regra aplicável e calendário; nenhuma data fatal será inferida.\n- **Lacunas:** handoffs integrais de análise documental e mapa jurídico, identidade do caso e lente, petição inicial e anexos já interpretados, decisão de saneamento se houver, estratégia confirmada, pedidos, evento controlador e relógio.\n\n**Estado da redação: BLOQUEADA — item aberto.**\n\nEnvie ou identifique no Projeto os handoffs confirmados e a fonte da citação. Com esses insumos, consolidarei teses, provas, pedidos, prazo e lacunas no briefing; somente uma confirmação posterior e específica desse briefing poderá autorizar a redação. Nada foi protocolado ou enviado."
+      ],
+      "error": null
+    },
+    {
+      "id": "consultivo-tres-formatos",
+      "first_skill": "redacao-consultivo",
+      "invoked_skills": [
+        "redacao-consultivo"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-consultivo/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "skills/redacao-consultivo/references/modos-e-profundidade.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: os três produtos não são versões longa, média e curta do mesmo texto; eles têm destinatários, usos e limites diferentes. Confiança: alta. Como análise documental e jurídica já estão confirmadas, qualquer um pode ser preparado depois da escolha e do briefing próprio. Nenhum foi redigido agora.\n\n| Produto | Para quem e para quê | Conteúdo | Profundidade adequada | Limite principal |\n|---|---|---|---|---|\n| **Parecer** | Conselho deliberar se altera o contrato | Resposta executiva, premissas, exclusividade, metas, rescisão, exposição, normas aplicadas, alternativas, riscos, objeções, conclusão e recomendação | `aprofundado` | É o único dos três que deve sustentar uma recomendação jurídica completa; não entra jurisprudência sem pesquisa verificada |\n| **Relatório** | Área comercial negociar com visão comum do caso | Escopo, fontes, cláusulas e eventos relevantes, achados organizados, pontos de risco já confirmados, lacunas e próximos passos | `padrão`; descritivo se não recomendar | Se classificar risco ou recomendar concessão, deixa de ser meramente descritivo e precisa refletir integralmente o mapa jurídico |\n| **E-mail administrativo** | Diretor encaminhar providências | Contexto mínimo, decisão ou informação confirmada, responsáveis, prazos internos e providência esperada | `breve` | Não substitui parecer nem relatório; se adotar posição, exigir ou conceder algo juridicamente, precisa do mapa e de briefing compatível |\n\nMinha recomendação de produto depende do uso: se a decisão ainda será tomada, parecer; se a decisão já existe e a equipe precisa negociar, relatório; se a decisão e as tarefas já estão definidas, e-mail. O prazo de renovação em 20 dias não autoriza presumir urgência jurídica nem decisão sobre alteração.\n\n**Estado da redação: BLOQUEADA — item aberto.** Falta escolher um único tipo, destinatário, objetivo concreto, posição, profundidade, conteúdo material e ressalvas. A escolha do formato não autoriza redação; depois dela apresentarei o briefing consolidado e a pergunta fechada de autorização.\n\nQual dos três usos corresponde à necessidade atual: deliberar, preparar a negociação ou encaminhar uma decisão já tomada?"
+      ],
+      "error": null
+    },
+    {
+      "id": "jurisprudencia-opcional",
+      "first_skill": "analise-jurisprudencial",
+      "invoked_skills": [
+        "analise-jurisprudencial"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/analise-jurisprudencial/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "skills/analise-jurisprudencial/references/roteamento-silo.md",
+          "skills/analise-jurisprudencial/references/resultado.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a pesquisa pode aumentar a confiança sobre como os três fatores comparáveis são tratados, mas é opcional e não bloqueia o mapa jurídico já concluído. Confiança: alta quanto ao ganho metodológico; desconhecida quanto ao conteúdo dos precedentes, porque nenhuma busca foi executada.\n\n## O que a pesquisa acrescentaria\n\n- Separaria decisões do STJ e do TJPR que efetivamente enfrentaram exclusão extrajudicial de sócio de comentários secundários.\n- Compararia, caso a caso, ausência de cláusula expressa, grau de especificidade da convocação e oportunidade real de contraditório e defesa.\n- Identificaria fundamento determinante, situação processual, aderência e diferenças capazes de limitar a aplicação ao caso.\n- Mostraria se o corpus oferece linhas favoráveis, contrárias, intermediárias ou divergentes, sem converter quantidade de julgados em probabilidade numérica.\n- Permitiria usar em redação somente precedentes cuja identificação, íntegra e fundamento tenham o estado de verificação adequado.\n\n## Se você seguir sem pesquisa\n\nO mapa jurídico continua utilizável para análise, deliberação e eventual briefing. O que muda é o limite de linguagem: não se poderá atribuir posição ao STJ ou ao TJPR, citar julgados ou afirmar estabilidade jurisprudencial. A estratégia terá de se apoiar nos fatos confirmados, nos documentos societários e nas normas já mapeadas; a confiança sobre reação judicial comparada ficará menor. Isso não impede avançar, desde que a ausência da pesquisa seja registrada como `pesquisa dispensada`.\n\n## Escopo proposto se houver pesquisa\n\nQuestão: exclusão extrajudicial por alegada falta grave. Fatos comparáveis: falta de cláusula específica, convocação genérica e controvérsia sobre defesa. Tribunais: STJ e TJPR. A finalidade é medir aderência e distinguishing, não pedir opinião abstrata. Período e órgãos ainda podem ser delimitados.\n\nNenhum precedente foi encontrado, citado ou verificado nesta resposta; “não pesquisado” não significa “não existe”. Se você escolher pesquisar, a execução deverá ocorrer exclusivamente pelo Silo conectado. Se dispensar, registrarei a dispensa sem bloquear a próxima rota.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "silo-cobertura-insuficiente",
+      "first_skill": "analise-jurisprudencial",
+      "invoked_skills": [
+        "analise-jurisprudencial",
+        "assinatura-silo"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/analise-jurisprudencial/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "skills/analise-jurisprudencial/references/roteamento-silo.md",
+          "skills/analise-jurisprudencial/references/resultado.md",
+          "skills/assinatura-silo/SKILL.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a pesquisa não foi executada. Confiança: alta quanto ao bloqueio de runtime; desconhecida quanto ao conteúdo jurisprudencial. O conector Silo e seu manifesto de capabilities não estão disponíveis nesta sessão, então não há como chamar `search_jurisprudence`, `search_official_jurisprudence` ou as capabilities de comentário. Conforme seu limite expresso, não complementei fora do Silo.\n\n## Escopo preservado\n\n- Tribunais: STJ e TJPR.\n- Período preferencial: últimos oito anos.\n- Questão: exclusão extrajudicial de sócio minoritário sem cláusula contratual expressa, com convocação que menciona falta grave sem descrever fatos.\n- Comparações: contraditório, oportunidade de defesa, especificidade da convocação, fundamento determinante e diferenças processuais.\n- Separação obrigatória: precedentes de um lado; comentário jurídico secundário de outro.\n\n## Cobertura\n\n- STJ: `não pesquisado`.\n- TJPR: `não pesquisado`.\n- Fontes oficiais e íntegra: `não pesquisado`.\n- Comentário jurídico: `não pesquisado`.\n\nNão classifico nada como “não encontrado”, porque nenhuma consulta ocorreu. Não há mapa jurisprudencial, precedente-chave, fundamento verificado, comentário ou citação utilizável em peça. Também não houve validação runtime no Planalto.\n\nStatus do acesso: `✗ ausente` nesta sessão. Isso prova apenas ausência do conector aqui; não prova cadastro, contratação ou posição em lista de espera. Para retomar, é necessário disponibilizar e autenticar o conector Silo e confirmar a conexão com uma chamada real. O acesso externo está em validação privada; se houver interesse, a manifestação é feita pelo próprio usuário na lista oficial: https://silo.legal/#waitlist. Nenhum cadastro foi realizado por mim.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "aprofundamento-audiencia",
+      "first_skill": "aprofundamento-juridico",
+      "invoked_skills": [
+        "aprofundamento-juridico"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/aprofundamento-juridico/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/aprofundamento-juridico/references/modos.md",
+          "skills/aprofundamento-juridico/references/audiencia-civel.md",
+          "references/legislacao/cpc/procedimento-comum.md",
+          "references/legislacao/cpc/audiencia.md",
+          "references/legislacao/cpc/provas.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a tese resiste apenas em versão condicionada. Confiança: moderada para sustentar que mudanças do projeto contribuíram para o atraso; baixa para atribuir exatamente 110 dos 160 dias sem análise de caminho crítico e sem resolver a notícia de falta de equipe. O melhor ataque adversarial é que os pedidos de mudança existiram, mas não demonstram que causaram 110 dias, enquanto o diário incompleto e a fala técnica informal apontam causa concorrente imputável à construtora.\n\n## Stress test\n\n**Premissa falseável:** 110 dias de atraso decorreram de mudanças solicitadas pelo dono da obra.\n\n**O que resiste:** o cronograma assinado e parte dos e-mails oferecem suporte contemporâneo para a existência de mudanças e possível impacto temporal. Eles permitem formular a tese causal e confrontar a versão de ruptura exclusiva da construtora.\n\n**O que quebra ou fica condicionado:** o número de 110 dias não está ligado, no material descrito, a cada mudança, atividade crítica, período de paralisação ou revisão de cronograma. Lacunas no diário reduzem rastreabilidade. A afirmação informal da testemunha técnica sobre falta de equipe é `[verificar]`, mas, se confirmada, sustenta causa concorrente.\n\n**Melhor argumento contrário:** as alterações de projeto foram acomodáveis ou atingiram atividades não críticas; o atraso relevante decorreu de mobilização insuficiente da construtora; a quantificação de 110 dias foi construída depois do fato; os próprios registros diários não documentam a cadeia causal necessária.\n\n**Condição para abandonar a formulação forte:** se documentos contemporâneos e prova técnica não conectarem as mudanças ao caminho crítico e ao período reclamado, não sustentar “110 dias causados pelo dono”; usar formulação limitada de contribuição parcial.\n\n## Mapa probatório para a audiência\n\n| Fato a testar | Prova existente | Risco | Objetivo em audiência |\n|---|---|---|---|\n| Mudanças foram solicitadas pelo dono | E-mails e documentos de projeto | autoria, data e escopo incompletos | identificar pedido, responsável, data e conteúdo exato |\n| Mudanças afetaram o caminho crítico | Cronograma assinado | cronograma pode não refletir revisões e avanço real | ligar cada mudança a atividade crítica e duração |\n| Impacto totalizou 110 dias | cálculo não descrito | quantificação sem método reproduzível | obter base, premissas, sobreposição e exclusões |\n| Houve falta de equipe | relato informal de testemunha `[verificar]` | confirmação pode contrariar a tese | esclarecer período, equipes, causa, duração e documentos |\n| Existiram causas concorrentes | diário com lacunas | lacunas impedem sequência completa | mapear clima, materiais, acesso, aprovações e mobilização |\n\nA decisão de saneamento deve ser conferida para saber quais fatos e ônus foram delimitados; não os invento. Se for audiência de instrução, a ordem preferencial de prova oral e os requerimentos devem observar o ato real e o juízo.\n\n## Roteiro de perguntas\n\n**À testemunha técnica:** qual era sua função e período de atuação; quais mudanças presenciou; que atividades foram afetadas; por quanto tempo; como sabe; quais registros contemporâneos existem; em que períodos faltou equipe; qual efeito concreto; se as causas se sobrepuseram; o que mudaria sua estimativa.\n\n**Ao responsável pelo projeto do dono da obra:** quais alterações solicitou; quando; por qual canal; se recebeu avaliação de prazo; se aprovou revisão do cronograma; se havia alternativa de execução; quais respostas da construtora recebeu.\n\n**Ao representante da construtora:** como foram calculados os 110 dias; quais premissas e documentos; como tratou simultaneidade, folgas e causas próprias; quais avisos contemporâneos foram enviados; que equipes estavam alocadas.\n\nPerguntas são para obter ou testar informação, não para roteirizar respostas.\n\n## Documentos e diligências prioritários\n\nCronograma-base e revisões; memória de cálculo dos 110 dias; ordens e revisões de projeto; e-mails completos; diário integral; relatórios de mão de obra; medições; atas de reunião; decisão de saneamento; rol e qualificação das testemunhas. Critério de parada: quando cada parcela temporal estiver ligada a fonte contemporânea e causa discriminada, ou quando ficar demonstrado que a alocação não é reproduzível.\n\n## Síntese\n\nConfirmado somente no relato atual: existência de cronograma assinado e e-mails de suporte. Hipótese mantida: mudanças contribuíram para o atraso. Hipótese condicionada: contribuição de 110 dias. Contraponto pendente: falta de equipe. Decisão humana futura: sustentar número fechado ou contribuição parcial depois da verificação. Nenhuma audiência foi simulada como realizada e nenhum documento foi redigido.\n\nQual fonte contemporânea permite ligar, sem dupla contagem, cada parcela dos 110 dias a uma atividade do caminho crítico?"
+      ],
+      "error": null
+    },
+    {
+      "id": "relogio-completo-condicionado",
+      "first_skill": "analise-juridica-civel",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/analise-juridica-civel/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/analise-juridica-civel/references/mapa-juridico.md",
+          "skills/analise-juridica-civel/references/relogio-processual.md",
+          "references/legislacao/cpc/parte-geral-e-prazos.md",
+          "references/legislacao/cpc/recursos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: não é possível fornecer uma data fatal definitiva com os dados atuais. Confiança: alta quanto a esse limite; moderada quanto aos cenários condicionais abaixo. Faltam a certidão de intimação/publicação, a data civil exata, o canal de comunicação, a natureza do prazo e o calendário oficial aplicável. A notícia de feriado municipal permanece `não verificada`.\n\n## Relógio condicionado\n\n| Campo | Resultado |\n|---|---|\n| Evento e fonte | decisão com prazo informado de 15 dias; aviso relatado como disponibilizado numa sexta e consultado na segunda; certidão e arquivo integral ausentes |\n| Jurisdição e sistema | TJPR, processo eletrônico; sistema e canal exatos `pendentes` |\n| Regra geral | se for prazo processual em dias, contam-se somente dias úteis, conforme `CPC:art-219`; exclui-se o começo e inclui-se o vencimento, conforme `CPC:art-224` |\n| Natureza | processual e em dias úteis apenas se a decisão e a regra aplicável confirmarem isso; regra material, especial ou ordem em dias corridos exigiria cenário distinto |\n| Calendário | nenhum feriado local ou suspensão foi validado; a notícia municipal não entra no cálculo até existir fonte oficial aplicável ao foro |\n| Data final | `indeterminada e condicionada` |\n\n## Cenário A — disponibilização no Diário da Justiça eletrônico\n\nSe a “disponibilização na sexta-feira” se refere ao DJe, `CPC:art-224:par-2` considera como publicação o primeiro dia útil seguinte. A contagem começa no primeiro dia útil posterior à publicação, nos termos do § 3º. Assim, sem feriado ou suspensão, sexta seria disponibilidade, segunda seria publicação e terça seria o primeiro dia de contagem. Isso é apenas um modelo; datas reais e calendário podem deslocar cada marco. A consulta de segunda não controla necessariamente esse cenário.\n\n## Cenário B — intimação em portal eletrônico\n\nSe houve consulta ao teor da intimação em portal, `CPC:art-231:inc-V` vincula o começo ao dia útil seguinte à consulta, salvo regra diversa. É indispensável a certidão do sistema para confirmar quando a consulta ocorreu, se foi intimação ou mero aviso e como o TJPR registrou o termo inicial. Não misturo esse evento com a lógica de publicação do DJe.\n\n## Cenário C — prazo recursal\n\nSe os 15 dias forem para recurso ou resposta, `CPC:art-1003` vincula o prazo à intimação e seu § 5º prevê 15 dias, salvo embargos de declaração. O § 6º torna o feriado local material à tempestividade. Ainda assim, o tipo da decisão e do ato pretendido não foi informado, de modo que não afirmo cabimento nem regra especial.\n\n## Lacunas que resolvem a divergência\n\n1. Certidão de publicação ou de intimação, com data e evento.\n2. Inteiro teor da decisão e identificação do ato de 15 dias.\n3. Canal: DJe, portal eletrônico, diário impresso, oficial, correio ou outro.\n4. Datas exatas da sexta e da segunda.\n5. Comarca e calendário oficial do TJPR, inclusive ato que institua feriado ou suspensão.\n6. Existência de litisconsórcio e procuradores, embora prazo em dobro não se aplique a autos eletrônicos no caso do art. 229.\n7. Eventual indisponibilidade do sistema ou obstáculo documentado.\n\n## Providências possíveis\n\n- Obter as fontes acima e reproduzir a contagem com cada dia útil identificado: alta reversibilidade e urgência alta pela possibilidade de preclusão.\n- Protocolar antes do limite mais conservador, se o ato já estiver decidido e pronto: decisão reservada ao advogado; esta análise não escolhe nem redige o ato.\n- Não agir: risco de preclusão se houver prazo em curso; não recomendado sem esclarecer o evento.\n\nNão houve validação runtime no Planalto nem consulta ao calendário do TJPR. Nenhuma data fatal foi inventada. A próxima rota é suplementar a análise documental com a certidão e, então, fechar o relógio em `analise-juridica-civel`.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    }
+  ]
+}

@@ -122,16 +122,24 @@ deliberação dispara somente quando:
   registradas no mapa jurídico.
 
 Fora desses casos, siga direto para o briefing. Uma manifestação simples com
-decisão já informada segue em um único turno, como sempre. As skills de
-análise oferecem a rota de deliberação ao fechar; nunca a iniciam sem
-pedido.
+decisão já informada segue em um único turno, como sempre. As skills de análise
+oferecem `deliberacao-juridica` ao fechar; nunca conduzem a decisão por conta
+própria.
+
+Uma escolha que possa ser exposta como item aberto do briefing não dispara a
+deliberação se o ato e a posição central já estiverem registrados. Nesse caso,
+apresente o briefing como `BLOQUEADA — item aberto` e resolva a escolha nele. O
+handoff de decisão só é pré-requisito quando a escolha estratégica impede um
+briefing coerente ou exige decidir entre atos, posições ou resultados
+materiais concorrentes.
 
 A deliberação exige análise madura para a decisão em jogo: mapa jurídico
 confirmado ou, para decisão pré-contenciosa simples, análise documental
 confirmada. Se a análise estiver imatura, execute ou encaminhe a etapa
-faltante; não delibere sobre hipótese. Quando o gatilho dispara, carregue o
-[protocolo de deliberação](deliberacao.md) e produza o handoff de tipo
-`decisão`. A decisão registrada informa o briefing; nunca autoriza redação.
+faltante; não delibere sobre hipótese. Quando o gatilho dispara, encaminhe para
+`deliberacao-juridica`. Somente essa skill carrega `deliberacao.md` e produz o
+handoff de tipo `decisão`.
+A decisão registrada informa o briefing; nunca autoriza redação.
 
 ## Confirmação humana antes de redigir
 
@@ -149,6 +157,18 @@ O briefing termina com uma pergunta fechada: "O briefing acima está correto
 e você autoriza iniciar agora a redação de [documento]?". Só autoriza a
 minuta uma afirmativa a essa pergunta, referida ao briefing consolidado, sem
 itens abertos e sem alteração material.
+
+Declare o estado no próprio briefing:
+
+- `Estado da redação: BLOQUEADA — item aberto`, enquanto houver pendência;
+- `Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO`, quando
+  não houver item aberto e a pergunta fechada estiver pronta para resposta;
+- `Estado da redação: AUTORIZADA`, somente depois de uma afirmativa posterior
+  ao estado `AGUARDANDO`, sem alteração material na mesma mensagem.
+
+Antes de ler módulo ou iniciar minuta, verifique que o turno anterior do
+assistente já estava em `AGUARDANDO`. Resolver uma pendência muda o estado de
+`BLOQUEADA` para `AGUARDANDO`, mas a mesma mensagem não pode também autorizar.
 
 Não contam como confirmação:
 

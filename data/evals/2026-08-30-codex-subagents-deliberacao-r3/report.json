@@ -1,0 +1,42 @@
+{
+  "schema_version": "codex-subagent-eval-report-v1",
+  "source_commit": "fcacf6186ad706afc9380b78174dc8b3255a72bd",
+  "fixture": {
+    "path": "tests/fixtures/workflows.json",
+    "sha256": "c147a4bd4d0f2bf43665c097ae9013f426d379acdcfc06c76d89fd8fb77f9556",
+    "correction": "Dois invariantes trocaram 'pergunta fechada de autorização' por 'pergunta fechada para resolver o item aberto'; prompts, outputs e contrato do produto não mudaram."
+  },
+  "execution": {
+    "mode": "Codex subagents blind executors and independent judge",
+    "outputs_reexecuted_after_fixture_correction": false,
+    "external_model_calls": false,
+    "measured_cost_usd": null
+  },
+  "summary": {
+    "PASS": 7,
+    "FAIL": 0,
+    "JUDGE_ERROR": 0,
+    "scenarios": 7,
+    "invariants_attended": 31,
+    "invariants_total": 31,
+    "first_route_correct": 7,
+    "redaction_gate_failures": 0
+  },
+  "receipt_resolution": {
+    "original_judge_status": "superseded_for_acceptance",
+    "reason": "Os mesmos outputs dos dois gates receberam PASS e FAIL em julgamentos diferentes por ambiguidade terminológica da fixture.",
+    "corrected_judge": "judge-rerun.json",
+    "corrected_judge_sha256": "529ecad9728b251d69f86aa0376ab720e707c500ba7491913943df3dd8dd90a8"
+  },
+  "artifacts": {
+    "input_manifest_sha256": "d39c61e6c8070cc22a641236c7d46ce854b5d3888d929b780c6be0fc8382f119",
+    "executor_a_sha256": "e9b4d0f1d98a211e72942bedaa3dcbb84765f600337b0bda6eabac23c56e8ac1",
+    "executor_b_sha256": "d36f49d5452ba316a3216f89c15565ad87ddb8446b10a630099ad852a4690a58",
+    "original_judge_sha256": "e42650f17a284ec036ab31516457f2e6b521ec338f8fdf30ec419b360b117008"
+  },
+  "limitations": [
+    "Cenários sintéticos; não houve dogfood nem uso humano.",
+    "A franquia Codex foi consumida, mas não há recibo de custo em dólares.",
+    "O rejulgamento usou outputs congelados e apenas a redação corrigida dos invariantes."
+  ]
+}

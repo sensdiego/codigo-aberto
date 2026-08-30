@@ -13,8 +13,16 @@ A versão publicada é `v0.5.1`. O PR #27 foi integrado a `main` pelo merge comm
 `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
 commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
 pelo merge commit `da41883`. O workflow `Software release` criou o commit
-`f2e99ba`, a tag e o GitHub Release `v0.5.1`. A skill autônoma de deliberação
-continua pausada no PR #26 e não foi incorporada.
+`f2e99ba`, a tag e o GitHub Release `v0.5.1`.
+
+A skill autônoma de deliberação continua no draft PR #26 e não foi incorporada.
+Sua branch incorporou a baseline `v0.5.1` sem reescrever a cadeia auditada. A
+rodada dirigida aprovou sete cenários e 31/31 invariantes. A regressão integral
+congelada registrou 22 PASS / 8 FAIL, 30/30 primeiras rotas e nenhum gate
+mecânico violado; a triagem encontrou cinco fixtures inelegíveis, um cenário
+condicionado ao Silo e dois bugs de baseline. Esses dois bugs foram corrigidos
+na `v0.5.1` e reexecutados em 2/2 cenários, elevando a leitura combinada dos
+cenários elegíveis a 24/24, sem constituir uma nova passagem única dos 30.
 
 O trabalho posterior à tutela está integrado e publicado. A release contém os
 sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
@@ -39,13 +47,15 @@ instalação e uso humano continuam sendo recibos distintos.
 - `indice-modulos.md` organiza o roteamento por fase e preserva um único
   módulo-base; tutela continua sendo o único complemento cumulativo.
 - Dez fixtures acrescentam cobertura para as famílias novas e o gate de
-  confirmação. Agravo interno e interdição foram executados com subagentes
-  Codex depois de expor no índice seus controles pré-briefing: 2/2 cenários,
-  6/6 invariantes e zero leitura prematura de módulo. Essa avaliação sintética
-  não equivale a dogfood; as oito restantes não foram reexecutadas nesta frente.
-- `references/mapa-visual-skills-modulos.md` representa as nove skills, seus
-  handoffs e gates, os modos não contenciosos e os 37 módulos contenciosos. O
-  mapa é estritamente descritivo e não simula workflows prováveis.
+  confirmação. A primeira execução encontrou quatro PASS e seis FAIL: quatro
+  conflitos de fixture e dois bugs de baseline. Agravo interno e interdição
+  foram corrigidos e reexecutados com subagentes Codex: 2/2 cenários, 6/6
+  invariantes e zero leitura prematura de módulo. As quatro fixtures restantes
+  continuam inelegíveis para medir comportamento.
+- `references/mapa-visual-skills-modulos.md` representa as nove skills
+  publicadas e a candidata deliberativa do PR #26, seus handoffs e gates, os
+  modos não contenciosos e os 37 módulos contenciosos. O mapa é estritamente
+  descritivo e não simula workflows prováveis.
 - `references/validacao-casos-reais.md` confronta os contratos públicos com 14
   cenários reais anonimizados, registra a fronteira da prova e prioriza as
   lacunas sem incorporar dado identificador do corpus privado.
@@ -157,7 +167,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 61 testes.
+- `make test`: PASS — 62 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
@@ -181,14 +191,20 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `f2e99ba`.
   `v0.5.0` e `v0.5.1`, respectivamente.
 - A publicação `v0.5.1` contém sete bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
+- A nova medição do PR #26 usou apenas subagentes Codex e cenários sintéticos.
+  Ela comprova o comportamento dirigido, mas não dogfood, uso humano ou
+  aprendizagem em caso real.
 - A rodada dirigida dos dois gates usou subagentes Codex e cenários sintéticos;
   não houve modelo externo, dogfood, uso humano ou custo medido em dólares.
+- A leitura combinada de 24/24 cenários elegíveis agrega duas rodadas; cinco
+  fixtures continuam materialmente inelegíveis e um cenário depende de um job
+  com conector Silo autenticado.
 
 ## Próxima ação
 
-Sincronizar o PR #26 com a baseline `v0.5.1` e repetir seus gates proporcionais.
-Comparação externa, Fases 2 e 4, instalação, dogfood e anúncio continuam fora
-do escopo concluído.
+Repetir os gates estruturais após a sincronização, publicar a branch do PR #26
+e decidir seu landing separadamente. Comparação externa, Fases 2 e 4,
+instalação, dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 

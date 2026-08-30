@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera sete skills autossuficientes para upload no ChatGPT."""
+"""Gera oito skills autossuficientes para upload no ChatGPT."""
 
 import hashlib
 import json
@@ -19,6 +19,7 @@ SKILLS = (
     "analise-juridica-civel",
     "analise-jurisprudencial",
     "aprofundamento-juridico",
+    "deliberacao-juridica",
     "redacao-contencioso",
     "redacao-consultivo",
 )
@@ -66,9 +67,10 @@ def skill_files(name: str) -> dict[str, bytes]:
     files[f"{name}/references/handoff.md"] = (
         PLUGIN / "references" / "handoff.md"
     ).read_bytes()
-    files[f"{name}/references/deliberacao.md"] = (
-        PLUGIN / "references" / "deliberacao.md"
-    ).read_bytes()
+    if name == "deliberacao-juridica":
+        files[f"{name}/references/deliberacao.md"] = (
+            PLUGIN / "references" / "deliberacao.md"
+        ).read_bytes()
     if name in CPC_SKILLS:
         cpc = PLUGIN / "references" / "legislacao" / "cpc"
         for path in cpc.iterdir():

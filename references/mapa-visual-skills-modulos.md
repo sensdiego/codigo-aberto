@@ -15,9 +15,9 @@ propõe workflows prováveis de utilização.
 - “sem modo obrigatório” significa que o módulo não contém a seção
   `Modo obrigatório`; não significa ausência de escolhas no briefing.
 
-Inventário conferido: **9 skills públicas**, **37 módulos contenciosos**
-(36 bases e 1 complemento), **24 módulos contenciosos com modo obrigatório** e
-**13 sem modo obrigatório**.
+Inventário deste branch: **10 skills** (**9 publicadas na v0.5.0 e 1 candidata
+no PR #26**), **37 módulos contenciosos** (36 bases e 1 complemento), **24
+módulos contenciosos com modo obrigatório** e **13 sem modo obrigatório**.
 
 ## 1. Superfície pública: entrada e roteamento
 
@@ -33,6 +33,7 @@ flowchart TB
     R --> AJ["analise-juridica-civel"]
     R --> AP["analise-jurisprudencial"]
     R --> PROF["aprofundamento-juridico"]
+    R --> DEL["deliberacao-juridica<br/>candidata no PR #26"]
     R --> RC["redacao-contencioso"]
     R --> RCON["redacao-consultivo"]
     R --> PS["pesquisa-silo"]
@@ -61,25 +62,32 @@ flowchart LR
     P -. "quando disponível" .-> PROF
     PROF --> A["handoff: aprofundamento"]
 
+    M --> DEL["deliberacao-juridica"]
+    A --> DEL
+    DEL --> DEC["handoff: decisão"]
+
     D --> RCON["redacao-consultivo<br/>descritiva"]
     D --> RC["redacao-contencioso"]
     M --> RC
     M --> RCON2["redacao-consultivo<br/>com posição jurídica"]
     P -. "se usada e verificada" .-> RC
     P -. "se usada e verificada" .-> RCON2
+    DEC --> RC
+    DEC --> RCON2
 ```
 
 ## 3. Gates compartilhados antes da redação
 
-O protocolo de deliberação é uma referência compartilhada, não uma décima
-skill pública neste branch.
+O protocolo de deliberação continua sendo referência compartilhada. A skill
+candidata `deliberacao-juridica` o embrulha e produz o mesmo handoff `decisão`.
 
 ```mermaid
 flowchart LR
     H["Handoffs maduros<br/>do mesmo caso e lente"] --> Q{"Decisão humana pendente<br/>que a redação pressupõe?"}
     Q -- "não" --> B["Briefing consolidado"]
-    Q -- "sim" --> DEL["Protocolo de deliberação"]
-    DEL --> DEC["handoff: decisão"]
+    Q -- "sim" --> DEL["deliberacao-juridica"]
+    DEL --> PROTO["Protocolo de deliberação"]
+    PROTO --> DEC["handoff: decisão"]
     DEC --> B
     B --> C{"Confirmação humana explícita<br/>pela pergunta fechada?"}
     C -- "não ou com alteração" --> B
@@ -105,7 +113,7 @@ continuam sendo serviço separado deste repositório.
 
 ```mermaid
 flowchart TB
-    DISC["Disciplina compartilhada"] --> SK["9 skills públicas"]
+    DISC["Disciplina compartilhada"] --> SK["10 skills no branch<br/>9 publicadas + 1 candidata"]
     HAND["Contrato comum de handoff"] --> SK
     CPC["Biblioteca versionada do CPC"] --> ADJ["analise-juridica-civel"]
     CPC --> APROF["aprofundamento-juridico"]
@@ -168,7 +176,7 @@ flowchart TB
     AJ -. "evento temporal material" .-> REL["relógio processual"]
     AJ -. "Silo conectado" .-> VAL["validação Silo/Planalto"]
     AJ -. "questão delimitada e pesquisa aceita" .-> JUR["analise-jurisprudencial"]
-    AJ -. "decisão pendente e pedido do advogado" .-> DEL["protocolo de deliberação"]
+    AJ -. "decisão estratégica pendente" .-> DEL["deliberacao-juridica"]
 ```
 
 ### 5.4 Análise jurisprudencial, pesquisa e acesso ao Silo
@@ -199,7 +207,23 @@ flowchart TB
     M4 -. "audiência civil" .-> AUD["referência específica de audiência"]
 ```
 
-### 5.6 Redação consultiva
+### 5.6 Deliberação jurídica
+
+A skill candidata usa o protocolo compartilhado e não pesquisa, aprofunda ou
+redige. A saída é sempre um handoff de decisão ou uma rota explícita de retorno.
+
+```mermaid
+flowchart TB
+    DEL["deliberacao-juridica"] --> PROTO["protocolo compartilhado"]
+    PROTO --- OPT["até quatro opções materiais"]
+    PROTO --- REC["recomendação + confiança<br/>+ melhor objeção"]
+    PROTO --- ENT["entrevista decisória<br/>uma pergunta de maior valor por vez"]
+    PROTO --> DEC["handoff: decisão"]
+    DEL -. "lacuna impede decidir" .-> PROF["aprofundamento-juridico"]
+    DEC -. "briefing próprio confirmado" .-> RED["redação"]
+```
+
+### 5.7 Redação consultiva
 
 Tipo e profundidade são eixos independentes. O diagrama não gera combinações
 prováveis entre eles.
@@ -324,6 +348,6 @@ flowchart LR
 flowchart TB
     MAPA["Mapa atual"] --- IN["Inclui<br/>skills, módulos, modos, handoffs,<br/>gates e dependências documentadas"]
     MAPA --- OUT["Não inclui nesta etapa<br/>personas, casos sintéticos, frequência,<br/>combinações prováveis ou jornadas simuladas"]
-    MAPA --- PAUSA["Não promove a skill autônoma de deliberação<br/>pausada e ausente deste branch"]
+    MAPA --- CAND["Inclui deliberacao-juridica como candidata do PR #26<br/>conflitos resolvidos; validação comportamental pendente"]
     MAPA --- EXT["Não representa como local<br/>servidor, base ou API externos do Silo"]
 ```

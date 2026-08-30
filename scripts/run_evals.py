@@ -25,6 +25,7 @@ PUBLIC_SKILLS = (
     "analise-jurisprudencial",
     "aprofundamento-juridico",
     "assinatura-silo",
+    "deliberacao-juridica",
     "novo-caso",
     "pesquisa-silo",
     "redacao-consultivo",
@@ -468,8 +469,8 @@ def parse_turns(transcripts: list[str]) -> dict[str, object]:
 
 
 def routing_ok(expected_skill: str, invoked_skills: Sequence[str]) -> bool:
-    """Verifica o roteamento determinístico para a skill esperada."""
-    return f"silo-legal:{expected_skill}" in invoked_skills
+    """Verifica se a primeira rota corresponde à skill esperada."""
+    return bool(invoked_skills) and invoked_skills[0] == f"silo-legal:{expected_skill}"
 
 
 def is_redaction_module(file_path: str) -> bool:
@@ -751,6 +752,8 @@ def runner_command(prompt: str, model: str) -> list[str]:
         "--verbose",
         "--allowedTools",
         "Skill,Read,Glob,Grep",
+        "--plugin-dir",
+        str(ROOT),
         "--mcp-config",
         '{"mcpServers":{}}',
         "--strict-mcp-config",

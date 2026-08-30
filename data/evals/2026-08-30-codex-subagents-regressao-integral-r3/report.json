@@ -1,0 +1,79 @@
+{
+  "schema_version": "codex-subagent-eval-report-v1",
+  "source_commit": "fcacf6186ad706afc9380b78174dc8b3255a72bd",
+  "fixture": {
+    "path": "tests/fixtures/workflows.json",
+    "sha256": "c147a4bd4d0f2bf43665c097ae9013f426d379acdcfc06c76d89fd8fb77f9556"
+  },
+  "execution": {
+    "mode": "three blind Codex subagent executors and cross-judges",
+    "outputs_reexecuted_after_fixture_correction": false,
+    "external_model_calls": false,
+    "measured_cost_usd": null
+  },
+  "observed_summary_after_fixture_correction": {
+    "PASS": 22,
+    "FAIL": 8,
+    "JUDGE_ERROR": 0,
+    "scenarios": 30,
+    "invariants_attended": 93,
+    "invariants_total": 103,
+    "first_route_correct": 30,
+    "redaction_gate_failures": 0
+  },
+  "triage_of_original_ten_failures": {
+    "FIXTURE_CONTRACT_CONFLICT": 7,
+    "ENVIRONMENT_LIMITATION": 1,
+    "PRODUCT_BUG": 2,
+    "JUDGE_ERROR": 0,
+    "resolved_by_fixture_correction": [
+      "gate-resposta-nao-autoriza",
+      "gate-confirmacao-combinada"
+    ],
+    "remaining_invalid_fixtures": [
+      "peca-contenciosa-complexa",
+      "redacao-cumprimento-sentenca",
+      "redacao-prova-pericial-laudo",
+      "redacao-acao-monitoria",
+      "redacao-recurso-especial"
+    ],
+    "environment_limited": [
+      "silo-cobertura-insuficiente"
+    ],
+    "confirmed_baseline_product_bugs": [
+      "redacao-agravo-interno",
+      "redacao-jurisdicao-voluntaria-interdicao"
+    ]
+  },
+  "eligible_summary": {
+    "PASS": 22,
+    "FAIL": 2,
+    "eligible_scenarios": 24,
+    "excluded_invalid_fixture": 5,
+    "excluded_environment_limitation": 1
+  },
+  "pr_26_impact": {
+    "pr_specific_product_failures": 0,
+    "behavioral_blocker": false,
+    "full_baseline_green": false,
+    "reason": "Os dois defeitos reais pertencem à baseline/main e aos contratos de briefing de agravo interno e interdição; não foram introduzidos pela skill deliberativa."
+  },
+  "artifacts": {
+    "input_manifest_sha256": "599eebdbae73e3ce2cd199f4f31b1cb6f28e5dc574f97da4d073adb8234242bd",
+    "executor_a_sha256": "91d895ed9d16fa1ee7b90467a766e82e6decb16748e6b5db26b3d940adc2ce6c",
+    "executor_b_sha256": "358b6d10a963b2da3e7318987c72692198af9a0bf536ea359df9c6f779a4f714",
+    "executor_c_sha256": "33474a91a0c5ba0dd05662c5f570e9c7a10f0acd39d6a3981aa3e2db8812e4a1",
+    "judge_a_sha256": "d1f50e3d8058a23f53320b06d5791408489b06782b2869513e88b0f7bd799a29",
+    "judge_b_rerun_sha256": "49170ee1d63700dbe47e2487d15737ffb82ed60227e76edd4ec71b1c41b2a968",
+    "judge_c_sha256": "5f11cd786e2d2b3b851c8e22636cfdb17755021a28c17184a40df89803383ba8",
+    "triage_a_sha256": "96acfb3968b079b21ccfc9fadfb857203a075eee70dc990b65f4bbdcff940b51",
+    "triage_b_sha256": "5d6a66a73f4092cc866158634f0c1d29edd41dd335ea22e6609dd3f7e209af17",
+    "triage_c_sha256": "0a54fd934b995da71d5312eb96b39d9822e7236d40985037dd302987b97ef98d"
+  },
+  "limitations": [
+    "A regressão integral não está verde: restam dois defeitos reais de baseline.",
+    "Cinco fixtures não fornecem os artefatos que seus próprios invariantes exigem.",
+    "O cenário de pesquisa Silo não pode exercitar o handshake sem conector autenticado.",
+    "Cenários sintéticos; não houve dogfood nem uso humano."
+  ]
+}
