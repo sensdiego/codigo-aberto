@@ -8,14 +8,16 @@ comportamental A01–A14 com subagentes Codex.
 
 ## Estado do produto
 
-A versão publicada continua `v0.3.0`. O módulo de tutela provisória permanece
-no PR #27, branch `codex/SEN-2413-tutela-urgencia-evidencia`, commit `86a28eb`.
-A skill autônoma de deliberação continua pausada no PR #26 e não foi incorporada.
+A versão publicada é `v0.4.0`. O PR #27 foi integrado a `main` pelo merge commit
+`0d9c04c`, preservando o commit `86a28eb`. O merge acionou automaticamente o
+workflow `Software release`, que criou o commit `39c2e26`, a tag e o GitHub
+Release `v0.4.0`. A skill autônoma de deliberação continua pausada no PR #26 e
+não foi incorporada.
 
 O trabalho posterior à tutela está no branch empilhado
-`codex/redacao-contencioso-cobertura-integral` e no draft PR #28, cuja base é a
-branch do PR #27. O CI remoto está verde. Não houve merge, release, publicação
-de bundle ou anúncio.
+`codex/redacao-contencioso-cobertura-integral` e no draft PR #28, agora baseado
+em `main`. A branch incorporou `main` por merge commit, sem reescrever a cadeia
+auditada. O PR #28 não foi integrado nem publicado.
 
 ## O que este branch entrega
 
@@ -137,6 +139,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `de028ce` — output cego da regressão A03;
 - `252a917` — julgamento independente da regressão A03, PASS;
 - `3f2265a` — relatório R2 e documentação de fechamento.
+- `babdfba` — sincronização com `main` após o landing e a release automática da
+  tutela, sem reescrita da cadeia.
 
 ## Verificação
 
@@ -149,8 +153,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
-Os comandos foram repetidos antes do push; o workflow `Quality` do PR #28
-também passou integralmente.
+Os comandos foram repetidos após o retarget para `main` e a sincronização com
+`v0.4.0`.
 
 ## Limites e recibos negativos
 
@@ -165,17 +169,16 @@ também passou integralmente.
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- Houve push da branch e abertura do draft PR #28. Não houve issue nova, merge,
-  tag, release ou anúncio.
-- O plano de release calcula `v0.4.0` a partir de quatro fragmentos `minor` e três
-  fragmentos documentais `none`, mas nenhuma publicação está autorizada por
-  este handoff.
+- O PR #27 foi integrado. Esse merge disparou automaticamente o workflow que
+  publicou `v0.4.0`; não houve publicação manual, bundle ou anúncio.
+- O draft PR #28 permanece sem merge. Seu plano calcula `v0.5.0` a partir de
+  três fragmentos `minor`, um `patch` e três `none`; nova publicação não está
+  autorizada por este handoff.
 
 ## Próxima ação
 
-Revisar o draft PR #28 contra a branch do PR #27. Depois do landing de #27,
-retargetar #28 para `main` sem rebase, squash, amend ou cherry-pick e repetir os
-gates antes de qualquer merge. Comparação externa, Fases 2 e 4, dogfood, merge e
+Revisar o draft PR #28 contra `main` e seus recibos após a sincronização com
+`v0.4.0`. Comparação externa, Fases 2 e 4, dogfood, merge do PR #28 e nova
 release continuam sem autorização.
 
 ## Comandos de retomada
