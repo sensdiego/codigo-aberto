@@ -10,11 +10,11 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-27, v0.2.4)
+## Estado atual (2026-08-30, v0.3.0)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.2.4` (correções de roteamento
-  jurisprudencial e rótulos canônicos do delta).
+  recorte versionado do CPC. Versão corrente `v0.3.0`: contratos deliberativos
+  e gate de confirmação entregues pelo PR #25.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
   GitHub Release e publicação idempotente de assets (quatro releases publicadas
   pelo workflow, todas verdes).
@@ -50,12 +50,12 @@ Estado dos itens:
   limpa nem adoção externa. Também revelou dois achados de produto: gates
   críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
   entre receber a análise e autorizar a redação.
-- Camada deliberativa decidida em 2026-08-26: **adaptar** os contratos
-  (protocolo compartilhado, tipo de artefato `decisão`, gate determinístico),
-  sem skill nova. Estudo, comparação das quatro alternativas, revisão
-  independente e especificação em
-  [#22](https://github.com/sensdiego/codigo-aberto/issues/22). Implementação em
-  duas frentes medidas (Fase 3), com a régua antes de qualquer edição de skill.
+- Camada deliberativa inicialmente decidida em 2026-08-26 como adaptação dos
+  contratos. As duas rodadas da frente 2 satisfizeram a cláusula de promoção
+  por falha repetida de roteamento; a frente 3 implementa a skill autônoma
+  `deliberacao-juridica` sobre o mesmo protocolo e handoff. A primeira medição
+  dirigida confirmou o roteamento decisório e o gate combinado, mas revelou
+  excesso de roteamento na ponte com redação; a branch permanece não aceita.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
   harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
   leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
@@ -166,15 +166,14 @@ usando o eval harness como pré-condição de qualidade.
 
 Pré-requisito: Fase 2 concluída.
 
-### Camada deliberativa entre análise e redação — decidido: adaptar
+### Camada deliberativa entre análise e redação — skill autônoma em validação
 
-Status: hipótese identificada no dogfood interno de 2026-08-25 e **decidida em
-2026-08-26: adaptar os contratos existentes, sem skill nova** (estudo,
-comparação das quatro alternativas, revisão independente e especificação em
-[#22](https://github.com/sensdiego/codigo-aberto/issues/22)). A implementação
-segue nas duas frentes medidas listadas ao final desta seção; a régua vem antes
-de qualquer edição de skill. *(O texto de 2026-08-25 está preservado abaixo com
-anotações inline.)*
+Status: a decisão de 2026-08-26 foi adaptar os contratos existentes e medir
+antes de promover uma nova porta. As duas rodadas da frente 2 falharam por
+omissão ou roteamento e acionaram a cláusula de promoção de
+[#22](https://github.com/sensdiego/codigo-aberto/issues/22). A frente 3 cria a
+skill autônoma reaproveitando protocolo e handoff; ela ainda não está aceita,
+porque a medição dirigida encontrou regressões na ponte com redação.
 
 Problema observado: as skills de análise entregam conclusões e a redação pede
 um briefing, mas nenhuma etapa é claramente responsável por apresentar ao
@@ -214,12 +213,13 @@ Comportamento desejado, independentemente da forma de implementação:
 Alternativas comparadas em 2026-08-26 (detalhe em
 [#22](https://github.com/sensdiego/codigo-aberto/issues/22)):
 
-- skill autônoma `deliberacao-juridica` — rejeitada por ora: décima porta num
+- skill autônoma `deliberacao-juridica` — rejeitada inicialmente: décima porta num
   pacote em que o usuário não conhece nomes, descrição concorrendo com análise
   jurídica e aprofundamento (a família de confusão que o baseline mediu) e, no
-  ChatGPT, um oitavo ZIP a descobrir; fica como cláusula de promoção medida;
-- protocolo/handoff compartilhado sem nova skill — **escolhida**, com o mínimo
-  de ajuste nos contratos existentes;
+  ChatGPT, um oitavo ZIP a descobrir; promovida em 2026-08-30 após a cláusula
+  medida disparar;
+- protocolo/handoff compartilhado sem nova skill — escolhido e entregue na
+  v0.3.0; mantido como contrato da skill autônoma;
 - ajuste apenas das skills existentes — rejeitada: concentra em uma skill o que
   nasce de qualquer análise e duplica texto;
 - adiamento ou rejeição — rejeitada: corrige o incidente do gate, não a lacuna.
@@ -254,14 +254,26 @@ briefing ou contexto sejam tratados como autorização implícita.
       primeiro por roteamento e, na skill errada, ainda cumpre parte do
       protocolo (5/5, 4/5, 2/6). Esta rodada mede a v0.2.4 sem protocolo e não
       conta para a cláusula de promoção.
-- [ ] Frente 2 — contratos (fragmento `minor` → v0.3.0): `disciplina.md`
+- [x] Frente 2 — contratos (publicada na v0.3.0): `disciplina.md`
       (gatilho + gate), `handoff.md` (tipo `decisão`),
       `references/deliberacao.md`, ponteiros em `analise-juridica-civel`,
       `analise-jurisprudencial`, `aprofundamento-juridico`,
       `redacao-contencioso` e `redacao-consultivo`, description de
       `analise-juridica-civel` (com `aprofundamento-audiencia` como controle
       de confusão) e gerador de bundles (`REWRITES` + cópia). Re-medir contra
-      a frente 1. PR próprio.
+      a frente 1. PR próprio. PR #25 integrado em 2026-08-28. Duas rodadas
+      medidas falharam repetidamente por omissão ou roteamento e acionaram a
+      cláusula de promoção.
+- [~] Frente 3 — skill autônoma `deliberacao-juridica` (SEN-2408): porta
+      própria sobre `references/deliberacao.md`, handoff `decisão`, oitavo
+      bundle, roteamento das três fixtures `deliberacao-*` e estado explícito
+      do gate de redação. Medição dirigida parcial em 2026-08-30: dois cenários
+      decisórios PASS, `gate-confirmacao-combinada` PASS, dois controles da
+      ponte de redação FAIL; dois cenários iniciais foram interrompidos após
+      FAIL. As falhas apontaram roteamento precoce para deliberação e uma
+      primeira entrevista com perguntas agrupadas. As regras foram estreitadas
+      depois da rodada, ainda sem re-medição. Não houve regressão completa,
+      merge, release ou publicação desta frente.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.

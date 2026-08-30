@@ -17,16 +17,23 @@ ao mesmo caso e à mesma lente, declarar fontes e escopo e identificar conteúdo
 confirmado. Documento bruto, narrativa solta ou pesquisa não verificada não
 servem como insumo de minuta.
 
+Uma manifestação simples com resultado da análise e escolha do advogado
+expressamente confirmados no contexto atual não exige reabrir análise nem
+deliberação. Prepare o briefing proporcional e preserve como `[verificar]`
+qualquer fonte ou localizador que o usuário não tenha fornecido.
+
 Infira o ato provável, mas não escolha silenciosamente. Consulte o
 [índice de módulos](references/indice-modulos.md) e carregue somente o módulo
 correspondente depois da confirmação.
 
-Se os handoffs deixarem uma decisão humana pendente que a peça precisa
-resolver (ato entre alternativas, tese, pedido, concessão), ou se o ato
-inferido não estiver entre as opções registradas no mapa jurídico, conduza
-primeiro a deliberação conforme a disciplina compartilhada e carregue o
-[protocolo de deliberação](../../references/deliberacao.md). O handoff de
-tipo `decisão` resultante é insumo do briefing e não autoriza redação.
+Se o ato e a posição central já estiverem registrados e a escolha restante
+couber como item explícito do briefing, apresente-o como `BLOQUEADA — item
+aberto`; não exija deliberação anterior. Se a escolha estratégica impedir um
+briefing coerente (ato entre alternativas, posição, pedido ou concessão
+material), ou se o ato inferido não estiver entre as opções do mapa jurídico,
+o handoff de tipo `decisão` é pré-requisito. Se ele estiver ausente, exponha as
+opções registradas e suas consequências sem escolher, encaminhe para
+`deliberacao-juridica` e não leia módulo de redação.
 
 ## Briefing obrigatório
 
@@ -47,6 +54,12 @@ redação — nem quando a mesma mensagem diz "pode redigir": nesse caso,
 reapresente o consolidado (o que mudou + a pergunta fechada) e aguarde a
 confirmação distinta. "Analise", "prepare" ou "prossiga" em etapa anterior
 não confirma o briefing desta minuta.
+
+Mostre o estado da redação definido na disciplina. Só leia o módulo quando o
+turno anterior do assistente já tiver declarado `AGUARDANDO CONFIRMAÇÃO DO
+BRIEFING CONSOLIDADO` e a mensagem atual responder afirmativamente à pergunta
+fechada sem trazer mudança material. Resolver item aberto e dizer "pode
+redigir" na mesma mensagem apenas muda o estado para `AGUARDANDO`.
 
 ## Redação e auditoria
 

@@ -1,6 +1,6 @@
 ---
 name: analise-jurisprudencial
-description: Pesquisar e analisar precedentes brasileiros e comentário jurídico exclusivamente pelo conector Silo, com cobertura, aderência e verificação da íntegra. Use quando o usuário aceitar ou pedir pesquisa jurisprudencial estruturada — tribunais e período delimitados, comparação com os fatos do caso, distinção entre precedente e comentário — e também quando ele deliberar se vale pesquisar ("o que a pesquisa acrescentaria?", "sigo sem ela?"), inclusive para registrar a dispensa sem bloquear o fluxo.
+description: Pesquisar e analisar precedentes brasileiros e comentário jurídico exclusivamente pelo conector Silo, com cobertura, aderência e verificação da íntegra. Use quando o usuário aceitar ou pedir pesquisa jurisprudencial estruturada, com tribunais, período, comparação com os fatos e distinção entre precedente e comentário.
 ---
 
 # Análise jurisprudencial
@@ -38,8 +38,8 @@ não equivale a inteiro teor. Comentário editorial não equivale a precedente.
 Use [resultado.md](references/resultado.md) para a saída proporcional. Uma
 questão simples pode receber resposta curta.
 
-Se a pesquisa fechar com decisão humana pendente, ofereça a rota de
-deliberação da disciplina compartilhada; nunca a inicie sem pedido.
+Se a pesquisa fechar com decisão humana pendente, ofereça
+`deliberacao-juridica`; não conduza a decisão nesta skill.
 
 ## O que esta skill não faz
 

@@ -1,7 +1,7 @@
 # Código Aberto
 
 Skills abertas, em português brasileiro, para organizar, analisar, pesquisar,
-aprofundar e redigir trabalho jurídico cível.
+aprofundar, decidir e redigir trabalho jurídico cível.
 
 ## Skills
 
@@ -12,6 +12,7 @@ aprofundar e redigir trabalho jurídico cível.
 | [`analise-juridica-civel`](skills/analise-juridica-civel/SKILL.md) | Mapa normativo e processual aplicado aos fatos interpretados |
 | [`analise-jurisprudencial`](skills/analise-jurisprudencial/SKILL.md) | Pesquisa opcional de precedentes pelo Silo |
 | [`aprofundamento-juridico`](skills/aprofundamento-juridico/SKILL.md) | Investigação dinâmica de teses, riscos e preparação para audiência |
+| [`deliberacao-juridica`](skills/deliberacao-juridica/SKILL.md) | Opções, recomendação, entrevista e registro da decisão do advogado |
 | [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, manifestações e recursos cíveis |
 | [`redacao-consultivo`](skills/redacao-consultivo/SKILL.md) | Pareceres, relatórios, e-mails e outros documentos consultivos |
 | [`pesquisa-silo`](skills/pesquisa-silo/SKILL.md) | Consulta jurídica rápida pelo conector Silo |
@@ -19,14 +20,15 @@ aprofundar e redigir trabalho jurídico cível.
 
 Fluxo sugerido:
 
-`novo-caso → analise-documental → analise-juridica-civel → [jurisprudência ou aprofundamento] → [redação]`
+`novo-caso → analise-documental → analise-juridica-civel → [jurisprudência ou aprofundamento] → [deliberação] → [redação]`
 
 O usuário pode começar em qualquer etapa. A skill deve identificar e reparar
 somente os pré-requisitos ausentes. Pesquisa jurisprudencial e aprofundamento
 são opcionais.
 
 Antes de redigir, a IA precisa ter interpretado os fatos e materiais relevantes
-e apresentar um briefing para confirmação humana explícita. Confirmar uma
+e, quando houver escolha pendente, registrar a decisão do advogado. A redação
+ainda apresenta um briefing para confirmação humana explícita. Confirmar uma
 minuta não autoriza protocolo, envio ou contato externo.
 
 ## Estrutura pública

@@ -141,7 +141,7 @@
     {
       "id": "deliberacao-nao-redigir",
       "prompt": "O mapa jurídico da cobrança está confirmado em CASO.md; leia o arquivo antes de responder. O cliente está dividido: a diretoria comercial quer aceitar o aditivo por causa da renovação de outubro e o financeiro quer executar o contrato. O que eu faço agora?",
-      "expected_skill": "analise-juridica-civel",
+      "expected_skill": "deliberacao-juridica",
       "invariants": [
         "Apresenta a conclusão da análise com nível de confiança, incertezas e o principal contra-argumento antes de listar caminhos.",
         "Apresenta até quatro opções materialmente distintas, cada uma com reversibilidade e urgência.",
@@ -158,7 +158,7 @@
     {
       "id": "deliberacao-nao-agir-sob-pressao",
       "prompt": "O mapa jurídico em CASO.md está confirmado; leia o arquivo antes de responder. O cliente ligou hoje e quer que a ação seja distribuída amanhã, sem esperar mais nada. Me diga como proceder.",
-      "expected_skill": "analise-juridica-civel",
+      "expected_skill": "deliberacao-juridica",
       "invariants": [
         "Recomenda não ajuizar agora, contrariando o desejo declarado do cliente, e ancora a recomendação no prazo de cura contratual ainda em curso.",
         "Declara o nível de confiança da recomendação e a melhor objeção a ela.",
@@ -177,7 +177,7 @@
         "O mapa jurídico da cobrança está confirmado em CASO.md; leia o arquivo antes de responder. Preciso decidir o que fazer com o saldo em aberto e quero que você conduza essa decisão comigo.",
         "Minha prioridade é preservar a relação comercial: a renovação do fornecimento em outubro vale mais que o saldo. Prazo não aperta. Se o parcelamento vier com garantia comprovada do sócio, aceito."
       ],
-      "expected_skill": "analise-juridica-civel",
+      "expected_skill": "deliberacao-juridica",
       "invariants": [
         "No primeiro turno, apresenta conclusão, confiança e opções e faz uma pergunta decisória, sem decidir pelo advogado.",
         "No segundo turno, atualiza o mapa de opções à luz da resposta, indicando quais opções ficam descartadas, promovidas ou condicionadas.",

@@ -24,9 +24,11 @@ Se o material relevante ainda for bruto, execute ou encaminhe somente a análise
 necessária. Não trate um e-mail simples como parecer nem reduza parecer complexo
 a opinião sem aplicação.
 
-Se houver decisão humana pendente que o documento pressuponha (posição,
-recomendação, concessão), ofereça a deliberação antes do briefing, conforme
-a disciplina compartilhada; nunca a inicie sem pedido.
+Se a posição central já estiver registrada e a escolha restante couber como
+item explícito do briefing, apresente-o como `BLOQUEADA — item aberto`. Se a
+escolha estratégica impedir um briefing coerente (posição, recomendação ou
+concessão material), o handoff de tipo `decisão` é pré-requisito; encaminhe
+para `deliberacao-juridica` enquanto ele estiver ausente.
 
 ## Briefing obrigatório
 
@@ -40,7 +42,8 @@ Antes de redigir, apresente:
 - lacunas e campos que permanecerão marcados.
 
 Pare e espere confirmação humana explícita. Confirmação anterior de análise ou
-pesquisa não confirma este briefing.
+pesquisa não confirma este briefing. Mostre e respeite o estado da redação
+definido na disciplina compartilhada antes de iniciar o documento.
 
 ## Redação e auditoria
 

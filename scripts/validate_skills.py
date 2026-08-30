@@ -24,6 +24,7 @@ WORKFLOW_SKILLS = {
     "analise-juridica-civel",
     "analise-jurisprudencial",
     "aprofundamento-juridico",
+    "deliberacao-juridica",
     "redacao-contencioso",
     "redacao-consultivo",
 }
