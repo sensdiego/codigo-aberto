@@ -3,7 +3,8 @@
 Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
 redação contenciosa, a elaboração do mapa visual, a validação estrutural
 anonimizada contra situações documentadas em casos reais e a adoção da
-arquitetura de adaptação, incluindo seus consumidores públicos locais.
+arquitetura de adaptação, seus consumidores públicos locais e a avaliação
+comportamental A01–A14 com subagentes Codex.
 
 ## Estado do produto
 
@@ -44,11 +45,18 @@ branch, merge, release, publicação de bundle ou anúncio.
 - `RFC-CA-001-adaptacao-casos-reais.md` adota adaptador versionado, intake
   obrigatório, análise documental condicionada, perfil de frentes, precedência
   temporal, despachante de escopo e critérios sintéticos A01–A14. A RFC foi
-  aceita; as Fases 1 e 3 foram concluídas e as Fases 2, 4 e 5 não foram
-  autorizadas.
+  aceita; as Fases 1 e 3 foram concluídas, A01–A14 foram executados na Fase 5
+  com subagentes Codex e as Fases 2 e 4 não foram autorizadas.
 - `novo-caso`, `analise-documental`, `analise-juridica-civel` e
   `redacao-contencioso` consomem o pacote v1 conforme sua etapa. O estado de
   escopo agora pertence a cada frente; handoffs comuns continuam compatíveis.
+- `adaptacao-workflows.json` referencia A01–A14 sem duplicar as 20 frentes. O
+  runner materializa pacotes sintéticos completos, cobre os quatro consumidores
+  e mantém A01–A04 como canário separado da rodada integral.
+- A rodada comportamental teve primeira passagem 13/14. A01 revelou perda da
+  hierarquia entre petição inicial e tutela; a regra foi corrigida sem mudar a
+  fixture, e a regressão com executor e juiz novos passou. O estado efetivo é
+  14/14, sem alegação de passagem única perfeita.
 
 ## Resultado da validação com casos reais
 
@@ -116,9 +124,10 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `3c753a0` — base normativa e módulos prioritários;
 - `d7ce8ab` — procedimentos especiais e roteamento completo;
 - `d21c7b9` — checks, fixtures e fechamento da cobertura de redação;
-- `9168d63` (HEAD) — mapa visual de skills, módulos e modos;
-- RFC, contrato de handoff, régua A01–A14, consumidores e este handoff ainda
-  estão sem commit.
+- `9168d63` — mapa visual de skills, módulos e modos;
+- `8c255e5` (HEAD) — checkpoint local das Fases 1 e 3 da adaptação;
+- avaliação comportamental A01–A14, correção A01 e este handoff ainda estão sem
+  commit.
 
 ## Verificação
 
@@ -127,7 +136,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 47 testes.
+- `make test`: PASS — 53 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
@@ -136,8 +145,12 @@ A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
 
 ## Limites e recibos negativos
 
-- Nenhuma fixture nova foi executada contra modelo; não houve dogfood nem custo
-  de inferência.
+- A01–A14 foram executados com subagentes Codex; não houve chamada de modelo
+  externo, dogfood ou recibo de custo em dólares. Houve consumo não medido da
+  franquia Codex.
+- Custo medido nos quatro relatórios anteriores: medianas por cenário entre
+  US$ 0,28 e US$ 0,65; máximo de US$ 1,19. Estimativa não executada no executor
+  externo: US$ 2–5 para A01–A04 e US$ 8–17 para A01–A14.
 - A auditoria composta de ingestão reescreveu por efeito colateral uma fila
   operacional do repositório privado. A alteração foi atribuída pelo timestamp,
   restaurada exatamente ao blob de `HEAD` e o repositório terminou limpo.
@@ -145,17 +158,15 @@ A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
 - Não houve criação de issue, PR, push, merge, tag, release ou anúncio.
-- O plano de release calcula `v0.4.0` a partir de quatro fragmentos `minor` e dois
+- O plano de release calcula `v0.4.0` a partir de quatro fragmentos `minor` e três
   fragmentos documentais `none`, mas nenhuma publicação está autorizada por
   este handoff.
 
 ## Próxima ação
 
-Aguardar instrução do owner. A Fase 2 permanece fora deste projeto. Dentro do
-`codigo-aberto`, as próximas frentes possíveis são a Fase 4, por contratos
-auxiliares próprios, ou a Fase 5, com avaliação comportamental autorizada.
-Chamadas pagas, dogfood, nova branch, PR, merge e release continuam exigindo
-decisões próprias e não devem ser iniciados silenciosamente.
+Aguardar novas instruções. A comparação no executor externo permanece opcional
+e exigiria autorização de custo. Fases 2 e 4, dogfood, nova branch, PR, merge e
+release continuam sem autorização.
 
 ## Comandos de retomada
 
@@ -170,4 +181,5 @@ make test-release
 git diff --check
 python3 scripts/release.py impact --ref-range origin/main...HEAD
 python3 scripts/release.py plan
+python3 scripts/run_evals.py --fixture tests/fixtures/adaptacao-workflows.json --list
 ```

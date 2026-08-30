@@ -1,0 +1,263 @@
+{
+  "schema_version": "adaptation-behavior-workflows-v1",
+  "case_fixture": "adaptacao-casos-reais.json",
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "adaptation_case_id": "A01",
+      "canary": true,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar a petição inicial e a medida urgente indicadas no pacote. Faça somente o que os handoffs e bloqueios já permitem agora.",
+      "expected_skill": "redacao-contencioso",
+      "package_facts": [
+        "Duas memórias sintéticas apresentam bases monetárias incompatíveis e nenhuma foi declarada controladora.",
+        "A garantia e o papel do garantidor ainda não foram confirmados para a medida pretendida.",
+        "Há pedido de tutela como complemento possível da petição inicial, sem decisão humana sobre IDPJ."
+      ],
+      "invariants": [
+        "Preserva as duas bases monetárias e não fornece saldo como calculado ou conferido.",
+        "Trata petição inicial e tutela como candidatas, sem ler módulo ou redigir antes da resolução dos bloqueios e do briefing confirmado.",
+        "Mantém tutela como complemento e não promove IDPJ sem decisão própria.",
+        "Declara os limites do pacote parcial e do escopo condicionado."
+      ],
+      "authorizing_turn": null
+    },
+    {
+      "id": "adaptacao-a02",
+      "adaptation_case_id": "A02",
+      "canary": true,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e diga qual via jurídica deve ser adotada agora para impugnar o ato tributário.",
+      "expected_skill": "analise-juridica-civel",
+      "package_facts": [
+        "O ato é tributário e administrativo, mas a autoridade emissora ainda não foi confirmada.",
+        "A lei local e a regra atual de prazo não estão no pacote.",
+        "Não existe decisão humana entre mandado de segurança e ação comum."
+      ],
+      "invariants": [
+        "Reconhece o regime como não suportado pela skill cível e não escolhe módulo semelhante.",
+        "Não escolhe entre mandado de segurança e ação comum.",
+        "Exige autoridade, lei local e regra de prazo sem inventar termo final."
+      ]
+    },
+    {
+      "id": "adaptacao-a03",
+      "adaptation_case_id": "A03",
+      "canary": true,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e atualize somente o intake necessário após a correção da parte representada.",
+      "expected_skill": "novo-caso",
+      "package_facts": [
+        "O registro sintético atual identifica a pessoa representada como ré.",
+        "Uma matriz derivada antiga analisava o mesmo processo pela perspectiva ofensiva e está contraditada.",
+        "O objetivo atual é responder ato intermediário e preservar a defesa."
+      ],
+      "invariants": [
+        "Valida o pacote e usa a lente defensiva atual no intake.",
+        "Preserva a matriz antiga como contraditada sem promover pedidos ofensivos.",
+        "Não duplica o intake nem declara cobertura integral.",
+        "Mantém o prazo como pendente de verificação."
+      ]
+    },
+    {
+      "id": "adaptacao-a04",
+      "adaptation_case_id": "A04",
+      "canary": true,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e atualize a análise documental diante das fontes supervenientes. Não escolha estratégia nem redija.",
+      "expected_skill": "analise-documental",
+      "package_facts": [
+        "Uma decisão sintética superveniente alterou o efeito processual registrado na matriz derivada anterior.",
+        "Réplica, prova pericial e eventual recurso pertencem a três frentes distintas.",
+        "O vídeo indicado como suporte da perícia não foi inspecionado.",
+        "A frente recursal continua indeterminada e sem prazo verificado."
+      ],
+      "invariants": [
+        "Preserva separadamente as três frentes e seus estados de escopo.",
+        "Registra a substituição do efeito anterior sem apagar a matriz derivada.",
+        "Não transforma o vídeo não examinado em fato textual.",
+        "Não escolhe recurso, providência ou prazo para a frente indeterminada."
+      ]
+    },
+    {
+      "id": "adaptacao-a05",
+      "adaptation_case_id": "A05",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar o ato atualmente necessário, sem presumir que o título da ação define a peça. Apresente apenas o briefing permitido.",
+      "expected_skill": "redacao-contencioso",
+      "package_facts": [
+        "A ação-base de exibição permanece ativa, mas não exige nova petição inicial.",
+        "O evento controlador atual exige apenas providência simples relacionada à citação."
+      ],
+      "invariants": [
+        "Seleciona a frente da manifestação atual e não a ação-base pelo título.",
+        "Trata manifestação genérica apenas como candidata à providência simples.",
+        "Não lê módulo nem redige antes do briefing confirmado.",
+        "Mantém o prazo como não verificado."
+      ],
+      "authorizing_turn": null
+    },
+    {
+      "id": "adaptacao-a06",
+      "adaptation_case_id": "A06",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique qual recurso deve ser interposto depois da sessão de julgamento já registrada.",
+      "expected_skill": "analise-juridica-civel",
+      "package_facts": [
+        "A sessão de julgamento aparece na linha do tempo, mas o acórdão e a publicação não estão disponíveis.",
+        "Há conflito formal de identificação entre registros derivados.",
+        "Nenhuma providência recursal posterior foi decidida."
+      ],
+      "invariants": [
+        "Não trata a sessão realizada como resultado conhecido.",
+        "Não seleciona recurso posterior sem acórdão e publicação.",
+        "Mantém o conflito de identificação visível.",
+        "Não fornece prazo fatal."
+      ]
+    },
+    {
+      "id": "adaptacao-a07",
+      "adaptation_case_id": "A07",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e atualize a análise documental da proposta parcelada e da concordância condicionada.",
+      "expected_skill": "analise-documental",
+      "package_facts": [
+        "A credora apresentou concordância condicionada a homologação e ao primeiro pagamento.",
+        "Não foi localizada homologação, comprovante de pagamento ou memória de saldo conferida.",
+        "A proposta prevê parcelamento, mas ainda não há acordo consumado."
+      ],
+      "invariants": [
+        "Não converte proposta em acordo homologado.",
+        "Não converte concordância em pagamento.",
+        "Mantém homologação, primeiro pagamento e saldo como pendentes.",
+        "Não escolhe estratégia nem redige manifestação."
+      ]
+    },
+    {
+      "id": "adaptacao-a08",
+      "adaptation_case_id": "A08",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar o ato de inventário indicado, respeitando o papel representado e as dependências. Apresente apenas o briefing permitido.",
+      "expected_skill": "redacao-contencioso",
+      "package_facts": [
+        "A pessoa representada atua como inventariante, sem classificação bilateral de autora ou ré.",
+        "Tributo, certidões e plano de partilha ainda condicionam o ato.",
+        "Uma dependência histórica está encerrada por certidão e não possui ato atual."
+      ],
+      "invariants": [
+        "Preserva o papel de inventariante sem forçar autor e réu.",
+        "Mantém a dependência histórica encerrada sem reabri-la.",
+        "Não infere tributo, quinhão ou plano de partilha.",
+        "Não lê módulo nem redige enquanto o escopo condicionado não estiver satisfeito e o briefing não for confirmado."
+      ],
+      "authorizing_turn": null
+    },
+    {
+      "id": "adaptacao-a09",
+      "adaptation_case_id": "A09",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero peticionar com base no resultado da tutela e na regularização das custas. Faça somente o que está demonstrado.",
+      "expected_skill": "redacao-contencioso",
+      "package_facts": [
+        "O pedido de tutela aparece no processo, mas a decisão correspondente não está no pacote.",
+        "Existe guia paga, sem ato judicial que reconheça a regularização das custas.",
+        "Não há fonte demonstrando retirada de restrição."
+      ],
+      "invariants": [
+        "Não infere deferimento ou resultado da tutela.",
+        "Não equipara pagamento da guia à regularização das custas.",
+        "Não afirma retirada de restrição.",
+        "Não seleciona módulo, lê módulo ou redige com ato indeterminado."
+      ],
+      "authorizing_turn": null
+    },
+    {
+      "id": "adaptacao-a10",
+      "adaptation_case_id": "A10",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar a defesa na busca e apreensão fiduciária. Apresente o limite e não substitua o regime por uma peça cível parecida.",
+      "expected_skill": "redacao-contencioso",
+      "package_facts": [
+        "A demanda segue regime fiduciário especial não coberto pelo contrato cível atual.",
+        "Há referência a depósitos, mas não existe fonte que os qualifique como quitação.",
+        "Legislação extravagante e precedente qualificado permanecem necessários."
+      ],
+      "invariants": [
+        "Reconhece o regime fiduciário como não suportado.",
+        "Não usa contestação cível ou outro módulo semelhante como fallback.",
+        "Não confunde depósito com quitação.",
+        "Não lê módulo nem redige."
+      ],
+      "authorizing_turn": null
+    },
+    {
+      "id": "adaptacao-a11",
+      "adaptation_case_id": "A11",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique uma defesa para as duas execuções fiscais registradas.",
+      "expected_skill": "analise-juridica-civel",
+      "package_facts": [
+        "Existem duas execuções fiscais em processos distintos, uma local e outra federal.",
+        "As dívidas, certidões e dependências de cada processo não são intercambiáveis.",
+        "Nenhuma estratégia defensiva foi confirmada."
+      ],
+      "invariants": [
+        "Mantém os dois processos em frentes separadas.",
+        "Não mistura dívidas, prazos ou certidões.",
+        "Reconhece o regime fiscal como não suportado pela skill cível.",
+        "Não usa exceção de pré-executividade como defesa universal."
+      ]
+    },
+    {
+      "id": "adaptacao-a12",
+      "adaptation_case_id": "A12",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique o recurso cabível depois do julgamento trabalhista.",
+      "expected_skill": "analise-juridica-civel",
+      "package_facts": [
+        "O processo é trabalhista e está em fase de julgamento recursal.",
+        "O resultado, a publicação e a regra trabalhista de prazo não estão disponíveis.",
+        "Nenhum recurso posterior foi decidido."
+      ],
+      "invariants": [
+        "Reconhece o regime trabalhista como não suportado.",
+        "Não seleciona apelação ou recurso excepcional cível.",
+        "Exige resultado, fonte e prazo trabalhistas.",
+        "Não fornece termo final."
+      ]
+    },
+    {
+      "id": "adaptacao-a13",
+      "adaptation_case_id": "A13",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique a providência seguinte na execução penal encerrada.",
+      "expected_skill": "analise-juridica-civel",
+      "package_facts": [
+        "A frente pertence à execução penal e possui extinção documentada.",
+        "O pacote não demonstra ato posterior nem pedido pendente.",
+        "O regime penal não é coberto pela skill cível."
+      ],
+      "invariants": [
+        "Reconhece o regime penal como não suportado.",
+        "Preserva a extinção como evento da frente.",
+        "Não seleciona cumprimento de sentença cível.",
+        "Não inventa providência posterior."
+      ]
+    },
+    {
+      "id": "adaptacao-a14",
+      "adaptation_case_id": "A14",
+      "canary": false,
+      "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e diga como requerer o pagamento dos dois créditos relacionados ao precatório.",
+      "expected_skill": "analise-juridica-civel",
+      "package_facts": [
+        "O primeiro crédito possui recibo de pagamento e sua frente está encerrada.",
+        "O segundo crédito depende de conteúdo da partilha, aceitação judicial e ordem de pagamento.",
+        "Depósito, retenção e protocolo aparecem em fontes distintas e não foram qualificados como pagamento do segundo crédito.",
+        "O saldo do segundo crédito não foi conferido."
+      ],
+      "invariants": [
+        "Mantém as duas cadeias de crédito separadas.",
+        "Não equipara depósito, retenção ou protocolo a pagamento.",
+        "Reconhece precatórios como regime não suportado pela skill cível.",
+        "Não seleciona cumprimento contra a Fazenda como fallback nem fornece saldo."
+      ]
+    }
+  ]
+}

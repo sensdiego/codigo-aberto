@@ -5,7 +5,7 @@
 | Status | **Aceita em 2026-08-30** |
 | Data | 2026-08-30 |
 | Escopo | Contrato de integração entre o estado de um caso real e as skills públicas |
-| Implementação | **Fases 1 e 3 concluídas**; Fases 2, 4 e 5 não autorizadas |
+| Implementação | **Fases 1 e 3 concluídas**; A01–A14 executados na Fase 5 com subagentes Codex; Fases 2 e 4 não autorizadas |
 | Decisão principal | Adaptador versionado + perfil de frentes, sem nova skill pública |
 | Evidência de origem | [Validação estrutural com casos reais](references/validacao-casos-reais.md) |
 | Contratos relacionados | [Disciplina](references/disciplina.md) e [handoff comum](references/handoff.md) |
@@ -568,10 +568,30 @@ execução de modelo foi realizada.
 
 ### Fase 5 — validação comportamental
 
-- rodar V3 somente com autorização de custo;
-- corrigir contrato ou consumidor sem alterar silenciosamente a régua;
-- executar V4 apenas depois de V0–V3 verdes;
-- manter recibos separados para código, release, runtime, dogfood e uso.
+- [x] materializar pacotes completos a partir de A01–A14 sem duplicar frentes;
+- [x] criar 14 cenários comportamentais cobrindo os quatro consumidores;
+- [x] fixar A01–A04 como canário e registrar custo estimado e stop rule;
+- [x] executar A01–A14 com executores e juízes separados no Codex;
+- [x] corrigir o consumidor afetado sem alterar a régua;
+- [x] repetir A01 com executor e juiz novos;
+- [ ] rodar comparação V3 no executor externo somente com autorização de custo;
+- [ ] executar V4 apenas depois de V0–V3 verdes;
+- [ ] manter recibos separados para código, release, runtime, dogfood e uso.
+
+Preparação inicial de 2026-08-30: o runner recebeu seleção explícita de fixture e gera
+um `PACOTE_ADAPTADO.json` sintético completo para cada caso. O canário cobre
+escopo condicionado, regime não suportado, correção de lente e múltiplas frentes.
+Até esse recibo, nenhum modelo havia sido chamado. Com base nos relatórios locais anteriores, a faixa
+estimada é US$ 2–5 para o canário e US$ 8–17 para os 14 cenários; o maior custo
+histórico observado foi US$ 1,19 por cenário.
+
+Execução local de 2026-08-30: a primeira passagem com subagentes Codex produziu
+13 PASS e 1 FAIL. A01 não preservou expressamente tutela como complemento da
+petição inicial. A skill de redação recebeu uma regra mínima; fixture e critérios
+do juiz permaneceram congelados. A regressão A01, com executor e juiz novos,
+passou. O estado efetivo é 14/14, mas não houve passagem única perfeita. O
+[relatório e as saídas congeladas](data/evals/2026-08-30-codex-subagents-adaptacao/report.md)
+registram a prova e suas limitações. Não houve chamada de modelo externo.
 
 ## Compatibilidade, migração e rollback
 
@@ -673,7 +693,9 @@ A aceitação de 2026-08-30 adotou as respostas recomendadas:
 
 A condição foi cumprida em 2026-08-30 com a aceitação das seis decisões. A Fase
 1 e, após autorização local própria, a Fase 3 foram concluídas no
-`codigo-aberto`; as Fases 2, 4 e 5 permanecem não autorizadas.
+`codigo-aberto`. A avaliação A01–A14 da Fase 5 foi executada depois com
+subagentes Codex; a comparação externa, V4, dogfood e as Fases 2 e 4 permanecem
+não autorizadas.
 
 Se a RFC for rejeitada ou substituída, a auditoria permanece válida como
 evidência da lacuna. Nenhuma implementação deve começar sem uma alternativa que

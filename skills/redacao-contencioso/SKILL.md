@@ -27,6 +27,8 @@ o efeito necessário ou o escopo estiver `nao_suportado`. Em
 Módulo indicado pelo pacote é candidato, não ordem. Refaça o mapeamento pelo
 índice depois do mapa jurídico. Ato `decidido` exige recibo de decisão humana e
 ainda passa pelo briefing próprio; `candidato` exige análise ou deliberação.
+Ao expor ato ainda candidato, preserve a hierarquia declarada no pacote entre
+módulo-base e complementos; nunca apresente complemento como ato-base autônomo.
 Sem recibo de adaptação, aplique os pré-requisitos comuns sem exigir conversão.
 
 Infira o ato provável, mas não escolha silenciosamente. Consulte o

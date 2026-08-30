@@ -1,0 +1,84 @@
+{
+  "executor": "codex-subagent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a06",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        ".claude-plugin/marketplace.json",
+        "skills/analise-juridica-civel/SKILL.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta quanto ao bloqueio; confiança desconhecida quanto à espécie recursal: nenhum recurso pode ser indicado com o material disponível. O pacote registra apenas a sessão de julgamento, mas não contém o resultado, o acórdão nem a publicação; por isso, o conteúdo e a natureza do pronunciamento, a sucumbência, o interesse recursal, o cabimento e o termo inicial permanecem indeterminados. Além disso, o conflito formal C01 bloqueia a identificação formal da peça. Não é possível escolher, sem inventar, entre embargos de declaração, agravo interno, recurso especial, recurso extraordinário ou outra via.\n\nPara reabrir a análise, são necessários: (1) o inteiro teor do acórdão ou decisão, inclusive dispositivo, órgão julgador e eventuais votos; (2) a certidão de julgamento e a publicação/intimação correspondente; e (3) a fonte que resolva a identificação formal conflitante. Até lá, não há data fatal calculável e nenhuma minuta deve ser iniciada. A próxima rota é análise documental dessas fontes e, depois, análise jurídica cível do cabimento. Nada foi redigido, protocolado ou enviado.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a07",
+      "invoked_skills": [
+        "analise-documental"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        ".claude-plugin/marketplace.json",
+        "skills/analise-documental/SKILL.md",
+        "skills/analise-documental/references/contrato-saida.md",
+        "skills/analise-documental/references/avaliacao-probatoria.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta: a documentação disponível demonstra somente que existe proposta parcelada e que a credora manifestou concordância condicionada à homologação e ao primeiro pagamento. Não demonstra acordo consumado, homologação, primeiro pagamento nem saldo conferido.\n\nCaso: A07, frente front-cumprimento, lente credor. Tipo de artefato: atualização de análise documental. Fontes consumidas: fonte-sintetica-12, manifestação 2; fonte-sintetica-12, condição 1; e acervo-sintetico, ausência de homologação localizada. O exame está limitado ao conteúdo transportado pelo PACOTE_ADAPTADO.json; os documentos originais não foram disponibilizados.\n\nAchados preservados:\n- AD01 — confirmado apenas no alcance da confirmação humana registrada: a credora apresentou concordância condicionada à homologação e ao primeiro pagamento. Fonte: fonte-sintetica-12, condição 1. Essa confirmação prova a existência da manifestação condicional, não o implemento das condições.\n- AD02 — pendente: há referência a proposta parcelada em fonte-sintetica-12, manifestação 2, mas o pacote não fornece número de parcelas, valores, vencimentos, encargos ou demais termos para conferência.\n- AD03 — pendente: não foi localizada, no escopo examinado, homologação. Isso não prova que ela inexista.\n- AD04 — pendente: não foi localizado comprovante do primeiro pagamento. Isso não prova inadimplemento nem pagamento.\n- AD05 — pendente: não há memória de cálculo ou saldo conferido.\n\nAtos e efeitos documentados: a concordância é expressamente condicional. Nenhum efeito posterior — homologação, eficácia do ajuste, suspensão, extinção, quitação ou satisfação do crédito — está demonstrado pelo pacote.\n\nMatriz fato-prova: a existência da concordância condicionada possui suporte direto em condição 1; a existência da proposta parcelada possui suporte limitado em manifestação 2, sem termos examináveis; homologação, primeiro pagamento e saldo permanecem não demonstrados no escopo. Não há contradição registrada, mas as ausências continuam abertas.\n\nConfirmação humana: somente a existência da concordância condicional foi confirmada. Ficaram fora da confirmação a homologação, o pagamento, o saldo, a eficácia e qualquer consequência jurídica. Atualização: nenhuma fonte nova foi fornecida para comparação; portanto, não há delta documental novo a classificar. Os achados anteriores permanecem inalterados e não são promovidos. O handoff adaptado de análise documental também não pode ser tratado como integralmente consumível, porque nem todo achado declara conflito e alcance de confirmação; os pontos seguros foram preservados a partir do intake e do recibo, sem completar campos por inferência.\n\nPróxima rota: obter a decisão de homologação, o comprovante do primeiro pagamento, a proposta integral e a memória de saldo conferida; depois, atualizar pontualmente a matriz e somente então avaliar consequências jurídicas. Nada foi redigido, protocolado ou enviado.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a08",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        ".claude-plugin/marketplace.json",
+        "skills/redacao-contencioso/SKILL.md",
+        "skills/redacao-contencioso/references/indice-modulos.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Briefing preliminar permitido — confiança alta quanto aos limites do pacote.\n\nAto e destinatário: petição no inventário voltada à organização da partilha e dos documentos; o ato exato e o juízo destinatário não estão demonstrados e permanecem [verificar].\n\nMódulo-base e modo: inventario-partilha é apenas o módulo candidato indicado pelo pacote e compatível com o índice público. Não está escolhido nem autorizado, porque o ato tem estado candidato, não existe recibo de decisão humana e o mapa jurídico foi omitido.\n\nObjetivo processual: organizar a partilha e os documentos da frente front-inventario.\n\nParte e posição representada: inventariante. Essa lente não deve ser convertida em autora ou ré. A frente histórica é distinta, está encerrada, tem papel de interessado e não possui ato atual; portanto, não será incorporada como fundamento de uma providência atual.\n\nFatos e provas utilizáveis: o recibo e o intake atribuem à pessoa representada o papel de inventariante e apontam fonte-sintetica-13, termo 2, como evento controlador. A certidão em fonte-sintetica-14, certidão 1, sustenta apenas o encerramento da dependência histórica dentro do alcance confirmado. O achado documental que associa essa certidão ao papel de inventariante não pode ser promovido, pois sua fonte e seu alcance de confirmação não correspondem à proposição.\n\nNormas e teses: nenhuma está disponível. O mapa jurídico foi omitido; não serão inventados dispositivos, teses ou cabimento.\n\nPedidos e resultado pretendido: ainda não definidos. O único objetivo registrado é organizar partilha e documentos; não há autorização para formular quinhões, pedir homologação, declarar recolhimento tributário ou adotar outra conclusão material.\n\nProfundidade e tom: petição objetiva e técnica, em extensão proporcional ao ato que vier a ser confirmado.\n\nPrazo e cabimento: pendentes. Há evento indicado em fonte-sintetica-13, termo 2, mas nenhuma regra de prazo ou data fatal demonstrada.\n\nDependências e campos marcados: tributo não calculado; quinhão não conferido; certidões ainda condicionantes; plano de partilha pendente; juízo, ato, modo, pedidos, bases normativas e prazo [verificar]. O escopo é suportado_condicionado, logo essas ausências bloqueiam as conclusões que dependem delas.\n\nEstado do briefing: este é apenas o limite preliminar permitido. Ainda não cabe a pergunta fechada de autorização para redigir, porque existem itens materiais abertos, falta mapa jurídico e não há decisão humana sobre o ato. A próxima etapa é suprir as dependências e confirmar ato, modo, pedidos e cabimento; depois, apresentar briefing consolidado para confirmação própria. Nenhuma minuta foi produzida e nada foi protocolado ou enviado.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a09",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        ".claude-plugin/marketplace.json",
+        "skills/redacao-contencioso/SKILL.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta: não é possível preparar a petição pedida com base no resultado da tutela e na regularização das custas, porque nenhum desses dois pressupostos está demonstrado.\n\nO que o pacote demonstra, e somente isso: (1) existe referência a um pedido de tutela, mas a decisão correspondente não foi localizada; (2) existe uma guia paga, com confirmação humana limitada ao pagamento da guia identificada; (3) não há fonte demonstrando retirada de restrição; e (4) há conflito aberto entre fonte-sintetica-15 e fonte-sintetica-16 que bloqueia a afirmação de regularidade das custas. Pagamento de guia não equivale, sem ato judicial correspondente, a reconhecimento de regularização. Ausência da decisão no pacote não demonstra deferimento nem indeferimento da tutela.\n\nOs gates de redação não estão satisfeitos: a frente front-tutela tem escopo suportado_condicionado e estado indeterminado; o ato está indeterminado, sem módulo e sem recibo de decisão; o mapa jurídico, a decisão e a redação foram omitidos; e o handoff documental não pode promover seu F01 como confirmado, pois a proposição sobre a existência do pedido de tutela não corresponde ao alcance da confirmação humana, limitado ao pagamento da guia. Não selecionarei manifestação genérica para contornar essas ausências.\n\nPara reabrir a rota são necessários: inteiro teor da decisão da tutela, com fonte e localizador; ato judicial ou certidão que trate da regularidade das custas; resolução documentada do conflito C01; e, se relevante, fonte que demonstre a retirada da restrição. Depois disso, cabem atualização documental, mapa jurídico, decisão sobre o ato e briefing próprio com pergunta fechada de autorização. Não há prazo fatal calculável no pacote. Nenhuma petição foi redigida e nada foi protocolado ou enviado.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a10",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        ".claude-plugin/marketplace.json",
+        "skills/redacao-contencioso/SKILL.md",
+        "skills/redacao-contencioso/references/indice-modulos.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta: a defesa não pode ser preparada por este workflow cível com o pacote atual. A frente front-fiduciaria está expressamente marcada como nao_suportado, o ato está indeterminado e o caso depende de regime fiduciário especial, legislação extravagante e precedente qualificado ausentes. Usar o módulo de contestação do procedimento comum, manifestação genérica ou outra peça cível parecida seria substituir o regime aplicável e violar o limite declarado.\n\nO conteúdo que pode ser preservado é apenas este: a pessoa representada ocupa o papel de réu; a frente está ativa em fase de defesa especial; o evento controlador indicado é fonte-sintetica-17, decisão 1; há referência a depósitos, mas nenhuma fonte os qualifica como quitação; e o prazo permanece pendente, sem regra e sem data fatal demonstradas. Não há análise documental, mapa jurídico, decisão humana ou redação consumível.\n\nPara reabrir a tarefa, é necessário encaminhá-la a uma capacidade que cubra expressamente o regime fiduciário especial e fornecer: a decisão e a intimação/publicação completas; as peças relevantes da demanda; os comprovantes e a natureza jurídica alegada dos depósitos; a legislação extravagante aplicável verificada; e o precedente qualificado exigido, com fonte verificável. Só depois cabem mapa jurídico específico, escolha do ato, briefing e confirmação própria. Nenhum módulo cível foi selecionado, nenhuma minuta foi redigida e nada foi protocolado ou enviado.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual.",
+      "execution_error": null
+    }
+  ]
+}

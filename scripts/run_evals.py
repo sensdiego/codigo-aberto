@@ -15,6 +15,7 @@ from typing import Callable, Sequence
 
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE_PATH = ROOT / "tests" / "fixtures" / "workflows.json"
+ADAPTATION_FIXTURE_SCHEMA = "adaptation-behavior-workflows-v1"
 PLUGIN_PATH = ROOT / ".claude-plugin" / "plugin.json"
 PUBLIC_SKILLS = (
     "analise-documental",
@@ -45,6 +46,177 @@ def run_subprocess(
     )
 
 
+def render_adaptation_package(
+    case: dict[str, object], contract_version: str, facts: list[str]
+) -> str:
+    """Materializa um pacote sintético completo sem duplicar a fixture estrutural."""
+    case_id = case.get("id")
+    title = case.get("title")
+    eligibility = case.get("eligibility")
+    handoff_names = case.get("handoffs")
+    fronts = case.get("fronts")
+    findings = case.get("findings")
+    conflicts = case.get("conflicts")
+    blockers = case.get("blockers")
+    if (
+        not isinstance(case_id, str)
+        or not isinstance(title, str)
+        or not isinstance(eligibility, str)
+        or not isinstance(handoff_names, list)
+        or not all(isinstance(item, str) for item in handoff_names)
+        or not isinstance(fronts, list)
+        or not all(isinstance(front, dict) for front in fronts)
+        or not isinstance(findings, list)
+        or not all(isinstance(finding, dict) for finding in findings)
+        or not isinstance(conflicts, list)
+        or not isinstance(blockers, list)
+        or not all(isinstance(blocker, str) for blocker in blockers)
+        or not facts
+    ):
+        raise ValueError(f"caso de adaptação inválido: {case_id or '?'}")
+
+    sources: list[dict[str, object]] = []
+    for front in fronts:
+        event = front.get("controlling_event")
+        if isinstance(event, dict):
+            sources.append(event)
+    for finding in findings:
+        sources.append(
+            {
+                "source_ref": finding.get("source_ref"),
+                "locator": finding.get("locator"),
+            }
+        )
+    lenses = {
+        str(front.get("front_id")): front.get("represented_role") for front in fronts
+    }
+    coverage = {
+        str(front.get("front_id")): front.get("coverage") for front in fronts
+    }
+    confirmation_scopes = [
+        finding["confirmation_scope"]
+        for finding in findings
+        if isinstance(finding.get("confirmation_scope"), str)
+    ]
+    intake = {
+        "Caso": {"id": case_id, "title": title, "lenses": lenses},
+        "Tipo de artefato": "intake",
+        "Fontes consumidas": sources,
+        "Escopo": [
+            {
+                "front_id": front.get("front_id"),
+                "scope_status": front.get("scope_status"),
+                "coverage": front.get("coverage"),
+            }
+            for front in fronts
+        ],
+        "Achados": facts,
+        "Estado": eligibility,
+        "Confirmação humana": confirmation_scopes or "não confirmada",
+        "Lacunas": blockers,
+        "Atualização": "primeira versão sintética",
+        "Próximas rotas": ["analise-documental", "analise-juridica-civel"],
+    }
+    handoffs: dict[str, object] = {"intake": intake}
+    if "analise_documental" in handoff_names:
+        enriched_findings = []
+        for index, finding in enumerate(findings):
+            front = fronts[min(index, len(fronts) - 1)] if fronts else {}
+            enriched_findings.append(
+                {
+                    **finding,
+                    "proposition": facts[min(index, len(facts) - 1)],
+                    "front_id": front.get("front_id"),
+                    "represented_role": front.get("represented_role"),
+                    "coverage": front.get("coverage"),
+                    "quality": "fixture_sintetica_direta",
+                }
+            )
+        handoffs["analise_documental"] = {
+            "Caso": {"id": case_id, "title": title, "lenses": lenses},
+            "Tipo de artefato": "análise documental",
+            "Fontes consumidas": sources,
+            "Escopo": coverage,
+            "Achados": enriched_findings,
+            "Estado": "por achado",
+            "Confirmação humana": confirmation_scopes or "não confirmada",
+            "Lacunas": blockers,
+            "Atualização": {"conflicts": conflicts},
+            "Próximas rotas": ["analise-juridica-civel"],
+        }
+    package = {
+        "contract_version": contract_version,
+        "receipt": {
+            "case_id": case_id,
+            "generated_at": "2026-08-30T12:00:00-03:00",
+            "identity_authority": "registro-sintetico",
+            "lens_authority": lenses,
+            "eligibility": eligibility,
+            "coverage": coverage,
+            "blockers": blockers,
+            "included_artifacts": handoff_names,
+            "omitted_artifacts": [
+                name
+                for name in ("analise_documental", "mapa_juridico", "decisao", "redacao")
+                if name not in handoff_names
+            ],
+            "source_version": f"fixture-{case_id.lower()}-v1",
+            "external_action": False,
+        },
+        "handoffs": handoffs,
+        "fronts": fronts,
+        "conflicts": conflicts,
+    }
+    return json.dumps(package, ensure_ascii=False, indent=2) + "\n"
+
+
+def _hydrate_adaptation_scenarios(
+    data: dict[str, object], scenarios: list[dict[str, object]], path: Path
+) -> list[dict[str, object]]:
+    if data.get("schema_version") != ADAPTATION_FIXTURE_SCHEMA:
+        return scenarios
+    case_fixture = data.get("case_fixture")
+    if not isinstance(case_fixture, str) or not case_fixture:
+        raise ValueError("fixture comportamental sem case_fixture")
+    case_path = (path.parent / case_fixture).resolve()
+    try:
+        case_path.relative_to(path.parent.resolve())
+    except ValueError as exc:
+        raise ValueError("case_fixture aponta para fora de tests/fixtures") from exc
+    case_data = json.loads(case_path.read_text(encoding="utf-8"))
+    contract_version = case_data.get("contract_version")
+    cases = case_data.get("scenarios")
+    if not isinstance(contract_version, str) or not isinstance(cases, list):
+        raise ValueError("fixture estrutural de adaptação inválida")
+    case_by_id = {
+        case.get("id"): case
+        for case in cases
+        if isinstance(case, dict) and isinstance(case.get("id"), str)
+    }
+    hydrated = []
+    for scenario in scenarios:
+        case_id = scenario.get("adaptation_case_id")
+        facts = scenario.get("package_facts")
+        case = case_by_id.get(case_id)
+        if (
+            not isinstance(case_id, str)
+            or not isinstance(facts, list)
+            or not all(isinstance(fact, str) and fact.strip() for fact in facts)
+            or not isinstance(case, dict)
+        ):
+            raise ValueError(
+                f"cenário comportamental aponta para caso inválido: {case_id or '?'}"
+            )
+        item = dict(scenario)
+        item["setup_files"] = {
+            "PACOTE_ADAPTADO.json": render_adaptation_package(
+                case, contract_version, facts
+            )
+        }
+        hydrated.append(item)
+    return hydrated
+
+
 def load_scenarios(path: Path | None = None) -> list[dict[str, object]]:
     """Carrega os cenários de workflow."""
     path = path or FIXTURE_PATH
@@ -54,7 +226,7 @@ def load_scenarios(path: Path | None = None) -> list[dict[str, object]]:
         raise ValueError("fixture de workflows sem lista de cenários")
     if not all(isinstance(scenario, dict) for scenario in scenarios):
         raise ValueError("fixture de workflows contém cenário inválido")
-    return scenarios
+    return _hydrate_adaptation_scenarios(data, scenarios, path)
 
 
 def prompt_turns(scenario: dict[str, object]) -> list[str]:
@@ -697,6 +869,12 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--scenario", action="append", help="id de cenário a executar; pode repetir"
     )
+    parser.add_argument(
+        "--fixture",
+        type=Path,
+        default=FIXTURE_PATH,
+        help="fixture de cenários; padrão: tests/fixtures/workflows.json",
+    )
     parser.add_argument("--model", default="sonnet", help="modelo do Claude")
     parser.add_argument("--out-dir", type=Path, help="diretório dos relatórios")
     parser.add_argument(
@@ -749,7 +927,7 @@ def main(
     """Executa o fluxo de avaliação e escreve seus relatórios."""
     args = _parser().parse_args(argv)
     try:
-        fixture_scenarios = load_scenarios()
+        fixture_scenarios = load_scenarios(args.fixture)
         for scenario in fixture_scenarios:
             _scenario_values(scenario)
             _authorizing_turn(scenario, len(prompt_turns(scenario)))
@@ -782,8 +960,16 @@ def main(
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Erro ao ler a versão do plugin: {exc}", file=sys.stderr)
         return 1
+    fixture_suffix = (
+        ""
+        if args.fixture.resolve() == FIXTURE_PATH.resolve()
+        else f"-{args.fixture.stem}"
+    )
     output_dir = args.out_dir or (
-        ROOT / "data" / "evals" / f"{run_date}-claude-{args.model}-v{plugin_version}"
+        ROOT
+        / "data"
+        / "evals"
+        / f"{run_date}-claude-{args.model}-v{plugin_version}{fixture_suffix}"
     )
     transcript_dir = output_dir / "transcripts"
     to_execute = [

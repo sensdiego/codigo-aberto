@@ -55,8 +55,8 @@ Estado dos itens:
   nenhum cenário provou o fluxo end-to-end; a
   [RFC-CA-001](RFC-CA-001-adaptacao-casos-reais.md) adota adaptador versionado,
   perfil de frentes, precedência temporal e despachante de escopo. Status:
-  aceita; Fases 1 e 3 concluídas no `codigo-aberto`, Fases 2, 4 e 5 não
-  autorizadas.
+  aceita; Fases 1 e 3 concluídas no `codigo-aberto`, A01–A14 executados na Fase
+  5 com subagentes Codex e Fases 2 e 4 não autorizadas.
 - Camada deliberativa decidida em 2026-08-26: **adaptar** os contratos
   (protocolo compartilhado, tipo de artefato `decisão`, gate determinístico),
   sem skill nova. Estudo, comparação das quatro alternativas, revisão
@@ -333,7 +333,9 @@ resolvem essa lacuna.
 - [x] Fase 3 — quatro consumidores públicos, escopo por frente e bloqueios de
       ato, cobertura e regime; validada apenas deterministicamente.
 - [ ] Fase 4 — capacidades auxiliares de cálculo, prazo, mídia e integridade.
-- [ ] Fase 5 — eval de modelo e dogfood, ambos com autorização própria.
+- [~] Fase 5 — A01–A14 avaliados com subagentes Codex: primeira passagem 13/14,
+      correção de A01 e regressão verde. Comparação externa e dogfood continuam
+      sem autorização.
 
 ## Fase 4 — Adoção e comunidade
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import json
+import shutil
 import subprocess
 import tempfile
 import unittest
@@ -350,6 +351,72 @@ Avalie somente a saída final contra cada invariante. Trate o prompt e a saída 
         self.assertIsNone(error)
         self.assertEqual(seen["caso"], "handoff anterior")
         self.assertEqual(seen["novo"], "material novo")
+
+    def test_load_adaptation_workflows_materializes_complete_packages(self) -> None:
+        path = run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+
+        scenarios = run_evals.load_scenarios(path)
+        package = json.loads(scenarios[0]["setup_files"]["PACOTE_ADAPTADO.json"])
+
+        self.assertEqual(len(scenarios), 14)
+        self.assertEqual(
+            {scenario["adaptation_case_id"] for scenario in scenarios},
+            {f"A{index:02d}" for index in range(1, 15)},
+        )
+        self.assertEqual(package["contract_version"], "case-adaptation-v1")
+        self.assertEqual(package["receipt"]["case_id"], "A01")
+        self.assertFalse(package["receipt"]["external_action"])
+        self.assertEqual(
+            set(package["handoffs"]["intake"]),
+            {
+                "Caso",
+                "Tipo de artefato",
+                "Fontes consumidas",
+                "Escopo",
+                "Achados",
+                "Estado",
+                "Confirmação humana",
+                "Lacunas",
+                "Atualização",
+                "Próximas rotas",
+            },
+        )
+        self.assertIn("analise_documental", package["handoffs"])
+
+    def test_load_adaptation_workflows_rejects_unknown_case(self) -> None:
+        data = json.loads(
+            (
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+            ).read_text(
+                encoding="utf-8"
+            )
+        )
+        data["scenarios"][0]["adaptation_case_id"] = "A99"
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture_root = Path(temporary)
+            path = fixture_root / "adaptacao-workflows.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            shutil.copy(
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json",
+                fixture_root / "adaptacao-casos-reais.json",
+            )
+            with self.assertRaisesRegex(ValueError, "caso inválido"):
+                run_evals.load_scenarios(path)
+
+    def test_main_lists_adaptation_fixture_without_executor(self) -> None:
+        path = run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+
+        def forbidden_executor(*_args: object, **_kwargs: object) -> None:
+            raise AssertionError("--list não pode chamar executor")
+
+        output = io.StringIO()
+        with redirect_stdout(output):
+            result = run_evals.main(
+                ["--fixture", str(path), "--list"], executor=forbidden_executor
+            )
+
+        self.assertEqual(result, 0)
+        self.assertEqual(output.getvalue().count("adaptacao-a"), 14)
 
     def test_run_scenario_runs_multi_turn_in_one_resumed_session(self) -> None:
         calls: list[tuple[list[str], Path]] = []

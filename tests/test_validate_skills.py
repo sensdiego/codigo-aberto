@@ -212,18 +212,77 @@ class AdaptationFixtureValidationTest(unittest.TestCase):
             with patch.object(validate_skills, "ROOT", tree):
                 return validate_skills.check_adaptation_consumers()
 
+    def adaptation_workflow_errors(self, mutator) -> list[str]:
+        workflows = json.loads(
+            (ROOT / "tests" / "fixtures" / "adaptacao-workflows.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        mutator(workflows)
+        with tempfile.TemporaryDirectory() as temporary:
+            tree = Path(temporary)
+            fixture_root = tree / "tests" / "fixtures"
+            fixture_root.mkdir(parents=True)
+            (fixture_root / "adaptacao-workflows.json").write_text(
+                json.dumps(workflows), encoding="utf-8"
+            )
+            shutil.copy(
+                ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json",
+                fixture_root / "adaptacao-casos-reais.json",
+            )
+            with patch.object(validate_skills, "ROOT", tree):
+                return validate_skills.check_adaptation_workflow_fixtures()
+
     def test_contract_fixtures_are_valid(self) -> None:
         self.assertEqual(validate_skills.check_adaptation_fixtures(), [])
 
     def test_consumer_contracts_are_valid(self) -> None:
         self.assertEqual(validate_skills.check_adaptation_consumers(), [])
 
+    def test_adaptation_workflows_are_valid(self) -> None:
+        self.assertEqual(validate_skills.check_adaptation_workflow_fixtures(), [])
+
+    def test_adaptation_workflows_enforce_coverage_and_canary(self) -> None:
+        def missing_case(data) -> None:
+            data["scenarios"].pop()
+
+        def wrong_canary(data) -> None:
+            data["scenarios"][4]["canary"] = True
+
+        def missing_redaction_gate(data) -> None:
+            data["scenarios"][0].pop("authorizing_turn")
+
+        cases = (
+            (missing_case, "cobrir A01–A14 exatamente uma vez"),
+            (wrong_canary, "canário comportamental deve conter exatamente A01–A04"),
+            (missing_redaction_gate, "authorizing_turn null"),
+        )
+        for mutator, expected in cases:
+            with self.subTest(expected=expected):
+                errors = self.adaptation_workflow_errors(mutator)
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_adaptation_workflows_reject_malformed_values_without_crashing(self) -> None:
+        def malformed(data) -> None:
+            scenario = data["scenarios"][0]
+            scenario["adaptation_case_id"] = {}
+            scenario["expected_skill"] = {}
+            scenario["package_facts"] = []
+
+        errors = self.adaptation_workflow_errors(malformed)
+        for expected in (
+            "adaptation_case_id inválido",
+            "consumidor inválido",
+            "package_facts insuficientes",
+        ):
+            self.assertTrue(any(expected in error for error in errors), errors)
+
     def test_consumer_contract_markers_are_enforced(self) -> None:
         for relative, markers in validate_skills.ADAPTATION_CONSUMER_REQUIREMENTS.items():
-            marker = markers[0]
-            with self.subTest(relative=relative):
-                errors = self.consumer_errors(relative, marker)
-                self.assertTrue(any(relative in error for error in errors), errors)
+            for marker in markers:
+                with self.subTest(relative=relative, marker=marker):
+                    errors = self.consumer_errors(relative, marker)
+                    self.assertTrue(any(relative in error for error in errors), errors)
 
     def test_accepts_blocked_and_integral_modes(self) -> None:
         def blocked(data) -> None:

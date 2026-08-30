@@ -69,6 +69,7 @@ ADAPTATION_CONSUMER_REQUIREMENTS = {
     "skills/redacao-contencioso/SKILL.md": (
         "Não selecione módulo quando a frente ou o ato estiver `indeterminado`",
         "Módulo indicado pelo pacote é candidato, não ordem",
+        "preserve a hierarquia declarada no pacote entre módulo-base e complementos",
         "Sem recibo de adaptação, aplique os pré-requisitos comuns",
     ),
 }
@@ -616,6 +617,117 @@ def check_adaptation_consumers():
     return errors
 
 
+def check_adaptation_workflow_fixtures():
+    errors = []
+    path = ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+    case_path = ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json"
+    data, err = load_json(path)
+    case_data, case_err = load_json(case_path)
+    if err or not isinstance(data, dict):
+        return [f"fixture comportamental de adaptação inválida: {err or 'objeto esperado'}"]
+    if case_err or not isinstance(case_data, dict):
+        return [f"fixture estrutural de adaptação inválida: {case_err or 'objeto esperado'}"]
+    if data.get("schema_version") != "adaptation-behavior-workflows-v1":
+        errors.append("fixture comportamental: schema_version inválida")
+    if data.get("case_fixture") != "adaptacao-casos-reais.json":
+        errors.append("fixture comportamental deve reutilizar adaptacao-casos-reais.json")
+
+    scenarios = data.get("scenarios")
+    cases = case_data.get("scenarios")
+    if not isinstance(scenarios, list):
+        return [*errors, "fixture comportamental: scenarios deve ser lista"]
+    if not isinstance(cases, list):
+        return [*errors, "fixture estrutural: scenarios deve ser lista"]
+    case_findings = {
+        case.get("id"): len(case.get("findings", []))
+        for case in cases
+        if isinstance(case, dict)
+        and isinstance(case.get("id"), str)
+        and isinstance(case.get("findings"), list)
+    }
+    expected_case_ids = {f"A{index:02d}" for index in range(1, 15)}
+    expected_consumers = {
+        "novo-caso",
+        "analise-documental",
+        "analise-juridica-civel",
+        "redacao-contencioso",
+    }
+    scenario_ids = set()
+    referenced_cases = set()
+    covered_consumers = set()
+    canary_cases = set()
+    for index, scenario in enumerate(scenarios, start=1):
+        if not isinstance(scenario, dict):
+            errors.append(f"fixture comportamental {index}: cenário deve ser objeto")
+            continue
+        scenario_id = scenario.get("id")
+        case_id = scenario.get("adaptation_case_id")
+        label = scenario_id if isinstance(scenario_id, str) else index
+        if not isinstance(scenario_id, str) or not scenario_id:
+            errors.append(f"fixture comportamental {index}: id ausente")
+        elif scenario_id in scenario_ids:
+            errors.append(f"fixture comportamental {scenario_id}: id duplicado")
+        else:
+            scenario_ids.add(scenario_id)
+        if not isinstance(case_id, str) or case_id not in expected_case_ids:
+            errors.append(f"fixture comportamental {label}: adaptation_case_id inválido")
+        elif case_id in referenced_cases:
+            errors.append(f"fixture comportamental {label}: caso repetido {case_id}")
+        else:
+            referenced_cases.add(case_id)
+
+        prompt = scenario.get("prompt")
+        if not isinstance(prompt, str) or not prompt.strip():
+            errors.append(f"fixture comportamental {label}: prompt deve ser texto")
+        consumer = scenario.get("expected_skill")
+        if not isinstance(consumer, str) or consumer not in expected_consumers:
+            errors.append(f"fixture comportamental {label}: consumidor inválido")
+        else:
+            covered_consumers.add(consumer)
+        facts = scenario.get("package_facts")
+        finding_count = case_findings.get(case_id, 0) if isinstance(case_id, str) else 0
+        minimum_facts = max(1, finding_count)
+        if (
+            not isinstance(facts, list)
+            or len(facts) < minimum_facts
+            or not all(isinstance(fact, str) and fact.strip() for fact in facts)
+        ):
+            errors.append(
+                f"fixture comportamental {label}: package_facts insuficientes"
+            )
+        invariants = scenario.get("invariants")
+        if (
+            not isinstance(invariants, list)
+            or len(invariants) < 3
+            or not all(
+                isinstance(invariant, str) and invariant.strip()
+                for invariant in invariants
+            )
+        ):
+            errors.append(f"fixture comportamental {label}: invariants exige três textos")
+        canary = scenario.get("canary")
+        if not isinstance(canary, bool):
+            errors.append(f"fixture comportamental {label}: canary deve ser booleano")
+        elif canary and isinstance(case_id, str):
+            canary_cases.add(case_id)
+        if consumer == "redacao-contencioso" and scenario.get("authorizing_turn", "absent") is not None:
+            errors.append(
+                f"fixture comportamental {label}: redação deve manter authorizing_turn null"
+            )
+        if "setup_files" in scenario:
+            errors.append(
+                f"fixture comportamental {label}: setup_files é materializado pelo runner"
+            )
+
+    if referenced_cases != expected_case_ids or len(scenarios) != len(expected_case_ids):
+        errors.append("fixture comportamental deve cobrir A01–A14 exatamente uma vez")
+    if covered_consumers != expected_consumers:
+        errors.append("fixture comportamental deve cobrir os quatro consumidores")
+    if canary_cases != {"A01", "A02", "A03", "A04"}:
+        errors.append("canário comportamental deve conter exatamente A01–A04")
+    return errors
+
+
 def check_new_file_placeholders():
     errors = []
     roots = [
@@ -776,6 +888,7 @@ def main():
     errors.extend(check_workflow_fixtures())
     errors.extend(check_adaptation_fixtures())
     errors.extend(check_adaptation_consumers())
+    errors.extend(check_adaptation_workflow_fixtures())
     errors.extend(check_cpc_manifest())
 
     if errors:
