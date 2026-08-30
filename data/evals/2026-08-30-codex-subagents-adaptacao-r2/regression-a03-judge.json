@@ -1,0 +1,54 @@
+{
+  "schema_version": "codex-subagent-judgment-v2",
+  "source_executor_commit": "de028ce",
+  "source_skill_commit": "267bfc8",
+  "source_input_commit": "387c32f",
+  "judge_task": "/root/judge_r2_a03_regression",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a03",
+      "routing": {
+        "expected_skill": "novo-caso",
+        "invoked_skills": [
+          "novo-caso"
+        ],
+        "ok": true,
+        "evidence": "A execução registrou invoked_skills com novo-caso, correspondendo à skill esperada novo-caso."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Valida o pacote e usa a lente defensiva atual no intake.",
+          "atendido": true,
+          "evidencia": "\"Validação do pacote: recibo válido para `case-adaptation-v1`\"; \"lente coerente como `reu` na frente `front-defesa`\"; \"`intake`, atualizado somente para refletir a lente defensiva controladora\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Preserva a matriz antiga como contraditada sem promover pedidos ofensivos.",
+          "atendido": true,
+          "evidencia": "\"`matriz-sintetica-antiga` [...] fonte derivada mantida como contraditada\"; o objetivo de responder ato intermediário permanece \"`pendente`\" e \"não foi promovido a conteúdo confirmado\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Não duplica o intake nem declara cobertura integral.",
+          "atendido": true,
+          "evidencia": "\"a entrada duplicada idêntica foi consolidada sem mudança de conteúdo\"; \"Incluída somente a frente `front-defesa` [...] cobertura `parcial`\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Mantém o prazo como pendente de verificação.",
+          "atendido": true,
+          "evidencia": "\"`prazo_nao_verificado`: impede afirmar ou calcular prazo\"; a verificação do prazo permanece fora do escopo."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ]
+}
