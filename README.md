@@ -12,7 +12,7 @@ aprofundar e redigir trabalho jurídico cível.
 | [`analise-juridica-civel`](skills/analise-juridica-civel/SKILL.md) | Mapa normativo e processual aplicado aos fatos interpretados |
 | [`analise-jurisprudencial`](skills/analise-jurisprudencial/SKILL.md) | Pesquisa opcional de precedentes pelo Silo |
 | [`aprofundamento-juridico`](skills/aprofundamento-juridico/SKILL.md) | Investigação dinâmica de teses, riscos e preparação para audiência |
-| [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, manifestações e recursos cíveis |
+| [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, execuções, procedimentos especiais, manifestações e recursos cíveis |
 | [`redacao-consultivo`](skills/redacao-consultivo/SKILL.md) | Pareceres, relatórios, e-mails e outros documentos consultivos |
 | [`pesquisa-silo`](skills/pesquisa-silo/SKILL.md) | Consulta jurídica rápida pelo conector Silo |
 | [`assinatura-silo`](skills/assinatura-silo/SKILL.md) | Orientação para a lista de espera e conexão ao Silo |

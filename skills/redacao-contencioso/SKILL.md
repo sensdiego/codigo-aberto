@@ -1,6 +1,6 @@
 ---
 name: redacao-contencioso
-description: Redigir peças, recursos e manifestações para processo civil usando somente fatos, provas, normas e escolhas já interpretados e confirmados. Use quando o usuário quiser minuta protocolável, inclusive inicial, defesa, réplica, provas, alegações finais ou recurso.
+description: Redigir peças, recursos, execuções, procedimentos especiais e manifestações para processo civil usando somente fatos, provas, normas e escolhas já interpretados e confirmados. Use quando o usuário quiser minuta protocolável após análise confirmada.
 ---
 
 # Redação contenciosa
@@ -19,8 +19,10 @@ servem como insumo de minuta.
 
 Infira o ato provável, mas não escolha silenciosamente. Consulte o
 [índice de módulos](references/indice-modulos.md) e carregue depois da
-confirmação somente o módulo-base correspondente. Se o briefing também
-confirmar tutela provisória, acrescente apenas o módulo complementar de tutela.
+confirmação somente o módulo-base correspondente. Quando o módulo oferecer
+modos, confirme um modo e carregue apenas o trecho aplicável. Se o briefing
+também confirmar tutela provisória, acrescente apenas o módulo complementar de
+tutela.
 
 Se os handoffs deixarem uma decisão humana pendente que a peça precisa
 resolver (ato entre alternativas, tese, pedido, concessão), ou se o ato
@@ -34,6 +36,7 @@ tipo `decisão` resultante é insumo do briefing e não autoriza redação.
 Antes de redigir, apresente:
 
 - ato e destinatário;
+- módulo-base e modo, quando houver;
 - objetivo processual;
 - parte e posição representada;
 - fatos, provas, normas e teses que serão usados;
