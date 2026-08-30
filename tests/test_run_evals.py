@@ -24,6 +24,7 @@ from scripts.run_evals import (
     parse_judge_verdict,
     parse_transcript,
     parse_turns,
+    routing_ok,
     run_scenario,
     write_reports,
 )
@@ -126,6 +127,15 @@ class RunEvalsTest(unittest.TestCase):
         ]
 
         self.assertEqual(calculate_verdict(False, invariants, 2), "FAIL")
+
+    def test_routing_requires_expected_skill_first(self) -> None:
+        expected = "redacao-contencioso"
+
+        expected_route = "silo-legal:redacao-contencioso"
+        other_route = "silo-legal:deliberacao-juridica"
+        self.assertTrue(routing_ok(expected, [expected_route, other_route]))
+        self.assertFalse(routing_ok(expected, [other_route, expected_route]))
+        self.assertFalse(routing_ok(expected, []))
 
     def test_gate_error_always_fails(self) -> None:
         invariants = [{"n": 1, "atendido": True, "evidencia": "atende"}]

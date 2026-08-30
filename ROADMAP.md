@@ -278,6 +278,8 @@ briefing ou contexto sejam tratados como autorização implícita.
       sincronizado com a `v0.5.0` e não tem mais conflitos Git. A medição
       dirigida permanece em 3 PASS / 2 FAIL; as correções posteriores não
       foram re-medidas e não houve regressão completa, merge ou publicação.
+      Antes da nova rodada, a régua passou a exigir a skill esperada como
+      primeira rota; a regressão integral corresponde aos 30 cenários atuais.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.

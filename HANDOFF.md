@@ -16,6 +16,8 @@ A skill autônoma de deliberação continua no draft PR #26 e não foi incorpora
 Sua branch foi sincronizada com a `v0.5.0` por merge commit, sem reescrever o
 commit experimental; os conflitos Git foram resolvidos, mas a aceitação
 comportamental permanece bloqueada em 3 PASS / 2 FAIL, sem regressão completa.
+A régua agora exige a skill esperada como primeira rota; a regressão integral
+abrange todos os 30 cenários da fixture atual, não os 19 anteriores à v0.5.0.
 
 O trabalho posterior à tutela está integrado e publicado. A release contém os
 sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
