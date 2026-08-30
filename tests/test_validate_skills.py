@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -79,20 +80,39 @@ class OsJunkToleranceTest(unittest.TestCase):
                         name.startswith("._"), f"{archive.name}: {member}"
                     )
 
-    def test_redaction_bundle_includes_tutela_module_and_cpc(self) -> None:
+    def test_redaction_bundle_includes_every_module_and_cpc_file(self) -> None:
         result = run_script(self.tree, "build_chatgpt_smoke_bundle.py")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         archive = self.tree / "dist" / "chatgpt-work-smoke" / "redacao-contencioso.zip"
         with zipfile.ZipFile(archive) as bundle:
             members = set(bundle.namelist())
-        self.assertIn(
-            "redacao-contencioso/references/modulos/tutela-urgencia-evidencia.md",
-            members,
+        modules = {
+            f"redacao-contencioso/references/modulos/{path.name}"
+            for path in (
+                self.tree / "skills" / "redacao-contencioso" / "references" / "modulos"
+            ).glob("*.md")
+        }
+        cpc_files = {
+            f"redacao-contencioso/references/legislacao/cpc/{path.name}"
+            for path in (self.tree / "references" / "legislacao" / "cpc").iterdir()
+            if path.is_file() and not validate_skills.is_os_junk(path.name)
+        }
+        self.assertLessEqual(modules | cpc_files, members)
+
+    def test_redaction_index_covers_every_module(self) -> None:
+        modules_root = (
+            self.tree / "skills" / "redacao-contencioso" / "references" / "modulos"
         )
-        self.assertIn(
-            "redacao-contencioso/references/legislacao/cpc/procedimento-comum.md",
-            members,
-        )
+        expected = {path.name for path in modules_root.glob("*.md")}
+        index = (
+            self.tree
+            / "skills"
+            / "redacao-contencioso"
+            / "references"
+            / "indice-modulos.md"
+        ).read_text(encoding="utf-8")
+        linked = set(re.findall(r"\(modulos/([a-z0-9-]+\.md)\)", index))
+        self.assertEqual(expected, linked)
 
 
 class WorkflowFixtureValidationTest(unittest.TestCase):

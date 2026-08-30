@@ -455,4 +455,3 @@ Art. 1.042. Cabe agravo contra decisão do presidente ou do vice-presidente do t
 § 7º Havendo apenas um agravo, o recurso será remetido ao tribunal competente, e, havendo interposição conjunta, os autos serão remetidos ao Superior Tribunal de Justiça.
 
 § 8º Concluído o julgamento do agravo pelo Superior Tribunal de Justiça e, se for o caso, do recurso especial, independentemente de pedido, os autos serão remetidos ao Supremo Tribunal Federal para apreciação do agravo a ele dirigido, salvo se estiver prejudicado.
-

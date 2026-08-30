@@ -345,5 +345,3 @@ Parágrafo único. No caso previsto no inciso III, se a dependência for parcial
 ## Art. 673
 
 Art. 673. No caso previsto no art. 672 , inciso II, prevalecerão as primeiras declarações, assim como o laudo de avaliação, salvo se alterado o valor dos bens.
-
-

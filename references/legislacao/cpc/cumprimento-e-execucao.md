@@ -792,5 +792,3 @@ I - o exequente será ouvido no prazo de 15 (quinze) dias;
 II - a seguir, o juiz julgará imediatamente o pedido ou designará audiência;
 
 III - encerrada a instrução, o juiz proferirá sentença.
-
-

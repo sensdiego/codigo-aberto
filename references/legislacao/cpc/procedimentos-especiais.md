@@ -1028,5 +1028,3 @@ Art. 717. Se o desaparecimento dos autos tiver ocorrido no tribunal, o processo 
 ## Art. 718
 
 Art. 718. Quem houver dado causa ao desaparecimento dos autos responderá pelas custas da restauração e pelos honorários de advogado, sem prejuízo da responsabilidade civil ou penal em que incorrer.
-
-

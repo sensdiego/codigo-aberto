@@ -201,5 +201,3 @@ V - subsistirem outros motivos graves que, segundo o prudente arbítrio do juiz,
 VI - houver disposição legal que justifique a recusa da exibição.
 
 Parágrafo único. Se os motivos de que tratam os incisos I a VI do caput disserem respeito a apenas uma parcela do documento, a parte ou o terceiro exibirá a outra em cartório, para dela ser extraída cópia reprográfica, de tudo sendo lavrado auto circunstanciado.
-
-
