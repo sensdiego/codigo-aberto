@@ -33,6 +33,9 @@ reabrir a entrada. Em `parcial_utilizavel`, preserve todos os limites materiais,
 temporais e por frente. Trate `integral` apenas quando houver recibo positivo
 expresso.
 
+Declare na saída o resultado da validação de recibo, identidade, lente e
+elegibilidade; não apenas use esses campos silenciosamente.
+
 Pacote utilizável já contém intake. Valide-o e repare somente o campo necessário,
 sem duplicar inventário ou promover cobertura. Se não houver recibo de adaptação,
 siga o fluxo comum abaixo; não exija que o usuário converta um handoff válido.
