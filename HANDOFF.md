@@ -1,7 +1,9 @@
 # Handoff de sessão
 
 Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
-redação contenciosa e a elaboração do mapa visual, ambas aprovadas pelo owner.
+redação contenciosa, a elaboração do mapa visual, a validação estrutural
+anonimizada contra situações documentadas em casos reais e a adoção da
+arquitetura de adaptação, incluindo seus consumidores públicos locais.
 
 ## Estado do produto
 
@@ -36,6 +38,44 @@ branch, merge, release, publicação de bundle ou anúncio.
 - `references/mapa-visual-skills-modulos.md` representa as nove skills, seus
   handoffs e gates, os modos não contenciosos e os 37 módulos contenciosos. O
   mapa é estritamente descritivo e não simula workflows prováveis.
+- `references/validacao-casos-reais.md` confronta os contratos públicos com 14
+  cenários reais anonimizados, registra a fronteira da prova e prioriza as
+  lacunas sem incorporar dado identificador do corpus privado.
+- `RFC-CA-001-adaptacao-casos-reais.md` adota adaptador versionado, intake
+  obrigatório, análise documental condicionada, perfil de frentes, precedência
+  temporal, despachante de escopo e critérios sintéticos A01–A14. A RFC foi
+  aceita; as Fases 1 e 3 foram concluídas e as Fases 2, 4 e 5 não foram
+  autorizadas.
+- `novo-caso`, `analise-documental`, `analise-juridica-civel` e
+  `redacao-contencioso` consomem o pacote v1 conforme sua etapa. O estado de
+  escopo agora pertence a cada frente; handoffs comuns continuam compatíveis.
+
+## Resultado da validação com casos reais
+
+A infraestrutura não sustenta ainda uma promessa de cobertura integral. O
+núcleo de redação cível tem encaixe material forte, mas nenhum cenário provou o
+fluxo completo desde a fonte real até uma minuta confirmada.
+
+A amostra estratificada produziu quatro cenários válidos com extensão, dois
+inconsistentes na integração, dois não validáveis por falta de evento atual e
+seis fora do escopo end-to-end. Esses números não são taxa de sucesso: a
+amostra foi escolhida por variedade e dificuldade, não por frequência.
+
+As causas prioritárias são:
+
+1. ausência de adaptador do estado do caso para o handoff público;
+2. ausência de roteador explícito de frente e ato atual;
+3. falta de precedência temporal e resolução de conflito entre artefatos;
+4. ausência de recibo end-to-end;
+5. regimes tributário/público especial, fiscal, trabalhista, criminal,
+   fiduciário e de precatórios fora do contrato cível vigente.
+
+As Fases 1 e 3 implementaram contrato, régua e consumidores locais:
+`references/handoff.md` recebeu elegibilidade e perfil opcional de frentes;
+`adaptacao-casos-reais.json` contém A01–A14 sintéticos com escopo por frente; o
+validador reprova promoções, remoção das cláusulas consumidoras e roteamentos
+inseguros. Não existe produtor neste repositório e nenhum outro workspace foi
+alterado.
 
 ## Biblioteca legislativa
 
@@ -75,8 +115,10 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 
 - `3c753a0` — base normativa e módulos prioritários;
 - `d7ce8ab` — procedimentos especiais e roteamento completo;
-- terceiro commit (HEAD deste branch) — checks, fixtures, documentação e este
-  handoff.
+- `d21c7b9` — checks, fixtures e fechamento da cobertura de redação;
+- `9168d63` (HEAD) — mapa visual de skills, módulos e modos;
+- RFC, contrato de handoff, régua A01–A14, consumidores e este handoff ainda
+  estão sem commit.
 
 ## Verificação
 
@@ -85,7 +127,9 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 37 testes.
+- `make test`: PASS — 47 testes.
+- `make test-release`: PASS — 13 testes.
+- `git diff --check`: PASS.
 
 A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
 `git diff --check` depois do commit de documentação.
@@ -94,17 +138,24 @@ A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
 
 - Nenhuma fixture nova foi executada contra modelo; não houve dogfood nem custo
   de inferência.
+- A auditoria composta de ingestão reescreveu por efeito colateral uma fila
+  operacional do repositório privado. A alteração foi atribuída pelo timestamp,
+  restaurada exatamente ao blob de `HEAD` e o repositório terminou limpo.
+- Nenhum nome, número processual, valor, documento ou trecho identificador de
+  caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
 - Não houve criação de issue, PR, push, merge, tag, release ou anúncio.
-- O plano de release calcula `v0.4.0` a partir dos dois fragmentos `minor`, mas
-  nenhuma publicação está autorizada por este handoff.
+- O plano de release calcula `v0.4.0` a partir de quatro fragmentos `minor` e dois
+  fragmentos documentais `none`, mas nenhuma publicação está autorizada por
+  este handoff.
 
 ## Próxima ação
 
-Apresentar o mapa visual ao owner. A identificação ou simulação de workflows
-prováveis deve esperar instrução própria. As escolhas ainda abertas são de
-integração: manter o branch empilhado, dividir em PRs ou reorganizar commits;
-nenhuma delas deve ser tomada silenciosamente.
+Aguardar instrução do owner. A Fase 2 permanece fora deste projeto. Dentro do
+`codigo-aberto`, as próximas frentes possíveis são a Fase 4, por contratos
+auxiliares próprios, ou a Fase 5, com avaliação comportamental autorizada.
+Chamadas pagas, dogfood, nova branch, PR, merge e release continuam exigindo
+decisões próprias e não devem ser iniciados silenciosamente.
 
 ## Comandos de retomada
 

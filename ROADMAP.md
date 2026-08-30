@@ -50,6 +50,13 @@ Estado dos itens:
   limpa nem adoção externa. Também revelou dois achados de produto: gates
   críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
   entre receber a análise e autorizar a redação.
+- Validação estrutural anonimizada contra 14 classes de situações documentadas
+  em casos reais concluída em 2026-08-30. O núcleo cível mostrou encaixe, mas
+  nenhum cenário provou o fluxo end-to-end; a
+  [RFC-CA-001](RFC-CA-001-adaptacao-casos-reais.md) adota adaptador versionado,
+  perfil de frentes, precedência temporal e despachante de escopo. Status:
+  aceita; Fases 1 e 3 concluídas no `codigo-aberto`, Fases 2, 4 e 5 não
+  autorizadas.
 - Camada deliberativa decidida em 2026-08-26: **adaptar** os contratos
   (protocolo compartilhado, tipo de artefato `decisão`, gate determinístico),
   sem skill nova. Estudo, comparação das quatro alternativas, revisão
@@ -303,6 +310,30 @@ briefing ou contexto sejam tratados como autorização implícita.
       integração e eventual divisão em PRs ficam para instrução posterior.
 - [ ] Dogfood dos módulos ampliados: adiado expressamente pelo owner; fixtures
       e checks estruturais foram adicionados sem chamadas pagas a modelo.
+
+### Adaptação segura de casos reais — RFC aceita
+
+Problema confirmado pela
+[auditoria anonimizada](references/validacao-casos-reais.md): os módulos cíveis
+não recebem hoje lente, frente ativa, ato atual, cobertura e conflito temporal
+em um contrato suficientemente determinístico. Mais módulos de peça não
+resolvem essa lacuna.
+
+- [x] Censo e amostra estratificada de 14 cenários reais, sem incorporar dados
+      identificadores ao repositório.
+- [x] Arquitetura aceita em
+      [`RFC-CA-001`](RFC-CA-001-adaptacao-casos-reais.md): intake obrigatório,
+      análise documental somente quando elegível, perfil opcional de frentes,
+      estados de escopo e critérios sintéticos A01–A14.
+- [x] Decisão do owner sobre as seis questões de fechamento da RFC.
+- [x] Fase 1 — contrato público e régua determinística A01–A14; nenhuma skill
+      consumidora alterada durante essa fase.
+- [ ] Fase 2 — produtor no ambiente dos casos, com autorização separada e
+      dry-run sem mutação.
+- [x] Fase 3 — quatro consumidores públicos, escopo por frente e bloqueios de
+      ato, cobertura e regime; validada apenas deterministicamente.
+- [ ] Fase 4 — capacidades auxiliares de cálculo, prazo, mídia e integridade.
+- [ ] Fase 5 — eval de modelo e dogfood, ambos com autorização própria.
 
 ## Fase 4 — Adoção e comunidade
 

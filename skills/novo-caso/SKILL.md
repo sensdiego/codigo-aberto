@@ -24,6 +24,19 @@ Declare também o modo real de persistência: `completo`, `assistido` ou
   [indexacao-processo.md](references/indexacao-processo.md).
 - Em caso misto, use ambas, sem duplicar o inventário.
 
+## Pacote adaptado
+
+Se a entrada declarar `case-adaptation-v1`, valide recibo, identidade, lente e
+elegibilidade antes de usar qualquer handoff. Em `bloqueado`, não crie nem
+consuma intake: exponha os bloqueios e peça somente a fonte necessária para
+reabrir a entrada. Em `parcial_utilizavel`, preserve todos os limites materiais,
+temporais e por frente. Trate `integral` apenas quando houver recibo positivo
+expresso.
+
+Pacote utilizável já contém intake. Valide-o e repare somente o campo necessário,
+sem duplicar inventário ou promover cobertura. Se não houver recibo de adaptação,
+siga o fluxo comum abaixo; não exija que o usuário converta um handoff válido.
+
 ## Fluxo mínimo
 
 1. Identifique caso, lente representada, ciclo, estado e objetivo do intake.

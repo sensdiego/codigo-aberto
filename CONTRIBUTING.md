@@ -74,6 +74,20 @@ compare com o baseline registrado antes de propor mudanças de conteúdo. Nunca
 edite uma skill e o cenário que a mede no mesmo pull request sem explicar por
 que a régua também precisava mudar.
 
+### Fixtures de adaptação de casos reais
+
+[`tests/fixtures/adaptacao-casos-reais.json`](tests/fixtures/adaptacao-casos-reais.json)
+é a régua determinística do contrato de adaptação. Ela contém exatamente A01–A14
+com dados sintéticos e não é uma coleção de prompts para modelo. O validador
+confere elegibilidade, intake, análise documental, frentes, estados, fontes,
+conflitos, escopo por frente, módulos, recibos de decisão e a presença das
+cláusulas obrigatórias nas quatro skills consumidoras.
+
+Não copie nomes, números, valores, trechos ou estrutura identificável de caso
+real. Uma fixture nova deve abstrair a classe de falha, preservar ao menos dois
+invariantes verificáveis e manter separado o que o contrato prova do que depende
+do produtor, das skills consumidoras ou de dogfood.
+
 ## Envio
 
 1. Crie uma branch `feat/<nome>`.

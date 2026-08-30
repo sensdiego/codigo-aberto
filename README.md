@@ -23,6 +23,12 @@ Fluxo sugerido:
 
 Para a topologia completa, sem simulação de jornadas, consulte o
 [mapa visual de skills, módulos e modos](references/mapa-visual-skills-modulos.md).
+O estado de prontidão contra situações documentadas está na
+[validação estrutural anonimizada com casos reais](references/validacao-casos-reais.md).
+A arquitetura adotada para fechar as lacunas está na
+[RFC-CA-001 de adaptação segura de casos reais](RFC-CA-001-adaptacao-casos-reais.md).
+As quatro skills consumidoras aceitam o pacote v1 sem tornar esse formato
+obrigatório para handoffs comuns.
 
 O usuário pode começar em qualquer etapa. A skill deve identificar e reparar
 somente os pré-requisitos ausentes. Pesquisa jurisprudencial e aprofundamento

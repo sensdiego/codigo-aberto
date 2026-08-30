@@ -17,6 +17,47 @@ Um resumo solto, documento bruto ou narrativa não interpretada não se torna
 handoff válido apenas por estar disponível no contexto. Ausência de um campo
 material deve ser registrada como lacuna; não complete por inferência silenciosa.
 
+## Pacote adaptado de caso real
+
+Quando um sistema que possui fontes privadas adaptar o estado de um caso para
+estas skills, ele declara antes dos handoffs:
+
+- versão do contrato de adaptação;
+- identificador inequívoco ou opaco do caso;
+- momento da geração;
+- autoridade usada para identidade e lente;
+- elegibilidade, cobertura e bloqueios;
+- artefatos incluídos e omitidos;
+- declaração de que nenhuma ação externa ocorreu.
+
+A única versão reconhecida neste contrato é `case-adaptation-v1`. A simples
+presença de um handoff comum não o transforma em pacote adaptado: sem recibo de
+adaptação, o consumidor segue o contrato comum e não exige campos desta seção.
+
+Estados de elegibilidade:
+
+- `bloqueado`: entrega somente identidade mínima e recibo de bloqueios, sem
+  pacote consumível;
+- `parcial_utilizavel`: entrega pacote com limites materiais e temporais
+  explícitos;
+- `integral`: exige recibo positivo próprio e nunca é inferido pela ausência de
+  bloqueios.
+
+Todo pacote em `parcial_utilizavel` ou `integral` contém handoff de tipo
+`intake`. Ele pode conter `análise documental` somente quando cada achado tiver
+proposição delimitada, fonte, localizador, estado, cobertura, relação com a
+lente e alcance da confirmação. O adaptador não emite automaticamente mapa
+jurídico, pesquisa, decisão ou redação.
+
+Versão desconhecida, identidade incompatível ou elegibilidade ausente falham
+fechadas. O consumidor usa somente conteúdo compatível com o contrato que
+compreende e devolve o restante como lacuna.
+
+Para cada frente, o recibo declara também `scope_status`: `suportado`,
+`suportado_condicionado`, `nao_suportado` ou `indeterminado`. O estado
+condicionado nomeia a fonte ou capacidade ausente. Os dois últimos bloqueiam
+seleção de módulo; o condicionado bloqueia somente a conclusão dependente.
+
 ## Dez campos lógicos
 
 | Campo | Conteúdo mínimo |
@@ -153,13 +194,51 @@ Quando o tipo for `decisão`, acrescente:
 {fato ou verificação que reabre a deliberação}
 ```
 
+Quando o caso tiver processo em andamento ou mais de uma frente, pode
+acrescentar:
+
+```markdown
+## Frentes
+
+### {front_id}
+- Natureza: {processo, recurso, incidente, reconvenção, execução, crédito,
+  administrativo ou dependência}
+- Relação: {principal, dependente, paralelo, sucessor ou apenso}
+- Jurisdição/regime: {demonstrado e pendente de verificação}
+- Estado de escopo: {suportado | suportado_condicionado | nao_suportado |
+  indeterminado}
+- Lente na frente: {parte ou papel representado}
+- Estado: {ativa | dependente | latente | encerrada | indeterminada}
+- Fase: {fase demonstrada e fonte}
+- Evento controlador: {fonte, localizador e data pertinente}
+- Objetivo atual: {resultado operativo informado ou confirmado}
+- Ato: {demonstrado | candidato | decidido | indeterminado | sem_ato}
+- Prazo: {evento inicial e estado da verificação}
+- Cobertura: {integral | parcial | bloqueada}
+- Dependências: {frente, documento, cálculo, pesquisa ou decisão}
+```
+
+`decidido` exige escolha humana registrada. `demonstrado` significa somente
+que a necessidade do ato consta de fonte direta; cabimento e seleção do módulo
+continuam pertencendo ao mapa jurídico e ao briefing. Espécie da ação, nome do
+arquivo e título extraído são sinais, não autoridade sobre o ato atual.
+
 ## Recebimento por outra skill
 
 Ao receber o handoff:
 
-1. confirme que ele corresponde ao mesmo caso e à lente correta;
-2. verifique tipo, fontes, escopo e confirmação;
-3. aceite apenas achados compatíveis com o pré-requisito da tarefa atual;
-4. preserve lacunas e estados sem promovê-los;
-5. repare somente o pré-requisito ausente;
-6. produza novo handoff com a relação e o delta para o artefato anterior.
+1. quando houver pacote adaptado, verifique versão, elegibilidade e recibo;
+2. confirme que ele corresponde ao mesmo caso e à lente correta;
+3. selecione a frente material ao pedido e verifique seu evento controlador;
+4. verifique tipo, fontes, escopo e confirmação;
+5. aceite apenas achados compatíveis com o pré-requisito da tarefa atual;
+6. preserve lacunas e estados sem promovê-los;
+7. bloqueie seleção de ato se a frente, o regime ou o evento estiverem
+   indeterminados;
+8. repare somente o pré-requisito ausente;
+9. produza novo handoff com a relação e o delta para o artefato anterior.
+
+Um handoff comum criado diretamente pelo usuário ou por outra skill permanece
+válido sem pacote adaptado, desde que satisfaça seus dez campos e os
+pré-requisitos da tarefa receptora. Compatibilidade não permite inventar
+recibo, elegibilidade, frente ou estado de escopo ausente.
