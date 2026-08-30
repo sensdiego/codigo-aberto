@@ -1,6 +1,0 @@
-{
-  "schema": 1,
-  "kind": "patch",
-  "category": "Fixed",
-  "summary": "Expõe antes da confirmação os controles de briefing do agravo interno e da interdição."
-}

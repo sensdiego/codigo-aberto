@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.5.1] - 2026-08-30
+
+### Fixed
+
+- Expõe antes da confirmação os controles de briefing do agravo interno e da interdição.
+
 ## [0.5.0] - 2026-08-30
 
 ### Added
