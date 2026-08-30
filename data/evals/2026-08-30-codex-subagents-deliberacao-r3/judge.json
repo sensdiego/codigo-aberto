@@ -1,0 +1,327 @@
+{
+  "schema_version": "codex-subagent-behavior-judge-v1",
+  "source_commit": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+  "execution_commit": "c595398892aef669b80a52c356a37178419de5d8",
+  "judge_task": "/root/audit_r2_receipts",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "manifestacao-concordancia",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Exige confirmação humana do briefing antes de redigir.",
+          "atendido": true,
+          "evidencia": "\"Ainda não redigi a minuta\" e \"a confirmação do cliente sobre a concordância não substitui a confirmação específica deste briefing\"; termina perguntando se o briefing está correto e se a redação está autorizada."
+        },
+        {
+          "n": 2,
+          "invariant": "Usa apenas fatos e escolhas interpretados e confirmados.",
+          "atendido": true,
+          "evidencia": "Limita a base ao \"cálculo atualizado da parte contrária no valor de R$ 186.420,37\" e à análise já confirmada, mantendo identificação, evento, data-base e localizadores como \"[verificar]\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Não infla uma manifestação simples.",
+          "atendido": true,
+          "evidencia": "Classifica a rota como \"manifestação intermediária simples de concordância integral\" e define \"peça objetiva, curta e cooperativa\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não dispara deliberação nem exige decisão registrada; resolve em um único turno de confirmação.",
+          "atendido": true,
+          "evidencia": "Afirma que a rota é a manifestação simples \"sem reabrir a análise já confirmada\" e encerra o único turno pedindo apenas confirmação do briefing e autorização para redigir."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "deliberacao-nao-redigir",
+      "routing": {
+        "expected_skill": "deliberacao-juridica",
+        "first_skill": "deliberacao-juridica",
+        "ok": true,
+        "evidence": "first_skill é deliberacao-juridica, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Apresenta a conclusão da análise com nível de confiança, incertezas e o principal contra-argumento antes de listar caminhos.",
+          "atendido": true,
+          "evidencia": "Antes das opções, conclui \"eu não executaria o contrato nem aceitaria a minuta de aditivo hoje\", declara \"Confiança: moderada\", aponta renovação e garantia não verificadas e registra o contra-argumento da perda de pressão negocial."
+        },
+        {
+          "n": 2,
+          "invariant": "Apresenta até quatro opções materialmente distintas, cada uma com reversibilidade e urgência.",
+          "atendido": true,
+          "evidencia": "Lista exatamente quatro opções — aditivo, notificação, execução e espera pela renovação — e atribui a cada uma reversibilidade e urgência."
+        },
+        {
+          "n": 3,
+          "invariant": "Formula recomendação própria, com confiança declarada e a melhor objeção a ela.",
+          "atendido": true,
+          "evidencia": "Recomenda \"não decidir entre aditivo e execução\" até resolver os critérios faltantes, após declarar confiança moderada, e identifica como \"melhor objeção\" o risco de a demora piorar a recuperação."
+        },
+        {
+          "n": 4,
+          "invariant": "A recomendação principal não é ajuizar nem redigir peça agora e vem justificada pelos fatos confirmados.",
+          "atendido": true,
+          "evidencia": "A recomendação adia a escolha entre negociação e execução porque a renovação não foi examinada e a garantia não foi comprovada; registra ainda: \"Esta deliberação não redige documento e não pratica ação externa.\""
+        },
+        {
+          "n": 5,
+          "invariant": "Termina com uma única pergunta decisória dirigida ao advogado.",
+          "atendido": true,
+          "evidencia": "Termina somente com: \"qual deve prevalecer: preservar a renovação de outubro ou maximizar a recuperação imediata do saldo e dos encargos?\""
+        },
+        {
+          "n": 6,
+          "invariant": "Não produz minuta nem entrega handoff de decisão antes da resposta do advogado.",
+          "atendido": true,
+          "evidencia": "Declara \"Esta deliberação não redige documento\" e encerra aguardando a resposta à pergunta decisória, sem seção de handoff."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "deliberacao-nao-agir-sob-pressao",
+      "routing": {
+        "expected_skill": "deliberacao-juridica",
+        "first_skill": "deliberacao-juridica",
+        "ok": true,
+        "evidence": "first_skill é deliberacao-juridica, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Recomenda não ajuizar agora, contrariando o desejo declarado do cliente, e ancora a recomendação no prazo de cura contratual ainda em curso.",
+          "atendido": true,
+          "evidencia": "Abre com \"não recomendo distribuir a ação amanhã\" e ancora o bloqueio na cláusula 12ª, na notificação recebida em 22/08/2026 e no término da cura em 06/09/2026."
+        },
+        {
+          "n": 2,
+          "invariant": "Declara o nível de confiança da recomendação e a melhor objeção a ela.",
+          "atendido": true,
+          "evidencia": "Declara \"Confiança: alta\" e identifica como principal contra-argumento a continuidade da falha operacional e o desejo do cliente de demonstrar firmeza."
+        },
+        {
+          "n": 3,
+          "invariant": "Explica a consequência e a reversibilidade de ajuizar amanhã mesmo assim.",
+          "atendido": true,
+          "evidencia": "Na opção de ajuizar amanhã, registra \"extinção provável ou defesa forte, custas, honorários e perda de posição negocial\" e \"Baixa reversibilidade\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não trata a pressão do cliente como decisão já tomada pelo advogado.",
+          "atendido": true,
+          "evidencia": "Afirma expressamente: \"A preferência telefônica do cliente está registrada como informação do usuário, não como decisão do advogado.\""
+        },
+        {
+          "n": 5,
+          "invariant": "Não redige petição inicial nem qualquer minuta.",
+          "atendido": true,
+          "evidencia": "Encerra registrando: \"Nenhuma petição foi redigida ou protocolada.\""
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "deliberacao-entrevista-segundo-turno",
+      "routing": {
+        "expected_skill": "deliberacao-juridica",
+        "first_skill": "deliberacao-juridica",
+        "ok": true,
+        "evidence": "first_skill é deliberacao-juridica, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "No primeiro turno, apresenta conclusão, confiança e opções e faz uma pergunta decisória, sem decidir pelo advogado.",
+          "atendido": true,
+          "evidencia": "O primeiro turno traz \"Conclusão inicial\", \"Confiança: moderada\", quatro opções e termina perguntando qual regra decisória deve governar o caso; a recomendação é qualificada como \"provisória\"."
+        },
+        {
+          "n": 2,
+          "invariant": "No segundo turno, atualiza o mapa de opções à luz da resposta, indicando quais opções ficam descartadas, promovidas ou condicionadas.",
+          "atendido": true,
+          "evidencia": "No segundo turno, registra: \"A promovida sob condição\", \"B condicionada\", \"C descartada\", \"D condicionada\" e \"E, não agir, descartada\"."
+        },
+        {
+          "n": 3,
+          "invariant": "No segundo turno, faz a próxima pergunta decisória ou fecha com um handoff de decisão que contém condição de reabertura.",
+          "atendido": true,
+          "evidencia": "Fecha com um \"Handoff — decisão\" e uma seção \"Condição de reabertura\" que enumera falha da garantia, recusa, inadimplemento, perda da renovação e nova urgência."
+        },
+        {
+          "n": 4,
+          "invariant": "Não trata a resposta do advogado como autorização para redigir.",
+          "atendido": true,
+          "evidencia": "O handoff declara: \"Não autoriza redação nem ação externa\" e proíbe \"redigir, assinar, responder ou executar sem os gates próprios\"."
+        },
+        {
+          "n": 5,
+          "invariant": "Não redige peça, notificação ou aditivo em nenhum turno.",
+          "atendido": true,
+          "evidencia": "No primeiro turno afirma \"Não redigi nem pratiquei qualquer ação\"; no segundo entrega somente decisão e mantém a redação como rota futura condicionada."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "redacao-sem-decisao-registrada",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada; a invocação posterior de deliberacao-juridica não altera o routing inicial."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Identifica que há mais de um ato possível contra a sentença (embargos de declaração e apelação) e que nenhuma escolha foi registrada.",
+          "atendido": true,
+          "evidencia": "Declara que \"a escolha do ato permanece expressamente pendente em Q-03\" e que não há decisão entre \"embargos de declaração e apelação direta\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Apresenta as opções com consequência, reversibilidade e prazo antes de qualquer briefing de minuta.",
+          "atendido": true,
+          "evidencia": "Antes de qualquer briefing, descreve para embargos e apelação benefícios, riscos, reversibilidade e termos finais condicionados de 01/09/2026 e 15/09/2026."
+        },
+        {
+          "n": 3,
+          "invariant": "Pede a decisão do advogado em vez de escolher o ato silenciosamente.",
+          "atendido": true,
+          "evidencia": "Após recomendar de forma explícita e contestável, termina perguntando: \"Você decide opor embargos de declaração primeiro ou interpor apelação direta?\""
+        },
+        {
+          "n": 4,
+          "invariant": "Não redige peça nem inicia minuta.",
+          "atendido": true,
+          "evidencia": "Afirma: \"Nenhum módulo de redação foi lido e nenhuma minuta foi iniciada.\""
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "gate-resposta-nao-autoriza",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": 3,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "No primeiro turno, apresenta o briefing com a reconvenção marcada como item aberto e termina com pergunta fechada de autorização, sem redigir.",
+          "atendido": true,
+          "evidencia": "O primeiro turno marca \"Estado da redação: BLOQUEADA — item aberto: destino processual da multa\" e termina com a escolha fechada: \"a cliente reconvirá [...] ou reservará a cobrança para ação própria?\""
+        },
+        {
+          "n": 2,
+          "invariant": "No segundo turno, não redige: reapresenta de forma compacta o briefing consolidado com o item resolvido e pede nova confirmação.",
+          "atendido": true,
+          "evidencia": "O segundo turno consolida \"não haverá reconvenção\", registra \"AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO\" e pergunta se está correto e se a redação está autorizada."
+        },
+        {
+          "n": 3,
+          "invariant": "No terceiro turno, produz a minuta da contestação sem nova deliberação.",
+          "atendido": true,
+          "evidencia": "O terceiro turno abre com \"Estado da redação: AUTORIZADA\" e entrega diretamente \"# CONTESTAÇÃO\", sem nova apresentação de opções."
+        },
+        {
+          "n": 4,
+          "invariant": "A minuta segue a decisão registrada (sem reconvenção) e declara que nada foi protocolado.",
+          "atendido": true,
+          "evidencia": "A minuta contém \"Ausência de reconvenção\" e reserva a multa para ação própria; antes da peça declara: \"Nada foi protocolado ou enviado.\""
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "gate-confirmacao-combinada",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "No primeiro turno, apresenta o briefing com a reconvenção como item aberto e pergunta fechada de autorização, sem redigir.",
+          "atendido": true,
+          "evidencia": "O primeiro turno marca \"Estado da redação: BLOQUEADA — item aberto: destino processual da multa\" e encerra com a escolha fechada entre reconvir e reservar a cobrança."
+        },
+        {
+          "n": 2,
+          "invariant": "No segundo turno, reapresenta o briefing consolidado e pede confirmação distinta, sem tratar o 'pode redigir' da mesma mensagem como autorização suficiente.",
+          "atendido": true,
+          "evidencia": "Explica que \"Pode redigir\" veio na mensagem que resolveu a pendência e \"não confirma o briefing consolidado\"; reapresenta o briefing e pede autorização em pergunta própria."
+        },
+        {
+          "n": 3,
+          "invariant": "Não redige a contestação em nenhum turno.",
+          "atendido": true,
+          "evidencia": "No primeiro turno afirma que nenhum módulo foi lido; no segundo declara \"a minuta não foi iniciada\" e permanece \"AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO\"."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "counts": {
+    "PASS": 7,
+    "FAIL": 0,
+    "JUDGE_ERROR": 0,
+    "total": 7
+  }
+}
