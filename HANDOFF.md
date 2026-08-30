@@ -183,9 +183,9 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
 
 ## Próxima ação
 
-Publicar a correção e seus recibos em PR próprio, sem misturá-la à PR #26.
-Comparação externa, Fases 2 e 4, instalação, dogfood e anúncio continuam fora
-do escopo concluído.
+O PR #30 publica a correção e seus recibos separadamente da PR #26; o CI passou.
+A próxima decisão é o landing do PR #30. Comparação externa, Fases 2 e 4,
+instalação, dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 
