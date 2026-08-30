@@ -10,12 +10,13 @@ autônoma de deliberação na `v0.6.0`.
 
 ## Estado do produto
 
-A versão publicada é `v0.6.0`. O PR #27 foi integrado a `main` pelo merge commit
+A versão publicada é `v0.6.1`. O PR #27 foi integrado a `main` pelo merge commit
 `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
 commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
 pelo merge commit `da41883`; e o PR #26 foi integrado pelo merge commit
-`c47555a`. O workflow `Software release` criou o commit `e070f83`, a tag e o
-GitHub Release `v0.6.0`.
+`c47555a`. O PR #32 corrigiu o estado publicado no mapa visual pelo merge commit
+`eb43e98`; o workflow `Software release` criou o commit `916db93`, a tag e o
+GitHub Release `v0.6.1`.
 
 A skill autônoma de deliberação foi incorporada sobre a baseline `v0.5.1` sem
 reescrever a cadeia auditada. A rodada dirigida aprovou sete cenários e 31/31
@@ -164,6 +165,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `f2e99ba` — release `v0.5.1` e consumo do fragmento `patch`.
 - `c47555a` — merge do PR #26, com a skill deliberativa e seus recibos;
 - `e070f83` — release `v0.6.0` e consumo do fragmento `minor`.
+- `eb43e98` — merge do PR #32, com o closeout e o mapa visual corrigido;
+- `916db93` — release `v0.6.1` e consumo do fragmento `patch`.
 
 ## Verificação
 
@@ -175,7 +178,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test`: PASS — 62 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
-- release: tag `v0.6.0` e `origin/main` em `e070f83`; oito bundles conferidos
+- release: tag `v0.6.1` e `origin/main` em `916db93`; oito bundles conferidos
   contra o manifesto, sem asset ausente, extra ou SHA-256 divergente.
 
 Os comandos foram repetidos antes do landing do PR #26. O workflow de release
@@ -194,9 +197,9 @@ passou e publicou oito ZIPs e `manifest.json` a partir de `e070f83`.
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- Os PRs #27, #28, #30 e #26 foram integrados; seus workflows publicaram
-  `v0.4.0`, `v0.5.0`, `v0.5.1` e `v0.6.0`, respectivamente.
-- A publicação `v0.6.0` contém oito bundles ZIP e um manifesto. Não houve
+- Os PRs #27, #28, #30, #26 e #32 foram integrados; seus workflows publicaram
+  `v0.4.0`, `v0.5.0`, `v0.5.1`, `v0.6.0` e `v0.6.1`, respectivamente.
+- A publicação `v0.6.1` contém oito bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
 - A nova medição do PR #26 usou apenas subagentes Codex e cenários sintéticos.
   Ela comprova o comportamento dirigido, mas não dogfood, uso humano ou
