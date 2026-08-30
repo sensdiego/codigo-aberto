@@ -1,6 +1,0 @@
-{
-  "schema": 1,
-  "kind": "patch",
-  "category": "Fixed",
-  "summary": "Preserva a hierarquia entre módulo-base candidato e complementos antes do briefing de redação."
-}

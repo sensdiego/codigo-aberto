@@ -1,6 +1,6 @@
 {
   "name": "silo-legal",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Workflow jurídico cível em PT-BR: intake, análise documental e jurídica, pesquisa opcional via Silo, aprofundamento e redação confirmada. Skills open source; acesso ao Silo em validação privada.",
   "author": {
     "name": "Diego Sens"
