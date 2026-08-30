@@ -7,8 +7,8 @@ Planalto](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105com
 ## Organização
 
 - `parte-geral-e-prazos.md`: contraditório, contagem e termos processuais;
-- `procedimento-comum.md`: tutela essencial, petição inicial, defesa, réplica,
-  saneamento e decisão;
+- `procedimento-comum.md`: tutela provisória dos arts. 294–311, petição
+  inicial, defesa, réplica, saneamento e decisão;
 - `provas.md`: regras gerais, documentos, testemunhas e perícia;
 - `audiencia.md`: conciliação, instrução e razões finais;
 - `recursos.md`: regras gerais, apelação, agravo de instrumento e embargos de
@@ -28,9 +28,9 @@ temático adequado, crie os IDs necessários e atualize a data única do corpus.
 ## Atualização e vigência
 
 `updated_at` no manifesto é a data em que o corpus foi rechecado. Não se mantém
-data de captura por artigo. A revisão de 2026-08-20 utilizou o HTML compilado
-oficial atualizado em 5/08/2026 e verificou separadamente alterações publicadas
-em 2026 que poderiam afetar o escopo selecionado.
+data de captura por artigo. A revisão de 2026-08-30 conferiu no HTML compilado
+oficial os arts. 294–311 e preservou o restante do recorte já verificado em
+2026-08-20.
 
 A conferência mecânica garante correspondência de texto, ordem e subdivisões
 com a fonte usada. Ela não substitui a análise de vigência, vacatio legis,

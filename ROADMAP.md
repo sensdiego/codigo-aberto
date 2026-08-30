@@ -10,18 +10,18 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-27, v0.2.4)
+## Estado atual (2026-08-30, v0.3.0)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.2.4` (correções de roteamento
-  jurisprudencial e rótulos canônicos do delta).
+  recorte versionado do CPC. Versão corrente `v0.3.0`, publicada em 2026-08-28
+  com os contratos deliberativos do PR #25.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
   GitHub Release e publicação idempotente de assets (quatro releases publicadas
   pelo workflow, todas verdes).
 - Sete bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.2.4](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.2.4);
-  acervo do projeto de smoke no ChatGPT atualizado com esses ZIPs em
-  2026-08-24.
+  [release v0.3.0](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.3.0).
+  O último recibo de atualização do acervo do projeto de smoke no ChatGPT é da
+  v0.2.4, em 2026-08-24; release publicada não prova atualização do projeto.
 - Smoke completo do Claude Code aprovado em 2026-08-24
   ([#9](https://github.com/sensdiego/codigo-aberto/issues/9)): instalação limpa
   da `v0.2.3` via marketplace, nove skills carregadas, roteamento correto e
@@ -56,6 +56,10 @@ Estado dos itens:
   independente e especificação em
   [#22](https://github.com/sensdiego/codigo-aberto/issues/22). Implementação em
   duas frentes medidas (Fase 3), com a régua antes de qualquer edição de skill.
+- A cláusula de promoção da camada deliberativa disparou após duas rodadas. A
+  skill autônoma foi implementada no PR #26, mas permanece em rascunho e fora
+  da `main`; por decisão de 2026-08-30, a frente foi pausada sem nova medição,
+  merge ou publicação.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
   harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
   leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
@@ -254,14 +258,18 @@ briefing ou contexto sejam tratados como autorização implícita.
       primeiro por roteamento e, na skill errada, ainda cumpre parte do
       protocolo (5/5, 4/5, 2/6). Esta rodada mede a v0.2.4 sem protocolo e não
       conta para a cláusula de promoção.
-- [ ] Frente 2 — contratos (fragmento `minor` → v0.3.0): `disciplina.md`
+- [x] Frente 2 — contratos (publicada na v0.3.0): `disciplina.md`
       (gatilho + gate), `handoff.md` (tipo `decisão`),
       `references/deliberacao.md`, ponteiros em `analise-juridica-civel`,
       `analise-jurisprudencial`, `aprofundamento-juridico`,
       `redacao-contencioso` e `redacao-consultivo`, description de
       `analise-juridica-civel` (com `aprofundamento-audiencia` como controle
       de confusão) e gerador de bundles (`REWRITES` + cópia). Re-medir contra
-      a frente 1. PR próprio.
+      a frente 1. PR próprio. PR #25 integrado em 2026-08-28.
+- [~] Frente 3 — skill autônoma `deliberacao-juridica`: implementada no PR
+      #26 após a cláusula de promoção. A medição dirigida parcial teve 3 PASS e
+      2 FAIL; correções posteriores não foram re-medidas. Frente pausada por
+      decisão do owner, sem merge, release ou anúncio.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.
@@ -269,8 +277,10 @@ briefing ou contexto sejam tratados como autorização implícita.
   por roteamento, a skill autônoma passa a ser a recomendação — embrulhando
   protocolo e artefato já existentes.
 
-- [ ] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
-      (CPC arts. 300–310); ampliar recorte legislativo se necessário.
+- [~] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
+      (SEN-2413): complemento do ato-base, recorte integral dos CPC arts.
+      294–311 e cenário multi-turno com gate mecânico. A régua fica pronta no
+      PR, sem execução paga nesta frente sem orçamento separado.
 - [ ] Módulo `cumprimento-sentença` (CPC arts. 523–541), incluindo
       impugnação.
 - [ ] Módulo `execucao` (CPC Livre II, arts. 771+), avaliando escopo mínimo

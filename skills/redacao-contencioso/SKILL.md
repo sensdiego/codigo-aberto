@@ -18,8 +18,9 @@ confirmado. Documento bruto, narrativa solta ou pesquisa não verificada não
 servem como insumo de minuta.
 
 Infira o ato provável, mas não escolha silenciosamente. Consulte o
-[índice de módulos](references/indice-modulos.md) e carregue somente o módulo
-correspondente depois da confirmação.
+[índice de módulos](references/indice-modulos.md) e carregue depois da
+confirmação somente o módulo-base correspondente. Se o briefing também
+confirmar tutela provisória, acrescente apenas o módulo complementar de tutela.
 
 Se os handoffs deixarem uma decisão humana pendente que a peça precisa
 resolver (ato entre alternativas, tese, pedido, concessão), ou se o ato
@@ -53,7 +54,8 @@ não confirma o briefing desta minuta.
 Depois da confirmação:
 
 1. recupere somente elementos interpretados e confirmados;
-2. leia o módulo e os artigos integrais por ele referenciados;
+2. leia o módulo-base, o complemento de tutela quando confirmado e os artigos
+   integrais referenciados por eles;
 3. produza estrutura proporcional ao ato;
 4. ligue afirmações materiais às fontes e localizadores;
 5. preserve `[verificar]`, lacunas e decisões do advogado;

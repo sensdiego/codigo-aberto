@@ -79,6 +79,21 @@ class OsJunkToleranceTest(unittest.TestCase):
                         name.startswith("._"), f"{archive.name}: {member}"
                     )
 
+    def test_redaction_bundle_includes_tutela_module_and_cpc(self) -> None:
+        result = run_script(self.tree, "build_chatgpt_smoke_bundle.py")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        archive = self.tree / "dist" / "chatgpt-work-smoke" / "redacao-contencioso.zip"
+        with zipfile.ZipFile(archive) as bundle:
+            members = set(bundle.namelist())
+        self.assertIn(
+            "redacao-contencioso/references/modulos/tutela-urgencia-evidencia.md",
+            members,
+        )
+        self.assertIn(
+            "redacao-contencioso/references/legislacao/cpc/procedimento-comum.md",
+            members,
+        )
+
 
 class WorkflowFixtureValidationTest(unittest.TestCase):
     def workflow_errors(self, changes: dict[str, object]) -> list[str]:
