@@ -9,11 +9,12 @@ gates de briefing do agravo interno e da interdição.
 
 ## Estado do produto
 
-A versão publicada é `v0.5.0`. O PR #27 foi integrado a `main` pelo merge commit
+A versão publicada é `v0.5.1`. O PR #27 foi integrado a `main` pelo merge commit
 `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
-commit `7b6ecf0`, preservando toda a cadeia de avaliação. O workflow
-`Software release` criou o commit `632fa21`, a tag e o GitHub Release `v0.5.0`.
-A skill autônoma de deliberação continua pausada no PR #26 e não foi incorporada.
+commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
+pelo merge commit `da41883`. O workflow `Software release` criou o commit
+`f2e99ba`, a tag e o GitHub Release `v0.5.1`. A skill autônoma de deliberação
+continua pausada no PR #26 e não foi incorporada.
 
 O trabalho posterior à tutela está integrado e publicado. A release contém os
 sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
@@ -146,6 +147,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
   tutela, sem reescrita da cadeia.
 - `7b6ecf0` — merge do PR #28, sem rebase ou squash;
 - `632fa21` — release `v0.5.0` e consumo dos sete fragmentos.
+- `da41883` — merge do PR #30, com os gates de briefing corrigidos;
+- `f2e99ba` — release `v0.5.1` e consumo do fragmento `patch`.
 
 ## Verificação
 
@@ -158,8 +161,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
-Os comandos foram repetidos após o retarget para `main`. O workflow de release
-passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
+Os comandos foram repetidos antes do landing do PR #30. O workflow de release
+passou e publicou sete ZIPs e `manifest.json` a partir de `f2e99ba`.
 
 ## Limites e recibos negativos
 
@@ -174,24 +177,24 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- Os PRs #27 e #28 foram integrados; seus workflows publicaram `v0.4.0` e
-  `v0.5.0`, respectivamente.
-- A publicação `v0.5.0` contém sete bundles ZIP e um manifesto. Não houve
+- Os PRs #27, #28 e #30 foram integrados; seus workflows publicaram `v0.4.0`,
+  `v0.5.0` e `v0.5.1`, respectivamente.
+- A publicação `v0.5.1` contém sete bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
 - A rodada dirigida dos dois gates usou subagentes Codex e cenários sintéticos;
   não houve modelo externo, dogfood, uso humano ou custo medido em dólares.
 
 ## Próxima ação
 
-O PR #30 publica a correção e seus recibos separadamente da PR #26; o CI passou.
-A próxima decisão é o landing do PR #30. Comparação externa, Fases 2 e 4,
-instalação, dogfood e anúncio continuam fora do escopo concluído.
+Sincronizar o PR #26 com a baseline `v0.5.1` e repetir seus gates proporcionais.
+Comparação externa, Fases 2 e 4, instalação, dogfood e anúncio continuam fora
+do escopo concluído.
 
 ## Comandos de retomada
 
 ```bash
-git switch main
-git pull --ff-only origin main
+git switch codex/SEN-2408-deliberacao-juridica
+git fetch origin main
 git status --short --branch
 git log --oneline --decorate -6
 make validate
