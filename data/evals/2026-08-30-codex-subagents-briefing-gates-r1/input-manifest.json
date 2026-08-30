@@ -1,0 +1,19 @@
+{
+  "schema_version": "codex-subagent-briefing-gates-v1",
+  "source_commit": "e48762ca5fd1d1de0e7153287d1417723a26ea91",
+  "fixture": {
+    "path": "tests/fixtures/workflows.json",
+    "sha256": "253d2856c4af6e9f8022998dd7938749e45645c29a877092570fccf0f4538155"
+  },
+  "contracts": {
+    "skill_sha256": "9829c264fb96893fdb3a08e6854b21749b70eded8df84c026572e7adb9d69e8b",
+    "index_sha256": "1fef7daa4d37cf5fbe2300a9d9594309f24edb75ff250d9333407c93349474ff"
+  },
+  "scenario_ids": [
+    "redacao-agravo-interno",
+    "redacao-jurisdicao-voluntaria-interdicao"
+  ],
+  "executor_mode": "blind_to_expected_skill_and_invariants",
+  "judge_mode": "independent_after_outputs_frozen",
+  "external_model_calls": false
+}
