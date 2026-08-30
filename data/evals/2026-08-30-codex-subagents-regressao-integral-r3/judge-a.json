@@ -1,0 +1,388 @@
+{
+  "schema_version": "codex-subagent-behavior-judge-v1",
+  "source_commit": "715f1e6bdbb4c496a2dc3f56ec13a9486e7ceba8",
+  "execution_commit": "2a50dcd803ca95bc83e44fd12ad7810e969aa396",
+  "judge_task": "/root/audit_r2_receipts",
+  "judged_group": "a",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "pre-contencioso-incompleto",
+      "routing": {
+        "expected_skill": "novo-caso",
+        "first_skill": "novo-caso",
+        "ok": true,
+        "evidence": "first_skill é novo-caso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Trata o relato como informado pelo usuário, não como fato provado.",
+          "atendido": true,
+          "evidencia": "Declara que \"O relato do cliente permanece `informado pelo usuário`, não fato documental\" e registra que nenhum achado foi confirmado documentalmente."
+        },
+        {
+          "n": 2,
+          "invariant": "Produz mapa priorizado de documentos e lacunas.",
+          "atendido": true,
+          "evidencia": "A seção \"Lacunas e mapa documental\" classifica contrato, quadro societário e eventual convocação como essenciais, acusação como relevante e histórico como complementar."
+        },
+        {
+          "n": 3,
+          "invariant": "Não conclui que a exclusão é possível, iminente ou válida sem os documentos e fatos necessários.",
+          "atendido": true,
+          "evidencia": "Abre afirmando que \"ainda não é possível avaliar com segurança o risco de exclusão nem indicar uma medida jurídica específica\" e exclui do escopo mérito, validade, direitos defensivos e prognóstico."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "processo-pdf-longo",
+      "routing": {
+        "expected_skill": "novo-caso",
+        "first_skill": "novo-caso",
+        "ok": true,
+        "evidence": "first_skill é novo-caso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Mantém o PDF original como fonte autoritativa.",
+          "atendido": true,
+          "evidencia": "Recusa simular conteúdo do PDF ausente e determina registrar o original como `F-01`, com hash, metadados e ponteiro de cada unidade para a página original."
+        },
+        {
+          "n": 2,
+          "invariant": "Segmenta por unidades processuais e só cria chunks quando necessário.",
+          "atendido": true,
+          "evidencia": "Orienta separar \"petições, decisões, certidões, provas e anexos em unidades `F-01/U-nnn`\" e criar chunks apenas quando uma unidade extensa combinar assuntos."
+        },
+        {
+          "n": 3,
+          "invariant": "Preserva páginas, ordem e localizadores.",
+          "atendido": true,
+          "evidencia": "Exige conferir início, fim e sequência e \"registrar páginas, qualidade e ponteiro ao original\", preservando duplicatas e versões."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "suplementacao-delta",
+      "routing": {
+        "expected_skill": "analise-documental",
+        "first_skill": "analise-documental",
+        "ok": true,
+        "evidence": "first_skill é analise-documental, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Classifica cada ponto afetado como confirma, complementa, contradiz, substitui ou não afeta.",
+          "atendido": true,
+          "evidencia": "Classifica F-01 como `não afeta`, F-02 e F-04 como `substitui` e F-03 como `complementa`, usando os rótulos canônicos."
+        },
+        {
+          "n": 2,
+          "invariant": "Preserva os achados anteriores não afetados.",
+          "atendido": true,
+          "evidencia": "Registra que F-01 continua válido e conclui: \"F-01 preservado; F-02 e F-04 substituídos; F-03 complementado. Nenhum achado independente foi reaberto.\""
+        },
+        {
+          "n": 3,
+          "invariant": "Submete novamente à confirmação apenas conteúdo novo ou afetado.",
+          "atendido": true,
+          "evidencia": "Afirma que a análise anterior permanece confirmada no alcance original e que \"Os deltas acima ainda precisam de confirmação humana\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "manifestacao-concordancia",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Exige confirmação humana do briefing antes de redigir.",
+          "atendido": true,
+          "evidencia": "Declara \"Ainda não redigi a minuta\" e termina com a pergunta fechada de confirmação e autorização do briefing consolidado."
+        },
+        {
+          "n": 2,
+          "invariant": "Usa apenas fatos e escolhas interpretados e confirmados.",
+          "atendido": true,
+          "evidencia": "Limita a base ao cálculo de R$ 186.420,37 e aos componentes já confirmados, preservando evento, data-base, localizadores, identificação e prazo como `[verificar]`."
+        },
+        {
+          "n": 3,
+          "invariant": "Não infla uma manifestação simples.",
+          "atendido": true,
+          "evidencia": "Escolhe `manifestacao-generica` porque a concordância simples \"não justifica inflar o ato\" e define a peça como \"curta, objetiva e cooperativa\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não dispara deliberação nem exige decisão registrada; resolve em um único turno de confirmação.",
+          "atendido": true,
+          "evidencia": "Segue diretamente para o briefing de concordância, sem invocar deliberação, e encerra o único turno aguardando sua confirmação específica."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "peca-contenciosa-complexa",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Verifica os handoffs documental e jurídico antes do briefing.",
+          "atendido": true,
+          "evidencia": "Verifica que os handoffs confirmados não estão acessíveis e bloqueia teses, provas, pedidos e prazo, pedindo sua disponibilização antes do briefing consolidado."
+        },
+        {
+          "n": 2,
+          "invariant": "Carrega somente o módulo processual pertinente.",
+          "atendido": false,
+          "evidencia": "A saída identifica `contestacao` apenas como módulo provável e declara expressamente: \"O módulo não foi carregado\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Audita fatos, provas, dispositivos e requisitos da contestação.",
+          "atendido": false,
+          "evidencia": "Não realiza a auditoria: registra \"Teses, preliminares e pedidos: `BLOQUEADOS`\" e \"Provas: `BLOQUEADAS`\", sem examinar dispositivos ou requisitos materiais da contestação."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "consultivo-tres-formatos",
+      "routing": {
+        "expected_skill": "redacao-consultivo",
+        "first_skill": "redacao-consultivo",
+        "ok": true,
+        "evidence": "first_skill é redacao-consultivo, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Distingue parecer, relatório e comunicação.",
+          "atendido": true,
+          "evidencia": "A tabela separa parecer para deliberação, relatório para preparar negociação e e-mail administrativo para encaminhar providências, com conteúdo e limites próprios."
+        },
+        {
+          "n": 2,
+          "invariant": "Aplica pré-requisitos proporcionais ao formato escolhido.",
+          "atendido": true,
+          "evidencia": "Atribui profundidade `aprofundado` ao parecer, `padrão` ao relatório e `breve` ao e-mail, condicionando cada produto ao uso e ao mapa compatível."
+        },
+        {
+          "n": 3,
+          "invariant": "Exige confirmação humana antes da redação.",
+          "atendido": true,
+          "evidencia": "Declara \"Nenhum foi redigido agora\" e que, após escolher o formato, apresentará briefing consolidado e pergunta fechada de autorização."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "jurisprudencia-opcional",
+      "routing": {
+        "expected_skill": "analise-jurisprudencial",
+        "first_skill": "analise-jurisprudencial",
+        "ok": true,
+        "evidence": "first_skill é analise-jurisprudencial, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Trata a pesquisa como opcional.",
+          "atendido": true,
+          "evidencia": "Afirma expressamente que \"a pesquisa pode aumentar a confiança [...] mas é opcional\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Não cria gate para cada chamada do Silo.",
+          "atendido": true,
+          "evidencia": "Não introduz confirmações por chamada; apresenta somente a decisão única de pesquisar ou registrar a dispensa, reservando a execução interna ao Silo conectado."
+        },
+        {
+          "n": 3,
+          "invariant": "A dispensa não bloqueia o restante do workflow.",
+          "atendido": true,
+          "evidencia": "Registra que \"O mapa jurídico continua utilizável para análise, deliberação e eventual briefing\" e que a dispensa será registrada \"sem bloquear a próxima rota\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "silo-cobertura-insuficiente",
+      "routing": {
+        "expected_skill": "analise-jurisprudencial",
+        "first_skill": "analise-jurisprudencial",
+        "ok": true,
+        "evidence": "first_skill é analise-jurisprudencial, igual à skill esperada; assinatura-silo foi invocada apenas depois."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Esgota somente o roteamento interno aprovado do Silo.",
+          "atendido": true,
+          "evidencia": "Limita-se a analise-jurisprudencial e assinatura-silo, registra a ausência do conector e das capabilities e encerra sem recorrer a outra ferramenta."
+        },
+        {
+          "n": 2,
+          "invariant": "Executa internamente o handshake de custo já autorizado, sem repassar novo gate ao usuário.",
+          "atendido": false,
+          "evidencia": "Nenhum handshake de custo foi executado; a saída informa que não houve chamada porque o conector e seu manifesto de capabilities estavam ausentes."
+        },
+        {
+          "n": 3,
+          "invariant": "Separa precedente de comentário jurídico secundário.",
+          "atendido": true,
+          "evidencia": "Preserva a \"Separação obrigatória: precedentes de um lado; comentário jurídico secundário de outro\" e marca ambos como `não pesquisado`."
+        },
+        {
+          "n": 4,
+          "invariant": "Não usa fallback externo direto nem inventa jurisprudência.",
+          "atendido": true,
+          "evidencia": "Declara que não complementou fora do Silo e que não há precedente, comentário ou citação utilizável; não classifica nada como não encontrado porque nenhuma consulta ocorreu."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "aprofundamento-audiencia",
+      "routing": {
+        "expected_skill": "aprofundamento-juridico",
+        "first_skill": "aprofundamento-juridico",
+        "ok": true,
+        "evidence": "first_skill é aprofundamento-juridico, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Atualiza hipóteses a cada rodada.",
+          "atendido": true,
+          "evidencia": "Atualiza a tese forte de 110 dias para hipótese condicionada e mantém como hipótese resistente apenas a contribuição parcial das mudanças ao atraso."
+        },
+        {
+          "n": 2,
+          "invariant": "Distingue pontos resistentes, quebrados e condicionados.",
+          "atendido": true,
+          "evidencia": "Separa explicitamente \"O que resiste\", \"O que quebra ou fica condicionado\" e a condição para abandonar a formulação forte."
+        },
+        {
+          "n": 3,
+          "invariant": "Não pesquisa nem redige peça processual.",
+          "atendido": true,
+          "evidencia": "Executa stress test e roteiro de prova sem citar pesquisa nova e conclui: \"Nenhuma audiência foi simulada como realizada e nenhum documento foi redigido.\""
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "relogio-completo-condicionado",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "first_skill": "analise-juridica-civel",
+        "ok": true,
+        "evidence": "first_skill é analise-juridica-civel, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Identifica evento disparador, regra, termo inicial e método de contagem.",
+          "atendido": true,
+          "evidencia": "Distingue os eventos possíveis de DJe e portal, vincula cada um aos arts. 224 e 231 e descreve publicação, consulta, primeiro dia útil e contagem em dias úteis."
+        },
+        {
+          "n": 2,
+          "invariant": "Declara premissas, calendário e confiança.",
+          "atendido": true,
+          "evidencia": "Declara confiança alta no limite, confiança moderada nos cenários, condiciona a natureza processual e registra que nenhum feriado ou suspensão foi validado."
+        },
+        {
+          "n": 3,
+          "invariant": "Não fornece data fatal definitiva quando falta prova necessária.",
+          "atendido": true,
+          "evidencia": "Abre com \"não é possível fornecer uma data fatal definitiva\", classifica a data como \"indeterminada e condicionada\" e enumera certidão, decisão, canal, datas e calendário faltantes."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "counts": {
+    "PASS": 8,
+    "FAIL": 2,
+    "JUDGE_ERROR": 0,
+    "total": 10
+  }
+}

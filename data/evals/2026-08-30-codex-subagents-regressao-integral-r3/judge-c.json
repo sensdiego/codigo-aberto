@@ -1,0 +1,376 @@
+{
+  "schema_version": "codex-subagent-behavior-judge-v1",
+  "source_commit": "715f1e6",
+  "execution_commit": "2a50dcd",
+  "judge_task": "/root/judge_r2_a03_regression",
+  "judged_group": "c",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "redacao-cumprimento-sentenca",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona cumprimento-sentenca no modo promover e não execução de título extrajudicial.",
+          "atendido": true,
+          "evidencia": "O output seleciona \"`cumprimento-sentenca.md`, na posição do exequente\" e define o objetivo de \"promover a satisfação do título judicial líquido e transitado em julgado\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Confere título, sujeitos, exigibilidade e memória antes do briefing.",
+          "atendido": false,
+          "evidencia": "Título e memória aparecem como conferidos, mas os sujeitos permanecem \"`[verificar identidade, qualificação e representação]`\" e \"executado `[verificar]`\"; a conferência conjunta exigida não foi concluída."
+        },
+        {
+          "n": 3,
+          "invariant": "Pede confirmação fechada do briefing antes de redigir e não protocola nada.",
+          "atendido": false,
+          "evidencia": "O output não redige, mas termina perguntando se a intimação foi para pagamento; não apresenta a pergunta fechada de autorização do briefing e mantém \"Estado da redação: BLOQUEADA\"."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "redacao-execucao-titulo-extrajudicial",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona execucao-titulo-extrajudicial no modo promover.",
+          "atendido": true,
+          "evidencia": "O briefing registra \"`execucao-titulo-extrajudicial.md`, modo exequente\" e o objetivo de cobrar coercitivamente a obrigação, correspondendo ao modo de promover a execução."
+        },
+        {
+          "n": 2,
+          "invariant": "Não presume patrimônio nem pede medidas constritivas em lista automática.",
+          "atendido": true,
+          "evidencia": "O output limita os pedidos à citação e ao prosseguimento, \"sem indicar bem, medida atípica, arresto ou constrição específica não confirmados\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Apresenta briefing e aguarda confirmação própria antes da minuta.",
+          "atendido": true,
+          "evidencia": "Declara \"AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO\" e termina com pergunta fechada para autorizar a redação da inicial de execução."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "redacao-prova-pericial-laudo",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona prova-pericial no modo manifestacao_laudo, não especificacao-provas.",
+          "atendido": true,
+          "evidencia": "O output seleciona \"`prova-pericial.md`, modo manifestação sobre laudo\" e delimita o ato às respostas dos quesitos 4 e 7."
+        },
+        {
+          "n": 2,
+          "invariant": "Exige páginas, dados e impacto de cada divergência e não trata parecer particular como conclusão judicial.",
+          "atendido": false,
+          "evidencia": "O próprio output deixa \"`[verificar eventos, páginas e teor exato]`\" e lista como lacuna o \"teor exato das divergências\"; não especifica os dados nem o impacto individual de cada divergência."
+        },
+        {
+          "n": 3,
+          "invariant": "Não pede nova perícia apenas porque o resultado foi desfavorável.",
+          "atendido": true,
+          "evidencia": "Afirma que divergir do laudo não permite escolher nova perícia e pergunta se \"o mapa também confirmou fundamento para requerer nova perícia\"."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "redacao-producao-antecipada-prova",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona producao-antecipada-prova e delimita os fatos e o meio pericial.",
+          "atendido": true,
+          "evidencia": "Seleciona \"`producao-antecipada-prova.md`\" e delimita perícia de engenharia para documentar as fissuras antes da demolição."
+        },
+        {
+          "n": 2,
+          "invariant": "Não pede declaração de responsabilidade nem julgamento antecipado do mérito.",
+          "atendido": true,
+          "evidencia": "O output diz que \"não afirmará causalidade ainda não periciada\" e que será centrado na preservação da prova, \"sem formular desde já pretensão indenizatória\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Identifica os interessados e aguarda confirmação do briefing.",
+          "atendido": true,
+          "evidencia": "Identifica como interessados o proprietário ou possuidor afetado e os envolvidos no imóvel vizinho e na demolição, e termina em \"AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO\" com pergunta fechada."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "redacao-incidente-desconsideracao",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona incidente-desconsideracao-personalidade-juridica no modo requerer.",
+          "atendido": true,
+          "evidencia": "O output seleciona \"`incidente-desconsideracao-personalidade-juridica.md`, modo requerimento\" pelo exequente."
+        },
+        {
+          "n": 2,
+          "invariant": "Individualiza sujeitos, fatos e provas e não usa o mero inadimplemento como fundamento.",
+          "atendido": true,
+          "evidencia": "Delimita a executada, o sócio atingido e as \"transferências posteriores individualizadas\", exigindo valores, datas, contas, documentos e nexo; não fundamenta o incidente apenas no inadimplemento."
+        },
+        {
+          "n": 3,
+          "invariant": "Distingue pressupostos materiais do rito do incidente.",
+          "atendido": true,
+          "evidencia": "Separa os \"pressupostos materiais confirmados no mapa\" dos pedidos rituais de instauração, contraditório do sócio e decisão judicial."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "redacao-agravo-interno",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona agravo-interno e não agravo de instrumento.",
+          "atendido": true,
+          "evidencia": "O output identifica decisão individual do relator e seleciona \"`agravo-interno.md`, modo agravante\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Exige impugnação específica de ambos os fundamentos e consulta o regimento confirmado.",
+          "atendido": true,
+          "evidencia": "Exige \"capítulos autônomos e impugnação específica de cada razão decisória\" e transporta o regimento anexado, mantendo os dispositivos regimentais como `[verificar]`."
+        },
+        {
+          "n": 3,
+          "invariant": "Trata efeito e risco de multa sem automatismos.",
+          "atendido": false,
+          "evidencia": "As seções de pedidos, prazo e lacunas tratam processamento da apelação, prazo e peças, mas o output não menciona efeito do agravo interno nem risco de multa."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "redacao-acao-monitoria",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona acao-monitoria no modo ajuizar e preserva a distinção para execução.",
+          "atendido": true,
+          "evidencia": "Seleciona \"`acao-monitoria.md`, modo autor\" para ajuizamento e justifica a monitória porque a prova escrita \"não possui eficácia executiva\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Liga documento, obrigação, vencimento e cálculo às fontes confirmadas.",
+          "atendido": false,
+          "evidencia": "O output afirma dívida, inadimplemento e cálculo conferidos, mas deixa \"Documento, origem da obrigação, vencimento, valor, data-base e localizadores\" integralmente como `[verificar]`, sem fazer as ligações exigidas."
+        },
+        {
+          "n": 3,
+          "invariant": "Não afirma formação do título antes do evento processual previsto.",
+          "atendido": true,
+          "evidencia": "O objetivo condiciona a constituição do título executivo judicial a \"se não houver cumprimento ou defesa eficaz\"."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "redacao-recurso-especial",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona recurso-especial-extraordinario no modo recurso_especial.",
+          "atendido": true,
+          "evidencia": "O output seleciona \"`recurso-especial-extraordinario.md`, modo recurso especial do recorrente\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Localiza a questão decidida, o prequestionamento e todos os fundamentos autônomos.",
+          "atendido": false,
+          "evidencia": "Deixa como `[verificar]` \"o artigo federal violado, a questão federal efetivamente decidida, os trechos do acórdão e dos embargos, o estado do prequestionamento e os óbices enfrentados\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Não inventa precedente nem tenta reexaminar fatos e exige verificação dos requisitos atuais.",
+          "atendido": true,
+          "evidencia": "Declara que \"não haverá reexame de fatos ou provas nem fundamento novo\", exclui dissídio não decidido e mantém prazo, preparo, feriados e óbices como itens a verificar."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "redacao-excecao-sem-jurisprudencia",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona o contrato de excecao-pre-executividade, mas bloqueia a redação.",
+          "atendido": true,
+          "evidencia": "Identifica \"`excecao-pre-executividade.md`, ainda não carregado\" e declara \"Estado da redação: BLOQUEADA\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Exige pesquisa jurisprudencial atual e prova pré-constituída antes do briefing.",
+          "atendido": true,
+          "evidencia": "Lista como pré-requisitos \"prova pré-constituída\" e \"pesquisa atual do tribunal competente\", remetendo ambos à próxima rota antes da decisão do ato."
+        },
+        {
+          "n": 3,
+          "invariant": "Não apresenta a exceção como defesa universal nem afirma suspensão automática.",
+          "atendido": true,
+          "evidencia": "Trata a exceção apenas como \"ato candidato\", condicionada a matéria sem dilação probatória, e mantém \"Pedidos, prazo e cabimento\" bloqueados, sem afirmar suspensão."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "redacao-jurisdicao-voluntaria-interdicao",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona jurisdicao-voluntaria no modo interdicao.",
+          "atendido": true,
+          "evidencia": "O briefing seleciona \"`jurisdicao-voluntaria.md`, modo interdição\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Delimita atos e apoio necessários sem usar fórmula de incapacidade total.",
+          "atendido": true,
+          "evidencia": "Limita a curatela aos atos patrimoniais a confirmar, exige preservar os demais atos e afirma: \"Não se presumirá incapacidade geral\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Mapeia interessados, representação, prova e intervenção obrigatória antes da redação.",
+          "atendido": false,
+          "evidencia": "O output lista requerente, curatelado, curador, interessados, representação, avaliação clínica, entrevista e perícia, mas não identifica nem mapeia qualquer intervenção obrigatória."
+        }
+      ],
+      "verdict": "FAIL"
+    }
+  ],
+  "counts": {
+    "PASS": 4,
+    "FAIL": 6,
+    "JUDGE_ERROR": 0,
+    "total": 10
+  }
+}
