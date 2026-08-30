@@ -178,7 +178,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test`: PASS — 62 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
-- release: tag `v0.6.1` e `origin/main` em `916db93`; oito bundles conferidos
+- release: tag imutável `v0.6.1` em `916db93`; oito bundles conferidos
   contra o manifesto, sem asset ausente, extra ou SHA-256 divergente.
 
 Os comandos foram repetidos antes do landing do PR #26. O workflow de release

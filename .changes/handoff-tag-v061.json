@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "kind": "none",
+  "category": "Changed",
+  "summary": "Registra o commit imutável da tag 0.6.1 sem atrelar o recibo ao ponteiro móvel da main."
+}
