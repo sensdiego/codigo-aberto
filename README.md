@@ -21,6 +21,9 @@ Fluxo sugerido:
 
 `novo-caso → analise-documental → analise-juridica-civel → [jurisprudência ou aprofundamento] → [redação]`
 
+Para a topologia completa, sem simulação de jornadas, consulte o
+[mapa visual de skills, módulos e modos](references/mapa-visual-skills-modulos.md).
+
 O usuário pode começar em qualquer etapa. A skill deve identificar e reparar
 somente os pré-requisitos ausentes. Pesquisa jurisprudencial e aprofundamento
 são opcionais.

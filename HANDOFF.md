@@ -1,7 +1,7 @@
 # Handoff de sessão
 
 Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
-redação contenciosa aprovada pelo owner.
+redação contenciosa e a elaboração do mapa visual, ambas aprovadas pelo owner.
 
 ## Estado do produto
 
@@ -33,6 +33,9 @@ branch, merge, release, publicação de bundle ou anúncio.
   módulo-base; tutela continua sendo o único complemento cumulativo.
 - Dez fixtures não executadas acrescentam cobertura futura para as famílias
   novas e o gate de confirmação.
+- `references/mapa-visual-skills-modulos.md` representa as nove skills, seus
+  handoffs e gates, os modos não contenciosos e os 37 módulos contenciosos. O
+  mapa é estritamente descritivo e não simula workflows prováveis.
 
 ## Biblioteca legislativa
 
@@ -98,9 +101,10 @@ A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
 
 ## Próxima ação
 
-Depois da validação final, encerrar a etapa e pedir novas instruções ao owner.
-As escolhas ainda abertas são de integração: manter o branch empilhado, dividir
-em PRs ou reorganizar commits; nenhuma delas deve ser tomada silenciosamente.
+Apresentar o mapa visual ao owner. A identificação ou simulação de workflows
+prováveis deve esperar instrução própria. As escolhas ainda abertas são de
+integração: manter o branch empilhado, dividir em PRs ou reorganizar commits;
+nenhuma delas deve ser tomada silenciosamente.
 
 ## Comandos de retomada
 
