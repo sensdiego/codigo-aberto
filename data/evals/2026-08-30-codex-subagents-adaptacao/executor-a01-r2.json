@@ -1,0 +1,24 @@
+{
+  "executor": "codex-subagent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "invoked_skills": [
+        "redacao-contencioso",
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        ".claude-plugin/marketplace.json",
+        "skills/redacao-contencioso/SKILL.md",
+        "references/disciplina.md",
+        "references/handoff.md",
+        "skills/analise-juridica-civel/SKILL.md",
+        "skills/analise-juridica-civel/references/mapa-juridico.md",
+        "references/deliberacao.md"
+      ],
+      "final_text": "Não redigirei a petição inicial nem a tutela urgente neste estado. Confiança: alta. O pacote case-adaptation-v1 identifica o caso A01 e a lente pretenso_autor, mas é apenas parcial_utilizavel: contém intake e análise documental e omite mapa jurídico, decisão e redação. Na frente principal, o ato é somente candidato, decision_receipt é false, a cobertura é parcial e o escopo é suportado_condicionado.\n\nBloqueios materiais preservados:\n- cálculo reproduzível: o conflito C01 permanece aberto, sem fonte controladora, e bloqueia valor_atual e saldo;\n- confirmação da medida: a tutela é apenas complemento possível, não uma escolha humana registrada;\n- garantia: o papel do garantidor não foi confirmado para a medida pretendida;\n- evidência visual: consta como dependência ainda não satisfeita;\n- prazo e cabimento: o prazo está pendente, sem fonte do evento nem da regra.\n\nO achado confirmado sobre a existência da obrigação documentada não supera esses bloqueios. Esse é o principal argumento contrário à suspensão da redação, mas ele prova apenas um núcleo limitado: não resolve o valor exigível, o polo relacionado à garantia, os pressupostos da urgência nem a escolha do ato.\n\nO que os handoffs permitem agora é reparar o pré-requisito imediato: encaminhar o caso à análise jurídica cível para produzir o mapa jurídico somente com os fatos confirmados e manter como [verificar] tudo o que dependa das lacunas acima. Para destravar essa etapa, devem ser fornecidos ou confirmados: (1) a memória de cálculo controladora ou um cálculo reproduzível; (2) a fonte que define a garantia e o papel do garantidor; (3) a evidência que sustentaria a urgência; e (4) a escolha humana sobre pedir ou não a tutela como complemento da petição.\n\nDepois de um mapa jurídico maduro, a decisão entre as rotas deve ser registrada em handoff próprio. Só então cabe apresentar o briefing consolidado da petição inicial e, se confirmada, da tutela, encerrado pela pergunta fechada de autorização. O pedido atual para preparar não substitui essa confirmação. Nenhum módulo de redação foi carregado, nenhuma minuta foi produzida e nenhuma ação externa foi executada.",
+      "execution_error": null
+    }
+  ]
+}

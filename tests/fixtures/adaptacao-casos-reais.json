@@ -1,0 +1,693 @@
+{
+  "schema_version": "case-adaptation-fixtures-v1",
+  "contract_version": "case-adaptation-v1",
+  "scenarios": [
+    {
+      "id": "A01",
+      "title": "Contrato, garantia e constrição cautelar",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-principal",
+          "scope_status": "suportado_condicionado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "pretenso_autor",
+          "status": "ativa",
+          "phase": "pre_ajuizamento",
+          "controlling_event": {"source_ref": "fonte-sintetica-01", "locator": "item 4"},
+          "current_objective": "avaliar demanda e medida cautelar",
+          "act": {
+            "status": "candidato",
+            "module": "peticao-inicial",
+            "complements": ["tutela-urgencia-evidencia"],
+            "decision_receipt": false
+          },
+          "deadline": {"status": "pendente", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["calculo", "papel_do_garantidor", "evidencia_visual"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "fonte-sintetica-01",
+          "locator": "clausula 4",
+          "confirmation_scope": "existencia da obrigacao documentada"
+        },
+        {
+          "id": "F02",
+          "state": "contraditado",
+          "source_ref": "fontes-sinteticas-02-03",
+          "locator": "memorias A e B"
+        }
+      ],
+      "conflicts": [
+        {
+          "id": "C01",
+          "delta": "contradiz",
+          "status": "aberto",
+          "sources": ["fonte-sintetica-02", "fonte-sintetica-03"],
+          "controlling_source": null,
+          "blocked_claims": ["valor_atual", "saldo"]
+        }
+      ],
+      "blockers": ["calculo_reproduzivel", "confirmacao_da_medida"],
+      "invariants": [
+        "preserva as duas bases monetarias sem escolher silenciosamente",
+        "nao calcula saldo",
+        "mantem tutela como complemento e IDPJ como decisao separada"
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "Controversia tributaria administrativa",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake"],
+      "analysis_eligible": false,
+      "fronts": [
+        {
+          "front_id": "front-tributaria",
+          "scope_status": "nao_suportado",
+          "nature": "administrativo",
+          "relation": "principal",
+          "represented_role": "contribuinte",
+          "status": "ativa",
+          "phase": "pre_contencioso",
+          "controlling_event": {"source_ref": "fonte-sintetica-04", "locator": "ato 2"},
+          "current_objective": "definir via de impugnacao",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-04", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["autoridade", "lei_local", "pesquisa_atual"]
+        }
+      ],
+      "findings": [],
+      "conflicts": [],
+      "blockers": ["regime_nao_suportado", "prazo_nao_verificado"],
+      "invariants": [
+        "nao escolhe entre mandado de seguranca e acao comum",
+        "exige autoridade e lei local",
+        "nao seleciona modulo contencioso civel"
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Correcao superveniente da lente representada",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-defesa",
+          "scope_status": "suportado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "reu",
+          "status": "ativa",
+          "phase": "defesa",
+          "controlling_event": {"source_ref": "registro-sintetico-lente-atual", "locator": "lente vigente"},
+          "current_objective": "responder ato intermediario e preservar defesa",
+          "act": {"status": "candidato", "module": "manifestacao-generica", "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-05", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["confirmacao_do_objetivo"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "registro-sintetico-lente-atual",
+          "locator": "lente vigente",
+          "confirmation_scope": "papel defensivo atual"
+        },
+        {
+          "id": "F02",
+          "state": "contraditado",
+          "source_ref": "matriz-sintetica-antiga",
+          "locator": "conclusao 3"
+        }
+      ],
+      "conflicts": [
+        {
+          "id": "C01",
+          "delta": "substitui",
+          "status": "resolvido",
+          "sources": ["matriz-sintetica-antiga", "registro-sintetico-lente-atual"],
+          "controlling_source": "registro-sintetico-lente-atual",
+          "blocked_claims": []
+        }
+      ],
+      "blockers": ["prazo_nao_verificado"],
+      "invariants": [
+        "a lente defensiva controla o roteamento",
+        "a matriz antiga permanece visivel como contraditada",
+        "nenhum pedido ofensivo e promovido da analise antiga"
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "Fontes supervenientes e varias frentes civis",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-replica",
+          "scope_status": "suportado_condicionado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "autor",
+          "status": "ativa",
+          "phase": "providencias_preliminares",
+          "controlling_event": {"source_ref": "fonte-sintetica-06", "locator": "evento 18"},
+          "current_objective": "responder defesa e documentos",
+          "act": {"status": "candidato", "module": "replica", "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-06", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["anexos_integrais"]
+        },
+        {
+          "front_id": "front-pericia",
+          "scope_status": "suportado_condicionado",
+          "nature": "incidente",
+          "relation": "dependente",
+          "represented_role": "autor",
+          "status": "dependente",
+          "phase": "prova_tecnica",
+          "controlling_event": {"source_ref": "fonte-sintetica-07", "locator": "decisao 2"},
+          "current_objective": "delimitar prova tecnica",
+          "act": {"status": "candidato", "module": "prova-pericial", "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-07", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["inspecao_de_video"]
+        },
+        {
+          "front_id": "front-recurso",
+          "scope_status": "indeterminado",
+          "nature": "recurso",
+          "relation": "paralelo",
+          "represented_role": "agravante_potencial",
+          "status": "indeterminada",
+          "phase": "cabimento_pendente",
+          "controlling_event": {"source_ref": "fonte-sintetica-08", "locator": "decisao superveniente"},
+          "current_objective": "verificar efeito da decisao",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-08", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["mapa_de_cabimento"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "fonte-sintetica-08",
+          "locator": "dispositivo",
+          "confirmation_scope": "efeito processual da decisao superveniente"
+        },
+        {
+          "id": "F02",
+          "state": "contraditado",
+          "source_ref": "matriz-sintetica-anterior",
+          "locator": "estado da tutela"
+        }
+      ],
+      "conflicts": [
+        {
+          "id": "C01",
+          "delta": "substitui",
+          "status": "resolvido",
+          "sources": ["matriz-sintetica-anterior", "fonte-sintetica-08"],
+          "controlling_source": "fonte-sintetica-08",
+          "blocked_claims": []
+        }
+      ],
+      "blockers": ["prova_visual_nao_examinada", "prazo_recursal_nao_verificado"],
+      "invariants": [
+        "a fonte superveniente controla o efeito atual sem apagar a matriz antiga",
+        "replica pericia e recurso permanecem em frentes separadas",
+        "video nao examinado nao vira fato textual"
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "Acao-base distinta da manifestacao atual",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-acao-base",
+          "scope_status": "suportado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "autor",
+          "status": "latente",
+          "phase": "citacao",
+          "controlling_event": {"source_ref": "fonte-sintetica-09", "locator": "despacho 1"},
+          "current_objective": "acompanhar a acao de exibicao",
+          "act": {"status": "sem_ato", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "nao_aplicavel", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": []
+        },
+        {
+          "front_id": "front-manifestacao",
+          "scope_status": "suportado",
+          "nature": "processo",
+          "relation": "dependente",
+          "represented_role": "autor",
+          "status": "ativa",
+          "phase": "cumprimento_de_determinacao",
+          "controlling_event": {"source_ref": "fonte-sintetica-10", "locator": "intimacao 1"},
+          "current_objective": "requerer providencia de citacao",
+          "act": {"status": "candidato", "module": "manifestacao-generica", "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-10", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["confirmacao_do_pedido"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "inferido",
+          "source_ref": "fonte-sintetica-10",
+          "locator": "pedido operacional"
+        }
+      ],
+      "conflicts": [],
+      "blockers": ["prazo_nao_verificado"],
+      "invariants": [
+        "nao seleciona peticao inicial pelo titulo extraido",
+        "mantem exibicao como acao-base sem ato atual",
+        "seleciona manifestacao generica apenas para a providencia simples"
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "Resultado recursal ainda ausente",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake"],
+      "analysis_eligible": false,
+      "fronts": [
+        {
+          "front_id": "front-recursal",
+          "scope_status": "suportado",
+          "nature": "recurso",
+          "relation": "principal",
+          "represented_role": "apelante",
+          "status": "indeterminada",
+          "phase": "julgamento",
+          "controlling_event": {"source_ref": "fonte-sintetica-11", "locator": "pauta 3"},
+          "current_objective": "obter resultado e publicacao",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["acordao", "publicacao"]
+        }
+      ],
+      "findings": [],
+      "conflicts": [
+        {
+          "id": "C01",
+          "delta": "contradiz",
+          "status": "aberto",
+          "sources": ["cabecalho-sintetico", "pedido-sintetico"],
+          "controlling_source": null,
+          "blocked_claims": ["identificacao_formal_da_peca"]
+        }
+      ],
+      "blockers": ["resultado_ausente", "conflito_formal"],
+      "invariants": [
+        "nao seleciona recurso posterior sem acordao",
+        "mantem o conflito de identificacao visivel",
+        "nao trata sessao realizada como resultado conhecido"
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "Proposta parcelada e concordancia condicional",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-cumprimento",
+          "scope_status": "suportado",
+          "nature": "execucao",
+          "relation": "principal",
+          "represented_role": "credor",
+          "status": "ativa",
+          "phase": "composicao_condicional",
+          "controlling_event": {"source_ref": "fonte-sintetica-12", "locator": "manifestacao 2"},
+          "current_objective": "registrar concordancia condicionada",
+          "act": {"status": "candidato", "module": "manifestacao-generica", "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-12", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["homologacao", "primeiro_pagamento", "calculo"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "fonte-sintetica-12",
+          "locator": "condicao 1",
+          "confirmation_scope": "existencia da concordancia condicional"
+        },
+        {
+          "id": "F02",
+          "state": "pendente",
+          "source_ref": "acervo-sintetico",
+          "locator": "ausencia de homologacao localizada"
+        }
+      ],
+      "conflicts": [],
+      "blockers": ["homologacao_nao_provada", "pagamento_nao_provado", "saldo_nao_conferido"],
+      "invariants": [
+        "nao converte proposta em acordo homologado",
+        "nao converte concordancia em pagamento",
+        "usa manifestacao generica para o ato simples"
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "Inventario com papel nao bilateral",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-inventario",
+          "scope_status": "suportado_condicionado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "inventariante",
+          "status": "ativa",
+          "phase": "partilha",
+          "controlling_event": {"source_ref": "fonte-sintetica-13", "locator": "termo 2"},
+          "current_objective": "organizar partilha e documentos",
+          "act": {"status": "candidato", "module": "inventario-partilha", "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-13", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["tributo", "certidoes", "plano_de_partilha"]
+        },
+        {
+          "front_id": "front-dependencia-historica",
+          "scope_status": "suportado",
+          "nature": "dependencia",
+          "relation": "dependente",
+          "represented_role": "interessado",
+          "status": "encerrada",
+          "phase": "resolvida",
+          "controlling_event": {"source_ref": "fonte-sintetica-14", "locator": "certidao 1"},
+          "current_objective": "nenhum",
+          "act": {"status": "sem_ato", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "nao_aplicavel", "event_source": null, "rule_source": null},
+          "coverage": "integral",
+          "dependencies": []
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "fonte-sintetica-14",
+          "locator": "certidao 1",
+          "confirmation_scope": "encerramento da dependencia historica"
+        }
+      ],
+      "conflicts": [],
+      "blockers": ["tributo_nao_calculado", "quinhao_nao_conferido"],
+      "invariants": [
+        "aceita inventariante sem forcar autor e reu",
+        "mantem dependencia encerrada sem reabri-la",
+        "nao infere tributo ou quinhao"
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "Tutela e custas sem resultado atual",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-tutela",
+          "scope_status": "suportado_condicionado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "autor",
+          "status": "indeterminada",
+          "phase": "analise_inicial",
+          "controlling_event": {"source_ref": "fonte-sintetica-15", "locator": "guia 1"},
+          "current_objective": "obter decisao e confirmar regularidade",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["decisao_da_tutela", "ato_sobre_custas"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "fonte-sintetica-15",
+          "locator": "comprovante 1",
+          "confirmation_scope": "pagamento da guia identificada"
+        },
+        {
+          "id": "F02",
+          "state": "pendente",
+          "source_ref": "acervo-sintetico",
+          "locator": "decisao nao localizada"
+        }
+      ],
+      "conflicts": [
+        {
+          "id": "C01",
+          "delta": "contradiz",
+          "status": "aberto",
+          "sources": ["fonte-sintetica-15", "fonte-sintetica-16"],
+          "controlling_source": null,
+          "blocked_claims": ["regularidade_das_custas"]
+        }
+      ],
+      "blockers": ["resultado_da_tutela_ausente", "custas_nao_regularizadas"],
+      "invariants": [
+        "nao infere deferimento da tutela",
+        "pagamento de guia nao equivale a regularizacao",
+        "nao afirma retirada de restricao"
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Busca e apreensao fiduciaria",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake"],
+      "analysis_eligible": false,
+      "fronts": [
+        {
+          "front_id": "front-fiduciaria",
+          "scope_status": "nao_suportado",
+          "nature": "processo",
+          "relation": "principal",
+          "represented_role": "reu",
+          "status": "ativa",
+          "phase": "defesa_especial",
+          "controlling_event": {"source_ref": "fonte-sintetica-17", "locator": "decisao 1"},
+          "current_objective": "avaliar defesa e depositos",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-17", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["legislacao_extravagante", "precedente_qualificado"]
+        }
+      ],
+      "findings": [],
+      "conflicts": [],
+      "blockers": ["regime_nao_suportado"],
+      "invariants": [
+        "nao usa contestacao civel como fallback",
+        "exige regime fiduciario proprio",
+        "nao confunde deposito com quitacao"
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Execucoes fiscais em processos distintos",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake"],
+      "analysis_eligible": false,
+      "fronts": [
+        {
+          "front_id": "front-fiscal-local",
+          "scope_status": "nao_suportado",
+          "nature": "execucao",
+          "relation": "paralelo",
+          "represented_role": "executado",
+          "status": "ativa",
+          "phase": "execucao_fiscal",
+          "controlling_event": {"source_ref": "fonte-sintetica-18", "locator": "processo A"},
+          "current_objective": "mapear divida e defesa",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-18", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["cda_local", "lei_fiscal"]
+        },
+        {
+          "front_id": "front-fiscal-federal",
+          "scope_status": "nao_suportado",
+          "nature": "execucao",
+          "relation": "paralelo",
+          "represented_role": "executado",
+          "status": "ativa",
+          "phase": "execucao_fiscal",
+          "controlling_event": {"source_ref": "fonte-sintetica-19", "locator": "processo B"},
+          "current_objective": "mapear divida e defesa",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": "fonte-sintetica-19", "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["cda_federal", "parcelamento"]
+        }
+      ],
+      "findings": [],
+      "conflicts": [],
+      "blockers": ["regime_nao_suportado", "lente_estrategica_pendente"],
+      "invariants": [
+        "mantem dois processos em frentes separadas",
+        "nao mistura dividas prazos ou certidoes",
+        "nao usa excecao de pre-executividade como defesa universal"
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Processo trabalhista em fase recursal",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake"],
+      "analysis_eligible": false,
+      "fronts": [
+        {
+          "front_id": "front-trabalhista",
+          "scope_status": "nao_suportado",
+          "nature": "recurso",
+          "relation": "principal",
+          "represented_role": "recorrente",
+          "status": "indeterminada",
+          "phase": "julgamento_recursal",
+          "controlling_event": {"source_ref": "fonte-sintetica-20", "locator": "recurso 1"},
+          "current_objective": "obter resultado recursal",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["resultado", "midia_processual", "regra_trabalhista"]
+        }
+      ],
+      "findings": [],
+      "conflicts": [],
+      "blockers": ["regime_nao_suportado"],
+      "invariants": [
+        "nao seleciona apelacao civel",
+        "nao seleciona recurso excepcional civel",
+        "exige fonte e prazo trabalhistas"
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "Execucao penal com extincao documentada",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake"],
+      "analysis_eligible": false,
+      "fronts": [
+        {
+          "front_id": "front-penal",
+          "scope_status": "nao_suportado",
+          "nature": "execucao",
+          "relation": "principal",
+          "represented_role": "apenado",
+          "status": "encerrada",
+          "phase": "extincao",
+          "controlling_event": {"source_ref": "fonte-sintetica-21", "locator": "decisao final"},
+          "current_objective": "acompanhar efeitos posteriores",
+          "act": {"status": "sem_ato", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "nao_aplicavel", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["regime_penal"]
+        }
+      ],
+      "findings": [],
+      "conflicts": [],
+      "blockers": ["regime_nao_suportado"],
+      "invariants": [
+        "nao seleciona cumprimento de sentenca civel",
+        "preserva extincao como evento da frente penal",
+        "nao inventa providencia posterior"
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Precatorio com duas cadeias de credito",
+      "eligibility": "parcial_utilizavel",
+      "handoffs": ["intake", "analise_documental"],
+      "analysis_eligible": true,
+      "fronts": [
+        {
+          "front_id": "front-credito-um",
+          "scope_status": "nao_suportado",
+          "nature": "credito",
+          "relation": "paralelo",
+          "represented_role": "cessionario",
+          "status": "encerrada",
+          "phase": "pagamento_documentado",
+          "controlling_event": {"source_ref": "fonte-sintetica-22", "locator": "recibo 1"},
+          "current_objective": "preservar cadeia encerrada",
+          "act": {"status": "sem_ato", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "nao_aplicavel", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": []
+        },
+        {
+          "front_id": "front-credito-dois",
+          "scope_status": "nao_suportado",
+          "nature": "credito",
+          "relation": "paralelo",
+          "represented_role": "sucessor",
+          "status": "dependente",
+          "phase": "habilitacao",
+          "controlling_event": {"source_ref": "fonte-sintetica-23", "locator": "protocolo 2"},
+          "current_objective": "comprovar sucessao e aguardar ordem principal",
+          "act": {"status": "indeterminado", "module": null, "complements": [], "decision_receipt": false},
+          "deadline": {"status": "pendente", "event_source": null, "rule_source": null},
+          "coverage": "parcial",
+          "dependencies": ["conteudo_da_partilha", "aceitacao_judicial", "ordem_de_pagamento", "calculo"]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "state": "confirmado",
+          "source_ref": "fonte-sintetica-22",
+          "locator": "recibo 1",
+          "confirmation_scope": "pagamento do primeiro credito"
+        },
+        {
+          "id": "F02",
+          "state": "pendente",
+          "source_ref": "fonte-sintetica-23",
+          "locator": "protocolo 2"
+        }
+      ],
+      "conflicts": [],
+      "blockers": ["regime_nao_suportado", "cadeia_de_credito_incompleta", "saldo_nao_conferido"],
+      "invariants": [
+        "mantem as duas cadeias de credito separadas",
+        "deposito retencao protocolo e pagamento nao sao equivalentes",
+        "nao seleciona cumprimento contra a Fazenda como fallback"
+      ]
+    }
+  ]
+}

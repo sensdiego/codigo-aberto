@@ -1,0 +1,73 @@
+{
+  "executor": "codex-subagent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a11",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "README.md",
+        "references/mapa-visual-skills-modulos.md",
+        "skills/analise-juridica-civel/SKILL.md",
+        "skills/analise-juridica-civel/references/mapa-juridico.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta quanto ao limite; desconhecida quanto à defesa: o pacote não permite indicar uma defesa para nenhuma das execuções. As duas frentes estão marcadas como `nao_suportado`, têm cobertura parcial e não contêm análise documental, mapa jurídico, decisão ou estratégia confirmada. Também não devem ser reunidas por analogia: a execução local e a federal são processos paralelos, com dívidas, certidões e dependências próprias. Para a frente local, é necessário obter e examinar a CDA local, o processo A e a legislação fiscal aplicável. Para a frente federal, é necessário obter e examinar a CDA federal, o processo B e a situação do parcelamento. Os prazos permanecem pendentes porque não há regra de prazo validada. A providência segura é encaminhar cada frente separadamente para análise tributária/fiscal competente; não cabe preencher a lacuna com um módulo cível semelhante nem sugerir, sem essas fontes, exceção de pré-executividade, embargos ou outra defesa específica.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a12",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "README.md",
+        "references/mapa-visual-skills-modulos.md",
+        "skills/analise-juridica-civel/SKILL.md",
+        "skills/analise-juridica-civel/references/mapa-juridico.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta quanto à impossibilidade de seleção; desconhecida quanto ao recurso: o pacote não demonstra que já exista resultado recorrível nem permite indicar o recurso cabível. A frente trabalhista está em `nao_suportado`, com cobertura parcial; faltam o resultado do julgamento, a publicação ou intimação, o meio processual correspondente e a regra trabalhista de prazo. O ato está `indeterminado` e o prazo, `pendente`. É necessário obter o inteiro teor da decisão ou acórdão, identificar o órgão julgador e o recurso já julgado, comprovar a publicação/intimação e aplicar a disciplina recursal trabalhista competente. Até isso ocorrer, não é possível escolher entre embargos de declaração, recurso de revista ou qualquer outro meio sem inventar cabimento e prazo. A próxima rota é análise trabalhista especializada, sem encaminhamento a módulo recursal cível semelhante.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a13",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "README.md",
+        "references/mapa-visual-skills-modulos.md",
+        "skills/analise-juridica-civel/SKILL.md",
+        "skills/analise-juridica-civel/references/mapa-juridico.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta: nenhuma providência processual seguinte está demonstrada no pacote. A execução penal aparece encerrada, na fase de extinção, com ato `sem_ato` e prazo `nao_aplicavel`; não há ato posterior nem pedido pendente. Como a frente penal está em `nao_suportado` e a cobertura é parcial, a skill cível não pode escolher ou inventar uma medida penal. A providência proporcional é preservar e conferir a decisão final indicada em `fonte-sintetica-21`, verificar se existem efeitos posteriores concretos ainda não documentados e, somente se houver objetivo adicional, submetê-lo a análise penal especializada. Com os dados atuais, não há base para recomendar petição, recurso ou incidente.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a14",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "README.md",
+        "references/mapa-visual-skills-modulos.md",
+        "skills/analise-juridica-civel/SKILL.md",
+        "skills/analise-juridica-civel/references/mapa-juridico.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta: a premissa de requerer o pagamento dos dois créditos está errada. O primeiro crédito já possui pagamento confirmado por recibo e sua frente está encerrada; para ele, o pacote indica preservar a cadeia e o comprovante, não formular novo pedido de pagamento. O segundo crédito não pode ser tratado como pago nem reunido ao primeiro: depósito, retenção e protocolo aparecem em fontes distintas e não foram qualificados como pagamento. Antes de requerer qualquer pagamento do segundo crédito, é necessário comprovar o conteúdo da partilha, a condição de sucessor, a aceitação judicial, a ordem de pagamento aplicável e conferir o cálculo e o saldo. Essa frente está em `nao_suportado`, com ato `indeterminado` e prazo `pendente`, de modo que o pacote não autoriza selecionar uma petição ou procedimento. A próxima rota é análise especializada do regime de precatórios e da sucessão, limitada ao segundo crédito; não há base para um pedido conjunto dos dois.",
+      "execution_error": null
+    }
+  ]
+}

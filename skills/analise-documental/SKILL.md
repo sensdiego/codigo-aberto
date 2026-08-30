@@ -21,6 +21,20 @@ por documento novo. Para a estrutura de saída, leia
 [contrato-saida.md](references/contrato-saida.md). Para relacionar fatos e
 provas, leia [avaliacao-probatoria.md](references/avaliacao-probatoria.md).
 
+## Pacote adaptado
+
+Se a entrada declarar `case-adaptation-v1`, valide recibo, identidade, lente,
+elegibilidade e intake obrigatório. `bloqueado` não autoriza análise;
+`parcial_utilizavel` limita cada conclusão à cobertura declarada; `integral`
+exige recibo positivo expresso.
+
+Consuma o handoff opcional de análise documental somente quando cada achado
+trouxer proposição, fonte, localizador, estado, frente, cobertura, conflito e
+alcance da confirmação. Sem esses elementos, trate o conteúdo como material de
+intake e analise apenas as fontes efetivamente acessíveis. Preserve frentes,
+deltas e conflitos; fonte posterior não controla apenas por ser mais recente.
+Sem recibo de adaptação, aplique normalmente o contrato comum.
+
 ## Módulos
 
 Execute somente os módulos materiais ao pedido:

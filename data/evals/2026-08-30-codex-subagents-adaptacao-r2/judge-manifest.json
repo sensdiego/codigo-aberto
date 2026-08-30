@@ -1,0 +1,40 @@
+{
+  "schema_version": "codex-subagent-judge-manifest-v1",
+  "created_at": "2026-08-30T12:56:38-03:00",
+  "source_executor_commit": "4f11742",
+  "source_input_commit": "387c32f",
+  "executor_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/executor-manifest.json",
+  "executor_manifest_sha256": "059d727067bb576f574d85ddb3ebf741abcf7f66ce52c64ce18b0bf53949a89c",
+  "external_model_calls": false,
+  "outputs": [
+    {
+      "judge_task": "/root/judge_r2_a01_a05",
+      "file": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/judge-a01-a05.json",
+      "sha256": "b9b74cb9f97f8f7bfce671f25e3b39814051167c0fa78d0283cb6c7cfc0dc58a",
+      "pass": 4,
+      "fail": 1
+    },
+    {
+      "judge_task": "/root/judge_r2_a06_a10",
+      "file": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/judge-a06-a10.json",
+      "sha256": "ce0a3b61d9ef8d81607782038f3642263ed40dd2d0d8cc024b5cf1872caad57e",
+      "pass": 5,
+      "fail": 0
+    },
+    {
+      "judge_task": "/root/judge_r2_a11_a14",
+      "file": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/judge-a11-a14.json",
+      "sha256": "10923cc6e4487b8d644379c4c7c8f26950e46ae4a784b1d3ce212f6b3b06e8ef",
+      "pass": 4,
+      "fail": 0
+    }
+  ],
+  "first_pass": {
+    "total": 14,
+    "pass": 13,
+    "fail": 1,
+    "failed_scenarios": [
+      "adaptacao-a03"
+    ]
+  }
+}

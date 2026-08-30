@@ -1,0 +1,108 @@
+{
+  "schema_version": "codex-subagent-execution-v2",
+  "source_commit": "387c32f",
+  "input_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+  "executor_task": "/root/exec_r2_a01_a05",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "visible_input_sha256": "aea54d5ddc906bbdcced27c23e81a6eb4b289c2f3f95dd3e28f05dcc11f6e8f2",
+      "invoked_skills": [
+        "analise-juridica-civel",
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/analise-juridica-civel/SKILL.md",
+          "skills/analise-juridica-civel/references/mapa-juridico.md",
+          "skills/redacao-contencioso/SKILL.md",
+          "skills/redacao-contencioso/references/indice-modulos.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta: não está permitido redigir a petição inicial nem a medida urgente neste estado do pacote. O recibo é `parcial_utilizavel`; há intake e análise documental, mas não há mapa jurídico, decisão humana nem briefing confirmado. A petição inicial aparece apenas como ato candidato e a tutela como complemento candidato, ambos com `decision_receipt: false`.\n\nO que pode ser aproveitado agora:\n\n- a existência da obrigação documentada está confirmada somente no alcance da cláusula 4 da `fonte-sintetica-01`;\n- o valor atual e o saldo permanecem bloqueados, pois as memórias A e B são incompatíveis e nenhuma fonte controladora foi definida (`C01`);\n- a garantia, o papel do garantidor e a evidência visual ainda não sustentam a escolha ou o conteúdo da medida urgente;\n- a frente está `suportado_condicionado`, portanto a ausência dessas condições bloqueia apenas as conclusões que dependem delas, mas impede a minuta pedida.\n\nPara avançar, preciso de: (1) memória declarada controladora ou cálculo reproduzível; (2) fonte que confirme a garantia e o papel do garantidor; (3) inspeção da evidência visual; e (4) confirmação do objetivo e da medida a deliberar. Com isso, a próxima etapa é o mapa jurídico e, se ainda houver alternativas, a deliberação humana. Só depois caberá apresentar o briefing fechado de redação. Nenhum texto de petição foi produzido e nenhuma ação externa foi praticada."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a02",
+      "visible_input_sha256": "396d35d509f8d413bc2957b37724c9efc0bc7d551ea3316031a559c1adb53482",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/analise-juridica-civel/SKILL.md",
+          "skills/analise-juridica-civel/references/mapa-juridico.md",
+          "skills/analise-juridica-civel/references/relogio-processual.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta quanto ao bloqueio e desconhecida quanto à via adequada: o pacote não permite escolher agora entre mandado de segurança, ação comum ou outra impugnação. A frente tributária está expressamente `nao_suportado`, o ato candidato está `indeterminado` e não existe decisão humana registrada. Escolher uma via apesar disso seria inventar o regime aplicável.\n\nFaltam elementos que mudam cabimento e prazo: identificação e competência da autoridade emissora, íntegra do ato e de sua comunicação, lei local e regime tributário aplicáveis, regra atual de impugnação e data/forma da ciência. O prazo também permanece `pendente`; sem regra e calendário aplicáveis, não há data fatal verificável.\n\nA próxima providência permitida é suplementar o intake e a análise documental com essas fontes e validar o regime atual. Depois disso, uma análise jurídica específica poderá comparar as vias, consequências, urgência e reversibilidade. Até lá, nenhuma estratégia, peça ou prazo definitivo deve ser apresentado como escolhido."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a03",
+      "visible_input_sha256": "504a51f70060de677b46283a1d023dd9df2a0935085568cfdf22a40d67e22456",
+      "invoked_skills": [
+        "novo-caso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/novo-caso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Intake atualizado somente no ponto necessário — confiança alta.\n\n- **Caso/lente:** em `front-defesa`, a parte representada é `reu`, conforme `registro-sintetico-lente-atual`, localizador `lente vigente`.\n- **Achado controlador:** o papel defensivo atual permanece `confirmado` no alcance da confirmação humana registrada.\n- **Versão anterior:** a perspectiva ofensiva da `matriz-sintetica-antiga`, `conclusao 3`, permanece visível como `contraditado`; ela não controla o intake atual.\n- **Atualização:** delta `substitui`, da matriz antiga para o registro sintético atual; `controlling_source: registro-sintetico-lente-atual`; nenhuma alegação continua bloqueada por esse conflito.\n- **Escopo preservado:** processo em andamento, fase de defesa, objetivo de responder ao ato intermediário e preservar a defesa.\n- **Lacuna preservada:** `prazo_nao_verificado`.\n\nTodo o restante do intake permanece inalterado. Não atualizei a análise documental, não escolhi estratégia e não redigi manifestação."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a04",
+      "visible_input_sha256": "8ca5d312bcf79eec194f1343a94bcc200790998c852368c3102262646e7f08bb",
+      "invoked_skills": [
+        "analise-documental"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/analise-documental/SKILL.md",
+          "skills/analise-documental/references/contrato-saida.md",
+          "skills/analise-documental/references/avaliacao-probatoria.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Análise documental atualizada — confiança alta dentro da cobertura parcial do pacote.\n\n**Fontes e escopo afetados**\n\nForam preservadas as frentes separadas de réplica, perícia e recurso. A atualização usa `fonte-sintetica-08`, localizadores `decisao superveniente` e `dispositivo`, em confronto com `matriz-sintetica-anterior`, localizador `estado da tutela`. As demais fontes inventariadas permanecem no handoff sem promoção de cobertura.\n\n**Achados atualizados**\n\n- `F01` — `confirmado`: o dispositivo da `fonte-sintetica-08` alterou o efeito processual antes registrado. O alcance da confirmação humana é somente o efeito processual da decisão superveniente, na `front-replica`.\n- `F02` — `contraditado`: o estado anterior da tutela permanece rastreável, mas não controla o efeito atual.\n- `C01` — delta `substitui`, estado `resolvido`: `fonte-sintetica-08` passa a controlar o ponto antes registrado pela matriz anterior; `blocked_claims` permanece vazio. A fonte superveniente controla porque o recibo registra expressamente a substituição e a confirmação, não apenas por ser mais recente.\n\n**Limites preservados**\n\n- `front-replica`: cobertura parcial; anexos integrais ainda são dependência.\n- `front-pericia`: o vídeo não foi examinado, portanto qualquer conclusão dependente da prova visual permanece pendente.\n- `front-recurso`: frente e ato continuam indeterminados; o prazo recursal não foi verificado.\n\nA atualização não escolhe estratégia, recurso, tese ou módulo e não produz redação. A próxima rota possível é análise jurídica cível limitada às frentes e fontes efetivamente confirmadas."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a05",
+      "visible_input_sha256": "9d8c8e613d6a1f5989022220528fdca0ef78e14ecf60a75547c7ed0ab211bfd0",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "skills/redacao-contencioso/references/indice-modulos.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Briefing preliminar permitido — confiança moderada quanto ao ato e alta quanto aos limites. O título da ação-base não define a peça atual: `front-acao-base` está latente e sem ato; a frente material é `front-manifestacao`, cujo evento controlador é `fonte-sintetica-10`, `intimacao 1`.\n\n- **Ato:** petição intermediária simples relacionada à citação; `manifestacao-generica` é somente o módulo-base candidato, ainda não confirmado. Não é nova petição inicial nem peça de exibição.\n- **Destinatário:** juízo do processo em andamento; identificação exata não consta do pacote.\n- **Objetivo:** requerer a providência de citação exigida pelo evento controlador.\n- **Parte e posição:** autor, na `front-manifestacao`.\n- **Fatos e provas utilizáveis:** a ação-base permanece ativa sem novo ato; a necessidade de providência simples é achado `inferido` da `fonte-sintetica-10`, localizador `pedido operacional`, com cobertura parcial e sem confirmação humana.\n- **Normas e teses:** nenhuma confirmada; o pacote omite mapa jurídico e não autoriza acrescentar fundamento por inferência.\n- **Pedido:** permanece aberto; falta confirmar qual providência concreta de citação deve ser requerida.\n- **Profundidade e tom:** peça curta, objetiva e limitada ao cumprimento da determinação, sem ampliar o mérito da ação-base.\n- **Prazo e cabimento:** prazo pendente e não verificado; o ato continua candidato, não decidido.\n- **Lacunas marcadas:** juízo e número do processo, inteiro teor da intimação, providência de citação pretendida, dados necessários ao cumprimento e prazo aplicável.\n\nEste briefing ainda não pode receber a pergunta fechada de autorização porque contém um item material aberto. Qual é exatamente a providência de citação a requerer e quais dados devem constar do pedido? Após essa resposta, o briefing consolidado deve ser reapresentado para confirmação própria antes de qualquer redação."
+      ],
+      "error": null
+    }
+  ]
+}

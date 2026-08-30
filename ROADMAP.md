@@ -50,6 +50,13 @@ Estado dos itens:
   limpa nem adoção externa. Também revelou dois achados de produto: gates
   críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
   entre receber a análise e autorizar a redação.
+- Validação estrutural anonimizada contra 14 classes de situações documentadas
+  em casos reais concluída em 2026-08-30. O núcleo cível mostrou encaixe, mas
+  nenhum cenário provou o fluxo end-to-end; a
+  [RFC-CA-001](RFC-CA-001-adaptacao-casos-reais.md) adota adaptador versionado,
+  perfil de frentes, precedência temporal e despachante de escopo. Status:
+  aceita; Fases 1 e 3 e validação local A01–A14 da Fase 5 concluídas no
+  `codigo-aberto`; comparação externa, Fases 2 e 4 e dogfood não autorizados.
 - Camada deliberativa decidida em 2026-08-26: **adaptar** os contratos
   (protocolo compartilhado, tipo de artefato `decisão`, gate determinístico),
   sem skill nova. Estudo, comparação das quatro alternativas, revisão
@@ -281,16 +288,55 @@ briefing ou contexto sejam tratados como autorização implícita.
       (SEN-2413): complemento do ato-base, recorte integral dos CPC arts.
       294–311 e cenário multi-turno com gate mecânico. A régua fica pronta no
       PR, sem execução paga nesta frente sem orçamento separado.
-- [ ] Módulo `cumprimento-sentença` (CPC arts. 523–541), incluindo
-      impugnação.
-- [ ] Módulo `execucao` (CPC Livre II, arts. 771+), avaliando escopo mínimo
-      viável antes de redigir.
-- [ ] Revisar cobertura do `manifest.json` do CPC contra os novos módulos;
-      o validador garante consistência de IDs.
-- [ ] Avaliar skills candidatas fora do fluxo atual: cálculo e atualização
-      monetária; relógio processual autônomo. Decidir entrar ou registrar em
-      Fora de escopo.
-- [ ] Cada módulo entra por PR próprio com fragmento `minor`.
+- [x] Módulo `cumprimento-sentenca`, corrigido para o recorte dos CPC arts.
+      513–538, com modos promover, impugnar e responder à impugnação.
+- [x] Módulo `execucao-titulo-extrajudicial`, com modos promover, embargar e
+      responder aos embargos, além de módulo condicionado de exceção de
+      pré-executividade.
+- [x] Cobertura ampliada de redação: liquidação, prova pericial, exibição,
+      produção antecipada, IDPJ, agravo interno, acordo, ação rescisória,
+      recursos excepcionais, inventário e os procedimentos especiais
+      contenciosos dos arts. 539–718.
+- [x] Jurisdição voluntária dos arts. 719–770 coberta por módulo único com
+      treze modos obrigatórios, evitando módulos redundantes por seção.
+- [x] Cobertura do `manifest.json` revisada: 235 artigos novos resolvem para
+      seis recortes temáticos conferidos contra o HTML compilado oficial em
+      2026-08-30; o validador garante IDs e âncoras.
+- [x] Cálculo/atualização monetária e relógio processual não entram como
+      módulos de redação. Continuam dependentes de capacidade verificável
+      própria antes de eventual implementação.
+- [x] Por decisão do owner em 2026-08-30, a implementação posterior à tutela
+      foi consolidada em branch local única com fragmento `minor`; formato de
+      integração e eventual divisão em PRs ficam para instrução posterior.
+- [ ] Dogfood dos módulos ampliados: adiado expressamente pelo owner; fixtures
+      e checks estruturais foram adicionados sem chamadas pagas a modelo.
+
+### Adaptação segura de casos reais — RFC aceita
+
+Problema confirmado pela
+[auditoria anonimizada](references/validacao-casos-reais.md): os módulos cíveis
+não recebem hoje lente, frente ativa, ato atual, cobertura e conflito temporal
+em um contrato suficientemente determinístico. Mais módulos de peça não
+resolvem essa lacuna.
+
+- [x] Censo e amostra estratificada de 14 cenários reais, sem incorporar dados
+      identificadores ao repositório.
+- [x] Arquitetura aceita em
+      [`RFC-CA-001`](RFC-CA-001-adaptacao-casos-reais.md): intake obrigatório,
+      análise documental somente quando elegível, perfil opcional de frentes,
+      estados de escopo e critérios sintéticos A01–A14.
+- [x] Decisão do owner sobre as seis questões de fechamento da RFC.
+- [x] Fase 1 — contrato público e régua determinística A01–A14; nenhuma skill
+      consumidora alterada durante essa fase.
+- [ ] Fase 2 — produtor no ambiente dos casos, com autorização separada e
+      dry-run sem mutação.
+- [x] Fase 3 — quatro consumidores públicos, escopo por frente e bloqueios de
+      ato, cobertura e regime; validada apenas deterministicamente.
+- [ ] Fase 4 — capacidades auxiliares de cálculo, prazo, mídia e integridade.
+- [x] Fase 5 — validação local A01–A14 com subagentes Codex: primeira passagem
+      13/14, correção de A03 e regressão verde; cadeia de inputs, outputs e
+      julgamentos congelada por hashes e commits. Comparação externa e dogfood
+      continuam sem autorização.
 
 ## Fase 4 — Adoção e comunidade
 
@@ -320,3 +366,9 @@ silenciosas.
   proibido pelo CONTRIBUTING.
 - Suporte a jurisdições não cíveis (trabalhista, criminal): manter o foco até
   o fluxo cível estar completo e validado.
+- Cálculo financeiro e atualização monetária por geração de texto: exigir
+  motor reproduzível, índices identificados e conferência própria antes de
+  transformar a capacidade em produto.
+- Relógio processual autônomo por geração de texto: exigir calendário,
+  feriados e regra de contagem verificáveis; a redação apenas consome prazo já
+  analisado.

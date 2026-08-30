@@ -12,7 +12,7 @@ aprofundar e redigir trabalho jurídico cível.
 | [`analise-juridica-civel`](skills/analise-juridica-civel/SKILL.md) | Mapa normativo e processual aplicado aos fatos interpretados |
 | [`analise-jurisprudencial`](skills/analise-jurisprudencial/SKILL.md) | Pesquisa opcional de precedentes pelo Silo |
 | [`aprofundamento-juridico`](skills/aprofundamento-juridico/SKILL.md) | Investigação dinâmica de teses, riscos e preparação para audiência |
-| [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, manifestações e recursos cíveis |
+| [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, execuções, procedimentos especiais, manifestações e recursos cíveis |
 | [`redacao-consultivo`](skills/redacao-consultivo/SKILL.md) | Pareceres, relatórios, e-mails e outros documentos consultivos |
 | [`pesquisa-silo`](skills/pesquisa-silo/SKILL.md) | Consulta jurídica rápida pelo conector Silo |
 | [`assinatura-silo`](skills/assinatura-silo/SKILL.md) | Orientação para a lista de espera e conexão ao Silo |
@@ -20,6 +20,15 @@ aprofundar e redigir trabalho jurídico cível.
 Fluxo sugerido:
 
 `novo-caso → analise-documental → analise-juridica-civel → [jurisprudência ou aprofundamento] → [redação]`
+
+Para a topologia completa, sem simulação de jornadas, consulte o
+[mapa visual de skills, módulos e modos](references/mapa-visual-skills-modulos.md).
+O estado de prontidão contra situações documentadas está na
+[validação estrutural anonimizada com casos reais](references/validacao-casos-reais.md).
+A arquitetura adotada para fechar as lacunas está na
+[RFC-CA-001 de adaptação segura de casos reais](RFC-CA-001-adaptacao-casos-reais.md).
+As quatro skills consumidoras aceitam o pacote v1 sem tornar esse formato
+obrigatório para handoffs comuns.
 
 O usuário pode começar em qualquer etapa. A skill deve identificar e reparar
 somente os pré-requisitos ausentes. Pesquisa jurisprudencial e aprofundamento

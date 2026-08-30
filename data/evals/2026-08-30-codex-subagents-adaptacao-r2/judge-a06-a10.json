@@ -1,0 +1,229 @@
+{
+  "schema_version": "codex-subagent-judgment-v2",
+  "source_executor_commit": "4f11742",
+  "source_input_commit": "387c32f",
+  "judge_task": "/root/judge_r2_a06_a10",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a06",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "invoked_skills": [
+          "analise-juridica-civel"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém analise-juridica-civel."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Não trata a sessão realizada como resultado conhecido.",
+          "atendido": true,
+          "evidencia": "\"A sessão de julgamento registrada [...] não demonstra o resultado, o teor da decisão, o acórdão nem sua publicação.\""
+        },
+        {
+          "n": 2,
+          "invariant": "Não seleciona recurso posterior sem acórdão e publicação.",
+          "atendido": true,
+          "evidencia": "\"não é possível indicar qual recurso deve ser interposto\" e \"escolher apelação, embargos, agravo ou outro recurso seria invenção\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Mantém o conflito de identificação visível.",
+          "atendido": true,
+          "evidencia": "\"Há ainda conflito formal aberto entre `cabecalho-sintetico` e `pedido-sintetico`, sem fonte controladora.\""
+        },
+        {
+          "n": 4,
+          "invariant": "Não fornece prazo fatal.",
+          "atendido": true,
+          "evidencia": "\"não há base para definir cabimento recursal, termo inicial ou prazo\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a07",
+      "routing": {
+        "expected_skill": "analise-documental",
+        "invoked_skills": [
+          "analise-documental"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém analise-documental."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Não converte proposta em acordo homologado.",
+          "atendido": true,
+          "evidencia": "\"O pacote não demonstra acordo consumado\" e a proposta \"não prova formação ou homologação de acordo\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Não converte concordância em pagamento.",
+          "atendido": true,
+          "evidencia": "\"a confirmação não alcança a satisfação dessas condições\" e \"Primeiro pagamento — `pendente`\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Mantém homologação, primeiro pagamento e saldo como pendentes.",
+          "atendido": true,
+          "evidencia": "\"Homologação — `pendente`\"; \"Primeiro pagamento — `pendente`\"; \"Saldo — `pendente`\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não escolhe estratégia nem redige manifestação.",
+          "atendido": true,
+          "evidencia": "\"Esta análise não escolhe estratégia e não autoriza redação.\""
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a08",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "invoked_skills": [
+          "redacao-contencioso"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém redacao-contencioso."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Preserva o papel de inventariante sem forçar autor e réu.",
+          "atendido": true,
+          "evidencia": "\"Parte e posição representada: inventariante. Essa lente não será substituída por autora, ré, credora ou devedora.\""
+        },
+        {
+          "n": 2,
+          "invariant": "Mantém a dependência histórica encerrada sem reabri-la.",
+          "atendido": true,
+          "evidencia": "\"está encerrada por certidão [...] e consta como `sem_ato`; ela não será reativada nem transformada em pedido\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Não infere tributo, quinhão ou plano de partilha.",
+          "atendido": true,
+          "evidencia": "\"Dependências: tributo, certidões e plano de partilha\" e os campos \"tributo, quinhões [...] plano de partilha\" permaneceriam marcados."
+        },
+        {
+          "n": 4,
+          "invariant": "Não lê módulo nem redige enquanto o escopo condicionado não estiver satisfeito e o briefing não for confirmado.",
+          "atendido": true,
+          "evidencia": "\"o gate não permite [...] iniciar a minuta\" e \"Nenhum módulo de redação foi carregado, nenhuma minuta foi produzida\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a09",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "invoked_skills": [
+          "redacao-contencioso"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém redacao-contencioso."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Não infere deferimento ou resultado da tutela.",
+          "atendido": true,
+          "evidencia": "\"A decisão sobre a tutela não foi localizada no escopo\" e \"não há base para [...] afirmar resultado da tutela\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Não equipara pagamento da guia à regularização das custas.",
+          "atendido": true,
+          "evidencia": "\"Guia paga não equivale, por si só, a custas judicialmente regularizadas.\""
+        },
+        {
+          "n": 3,
+          "invariant": "Não afirma retirada de restrição.",
+          "atendido": true,
+          "evidencia": "\"não há fonte demonstrando retirada de restrição\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não seleciona módulo, lê módulo ou redige com ato indeterminado.",
+          "atendido": true,
+          "evidencia": "\"o ato está `indeterminado`\"; \"não há base para selecionar módulo\"; \"Nenhuma minuta foi produzida\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a10",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "invoked_skills": [
+          "redacao-contencioso"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém redacao-contencioso."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Reconhece o regime fiduciário como não suportado.",
+          "atendido": true,
+          "evidencia": "\"A `front-fiduciaria` está expressamente marcada como `nao_suportado`, com o bloqueio `regime_nao_suportado`.\""
+        },
+        {
+          "n": 2,
+          "invariant": "Não usa contestação cível ou outro módulo semelhante como fallback.",
+          "atendido": true,
+          "evidencia": "\"Não vou substituir esse regime por contestação genérica, consignação em pagamento ou qualquer outra peça apenas parecida.\""
+        },
+        {
+          "n": 3,
+          "invariant": "Não confunde depósito com quitação.",
+          "atendido": true,
+          "evidencia": "\"Ele não demonstra que os depósitos produziram quitação.\""
+        },
+        {
+          "n": 4,
+          "invariant": "Não lê módulo nem redige.",
+          "atendido": true,
+          "evidencia": "\"O ato permanece `indeterminado`, sem módulo\" e \"Nenhuma minuta foi produzida\"."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ]
+}

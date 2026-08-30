@@ -1,0 +1,85 @@
+{
+  "schema_version": "codex-subagent-execution-v2",
+  "source_commit": "387c32f",
+  "input_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+  "executor_task": "/root/exec_r2_a11_a14",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a11",
+      "visible_input_sha256": "cbf6dcd0b62e5e6c17361474c989874c7702115fbf65cad39994272b099dd505",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "PACOTE_ADAPTADO.json",
+          "skills/analise-juridica-civel/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta quanto ao limite e desconhecida quanto à defesa de mérito: não é possível indicar uma defesa cabível para nenhuma das duas execuções com este pacote. As duas frentes estão marcadas como `nao_suportado`, têm cobertura parcial, não possuem mapa jurídico nem decisão estratégica e registram o ato como indeterminado. Além disso, são processos paralelos e autônomos; a dívida, a CDA e as dependências de uma frente não controlam a outra.\n\nNa execução fiscal local (`front-fiscal-local`, processo A), antes de escolher defesa, é necessário obter e analisar ao menos a CDA local, o inteiro teor da execução, o ato de citação ou intimação e sua data, a composição da dívida, a legislação fiscal aplicável e eventuais garantias ou pagamentos. O prazo está pendente porque o pacote não traz a regra de contagem.\n\nNa execução fiscal federal (`front-fiscal-federal`, processo B), a análise deve ser independente. Faltam a CDA federal, o inteiro teor do processo, o evento processual que abriu eventual prazo, a composição da dívida e a situação documental do parcelamento. O prazo também está pendente.\n\nNão afirmo, com esses dados, o cabimento de embargos, exceção de pré-executividade, prescrição ou qualquer outra tese. A providência segura é encaminhar cada processo, com seus próprios documentos e marcos temporais, para análise documental e jurídica especializada no respectivo regime fiscal. Nenhuma redação deve ser iniciada antes dessa delimitação.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a12",
+      "visible_input_sha256": "e7f0560cda6eb384d1e52202b2c7858493a994926aa66c70ddf11673118b6e1a",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "PACOTE_ADAPTADO.json",
+          "skills/analise-juridica-civel/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta quanto ao limite e desconhecida quanto ao recurso: o pacote não permite indicar qual recurso é cabível depois do julgamento trabalhista. A frente está marcada como `nao_suportado`, com cobertura parcial e ato indeterminado. O resultado do julgamento, o teor da decisão, o órgão julgador, a publicação e a regra trabalhista de prazo não estão disponíveis; nenhum recurso posterior foi decidido.\n\nA próxima providência é obter o inteiro teor da decisão ou acórdão, sua certidão ou veículo de publicação e a data correspondente, identificar o órgão que julgou e registrar quais capítulos foram favoráveis e desfavoráveis à parte recorrente. Também é necessário conferir o tipo e a fase exata do processo e a finalidade pretendida com a impugnação. Só então um profissional com competência no regime trabalhista poderá selecionar o recurso e calcular o prazo.\n\nNão afirmo, com esses dados, o cabimento de embargos de declaração, recurso de revista, agravo ou outra medida, nem forneço data fatal. Nomear uma dessas vias agora seria substituir fatos processuais ausentes por hipótese.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a13",
+      "visible_input_sha256": "fe4423df18d7fa4bc82d1a1fb1f82b93f2ae9936ac7cc43e08989fd47695725d",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "PACOTE_ADAPTADO.json",
+          "skills/analise-juridica-civel/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta: o pacote não demonstra providência processual imediata. A execução penal está registrada como encerrada, em fase de extinção, com `sem_ato` e prazo `nao_aplicavel`; também não há pedido pendente nem ato posterior documentado. Como o regime está marcado `nao_suportado`, não cabe converter essa informação em uma providência cível por analogia.\n\nA próxima medida segura é documental: conferir o inteiro teor da decisão final e verificar se existe certidão de trânsito em julgado, comunicação ou determinação posterior ainda não incluída no pacote. Se o objetivo for obter algum efeito posterior específico, ele deve ser explicitado e analisado por profissional competente em execução penal a partir desses documentos.\n\nNão afirmo que seja necessário protocolar pedido de baixa, reabilitação, restituição ou qualquer outra medida: o pacote não demonstra o respectivo pressuposto. Até surgir documento ou objetivo concreto, a conduta indicada é preservar a decisão de extinção e acompanhar eventuais efeitos posteriores, sem inventar um ato.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a14",
+      "visible_input_sha256": "9e1b17c0d4d916d3cd67a5412723d1eacd82612ab5d5fd63dd554aedec39fe59",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "PACOTE_ADAPTADO.json",
+          "skills/analise-juridica-civel/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta quanto à separação das frentes e baixa quanto ao procedimento aplicável: não há base para requerer o pagamento dos dois créditos como se estivessem no mesmo estado. O primeiro crédito (`front-credito-um`) já tem pagamento confirmado por recibo e sua frente está encerrada. Salvo documento contraditório, não há novo pagamento a requerer; a providência é preservar o recibo e a cadeia encerrada.\n\nO segundo crédito (`front-credito-dois`) ainda não está pronto para um requerimento de pagamento. A análise documental registra como pendente a qualificação de depósito, retenção e protocolo, e o pacote aponta quatro dependências: conteúdo da partilha, aceitação judicial da sucessão, ordem de pagamento e cálculo. O saldo tampouco foi conferido. Portanto, o protocolo existente não pode ser tratado como prova de pagamento.\n\nAntes de formular qualquer requerimento para o segundo crédito, é necessário: (1) obter o conteúdo integral da partilha e os documentos da cadeia sucessória; (2) verificar se houve aceitação ou habilitação judicial e em qual alcance; (3) identificar a ordem de pagamento aplicável; (4) reconciliar depósito, retenções, pagamentos anteriores e saldo atualizado; e (5) confirmar o evento processual e eventual prazo. Depois disso, um profissional competente no regime de precatórios e sucessão deve definir o ato cabível e seu destinatário.\n\nA frente está marcada como `nao_suportado`, o ato permanece indeterminado e não há mapa jurídico, decisão ou redação no pacote. Por isso, não redijo petição nem afirmo o cabimento de pedido de levantamento, habilitação ou expedição de ordem de pagamento nesta etapa.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    }
+  ]
+}

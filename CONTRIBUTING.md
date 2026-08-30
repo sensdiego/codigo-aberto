@@ -74,6 +74,57 @@ compare com o baseline registrado antes de propor mudanças de conteúdo. Nunca
 edite uma skill e o cenário que a mede no mesmo pull request sem explicar por
 que a régua também precisava mudar.
 
+### Fixtures de adaptação de casos reais
+
+[`tests/fixtures/adaptacao-casos-reais.json`](tests/fixtures/adaptacao-casos-reais.json)
+é a régua determinística do contrato de adaptação. Ela contém exatamente A01–A14
+com dados sintéticos e não é uma coleção de prompts para modelo. O validador
+confere elegibilidade, intake, análise documental, frentes, estados, fontes,
+conflitos, escopo por frente, módulos, recibos de decisão e a presença das
+cláusulas obrigatórias nas quatro skills consumidoras.
+
+Não copie nomes, números, valores, trechos ou estrutura identificável de caso
+real. Uma fixture nova deve abstrair a classe de falha, preservar ao menos dois
+invariantes verificáveis e manter separado o que o contrato prova do que depende
+do produtor, das skills consumidoras ou de dogfood.
+
+[`tests/fixtures/adaptacao-workflows.json`](tests/fixtures/adaptacao-workflows.json)
+é a régua comportamental sintética. Cada cenário referencia exatamente um caso
+A01–A14; o runner materializa `PACOTE_ADAPTADO.json` a partir da fixture
+estrutural, evitando uma segunda cópia das frentes. `--list` não chama modelo:
+
+```bash
+python3 scripts/run_evals.py \
+  --fixture tests/fixtures/adaptacao-workflows.json \
+  --list
+```
+
+O canário fixo contém A01–A04 e deve ser selecionado explicitamente:
+
+```bash
+python3 scripts/run_evals.py \
+  --fixture tests/fixtures/adaptacao-workflows.json \
+  --scenario adaptacao-a01 \
+  --scenario adaptacao-a02 \
+  --scenario adaptacao-a03 \
+  --scenario adaptacao-a04
+```
+
+Qualquer execução sem `--list` chama executor e juiz e pode gerar custo. Medido
+nos quatro relatórios locais anteriores: medianas por cenário entre US$ 0,28 e
+US$ 0,65; máximo observado de US$ 1,19. Estimativa para esta régua no executor
+externo, ainda sem execução: US$ 2–5 no canário e US$ 8–17 nos 14 cenários. Stop rule: não rodar os 14 se o
+canário tiver `FAIL`, `JUDGE_ERROR`, falha de roteamento ou gate mecânico; corrigir
+primeiro a régua ou o consumidor afetado e manter os transcripts para `--resume`.
+
+A rodada local de 2026-08-30 usou subagentes Codex no lugar desse executor
+externo. O
+[relatório R2](data/evals/2026-08-30-codex-subagents-adaptacao-r2/report.md)
+registra inputs e outputs por hash e commit, primeira passagem 13/14, correção
+de A03 sem alterar fixture, invariantes ou input, e regressão verde. A rodada
+anterior foi invalidada e não integra o resultado. Essa alternativa consome a
+franquia Codex, cujo custo não é medido pelo runner.
+
 ## Envio
 
 1. Crie uma branch `feat/<nome>`.

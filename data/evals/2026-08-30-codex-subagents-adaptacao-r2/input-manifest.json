@@ -1,0 +1,129 @@
+{
+  "schema_version": "codex-subagent-input-manifest-v1",
+  "created_at": "2026-08-30T12:49:39-03:00",
+  "fixture": "tests/fixtures/adaptacao-workflows.json",
+  "fixture_sha256": "370218827cbf2c7c789fd40618cad2a04ed92d0bae1f9a9f6453dcac70882557",
+  "case_fixture": "tests/fixtures/adaptacao-casos-reais.json",
+  "case_fixture_sha256": "aea0321889c799eb2fa326718c5995ec186513e0230fd81046245c3b0a843ada",
+  "renderer": "scripts/run_evals.py",
+  "renderer_sha256": "3569b025110ee41d1c34289ab071cfa901c9e722da56f2e396a8ac32c9e79bb8",
+  "frozen_by_commit": true,
+  "executor_visible_fields": [
+    "prompt",
+    "setup_files"
+  ],
+  "executor_hidden_fields": [
+    "expected_skill",
+    "invariants",
+    "canary",
+    "authorizing_turn"
+  ],
+  "planned_batches": [
+    [
+      "adaptacao-a01",
+      "adaptacao-a02",
+      "adaptacao-a03",
+      "adaptacao-a04",
+      "adaptacao-a05"
+    ],
+    [
+      "adaptacao-a06",
+      "adaptacao-a07",
+      "adaptacao-a08",
+      "adaptacao-a09",
+      "adaptacao-a10"
+    ],
+    [
+      "adaptacao-a11",
+      "adaptacao-a12",
+      "adaptacao-a13",
+      "adaptacao-a14"
+    ]
+  ],
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "prompt_sha256": "8e753a881025cf1f5eea033595abc5be2dd79d23b8c4c0da4e5ec66ff9c746dd",
+      "package_sha256": "10427f4969ec1efb4962c1ab4d5f63cf3f572320fba1f99f1afcad21a312f26d",
+      "visible_input_sha256": "aea54d5ddc906bbdcced27c23e81a6eb4b289c2f3f95dd3e28f05dcc11f6e8f2"
+    },
+    {
+      "id": "adaptacao-a02",
+      "prompt_sha256": "768944d1738950f4b6ae58443c0b30d861d417498e9a94390b80a33f4f3f5ee8",
+      "package_sha256": "496ee5de685df78fd4018c52b2dfeec2f49a9c9568452d02ed58d083d990d149",
+      "visible_input_sha256": "396d35d509f8d413bc2957b37724c9efc0bc7d551ea3316031a559c1adb53482"
+    },
+    {
+      "id": "adaptacao-a03",
+      "prompt_sha256": "6d9ba1de7c713f58d896fa87bb9947d1b96626f93b909c14ccfad46066f6a819",
+      "package_sha256": "edbed50b2f273eb0c8b5f90b6f0b93c0771cd10702b65ad1761fbf2a4fed7ed6",
+      "visible_input_sha256": "504a51f70060de677b46283a1d023dd9df2a0935085568cfdf22a40d67e22456"
+    },
+    {
+      "id": "adaptacao-a04",
+      "prompt_sha256": "c155f65271c0d249661df5e4120bb7cc59a8640ff6170e1785b93faf2f1f8e2b",
+      "package_sha256": "dfa2fb5710b3af9b7542c64ed6eb3a26daacc0a147bc0247530da31ada8c6d2a",
+      "visible_input_sha256": "8ca5d312bcf79eec194f1343a94bcc200790998c852368c3102262646e7f08bb"
+    },
+    {
+      "id": "adaptacao-a05",
+      "prompt_sha256": "552769004255a12fb5dc278b5a62e4332190fe343336890cbd110757be5231a4",
+      "package_sha256": "586ff9b11840e9e6e97693d8083fdf0f855f2f53148d3e1240d3897f7495de2e",
+      "visible_input_sha256": "9d8c8e613d6a1f5989022220528fdca0ef78e14ecf60a75547c7ed0ab211bfd0"
+    },
+    {
+      "id": "adaptacao-a06",
+      "prompt_sha256": "8870cbaf2bec73c8b4d9049d8e067258df19b0a6c83296c1ac496f7ae72e8c99",
+      "package_sha256": "1e3460091ddcc70c2d08fda922be59bb8c146e97aa285af9ac801a73be303943",
+      "visible_input_sha256": "ec3b65203c6fca6e5c3002fafd5dbb82decb3c3049098c05b7c9206869a38bd5"
+    },
+    {
+      "id": "adaptacao-a07",
+      "prompt_sha256": "20d9edd22c8279499fa9bebb5a1009c8d4d04eabae4cb36480d1505d81472371",
+      "package_sha256": "f18e1c1281478d6a32c1f305f9323cfd9ae03330d365c67019232117c3f70abb",
+      "visible_input_sha256": "6aaa4e8615e195e07094624a2be22efd01d53decffdcfac2f06086dbd5b2d3f2"
+    },
+    {
+      "id": "adaptacao-a08",
+      "prompt_sha256": "0e0b2f68498a9eef6110d7400850baed2231ab4cedd68ef0308fb4baa8b10e0d",
+      "package_sha256": "1bb05945e28d800b271980cc8e61accc5da3202eadabe9bc4139ac08d1e25610",
+      "visible_input_sha256": "5d99dedc52486b707d0ee6c763be4b3412c19b4c02e7d82573b6812747fc8946"
+    },
+    {
+      "id": "adaptacao-a09",
+      "prompt_sha256": "e41c16246190dc341ea4c47600bb47d10a6ce5337d4f1358df8ca988d8c58ab0",
+      "package_sha256": "a0057b7db271b1271aba0931d4676ab35cc23b7b2d73ef20b809ee2ff3ea498d",
+      "visible_input_sha256": "d51fce87aed0035c6f52c274a523b3a74671682920d007f222ccef91acb03442"
+    },
+    {
+      "id": "adaptacao-a10",
+      "prompt_sha256": "8042e6477a8594538369e90c0810a1ad012e0a2030c4fe8024262250dc80066e",
+      "package_sha256": "70f029a653a4b7ebab78be24adb9227227300a7caecd52cb42d2f3c016004717",
+      "visible_input_sha256": "b9f40b8f9aae9d2510db9ca68350da0867d421344445b7c33245e0c09d4bacc4"
+    },
+    {
+      "id": "adaptacao-a11",
+      "prompt_sha256": "2a85e490aff8a27149ad971f7d6635b5c163ad898b6650ab81b02c7655534a3b",
+      "package_sha256": "25234f3b648c9d197ef5597baddde64c993c48365513964de6b6d3f005bd3ed1",
+      "visible_input_sha256": "cbf6dcd0b62e5e6c17361474c989874c7702115fbf65cad39994272b099dd505"
+    },
+    {
+      "id": "adaptacao-a12",
+      "prompt_sha256": "2aedcf0426cb87ac06507f91c9d6332f6602d55aa984250378a3b0ca5ef54676",
+      "package_sha256": "af1c7d1cf570f09cee3e5495cf835414f21f38ad3631ee425ec6f1dc398effce",
+      "visible_input_sha256": "e7f0560cda6eb384d1e52202b2c7858493a994926aa66c70ddf11673118b6e1a"
+    },
+    {
+      "id": "adaptacao-a13",
+      "prompt_sha256": "f36eea6d915852172ccd085c8ba0cd166a10d16662e21f6aa822f499d29bbd7b",
+      "package_sha256": "91f170c59338721191a95208f8949ddb7489aaad56694914d55fc01255f44fe6",
+      "visible_input_sha256": "fe4423df18d7fa4bc82d1a1fb1f82b93f2ae9936ac7cc43e08989fd47695725d"
+    },
+    {
+      "id": "adaptacao-a14",
+      "prompt_sha256": "77007b8df64d1b34b08473f18ebdd6f2e70b98dcb9bf4e510e72c9810ddf4f87",
+      "package_sha256": "1971e7ceefee26da0e0fcad087aa1567fe941f9c7c11b6df72d6041fdd621e78",
+      "visible_input_sha256": "9e1b17c0d4d916d3cd67a5412723d1eacd82612ab5d5fd63dd554aedec39fe59"
+    }
+  ]
+}

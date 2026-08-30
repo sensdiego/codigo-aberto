@@ -32,7 +32,8 @@ PUBLIC_ROOT_ENTRIES = {
     ".changes", ".claude-plugin", ".git", ".github", ".gitignore", ".ruff_cache",
     ".release-policy.toml", "CHANGELOG.md",
     "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "HANDOFF.md", "LICENSE", "QUICKSTART.md",
-    "Makefile", "README.md", "RELEASING.md", "ROADMAP.md", "SECURITY.md", "data", "dist", "references",
+    "Makefile", "README.md", "RELEASING.md", "RFC-CA-001-adaptacao-casos-reais.md",
+    "ROADMAP.md", "SECURITY.md", "data", "dist", "references",
     "scripts", "skills", "tests",
 }
 OS_JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "ehthumbs.db"}
@@ -44,6 +45,34 @@ PROHIBITED_PUBLIC_CLAIMS = (
     "o cadastro foi registrado",
     "requer assinatura ativa",
 )
+ADAPTATION_CONSUMER_REQUIREMENTS = {
+    "references/handoff.md": (
+        "A única versão reconhecida neste contrato é `case-adaptation-v1`",
+        "`scope_status`",
+        "Um handoff comum criado diretamente pelo usuário ou por outra skill permanece",
+    ),
+    "skills/novo-caso/SKILL.md": (
+        "## Pacote adaptado",
+        "Em `bloqueado`, não crie nem consuma intake",
+        "Se não houver recibo de adaptação",
+    ),
+    "skills/analise-documental/SKILL.md": (
+        "## Pacote adaptado",
+        "Consuma o handoff opcional de análise documental somente quando cada achado",
+        "fonte posterior não controla apenas por ser mais recente",
+    ),
+    "skills/analise-juridica-civel/SKILL.md": (
+        "Várias frentes candidatas exigem delimitação",
+        "Em `indeterminado`, delimite o regime",
+        "`decidido` exige recibo de escolha humana",
+    ),
+    "skills/redacao-contencioso/SKILL.md": (
+        "Não selecione módulo quando a frente ou o ato estiver `indeterminado`",
+        "Módulo indicado pelo pacote é candidato, não ordem",
+        "preserve a hierarquia declarada no pacote entre módulo-base e complementos",
+        "Sem recibo de adaptação, aplique os pré-requisitos comuns",
+    ),
+}
 
 def is_os_junk(name: str) -> bool:
     return name in OS_JUNK_NAMES or name.startswith("._")
@@ -269,9 +298,489 @@ def check_workflow_fixtures():
     return errors
 
 
+def check_adaptation_fixtures():
+    errors = []
+
+    def allowed(value, choices):
+        return isinstance(value, str) and value in choices
+
+    path = ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json"
+    if not path.exists():
+        return ["falta tests/fixtures/adaptacao-casos-reais.json"]
+    data, err = load_json(path)
+    if err or not isinstance(data, dict):
+        return [f"fixtures de adaptação inválidas: {err or 'objeto esperado'}"]
+    if data.get("schema_version") != "case-adaptation-fixtures-v1":
+        errors.append("fixtures de adaptação: schema_version deve ser case-adaptation-fixtures-v1")
+    if data.get("contract_version") != "case-adaptation-v1":
+        errors.append("fixtures de adaptação: contract_version deve ser case-adaptation-v1")
+
+    scenarios = data.get("scenarios")
+    if not isinstance(scenarios, list):
+        return [*errors, "fixtures de adaptação: scenarios deve ser lista"]
+    expected_ids = {f"A{index:02d}" for index in range(1, 15)}
+    actual_ids = {
+        scenario.get("id")
+        for scenario in scenarios
+        if isinstance(scenario, dict) and isinstance(scenario.get("id"), str)
+    }
+    if actual_ids != expected_ids or len(scenarios) != len(expected_ids):
+        errors.append("fixtures de adaptação devem conter exatamente A01–A14, sem duplicatas")
+
+    allowed_eligibility = {"bloqueado", "parcial_utilizavel", "integral"}
+    allowed_handoffs = {"intake", "analise_documental"}
+    allowed_scope = {
+        "suportado",
+        "suportado_condicionado",
+        "nao_suportado",
+        "indeterminado",
+    }
+    allowed_front_natures = {
+        "processo",
+        "recurso",
+        "incidente",
+        "reconvencao",
+        "execucao",
+        "credito",
+        "administrativo",
+        "dependencia",
+    }
+    allowed_relations = {"principal", "dependente", "paralelo", "sucessor", "apenso"}
+    allowed_front_statuses = {"ativa", "dependente", "latente", "encerrada", "indeterminada"}
+    allowed_act_statuses = {"demonstrado", "candidato", "decidido", "indeterminado", "sem_ato"}
+    allowed_coverage = {"integral", "parcial", "bloqueada"}
+    allowed_deadlines = {"verificado", "pendente", "nao_aplicavel"}
+    allowed_finding_states = {
+        "confirmado",
+        "informado pelo usuario",
+        "inferido",
+        "hipotese",
+        "contraditado",
+        "pendente",
+    }
+    allowed_deltas = {"confirma", "complementa", "contradiz", "substitui", "nao_afeta"}
+    allowed_conflict_statuses = {"aberto", "resolvido"}
+    modules_root = ROOT / "skills" / "redacao-contencioso" / "references" / "modulos"
+    existing_modules = {module.stem for module in modules_root.glob("*.md")}
+    observed_scope = set()
+
+    for index, scenario in enumerate(scenarios, start=1):
+        if not isinstance(scenario, dict):
+            errors.append(f"adaptação {index}: cenário deve ser objeto")
+            continue
+        scenario_id = scenario.get("id") or index
+        for field in (
+            "id",
+            "title",
+            "eligibility",
+            "handoffs",
+            "analysis_eligible",
+            "fronts",
+            "findings",
+            "conflicts",
+            "blockers",
+            "invariants",
+        ):
+            if field not in scenario:
+                errors.append(f"adaptação {scenario_id}: falta {field}")
+
+        if not isinstance(scenario.get("title"), str) or not scenario["title"].strip():
+            errors.append(f"adaptação {scenario_id}: title deve ser texto não vazio")
+        eligibility = scenario.get("eligibility")
+        if not allowed(eligibility, allowed_eligibility):
+            errors.append(f"adaptação {scenario_id}: eligibility inválida")
+
+        handoffs = scenario.get("handoffs")
+        if (
+            not isinstance(handoffs, list)
+            or any(not isinstance(item, str) for item in handoffs)
+            or len(handoffs) != len(set(handoffs))
+            or any(item not in allowed_handoffs for item in handoffs)
+        ):
+            errors.append(f"adaptação {scenario_id}: handoffs inválidos ou duplicados")
+            handoffs = []
+        if eligibility == "bloqueado" and handoffs:
+            errors.append(f"adaptação {scenario_id}: bloqueado não pode emitir handoff")
+        if eligibility in ("parcial_utilizavel", "integral") and "intake" not in handoffs:
+            errors.append(f"adaptação {scenario_id}: pacote utilizável exige intake")
+
+        analysis_eligible = scenario.get("analysis_eligible")
+        if not isinstance(analysis_eligible, bool):
+            errors.append(f"adaptação {scenario_id}: analysis_eligible deve ser booleano")
+        elif analysis_eligible != ("analise_documental" in handoffs):
+            errors.append(
+                f"adaptação {scenario_id}: analise_documental deve acompanhar analysis_eligible"
+            )
+
+        fronts = scenario.get("fronts")
+        if not isinstance(fronts, list):
+            errors.append(f"adaptação {scenario_id}: fronts deve ser lista")
+            fronts = []
+        if eligibility != "bloqueado" and not fronts:
+            errors.append(f"adaptação {scenario_id}: pacote utilizável exige ao menos uma frente")
+        if eligibility == "bloqueado" and fronts:
+            errors.append(f"adaptação {scenario_id}: bloqueado não pode expor frentes")
+        front_ids = set()
+        for front_index, front in enumerate(fronts, start=1):
+            label = f"adaptação {scenario_id} frente {front_index}"
+            if not isinstance(front, dict):
+                errors.append(f"{label}: deve ser objeto")
+                continue
+            front_id = front.get("front_id")
+            if not isinstance(front_id, str) or not front_id.strip():
+                errors.append(f"{label}: front_id ausente")
+            elif front_id in front_ids:
+                errors.append(f"{label}: front_id duplicado {front_id}")
+            else:
+                front_ids.add(front_id)
+            scope = front.get("scope_status")
+            if not allowed(scope, allowed_scope):
+                errors.append(f"{label}: scope_status inválido")
+            else:
+                observed_scope.add(scope)
+            if not allowed(front.get("nature"), allowed_front_natures):
+                errors.append(f"{label}: nature inválida")
+            if not allowed(front.get("relation"), allowed_relations):
+                errors.append(f"{label}: relation inválida")
+            front_status = front.get("status")
+            if not allowed(front_status, allowed_front_statuses):
+                errors.append(f"{label}: status inválido")
+            coverage = front.get("coverage")
+            if not allowed(coverage, allowed_coverage):
+                errors.append(f"{label}: coverage inválida")
+            for field in ("represented_role", "phase", "current_objective"):
+                if not isinstance(front.get(field), str) or not front[field].strip():
+                    errors.append(f"{label}: {field} deve ser texto não vazio")
+
+            event = front.get("controlling_event")
+            if not isinstance(event, dict) or any(
+                not isinstance(event.get(field), str) or not event[field].strip()
+                for field in ("source_ref", "locator")
+            ):
+                errors.append(f"{label}: controlling_event exige source_ref e locator")
+
+            act = front.get("act")
+            if not isinstance(act, dict):
+                errors.append(f"{label}: act deve ser objeto")
+                continue
+            act_status = act.get("status")
+            module = act.get("module")
+            complements = act.get("complements")
+            if not allowed(act_status, allowed_act_statuses):
+                errors.append(f"{label}: act.status inválido")
+            if module is not None and not allowed(module, existing_modules):
+                errors.append(f"{label}: módulo inexistente {module}")
+            if module == "tutela-urgencia-evidencia":
+                errors.append(f"{label}: tutela não pode ser módulo-base")
+            if (
+                not isinstance(complements, list)
+                or any(not isinstance(item, str) for item in complements)
+                or len(complements) != len(set(complements))
+                or any(item != "tutela-urgencia-evidencia" for item in complements)
+            ):
+                errors.append(f"{label}: complements aceita somente tutela sem duplicata")
+                complements = []
+            if complements and module is None:
+                errors.append(f"{label}: complemento exige módulo-base")
+            if scope in ("nao_suportado", "indeterminado") and module is not None:
+                errors.append(f"{label}: escopo {scope} não pode selecionar módulo")
+            if front_status == "indeterminada" and module is not None:
+                errors.append(f"{label}: frente indeterminada não pode selecionar módulo")
+            if coverage == "bloqueada" and module is not None:
+                errors.append(f"{label}: cobertura bloqueada não pode selecionar módulo")
+            if act_status in ("indeterminado", "sem_ato") and (module is not None or complements):
+                errors.append(f"{label}: ato {act_status} não pode selecionar módulo")
+            decision_receipt = act.get("decision_receipt")
+            if not isinstance(decision_receipt, bool):
+                errors.append(f"{label}: decision_receipt deve ser booleano")
+            elif act_status == "decidido" and not decision_receipt:
+                errors.append(f"{label}: ato decidido exige recibo de decisão")
+
+            deadline = front.get("deadline")
+            if not isinstance(deadline, dict) or not allowed(
+                deadline.get("status"), allowed_deadlines
+            ):
+                errors.append(f"{label}: deadline inválido")
+            elif deadline["status"] == "verificado" and any(
+                not isinstance(deadline.get(field), str) or not deadline[field].strip()
+                for field in ("event_source", "rule_source")
+            ):
+                errors.append(f"{label}: prazo verificado exige evento e regra")
+            dependencies = front.get("dependencies")
+            if not isinstance(dependencies, list) or any(
+                not isinstance(item, str) or not item.strip() for item in dependencies
+            ):
+                errors.append(f"{label}: dependencies deve ser lista de textos")
+            elif scope == "suportado_condicionado" and not dependencies:
+                errors.append(f"{label}: escopo condicionado exige dependência nomeada")
+
+        if eligibility == "integral" and any(
+            isinstance(front, dict) and front.get("coverage") != "integral" for front in fronts
+        ):
+            errors.append(f"adaptação {scenario_id}: pacote integral exige frentes integrais")
+
+        findings = scenario.get("findings")
+        if not isinstance(findings, list):
+            errors.append(f"adaptação {scenario_id}: findings deve ser lista")
+            findings = []
+        if analysis_eligible is True and not findings:
+            errors.append(f"adaptação {scenario_id}: análise elegível exige achados")
+        if analysis_eligible is False and findings:
+            errors.append(f"adaptação {scenario_id}: achados analíticos exigem análise elegível")
+        finding_ids = set()
+        for finding_index, finding in enumerate(findings, start=1):
+            label = f"adaptação {scenario_id} achado {finding_index}"
+            if not isinstance(finding, dict):
+                errors.append(f"{label}: deve ser objeto")
+                continue
+            finding_id = finding.get("id")
+            if not isinstance(finding_id, str) or not finding_id.strip():
+                errors.append(f"{label}: id ausente")
+            elif finding_id in finding_ids:
+                errors.append(f"{label}: id duplicado {finding_id}")
+            else:
+                finding_ids.add(finding_id)
+            if not allowed(finding.get("state"), allowed_finding_states):
+                errors.append(f"{label}: state inválido")
+            for field in ("source_ref", "locator"):
+                if not isinstance(finding.get(field), str) or not finding[field].strip():
+                    errors.append(f"{label}: {field} deve ser texto não vazio")
+            if finding.get("state") == "confirmado" and (
+                not isinstance(finding.get("confirmation_scope"), str)
+                or not finding["confirmation_scope"].strip()
+            ):
+                errors.append(f"{label}: confirmado exige confirmation_scope")
+
+        conflicts = scenario.get("conflicts")
+        if not isinstance(conflicts, list):
+            errors.append(f"adaptação {scenario_id}: conflicts deve ser lista")
+            conflicts = []
+        for conflict_index, conflict in enumerate(conflicts, start=1):
+            label = f"adaptação {scenario_id} conflito {conflict_index}"
+            if not isinstance(conflict, dict):
+                errors.append(f"{label}: deve ser objeto")
+                continue
+            if not allowed(conflict.get("delta"), allowed_deltas):
+                errors.append(f"{label}: delta inválido")
+            conflict_status = conflict.get("status")
+            if not allowed(conflict_status, allowed_conflict_statuses):
+                errors.append(f"{label}: status inválido")
+            sources = conflict.get("sources")
+            if not isinstance(sources, list) or len(sources) < 2 or any(
+                not isinstance(item, str) or not item.strip() for item in sources
+            ):
+                errors.append(f"{label}: sources exige ao menos duas fontes")
+                sources = []
+            controlling_source = conflict.get("controlling_source")
+            blocked_claims = conflict.get("blocked_claims")
+            if not isinstance(blocked_claims, list) or any(
+                not isinstance(item, str) or not item.strip() for item in blocked_claims
+            ):
+                errors.append(f"{label}: blocked_claims deve ser lista de textos")
+                blocked_claims = []
+            if conflict_status == "aberto":
+                if controlling_source is not None:
+                    errors.append(f"{label}: conflito aberto não pode escolher fonte controladora")
+                if not blocked_claims:
+                    errors.append(f"{label}: conflito aberto deve bloquear conclusão dependente")
+            if conflict_status == "resolvido":
+                if controlling_source not in sources:
+                    errors.append(f"{label}: conflito resolvido exige fonte controladora listada")
+                if blocked_claims:
+                    errors.append(f"{label}: conflito resolvido não mantém conclusão bloqueada")
+
+        for field in ("blockers", "invariants"):
+            values = scenario.get(field)
+            if not isinstance(values, list) or any(
+                not isinstance(item, str) or not item.strip() for item in values
+            ):
+                errors.append(f"adaptação {scenario_id}: {field} deve ser lista de textos")
+        invariants = scenario.get("invariants")
+        if isinstance(invariants, list) and len(invariants) < 2:
+            errors.append(f"adaptação {scenario_id}: invariants exige ao menos dois itens")
+    if observed_scope != allowed_scope:
+        errors.append("fixtures de adaptação devem cobrir os quatro estados de escopo")
+    return errors
+
+
+def check_adaptation_consumers():
+    errors = []
+    for relative, markers in ADAPTATION_CONSUMER_REQUIREMENTS.items():
+        path = ROOT / relative
+        if not path.exists():
+            errors.append(f"consumidor de adaptação ausente: {relative}")
+            continue
+        text = " ".join(path.read_text(encoding="utf-8").split())
+        for marker in markers:
+            if " ".join(marker.split()) not in text:
+                errors.append(f"{relative}: falta contrato de adaptação: {marker}")
+    return errors
+
+
+def check_adaptation_workflow_fixtures():
+    errors = []
+    path = ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+    case_path = ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json"
+    data, err = load_json(path)
+    case_data, case_err = load_json(case_path)
+    if err or not isinstance(data, dict):
+        return [f"fixture comportamental de adaptação inválida: {err or 'objeto esperado'}"]
+    if case_err or not isinstance(case_data, dict):
+        return [f"fixture estrutural de adaptação inválida: {case_err or 'objeto esperado'}"]
+    if data.get("schema_version") != "adaptation-behavior-workflows-v1":
+        errors.append("fixture comportamental: schema_version inválida")
+    if data.get("case_fixture") != "adaptacao-casos-reais.json":
+        errors.append("fixture comportamental deve reutilizar adaptacao-casos-reais.json")
+
+    scenarios = data.get("scenarios")
+    cases = case_data.get("scenarios")
+    if not isinstance(scenarios, list):
+        return [*errors, "fixture comportamental: scenarios deve ser lista"]
+    if not isinstance(cases, list):
+        return [*errors, "fixture estrutural: scenarios deve ser lista"]
+    case_contracts = {
+        case.get("id"): {
+            "finding_ids": {
+                finding.get("id")
+                for finding in case.get("findings", [])
+                if isinstance(finding, dict) and isinstance(finding.get("id"), str)
+            },
+            "front_ids": {
+                front.get("front_id")
+                for front in case.get("fronts", [])
+                if isinstance(front, dict) and isinstance(front.get("front_id"), str)
+            },
+            "analysis": "analise_documental" in case.get("handoffs", []),
+            "eligibility": case.get("eligibility"),
+        }
+        for case in cases
+        if isinstance(case, dict)
+        and isinstance(case.get("id"), str)
+        and isinstance(case.get("findings"), list)
+        and isinstance(case.get("fronts"), list)
+        and isinstance(case.get("handoffs"), list)
+    }
+    expected_case_ids = {f"A{index:02d}" for index in range(1, 15)}
+    expected_consumers = {
+        "novo-caso",
+        "analise-documental",
+        "analise-juridica-civel",
+        "redacao-contencioso",
+    }
+    scenario_ids = set()
+    referenced_cases = set()
+    covered_consumers = set()
+    canary_cases = set()
+    for index, scenario in enumerate(scenarios, start=1):
+        if not isinstance(scenario, dict):
+            errors.append(f"fixture comportamental {index}: cenário deve ser objeto")
+            continue
+        scenario_id = scenario.get("id")
+        case_id = scenario.get("adaptation_case_id")
+        label = scenario_id if isinstance(scenario_id, str) else index
+        if not isinstance(scenario_id, str) or not scenario_id:
+            errors.append(f"fixture comportamental {index}: id ausente")
+        elif scenario_id in scenario_ids:
+            errors.append(f"fixture comportamental {scenario_id}: id duplicado")
+        else:
+            scenario_ids.add(scenario_id)
+        if not isinstance(case_id, str) or case_id not in expected_case_ids:
+            errors.append(f"fixture comportamental {label}: adaptation_case_id inválido")
+        elif case_id in referenced_cases:
+            errors.append(f"fixture comportamental {label}: caso repetido {case_id}")
+        else:
+            referenced_cases.add(case_id)
+
+        prompt = scenario.get("prompt")
+        if not isinstance(prompt, str) or not prompt.strip():
+            errors.append(f"fixture comportamental {label}: prompt deve ser texto")
+        consumer = scenario.get("expected_skill")
+        if not isinstance(consumer, str) or consumer not in expected_consumers:
+            errors.append(f"fixture comportamental {label}: consumidor inválido")
+        else:
+            covered_consumers.add(consumer)
+        facts = scenario.get("package_facts")
+        contract = case_contracts.get(case_id) if isinstance(case_id, str) else None
+        if not isinstance(facts, list) or not facts:
+            errors.append(
+                f"fixture comportamental {label}: package_facts insuficientes"
+            )
+        elif isinstance(contract, dict):
+            front_ids = contract["front_ids"]
+            finding_ids = contract["finding_ids"]
+            bound_findings = []
+            for fact_index, fact in enumerate(facts, start=1):
+                if not isinstance(fact, dict):
+                    errors.append(
+                        f"fixture comportamental {label}: package_fact {fact_index} deve ser objeto"
+                    )
+                    continue
+                proposition = fact.get("proposition")
+                front_id = fact.get("front_id")
+                finding_id = fact.get("finding_id")
+                if not isinstance(proposition, str) or not proposition.strip():
+                    errors.append(
+                        f"fixture comportamental {label}: package_fact {fact_index} sem proposition"
+                    )
+                if not isinstance(front_id, str) or front_id not in front_ids:
+                    errors.append(
+                        f"fixture comportamental {label}: package_fact {fact_index} com front_id inválido"
+                    )
+                if finding_id is not None:
+                    if not isinstance(finding_id, str) or finding_id not in finding_ids:
+                        errors.append(
+                            f"fixture comportamental {label}: package_fact {fact_index} com finding_id inválido"
+                        )
+                    else:
+                        bound_findings.append(finding_id)
+            if len(bound_findings) != len(set(bound_findings)):
+                errors.append(
+                    f"fixture comportamental {label}: finding_id repetido em package_facts"
+                )
+            if contract["analysis"] and set(bound_findings) != finding_ids:
+                errors.append(
+                    f"fixture comportamental {label}: bindings de achados incompletos"
+                )
+        invariants = scenario.get("invariants")
+        if (
+            not isinstance(invariants, list)
+            or len(invariants) < 3
+            or not all(
+                isinstance(invariant, str) and invariant.strip()
+                for invariant in invariants
+            )
+        ):
+            errors.append(f"fixture comportamental {label}: invariants exige três textos")
+        canary = scenario.get("canary")
+        if not isinstance(canary, bool):
+            errors.append(f"fixture comportamental {label}: canary deve ser booleano")
+        elif canary and isinstance(case_id, str):
+            canary_cases.add(case_id)
+        if consumer == "redacao-contencioso" and scenario.get("authorizing_turn", "absent") is not None:
+            errors.append(
+                f"fixture comportamental {label}: redação deve manter authorizing_turn null"
+            )
+        if "setup_files" in scenario:
+            errors.append(
+                f"fixture comportamental {label}: setup_files é materializado pelo runner"
+            )
+
+    if referenced_cases != expected_case_ids or len(scenarios) != len(expected_case_ids):
+        errors.append("fixture comportamental deve cobrir A01–A14 exatamente uma vez")
+    if covered_consumers != expected_consumers:
+        errors.append("fixture comportamental deve cobrir os quatro consumidores")
+    if canary_cases != {"A01", "A02", "A03", "A04"}:
+        errors.append("canário comportamental deve conter exatamente A01–A04")
+    return errors
+
+
 def check_new_file_placeholders():
     errors = []
-    roots = [ROOT / "tests", PLUGIN / "references"]
+    roots = [
+        ROOT / "RFC-CA-001-adaptacao-casos-reais.md",
+        ROOT / "tests",
+        PLUGIN / "references",
+    ]
     roots.extend(PLUGIN / "skills" / name for name in WORKFLOW_SKILLS)
     for root in roots:
         if not root.exists():
@@ -404,7 +913,14 @@ def main():
 
     link_sources = {
         ROOT / name
-        for name in ("README.md", "QUICKSTART.md", "CONTRIBUTING.md", "RELEASING.md", "SECURITY.md")
+        for name in (
+            "README.md",
+            "QUICKSTART.md",
+            "CONTRIBUTING.md",
+            "RELEASING.md",
+            "RFC-CA-001-adaptacao-casos-reais.md",
+            "SECURITY.md",
+        )
     }
     link_sources.update(ROOT.rglob("SKILL.md"))
     for references in ROOT.rglob("references"):
@@ -416,6 +932,9 @@ def main():
     errors.extend(check_new_file_placeholders())
     errors.extend(check_silo_access_copy())
     errors.extend(check_workflow_fixtures())
+    errors.extend(check_adaptation_fixtures())
+    errors.extend(check_adaptation_consumers())
+    errors.extend(check_adaptation_workflow_fixtures())
     errors.extend(check_cpc_manifest())
 
     if errors:

@@ -1,0 +1,80 @@
+{
+  "executor": "codex-subagent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "skills/redacao-contencioso/SKILL.md",
+        "skills/redacao-contencioso/references/indice-modulos.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta quanto aos bloqueios e desconhecida quanto ao mérito: o pacote não autoriza iniciar a petição inicial nem o pedido de tutela.\n\nA frente front-principal está apenas como suportado_condicionado, com cobertura parcial. Petição inicial e tutela são atos candidatos, não decididos; não existe recibo de decisão humana. O pacote omite mapa jurídico, decisão e redação. Além disso, permanecem bloqueados o cálculo reproduzível e a confirmação da medida. O conflito C01 continua aberto: as duas memórias monetárias são incompatíveis, nenhuma é controladora e, por isso, valor atual e saldo não podem ser afirmados. O papel do garantidor e a prova visual também permanecem pendentes.\n\nO material permite preservar somente o achado confirmado de que há obrigação documentada, dentro do alcance registrado. Para habilitar o briefing de redação, são necessários: indicar a memória monetária controladora ou fornecer cálculo reproduzível; confirmar qual medida urgente se pretende, contra quem e sobre quais bens; confirmar o papel jurídico e documental do garantidor e se haverá pedido de IDPJ; examinar a evidência visual; e produzir o mapa jurídico seguido da decisão humana sobre ato, pedidos e tutela.\n\nNenhuma minuta foi redigida e nenhuma ação externa foi executada.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a02",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "skills/analise-juridica-civel/SKILL.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta quanto ao limite do pacote e desconhecida quanto à via adequada: nenhuma via jurídica pode ser escolhida responsavelmente agora.\n\nA frente tributária está marcada como nao_suportado, o ato está indeterminado e não há decisão humana entre mandado de segurança e ação comum. A autoridade emissora não foi confirmada; a lei local e a regra atual de prazo não estão disponíveis; o prazo permanece pendente; e o pacote não contém análise documental, mapa jurídico ou decisão. Portanto, o material não sustenta nem mandado de segurança, nem ação comum, nem a afirmação de uma data fatal.\n\nA providência permitida agora é completar a delimitação do regime: obter a íntegra do ato e o comprovante de ciência; identificar a autoridade emissora e sua competência; identificar o ente, a legislação tributária e o procedimento administrativo aplicáveis; e verificar a regra atual de impugnação e prazo. Depois disso, o caso deve seguir para capacidade especializada tributária/administrativa. Não deve ser encaminhado a um módulo cível apenas por semelhança formal.\n\nNão houve pesquisa externa nem prática de ato.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a03",
+      "invoked_skills": [
+        "novo-caso"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "skills/novo-caso/SKILL.md",
+        "skills/novo-caso/references/intake.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta: o único ajuste autorizado é consolidar no intake que a lente vigente da front-defesa é réu. Nenhuma análise documental, estratégia, escolha de ato ou redação foi alterada.\n\nCaso: A03 — Correcao superveniente da lente representada; front-defesa; parte representada: réu.\nTipo de artefato: intake de suplementação de processo em andamento, em modo temporário.\nFontes consumidas: registro-sintetico-lente-atual, localizador lente vigente, como autoridade atual de identidade e lente; matriz-sintetica-antiga, localizador conclusao 3, preservada apenas como versão anterior contraditada. O inventário original permanece preservado.\nEscopo: somente a correção da parte representada na front-defesa. Permanecem fora do escopo mérito, reanálise das fontes, mapa jurídico, prazo, estratégia e redação.\nAchados: o registro atual identifica a pessoa representada como ré; a matriz antiga adotava perspectiva ofensiva incompatível e não controla a lente vigente; o objetivo registrado continua sendo responder ao ato intermediário e preservar a defesa, ainda dependente de confirmação própria.\nEstado: parcial_utilizavel; front-defesa suportada; cobertura parcial; fase de defesa; prazo pendente e não verificado.\nConfirmação humana: somente papel defensivo atual.\nLacunas: prazo_nao_verificado e confirmacao_do_objetivo.\nAtualização: intake ajustado somente quanto à lente representada, mantendo IDs, fontes, cobertura e demais limites. O pacote registra o registro-sintetico-lente-atual como fonte controladora do conflito de lente. A análise documental não foi atualizada.\nPróximas rotas: analise-documental apenas se for necessário reexaminar efeitos da correção; analise-juridica-civel depois da confirmação do objetivo e da verificação temporal.\n\nNenhuma ação externa foi executada.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a04",
+      "invoked_skills": [
+        "analise-documental"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "skills/analise-documental/SKILL.md",
+        "skills/analise-documental/references/contrato-saida.md",
+        "skills/analise-documental/references/avaliacao-probatoria.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Conclusão — confiança alta quanto ao delta registrado e moderada quanto ao conteúdo documental não reproduzido: a decisão superveniente substitui a matriz anterior somente quanto ao efeito processual. Isso não escolhe estratégia, recurso ou peça.\n\nCaso: A04 — Fontes supervenientes e varias frentes civis; lentes preservadas: front-replica como autor, front-pericia como autor e front-recurso como agravante_potencial.\nTipo de artefato: atualização de análise documental.\nFontes consumidas por meio do pacote adaptado: fonte-sintetica-06, evento 18; fonte-sintetica-07, decisao 2; fonte-sintetica-08, decisao superveniente e dispositivo; matriz-sintetica-anterior, estado da tutela. Os originais não foram disponibilizados para releitura.\nEscopo: atualização localizada nas três frentes, todas com cobertura parcial. Não foram examinados o vídeo, os anexos integrais nem fontes externas.\nAchados: F01, confirmado dentro do alcance registrado — o dispositivo da fonte-sintetica-08 alterou o efeito processual antes registrado na matriz anterior, na front-replica. C01 — o estado anterior da tutela permanece visível como versão contraditada, mas deixa de controlar esse ponto. A existência de três frentes distintas é preservada como estrutura do pacote e não seleciona nenhuma delas para atuação.\nEstado: análise por achado. A frente de réplica permanece suportado_condicionado; a frente pericial permanece suportado_condicionado e dependente da inspeção do vídeo; a frente recursal permanece indeterminada, com cabimento e prazo pendentes.\nMatriz fato-prova: efeito processual superveniente — suporte direto registrado na fonte-sintetica-08, dispositivo; versão contrária na matriz-sintetica-anterior, estado da tutela; lacuna: originais não disponíveis. Necessidade de prova técnica — vídeo não examinado, portanto não examinável nesta rodada.\nContradições: para C01, delta substitui; status resolvido; fonte controladora fonte-sintetica-08; nenhuma reivindicação permanece bloqueada por esse conflito específico. O F02 do handoff associa uma proposição sobre separação de frentes ao localizador estado da tutela, enquanto C01 descreve conflito sobre efeito processual. Essa inconsistência interna não foi promovida a novo achado.\nConfirmação humana: somente o efeito processual da decisão superveniente.\nLacunas: prova_visual_nao_examinada, prazo_recursal_nao_verificado, anexos integrais e inconsistência interna do F02.\nAtualização: substitui apenas o ponto anterior sobre o efeito processual; preserva os demais elementos independentes e todas as frentes.\nPróximas rotas: a análise documental pode encerrar esta tarefa. Eventual análise jurídica deve ocorrer separadamente, depois das verificações pertinentes.\n\nNenhuma estratégia foi escolhida, nenhuma peça foi redigida e nenhuma ação externa foi executada.",
+      "execution_error": null
+    },
+    {
+      "id": "adaptacao-a05",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "PACOTE_ADAPTADO.json",
+        "skills/redacao-contencioso/SKILL.md",
+        "skills/redacao-contencioso/references/indice-modulos.md",
+        "references/disciplina.md",
+        "references/handoff.md"
+      ],
+      "final_text": "Briefing permitido — confiança alta quanto à frente atual e moderada quanto ao conteúdo exato do pedido.\n\nAto e destinatário: manifestação intermediária simples ao juízo do processo, em cumprimento da intimacao 1 da fonte-sintetica-10; identificação do juízo e do processo permanece [verificar].\nMódulo-base e modo: manifestacao-generica; sem modo especial e sem complemento. Não será usada nova petição inicial nem o módulo de exibição, porque a ação-base está latente e marcada como sem_ato.\nObjetivo processual: requerer exclusivamente a providência de citação indicada no pedido operacional da fonte-sintetica-10, sem ampliar o objeto.\nParte e posição representada: autor, na front-manifestacao.\nFatos e provas: a ação-base de exibição permanece ativa, mas não exige nova petição inicial; o evento controlador atual é a intimacao 1 e demanda providência simples relacionada à citação. Fontes: fonte-sintetica-09, despacho 1; fonte-sintetica-10, intimacao 1 e pedido operacional.\nNormas e teses: nenhuma norma ou tese foi confirmada no pacote; não serão inventadas. Se a manifestação puder ser estritamente operacional, esse campo permanecerá não aplicável.\nPedido: adoção da providência de citação exatamente como constar do pedido operacional da fonte-sintetica-10, com o conteúdo literal ainda [verificar]. Nenhum pedido adicional.\nProfundidade e tom: peça breve, objetiva e técnica, proporcional a uma providência simples.\nPrazo e cabimento: cabimento operacional indicado pelo evento controlador; prazo pendente e não verificado. Nenhuma data fatal será afirmada.\nLacunas marcadas: identificação do processo e do juízo, teor exato da providência de citação, data de ciência e prazo aplicável. A dependência confirmacao_do_pedido permanece aberta.\nLimite: este briefing não autoriza protocolo, envio ou qualquer outra ação externa.\n\nO briefing acima está correto e você autoriza iniciar agora a redação da manifestação genérica relacionada à citação, mantendo [verificar] nos pontos não disponibilizados?",
+      "execution_error": null
+    }
+  ]
+}
