@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.4.0] - 2026-08-30
+
+### Added
+
+- Adiciona módulo complementar para redação de tutela provisória de urgência e da evidência.
+
 ## [0.3.0] - 2026-08-28
 
 ### Added
