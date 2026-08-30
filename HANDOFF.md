@@ -5,30 +5,33 @@ redação contenciosa, a elaboração do mapa visual, a validação estrutural
 anonimizada contra situações documentadas em casos reais e a adoção da
 arquitetura de adaptação, seus consumidores públicos locais e a avaliação
 comportamental A01–A14 com subagentes Codex, além da correção dirigida dos
-gates de briefing do agravo interno e da interdição.
+gates de briefing do agravo interno e da interdição e da publicação da skill
+autônoma de deliberação na `v0.6.0`.
 
 ## Estado do produto
 
-A versão publicada é `v0.5.1`. O PR #27 foi integrado a `main` pelo merge commit
+A versão publicada é `v0.6.0`. O PR #27 foi integrado a `main` pelo merge commit
 `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
 commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
-pelo merge commit `da41883`. O workflow `Software release` criou o commit
-`f2e99ba`, a tag e o GitHub Release `v0.5.1`.
+pelo merge commit `da41883`; e o PR #26 foi integrado pelo merge commit
+`c47555a`. O workflow `Software release` criou o commit `e070f83`, a tag e o
+GitHub Release `v0.6.0`.
 
-A skill autônoma de deliberação continua no draft PR #26 e não foi incorporada.
-Sua branch incorporou a baseline `v0.5.1` sem reescrever a cadeia auditada. A
-rodada dirigida aprovou sete cenários e 31/31 invariantes. A regressão integral
+A skill autônoma de deliberação foi incorporada sobre a baseline `v0.5.1` sem
+reescrever a cadeia auditada. A rodada dirigida aprovou sete cenários e 31/31
+invariantes. A regressão integral
 congelada registrou 22 PASS / 8 FAIL, 30/30 primeiras rotas e nenhum gate
 mecânico violado; a triagem encontrou cinco fixtures inelegíveis, um cenário
 condicionado ao Silo e dois bugs de baseline. Esses dois bugs foram corrigidos
 na `v0.5.1` e reexecutados em 2/2 cenários, elevando a leitura combinada dos
 cenários elegíveis a 24/24, sem constituir uma nova passagem única dos 30.
 
-O trabalho posterior à tutela está integrado e publicado. A release contém os
-sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
-instalação e uso humano continuam sendo recibos distintos.
+O trabalho posterior à tutela e a skill deliberativa estão integrados e
+publicados. A release contém os oito bundles de skills e o manifesto produzidos
+pelo workflow; publicação, instalação e uso humano continuam sendo recibos
+distintos.
 
-## O que este branch entrega
+## O que a etapa entrega
 
 - 27 módulos novos em `redacao-contencioso`; o catálogo passa de 10 para 37
   módulos.
@@ -52,8 +55,8 @@ instalação e uso humano continuam sendo recibos distintos.
   foram corrigidos e reexecutados com subagentes Codex: 2/2 cenários, 6/6
   invariantes e zero leitura prematura de módulo. As quatro fixtures restantes
   continuam inelegíveis para medir comportamento.
-- `references/mapa-visual-skills-modulos.md` representa as nove skills
-  publicadas e a candidata deliberativa do PR #26, seus handoffs e gates, os
+- `references/mapa-visual-skills-modulos.md` representa as dez skills
+  publicadas, seus handoffs e gates, os
   modos não contenciosos e os 37 módulos contenciosos. O mapa é estritamente
   descritivo e não simula workflows prováveis.
 - `references/validacao-casos-reais.md` confronta os contratos públicos com 14
@@ -159,6 +162,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `632fa21` — release `v0.5.0` e consumo dos sete fragmentos.
 - `da41883` — merge do PR #30, com os gates de briefing corrigidos;
 - `f2e99ba` — release `v0.5.1` e consumo do fragmento `patch`.
+- `c47555a` — merge do PR #26, com a skill deliberativa e seus recibos;
+- `e070f83` — release `v0.6.0` e consumo do fragmento `minor`.
 
 ## Verificação
 
@@ -170,9 +175,11 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test`: PASS — 62 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
+- release: tag `v0.6.0` e `origin/main` em `e070f83`; oito bundles conferidos
+  contra o manifesto, sem asset ausente, extra ou SHA-256 divergente.
 
-Os comandos foram repetidos antes do landing do PR #30. O workflow de release
-passou e publicou sete ZIPs e `manifest.json` a partir de `f2e99ba`.
+Os comandos foram repetidos antes do landing do PR #26. O workflow de release
+passou e publicou oito ZIPs e `manifest.json` a partir de `e070f83`.
 
 ## Limites e recibos negativos
 
@@ -187,9 +194,9 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `f2e99ba`.
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- Os PRs #27, #28 e #30 foram integrados; seus workflows publicaram `v0.4.0`,
-  `v0.5.0` e `v0.5.1`, respectivamente.
-- A publicação `v0.5.1` contém sete bundles ZIP e um manifesto. Não houve
+- Os PRs #27, #28, #30 e #26 foram integrados; seus workflows publicaram
+  `v0.4.0`, `v0.5.0`, `v0.5.1` e `v0.6.0`, respectivamente.
+- A publicação `v0.6.0` contém oito bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
 - A nova medição do PR #26 usou apenas subagentes Codex e cenários sintéticos.
   Ela comprova o comportamento dirigido, mas não dogfood, uso humano ou
@@ -202,15 +209,15 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `f2e99ba`.
 
 ## Próxima ação
 
-Repetir os gates estruturais após a sincronização, publicar a branch do PR #26
-e decidir seu landing separadamente. Comparação externa, Fases 2 e 4,
-instalação, dogfood e anúncio continuam fora do escopo concluído.
+Aguardar novas instruções. Comparação externa, Fases 2 e 4, instalação, dogfood
+e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 
 ```bash
-git switch codex/SEN-2408-deliberacao-juridica
 git fetch origin main
+git switch main
+git pull --ff-only origin main
 git status --short --branch
 git log --oneline --decorate -6
 make validate

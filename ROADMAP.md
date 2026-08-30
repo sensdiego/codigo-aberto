@@ -10,16 +10,16 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-30, v0.5.1)
+## Estado atual (2026-08-30, v0.6.0)
 
-- Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.5.1`, publicada em 2026-08-30
-  com os controles pré-briefing de agravo interno e interdição.
+- Dez skills publicadas, com disciplina compartilhada, contrato de handoff e
+  recorte versionado do CPC. Versão corrente `v0.6.0`, publicada em 2026-08-30
+  com a porta autônoma de deliberação jurídica.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
-  GitHub Release e publicação idempotente de assets (nove GitHub Releases
+  GitHub Release e publicação idempotente de assets (dez GitHub Releases
   publicadas, todas finais).
-- Sete bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.5.1](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.5.1).
+- Oito bundles ChatGPT e o manifesto de checksums publicados na
+  [release v0.6.0](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.6.0).
   O último recibo de atualização do acervo do projeto de smoke no ChatGPT é da
   v0.2.4, em 2026-08-24; release publicada não prova atualização do projeto.
 - Smoke completo do Claude Code aprovado em 2026-08-24
@@ -68,8 +68,8 @@ Estado dos itens:
   encontrou zero defeitos específicos da PR. Os dois defeitos reais da baseline
   foram corrigidos e reexecutados 2/2 na v0.5.1: a leitura combinada fica em
   24/24 cenários elegíveis, sem fingir uma nova passagem única dos 30. Restam
-  cinco fixtures inelegíveis e uma limitação de ambiente sem Silo. O PR ainda
-  não foi integrado nem publicado.
+  cinco fixtures inelegíveis e uma limitação de ambiente sem Silo. O PR foi
+  integrado e publicado na `v0.6.0`.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
   harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
   leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
@@ -284,8 +284,8 @@ briefing ou contexto sejam tratados como autorização implícita.
       sincronizado com a `v0.5.1` e não tem mais conflitos Git. A medição
       dirigida R3 passou 7/7 e 31/31 invariantes; a regressão integral executou
       os 30 cenários, exigiu a primeira rota correta e não encontrou falha
-      específica da frente deliberativa. Merge e publicação permanecem etapas
-      separadas.
+      específica da frente deliberativa. Merge e publicação foram concluídos
+      na `v0.6.0`; dogfood permanece separado.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.
