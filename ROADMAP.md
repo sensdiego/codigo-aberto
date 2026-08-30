@@ -10,16 +10,16 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-30, v0.5.0)
+## Estado atual (2026-08-30, v0.5.1)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.5.0`, publicada em 2026-08-30
-  com a cobertura contenciosa ampliada e o contrato de adaptação de casos.
+  recorte versionado do CPC. Versão corrente `v0.5.1`, publicada em 2026-08-30
+  com os controles pré-briefing de agravo interno e interdição.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
-  GitHub Release e publicação idempotente de assets (quatro releases publicadas
-  pelo workflow, todas verdes).
+  GitHub Release e publicação idempotente de assets (nove GitHub Releases
+  publicadas, todas finais).
 - Sete bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.5.0](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.5.0).
+  [release v0.5.1](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.5.1).
   O último recibo de atualização do acervo do projeto de smoke no ChatGPT é da
   v0.2.4, em 2026-08-24; release publicada não prova atualização do projeto.
 - Smoke completo do Claude Code aprovado em 2026-08-24
@@ -62,10 +62,12 @@ Estado dos itens:
   de roteamento; a frente 3 implementou e validou a skill autônoma sobre o
   mesmo protocolo e handoff.
 - A cláusula de promoção da camada deliberativa disparou após duas rodadas. A
-  skill autônoma foi implementada no PR #26 e sincronizada com a `v0.5.0`. Os
+  skill autônoma foi implementada no PR #26 e sincronizada com a `v0.5.1`. Os
   conflitos Git foram resolvidos e a medição dirigida R3 passou 7/7, com 31/31
   invariantes. A regressão integral registrou 22 PASS / 8 FAIL; a triagem
-  encontrou zero defeitos específicos da PR, dois defeitos reais preexistentes,
+  encontrou zero defeitos específicos da PR. Os dois defeitos reais da baseline
+  foram corrigidos e reexecutados 2/2 na v0.5.1: a leitura combinada fica em
+  24/24 cenários elegíveis, sem fingir uma nova passagem única dos 30. Restam
   cinco fixtures inelegíveis e uma limitação de ambiente sem Silo. O PR ainda
   não foi integrado nem publicado.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
@@ -279,7 +281,7 @@ briefing ou contexto sejam tratados como autorização implícita.
 - [x] Frente 3 — skill autônoma `deliberacao-juridica` (SEN-2408): porta
       própria sobre `references/deliberacao.md`, handoff `decisão`, oitavo
       bundle e roteamento das fixtures `deliberacao-*`. O PR #26 foi
-      sincronizado com a `v0.5.0` e não tem mais conflitos Git. A medição
+      sincronizado com a `v0.5.1` e não tem mais conflitos Git. A medição
       dirigida R3 passou 7/7 e 31/31 invariantes; a regressão integral executou
       os 30 cenários, exigiu a primeira rota correta e não encontrou falha
       específica da frente deliberativa. Merge e publicação permanecem etapas
@@ -317,14 +319,12 @@ briefing ou contexto sejam tratados como autorização implícita.
       integração e eventual divisão em PRs ficam para instrução posterior.
 - [ ] Dogfood dos módulos ampliados: adiado expressamente pelo owner; fixtures
       e checks estruturais foram adicionados sem chamadas pagas a modelo.
-- [ ] Corrigir o contrato pré-redação do agravo interno: o briefing deve
-      explicitar efeito pretendido e risco de multa, sem automatismos, antes da
-      confirmação e sem antecipar o template do módulo.
-- [ ] Corrigir o contrato pré-redação da interdição: o briefing deve mapear
-      interessados, representação e intervenções institucionais obrigatórias,
-      incluindo a verificação da atuação do Ministério Público.
-- [ ] Tornar elegíveis as cinco fixtures que hoje exigem handoffs, documentos
-      e localizadores que não fornecem; manter o cenário de pesquisa Silo
+- [x] Expor no índice público os controles pré-briefing do agravo interno e da
+      interdição, sem liberar leitura prematura dos módulos. Rodada dirigida:
+      2/2 cenários, 6/6 invariantes e zero violação do gate com subagentes
+      Codex.
+- [ ] Tornar elegíveis as cinco fixtures que exigem handoffs, documentos e
+      localizadores que não fornecem; manter o cenário de pesquisa Silo
       condicionado a job com conector autenticado.
 
 ### Adaptação segura de casos reais — RFC aceita

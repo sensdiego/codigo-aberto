@@ -1,0 +1,96 @@
+{
+  "schema_version": "codex-subagent-behavior-judge-v1",
+  "source_commit": "e48762ca5fd1d1de0e7153287d1417723a26ea91",
+  "source_input_commit": "47ecb49157945d371f042c88837db82b49d799ba",
+  "execution_commit": "fc01c9baf8b6756408a915367e2408b1271e59e5",
+  "judge_task": "/root/judge_r2_a03_regression",
+  "judged_group": "briefing-gates-r1",
+  "external_model_calls": false,
+  "input_hashes": {
+    "executor.json": "a4c8d032e4df6573865932cd6b89d368775ac5600306c592ffa33a7cda64ac82",
+    "input-manifest.json": "11588bb262f4e740d5af68f7d3e48f7fc73a009141b078b24bd217dc2dfdcec4",
+    "tests/fixtures/workflows.json": "253d2856c4af6e9f8022998dd7938749e45645c29a877092570fccf0f4538155",
+    "skills/redacao-contencioso/SKILL.md": "9829c264fb96893fdb3a08e6854b21749b70eded8df84c026572e7adb9d69e8b",
+    "skills/redacao-contencioso/references/indice-modulos.md": "1fef7daa4d37cf5fbe2300a9d9594309f24edb75ff250d9333407c93349474ff"
+  },
+  "scenarios": [
+    {
+      "id": "redacao-agravo-interno",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona agravo-interno e não agravo de instrumento.",
+          "atendido": true,
+          "evidencia": "Identifica decisão individual do relator e seleciona expressamente o módulo-base agravo-interno no modo de interposição, sem mencionar agravo de instrumento como rota."
+        },
+        {
+          "n": 2,
+          "invariant": "Exige impugnação específica de ambos os fundamentos e consulta o regimento confirmado.",
+          "atendido": true,
+          "evidencia": "Exige enfrentar separadamente os dois fundamentos autônomos, com teor e localizadores próprios, e determina ligar o regimento anexado aos pontos usados, com tribunal, artigo e localizador."
+        },
+        {
+          "n": 3,
+          "invariant": "Trata efeito e risco de multa sem automatismos.",
+          "atendido": true,
+          "evidencia": "Declara que não se presume efeito suspensivo e condiciona qualquer efeito a fundamento e pressupostos concretos; trata a multa como risco condicionado, nunca consequência automática."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "redacao-jurisdicao-voluntaria-interdicao",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "first_skill": "redacao-contencioso",
+        "ok": true,
+        "evidence": "first_skill é redacao-contencioso, igual à skill esperada."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona jurisdicao-voluntaria no modo interdicao.",
+          "atendido": true,
+          "evidencia": "Seleciona expressamente jurisdicao-voluntaria como módulo-base e interdição/curatela como modo obrigatório."
+        },
+        {
+          "n": 2,
+          "invariant": "Delimita atos e apoio necessários sem usar fórmula de incapacidade total.",
+          "atendido": true,
+          "evidencia": "Restringe a curatela aos atos patrimoniais demonstrados, exige lista taxativa e capacidades preservadas e afirma que não será declarada incapacidade total."
+        },
+        {
+          "n": 3,
+          "invariant": "Mapeia interessados, representação, prova e intervenção obrigatória antes da redação.",
+          "atendido": true,
+          "evidencia": "Antes de qualquer minuta, individualiza interessados e papéis, exige representação e eventual curador especial, vincula prova clínica e funcional a localizadores e manda confirmar Ministério Público e demais intervenções obrigatórias."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "counts": {
+    "PASS": 2,
+    "FAIL": 0,
+    "JUDGE_ERROR": 0,
+    "total": 2
+  }
+}

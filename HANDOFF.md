@@ -4,23 +4,25 @@ Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
 redação contenciosa, a elaboração do mapa visual, a validação estrutural
 anonimizada contra situações documentadas em casos reais e a adoção da
 arquitetura de adaptação, seus consumidores públicos locais e a avaliação
-comportamental A01–A14 com subagentes Codex.
+comportamental A01–A14 com subagentes Codex, além da correção dirigida dos
+gates de briefing do agravo interno e da interdição.
 
 ## Estado do produto
 
-A versão publicada é `v0.5.0`. O PR #27 foi integrado a `main` pelo merge commit
+A versão publicada é `v0.5.1`. O PR #27 foi integrado a `main` pelo merge commit
 `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
-commit `7b6ecf0`, preservando toda a cadeia de avaliação. O workflow
-`Software release` criou o commit `632fa21`, a tag e o GitHub Release `v0.5.0`.
+commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
+pelo merge commit `da41883`. O workflow `Software release` criou o commit
+`f2e99ba`, a tag e o GitHub Release `v0.5.1`.
+
 A skill autônoma de deliberação continua no draft PR #26 e não foi incorporada.
-Sua branch foi sincronizada com a `v0.5.0` por merge commit, sem reescrever o
-commit experimental, e os conflitos Git foram resolvidos. A nova medição com
-subagentes Codex aprovou os sete cenários dirigidos e seus 31 invariantes. A
-regressão integral executou os 30 cenários: 22 PASS / 8 FAIL depois da correção
-de dois invariantes ambíguos, com 30/30 primeiras rotas corretas e nenhum gate
-mecânico violado. A triagem não encontrou defeito específico da PR #26, mas
-identificou dois defeitos reais preexistentes na baseline, cinco fixtures
-inelegíveis e um cenário condicionado ao conector Silo.
+Sua branch incorporou a baseline `v0.5.1` sem reescrever a cadeia auditada. A
+rodada dirigida aprovou sete cenários e 31/31 invariantes. A regressão integral
+congelada registrou 22 PASS / 8 FAIL, 30/30 primeiras rotas e nenhum gate
+mecânico violado; a triagem encontrou cinco fixtures inelegíveis, um cenário
+condicionado ao Silo e dois bugs de baseline. Esses dois bugs foram corrigidos
+na `v0.5.1` e reexecutados em 2/2 cenários, elevando a leitura combinada dos
+cenários elegíveis a 24/24, sem constituir uma nova passagem única dos 30.
 
 O trabalho posterior à tutela está integrado e publicado. A release contém os
 sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
@@ -44,11 +46,12 @@ instalação e uso humano continuam sendo recibos distintos.
   e protesto marítimo.
 - `indice-modulos.md` organiza o roteamento por fase e preserva um único
   módulo-base; tutela continua sendo o único complemento cumulativo.
-- Dez fixtures acrescentam cobertura para as famílias novas. A primeira
-  execução encontrou quatro PASS e seis FAIL; a triagem classificou quatro
-  FAILs como conflito de fixture e dois como defeitos reais da baseline, em
-  agravo interno e interdição. Essa avaliação sintética não foi transformada
-  retroativamente em critério da release `v0.5.0`.
+- Dez fixtures acrescentam cobertura para as famílias novas e o gate de
+  confirmação. A primeira execução encontrou quatro PASS e seis FAIL: quatro
+  conflitos de fixture e dois bugs de baseline. Agravo interno e interdição
+  foram corrigidos e reexecutados com subagentes Codex: 2/2 cenários, 6/6
+  invariantes e zero leitura prematura de módulo. As quatro fixtures restantes
+  continuam inelegíveis para medir comportamento.
 - `references/mapa-visual-skills-modulos.md` representa as nove skills
   publicadas e a candidata deliberativa do PR #26, seus handoffs e gates, os
   modos não contenciosos e os 37 módulos contenciosos. O mapa é estritamente
@@ -154,6 +157,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
   tutela, sem reescrita da cadeia.
 - `7b6ecf0` — merge do PR #28, sem rebase ou squash;
 - `632fa21` — release `v0.5.0` e consumo dos sete fragmentos.
+- `da41883` — merge do PR #30, com os gates de briefing corrigidos;
+- `f2e99ba` — release `v0.5.1` e consumo do fragmento `patch`.
 
 ## Verificação
 
@@ -162,12 +167,12 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 61 testes.
+- `make test`: PASS — 62 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
-Os comandos foram repetidos após o retarget para `main`. O workflow de release
-passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
+Os comandos foram repetidos antes do landing do PR #30. O workflow de release
+passou e publicou sete ZIPs e `manifest.json` a partir de `f2e99ba`.
 
 ## Limites e recibos negativos
 
@@ -182,22 +187,23 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- Os PRs #27 e #28 foram integrados; seus workflows publicaram `v0.4.0` e
-  `v0.5.0`, respectivamente.
-- A publicação `v0.5.0` contém sete bundles ZIP e um manifesto. Não houve
+- Os PRs #27, #28 e #30 foram integrados; seus workflows publicaram `v0.4.0`,
+  `v0.5.0` e `v0.5.1`, respectivamente.
+- A publicação `v0.5.1` contém sete bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
 - A nova medição do PR #26 usou apenas subagentes Codex e cenários sintéticos.
   Ela comprova o comportamento dirigido, mas não dogfood, uso humano ou
   aprendizagem em caso real.
-- A regressão integral da baseline não está verde: a leitura elegível é 22/24,
-  com dois defeitos reais preexistentes fora do escopo da PR #26.
+- A rodada dirigida dos dois gates usou subagentes Codex e cenários sintéticos;
+  não houve modelo externo, dogfood, uso humano ou custo medido em dólares.
+- A leitura combinada de 24/24 cenários elegíveis agrega duas rodadas; cinco
+  fixtures continuam materialmente inelegíveis e um cenário depende de um job
+  com conector Silo autenticado.
 
 ## Próxima ação
 
-Os recibos e a correção da fixture estão publicados na branch do PR #26 e o CI
-passou. A próxima decisão é o landing separado da skill deliberativa. Os dois
-defeitos de baseline e as cinco fixtures inelegíveis devem seguir em frente
-própria; não são regressões da PR #26. Comparação externa da RFC, Fases 2 e 4,
+Repetir os gates estruturais após a sincronização, publicar a branch do PR #26
+e decidir seu landing separadamente. Comparação externa, Fases 2 e 4,
 instalação, dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
