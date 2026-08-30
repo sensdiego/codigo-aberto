@@ -114,6 +114,26 @@ class OsJunkToleranceTest(unittest.TestCase):
         linked = set(re.findall(r"\(modulos/([a-z0-9-]+\.md)\)", index))
         self.assertEqual(expected, linked)
 
+    def test_redaction_index_exposes_prebriefing_controls(self) -> None:
+        index = (
+            self.tree
+            / "skills"
+            / "redacao-contencioso"
+            / "references"
+            / "indice-modulos.md"
+        ).read_text(encoding="utf-8")
+        normalized = " ".join(index.split())
+
+        for marker in (
+            "Controles de briefing antes da confirmação",
+            "Agravo interno:",
+            "risco de multa",
+            "Jurisdição voluntária — interdição:",
+            "intervenções institucionais obrigatórias",
+            "Ministério Público",
+        ):
+            self.assertIn(marker, normalized)
+
 
 class WorkflowFixtureValidationTest(unittest.TestCase):
     def workflow_errors(self, changes: dict[str, object]) -> list[str]:
