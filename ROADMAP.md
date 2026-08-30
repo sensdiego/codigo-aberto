@@ -310,6 +310,10 @@ briefing ou contexto sejam tratados como autorização implícita.
       integração e eventual divisão em PRs ficam para instrução posterior.
 - [ ] Dogfood dos módulos ampliados: adiado expressamente pelo owner; fixtures
       e checks estruturais foram adicionados sem chamadas pagas a modelo.
+- [x] Expor no índice público os controles pré-briefing do agravo interno e da
+      interdição, sem liberar leitura prematura dos módulos. Rodada dirigida:
+      2/2 cenários, 6/6 invariantes e zero violação do gate com subagentes
+      Codex.
 
 ### Adaptação segura de casos reais — RFC aceita
 

@@ -4,7 +4,8 @@ Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
 redação contenciosa, a elaboração do mapa visual, a validação estrutural
 anonimizada contra situações documentadas em casos reais e a adoção da
 arquitetura de adaptação, seus consumidores públicos locais e a avaliação
-comportamental A01–A14 com subagentes Codex.
+comportamental A01–A14 com subagentes Codex, além da correção dirigida dos
+gates de briefing do agravo interno e da interdição.
 
 ## Estado do produto
 
@@ -36,8 +37,11 @@ instalação e uso humano continuam sendo recibos distintos.
   e protesto marítimo.
 - `indice-modulos.md` organiza o roteamento por fase e preserva um único
   módulo-base; tutela continua sendo o único complemento cumulativo.
-- Dez fixtures não executadas acrescentam cobertura futura para as famílias
-  novas e o gate de confirmação.
+- Dez fixtures acrescentam cobertura para as famílias novas e o gate de
+  confirmação. Agravo interno e interdição foram executados com subagentes
+  Codex depois de expor no índice seus controles pré-briefing: 2/2 cenários,
+  6/6 invariantes e zero leitura prematura de módulo. Essa avaliação sintética
+  não equivale a dogfood; as oito restantes não foram reexecutadas nesta frente.
 - `references/mapa-visual-skills-modulos.md` representa as nove skills, seus
   handoffs e gates, os modos não contenciosos e os 37 módulos contenciosos. O
   mapa é estritamente descritivo e não simula workflows prováveis.
@@ -150,7 +154,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 60 testes.
+- `make test`: PASS — 61 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
@@ -174,11 +178,14 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
   `v0.5.0`, respectivamente.
 - A publicação `v0.5.0` contém sete bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
+- A rodada dirigida dos dois gates usou subagentes Codex e cenários sintéticos;
+  não houve modelo externo, dogfood, uso humano ou custo medido em dólares.
 
 ## Próxima ação
 
-Aguardar novas instruções. Comparação externa, Fases 2 e 4, instalação,
-dogfood e anúncio continuam fora do escopo concluído.
+Publicar a correção e seus recibos em PR próprio, sem misturá-la à PR #26.
+Comparação externa, Fases 2 e 4, instalação, dogfood e anúncio continuam fora
+do escopo concluído.
 
 ## Comandos de retomada
 
