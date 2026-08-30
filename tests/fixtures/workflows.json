@@ -318,7 +318,8 @@
         "Seleciona agravo-interno e não agravo de instrumento.",
         "Exige impugnação específica de ambos os fundamentos e consulta o regimento confirmado.",
         "Trata efeito e risco de multa sem automatismos."
-      ]
+      ],
+      "authorizing_turn": null
     },
     {
       "id": "redacao-acao-monitoria",
@@ -358,7 +359,8 @@
         "Seleciona jurisdicao-voluntaria no modo interdicao.",
         "Delimita atos e apoio necessários sem usar fórmula de incapacidade total.",
         "Mapeia interessados, representação, prova e intervenção obrigatória antes da redação."
-      ]
+      ],
+      "authorizing_turn": null
     }
   ]
 }

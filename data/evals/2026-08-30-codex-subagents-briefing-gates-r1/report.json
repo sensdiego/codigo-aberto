@@ -1,0 +1,36 @@
+{
+  "schema_version": "codex-subagent-eval-report-v1",
+  "source_commit": "e48762ca5fd1d1de0e7153287d1417723a26ea91",
+  "scope": [
+    "redacao-agravo-interno",
+    "redacao-jurisdicao-voluntaria-interdicao"
+  ],
+  "execution": {
+    "mode": "blind Codex subagent executor and independent judge",
+    "external_model_calls": false,
+    "measured_cost_usd": null
+  },
+  "summary": {
+    "PASS": 2,
+    "FAIL": 0,
+    "JUDGE_ERROR": 0,
+    "scenarios": 2,
+    "invariants_attended": 6,
+    "invariants_total": 6,
+    "first_route_correct": 2,
+    "redaction_gate_failures": 0,
+    "premature_module_reads": 0
+  },
+  "artifacts": {
+    "fixture_sha256": "253d2856c4af6e9f8022998dd7938749e45645c29a877092570fccf0f4538155",
+    "index_sha256": "1fef7daa4d37cf5fbe2300a9d9594309f24edb75ff250d9333407c93349474ff",
+    "input_manifest_sha256": "11588bb262f4e740d5af68f7d3e48f7fc73a009141b078b24bd217dc2dfdcec4",
+    "executor_sha256": "a4c8d032e4df6573865932cd6b89d368775ac5600306c592ffa33a7cda64ac82",
+    "judge_sha256": "b8e2ed74430e10d3a130a7dfbc911e7f34febe8f41088dc16745186651b19046"
+  },
+  "limitations": [
+    "Cenários sintéticos; não houve dogfood nem uso humano.",
+    "A franquia Codex foi consumida, mas não há recibo de custo em dólares.",
+    "A rodada mede somente os dois bugs confirmados; não reclassifica as demais fixtures."
+  ]
+}

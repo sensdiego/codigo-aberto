@@ -73,3 +73,15 @@ tutela é o único complemento cumulativo previsto.
 Se mais de um ato-base parecer possível, volte ao mapa jurídico e confirme
 cabimento, objetivo e prazo antes de escolher. Uma providência simples continua
 simples; não use módulo específico para inflar ciência, juntada ou concordância.
+
+## Controles de briefing antes da confirmação
+
+Verifique estes controles no briefing sem ler o módulo específico:
+
+- **Agravo interno:** fundamentos autônomos, regimento aplicável, efeito
+  pretendido e seus pressupostos e risco de multa, sem presumir efeito
+  suspensivo nem aplicação automática da sanção.
+- **Jurisdição voluntária — interdição:** atos abrangidos e capacidades
+  preservadas, interessados, representação, prova clínica e funcional e
+  intervenções institucionais obrigatórias, incluindo a atuação do Ministério
+  Público quando exigida pela hipótese.
