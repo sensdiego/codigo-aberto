@@ -2,6 +2,10 @@
 
 Data: 2026-08-30
 
+> **INVALIDADA.** A revisão do commit `10d7337` demonstrou que o materializador
+> associava fatos, achados e frentes por posição. Os vereditos abaixo são
+> preservados como histórico, mas não provam os cenários pretendidos.
+
 ## Resultado
 
 - Primeira passagem: **13 PASS / 1 FAIL**.
@@ -16,11 +20,12 @@ Data: 2026-08-30
 
 ## Método
 
-Três subagentes executores receberam somente prompt e pacote materializado, sem
-`expected_skill`, invariantes ou resultados esperados. As 14 respostas foram
-congeladas e identificadas por SHA-256 antes de três outros subagentes julgarem
-roteamento, gate de redação e cada invariável. A regressão A01 usou executor e
-juiz novos, ambos sem acesso aos resultados anteriores.
+Segundo o protocolo operacional da sessão, três subagentes executores receberam
+somente prompt e pacote materializado, sem `expected_skill`, invariantes ou
+resultados esperados. As respostas foram gravadas antes do julgamento por
+agentes distintos. Os recibos finais não registram hashes das entradas antes do
+despacho, identidade dos agentes ou ordem temporal; portanto, cegueira,
+congelamento e independência não são auditáveis por terceiro nesta rodada.
 
 Nenhum agente usou rede, Claude CLI ou API externa. A execução consumiu a
 franquia do Codex, mas o harness não forneceu recibo de tokens ou custo em

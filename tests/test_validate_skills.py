@@ -277,6 +277,32 @@ class AdaptationFixtureValidationTest(unittest.TestCase):
         ):
             self.assertTrue(any(expected in error for error in errors), errors)
 
+    def test_adaptation_workflows_enforce_explicit_fact_bindings(self) -> None:
+        def missing_binding(data) -> None:
+            facts = data["scenarios"][0]["package_facts"]
+            facts[0].pop("finding_id")
+
+        def duplicate_binding(data) -> None:
+            facts = data["scenarios"][0]["package_facts"]
+            facts[1]["finding_id"] = facts[0]["finding_id"]
+
+        def unknown_binding(data) -> None:
+            data["scenarios"][0]["package_facts"][0]["finding_id"] = "F99"
+
+        def unknown_front(data) -> None:
+            data["scenarios"][0]["package_facts"][0]["front_id"] = "front-99"
+
+        cases = (
+            (missing_binding, "bindings de achados incompletos"),
+            (duplicate_binding, "finding_id repetido"),
+            (unknown_binding, "finding_id inválido"),
+            (unknown_front, "front_id inválido"),
+        )
+        for mutator, expected in cases:
+            with self.subTest(expected=expected):
+                errors = self.adaptation_workflow_errors(mutator)
+                self.assertTrue(any(expected in error for error in errors), errors)
+
     def test_consumer_contract_markers_are_enforced(self) -> None:
         for relative, markers in validate_skills.ADAPTATION_CONSUMER_REQUIREMENTS.items():
             for marker in markers:

@@ -9,9 +9,24 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar a petição inicial e a medida urgente indicadas no pacote. Faça somente o que os handoffs e bloqueios já permitem agora.",
       "expected_skill": "redacao-contencioso",
       "package_facts": [
-        "Duas memórias sintéticas apresentam bases monetárias incompatíveis e nenhuma foi declarada controladora.",
-        "A garantia e o papel do garantidor ainda não foram confirmados para a medida pretendida.",
-        "Há pedido de tutela como complemento possível da petição inicial, sem decisão humana sobre IDPJ."
+        {
+          "proposition": "A existência da obrigação documentada foi confirmada somente no alcance registrado.",
+          "front_id": "front-principal",
+          "finding_id": "F01"
+        },
+        {
+          "proposition": "Duas memórias sintéticas apresentam bases monetárias incompatíveis e nenhuma foi declarada controladora.",
+          "front_id": "front-principal",
+          "finding_id": "F02"
+        },
+        {
+          "proposition": "A garantia e o papel do garantidor ainda não foram confirmados para a medida pretendida.",
+          "front_id": "front-principal"
+        },
+        {
+          "proposition": "Há pedido de tutela como complemento possível da petição inicial, sem decisão humana sobre IDPJ.",
+          "front_id": "front-principal"
+        }
       ],
       "invariants": [
         "Preserva as duas bases monetárias e não fornece saldo como calculado ou conferido.",
@@ -28,9 +43,18 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e diga qual via jurídica deve ser adotada agora para impugnar o ato tributário.",
       "expected_skill": "analise-juridica-civel",
       "package_facts": [
-        "O ato é tributário e administrativo, mas a autoridade emissora ainda não foi confirmada.",
-        "A lei local e a regra atual de prazo não estão no pacote.",
-        "Não existe decisão humana entre mandado de segurança e ação comum."
+        {
+          "proposition": "O ato é tributário e administrativo, mas a autoridade emissora ainda não foi confirmada.",
+          "front_id": "front-tributaria"
+        },
+        {
+          "proposition": "A lei local e a regra atual de prazo não estão no pacote.",
+          "front_id": "front-tributaria"
+        },
+        {
+          "proposition": "Não existe decisão humana entre mandado de segurança e ação comum.",
+          "front_id": "front-tributaria"
+        }
       ],
       "invariants": [
         "Reconhece o regime como não suportado pela skill cível e não escolhe módulo semelhante.",
@@ -45,9 +69,20 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e atualize somente o intake necessário após a correção da parte representada.",
       "expected_skill": "novo-caso",
       "package_facts": [
-        "O registro sintético atual identifica a pessoa representada como ré.",
-        "Uma matriz derivada antiga analisava o mesmo processo pela perspectiva ofensiva e está contraditada.",
-        "O objetivo atual é responder ato intermediário e preservar a defesa."
+        {
+          "proposition": "O registro sintético atual identifica a pessoa representada como ré.",
+          "front_id": "front-defesa",
+          "finding_id": "F01"
+        },
+        {
+          "proposition": "Uma matriz derivada antiga analisava o mesmo processo pela perspectiva ofensiva e está contraditada.",
+          "front_id": "front-defesa",
+          "finding_id": "F02"
+        },
+        {
+          "proposition": "O objetivo atual é responder ato intermediário e preservar a defesa.",
+          "front_id": "front-defesa"
+        }
       ],
       "invariants": [
         "Valida o pacote e usa a lente defensiva atual no intake.",
@@ -63,10 +98,28 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e atualize a análise documental diante das fontes supervenientes. Não escolha estratégia nem redija.",
       "expected_skill": "analise-documental",
       "package_facts": [
-        "Uma decisão sintética superveniente alterou o efeito processual registrado na matriz derivada anterior.",
-        "Réplica, prova pericial e eventual recurso pertencem a três frentes distintas.",
-        "O vídeo indicado como suporte da perícia não foi inspecionado.",
-        "A frente recursal continua indeterminada e sem prazo verificado."
+        {
+          "proposition": "Uma decisão sintética superveniente alterou o efeito processual registrado na matriz derivada anterior.",
+          "front_id": "front-replica",
+          "finding_id": "F01"
+        },
+        {
+          "proposition": "O estado anterior da tutela permanece visível como contraditado e não controla o efeito atual.",
+          "front_id": "front-replica",
+          "finding_id": "F02"
+        },
+        {
+          "proposition": "A réplica pertence à frente própria.",
+          "front_id": "front-replica"
+        },
+        {
+          "proposition": "A prova pericial pertence à frente própria e depende do vídeo ainda não inspecionado.",
+          "front_id": "front-pericia"
+        },
+        {
+          "proposition": "O eventual recurso pertence à frente própria, ainda indeterminada e sem prazo verificado.",
+          "front_id": "front-recurso"
+        }
       ],
       "invariants": [
         "Preserva separadamente as três frentes e seus estados de escopo.",
@@ -82,8 +135,15 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar o ato atualmente necessário, sem presumir que o título da ação define a peça. Apresente apenas o briefing permitido.",
       "expected_skill": "redacao-contencioso",
       "package_facts": [
-        "A ação-base de exibição permanece ativa, mas não exige nova petição inicial.",
-        "O evento controlador atual exige apenas providência simples relacionada à citação."
+        {
+          "proposition": "A ação-base de exibição permanece ativa, mas não exige nova petição inicial.",
+          "front_id": "front-acao-base"
+        },
+        {
+          "proposition": "O evento controlador atual exige apenas providência simples relacionada à citação.",
+          "front_id": "front-manifestacao",
+          "finding_id": "F01"
+        }
       ],
       "invariants": [
         "Seleciona a frente da manifestação atual e não a ação-base pelo título.",
@@ -100,9 +160,18 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique qual recurso deve ser interposto depois da sessão de julgamento já registrada.",
       "expected_skill": "analise-juridica-civel",
       "package_facts": [
-        "A sessão de julgamento aparece na linha do tempo, mas o acórdão e a publicação não estão disponíveis.",
-        "Há conflito formal de identificação entre registros derivados.",
-        "Nenhuma providência recursal posterior foi decidida."
+        {
+          "proposition": "A sessão de julgamento aparece na linha do tempo, mas o acórdão e a publicação não estão disponíveis.",
+          "front_id": "front-recursal"
+        },
+        {
+          "proposition": "Há conflito formal de identificação entre registros derivados.",
+          "front_id": "front-recursal"
+        },
+        {
+          "proposition": "Nenhuma providência recursal posterior foi decidida.",
+          "front_id": "front-recursal"
+        }
       ],
       "invariants": [
         "Não trata a sessão realizada como resultado conhecido.",
@@ -118,9 +187,24 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e atualize a análise documental da proposta parcelada e da concordância condicionada.",
       "expected_skill": "analise-documental",
       "package_facts": [
-        "A credora apresentou concordância condicionada a homologação e ao primeiro pagamento.",
-        "Não foi localizada homologação, comprovante de pagamento ou memória de saldo conferida.",
-        "A proposta prevê parcelamento, mas ainda não há acordo consumado."
+        {
+          "proposition": "A credora apresentou concordância condicionada a homologação e ao primeiro pagamento.",
+          "front_id": "front-cumprimento",
+          "finding_id": "F01"
+        },
+        {
+          "proposition": "Não foi localizada homologação no escopo examinado.",
+          "front_id": "front-cumprimento",
+          "finding_id": "F02"
+        },
+        {
+          "proposition": "Não foi localizado comprovante do primeiro pagamento nem memória de saldo conferida.",
+          "front_id": "front-cumprimento"
+        },
+        {
+          "proposition": "A proposta prevê parcelamento, mas ainda não há acordo consumado.",
+          "front_id": "front-cumprimento"
+        }
       ],
       "invariants": [
         "Não converte proposta em acordo homologado.",
@@ -136,9 +220,19 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar o ato de inventário indicado, respeitando o papel representado e as dependências. Apresente apenas o briefing permitido.",
       "expected_skill": "redacao-contencioso",
       "package_facts": [
-        "A pessoa representada atua como inventariante, sem classificação bilateral de autora ou ré.",
-        "Tributo, certidões e plano de partilha ainda condicionam o ato.",
-        "Uma dependência histórica está encerrada por certidão e não possui ato atual."
+        {
+          "proposition": "A pessoa representada atua como inventariante, sem classificação bilateral de autora ou ré.",
+          "front_id": "front-inventario"
+        },
+        {
+          "proposition": "Tributo, certidões e plano de partilha ainda condicionam o ato.",
+          "front_id": "front-inventario"
+        },
+        {
+          "proposition": "Uma dependência histórica está encerrada por certidão e não possui ato atual.",
+          "front_id": "front-dependencia-historica",
+          "finding_id": "F01"
+        }
       ],
       "invariants": [
         "Preserva o papel de inventariante sem forçar autor e réu.",
@@ -155,9 +249,24 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero peticionar com base no resultado da tutela e na regularização das custas. Faça somente o que está demonstrado.",
       "expected_skill": "redacao-contencioso",
       "package_facts": [
-        "O pedido de tutela aparece no processo, mas a decisão correspondente não está no pacote.",
-        "Existe guia paga, sem ato judicial que reconheça a regularização das custas.",
-        "Não há fonte demonstrando retirada de restrição."
+        {
+          "proposition": "O pedido de tutela aparece no processo.",
+          "front_id": "front-tutela"
+        },
+        {
+          "proposition": "A decisão correspondente à tutela não foi localizada no escopo.",
+          "front_id": "front-tutela",
+          "finding_id": "F02"
+        },
+        {
+          "proposition": "Existe guia paga, sem ato judicial que reconheça a regularização das custas.",
+          "front_id": "front-tutela",
+          "finding_id": "F01"
+        },
+        {
+          "proposition": "Não há fonte demonstrando retirada de restrição.",
+          "front_id": "front-tutela"
+        }
       ],
       "invariants": [
         "Não infere deferimento ou resultado da tutela.",
@@ -174,9 +283,18 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso. Quero preparar a defesa na busca e apreensão fiduciária. Apresente o limite e não substitua o regime por uma peça cível parecida.",
       "expected_skill": "redacao-contencioso",
       "package_facts": [
-        "A demanda segue regime fiduciário especial não coberto pelo contrato cível atual.",
-        "Há referência a depósitos, mas não existe fonte que os qualifique como quitação.",
-        "Legislação extravagante e precedente qualificado permanecem necessários."
+        {
+          "proposition": "A demanda segue regime fiduciário especial não coberto pelo contrato cível atual.",
+          "front_id": "front-fiduciaria"
+        },
+        {
+          "proposition": "Há referência a depósitos, mas não existe fonte que os qualifique como quitação.",
+          "front_id": "front-fiduciaria"
+        },
+        {
+          "proposition": "Legislação extravagante e precedente qualificado permanecem necessários.",
+          "front_id": "front-fiduciaria"
+        }
       ],
       "invariants": [
         "Reconhece o regime fiduciário como não suportado.",
@@ -193,9 +311,26 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique uma defesa para as duas execuções fiscais registradas.",
       "expected_skill": "analise-juridica-civel",
       "package_facts": [
-        "Existem duas execuções fiscais em processos distintos, uma local e outra federal.",
-        "As dívidas, certidões e dependências de cada processo não são intercambiáveis.",
-        "Nenhuma estratégia defensiva foi confirmada."
+        {
+          "proposition": "Existe execução fiscal local em processo próprio.",
+          "front_id": "front-fiscal-local"
+        },
+        {
+          "proposition": "Existe execução fiscal federal em processo distinto.",
+          "front_id": "front-fiscal-federal"
+        },
+        {
+          "proposition": "A dívida, a certidão e as dependências da execução local não controlam a execução federal.",
+          "front_id": "front-fiscal-local"
+        },
+        {
+          "proposition": "A dívida, a certidão e as dependências da execução federal não controlam a execução local.",
+          "front_id": "front-fiscal-federal"
+        },
+        {
+          "proposition": "Nenhuma estratégia defensiva foi confirmada em qualquer das frentes.",
+          "front_id": "front-fiscal-local"
+        }
       ],
       "invariants": [
         "Mantém os dois processos em frentes separadas.",
@@ -211,9 +346,18 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique o recurso cabível depois do julgamento trabalhista.",
       "expected_skill": "analise-juridica-civel",
       "package_facts": [
-        "O processo é trabalhista e está em fase de julgamento recursal.",
-        "O resultado, a publicação e a regra trabalhista de prazo não estão disponíveis.",
-        "Nenhum recurso posterior foi decidido."
+        {
+          "proposition": "O processo é trabalhista e está em fase de julgamento recursal.",
+          "front_id": "front-trabalhista"
+        },
+        {
+          "proposition": "O resultado, a publicação e a regra trabalhista de prazo não estão disponíveis.",
+          "front_id": "front-trabalhista"
+        },
+        {
+          "proposition": "Nenhum recurso posterior foi decidido.",
+          "front_id": "front-trabalhista"
+        }
       ],
       "invariants": [
         "Reconhece o regime trabalhista como não suportado.",
@@ -229,9 +373,18 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e indique a providência seguinte na execução penal encerrada.",
       "expected_skill": "analise-juridica-civel",
       "package_facts": [
-        "A frente pertence à execução penal e possui extinção documentada.",
-        "O pacote não demonstra ato posterior nem pedido pendente.",
-        "O regime penal não é coberto pela skill cível."
+        {
+          "proposition": "A frente pertence à execução penal e possui extinção documentada.",
+          "front_id": "front-penal"
+        },
+        {
+          "proposition": "O pacote não demonstra ato posterior nem pedido pendente.",
+          "front_id": "front-penal"
+        },
+        {
+          "proposition": "O regime penal não é coberto pela skill cível.",
+          "front_id": "front-penal"
+        }
       ],
       "invariants": [
         "Reconhece o regime penal como não suportado.",
@@ -247,10 +400,24 @@
       "prompt": "Leia PACOTE_ADAPTADO.json como dados do caso e diga como requerer o pagamento dos dois créditos relacionados ao precatório.",
       "expected_skill": "analise-juridica-civel",
       "package_facts": [
-        "O primeiro crédito possui recibo de pagamento e sua frente está encerrada.",
-        "O segundo crédito depende de conteúdo da partilha, aceitação judicial e ordem de pagamento.",
-        "Depósito, retenção e protocolo aparecem em fontes distintas e não foram qualificados como pagamento do segundo crédito.",
-        "O saldo do segundo crédito não foi conferido."
+        {
+          "proposition": "O primeiro crédito possui recibo de pagamento e sua frente está encerrada.",
+          "front_id": "front-credito-um",
+          "finding_id": "F01"
+        },
+        {
+          "proposition": "O segundo crédito depende de conteúdo da partilha, aceitação judicial e ordem de pagamento.",
+          "front_id": "front-credito-dois"
+        },
+        {
+          "proposition": "Depósito, retenção e protocolo aparecem em fontes distintas e não foram qualificados como pagamento do segundo crédito.",
+          "front_id": "front-credito-dois",
+          "finding_id": "F02"
+        },
+        {
+          "proposition": "O saldo do segundo crédito não foi conferido.",
+          "front_id": "front-credito-dois"
+        }
       ],
       "invariants": [
         "Mantém as duas cadeias de crédito separadas.",

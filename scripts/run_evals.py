@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -29,6 +31,7 @@ PUBLIC_SKILLS = (
     "redacao-contencioso",
 )
 RUNNER_TIMEOUT_SECONDS = 600
+SCENARIO_ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 CommandExecutor = Callable[..., subprocess.CompletedProcess[str]]
 
 
@@ -47,7 +50,7 @@ def run_subprocess(
 
 
 def render_adaptation_package(
-    case: dict[str, object], contract_version: str, facts: list[str]
+    case: dict[str, object], contract_version: str, facts: list[dict[str, object]]
 ) -> str:
     """Materializa um pacote sintético completo sem duplicar a fixture estrutural."""
     case_id = case.get("id")
@@ -65,15 +68,57 @@ def render_adaptation_package(
         or not isinstance(handoff_names, list)
         or not all(isinstance(item, str) for item in handoff_names)
         or not isinstance(fronts, list)
-        or not all(isinstance(front, dict) for front in fronts)
+        or not all(
+            isinstance(front, dict) and isinstance(front.get("front_id"), str)
+            for front in fronts
+        )
         or not isinstance(findings, list)
-        or not all(isinstance(finding, dict) for finding in findings)
+        or not all(
+            isinstance(finding, dict) and isinstance(finding.get("id"), str)
+            for finding in findings
+        )
         or not isinstance(conflicts, list)
         or not isinstance(blockers, list)
         or not all(isinstance(blocker, str) for blocker in blockers)
-        or not facts
+        or (eligibility != "bloqueado" and not facts)
     ):
         raise ValueError(f"caso de adaptação inválido: {case_id or '?'}")
+
+    front_ids = [front["front_id"] for front in fronts]
+    finding_ids = [finding["id"] for finding in findings]
+    if (
+        any(not identifier.strip() for identifier in [*front_ids, *finding_ids])
+        or len(front_ids) != len(set(front_ids))
+        or len(finding_ids) != len(set(finding_ids))
+    ):
+        raise ValueError(f"IDs estruturais ausentes ou duplicados no caso {case_id}")
+    front_by_id = dict(zip(front_ids, fronts))
+    finding_by_id = dict(zip(finding_ids, findings))
+    fact_by_finding: dict[str, dict[str, object]] = {}
+    propositions: list[str] = []
+    for fact in facts:
+        proposition = fact.get("proposition") if isinstance(fact, dict) else None
+        front_id = fact.get("front_id") if isinstance(fact, dict) else None
+        finding_id = fact.get("finding_id") if isinstance(fact, dict) else None
+        if (
+            not isinstance(proposition, str)
+            or not proposition.strip()
+            or not isinstance(front_id, str)
+            or front_id not in front_by_id
+            or (finding_id is not None and not isinstance(finding_id, str))
+        ):
+            raise ValueError(f"package_facts inválidos no caso {case_id}")
+        if isinstance(finding_id, str):
+            if finding_id not in finding_by_id or finding_id in fact_by_finding:
+                raise ValueError(
+                    f"binding de achado inválido no caso {case_id}: {finding_id}"
+                )
+            fact_by_finding[finding_id] = fact
+        propositions.append(proposition)
+    if "analise_documental" in handoff_names and set(fact_by_finding) != set(
+        finding_by_id
+    ):
+        raise ValueError(f"bindings de achados incompletos no caso {case_id}")
 
     sources: list[dict[str, object]] = []
     for front in fronts:
@@ -110,22 +155,26 @@ def render_adaptation_package(
             }
             for front in fronts
         ],
-        "Achados": facts,
+        "Achados": propositions,
         "Estado": eligibility,
         "Confirmação humana": confirmation_scopes or "não confirmada",
         "Lacunas": blockers,
         "Atualização": "primeira versão sintética",
         "Próximas rotas": ["analise-documental", "analise-juridica-civel"],
     }
-    handoffs: dict[str, object] = {"intake": intake}
+    handoffs: dict[str, object] = {}
+    if "intake" in handoff_names:
+        handoffs["intake"] = intake
     if "analise_documental" in handoff_names:
         enriched_findings = []
-        for index, finding in enumerate(findings):
-            front = fronts[min(index, len(fronts) - 1)] if fronts else {}
+        for finding in findings:
+            finding_id = finding["id"]
+            binding = fact_by_finding[finding_id]
+            front = front_by_id[binding["front_id"]]
             enriched_findings.append(
                 {
                     **finding,
-                    "proposition": facts[min(index, len(facts) - 1)],
+                    "proposition": binding["proposition"],
                     "front_id": front.get("front_id"),
                     "represented_role": front.get("represented_role"),
                     "coverage": front.get("coverage"),
@@ -157,7 +206,13 @@ def render_adaptation_package(
             "included_artifacts": handoff_names,
             "omitted_artifacts": [
                 name
-                for name in ("analise_documental", "mapa_juridico", "decisao", "redacao")
+                for name in (
+                    "intake",
+                    "analise_documental",
+                    "mapa_juridico",
+                    "decisao",
+                    "redacao",
+                )
                 if name not in handoff_names
             ],
             "source_version": f"fixture-{case_id.lower()}-v1",
@@ -184,6 +239,8 @@ def _hydrate_adaptation_scenarios(
     except ValueError as exc:
         raise ValueError("case_fixture aponta para fora de tests/fixtures") from exc
     case_data = json.loads(case_path.read_text(encoding="utf-8"))
+    if not isinstance(case_data, dict):
+        raise ValueError("fixture estrutural de adaptação deve ser objeto")
     contract_version = case_data.get("contract_version")
     cases = case_data.get("scenarios")
     if not isinstance(contract_version, str) or not isinstance(cases, list):
@@ -201,7 +258,7 @@ def _hydrate_adaptation_scenarios(
         if (
             not isinstance(case_id, str)
             or not isinstance(facts, list)
-            or not all(isinstance(fact, str) and fact.strip() for fact in facts)
+            or not all(isinstance(fact, dict) for fact in facts)
             or not isinstance(case, dict)
         ):
             raise ValueError(
@@ -316,6 +373,13 @@ def parse_transcript(transcript: str) -> dict[str, object]:
                     file_path = payload.get("file_path")
                     if isinstance(file_path, str):
                         read_files.append(file_path)
+                elif name == "Grep":
+                    path = payload.get("path")
+                    glob = payload.get("glob")
+                    if isinstance(path, str):
+                        read_files.append(f"grep:{path}")
+                    if isinstance(glob, str):
+                        read_files.append(f"grep:{glob}")
         if event.get("type") == "result":
             result = event.get("result")
             if isinstance(result, str):
@@ -409,14 +473,20 @@ def routing_ok(expected_skill: str, invoked_skills: Sequence[str]) -> bool:
 
 
 def is_redaction_module(file_path: str) -> bool:
-    """Identifica módulos de redação contenciosa sem depender do cache local."""
-    parts = Path(file_path).parts
-    return (
-        len(parts) >= 4
-        and parts[-4:-1] == ("redacao-contencioso", "references", "modulos")
-        and parts[-1].endswith(".md")
-        and parts[-1] != ".md"
-    )
+    """Identifica leitura ou busca no diretório de módulos de redação."""
+    is_grep = file_path.startswith("grep:")
+    path = file_path.removeprefix("grep:") if is_grep else file_path
+    parts = Path(path).parts
+    target = ("redacao-contencioso", "references", "modulos")
+    for index, part in enumerate(parts):
+        if part != target[0]:
+            continue
+        tail = parts[index:]
+        if tail[: len(target)] == target:
+            return True
+        if is_grep and tail == target[: len(tail)]:
+            return True
+    return False
 
 
 def check_redaction_gate(
@@ -448,8 +518,13 @@ def build_judge_prompt(
     """Monta o prompt fechado do juiz de invariantes."""
     prompts = prompt_turns(scenario)
     invariants = scenario["invariants"]
-    if not isinstance(invariants, list) or not all(
-        isinstance(invariant, str) for invariant in invariants
+    if (
+        not isinstance(invariants, list)
+        or not invariants
+        or not all(
+            isinstance(invariant, str) and invariant.strip()
+            for invariant in invariants
+        )
     ):
         raise ValueError("cenário sem invariantes válidos")
     numbered = "\n".join(
@@ -563,7 +638,7 @@ def calculate_verdict(
     gate_ok: bool = True,
 ) -> str:
     """Calcula o veredito binário após o julgamento."""
-    if not gate_ok:
+    if not gate_ok or expected_count <= 0:
         return "FAIL"
     if invariants is None:
         return "JUDGE_ERROR"
@@ -694,6 +769,40 @@ def _turn_transcript_paths(transcript_path: Path, turn_count: int) -> list[Path]
     ]
 
 
+def _validated_setup_files(
+    scenario: dict[str, object],
+) -> list[tuple[str, str]]:
+    """Valida arquivos sintéticos antes de qualquer escrita."""
+    setup_files = scenario.get("setup_files")
+    if setup_files is None:
+        return []
+    if not isinstance(setup_files, dict):
+        raise ValueError("setup_files deve ser objeto de caminho para conteúdo")
+    validated: list[tuple[str, str]] = []
+    for name, content in setup_files.items():
+        if not isinstance(name, str) or not isinstance(content, str):
+            raise ValueError("setup_files exige caminhos e conteúdos textuais")
+        path = Path(name)
+        if (
+            not name
+            or path.is_absolute()
+            or any(part in {"", ".", ".."} for part in path.parts)
+        ):
+            raise ValueError(f"setup_files contém caminho inseguro: {name!r}")
+        validated.append((name, content))
+    return validated
+
+
+def _contained_path(root: Path, relative: str) -> Path:
+    """Resolve um caminho já validado e confirma a contenção no diretório."""
+    target = (root / relative).resolve()
+    try:
+        target.relative_to(root.resolve())
+    except ValueError as exc:
+        raise ValueError(f"caminho escapa do diretório permitido: {relative}") from exc
+    return target
+
+
 def run_scenario(
     scenario: dict[str, object],
     model: str,
@@ -703,18 +812,16 @@ def run_scenario(
     """Executa os turnos de um cenário e persiste cada transcript."""
     prompts = prompt_turns(scenario)
     transcript_paths = _turn_transcript_paths(transcript_path, len(prompts))
-    setup_files = scenario.get("setup_files")
-    if setup_files is not None and not isinstance(setup_files, dict):
-        raise ValueError("setup_files deve ser objeto de caminho para conteúdo")
+    setup_files = _validated_setup_files(scenario)
     transcripts: list[str] = []
     transcript_path.parent.mkdir(parents=True, exist_ok=True)
     try:
         with tempfile.TemporaryDirectory(prefix="silo-legal-eval-") as temporary:
             workdir = Path(temporary)
-            for name, content in (setup_files or {}).items():
-                target = workdir / str(name)
+            for name, content in setup_files:
+                target = _contained_path(workdir, name)
                 target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_text(str(content), encoding="utf-8")
+                target.write_text(content, encoding="utf-8")
             session_id = str(uuid.uuid4())
             for turn, prompt in enumerate(prompts, start=1):
                 command = runner_command(prompt, model)
@@ -891,12 +998,29 @@ def _scenario_values(scenario: dict[str, object]) -> tuple[str, str, list[str]]:
     invariants = scenario.get("invariants")
     if (
         not isinstance(scenario_id, str)
+        or SCENARIO_ID_PATTERN.fullmatch(scenario_id) is None
         or not isinstance(expected_skill, str)
         or not isinstance(invariants, list)
-        or not all(isinstance(invariant, str) for invariant in invariants)
+        or not invariants
+        or not all(
+            isinstance(invariant, str) and invariant.strip()
+            for invariant in invariants
+        )
     ):
         raise ValueError("cenário inválido no fixture")
     return scenario_id, expected_skill, invariants
+
+
+def _fixture_suffix(path: Path, scenarios: list[dict[str, object]]) -> str:
+    """Distingue fixtures homônimas pelo conteúdo efetivamente carregado."""
+    if path.resolve() == FIXTURE_PATH.resolve():
+        return ""
+    payload = json.dumps(
+        scenarios, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    digest = hashlib.sha256(payload).hexdigest()[:12]
+    stem = re.sub(r"[^a-zA-Z0-9._-]+", "-", path.stem).strip(".-") or "fixture"
+    return f"-{stem}-{digest}"
 
 
 def _authorizing_turn(
@@ -931,6 +1055,7 @@ def main(
         for scenario in fixture_scenarios:
             _scenario_values(scenario)
             _authorizing_turn(scenario, len(prompt_turns(scenario)))
+            _validated_setup_files(scenario)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Erro ao carregar os cenários: {exc}", file=sys.stderr)
         return 1
@@ -960,11 +1085,7 @@ def main(
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Erro ao ler a versão do plugin: {exc}", file=sys.stderr)
         return 1
-    fixture_suffix = (
-        ""
-        if args.fixture.resolve() == FIXTURE_PATH.resolve()
-        else f"-{args.fixture.stem}"
-    )
+    fixture_suffix = _fixture_suffix(args.fixture, fixture_scenarios)
     output_dir = args.out_dir or (
         ROOT
         / "data"

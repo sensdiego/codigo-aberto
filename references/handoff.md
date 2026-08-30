@@ -223,6 +223,11 @@ que a necessidade do ato consta de fonte direta; cabimento e seleção do módul
 continuam pertencendo ao mapa jurídico e ao briefing. Espécie da ação, nome do
 arquivo e título extraído são sinais, não autoridade sobre o ato atual.
 
+O perfil pode transportar `module` e `complements` como pistas opcionais e não
+autoritativas do produtor. Quando presentes, o consumidor preserva a hierarquia
+entre ato-base e complementos ao descrevê-los, mas só confirma o módulo depois
+do mapa jurídico, da decisão aplicável e do briefing próprio.
+
 ## Recebimento por outra skill
 
 Ao receber o handoff:

@@ -638,12 +638,27 @@ def check_adaptation_workflow_fixtures():
         return [*errors, "fixture comportamental: scenarios deve ser lista"]
     if not isinstance(cases, list):
         return [*errors, "fixture estrutural: scenarios deve ser lista"]
-    case_findings = {
-        case.get("id"): len(case.get("findings", []))
+    case_contracts = {
+        case.get("id"): {
+            "finding_ids": {
+                finding.get("id")
+                for finding in case.get("findings", [])
+                if isinstance(finding, dict) and isinstance(finding.get("id"), str)
+            },
+            "front_ids": {
+                front.get("front_id")
+                for front in case.get("fronts", [])
+                if isinstance(front, dict) and isinstance(front.get("front_id"), str)
+            },
+            "analysis": "analise_documental" in case.get("handoffs", []),
+            "eligibility": case.get("eligibility"),
+        }
         for case in cases
         if isinstance(case, dict)
         and isinstance(case.get("id"), str)
         and isinstance(case.get("findings"), list)
+        and isinstance(case.get("fronts"), list)
+        and isinstance(case.get("handoffs"), list)
     }
     expected_case_ids = {f"A{index:02d}" for index in range(1, 15)}
     expected_consumers = {
@@ -685,16 +700,47 @@ def check_adaptation_workflow_fixtures():
         else:
             covered_consumers.add(consumer)
         facts = scenario.get("package_facts")
-        finding_count = case_findings.get(case_id, 0) if isinstance(case_id, str) else 0
-        minimum_facts = max(1, finding_count)
-        if (
-            not isinstance(facts, list)
-            or len(facts) < minimum_facts
-            or not all(isinstance(fact, str) and fact.strip() for fact in facts)
-        ):
+        contract = case_contracts.get(case_id) if isinstance(case_id, str) else None
+        if not isinstance(facts, list) or not facts:
             errors.append(
                 f"fixture comportamental {label}: package_facts insuficientes"
             )
+        elif isinstance(contract, dict):
+            front_ids = contract["front_ids"]
+            finding_ids = contract["finding_ids"]
+            bound_findings = []
+            for fact_index, fact in enumerate(facts, start=1):
+                if not isinstance(fact, dict):
+                    errors.append(
+                        f"fixture comportamental {label}: package_fact {fact_index} deve ser objeto"
+                    )
+                    continue
+                proposition = fact.get("proposition")
+                front_id = fact.get("front_id")
+                finding_id = fact.get("finding_id")
+                if not isinstance(proposition, str) or not proposition.strip():
+                    errors.append(
+                        f"fixture comportamental {label}: package_fact {fact_index} sem proposition"
+                    )
+                if not isinstance(front_id, str) or front_id not in front_ids:
+                    errors.append(
+                        f"fixture comportamental {label}: package_fact {fact_index} com front_id inválido"
+                    )
+                if finding_id is not None:
+                    if not isinstance(finding_id, str) or finding_id not in finding_ids:
+                        errors.append(
+                            f"fixture comportamental {label}: package_fact {fact_index} com finding_id inválido"
+                        )
+                    else:
+                        bound_findings.append(finding_id)
+            if len(bound_findings) != len(set(bound_findings)):
+                errors.append(
+                    f"fixture comportamental {label}: finding_id repetido em package_facts"
+                )
+            if contract["analysis"] and set(bound_findings) != finding_ids:
+                errors.append(
+                    f"fixture comportamental {label}: bindings de achados incompletos"
+                )
         invariants = scenario.get("invariants")
         if (
             not isinstance(invariants, list)

@@ -345,6 +345,11 @@ O consumidor determina o caminho nesta ordem:
 8. somente então mapear módulo-base, modo e eventual complemento de tutela;
 9. apresentar o briefing e aguardar sua confirmação própria.
 
+O produtor pode antecipar `module` e `complements` apenas como pistas opcionais
+e não autoritativas. O consumidor preserva essa hierarquia ao resumir o pacote,
+mas refaz o mapeamento na ordem acima antes de qualquer escolha ou leitura de
+módulo.
+
 Se houver várias frentes ou atos candidatos, o sistema não escolhe pela
 frequência, título ou ordem do acervo. Ele pede delimitação, completa a análise
 ou conduz deliberação conforme o gatilho compartilhado.

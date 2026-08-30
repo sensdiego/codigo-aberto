@@ -1,6 +1,8 @@
 {
   "schema_version": "codex-subagent-eval-v1",
   "date": "2026-08-30",
+  "status": "invalidated",
+  "invalidation_reason": "A revisão do commit 10d7337 demonstrou que o materializador associava package_facts, findings e frentes por posição.",
   "fixture": "tests/fixtures/adaptacao-workflows.json",
   "execution_mode": "codex_subagents",
   "external_model_calls": false,
@@ -14,9 +16,9 @@
       ["A06", "A07", "A08", "A09", "A10"],
       ["A11", "A12", "A13", "A14"]
     ],
-    "blind_execution": true,
-    "outputs_frozen_before_judgment": true,
-    "independent_judges": true,
+    "blind_execution": "declaração operacional não auditável pelos recibos",
+    "outputs_frozen_before_judgment": "declaração operacional não auditável pelos recibos",
+    "independent_judges": "agentes distintos segundo o protocolo operacional, sem identidade auditável nos recibos",
     "routing_and_redaction_gates": true
   },
   "first_pass": {
@@ -33,6 +35,7 @@
     "regression": "PASS"
   },
   "effective_final": {
+    "valid": false,
     "pass": 14,
     "fail": 0,
     "single_pass": false,
@@ -68,6 +71,8 @@
     "A01–A05 e A06–A10 compartilharam contexto dentro de seus respectivos lotes; A11–A14 compartilharam outro contexto.",
     "Os pacotes são sintéticos e derivados de classes observadas; os documentos privados originais não foram fornecidos aos agentes.",
     "A rodada não prova produtor, runtime, dogfood, uso humano ou adoção.",
-    "O consumo da franquia Codex não foi medido em dólares pelo harness."
+    "O consumo da franquia Codex não foi medido em dólares pelo harness.",
+    "Os recibos não registram hashes de entrada antes do despacho, identidade dos agentes ou ordem temporal; cegueira e congelamento são declarações operacionais.",
+    "A associação posicional de fatos, achados e frentes invalidou a força probatória desta rodada."
   ]
 }
