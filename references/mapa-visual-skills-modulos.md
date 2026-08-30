@@ -15,9 +15,9 @@ propõe workflows prováveis de utilização.
 - “sem modo obrigatório” significa que o módulo não contém a seção
   `Modo obrigatório`; não significa ausência de escolhas no briefing.
 
-Inventário deste branch: **10 skills** (**9 publicadas na v0.5.0 e 1 candidata
-no PR #26**), **37 módulos contenciosos** (36 bases e 1 complemento), **24
-módulos contenciosos com modo obrigatório** e **13 sem modo obrigatório**.
+Inventário da `v0.6.0`: **10 skills publicadas**, **37 módulos contenciosos**
+(36 bases e 1 complemento), **24 módulos contenciosos com modo obrigatório** e
+**13 sem modo obrigatório**.
 
 ## 1. Superfície pública: entrada e roteamento
 
@@ -33,7 +33,7 @@ flowchart TB
     R --> AJ["analise-juridica-civel"]
     R --> AP["analise-jurisprudencial"]
     R --> PROF["aprofundamento-juridico"]
-    R --> DEL["deliberacao-juridica<br/>candidata no PR #26"]
+    R --> DEL["deliberacao-juridica"]
     R --> RC["redacao-contencioso"]
     R --> RCON["redacao-consultivo"]
     R --> PS["pesquisa-silo"]
@@ -79,7 +79,7 @@ flowchart LR
 ## 3. Gates compartilhados antes da redação
 
 O protocolo de deliberação continua sendo referência compartilhada. A skill
-candidata `deliberacao-juridica` o embrulha e produz o mesmo handoff `decisão`.
+`deliberacao-juridica` o embrulha e produz o mesmo handoff `decisão`.
 
 ```mermaid
 flowchart LR
@@ -113,7 +113,7 @@ continuam sendo serviço separado deste repositório.
 
 ```mermaid
 flowchart TB
-    DISC["Disciplina compartilhada"] --> SK["10 skills no branch<br/>9 publicadas + 1 candidata"]
+    DISC["Disciplina compartilhada"] --> SK["10 skills publicadas"]
     HAND["Contrato comum de handoff"] --> SK
     CPC["Biblioteca versionada do CPC"] --> ADJ["analise-juridica-civel"]
     CPC --> APROF["aprofundamento-juridico"]
@@ -209,7 +209,7 @@ flowchart TB
 
 ### 5.6 Deliberação jurídica
 
-A skill candidata usa o protocolo compartilhado e não pesquisa, aprofunda ou
+A skill usa o protocolo compartilhado e não pesquisa, aprofunda ou
 redige. A saída é sempre um handoff de decisão ou uma rota explícita de retorno.
 
 ```mermaid
@@ -348,6 +348,6 @@ flowchart LR
 flowchart TB
     MAPA["Mapa atual"] --- IN["Inclui<br/>skills, módulos, modos, handoffs,<br/>gates e dependências documentadas"]
     MAPA --- OUT["Não inclui nesta etapa<br/>personas, casos sintéticos, frequência,<br/>combinações prováveis ou jornadas simuladas"]
-    MAPA --- CAND["Inclui deliberacao-juridica como candidata do PR #26<br/>conflitos resolvidos; validação comportamental pendente"]
+    MAPA --- DEL["Inclui deliberacao-juridica<br/>publicada e validada de forma dirigida"]
     MAPA --- EXT["Não representa como local<br/>servidor, base ou API externos do Silo"]
 ```
