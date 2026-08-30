@@ -8,16 +8,15 @@ comportamental A01–A14 com subagentes Codex.
 
 ## Estado do produto
 
-A versão publicada é `v0.4.0`. O PR #27 foi integrado a `main` pelo merge commit
-`0d9c04c`, preservando o commit `86a28eb`. O merge acionou automaticamente o
-workflow `Software release`, que criou o commit `39c2e26`, a tag e o GitHub
-Release `v0.4.0`. A skill autônoma de deliberação continua pausada no PR #26 e
-não foi incorporada.
+A versão publicada é `v0.5.0`. O PR #27 foi integrado a `main` pelo merge commit
+`0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
+commit `7b6ecf0`, preservando toda a cadeia de avaliação. O workflow
+`Software release` criou o commit `632fa21`, a tag e o GitHub Release `v0.5.0`.
+A skill autônoma de deliberação continua pausada no PR #26 e não foi incorporada.
 
-O trabalho posterior à tutela está no branch empilhado
-`codex/redacao-contencioso-cobertura-integral` e no draft PR #28, agora baseado
-em `main`. A branch incorporou `main` por merge commit, sem reescrever a cadeia
-auditada. O PR #28 não foi integrado nem publicado.
+O trabalho posterior à tutela está integrado e publicado. A release contém os
+sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
+instalação e uso humano continuam sendo recibos distintos.
 
 ## O que este branch entrega
 
@@ -141,6 +140,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `3f2265a` — relatório R2 e documentação de fechamento.
 - `babdfba` — sincronização com `main` após o landing e a release automática da
   tutela, sem reescrita da cadeia.
+- `7b6ecf0` — merge do PR #28, sem rebase ou squash;
+- `632fa21` — release `v0.5.0` e consumo dos sete fragmentos.
 
 ## Verificação
 
@@ -153,8 +154,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
-Os comandos foram repetidos após o retarget para `main` e a sincronização com
-`v0.4.0`.
+Os comandos foram repetidos após o retarget para `main`. O workflow de release
+passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
 
 ## Limites e recibos negativos
 
@@ -169,22 +170,21 @@ Os comandos foram repetidos após o retarget para `main` e a sincronização com
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- O PR #27 foi integrado. Esse merge disparou automaticamente o workflow que
-  publicou `v0.4.0`; não houve publicação manual, bundle ou anúncio.
-- O draft PR #28 permanece sem merge. Seu plano calcula `v0.5.0` a partir de
-  três fragmentos `minor`, um `patch` e três `none`; nova publicação não está
-  autorizada por este handoff.
+- Os PRs #27 e #28 foram integrados; seus workflows publicaram `v0.4.0` e
+  `v0.5.0`, respectivamente.
+- A publicação `v0.5.0` contém sete bundles ZIP e um manifesto. Não houve
+  instalação das skills, dogfood, uso humano ou anúncio externo.
 
 ## Próxima ação
 
-Revisar o draft PR #28 contra `main` e seus recibos após a sincronização com
-`v0.4.0`. Comparação externa, Fases 2 e 4, dogfood, merge do PR #28 e nova
-release continuam sem autorização.
+Aguardar novas instruções. Comparação externa, Fases 2 e 4, instalação,
+dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 
 ```bash
-git switch codex/redacao-contencioso-cobertura-integral
+git switch main
+git pull --ff-only origin main
 git status --short --branch
 git log --oneline --decorate -6
 make validate
