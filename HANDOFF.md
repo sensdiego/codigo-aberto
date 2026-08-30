@@ -12,9 +12,10 @@ A versão publicada continua `v0.3.0`. O módulo de tutela provisória permanece
 no PR #27, branch `codex/SEN-2413-tutela-urgencia-evidencia`, commit `86a28eb`.
 A skill autônoma de deliberação continua pausada no PR #26 e não foi incorporada.
 
-O trabalho posterior à tutela está no branch local empilhado
-`codex/redacao-contencioso-cobertura-integral`. Não há PR remoto para este
-branch, merge, release, publicação de bundle ou anúncio.
+O trabalho posterior à tutela está no branch empilhado
+`codex/redacao-contencioso-cobertura-integral` e no draft PR #28, cuja base é a
+branch do PR #27. O CI remoto está verde. Não houve merge, release, publicação
+de bundle ou anúncio.
 
 ## O que este branch entrega
 
@@ -134,7 +135,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `ff2a210` — julgamento independente da primeira passagem, 13/14;
 - `267bfc8` — validação do pacote tornada explícita em `novo-caso`;
 - `de028ce` — output cego da regressão A03;
-- `252a917` — julgamento independente da regressão A03, PASS.
+- `252a917` — julgamento independente da regressão A03, PASS;
+- `3f2265a` — relatório R2 e documentação de fechamento.
 
 ## Verificação
 
@@ -147,8 +149,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
-A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
-`git diff --check` depois do commit de documentação.
+Os comandos foram repetidos antes do push; o workflow `Quality` do PR #28
+também passou integralmente.
 
 ## Limites e recibos negativos
 
@@ -163,15 +165,17 @@ A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.
-- Não houve criação de issue, PR, push, merge, tag, release ou anúncio.
+- Houve push da branch e abertura do draft PR #28. Não houve issue nova, merge,
+  tag, release ou anúncio.
 - O plano de release calcula `v0.4.0` a partir de quatro fragmentos `minor` e três
   fragmentos documentais `none`, mas nenhuma publicação está autorizada por
   este handoff.
 
 ## Próxima ação
 
-Aguardar novas instruções. A comparação no executor externo permanece opcional
-e exigiria autorização de custo. Fases 2 e 4, dogfood, nova branch, PR, merge e
+Revisar o draft PR #28 contra a branch do PR #27. Depois do landing de #27,
+retargetar #28 para `main` sem rebase, squash, amend ou cherry-pick e repetir os
+gates antes de qualquer merge. Comparação externa, Fases 2 e 4, dogfood, merge e
 release continuam sem autorização.
 
 ## Comandos de retomada
