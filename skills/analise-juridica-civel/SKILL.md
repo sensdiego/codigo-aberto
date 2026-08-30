@@ -16,6 +16,21 @@ receber apenas documentos brutos ou narrativa solta, execute ou encaminhe a
 análise documental necessária. Não promova hipótese ou relato para preencher o
 mapa.
 
+## Pacote adaptado
+
+Se a entrada declarar `case-adaptation-v1`, valide recibo, identidade, lente e
+elegibilidade; então delimite as frentes materiais ao pedido e confira em cada
+uma evento controlador, objetivo, cobertura, conflitos e `scope_status`. Várias
+frentes candidatas exigem delimitação — título, ordem do acervo e frequência não
+escolhem a frente.
+
+Em `indeterminado`, delimite o regime antes de mapear a providência. Em
+`nao_suportado`, registre o limite e não encaminhe a redação a módulo cível
+semelhante. Em `suportado_condicionado`, nomeie a fonte ou capacidade ausente e
+bloqueie somente a conclusão dependente. `candidato` não equivale a decisão;
+`decidido` exige recibo de escolha humana. Sem recibo de adaptação, consuma o
+handoff comum normalmente.
+
 ## Módulos
 
 1. Separe questões de direito civil material e de processo civil.

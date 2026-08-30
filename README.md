@@ -13,7 +13,7 @@ aprofundar, decidir e redigir trabalho jurídico cível.
 | [`analise-jurisprudencial`](skills/analise-jurisprudencial/SKILL.md) | Pesquisa opcional de precedentes pelo Silo |
 | [`aprofundamento-juridico`](skills/aprofundamento-juridico/SKILL.md) | Investigação dinâmica de teses, riscos e preparação para audiência |
 | [`deliberacao-juridica`](skills/deliberacao-juridica/SKILL.md) | Opções, recomendação, entrevista e registro da decisão do advogado |
-| [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, manifestações e recursos cíveis |
+| [`redacao-contencioso`](skills/redacao-contencioso/SKILL.md) | Peças, execuções, procedimentos especiais, manifestações e recursos cíveis |
 | [`redacao-consultivo`](skills/redacao-consultivo/SKILL.md) | Pareceres, relatórios, e-mails e outros documentos consultivos |
 | [`pesquisa-silo`](skills/pesquisa-silo/SKILL.md) | Consulta jurídica rápida pelo conector Silo |
 | [`assinatura-silo`](skills/assinatura-silo/SKILL.md) | Orientação para a lista de espera e conexão ao Silo |
@@ -22,14 +22,23 @@ Fluxo sugerido:
 
 `novo-caso → analise-documental → analise-juridica-civel → [jurisprudência ou aprofundamento] → [deliberação] → [redação]`
 
+Para a topologia completa, sem simulação de jornadas, consulte o
+[mapa visual de skills, módulos e modos](references/mapa-visual-skills-modulos.md).
+O estado de prontidão contra situações documentadas está na
+[validação estrutural anonimizada com casos reais](references/validacao-casos-reais.md).
+A arquitetura adotada para fechar as lacunas está na
+[RFC-CA-001 de adaptação segura de casos reais](RFC-CA-001-adaptacao-casos-reais.md).
+As quatro skills consumidoras aceitam o pacote v1 sem tornar esse formato
+obrigatório para handoffs comuns.
+
 O usuário pode começar em qualquer etapa. A skill deve identificar e reparar
 somente os pré-requisitos ausentes. Pesquisa jurisprudencial e aprofundamento
 são opcionais.
 
 Antes de redigir, a IA precisa ter interpretado os fatos e materiais relevantes
-e, quando houver escolha pendente, registrar a decisão do advogado. A redação
-ainda apresenta um briefing para confirmação humana explícita. Confirmar uma
-minuta não autoriza protocolo, envio ou contato externo.
+e, quando houver escolha estratégica pendente, registrar a decisão do advogado.
+A redação ainda apresenta um briefing para confirmação humana explícita.
+Confirmar uma minuta não autoriza protocolo, envio ou contato externo.
 
 ## Estrutura pública
 

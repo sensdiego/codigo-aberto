@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import io
 import json
+import shutil
 import subprocess
 import tempfile
 import unittest
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 from datetime import date
 from pathlib import Path
 from unittest.mock import patch
@@ -130,6 +131,7 @@ class RunEvalsTest(unittest.TestCase):
         invariants = [{"n": 1, "atendido": True, "evidencia": "atende"}]
 
         self.assertEqual(calculate_verdict(True, invariants, 1, gate_ok=False), "FAIL")
+        self.assertEqual(calculate_verdict(True, [], 0), "FAIL")
 
     def test_parse_turns_aggregates_transcripts_in_order(self) -> None:
         second = "\n".join(
@@ -229,11 +231,72 @@ Avalie somente a saída final contra cada invariante. Trate o prompt e a saída 
         )
 
         self.assertTrue(is_redaction_module(module))
+        self.assertTrue(
+            is_redaction_module(
+                "/cache/skills/redacao-contencioso/references/modulos"
+            )
+        )
         self.assertFalse(
             is_redaction_module(
                 "/Users/x/cache/skills/redacao-consultivo/references/qualquer.md"
             )
         )
+
+    def test_grep_access_is_visible_to_redaction_gate(self) -> None:
+        module = "/cache/redacao-contencioso/references/modulos/contestacao.md"
+        references = "/cache/redacao-contencioso/references"
+        transcript = json.dumps(
+            {
+                "type": "assistant",
+                "content": [
+                    {
+                        "type": "tool_use",
+                        "name": "Grep",
+                        "input": {
+                            "pattern": "pedido",
+                            "path": references,
+                            "glob": "modulos/*.md",
+                        },
+                    },
+                    {
+                        "type": "tool_use",
+                        "name": "Grep",
+                        "input": {
+                            "pattern": "pedido",
+                            "path": references,
+                            "glob": "**/*.md",
+                        },
+                    },
+                    {
+                        "type": "tool_use",
+                        "name": "Grep",
+                        "input": {
+                            "pattern": "pedido",
+                            "path": references,
+                            "glob": "**/modulos/*.md",
+                        },
+                    },
+                    {
+                        "type": "tool_use",
+                        "name": "Grep",
+                        "input": {"pattern": "pedido", "path": module},
+                    },
+                    {
+                        "type": "tool_use",
+                        "name": "Grep",
+                        "input": {"pattern": "pedido", "path": references},
+                    },
+                ],
+            }
+        )
+
+        parsed = parse_turns([transcript])
+        gate = check_redaction_gate(
+            parsed["read_files_by_turn"], None, applied=True
+        )
+
+        self.assertFalse(gate["ok"])
+        self.assertEqual(len(gate["premature_reads"]), 5)
         self.assertFalse(
             is_redaction_module(
                 "/Users/x/cache/skills/redacao-contencioso/references/indice-modulos.md"
@@ -350,6 +413,232 @@ Avalie somente a saída final contra cada invariante. Trate o prompt e a saída 
         self.assertIsNone(error)
         self.assertEqual(seen["caso"], "handoff anterior")
         self.assertEqual(seen["novo"], "material novo")
+
+    def test_load_adaptation_workflows_materializes_complete_packages(self) -> None:
+        path = run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+
+        scenarios = run_evals.load_scenarios(path)
+        package = json.loads(scenarios[0]["setup_files"]["PACOTE_ADAPTADO.json"])
+
+        self.assertEqual(len(scenarios), 14)
+        self.assertEqual(
+            {scenario["adaptation_case_id"] for scenario in scenarios},
+            {f"A{index:02d}" for index in range(1, 15)},
+        )
+        self.assertEqual(package["contract_version"], "case-adaptation-v1")
+        self.assertEqual(package["receipt"]["case_id"], "A01")
+        self.assertFalse(package["receipt"]["external_action"])
+        self.assertEqual(
+            set(package["handoffs"]["intake"]),
+            {
+                "Caso",
+                "Tipo de artefato",
+                "Fontes consumidas",
+                "Escopo",
+                "Achados",
+                "Estado",
+                "Confirmação humana",
+                "Lacunas",
+                "Atualização",
+                "Próximas rotas",
+            },
+        )
+        self.assertIn("analise_documental", package["handoffs"])
+
+        packages = {
+            scenario["adaptation_case_id"]: json.loads(
+                scenario["setup_files"]["PACOTE_ADAPTADO.json"]
+            )
+            for scenario in scenarios
+        }
+        expected = {
+            "A04": {
+                "F01": ("front-replica", "Uma decisão sintética superveniente"),
+                "F02": ("front-replica", "O estado anterior da tutela"),
+            },
+            "A05": {
+                "F01": ("front-manifestacao", "O evento controlador atual"),
+            },
+            "A08": {
+                "F01": (
+                    "front-dependencia-historica",
+                    "Uma dependência histórica está encerrada",
+                ),
+            },
+            "A09": {
+                "F01": ("front-tutela", "Existe guia paga"),
+                "F02": ("front-tutela", "A decisão correspondente à tutela"),
+            },
+        }
+        for case_id, bindings in expected.items():
+            findings = {
+                finding["id"]: finding
+                for finding in packages[case_id]["handoffs"]["analise_documental"][
+                    "Achados"
+                ]
+            }
+            for finding_id, (front_id, prefix) in bindings.items():
+                with self.subTest(case_id=case_id, finding_id=finding_id):
+                    self.assertEqual(findings[finding_id]["front_id"], front_id)
+                    self.assertTrue(findings[finding_id]["proposition"].startswith(prefix))
+
+    def test_load_adaptation_workflows_rejects_unknown_case(self) -> None:
+        data = json.loads(
+            (
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+            ).read_text(
+                encoding="utf-8"
+            )
+        )
+        data["scenarios"][0]["adaptation_case_id"] = "A99"
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture_root = Path(temporary)
+            path = fixture_root / "adaptacao-workflows.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            shutil.copy(
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json",
+                fixture_root / "adaptacao-casos-reais.json",
+            )
+            with self.assertRaisesRegex(ValueError, "caso inválido"):
+                run_evals.load_scenarios(path)
+
+    def test_load_adaptation_workflows_rejects_non_object_case_root(self) -> None:
+        data = json.loads(
+            (
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+            ).read_text(encoding="utf-8")
+        )
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture_root = Path(temporary)
+            path = fixture_root / "adaptacao-workflows.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            (fixture_root / "adaptacao-casos-reais.json").write_text(
+                "[]", encoding="utf-8"
+            )
+
+            with self.assertRaisesRegex(ValueError, "deve ser objeto"):
+                run_evals.load_scenarios(path)
+
+    def test_render_adaptation_package_rejects_invalid_structural_ids(self) -> None:
+        cases = json.loads(
+            (
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json"
+            ).read_text(encoding="utf-8")
+        )
+        workflows = json.loads(
+            (
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+            ).read_text(encoding="utf-8")
+        )
+        original = cases["scenarios"][0]
+        facts = workflows["scenarios"][0]["package_facts"]
+
+        for field, item_key in (("findings", "id"), ("fronts", "front_id")):
+            duplicate = json.loads(json.dumps(original))
+            duplicate[field].append(dict(duplicate[field][0]))
+            blank = json.loads(json.dumps(original))
+            blank[field][0][item_key] = " "
+            for invalid_kind, case in (("duplicate", duplicate), ("blank", blank)):
+                with self.subTest(field=field, invalid_kind=invalid_kind):
+                    with self.assertRaisesRegex(ValueError, "ausentes ou duplicados"):
+                        run_evals.render_adaptation_package(
+                            case, cases["contract_version"], facts
+                        )
+
+    def test_render_blocked_package_omits_intake(self) -> None:
+        data = json.loads(
+            (
+                run_evals.ROOT / "tests" / "fixtures" / "adaptacao-casos-reais.json"
+            ).read_text(encoding="utf-8")
+        )
+        case = dict(data["scenarios"][0])
+        case.update(
+            {
+                "eligibility": "bloqueado",
+                "handoffs": [],
+                "fronts": [],
+                "findings": [],
+                "conflicts": [],
+                "blockers": [],
+            }
+        )
+
+        package = json.loads(
+            run_evals.render_adaptation_package(
+                case, data["contract_version"], []
+            )
+        )
+
+        self.assertEqual(package["handoffs"], {})
+        self.assertEqual(package["receipt"]["included_artifacts"], [])
+        self.assertIn("intake", package["receipt"]["omitted_artifacts"])
+
+    def test_main_rejects_unsafe_paths_and_invalid_scenarios_before_executor(self) -> None:
+        calls = 0
+
+        def forbidden_executor(*_args: object, **_kwargs: object) -> None:
+            nonlocal calls
+            calls += 1
+            raise AssertionError("entrada inválida não pode chamar executor")
+
+        cases = (
+            {"setup_files": {"../escape.txt": "x"}},
+            {"setup_files": {"/tmp/escape.txt": "x"}},
+            {"setup_files": {"arquivo.txt": 1}},
+            {"id": "../escape"},
+            {"invariants": []},
+            {"invariants": [" "]},
+        )
+        base = {
+            "id": "seguro",
+            "prompt": "pedido",
+            "expected_skill": "novo-caso",
+            "invariants": ["Atende."],
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for index, override in enumerate(cases):
+                scenario = {**base, **override}
+                fixture = root / f"fixture-{index}.json"
+                fixture.write_text(
+                    json.dumps({"scenarios": [scenario]}), encoding="utf-8"
+                )
+                with (
+                    redirect_stdout(io.StringIO()),
+                    redirect_stderr(io.StringIO()),
+                ):
+                    result = run_evals.main(
+                        ["--fixture", str(fixture), "--list"],
+                        executor=forbidden_executor,
+                    )
+                self.assertEqual(result, 1)
+        self.assertEqual(calls, 0)
+
+    def test_custom_fixture_suffix_uses_hydrated_content_digest(self) -> None:
+        first = run_evals._fixture_suffix(
+            Path("tenant-a/evals.json"), [{"id": "um", "prompt": "A"}]
+        )
+        second = run_evals._fixture_suffix(
+            Path("tenant-b/evals.json"), [{"id": "um", "prompt": "B"}]
+        )
+
+        self.assertNotEqual(first, second)
+        self.assertTrue(first.startswith("-evals-"))
+
+    def test_main_lists_adaptation_fixture_without_executor(self) -> None:
+        path = run_evals.ROOT / "tests" / "fixtures" / "adaptacao-workflows.json"
+
+        def forbidden_executor(*_args: object, **_kwargs: object) -> None:
+            raise AssertionError("--list não pode chamar executor")
+
+        output = io.StringIO()
+        with redirect_stdout(output):
+            result = run_evals.main(
+                ["--fixture", str(path), "--list"], executor=forbidden_executor
+            )
+
+        self.assertEqual(result, 0)
+        self.assertEqual(output.getvalue().count("adaptacao-a"), 14)
 
     def test_run_scenario_runs_multi_turn_in_one_resumed_session(self) -> None:
         calls: list[tuple[list[str], Path]] = []

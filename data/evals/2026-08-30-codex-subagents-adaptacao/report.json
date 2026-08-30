@@ -1,0 +1,78 @@
+{
+  "schema_version": "codex-subagent-eval-v1",
+  "date": "2026-08-30",
+  "status": "invalidated",
+  "invalidation_reason": "A revisão do commit 10d7337 demonstrou que o materializador associava package_facts, findings e frentes por posição.",
+  "fixture": "tests/fixtures/adaptacao-workflows.json",
+  "execution_mode": "codex_subagents",
+  "external_model_calls": false,
+  "cost": {
+    "usd": null,
+    "codex_usage_receipt": "unavailable"
+  },
+  "methodology": {
+    "executor_batches": [
+      ["A01", "A02", "A03", "A04", "A05"],
+      ["A06", "A07", "A08", "A09", "A10"],
+      ["A11", "A12", "A13", "A14"]
+    ],
+    "blind_execution": "declaração operacional não auditável pelos recibos",
+    "outputs_frozen_before_judgment": "declaração operacional não auditável pelos recibos",
+    "independent_judges": "agentes distintos segundo o protocolo operacional, sem identidade auditável nos recibos",
+    "routing_and_redaction_gates": true
+  },
+  "first_pass": {
+    "pass": 13,
+    "fail": 1,
+    "failed_scenarios": ["A01"]
+  },
+  "remediation": {
+    "scenario": "A01",
+    "root_cause": "A skill de redação não exigia que a resposta preservasse expressamente a hierarquia entre módulo-base candidato e complemento antes do briefing.",
+    "change": "skills/redacao-contencioso/SKILL.md passou a proibir a apresentação de complemento como ato-base autônomo.",
+    "fixture_changed": false,
+    "judge_rule_changed": false,
+    "regression": "PASS"
+  },
+  "effective_final": {
+    "valid": false,
+    "pass": 14,
+    "fail": 0,
+    "single_pass": false,
+    "scenario_verdicts": {
+      "A01": "PASS_AFTER_FIX_R2",
+      "A02": "PASS",
+      "A03": "PASS",
+      "A04": "PASS",
+      "A05": "PASS",
+      "A06": "PASS",
+      "A07": "PASS",
+      "A08": "PASS",
+      "A09": "PASS",
+      "A10": "PASS",
+      "A11": "PASS",
+      "A12": "PASS",
+      "A13": "PASS",
+      "A14": "PASS"
+    }
+  },
+  "artifacts": {
+    "executor-a01-a05.json": "d5097048131732ad5594e757999011ec85aa64a5822b65c184f235e2a52fb1c5",
+    "executor-a06-a10.json": "a366ffc548cd829564a979657a2524d461abc6bf5a6c0ca8d99a5dbad7f56bde",
+    "executor-a11-a14.json": "b5a8fdedb7e6a4f3bc11d0d570543506e9c9b8dd2cb91bd56735b172eb231205",
+    "judge-a01-a05.json": "d8f96d541895fc1f1838fd234f4aac62f969e447a7d2291449992adf4240cc94",
+    "judge-a06-a10.json": "3225d0c477e014e55ac80cc1376ae95dfa9511c6d1e74bdb6476e2e662deedc2",
+    "judge-a11-a14.json": "08811a8db82a6c9ebf2d224302bff40432a649da11bf041ee8de4884562ff15a",
+    "executor-a01-r2.json": "41cc1c52dde9fb1456571de3c198c0850bea32eca5308158f97cadb7f6d86814",
+    "judge-a01-r2.json": "ece8845edd86a723e2709d0f54319ba9a49761e89a30816269fc0b7a3d6768b4"
+  },
+  "limitations": [
+    "Executores e juízes pertencem à mesma família de modelos Codex, portanto erros correlacionados continuam possíveis.",
+    "A01–A05 e A06–A10 compartilharam contexto dentro de seus respectivos lotes; A11–A14 compartilharam outro contexto.",
+    "Os pacotes são sintéticos e derivados de classes observadas; os documentos privados originais não foram fornecidos aos agentes.",
+    "A rodada não prova produtor, runtime, dogfood, uso humano ou adoção.",
+    "O consumo da franquia Codex não foi medido em dólares pelo harness.",
+    "Os recibos não registram hashes de entrada antes do despacho, identidade dos agentes ou ordem temporal; cegueira e congelamento são declarações operacionais.",
+    "A associação posicional de fatos, achados e frentes invalidou a força probatória desta rodada."
+  ]
+}

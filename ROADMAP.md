@@ -10,18 +10,18 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-30, v0.3.0)
+## Estado atual (2026-08-30, v0.5.0)
 
 - Nove skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.3.0`: contratos deliberativos
-  e gate de confirmação entregues pelo PR #25.
+  recorte versionado do CPC. Versão corrente `v0.5.0`, publicada em 2026-08-30
+  com a cobertura contenciosa ampliada e o contrato de adaptação de casos.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
   GitHub Release e publicação idempotente de assets (quatro releases publicadas
   pelo workflow, todas verdes).
 - Sete bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.2.4](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.2.4);
-  acervo do projeto de smoke no ChatGPT atualizado com esses ZIPs em
-  2026-08-24.
+  [release v0.5.0](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.5.0).
+  O último recibo de atualização do acervo do projeto de smoke no ChatGPT é da
+  v0.2.4, em 2026-08-24; release publicada não prova atualização do projeto.
 - Smoke completo do Claude Code aprovado em 2026-08-24
   ([#9](https://github.com/sensdiego/codigo-aberto/issues/9)): instalação limpa
   da `v0.2.3` via marketplace, nove skills carregadas, roteamento correto e
@@ -50,12 +50,22 @@ Estado dos itens:
   limpa nem adoção externa. Também revelou dois achados de produto: gates
   críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
   entre receber a análise e autorizar a redação.
+- Validação estrutural anonimizada contra 14 classes de situações documentadas
+  em casos reais concluída em 2026-08-30. O núcleo cível mostrou encaixe, mas
+  nenhum cenário provou o fluxo end-to-end; a
+  [RFC-CA-001](RFC-CA-001-adaptacao-casos-reais.md) adota adaptador versionado,
+  perfil de frentes, precedência temporal e despachante de escopo. Status:
+  aceita; Fases 1 e 3 e validação local A01–A14 da Fase 5 concluídas no
+  `codigo-aberto`; comparação externa, Fases 2 e 4 e dogfood não autorizados.
 - Camada deliberativa inicialmente decidida em 2026-08-26 como adaptação dos
-  contratos. As duas rodadas da frente 2 satisfizeram a cláusula de promoção
-  por falha repetida de roteamento; a frente 3 implementa a skill autônoma
-  `deliberacao-juridica` sobre o mesmo protocolo e handoff. A primeira medição
-  dirigida confirmou o roteamento decisório e o gate combinado, mas revelou
-  excesso de roteamento na ponte com redação; a branch permanece não aceita.
+  contratos. Duas rodadas acionaram a cláusula de promoção por falha repetida
+  de roteamento; a frente 3 implementa a skill autônoma sobre o mesmo protocolo
+  e handoff, ainda sem aceitação comportamental.
+- A cláusula de promoção da camada deliberativa disparou após duas rodadas. A
+  skill autônoma foi implementada no PR #26 e sincronizada com a `v0.5.0`, mas
+  permanece em rascunho e fora da `main`: os conflitos Git foram resolvidos,
+  enquanto a medição dirigida continua em 3 PASS / 2 FAIL, sem regressão
+  completa, merge ou publicação.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
   harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
   leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
@@ -216,8 +226,8 @@ Alternativas comparadas em 2026-08-26 (detalhe em
 - skill autônoma `deliberacao-juridica` — rejeitada inicialmente: décima porta num
   pacote em que o usuário não conhece nomes, descrição concorrendo com análise
   jurídica e aprofundamento (a família de confusão que o baseline mediu) e, no
-  ChatGPT, um oitavo ZIP a descobrir; promovida em 2026-08-30 após a cláusula
-  medida disparar;
+  ChatGPT, um oitavo ZIP a descobrir; promovida a experimento em 2026-08-30
+  após a cláusula medida disparar, ainda sem aceitação;
 - protocolo/handoff compartilhado sem nova skill — escolhido e entregue na
   v0.3.0; mantido como contrato da skill autônoma;
 - ajuste apenas das skills existentes — rejeitada: concentra em uma skill o que
@@ -261,19 +271,13 @@ briefing ou contexto sejam tratados como autorização implícita.
       `redacao-contencioso` e `redacao-consultivo`, description de
       `analise-juridica-civel` (com `aprofundamento-audiencia` como controle
       de confusão) e gerador de bundles (`REWRITES` + cópia). Re-medir contra
-      a frente 1. PR próprio. PR #25 integrado em 2026-08-28. Duas rodadas
-      medidas falharam repetidamente por omissão ou roteamento e acionaram a
-      cláusula de promoção.
+      a frente 1. PR próprio. PR #25 integrado em 2026-08-28.
 - [~] Frente 3 — skill autônoma `deliberacao-juridica` (SEN-2408): porta
       própria sobre `references/deliberacao.md`, handoff `decisão`, oitavo
-      bundle, roteamento das três fixtures `deliberacao-*` e estado explícito
-      do gate de redação. Medição dirigida parcial em 2026-08-30: dois cenários
-      decisórios PASS, `gate-confirmacao-combinada` PASS, dois controles da
-      ponte de redação FAIL; dois cenários iniciais foram interrompidos após
-      FAIL. As falhas apontaram roteamento precoce para deliberação e uma
-      primeira entrevista com perguntas agrupadas. As regras foram estreitadas
-      depois da rodada, ainda sem re-medição. Não houve regressão completa,
-      merge, release ou publicação desta frente.
+      bundle e roteamento das fixtures `deliberacao-*`. O PR #26 foi
+      sincronizado com a `v0.5.0` e não tem mais conflitos Git. A medição
+      dirigida permanece em 3 PASS / 2 FAIL; as correções posteriores não
+      foram re-medidas e não houve regressão completa, merge ou publicação.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.
@@ -281,18 +285,59 @@ briefing ou contexto sejam tratados como autorização implícita.
   por roteamento, a skill autônoma passa a ser a recomendação — embrulhando
   protocolo e artefato já existentes.
 
-- [ ] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
-      (CPC arts. 300–310); ampliar recorte legislativo se necessário.
-- [ ] Módulo `cumprimento-sentença` (CPC arts. 523–541), incluindo
-      impugnação.
-- [ ] Módulo `execucao` (CPC Livre II, arts. 771+), avaliando escopo mínimo
-      viável antes de redigir.
-- [ ] Revisar cobertura do `manifest.json` do CPC contra os novos módulos;
-      o validador garante consistência de IDs.
-- [ ] Avaliar skills candidatas fora do fluxo atual: cálculo e atualização
-      monetária; relógio processual autônomo. Decidir entrar ou registrar em
-      Fora de escopo.
-- [ ] Cada módulo entra por PR próprio com fragmento `minor`.
+- [~] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
+      (SEN-2413): complemento do ato-base, recorte integral dos CPC arts.
+      294–311 e cenário multi-turno com gate mecânico. A régua fica pronta no
+      PR, sem execução paga nesta frente sem orçamento separado.
+- [x] Módulo `cumprimento-sentenca`, corrigido para o recorte dos CPC arts.
+      513–538, com modos promover, impugnar e responder à impugnação.
+- [x] Módulo `execucao-titulo-extrajudicial`, com modos promover, embargar e
+      responder aos embargos, além de módulo condicionado de exceção de
+      pré-executividade.
+- [x] Cobertura ampliada de redação: liquidação, prova pericial, exibição,
+      produção antecipada, IDPJ, agravo interno, acordo, ação rescisória,
+      recursos excepcionais, inventário e os procedimentos especiais
+      contenciosos dos arts. 539–718.
+- [x] Jurisdição voluntária dos arts. 719–770 coberta por módulo único com
+      treze modos obrigatórios, evitando módulos redundantes por seção.
+- [x] Cobertura do `manifest.json` revisada: 235 artigos novos resolvem para
+      seis recortes temáticos conferidos contra o HTML compilado oficial em
+      2026-08-30; o validador garante IDs e âncoras.
+- [x] Cálculo/atualização monetária e relógio processual não entram como
+      módulos de redação. Continuam dependentes de capacidade verificável
+      própria antes de eventual implementação.
+- [x] Por decisão do owner em 2026-08-30, a implementação posterior à tutela
+      foi consolidada em branch local única com fragmento `minor`; formato de
+      integração e eventual divisão em PRs ficam para instrução posterior.
+- [ ] Dogfood dos módulos ampliados: adiado expressamente pelo owner; fixtures
+      e checks estruturais foram adicionados sem chamadas pagas a modelo.
+
+### Adaptação segura de casos reais — RFC aceita
+
+Problema confirmado pela
+[auditoria anonimizada](references/validacao-casos-reais.md): os módulos cíveis
+não recebem hoje lente, frente ativa, ato atual, cobertura e conflito temporal
+em um contrato suficientemente determinístico. Mais módulos de peça não
+resolvem essa lacuna.
+
+- [x] Censo e amostra estratificada de 14 cenários reais, sem incorporar dados
+      identificadores ao repositório.
+- [x] Arquitetura aceita em
+      [`RFC-CA-001`](RFC-CA-001-adaptacao-casos-reais.md): intake obrigatório,
+      análise documental somente quando elegível, perfil opcional de frentes,
+      estados de escopo e critérios sintéticos A01–A14.
+- [x] Decisão do owner sobre as seis questões de fechamento da RFC.
+- [x] Fase 1 — contrato público e régua determinística A01–A14; nenhuma skill
+      consumidora alterada durante essa fase.
+- [ ] Fase 2 — produtor no ambiente dos casos, com autorização separada e
+      dry-run sem mutação.
+- [x] Fase 3 — quatro consumidores públicos, escopo por frente e bloqueios de
+      ato, cobertura e regime; validada apenas deterministicamente.
+- [ ] Fase 4 — capacidades auxiliares de cálculo, prazo, mídia e integridade.
+- [x] Fase 5 — validação local A01–A14 com subagentes Codex: primeira passagem
+      13/14, correção de A03 e regressão verde; cadeia de inputs, outputs e
+      julgamentos congelada por hashes e commits. Comparação externa e dogfood
+      continuam sem autorização.
 
 ## Fase 4 — Adoção e comunidade
 
@@ -322,3 +367,9 @@ silenciosas.
   proibido pelo CONTRIBUTING.
 - Suporte a jurisdições não cíveis (trabalhista, criminal): manter o foco até
   o fluxo cível estar completo e validado.
+- Cálculo financeiro e atualização monetária por geração de texto: exigir
+  motor reproduzível, índices identificados e conferência própria antes de
+  transformar a capacidade em produto.
+- Relógio processual autônomo por geração de texto: exigir calendário,
+  feriados e regra de contagem verificáveis; a redação apenas consome prazo já
+  analisado.

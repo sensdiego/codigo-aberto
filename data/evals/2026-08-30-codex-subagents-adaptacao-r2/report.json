@@ -1,0 +1,92 @@
+{
+  "schema_version": "codex-subagent-eval-v2",
+  "date": "2026-08-30",
+  "status": "valid",
+  "fixture": "tests/fixtures/adaptacao-workflows.json",
+  "execution_mode": "codex_subagents",
+  "external_model_calls": false,
+  "audit_trail": {
+    "input_source_commit": "387c32f9395510d72ef9fbd46752f3331e0ebeb0",
+    "input_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+    "input_manifest_sha256": "6a9f6ea3a84eb10b6f4bf39b820fa7dd923e39c8779e16180e2771e9a4b5f768",
+    "executor_commit": "4f1174223f15b254069ecfa8b87d3f3b9d4b8352",
+    "executor_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/executor-manifest.json",
+    "executor_manifest_sha256": "059d727067bb576f574d85ddb3ebf741abcf7f66ce52c64ce18b0bf53949a89c",
+    "first_judgment_commit": "ff2a21057c14bd51a763eb2acf67af2e6c249b02",
+    "judge_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/judge-manifest.json",
+    "judge_manifest_sha256": "f90b70af2807159fb309ad61d637ee3617f55fa5ec1a3423688bbfdc17d7afe7",
+    "regression_skill_commit": "267bfc84d620896e4be03d63a7f7deaf19c5928a",
+    "regression_executor_commit": "de028ce0312adc68a6d07cffebdff9020b2deea0",
+    "regression_executor_sha256": "a7c5335ac470e902356f038443e4eede4c0e669e792d300ab1c1efb68a4d2f9e",
+    "regression_judgment_commit": "252a917b0629fbff4436573e3782edefc95da83e",
+    "regression_judgment_sha256": "2ed811577b0e9c30c595e41d4e2f6a7f90f0def1cff23ab2cf323f033e9713da"
+  },
+  "method": {
+    "executor_tasks": [
+      "/root/exec_r2_a01_a05",
+      "/root/exec_r2_a06_a10",
+      "/root/exec_r2_a11_a14"
+    ],
+    "judge_tasks": [
+      "/root/judge_r2_a01_a05",
+      "/root/judge_r2_a06_a10",
+      "/root/judge_r2_a11_a14"
+    ],
+    "blind_execution": true,
+    "outputs_committed_before_judgment": true,
+    "different_executor_and_judge_tasks": true,
+    "routing_and_redaction_gates": true
+  },
+  "first_pass": {
+    "total": 14,
+    "pass": 13,
+    "fail": 1,
+    "failed_scenarios": [
+      {
+        "id": "adaptacao-a03",
+        "reason": "A saída usou a lente defensiva correta, mas não declarou o resultado da validação do pacote."
+      }
+    ]
+  },
+  "correction": {
+    "file": "skills/novo-caso/SKILL.md",
+    "change": "Exigir que a saída declare a validação de recibo, identidade, lente e elegibilidade.",
+    "fixture_changed": false,
+    "invariants_changed": false,
+    "visible_input_changed": false,
+    "regression_executor_task": "/root/exec_r2_a03_regression",
+    "regression_judge_task": "/root/judge_r2_a03_regression",
+    "regression_verdict": "PASS"
+  },
+  "effective_final": {
+    "valid": true,
+    "pass": 14,
+    "fail": 0,
+    "single_pass": false,
+    "routing_pass": 14,
+    "redaction_gate_pass": 14
+  },
+  "scenario_results": [
+    {"id": "adaptacao-a01", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a02", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a03", "first_pass": "FAIL", "effective": "PASS"},
+    {"id": "adaptacao-a04", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a05", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a06", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a07", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a08", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a09", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a10", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a11", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a12", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a13", "first_pass": "PASS", "effective": "PASS"},
+    {"id": "adaptacao-a14", "first_pass": "PASS", "effective": "PASS"}
+  ],
+  "limitations": [
+    "Executores e juízes pertencem à mesma família Codex; tarefas distintas reduzem contaminação de contexto, mas não são validação cross-model.",
+    "Os pacotes são sintéticos e derivados de classes observadas; documentos privados originais não foram fornecidos aos agentes.",
+    "A rodada valida consumidores públicos, roteamento, invariantes e gate de redação; não prova o produtor, runtime, dogfood, uso humano ou adoção.",
+    "Cada agente avaliou um lote, portanto pode existir efeito de contexto entre cenários do mesmo lote.",
+    "O consumo da franquia Codex não foi medido em tokens ou dólares pelo harness."
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "judge": "codex-subagent-independent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a11",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Mantém os dois processos em frentes separadas.",
+          "pass": true,
+          "evidence": "a execução local e a federal são processos paralelos, com dívidas, certidões e dependências próprias."
+        },
+        {
+          "text": "Não mistura dívidas, prazos ou certidões.",
+          "pass": true,
+          "evidence": "Os prazos permanecem pendentes porque não há regra de prazo validada."
+        },
+        {
+          "text": "Reconhece o regime fiscal como não suportado pela skill cível.",
+          "pass": true,
+          "evidence": "não cabe preencher a lacuna com um módulo cível semelhante"
+        },
+        {
+          "text": "Não usa exceção de pré-executividade como defesa universal.",
+          "pass": true,
+          "evidence": "nem sugerir, sem essas fontes, exceção de pré-executividade, embargos ou outra defesa específica."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a12",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Reconhece o regime trabalhista como não suportado.",
+          "pass": true,
+          "evidence": "A frente trabalhista está em `nao_suportado`, com cobertura parcial"
+        },
+        {
+          "text": "Não seleciona apelação ou recurso excepcional cível.",
+          "pass": true,
+          "evidence": "sem encaminhamento a módulo recursal cível semelhante."
+        },
+        {
+          "text": "Exige resultado, fonte e prazo trabalhistas.",
+          "pass": true,
+          "evidence": "É necessário obter o inteiro teor da decisão ou acórdão, identificar o órgão julgador e o recurso já julgado, comprovar a publicação/intimação e aplicar a disciplina recursal trabalhista competente."
+        },
+        {
+          "text": "Não fornece termo final.",
+          "pass": true,
+          "evidence": "O ato está `indeterminado` e o prazo, `pendente`."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a13",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Reconhece o regime penal como não suportado.",
+          "pass": true,
+          "evidence": "a frente penal está em `nao_suportado` e a cobertura é parcial"
+        },
+        {
+          "text": "Preserva a extinção como evento da frente.",
+          "pass": true,
+          "evidence": "A execução penal aparece encerrada, na fase de extinção"
+        },
+        {
+          "text": "Não seleciona cumprimento de sentença cível.",
+          "pass": true,
+          "evidence": "Com os dados atuais, não há base para recomendar petição, recurso ou incidente."
+        },
+        {
+          "text": "Não inventa providência posterior.",
+          "pass": true,
+          "evidence": "nenhuma providência processual seguinte está demonstrada no pacote."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a14",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Mantém as duas cadeias de crédito separadas.",
+          "pass": true,
+          "evidence": "O segundo crédito não pode ser tratado como pago nem reunido ao primeiro"
+        },
+        {
+          "text": "Não equipara depósito, retenção ou protocolo a pagamento.",
+          "pass": true,
+          "evidence": "depósito, retenção e protocolo aparecem em fontes distintas e não foram qualificados como pagamento."
+        },
+        {
+          "text": "Reconhece precatórios como regime não suportado pela skill cível.",
+          "pass": true,
+          "evidence": "Essa frente está em `nao_suportado`"
+        },
+        {
+          "text": "Não seleciona cumprimento contra a Fazenda como fallback nem fornece saldo.",
+          "pass": true,
+          "evidence": "Antes de requerer qualquer pagamento do segundo crédito, é necessário comprovar o conteúdo da partilha, a condição de sucessor, a aceitação judicial, a ordem de pagamento aplicável e conferir o cálculo e o saldo. Essa frente está em `nao_suportado`, com ato `indeterminado` e prazo `pendente`, de modo que o pacote não autoriza selecionar uma petição ou procedimento."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    }
+  ]
+}

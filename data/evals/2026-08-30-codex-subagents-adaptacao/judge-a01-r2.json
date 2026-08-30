@@ -1,0 +1,34 @@
+{
+  "judge": "codex-subagent-independent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Preserva as duas bases monetárias e não fornece saldo como calculado ou conferido.",
+          "pass": true,
+          "evidence": "\"o conflito C01 permanece aberto, sem fonte controladora, e bloqueia valor_atual e saldo\""
+        },
+        {
+          "text": "Trata petição inicial e tutela como candidatas, sem ler módulo ou redigir antes da resolução dos bloqueios e do briefing confirmado.",
+          "pass": true,
+          "evidence": "\"o ato é somente candidato\"; \"Só então cabe apresentar o briefing consolidado\"; \"Nenhum módulo de redação foi carregado, nenhuma minuta foi produzida\""
+        },
+        {
+          "text": "Mantém tutela como complemento e não promove IDPJ sem decisão própria.",
+          "pass": true,
+          "evidence": "\"a tutela é apenas complemento possível, não uma escolha humana registrada\"; a saída não propõe IDPJ"
+        },
+        {
+          "text": "Declara os limites do pacote parcial e do escopo condicionado.",
+          "pass": true,
+          "evidence": "\"é apenas parcial_utilizavel\"; \"a cobertura é parcial e o escopo é suportado_condicionado\""
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    }
+  ]
+}

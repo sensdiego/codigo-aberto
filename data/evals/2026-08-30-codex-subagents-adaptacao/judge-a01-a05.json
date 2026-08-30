@@ -1,0 +1,147 @@
+{
+  "judge": "codex-subagent-independent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Preserva as duas bases monetárias e não fornece saldo como calculado ou conferido.",
+          "pass": true,
+          "evidence": "A saída registra que \"as duas memórias monetárias são incompatíveis, nenhuma é controladora\" e que \"valor atual e saldo não podem ser afirmados\"."
+        },
+        {
+          "text": "Trata petição inicial e tutela como candidatas, sem ler módulo ou redigir antes da resolução dos bloqueios e do briefing confirmado.",
+          "pass": true,
+          "evidence": "A saída afirma que \"Petição inicial e tutela são atos candidatos, não decididos\" e que \"Nenhuma minuta foi redigida\"; read_files contém apenas o índice de módulos, não arquivo sob references/modulos/."
+        },
+        {
+          "text": "Mantém tutela como complemento e não promove IDPJ sem decisão própria.",
+          "pass": false,
+          "evidence": "A saída diz apenas que \"Petição inicial e tutela são atos candidatos\" e pede confirmação sobre \"se haverá pedido de IDPJ\"; não identifica a tutela como complemento da petição inicial."
+        },
+        {
+          "text": "Declara os limites do pacote parcial e do escopo condicionado.",
+          "pass": true,
+          "evidence": "A saída qualifica a frente como \"suportado_condicionado, com cobertura parcial\" e registra que o pacote omite mapa jurídico, decisão e redação."
+        }
+      ],
+      "verdict": "FAIL",
+      "findings": [
+        "A relação exigida entre tutela e petição inicial não foi preservada expressamente: a saída apresentou ambas apenas como atos candidatos."
+      ]
+    },
+    {
+      "id": "adaptacao-a02",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Reconhece o regime como não suportado pela skill cível e não escolhe módulo semelhante.",
+          "pass": true,
+          "evidence": "A saída marca a frente tributária como \"nao_suportado\", encaminha para capacidade tributária/administrativa e diz que não deve seguir a módulo cível por semelhança formal."
+        },
+        {
+          "text": "Não escolhe entre mandado de segurança e ação comum.",
+          "pass": true,
+          "evidence": "A saída afirma que não há decisão humana entre as vias e que o material não sustenta \"nem mandado de segurança, nem ação comum\"."
+        },
+        {
+          "text": "Exige autoridade, lei local e regra de prazo sem inventar termo final.",
+          "pass": true,
+          "evidence": "A saída exige identificar a autoridade e a legislação aplicável, verificar a regra atual de impugnação e prazo e rejeita \"a afirmação de uma data fatal\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a03",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Valida o pacote e usa a lente defensiva atual no intake.",
+          "pass": true,
+          "evidence": "A saída consolida no intake a \"lente vigente da front-defesa\" e identifica a \"parte representada: réu\", com estado \"parcial_utilizavel\"."
+        },
+        {
+          "text": "Preserva a matriz antiga como contraditada sem promover pedidos ofensivos.",
+          "pass": true,
+          "evidence": "A matriz antiga é \"preservada apenas como versão anterior contraditada\" e a saída mantém o objetivo de \"responder ao ato intermediário e preservar a defesa\"."
+        },
+        {
+          "text": "Não duplica o intake nem declara cobertura integral.",
+          "pass": true,
+          "evidence": "A saída faz \"o único ajuste autorizado\", preserva o inventário original e declara \"cobertura parcial\"."
+        },
+        {
+          "text": "Mantém o prazo como pendente de verificação.",
+          "pass": true,
+          "evidence": "A saída registra literalmente \"prazo pendente e não verificado\" e a lacuna \"prazo_nao_verificado\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a04",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Preserva separadamente as três frentes e seus estados de escopo.",
+          "pass": true,
+          "evidence": "A saída enumera front-replica, front-pericia e front-recurso separadamente e registra seus estados como suportado_condicionado, suportado_condicionado e indeterminada."
+        },
+        {
+          "text": "Registra a substituição do efeito anterior sem apagar a matriz derivada.",
+          "pass": true,
+          "evidence": "A saída diz que a decisão superveniente \"substitui a matriz anterior somente quanto ao efeito processual\" e mantém o estado anterior \"visível como versão contraditada\"."
+        },
+        {
+          "text": "Não transforma o vídeo não examinado em fato textual.",
+          "pass": true,
+          "evidence": "A saída registra \"vídeo não examinado, portanto não examinável nesta rodada\" e não lhe atribui conteúdo."
+        },
+        {
+          "text": "Não escolhe recurso, providência ou prazo para a frente indeterminada.",
+          "pass": true,
+          "evidence": "A frente recursal permanece \"indeterminada, com cabimento e prazo pendentes\", e a saída afirma que nenhuma estratégia foi escolhida."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a05",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Seleciona a frente da manifestação atual e não a ação-base pelo título.",
+          "pass": true,
+          "evidence": "A saída seleciona a \"front-manifestacao\" e rejeita nova petição inicial ou módulo de exibição porque a ação-base está \"latente e marcada como sem_ato\"."
+        },
+        {
+          "text": "Trata manifestação genérica apenas como candidata à providência simples.",
+          "pass": true,
+          "evidence": "A saída limita o ato a uma \"manifestação intermediária simples\", sem pedidos adicionais, e termina pedindo autorização para iniciar a redação da manifestação genérica."
+        },
+        {
+          "text": "Não lê módulo nem redige antes do briefing confirmado.",
+          "pass": true,
+          "evidence": "read_files contém somente \"skills/redacao-contencioso/references/indice-modulos.md\", nenhum arquivo sob references/modulos/; a saída apresenta briefing e solicita confirmação antes de redigir."
+        },
+        {
+          "text": "Mantém o prazo como não verificado.",
+          "pass": true,
+          "evidence": "A saída registra \"prazo pendente e não verificado\" e afirma que nenhuma data fatal será indicada."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    }
+  ]
+}

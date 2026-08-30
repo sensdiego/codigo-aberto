@@ -1,0 +1,30 @@
+{
+  "schema_version": "codex-subagent-execution-v2",
+  "source_commit": "267bfc8",
+  "source_input_commit": "387c32f",
+  "input_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+  "executor_task": "/root/exec_r2_a03_regression",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a03",
+      "visible_input_sha256": "504a51f70060de677b46283a1d023dd9df2a0935085568cfdf22a40d67e22456",
+      "invoked_skills": [
+        "novo-caso"
+      ],
+      "read_files_by_turn": [
+        [
+          "PACOTE_ADAPTADO.json",
+          "skills/novo-caso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "skills/novo-caso/references/indexacao-processo.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Intake corrigido com confiança alta. A correção é localizada à lente representada e ao registro do delta; a análise documental e os artefatos omitidos não foram alterados.\n\nValidação do pacote: recibo válido para `case-adaptation-v1`, caso `A03`, gerado em `2026-08-30T12:00:00-03:00`, com `external_action: false`; identidade coerente sob a autoridade `registro-sintetico`; lente coerente como `reu` na frente `front-defesa`; elegibilidade `parcial_utilizavel`, cobertura `parcial` e bloqueio preservado em `prazo_nao_verificado`. O pacote pode alimentar o intake, mas não autoriza promover cobertura, calcular prazo, escolher ato ou redigir.\n\nModo de persistência: temporário. Segue o handoff copiável; nenhum arquivo do caso foi gravado.\n\n# Handoff — A03\n\n## Caso\n`A03` — Correção superveniente da lente representada. Na frente `front-defesa`, a pessoa representada é o `reu`. Ciclo: `suplementação`. Estado: `processo em andamento`.\n\n## Tipo de artefato\n`intake`, atualizado somente para refletir a lente defensiva controladora.\n\n## Fontes consumidas\n- `registro-sintetico-lente-atual`, localizador `lente vigente`, qualidade `fixture_sintetica_direta`; a entrada duplicada idêntica foi consolidada sem mudança de conteúdo.\n- `matriz-sintetica-antiga`, localizador `conclusao 3`, qualidade `fixture_sintetica_direta`; fonte derivada mantida como contraditada.\n\n## Escopo\nIncluída somente a frente `front-defesa`, com `scope_status: suportado` e cobertura `parcial`. Fora do escopo: mapa jurídico, decisão, redação, verificação do prazo e qualquer revisão da análise documental já incluída no pacote.\n\n## Achados\n- `confirmado`: o registro sintético atual identifica a pessoa representada como ré, sob `registro-sintetico-lente-atual` / `lente vigente`, no alcance da confirmação humana `papel defensivo atual`.\n- `contraditado`: a matriz derivada antiga analisava o processo pela perspectiva ofensiva, sob `matriz-sintetica-antiga` / `conclusao 3`.\n- `pendente`: o objetivo registrado de responder ato intermediário e preservar a defesa ainda depende de `confirmacao_do_objetivo`; não foi promovido a conteúdo confirmado.\n\n## Estado\n`parcial_utilizavel`, com estados preservados por achado: um confirmado, um contraditado e um pendente.\n\n## Confirmação humana\nConfirmado somente o papel defensivo atual da pessoa representada. Permanecem fora da confirmação o objetivo operativo, o prazo, o cabimento do ato e qualquer estratégia.\n\n## Lacunas\n- `prazo_nao_verificado`: impede afirmar ou calcular prazo.\n- `confirmacao_do_objetivo`: impede tratar o objetivo operativo como confirmado.\n\n## Atualização\nDelta `substitui`: para a lente representada da frente `front-defesa`, `registro-sintetico-lente-atual` passa a controlar e substitui a perspectiva ofensiva da `matriz-sintetica-antiga`. O conflito `C01` permanece registrado como `resolvido`, sem alegações bloqueadas. Os demais campos e limites do intake não são afetados; a cobertura continua parcial.\n\n## Próximas rotas\n- `analise-documental`, somente se houver material novo ou alterado.\n- `analise-juridica-civel`, depois da confirmação do objetivo e sem presumir prazo, ato ou autorização de redação.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    }
+  ]
+}

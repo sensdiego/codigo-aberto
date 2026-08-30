@@ -4,6 +4,24 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.5.0] - 2026-08-30
+
+### Added
+
+- Ensina as skills públicas a consumir pacotes adaptados com escopo e bloqueios por frente.
+- Amplia a redação contenciosa com módulos de execução, prova, incidentes, recursos e procedimentos especiais cíveis.
+- Adota o contrato versionado, o perfil de frentes e a régua determinística para adaptar casos reais aos handoffs públicos.
+
+### Fixed
+
+- Preserva a hierarquia entre módulo-base candidato e complementos antes do briefing de redação.
+
+## [0.4.0] - 2026-08-30
+
+### Added
+
+- Adiciona módulo complementar para redação de tutela provisória de urgência e da evidência.
+
 ## [0.3.0] - 2026-08-28
 
 ### Added

@@ -1,109 +1,206 @@
 # Handoff de sessão
 
-Atualizado em 2026-08-30 durante a frente 3 da camada deliberativa. O
-rastreamento é SEN-2408, sob SEN-2381; SEN-2384 registra o resultado da frente
-2. A decisão e a cláusula de promoção originais vivem em
-[#22](https://github.com/sensdiego/codigo-aberto/issues/22).
+Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
+redação contenciosa, a elaboração do mapa visual, a validação estrutural
+anonimizada contra situações documentadas em casos reais e a adoção da
+arquitetura de adaptação, seus consumidores públicos locais e a avaliação
+comportamental A01–A14 com subagentes Codex.
 
-## Estado do produto e da branch
+## Estado do produto
 
-A versão publicada é `v0.3.0`: PR #25 integrado, release publicada e nove
-skills públicas. A frente 3 está na branch
-`codex/SEN-2408-deliberacao-juridica`, ainda sem merge, release ou publicação.
-Ela adiciona a décima skill pública e o oitavo bundle de upload do ChatGPT.
+A versão publicada é `v0.5.0`. O PR #27 foi integrado a `main` pelo merge commit
+`0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
+commit `7b6ecf0`, preservando toda a cadeia de avaliação. O workflow
+`Software release` criou o commit `632fa21`, a tag e o GitHub Release `v0.5.0`.
+A skill autônoma de deliberação continua no draft PR #26 e não foi incorporada.
+Sua branch foi sincronizada com a `v0.5.0` por merge commit, sem reescrever o
+commit experimental; os conflitos Git foram resolvidos, mas a aceitação
+comportamental permanece bloqueada em 3 PASS / 2 FAIL, sem regressão completa.
 
-O resultado ainda não está aceito. A medição dirigida comprovou a porta
-decisória e consertou o incidente da confirmação combinada, mas reprovou dois
-controles da ponte com redação. As correções de causa raiz feitas depois da
-rodada ainda não foram re-medidas.
+O trabalho posterior à tutela está integrado e publicado. A release contém os
+sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
+instalação e uso humano continuam sendo recibos distintos.
 
-## Implementação da frente 3
+## O que este branch entrega
 
-- `skills/deliberacao-juridica/SKILL.md` embrulha o protocolo existente, exige
-  análise madura, conduz opções/recomendação/entrevista e produz o handoff de
-  tipo `decisão`; não pesquisa, aprofunda ou redige.
-- As skills de análise e aprofundamento apenas oferecem a nova rota. As skills
-  de redação a recebem quando uma escolha estratégica realmente impede um
-  briefing coerente.
-- `references/disciplina.md` explicita os estados `BLOQUEADA — item aberto`,
-  `AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO` e `AUTORIZADA`. Resolver um
-  item e dizer “pode redigir” na mesma mensagem não pula o estado intermediário.
-- O roteamento foi estreitado após a medição: pedido de redação começa na skill
-  de redação; uma escolha que cabe como campo aberto permanece no briefing
-  bloqueado. A deliberação autônoma recebe pedido decisório direto ou
-  encaminhamento de escolha estratégica.
-- Validador, gerador de bundles, harness, documentação e as três fixtures
-  `deliberacao-*` reconhecem a nova skill. O harness usa `--plugin-dir` para
-  medir a árvore de trabalho, não o plugin instalado antigo.
-- O fragmento `.changes/deliberacao-juridica.json` é `minor`; partindo da
-  `v0.3.0`, uma publicação desta frente será `v0.4.0`.
+- 27 módulos novos em `redacao-contencioso`; o catálogo passa de 10 para 37
+  módulos.
+- Família prioritária: cumprimento de sentença, execução de título
+  extrajudicial, liquidação, prova pericial, exibição, produção antecipada,
+  IDPJ, agravo interno e acordo/homologação.
+- Fila posterior: monitória, embargos de terceiro, ação rescisória, REsp/RE,
+  exceção de pré-executividade, habilitação e crédito, inventário, consignação,
+  exigir contas, possessórias, demarcação/divisão, dissolução parcial,
+  oposição, ações de família, penhor legal, avaria grossa e restauração.
+- Procedimentos de jurisdição voluntária dos arts. 719–770 cobertos em módulo
+  único com treze modos obrigatórios: geral, notificação/interpelação,
+  alienação, família consensual, alteração de regime, testamento/codicilo,
+  herança jacente, ausência, coisa vaga, interdição, tutela/curatela, fundação
+  e protesto marítimo.
+- `indice-modulos.md` organiza o roteamento por fase e preserva um único
+  módulo-base; tutela continua sendo o único complemento cumulativo.
+- Dez fixtures não executadas acrescentam cobertura futura para as famílias
+  novas e o gate de confirmação.
+- `references/mapa-visual-skills-modulos.md` representa as nove skills
+  publicadas e a candidata deliberativa do PR #26, seus handoffs e gates, os
+  modos não contenciosos e os 37 módulos contenciosos. O mapa é estritamente
+  descritivo e não simula workflows prováveis.
+- `references/validacao-casos-reais.md` confronta os contratos públicos com 14
+  cenários reais anonimizados, registra a fronteira da prova e prioriza as
+  lacunas sem incorporar dado identificador do corpus privado.
+- `RFC-CA-001-adaptacao-casos-reais.md` adota adaptador versionado, intake
+  obrigatório, análise documental condicionada, perfil de frentes, precedência
+  temporal, despachante de escopo e critérios sintéticos A01–A14. A RFC foi
+  aceita; as Fases 1 e 3 e a validação local da Fase 5 foram concluídas. A
+  comparação externa, as Fases 2 e 4 e o dogfood não foram autorizados.
+- `novo-caso`, `analise-documental`, `analise-juridica-civel` e
+  `redacao-contencioso` consomem o pacote v1 conforme sua etapa. O estado de
+  escopo agora pertence a cada frente; handoffs comuns continuam compatíveis.
+- `adaptacao-workflows.json` referencia A01–A14 sem duplicar as 20 frentes. O
+  runner materializa pacotes sintéticos completos, cobre os quatro consumidores
+  e mantém A01–A04 como canário separado da rodada integral.
+- A rodada comportamental R2 teve primeira passagem 13/14. A03 usou a lente
+  defensiva correta, mas não declarou a validação do pacote; `novo-caso` foi
+  corrigida sem mudar fixture, invariantes ou input, e a regressão com executor
+  e juiz novos passou. O estado efetivo é 14/14, sem alegação de passagem única
+  perfeita. A rodada anterior foi invalidada por associação posicional de
+  fatos, achados e frentes.
 
-## Evidência medida em 2026-08-30
+## Resultado da validação com casos reais
 
-Um smoke do Claude Code carregou o plugin inline `silo-legal@inline` na versão
-`0.3.0` e listou `silo-legal:deliberacao-juridica`. O comando respondeu `OK`,
-mas encerrou com `error_max_budget_usd`: custo observado de US$ 0,1265 para
-limite nominal de US$ 0,05. Isso prova carregamento, não qualidade.
+A infraestrutura não sustenta ainda uma promessa de cobertura integral. O
+núcleo de redação cível tem encaixe material forte, mas nenhum cenário provou o
+fluxo completo desde a fonte real até uma minuta confirmada.
 
-A primeira execução dirigida foi interrompida após dois FAIL e não gerou
-relatório consolidado:
+A amostra estratificada produziu quatro cenários válidos com extensão, dois
+inconsistentes na integração, dois não validáveis por falta de evento atual e
+seis fora do escopo end-to-end. Esses números não são taxa de sucesso: a
+amostra foi escolhida por variedade e dificuldade, não por frequência.
 
-- `manifestacao-concordancia`: roteou para `redacao-contencioso`, mas exigiu
-  handoff deliberativo e recusou briefing proporcional;
-- `deliberacao-nao-redigir`: roteou corretamente para
-  `deliberacao-juridica`, mas agrupou quatro perguntas na primeira resposta.
+As causas prioritárias são:
 
-A continuação persistida em
-`data/evals/2026-08-30-claude-sonnet-deliberacao-autonoma-continuacao/` terminou
-com 3 PASS, 2 FAIL, 0 erro de juiz e US$ 2,6675:
+1. ausência de adaptador do estado do caso para o handoff público;
+2. ausência de roteador explícito de frente e ato atual;
+3. falta de precedência temporal e resolução de conflito entre artefatos;
+4. ausência de recibo end-to-end;
+5. regimes tributário/público especial, fiscal, trabalhista, criminal,
+   fiduciário e de precatórios fora do contrato cível vigente.
 
-- PASS: `deliberacao-nao-agir-sob-pressao`;
-- PASS: `deliberacao-entrevista-segundo-turno`;
-- PASS: `gate-confirmacao-combinada` — nenhum módulo ou rascunho antes de uma
-  confirmação distinta do briefing consolidado;
-- FAIL: `redacao-sem-decisao-registrada` — conteúdo 4/4, mas roteamento inicial
-  precoce para `deliberacao-juridica`;
-- FAIL: `gate-resposta-nao-autoriza` — gate mecânico aprovado, mas a redação
-  enviou um item resolvível no briefing para deliberação e não chegou à minuta
-  esperada no terceiro turno.
+As Fases 1 e 3 implementaram contrato, régua e consumidores locais:
+`references/handoff.md` recebeu elegibilidade e perfil opcional de frentes;
+`adaptacao-casos-reais.json` contém A01–A14 sintéticos com escopo por frente; o
+validador reprova promoções, remoção das cláusulas consumidoras e roteamentos
+inseguros. Não existe produtor neste repositório e nenhum outro workspace foi
+alterado.
 
-Depois da rodada, a primeira pergunta passou a ser singular e o gatilho
-compartilhado foi estreitado para separar escolha estratégica de item aberto de
-briefing. Essas duas correções não têm recibo comportamental posterior.
+## Biblioteca legislativa
 
-O custo conhecido mínimo do lote é US$ 3,2877: smoke, dois executores da rodada
-interrompida e a continuação. O custo exato é maior porque os dois juízes da
-rodada interrompida não foram persistidos. Como não é possível provar margem
-sob o teto de US$ 5, não houve nova chamada paga. A condição para a regressão
-completa também não foi satisfeita; portanto, os 19 cenários não rodaram.
+Seis recortes novos armazenam 235 artigos integrais selecionados:
 
-## Próximo passo seguro
+- `incidentes-e-provas.md`;
+- `cumprimento-e-execucao.md`;
+- `procedimentos-especiais.md`;
+- `inventario-partilha.md`;
+- `jurisdicao-voluntaria.md`;
+- `recursos-avancados.md`.
 
-1. Com novo orçamento explícito, reexecutar somente os sete cenários dirigidos
-   em diretório novo. O mínimo é 7/7, roteamento correto nos três
-   `deliberacao-*`, `manifestacao-concordancia` preservado e os dois gates de
-   redação aprovados.
-2. Só depois do 7/7, rodar os 19 cenários. Qualquer falha direta de roteamento
-   deliberativo ou do gate combinado volta a bloquear merge e publicação.
-3. Com a regressão completa verde, revisar e integrar a frente, publicar a
-   release `v0.4.0` e conferir separadamente release, assets, instalação limpa
-   e smoke funcional.
-4. Manter anúncio e piloto externo bloqueados até o dogfood pareado previsto no
-   roadmap.
+Os 235 artigos foram comparados mecanicamente, sem divergência, com nova leitura
+do HTML compilado oficial do Planalto em 2026-08-30, excluindo notas editoriais
+e redações revogadas conforme a regra declarada do corpus. O manifesto agora
+contém 869 IDs únicos; todas as 378 referências usadas pelas skills resolvem.
+Essa conferência não equivale, isoladamente, a certidão de vigência nem substitui
+lei material, regimento ou jurisprudência exigidos pelo caso.
+
+## Decisões de escopo
+
+- Cumprimento cobre os arts. 513–538; o recorte anterior 523–541 foi corrigido,
+  pois o art. 539 inicia consignação em pagamento.
+- Credor e devedor começam como modos rígidos dentro das famílias de
+  cumprimento e execução. Extração futura para módulos separados depende de
+  falha observada, não de antecipação arquitetural.
+- Jurisdição voluntária usa um módulo com modos, evitando onze arquivos com o
+  mesmo contrato-base.
+- Cálculo/atualização monetária e relógio processual não foram disfarçados como
+  redação: permanecem fora de escopo até existir mecanismo reproduzível próprio.
+- Exceção de pré-executividade bloqueia redação sem prova pré-constituída e
+  pesquisa jurisprudencial atual do tribunal competente.
+- Procedimentos sujeitos a legislação material ou extravagante exigem que essa
+  fonte seja carregada antes de qualquer minuta; o novo corpus é apenas CPC.
+
+## Histórico local
+
+- `3c753a0` — base normativa e módulos prioritários;
+- `d7ce8ab` — procedimentos especiais e roteamento completo;
+- `d21c7b9` — checks, fixtures e fechamento da cobertura de redação;
+- `9168d63` — mapa visual de skills, módulos e modos;
+- `8c255e5` — checkpoint local das Fases 1 e 3 da adaptação;
+- `10d7337` — primeira avaliação comportamental, depois invalidada pela revisão;
+- `387c32f` — correções do materializador, gates e manifesto de inputs;
+- `4f11742` — outputs cegos A01–A14 congelados antes do julgamento;
+- `ff2a210` — julgamento independente da primeira passagem, 13/14;
+- `267bfc8` — validação do pacote tornada explícita em `novo-caso`;
+- `de028ce` — output cego da regressão A03;
+- `252a917` — julgamento independente da regressão A03, PASS;
+- `3f2265a` — relatório R2 e documentação de fechamento.
+- `babdfba` — sincronização com `main` após o landing e a release automática da
+  tutela, sem reescrita da cadeia.
+- `7b6ecf0` — merge do PR #28, sem rebase ou squash;
+- `632fa21` — release `v0.5.0` e consumo dos sete fragmentos.
+
+## Verificação
+
+- extração oficial: 235/235 artigos sem divergência;
+- módulos: 37/37 com as seis seções contratuais;
+- manifesto: 869 IDs únicos, nenhuma referência ausente;
+- `make validate`: PASS;
+- `make lint`: PASS;
+- `make test`: PASS — 60 testes.
+- `make test-release`: PASS — 13 testes.
+- `git diff --check`: PASS.
+
+Os comandos foram repetidos após o retarget para `main`. O workflow de release
+passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
+
+## Limites e recibos negativos
+
+- A01–A14 e a regressão A03 foram executados com subagentes Codex; não houve
+  chamada de modelo externo, dogfood ou recibo de custo em dólares. Houve
+  consumo não medido da franquia Codex.
+- Custo medido nos quatro relatórios anteriores: medianas por cenário entre
+  US$ 0,28 e US$ 0,65; máximo de US$ 1,19. Estimativa não executada no executor
+  externo: US$ 2–5 para A01–A04 e US$ 8–17 para A01–A14.
+- Esta etapa não escreveu em outro workspace. A análise anterior do corpus
+  privado permaneceu somente como evidência de origem anonimizada.
+- Nenhum nome, número processual, valor, documento ou trecho identificador de
+  caso real foi incorporado ao `codigo-aberto`.
+- Não houve pesquisa jurisprudencial nova.
+- Os PRs #27 e #28 foram integrados; seus workflows publicaram `v0.4.0` e
+  `v0.5.0`, respectivamente.
+- A publicação `v0.5.0` contém sete bundles ZIP e um manifesto. Não houve
+  instalação das skills, dogfood, uso humano ou anúncio externo.
+- A sincronização do PR #26 não executou nova medição comportamental e não
+  autoriza merge, release ou anúncio da skill autônoma.
+
+## Próxima ação
+
+O próximo gate do PR #26 é reexecutar a rodada deliberativa dirigida sobre a
+base `v0.5.0`; somente um resultado integralmente verde permite considerar a
+regressão completa. Comparação externa da RFC, Fases 2 e 4, instalação, dogfood,
+merge do PR #26 e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 
 ```bash
 git switch codex/SEN-2408-deliberacao-juridica
-git status --short
+git fetch origin main
+git status --short --branch
+git log --oneline --decorate -6
 make validate
 make lint
 make test
 make test-release
+git diff --check
 python3 scripts/release.py impact --ref-range origin/main...HEAD
+python3 scripts/release.py plan
+python3 scripts/run_evals.py --fixture tests/fixtures/adaptacao-workflows.json --list
 ```
-
-O plugin instalado globalmente pode continuar na `v0.3.0`; o harness desta
-branch precisa manter `--plugin-dir` para carregar a árvore de trabalho. Os
-transcripts permanecem ignorados por `.gitignore`; `report.json` e `report.md`
-são os recibos versionáveis.

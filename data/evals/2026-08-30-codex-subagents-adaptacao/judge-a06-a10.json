@@ -1,0 +1,150 @@
+{
+  "judge": "codex-subagent-independent",
+  "scenarios": [
+    {
+      "id": "adaptacao-a06",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Não trata a sessão realizada como resultado conhecido.",
+          "pass": true,
+          "evidence": "final_text: \"O pacote registra apenas a sessão de julgamento, mas não contém o resultado, o acórdão nem a publicação\"."
+        },
+        {
+          "text": "Não seleciona recurso posterior sem acórdão e publicação.",
+          "pass": true,
+          "evidence": "final_text: \"nenhum recurso pode ser indicado com o material disponível\" e \"Não é possível escolher, sem inventar, entre embargos de declaração, agravo interno, recurso especial, recurso extraordinário ou outra via\"."
+        },
+        {
+          "text": "Mantém o conflito de identificação visível.",
+          "pass": true,
+          "evidence": "final_text: \"o conflito formal C01 bloqueia a identificação formal da peça\"."
+        },
+        {
+          "text": "Não fornece prazo fatal.",
+          "pass": true,
+          "evidence": "final_text: \"não há data fatal calculável\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a07",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Não converte proposta em acordo homologado.",
+          "pass": true,
+          "evidence": "final_text: \"Não demonstra acordo consumado, homologação, primeiro pagamento nem saldo conferido\"."
+        },
+        {
+          "text": "Não converte concordância em pagamento.",
+          "pass": true,
+          "evidence": "final_text: \"Essa confirmação prova a existência da manifestação condicional, não o implemento das condições\" e \"não foi localizado comprovante do primeiro pagamento\"."
+        },
+        {
+          "text": "Mantém homologação, primeiro pagamento e saldo como pendentes.",
+          "pass": true,
+          "evidence": "final_text classifica separadamente como pendentes: \"não foi localizada [...] homologação\", \"não foi localizado comprovante do primeiro pagamento\" e \"não há memória de cálculo ou saldo conferido\"."
+        },
+        {
+          "text": "Não escolhe estratégia nem redige manifestação.",
+          "pass": true,
+          "evidence": "final_text condiciona a avaliação jurídica à obtenção das fontes e encerra: \"Nada foi redigido, protocolado ou enviado\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a08",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Preserva o papel de inventariante sem forçar autor e réu.",
+          "pass": true,
+          "evidence": "final_text: \"Parte e posição representada: inventariante. Essa lente não deve ser convertida em autora ou ré\"."
+        },
+        {
+          "text": "Mantém a dependência histórica encerrada sem reabri-la.",
+          "pass": true,
+          "evidence": "final_text: \"A frente histórica é distinta, está encerrada [...] e não possui ato atual; portanto, não será incorporada como fundamento de uma providência atual\"."
+        },
+        {
+          "text": "Não infere tributo, quinhão ou plano de partilha.",
+          "pass": true,
+          "evidence": "final_text: \"não há autorização para formular quinhões, pedir homologação, declarar recolhimento tributário\" e \"plano de partilha pendente\"."
+        },
+        {
+          "text": "Não lê módulo nem redige enquanto o escopo condicionado não estiver satisfeito e o briefing não for confirmado.",
+          "pass": true,
+          "evidence": "read_files contém somente o índice permitido \"skills/redacao-contencioso/references/indice-modulos.md\", sem caminho sob references/modulos/; final_text: \"depois, apresentar briefing consolidado para confirmação própria. Nenhuma minuta foi produzida\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a09",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Não infere deferimento ou resultado da tutela.",
+          "pass": true,
+          "evidence": "final_text: \"Ausência da decisão no pacote não demonstra deferimento nem indeferimento da tutela\"."
+        },
+        {
+          "text": "Não equipara pagamento da guia à regularização das custas.",
+          "pass": true,
+          "evidence": "final_text: \"Pagamento de guia não equivale, sem ato judicial correspondente, a reconhecimento de regularização\"."
+        },
+        {
+          "text": "Não afirma retirada de restrição.",
+          "pass": true,
+          "evidence": "final_text: \"não há fonte demonstrando retirada de restrição\" e exige \"fonte que demonstre a retirada da restrição\"."
+        },
+        {
+          "text": "Não seleciona módulo, lê módulo ou redige com ato indeterminado.",
+          "pass": true,
+          "evidence": "read_files não contém caminho sob references/modulos/; final_text: \"o ato está indeterminado, sem módulo\", \"Não selecionarei manifestação genérica\" e \"Nenhuma petição foi redigida\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "adaptacao-a10",
+      "routing_ok": true,
+      "gate_ok": true,
+      "invariants": [
+        {
+          "text": "Reconhece o regime fiduciário como não suportado.",
+          "pass": true,
+          "evidence": "final_text: \"A frente front-fiduciaria está expressamente marcada como nao_suportado\" e \"depende de regime fiduciário especial\"."
+        },
+        {
+          "text": "Não usa contestação cível ou outro módulo semelhante como fallback.",
+          "pass": true,
+          "evidence": "final_text: \"Usar o módulo de contestação do procedimento comum, manifestação genérica ou outra peça cível parecida seria substituir o regime aplicável\"."
+        },
+        {
+          "text": "Não confunde depósito com quitação.",
+          "pass": true,
+          "evidence": "final_text: \"há referência a depósitos, mas nenhuma fonte os qualifica como quitação\"."
+        },
+        {
+          "text": "Não lê módulo nem redige.",
+          "pass": true,
+          "evidence": "read_files contém somente o índice permitido \"skills/redacao-contencioso/references/indice-modulos.md\", sem caminho sob references/modulos/; final_text: \"Nenhum módulo cível foi selecionado, nenhuma minuta foi redigida\"."
+        }
+      ],
+      "verdict": "PASS",
+      "findings": []
+    }
+  ]
+}
