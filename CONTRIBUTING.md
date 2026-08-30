@@ -118,10 +118,12 @@ canário tiver `FAIL`, `JUDGE_ERROR`, falha de roteamento ou gate mecânico; cor
 primeiro a régua ou o consumidor afetado e manter os transcripts para `--resume`.
 
 A rodada local de 2026-08-30 usou subagentes Codex no lugar desse executor
-externo. O [relatório](data/evals/2026-08-30-codex-subagents-adaptacao/report.md)
-registra primeira passagem 13/14, correção de A01 sem alterar a fixture e
-regressão verde. Essa alternativa consome a franquia Codex, cujo custo não é
-medido pelo runner.
+externo. O
+[relatório R2](data/evals/2026-08-30-codex-subagents-adaptacao-r2/report.md)
+registra inputs e outputs por hash e commit, primeira passagem 13/14, correção
+de A03 sem alterar fixture, invariantes ou input, e regressão verde. A rodada
+anterior foi invalidada e não integra o resultado. Essa alternativa consome a
+franquia Codex, cujo custo não é medido pelo runner.
 
 ## Envio
 

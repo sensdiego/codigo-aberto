@@ -45,18 +45,20 @@ branch, merge, release, publicação de bundle ou anúncio.
 - `RFC-CA-001-adaptacao-casos-reais.md` adota adaptador versionado, intake
   obrigatório, análise documental condicionada, perfil de frentes, precedência
   temporal, despachante de escopo e critérios sintéticos A01–A14. A RFC foi
-  aceita; as Fases 1 e 3 foram concluídas, A01–A14 foram executados na Fase 5
-  com subagentes Codex e as Fases 2 e 4 não foram autorizadas.
+  aceita; as Fases 1 e 3 e a validação local da Fase 5 foram concluídas. A
+  comparação externa, as Fases 2 e 4 e o dogfood não foram autorizados.
 - `novo-caso`, `analise-documental`, `analise-juridica-civel` e
   `redacao-contencioso` consomem o pacote v1 conforme sua etapa. O estado de
   escopo agora pertence a cada frente; handoffs comuns continuam compatíveis.
 - `adaptacao-workflows.json` referencia A01–A14 sem duplicar as 20 frentes. O
   runner materializa pacotes sintéticos completos, cobre os quatro consumidores
   e mantém A01–A04 como canário separado da rodada integral.
-- A rodada comportamental teve primeira passagem 13/14. A01 revelou perda da
-  hierarquia entre petição inicial e tutela; a regra foi corrigida sem mudar a
-  fixture, e a regressão com executor e juiz novos passou. O estado efetivo é
-  14/14, sem alegação de passagem única perfeita.
+- A rodada comportamental R2 teve primeira passagem 13/14. A03 usou a lente
+  defensiva correta, mas não declarou a validação do pacote; `novo-caso` foi
+  corrigida sem mudar fixture, invariantes ou input, e a regressão com executor
+  e juiz novos passou. O estado efetivo é 14/14, sem alegação de passagem única
+  perfeita. A rodada anterior foi invalidada por associação posicional de
+  fatos, achados e frentes.
 
 ## Resultado da validação com casos reais
 
@@ -125,9 +127,14 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `d7ce8ab` — procedimentos especiais e roteamento completo;
 - `d21c7b9` — checks, fixtures e fechamento da cobertura de redação;
 - `9168d63` — mapa visual de skills, módulos e modos;
-- `8c255e5` (HEAD) — checkpoint local das Fases 1 e 3 da adaptação;
-- avaliação comportamental A01–A14, correção A01 e este handoff ainda estão sem
-  commit.
+- `8c255e5` — checkpoint local das Fases 1 e 3 da adaptação;
+- `10d7337` — primeira avaliação comportamental, depois invalidada pela revisão;
+- `387c32f` — correções do materializador, gates e manifesto de inputs;
+- `4f11742` — outputs cegos A01–A14 congelados antes do julgamento;
+- `ff2a210` — julgamento independente da primeira passagem, 13/14;
+- `267bfc8` — validação do pacote tornada explícita em `novo-caso`;
+- `de028ce` — output cego da regressão A03;
+- `252a917` — julgamento independente da regressão A03, PASS.
 
 ## Verificação
 
@@ -136,7 +143,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 53 testes.
+- `make test`: PASS — 60 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
@@ -145,15 +152,14 @@ A rodada final deve repetir os comandos abaixo e incluir `make test-release` e
 
 ## Limites e recibos negativos
 
-- A01–A14 foram executados com subagentes Codex; não houve chamada de modelo
-  externo, dogfood ou recibo de custo em dólares. Houve consumo não medido da
-  franquia Codex.
+- A01–A14 e a regressão A03 foram executados com subagentes Codex; não houve
+  chamada de modelo externo, dogfood ou recibo de custo em dólares. Houve
+  consumo não medido da franquia Codex.
 - Custo medido nos quatro relatórios anteriores: medianas por cenário entre
   US$ 0,28 e US$ 0,65; máximo de US$ 1,19. Estimativa não executada no executor
   externo: US$ 2–5 para A01–A04 e US$ 8–17 para A01–A14.
-- A auditoria composta de ingestão reescreveu por efeito colateral uma fila
-  operacional do repositório privado. A alteração foi atribuída pelo timestamp,
-  restaurada exatamente ao blob de `HEAD` e o repositório terminou limpo.
+- Esta etapa não escreveu em outro workspace. A análise anterior do corpus
+  privado permaneceu somente como evidência de origem anonimizada.
 - Nenhum nome, número processual, valor, documento ou trecho identificador de
   caso real foi incorporado ao `codigo-aberto`.
 - Não houve pesquisa jurisprudencial nova.

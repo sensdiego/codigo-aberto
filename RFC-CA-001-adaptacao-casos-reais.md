@@ -5,7 +5,7 @@
 | Status | **Aceita em 2026-08-30** |
 | Data | 2026-08-30 |
 | Escopo | Contrato de integração entre o estado de um caso real e as skills públicas |
-| Implementação | **Fases 1 e 3 concluídas**; A01–A14 executados na Fase 5 com subagentes Codex; Fases 2 e 4 não autorizadas |
+| Implementação | **Fases 1, 3 e validação local da Fase 5 concluídas**; comparação externa, Fases 2 e 4 e dogfood não autorizados |
 | Decisão principal | Adaptador versionado + perfil de frentes, sem nova skill pública |
 | Evidência de origem | [Validação estrutural com casos reais](references/validacao-casos-reais.md) |
 | Contratos relacionados | [Disciplina](references/disciplina.md) e [handoff comum](references/handoff.md) |
@@ -578,7 +578,7 @@ execução de modelo foi realizada.
 - [x] fixar A01–A04 como canário e registrar custo estimado e stop rule;
 - [x] executar A01–A14 com executores e juízes separados no Codex;
 - [x] corrigir o consumidor afetado sem alterar a régua;
-- [x] repetir A01 com executor e juiz novos;
+- [x] repetir A03 com executor e juiz novos;
 - [ ] rodar comparação V3 no executor externo somente com autorização de custo;
 - [ ] executar V4 apenas depois de V0–V3 verdes;
 - [ ] manter recibos separados para código, release, runtime, dogfood e uso.
@@ -590,13 +590,16 @@ Até esse recibo, nenhum modelo havia sido chamado. Com base nos relatórios loc
 estimada é US$ 2–5 para o canário e US$ 8–17 para os 14 cenários; o maior custo
 histórico observado foi US$ 1,19 por cenário.
 
-Execução local de 2026-08-30: a primeira passagem com subagentes Codex produziu
-13 PASS e 1 FAIL. A01 não preservou expressamente tutela como complemento da
-petição inicial. A skill de redação recebeu uma regra mínima; fixture e critérios
-do juiz permaneceram congelados. A regressão A01, com executor e juiz novos,
-passou. O estado efetivo é 14/14, mas não houve passagem única perfeita. O
-[relatório e as saídas congeladas](data/evals/2026-08-30-codex-subagents-adaptacao/report.md)
-registram a prova e suas limitações. Não houve chamada de modelo externo.
+Execução local válida de 2026-08-30: a primeira passagem com subagentes Codex
+produziu 13 PASS e 1 FAIL. A03 usou a lente defensiva correta, mas não declarou
+o resultado da validação do pacote. `novo-caso` recebeu uma regra mínima;
+fixture, invariantes e input visível permaneceram congelados. A regressão A03,
+com executor e juiz novos, passou. O estado efetivo é 14/14, mas não houve
+passagem única perfeita. O
+[relatório, manifests e saídas congeladas](data/evals/2026-08-30-codex-subagents-adaptacao-r2/report.md)
+registram hashes e ordem por commits. A rodada anterior foi invalidada por
+associação posicional incorreta entre fatos, achados e frentes e não sustenta
+este resultado. Não houve chamada de modelo externo.
 
 ## Compatibilidade, migração e rollback
 
@@ -696,10 +699,9 @@ A aceitação de 2026-08-30 adotou as respostas recomendadas:
 
 ## Condição de fechamento
 
-A condição foi cumprida em 2026-08-30 com a aceitação das seis decisões. A Fase
-1 e, após autorização local própria, a Fase 3 foram concluídas no
-`codigo-aberto`. A avaliação A01–A14 da Fase 5 foi executada depois com
-subagentes Codex; a comparação externa, V4, dogfood e as Fases 2 e 4 permanecem
+A condição foi cumprida em 2026-08-30 com a aceitação das seis decisões. As
+Fases 1 e 3 e a validação local A01–A14 da Fase 5 foram concluídas no
+`codigo-aberto`. A comparação externa, V4, dogfood e as Fases 2 e 4 permanecem
 não autorizadas.
 
 Se a RFC for rejeitada ou substituída, a auditoria permanece válida como
