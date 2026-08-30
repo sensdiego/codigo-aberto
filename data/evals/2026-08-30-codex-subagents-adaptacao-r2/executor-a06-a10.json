@@ -1,0 +1,121 @@
+{
+  "schema_version": "codex-subagent-execution-v2",
+  "source_commit": "387c32f",
+  "input_manifest": "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+  "executor_task": "/root/exec_r2_a06_a10",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a06",
+      "visible_input_sha256": "ec3b65203c6fca6e5c3002fafd5dbb82decb3c3049098c05b7c9206869a38bd5",
+      "invoked_skills": [
+        "analise-juridica-civel"
+      ],
+      "read_files_by_turn": [
+        [
+          "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+          "PACOTE_ADAPTADO.json",
+          "skills/analise-juridica-civel/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/analise-juridica-civel/references/mapa-juridico.md",
+          "skills/analise-juridica-civel/references/relogio-processual.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta quanto ao limite: não é possível indicar qual recurso deve ser interposto. A sessão de julgamento registrada em `fonte-sintetica-11`, `pauta 3`, não demonstra o resultado, o teor da decisão, o acórdão nem sua publicação. Sem uma decisão identificada e sem o evento de publicação ou intimação, não há base para definir cabimento recursal, termo inicial ou prazo.\n\nA frente relevante é `front-recursal`, sob a lente de apelante, mas o ato está `indeterminado`, a cobertura é parcial e o pacote não contém mapa jurídico, decisão humana ou redação. Há ainda conflito formal aberto entre `cabecalho-sintetico` e `pedido-sintetico`, sem fonte controladora, que bloqueia a identificação formal da eventual peça.\n\nPara decidir o recurso, é necessário obter: (1) o acórdão ou a decisão que registrou o resultado; (2) a publicação ou intimação correspondente; (3) a identificação correta das partes e do processo para resolver o conflito formal; e (4) tribunal, sistema e calendário aplicáveis para o relógio processual. Até lá, escolher apelação, embargos, agravo ou outro recurso seria invenção. Nenhuma minuta foi produzida e nenhuma ação externa ocorreu.\n\n> Documento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a07",
+      "visible_input_sha256": "6aaa4e8615e195e07094624a2be22efd01d53decffdcfac2f06086dbd5b2d3f2",
+      "invoked_skills": [
+        "analise-documental"
+      ],
+      "read_files_by_turn": [
+        [
+          "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+          "PACOTE_ADAPTADO.json",
+          "skills/analise-documental/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/analise-documental/references/contrato-saida.md",
+          "skills/analise-documental/references/avaliacao-probatoria.md"
+        ]
+      ],
+      "turn_outputs": [
+        "## Atualização da análise documental — A07\n\n**Conclusão — confiança alta:** o material demonstra uma proposta de parcelamento e a existência de concordância da credora, mas a concordância é expressamente condicionada à homologação e ao primeiro pagamento. O pacote não demonstra acordo consumado.\n\n**Caso e escopo.** Frente `front-cumprimento`, lente de credor, cobertura parcial. Foram consumidos apenas os achados adaptados de `fonte-sintetica-12` (`manifestacao 2` e `condicao 1`) e o registro de busca em `acervo-sintetico` (`ausencia de homologacao localizada`). Não foram examinados os documentos originais.\n\n**Achados e efeitos documentados**\n\n- Proposta parcelada — fato documental registrado no intake, com referência a `fonte-sintetica-12`, `manifestacao 2`. Seu efeito demonstrado é apenas o de proposta; não prova formação ou homologação de acordo.\n- Concordância condicionada — `confirmado` somente quanto à existência da declaração, em `fonte-sintetica-12`, `condicao 1`. As condições registradas são homologação e primeiro pagamento; a confirmação não alcança a satisfação dessas condições.\n- Homologação — `pendente`. O resultado correto é “não foi localizada no escopo examinado”, não “não existe”, conforme `acervo-sintetico`, `ausencia de homologacao localizada`.\n- Primeiro pagamento — `pendente`: não há comprovante incluído no pacote.\n- Saldo — `pendente`: não há memória de cálculo conferida incluída no pacote.\n\n**Matriz fato-prova.** A declaração em `condicao 1` dá suporte direto à existência da concordância condicional, mas não dá suporte à homologação, ao primeiro pagamento ou ao saldo. A ausência de homologação localizada é uma lacuna de cobertura, não contraprova da ocorrência. Não há contradição aberta registrada para esta frente.\n\n**Atualização.** Como nenhum documento novo foi fornecido além do pacote, não há delta documental novo a classificar; preservam-se os achados anteriores sem promoção de estado. Permanecem as lacunas `homologacao_nao_provada`, `pagamento_nao_provado` e `saldo_nao_conferido`. A próxima rota possível é a análise jurídica cível após obtenção da homologação, do comprovante do primeiro pagamento e da memória de saldo, se o objetivo for definir consequência ou providência. Esta análise não escolhe estratégia e não autoriza redação.\n\n> Documento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a08",
+      "visible_input_sha256": "5d99dedc52486b707d0ee6c763be4b3412c19b4c02e7d82573b6812747fc8946",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+          "PACOTE_ADAPTADO.json",
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "## Briefing permitido — A08\n\n- **Estado:** briefing preliminar bloqueado; não está apto à confirmação de redação.\n- **Ato e destinatário:** ato de inventário/partilha apenas como candidato. A espécie exata e o destinatário permanecem `[verificar]`. A pista `inventario-partilha` não foi promovida a módulo confirmado.\n- **Objetivo processual:** organizar a partilha e os documentos da frente `front-inventario`.\n- **Parte e posição representada:** inventariante. Essa lente não será substituída por autora, ré, credora ou devedora.\n- **Frente excluída do ato:** `front-dependencia-historica`, na posição de interessado, está encerrada por certidão em `fonte-sintetica-14`, `certidao 1`, e consta como `sem_ato`; ela não será reativada nem transformada em pedido.\n- **Fatos e provas disponíveis:** o papel de inventariante e o estágio de partilha estão referidos em `fonte-sintetica-13`, `termo 2`; o encerramento da dependência histórica está confirmado no alcance indicado pela certidão. A cobertura da frente principal é parcial.\n- **Normas e teses:** nenhuma foi confirmada. O pacote omite mapa jurídico e decisão; portanto, nenhuma base normativa ou tese será inserida por inferência.\n- **Pedidos ou resultado pretendido:** ainda não definidos e não podem ser escolhidos silenciosamente.\n- **Dependências:** tributo, certidões e plano de partilha. Os bloqueios materiais são `tributo_nao_calculado` e `quinhao_nao_conferido`.\n- **Prazo e cabimento:** pendentes; não há regra, termo inicial ou calendário suficientes.\n- **Profundidade e tom:** `[definir]`.\n- **Campos que permaneceriam marcados:** destinatário, modalidade do ato, tributo, quinhões, certidões ainda necessárias, plano de partilha, pedidos, fundamentos, prazo e cabimento.\n\nComo o escopo está `suportado_condicionado`, o ato está apenas `candidato` e não há recibo de decisão, o gate não permite apresentar a pergunta fechada de autorização nem iniciar a minuta. Primeiro devem ser supridas as dependências, elaborado o mapa jurídico e confirmados ato, pedidos e destinatário. Nenhum módulo de redação foi carregado, nenhuma minuta foi produzida e nenhuma ação externa ocorreu.\n\n> Documento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a09",
+      "visible_input_sha256": "d51fce87aed0035c6f52c274a523b3a74671682920d007f222ccef91acb03442",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+          "PACOTE_ADAPTADO.json",
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta quanto ao limite: não é possível preparar uma petição baseada no resultado da tutela ou na regularização das custas, porque nenhum desses dois efeitos está demonstrado no pacote.\n\nO que está demonstrado para a frente `front-tutela`, sob a lente de autor, é somente: (1) a existência do pedido de tutela; e (2) o pagamento da guia identificada, confirmado no alcance de `fonte-sintetica-15`, `comprovante 1`. A decisão sobre a tutela não foi localizada no escopo (`acervo-sintetico`, `decisao nao localizada`); não há ato judicial reconhecendo a regularização das custas; não há fonte demonstrando retirada de restrição. Além disso, o conflito `C01` entre `fonte-sintetica-15` e `fonte-sintetica-16` permanece aberto e bloqueia justamente a afirmação de regularidade das custas. Guia paga não equivale, por si só, a custas judicialmente regularizadas.\n\nA cobertura é parcial, o escopo é `suportado_condicionado`, o ato está `indeterminado` e o pacote omite mapa jurídico, decisão e redação. Por isso, não há base para selecionar módulo, formular pedido, afirmar resultado da tutela ou calcular prazo. Para liberar a rota, são necessários a decisão da tutela, o ato judicial sobre as custas, a resolução do conflito documental e a publicação ou intimação pertinente. Somente depois cabem mapa jurídico e briefing próprio. Nenhuma minuta foi produzida e nenhuma ação externa ocorreu.\n\n> Documento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    },
+    {
+      "id": "adaptacao-a10",
+      "visible_input_sha256": "b9f40b8f9aae9d2510db9ca68350da0867d421344445b7c33245e0c09d4bacc4",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "data/evals/2026-08-30-codex-subagents-adaptacao-r2/input-manifest.json",
+          "PACOTE_ADAPTADO.json",
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão — confiança alta: a defesa não pode ser preparada com o contrato cível atual. A `front-fiduciaria` está expressamente marcada como `nao_suportado`, com o bloqueio `regime_nao_suportado`; portanto, o fluxo falha fechado e não permite escolher um módulo cível semelhante.\n\nO limite preserva a lente correta: a pessoa representada é ré na busca e apreensão fiduciária. O pacote demonstra apenas que a demanda segue regime fiduciário especial, que há referência a depósitos e que a fase indicada é `defesa_especial`, com evento controlador em `fonte-sintetica-17`, `decisao 1`. Ele não demonstra que os depósitos produziram quitação. Também declara como dependências a legislação extravagante e precedente qualificado, ausentes do material fornecido.\n\nNão vou substituir esse regime por contestação genérica, consignação em pagamento ou qualquer outra peça apenas parecida. O ato permanece `indeterminado`, sem módulo, sem recibo de decisão e sem prazo verificável. Para prosseguir, é necessário ampliar a cobertura com a legislação especial aplicável, precedente qualificado validado, teor integral da decisão e da intimação, documentos e finalidade dos depósitos, além dos elementos de contagem de prazo. Depois disso, devem ser refeitos o mapa jurídico e o briefing sob o regime correto. Nenhuma minuta foi produzida e nenhuma ação externa ocorreu.\n\n> Documento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    }
+  ]
+}
