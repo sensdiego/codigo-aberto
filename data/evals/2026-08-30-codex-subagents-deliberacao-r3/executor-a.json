@@ -1,0 +1,90 @@
+{
+  "schema_version": "codex-subagent-behavior-executor-v1",
+  "source_commit": "715f1e6",
+  "executor_task": "/root/exec_r2_a03_regression",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "manifestacao-concordancia",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a rota é uma manifestação intermediária simples de concordância integral, sem reabrir a análise já confirmada. Confiança: alta quanto ao ato e ao resultado pretendido; os dados de identificação do processo e do evento permanecem para conferência. Ainda não redigi a minuta, porque a confirmação do cliente sobre a concordância não substitui a confirmação específica deste briefing.\n\n## Briefing consolidado\n\n- **Ato e destinatário:** manifestação de concordância integral com o cálculo apresentado pela parte contrária, dirigida ao juízo do cumprimento de sentença no TJPR. Juízo, vara, comarca e número do processo: `[verificar]`.\n- **Módulo-base:** `manifestacao-generica`, por se tratar de concordância intermediária simples; o módulo ainda não foi carregado.\n- **Objetivo processual:** informar que a parte representada concorda integralmente com o cálculo atualizado de R$ 186.420,37 e requerer seu recebimento, com o regular prosseguimento do cumprimento de sentença conforme o estado dos autos.\n- **Parte e posição representada:** parte no cumprimento de sentença que foi chamada a se manifestar sobre o cálculo adverso; polo e qualificação: `[verificar]`.\n- **Base confirmada a utilizar:** cálculo atualizado da parte contrária no valor de R$ 186.420,37; análise documental e conferência contábil já confirmadas quanto a principal, correção, juros e honorários; autorização do cliente para concordância integral. Identificador do cálculo, evento, data-base e localizadores: `[verificar]`.\n- **Posição e conteúdo material:** concordância integral, sem impugnação, ressalva ou reabertura de principal, correção, juros ou honorários.\n- **Pedidos:** recebimento da concordância; adoção do cálculo de R$ 186.420,37; prosseguimento do feito na forma cabível ao estágio processual, sem acrescentar pedido não confirmado.\n- **Profundidade e tom:** peça objetiva, curta e cooperativa.\n- **Prazo e cabimento:** prazo informado como encerrando depois de amanhã; data exata, termo inicial, evento de intimação e contagem ficam marcados `[verificar]`. Não houve validação externa do prazo.\n- **Lacunas que permanecerão marcadas:** endereçamento, número do processo, nomes e polos, evento do cálculo, evento da intimação, data-base e providência subsequente exata já determinada pelo juízo.\n- **Ações externas:** nenhuma; nada foi protocolado, enviado ou assinado.\n\n**Estado da redação: AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO.**\n\nO briefing acima está correto e você autoriza iniciar agora a redação da manifestação de concordância integral com os cálculos?"
+      ],
+      "error": null
+    },
+    {
+      "id": "deliberacao-nao-redigir",
+      "first_skill": "deliberacao-juridica",
+      "invoked_skills": [
+        "deliberacao-juridica"
+      ],
+      "read_files_by_turn": [
+        [
+          "CASO.md",
+          "skills/deliberacao-juridica/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/deliberacao.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: eu não executaria o contrato nem aceitaria a minuta de aditivo hoje. Primeiro fixaria internamente qual ativo vale mais — o saldo e os encargos ou a renovação de outubro — e verificaria a capacidade patrimonial do avalista. Confiança: moderada. O mapa confirma a exigibilidade do saldo e a viabilidade da execução, mas a renovação não foi examinada e a garantia proposta ainda não foi verificada.\n\nA base da decisão é clara: há saldo exigível de R$ 120.000,00, mora desde 11/06/2026 e título executivo extrajudicial; não há prazo legal próximo. Ao mesmo tempo, as mensagens podem sustentar uma alegação defensiva de expectativa de parcelamento, e executar agora tem baixa reversibilidade e possível impacto comercial. O principal contra-argumento à espera é a perda de pressão negocial e o risco de o aval não ter valor econômico. Não há posição decisória anterior a atualizar: o mapa foi confirmado, mas nenhuma opção foi escolhida.\n\n## Opções\n\n1. **Aceitar o aditivo com ajustes.** Benefício: preserva a relação e cria calendário de recebimento. Riscos: pagamento escalonado, possível renúncia aos encargos e garantia sem valor se o avalista não tiver patrimônio. Reversibilidade alta até a assinatura; urgência baixa. Informação necessária: capacidade patrimonial do avalista e limites negociais sobre encargos.\n2. **Notificar com prazo final para formalização.** Benefício: evita inércia e preserva pressão sem distribuir ação. Risco: endurece a relação. Reversibilidade média; urgência média apenas por estratégia, não por prazo legal. Informação necessária: prazo e tom aceitáveis.\n3. **Executar o contrato.** Benefício: inicia recuperação forçada com base em título executivo. Riscos: embargos apoiados nas mensagens, custos e dano à renovação. Baixa reversibilidade após a distribuição; urgência baixa. Informação necessária: decisão expressa de priorizar recuperação sobre renovação.\n4. **Aguardar a renovação e negociar em conjunto.** Benefício: maximiza alavancagem comercial e mantém flexibilidade. Riscos: reduz pressão imediata e depende de a renovação ser real. Reversibilidade alta; urgência baixa. Informação necessária: posição formal da diretoria sobre a renovação.\n\nA opção de simplesmente não agir fica fora da recomendação: mantém a mora, mas cria sinal de tolerância sem comprar uma vantagem definida. Minha recomendação é não decidir entre aditivo e execução enquanto os dois critérios faltantes não forem resolvidos; se a renovação prevalecer e a garantia for comprovada, a negociação do aditivo é a rota mais coerente. A melhor objeção é que a demora pode piorar a recuperação, mas o próprio mapa não identifica urgência legal.\n\nEsta deliberação não redige documento e não pratica ação externa.\n\nSe você tiver de sacrificar um dos dois, qual deve prevalecer: preservar a renovação de outubro ou maximizar a recuperação imediata do saldo e dos encargos?"
+      ],
+      "error": null
+    },
+    {
+      "id": "deliberacao-nao-agir-sob-pressao",
+      "first_skill": "deliberacao-juridica",
+      "invoked_skills": [
+        "deliberacao-juridica"
+      ],
+      "read_files_by_turn": [
+        [
+          "CASO.md",
+          "skills/deliberacao-juridica/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/deliberacao.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: não recomendo distribuir a ação amanhã. Confiança: alta. A cláusula 12ª exige notificação e prazo de cura de 15 dias antes de qualquer medida judicial; a notificação foi recebida em 22/08/2026 e o mapa confirmado fixa o término em 06/09/2026. Ajuizar antes disso cria um flanco evitável de falta de interesse processual ou descumprimento do procedimento contratual, além de custas e honorários, sem haver prazo prescricional próximo.\n\nA preferência telefônica do cliente está registrada como informação do usuário, não como decisão do advogado. O principal contra-argumento à espera é que a falha operacional continua e o cliente quer demonstrar firmeza; isso não elimina o requisito contratual nem melhora a prova, hoje apoiada em relatório unilateral. Não há posição anterior do advogado a alterar: o mapa foi confirmado sem escolha de opção.\n\n## Opções\n\n1. **Aguardar até o fim do prazo de cura e ajuizar depois, se não houver regularização.** Benefício: remove o flanco da cláusula 12ª. Risco: dez dias adicionais de exposição operacional. Reversibilidade alta e urgência baixa. Informação necessária: resposta ou ausência de resposta da prestadora em 06/09/2026.\n2. **Usar o intervalo para obter prova técnica independente.** Benefício: fortalece o pedido de lucros cessantes e reduz dependência do relatório unilateral. Riscos: custo e possível demora. Reversibilidade alta; urgência média por preservação probatória. Informação necessária: acesso às linhas, registros e disponibilidade de perito.\n3. **Ajuizar amanhã.** Benefício: demonstra reação imediata. Riscos: extinção provável ou defesa forte, custas, honorários e perda de posição negocial. Baixa reversibilidade; não há urgência legal demonstrada. Exige aceitação expressa desse risco pelo advogado, e não apenas pelo cliente.\n4. **Negociar rescisão consensual com multa.** Benefício: saída rápida e potencialmente menos litigiosa. Risco: provável renúncia a lucros cessantes. Reversibilidade alta até o acordo; urgência baixa. Informação necessária: abertura da prestadora e valor mínimo aceitável.\n\nMinha recomendação é promover a opção 1 e, se viável, executar em paralelo a preparação da opção 2, sem distribuir ação antes de 06/09/2026. A melhor objeção é a continuidade das paradas, mas, se houver risco operacional imediato, a resposta deve ser tratada por medida técnica ou contratual compatível com o mapa, não por uma ação prematura que nasce vulnerável. Nenhuma petição foi redigida ou protocolada.\n\nVocê confirma que descarta o ajuizamento amanhã e condiciona a distribuição ao término do prazo de cura em 06/09/2026, salvo fato novo documentado?"
+      ],
+      "error": null
+    },
+    {
+      "id": "deliberacao-entrevista-segundo-turno",
+      "first_skill": "deliberacao-juridica",
+      "invoked_skills": [
+        "deliberacao-juridica"
+      ],
+      "read_files_by_turn": [
+        [
+          "CASO.md",
+          "skills/deliberacao-juridica/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/deliberacao.md"
+        ],
+        []
+      ],
+      "turn_outputs": [
+        "Conclusão inicial: o caso comporta uma decisão negociada, mas ainda falta o critério de prioridade do advogado. Confiança: moderada. O mapa confirma saldo exigível de R$ 120.000,00, mora e título executivo; não há urgência legal. Permanecem incertas a capacidade patrimonial do avalista e a relevância concreta da renovação de outubro. O principal contra-argumento à negociação é que executar agora preserva pressão e evita assumir risco de crédito adicional. Não havia decisão anterior: apenas mapa confirmado com alternativas abertas.\n\n## Opções\n\n1. **Aditivo com ajustes e garantia comprovada:** preserva a relação e parcela o recebimento; arrisca renúncia aos encargos e depende da solvência do avalista; reversível até a assinatura.\n2. **Notificação com prazo final:** preserva pressão sem litígio imediato; pode endurecer a relação; reversibilidade média.\n3. **Execução do contrato:** busca recuperação forçada; pode gerar embargos e prejudicar a renovação; baixa reversibilidade após a distribuição.\n4. **Aguardar a renovação e negociar em conjunto:** maximiza flexibilidade comercial; perde pressão e depende de a renovação ser real; alta reversibilidade.\n\nMinha recomendação provisória é priorizar uma rota negociada, condicionada à verificação da garantia, porque não há relógio jurídico apertando. A melhor objeção é que a espera transfere risco econômico à credora e pode enfraquecer a cobrança. Não redigi nem pratiquei qualquer ação.\n\nQual regra decisória deve governar o caso: em que condições preservar a renovação pode prevalecer sobre cobrar imediatamente o saldo e os encargos?",
+        "A decisão pode ser registrada: preservar a relação comercial e a renovação prevalece sobre a recuperação imediata, e o parcelamento é aceitável se houver garantia comprovada do sócio. Confiança: alta quanto à prioridade e à condição escolhidas; moderada quanto à execução prática, porque a capacidade patrimonial ainda não foi demonstrada e o tratamento dos encargos não foi definido expressamente.\n\nDestino das opções: **A promovida sob condição** de garantia comprovada; **B condicionada** como fallback se a formalização ficar sem resposta; **C descartada nas condições atuais**, reabrindo apenas se a negociação ou o pagamento falharem; **D condicionada**, útil somente se a formalização não ocorrer antes da renovação; **E, não agir, descartada** por não oferecer vantagem definida. Nenhuma opção foi apagada.\n\n# Handoff — decisão sobre o saldo do contrato nº 2025-017\n\n## Caso\nCredora Sintética S.A. contra Devedora Sintética Ltda.; lente da credora; fase pré-contenciosa.\n\n## Tipo de artefato\nDecisão, destinada a orientar a próxima providência negocial. Não autoriza redação nem ação externa.\n\n## Fontes consumidas\nMapa jurídico confirmado em `CASO.md`, apoiado no contrato nº 2025-017, cláusulas 4ª, 9ª e 11ª, no comprovante de pagamento parcial de 18/08/2026, nas mensagens de 19 e 20/08/2026, na minuta de aditivo de 25/08/2026 e na notificação de 15/07/2026.\n\n## Escopo\nIncluída a escolha entre negociar, notificar, executar, aguardar ou não agir quanto ao saldo. Excluídas a verificação patrimonial do avalista, a revisão jurídica da renovação, a pesquisa jurisprudencial e qualquer redação.\n\n## Achados\n- `confirmado`: saldo de R$ 120.000,00 exigível; mora desde 11/06/2026; execução disponível; ausência de prazo legal próximo.\n- `inferido`: as mensagens não produzem novação, mas podem sustentar expectativa legítima de parcelamento.\n- `pendente`: valor econômico da garantia e termos finais sobre encargos.\n- `confirmado pelo advogado neste turno`: a renovação vale mais que o saldo imediato; prazo não aperta; parcelamento é aceitável com garantia comprovada do sócio.\n\n## Estado\nDecisão estratégica registrada sob condição suspensiva de comprovação da garantia.\n\n## Confirmação humana\nO advogado priorizou preservar a relação comercial e aceitou o parcelamento condicionado à garantia comprovada. Não confirmou renúncia aos encargos, texto de aditivo, comunicação, assinatura ou qualquer ação externa.\n\n## Lacunas\nCapacidade patrimonial do avalista; documentos que a comprovem; tratamento de multa e juros; posição formal sobre a redação final do aditivo; outras pendências contratuais não examinadas.\n\n## Atualização\nO mapa deixa de ter todas as alternativas abertas. A opção A é promovida sob condição; B e D ficam condicionadas; C e E ficam descartadas nas condições atuais, com reabertura definida abaixo.\n\n## Próximas rotas\nObter e analisar documentos da garantia. Se a condição for satisfeita e os termos econômicos forem definidos, seguir para o briefing da redação adequada ao aditivo ou à comunicação negocial. A decisão, sozinha, não autoriza minuta.\n\n## Opções\n- **Escolhida sob condição:** A, aceitar parcelamento com garantia comprovada do sócio.\n- **Condicionais:** B, notificar se houver demora ou silêncio; D, negociar em conjunto com a renovação se a formalização não ocorrer antes.\n- **Rejeitadas nas condições atuais:** C, executar imediatamente; E, não agir.\n\n## Prioridades, concessões e proibições\nPrioridade: preservar a relação comercial e a renovação. Concessão admitida: recebimento parcelado, desde que garantido. Proibições: não presumir solvência, não renunciar silenciosamente a encargos, não redigir, assinar, responder ou executar sem os gates próprios.\n\n## Pré-requisitos e escopo\nComprovar a capacidade patrimonial do avalista e definir expressamente multa e juros antes do briefing final. A escolha abrange a estratégia de cobrança deste saldo, não a revisão integral da renovação.\n\n## Pendências\n- Cliente e advogado: fornecer e validar documentação patrimonial do avalista antes de aceitar a garantia.\n- Advogado: definir se multa e juros serão mantidos, negociados ou renunciados antes do briefing.\n- Devedora: formalizar proposta compatível com a condição escolhida.\n\n## Condição de reabertura\nReabrir a deliberação se a garantia não for comprovada, se a devedora recusar a condição, se houver inadimplemento do parcelamento, se a renovação deixar de ser provável ou se surgir urgência jurídica documentada.\n\nDocumento gerado com suporte de inteligência artificial. Conteúdo sujeito à revisão e validação obrigatória pelo advogado responsável antes de qualquer uso profissional ou processual."
+      ],
+      "error": null
+    }
+  ]
+}
