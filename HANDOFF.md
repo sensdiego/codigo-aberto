@@ -194,11 +194,11 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
 
 ## Próxima ação
 
-Publicar os recibos e a correção da fixture na branch do PR #26, aguardar o CI
-e então decidir separadamente o landing da skill deliberativa. Os dois defeitos
-de baseline e as cinco fixtures inelegíveis devem seguir em frente própria; não
-são regressões da PR #26. Comparação externa da RFC, Fases 2 e 4, instalação,
-dogfood e anúncio continuam fora do escopo concluído.
+Os recibos e a correção da fixture estão publicados na branch do PR #26 e o CI
+passou. A próxima decisão é o landing separado da skill deliberativa. Os dois
+defeitos de baseline e as cinco fixtures inelegíveis devem seguir em frente
+própria; não são regressões da PR #26. Comparação externa da RFC, Fases 2 e 4,
+instalação, dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 
