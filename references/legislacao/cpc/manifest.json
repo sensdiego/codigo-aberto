@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "title": "Código de Processo Civil — Lei nº 13.105/2015",
   "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-30",
   "scope": "Artigos integrais selecionados para o workflow inicial de direito civil e processo civil.",
   "verification_note": "Texto e estrutura conferidos contra o HTML compilado oficial. Essa conferência não equivale, isoladamente, a certidão de vigência.",
   "entries": [
@@ -487,6 +487,36 @@
       "label": "Parágrafo único"
     },
     {
+      "id": "CPC:art-295",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-295",
+      "label": "Art. 295."
+    },
+    {
+      "id": "CPC:art-296",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-296",
+      "label": "Art. 296."
+    },
+    {
+      "id": "CPC:art-297",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-297",
+      "label": "Art. 297."
+    },
+    {
+      "id": "CPC:art-298",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-298",
+      "label": "Art. 298."
+    },
+    {
+      "id": "CPC:art-299",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-299",
+      "label": "Art. 299."
+    },
+    {
       "id": "CPC:art-300",
       "file": "procedimento-comum.md",
       "anchor": "cpc-art-300",
@@ -515,6 +545,60 @@
       "file": "procedimento-comum.md",
       "anchor": "cpc-art-301",
       "label": "Art. 301."
+    },
+    {
+      "id": "CPC:art-302",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-302",
+      "label": "Art. 302."
+    },
+    {
+      "id": "CPC:art-303",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-303",
+      "label": "Art. 303."
+    },
+    {
+      "id": "CPC:art-304",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-304",
+      "label": "Art. 304."
+    },
+    {
+      "id": "CPC:art-305",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-305",
+      "label": "Art. 305."
+    },
+    {
+      "id": "CPC:art-306",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-306",
+      "label": "Art. 306."
+    },
+    {
+      "id": "CPC:art-307",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-307",
+      "label": "Art. 307."
+    },
+    {
+      "id": "CPC:art-308",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-308",
+      "label": "Art. 308."
+    },
+    {
+      "id": "CPC:art-309",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-309",
+      "label": "Art. 309."
+    },
+    {
+      "id": "CPC:art-310",
+      "file": "procedimento-comum.md",
+      "anchor": "cpc-art-310",
+      "label": "Art. 310."
     },
     {
       "id": "CPC:art-311",

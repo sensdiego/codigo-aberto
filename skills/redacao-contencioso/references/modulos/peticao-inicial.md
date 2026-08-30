@@ -4,6 +4,9 @@
 
 Para iniciar demanda pelo procedimento comum. Não use para petição
 intermediária, resposta, recurso ou procedimento especial não analisado.
+Quando o briefing confirmar tutela provisória, carregue também o módulo
+[tutela-urgencia-evidencia.md](tutela-urgencia-evidencia.md); esta petição
+continua sendo o ato-base.
 
 ## Entradas mínimas
 
