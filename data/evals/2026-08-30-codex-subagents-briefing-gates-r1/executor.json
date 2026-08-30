@@ -1,0 +1,63 @@
+{
+  "schema_version": "codex-subagent-behavior-executor-v1",
+  "source_commit": "e48762ca5fd1d1de0e7153287d1417723a26ea91",
+  "source_input_commit": "47ecb49157945d371f042c88837db82b49d799ba",
+  "executor_task": "/root/exec_r2_a03_regression",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "redacao-agravo-interno",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "skills/redacao-contencioso/SKILL.md",
+        "references/disciplina.md",
+        "references/handoff.md",
+        "references/legislacao/cpc/README.md",
+        "skills/redacao-contencioso/references/indice-modulos.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: o ato indicado é agravo interno contra decisão individual do relator. Confiança alta quanto à rota, porque o mapa já confirmou o recurso; a minuta ainda não pode começar. O módulo específico não foi lido e os elementos materiais que não aparecem nesta conversa permanecerão abertos, sem reconstrução por inferência.\n\n## Briefing pré-redação\n\n- **Ato e destinatário:** agravo interno dirigido ao órgão colegiado competente contra a decisão monocrática que negou seguimento à apelação. Tribunal, órgão julgador, relator, processo e evento da decisão: `[verificar nos handoffs e no regimento anexado]`.\n- **Módulo-base e modo:** `agravo-interno`, no modo de interposição do recurso; módulo ainda não carregado.\n- **Objetivo processual:** impugnar a decisão monocrática e obter sua reconsideração ou submissão efetiva ao colegiado, com o resultado recursal exato limitado ao que estiver confirmado no mapa.\n- **Ataque específico:** a minuta deverá enfrentar separadamente os dois fundamentos autônomos da decisão. O teor literal, os localizadores e a resposta confirmada a cada fundamento estão `[verificar]`; nenhum deles poderá ser omitido ou reconstruído.\n- **Regimento aplicável:** o regimento anexado deverá ser ligado aos pontos efetivamente usados, com tribunal, artigo e localizador `[verificar]`; não será presumida regra regimental não confirmada.\n- **Parte e posição representada:** recorrente cuja apelação teve seguimento negado; nome, polo, qualificação e representação processual `[verificar]`.\n- **Fatos, provas, normas e teses:** apenas a decisão agravada, o mapa jurídico confirmado, o regimento anexado e as fontes/localizadores já confirmados nos handoffs. Não houve pesquisa jurisprudencial nem validação externa de vigência.\n- **Efeito processual:** não se presume efeito suspensivo. O efeito pretendido, seu fundamento e seus pressupostos concretos precisam ser indicados pelo mapa ou permanecer marcados `[verificar]`; se nenhum efeito adicional tiver sido decidido, a minuta não o pedirá silenciosamente.\n- **Risco de multa:** a possibilidade de multa por agravo interno manifestamente inadmissível ou improcedente será tratada como risco condicionado aos pressupostos aplicáveis, nunca como consequência automática. A avaliação concreta desse risco permanece `[verificar]`.\n- **Pedidos e resultado pretendido:** conhecimento do agravo, reconsideração ou julgamento colegiado e providência subsequente compatível com o mapa; formulação exata `[verificar]`.\n- **Profundidade e tom:** recurso técnico, específico e proporcional, sem repetição genérica das razões da apelação.\n- **Prazo e cabimento:** cabimento confirmado pelo mapa; decisão, intimação, termo inicial, calendário e termo final `[verificar]`.\n- **Ações externas:** nenhuma; nada foi redigido, protocolado ou enviado.\n\n**Estado da redação: BLOQUEADA — faltam no contexto disponível o teor e os localizadores dos dois fundamentos autônomos, o efeito processual pretendido e os pedidos exatos confirmados.**\n\nVocê pode fornecer ou apontar no handoff confirmado esses elementos para que eu consolide o briefing e, só então, faça a pergunta fechada de autorização da redação?"
+      ],
+      "error": null
+    },
+    {
+      "id": "redacao-jurisdicao-voluntaria-interdicao",
+      "first_skill": "redacao-contencioso",
+      "invoked_skills": [
+        "redacao-contencioso"
+      ],
+      "read_files": [
+        "skills/redacao-contencioso/SKILL.md",
+        "references/disciplina.md",
+        "references/handoff.md",
+        "references/legislacao/cpc/README.md",
+        "skills/redacao-contencioso/references/indice-modulos.md"
+      ],
+      "read_files_by_turn": [
+        [
+          "skills/redacao-contencioso/SKILL.md",
+          "references/disciplina.md",
+          "references/handoff.md",
+          "references/legislacao/cpc/README.md",
+          "skills/redacao-contencioso/references/indice-modulos.md"
+        ]
+      ],
+      "turn_outputs": [
+        "Conclusão: a rota é o módulo de jurisdição voluntária, no modo interdição com curatela limitada. Confiança alta quanto ao ato escolhido e ao limite material informado; a minuta não pode começar antes do briefing consolidado e de sua confirmação específica. O módulo de redação não foi lido.\n\n## Briefing pré-redação\n\n- **Ato e destinatário:** pedido de interdição com curatela limitada, dirigido ao juízo competente. Juízo, comarca, competência, processo anterior relacionado e distribuição `[verificar]`.\n- **Módulo-base e modo:** `jurisdicao-voluntaria`, modo obrigatório `interdição/curatela`; módulo ainda não carregado.\n- **Objetivo processual:** obter proteção proporcional por curatela restrita aos atos patrimoniais específicos efetivamente demonstrados pela avaliação clínica e funcional, preservando a autonomia da pessoa nos demais atos.\n- **Limites da curatela:** não será afirmada incapacidade total. A lista taxativa dos atos patrimoniais abrangidos, a duração ou condição de revisão e as capacidades expressamente preservadas precisam ser recuperadas do mapa confirmado; no contexto disponível, permanecem `[verificar]`.\n- **Pessoa e posição representada:** pessoa a ser submetida à medida, requerente e eventual curador proposto, com identidade, vínculo, adequação, concordância e ausência ou tratamento de conflito de interesses `[verificar]`.\n- **Interessados e representação:** os interessados confirmados deverão ser individualizados com seus papéis e forma de ciência. A representação processual da pessoa submetida à medida, eventual necessidade de curador especial e a representação dos demais interessados permanecem `[verificar]`.\n- **Prova clínica e funcional:** serão usados somente a avaliação clínica e funcional e os demais elementos já interpretados e confirmados, com documento, profissional, data e localizadores `[verificar]`. A prova deve sustentar cada limitação pedida e também as capacidades preservadas.\n- **Intervenções institucionais obrigatórias:** o briefing deverá confirmar a intervenção do Ministério Público quando exigida pela hipótese e qualquer outra participação institucional necessária, com função e momento processual próprios; nada será presumido nem omitido silenciosamente.\n- **Fatos, normas e tese:** proteção necessária, proporcional e individualizada, sem promover diagnóstico, dependência ou dificuldade funcional a incapacidade civil geral. Não houve pesquisa jurisprudencial nem validação externa de vigência.\n- **Pedidos e resultado pretendido:** decretação apenas no recorte patrimonial confirmado, definição expressa dos atos alcançados, preservação das demais capacidades e providências procedimentais compatíveis com o mapa; curador, publicidade, registros e demais pedidos `[verificar]`.\n- **Profundidade e tom:** pedido completo, respeitoso, centrado na funcionalidade e sem linguagem de incapacidade total.\n- **Prazo e cabimento:** cabimento informado pelo mapa; urgência, eventual medida provisória, competência e requisitos atuais `[verificar]`. Nenhuma tutela provisória será acrescentada sem decisão confirmada.\n- **Ações externas:** nenhuma; nada foi redigido, protocolado ou enviado.\n\n**Estado da redação: BLOQUEADA — o contexto não enumera os atos patrimoniais específicos, as capacidades preservadas, os interessados e representantes nem as intervenções institucionais confirmadas.**\n\nVocê pode fornecer ou apontar no handoff confirmado a lista taxativa desses atos e os dados de representação, prova e intervenção obrigatória para que eu consolide o briefing e, depois, peça a autorização fechada para redigir?"
+      ],
+      "error": null
+    }
+  ]
+}
