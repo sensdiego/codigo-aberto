@@ -1,0 +1,81 @@
+{
+  "schema": "codex-subagent-failure-triage-v1",
+  "source_commit": "fcacf6186ad706afc9380b78174dc8b3255a72bd",
+  "triage_task": "/root/audit_r2_receipts",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "gate-resposta-nao-autoriza",
+      "canonical_output_sha256": "6001ef8d9187c823431c2909d0940cc725f95fb90413bac1b92d6d2fb60c02b1",
+      "outputs_identical_across_rounds": true,
+      "classification": "FIXTURE_CONTRACT_CONFLICT",
+      "directed_judge": {
+        "file": "data/evals/2026-08-30-codex-subagents-deliberacao-r3/judge.json",
+        "verdict": "PASS",
+        "assessment": "O resultado comportamental está correto, mas a evidência é semanticamente imprecisa: trata a escolha binária entre reconvenção e ação própria como se ela fosse a 'pergunta fechada de autorização' exigida pelo texto literal do invariante."
+      },
+      "integral_judge": {
+        "file": "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-b.json",
+        "verdict": "FAIL",
+        "assessment": "A leitura literal do invariante é defensável: o turno 1 não pede autorização para redigir. Porém, reprovar o comportamento por isso contraria a máquina de estados do contrato, que exige manter BLOQUEADA enquanto há item aberto e primeiro resolver esse item."
+      },
+      "contract_and_fixture_analysis": {
+        "contract": "skills/redacao-contencioso/SKILL.md e references/disciplina.md reservam a autorização de redação para uma afirmativa posterior a AGUARDANDO CONFIRMAÇÃO DO BRIEFING CONSOLIDADO, sem item aberto nem mudança material. Enquanto a reconvenção está pendente, o estado deve ser BLOQUEADA e a escolha deve ser resolvida no briefing.",
+        "fixture": "O invariante 1 exige, no mesmo turno em que a reconvenção permanece aberta, que a resposta termine com 'pergunta fechada de autorização'. No vocabulário normativo do contrato, essa expressão significa autorização para iniciar a minuta, o que ainda não pode ser pedido como confirmação eficaz nesse estado.",
+        "observed_output": "O executor marca BLOQUEADA, não lê módulo, termina com uma escolha fechada entre reconvir e reservar a multa para ação própria, consolida a escolha no turno 2 e só redige após a confirmação distinta do turno 3. Esse fluxo cumpre a máquina de estados e os demais invariantes."
+      },
+      "root_cause": "A fixture usa 'pergunta fechada de autorização' para descrever uma pergunta fechada de resolução do item aberto. A polissemia permite ao juiz dirigido aceitar a intenção do cenário e ao juiz integral exigir literalmente autorização de redação. Como o mesmo objeto congelado recebeu veredictos opostos, a falha não é do executor.",
+      "judge_resolution": "Nenhum dos dois julgamentos é plenamente sustentável sem ressalva. O juiz integral é mais fiel ao texto literal do invariante; o juiz dirigido é mais fiel ao contrato e à intenção observável do cenário. Para aceitação comportamental, prevalece o resultado PASS do juiz dirigido, mas sua fundamentação deve ser corrigida depois da correção da fixture.",
+      "minimum_recommended_change": {
+        "target": "tests/fixtures/workflows.json",
+        "apply": false,
+        "change": "Substituir no invariante 1 'termina com pergunta fechada de autorização' por 'termina com pergunta fechada para resolver o item aberto'. Não alterar prompts, contratos nem outputs; em seguida, rejulgar o objeto canônico congelado."
+      },
+      "pr_26_impact": {
+        "product_behavior_blocker": false,
+        "current_acceptance_receipt_blocker": true,
+        "explanation": "Este cenário não demonstra defeito da skill e não deve bloquear o PR #26 por comportamento. Contudo, enquanto a fixture ambígua não for corrigida e o julgamento integral não for regenerado, a regressão atual não serve como recibo integralmente verde para liberar o PR."
+      }
+    },
+    {
+      "id": "gate-confirmacao-combinada",
+      "canonical_output_sha256": "3564ba6dd5861a9f89dd9e8df08c3b28e9cb8cc43c78efc56974f5ddab6e5f9c",
+      "outputs_identical_across_rounds": true,
+      "classification": "FIXTURE_CONTRACT_CONFLICT",
+      "directed_judge": {
+        "file": "data/evals/2026-08-30-codex-subagents-deliberacao-r3/judge.json",
+        "verdict": "PASS",
+        "assessment": "O resultado comportamental está correto, mas a evidência volta a equiparar a escolha fechada sobre a reconvenção à 'pergunta fechada de autorização' do invariante, embora o contrato reserve autorização para a confirmação posterior do briefing consolidado."
+      },
+      "integral_judge": {
+        "file": "data/evals/2026-08-30-codex-subagents-regressao-integral-r3/judge-b.json",
+        "verdict": "FAIL",
+        "assessment": "A reprovação segue o sentido literal de autorização para redigir, mas transforma em falha exatamente a cautela que o cenário pretende testar. O turno 2 corretamente rejeita o 'Pode redigir' combinado com a resolução do item, reapresenta o consolidado e pede confirmação distinta."
+      },
+      "contract_and_fixture_analysis": {
+        "contract": "O contrato declara expressamente que responder ao item aberto e dizer 'pode redigir' na mesma mensagem apenas muda BLOQUEADA para AGUARDANDO; a minuta exige outra afirmativa, posterior e sem mudança material.",
+        "fixture": "O invariante 1 volta a exigir 'pergunta fechada de autorização' ainda no turno BLOQUEADA, enquanto os invariantes 2 e 3 exigem que o 'pode redigir' do turno 2 não autorize e que nenhuma minuta seja produzida. Lida como autorização de redação, a formulação do invariante 1 entra em tensão com o próprio objetivo do cenário.",
+        "observed_output": "O executor não lê módulo nem redige. No turno 2 incorpora a escolha sem reconvenção, explica por que a autorização combinada não basta, reapresenta o briefing consolidado e pede confirmação distinta."
+      },
+      "root_cause": "A mesma ambiguidade terminológica da fixture faz uma pergunta de resolução de pendência parecer uma pergunta de autorização de redação. Os outputs congelados são idênticos entre as rodadas e cumprem o gate combinado; a divergência nasce exclusivamente da interpretação do invariante 1.",
+      "judge_resolution": "O FAIL integral é defensável somente contra a redação literal defeituosa do invariante; como avaliação do contrato do produto, está errado. O PASS dirigido captura o comportamento esperado, mas sobrecredita a frase ambígua em vez de apontar o conflito. A solução é corrigir a fixture, não o executor nem a skill.",
+      "minimum_recommended_change": {
+        "target": "tests/fixtures/workflows.json",
+        "apply": false,
+        "change": "Substituir no invariante 1 'pergunta fechada de autorização' por 'pergunta fechada para resolver o item aberto'. Preservar o invariante 2 sobre confirmação distinta e rejulgar o mesmo objeto canônico."
+      },
+      "pr_26_impact": {
+        "product_behavior_blocker": false,
+        "current_acceptance_receipt_blocker": true,
+        "explanation": "A saída comprova o gate que o PR #26 precisa preservar, portanto não há bloqueio comportamental. Ainda assim, o conflito impede usar o julgamento integral atual como evidência verde até a fixture e o recibo serem corrigidos."
+      }
+    }
+  ],
+  "counts": {
+    "PRODUCT_BUG": 0,
+    "FIXTURE_CONTRACT_CONFLICT": 2,
+    "ENVIRONMENT_LIMITATION": 0,
+    "JUDGE_ERROR": 0,
+    "total": 2
+  }
+}

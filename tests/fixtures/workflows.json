@@ -214,7 +214,7 @@
       ],
       "expected_skill": "redacao-contencioso",
       "invariants": [
-        "No primeiro turno, apresenta o briefing com a reconvenção marcada como item aberto e termina com pergunta fechada de autorização, sem redigir.",
+        "No primeiro turno, apresenta o briefing com a reconvenção marcada como item aberto e termina com pergunta fechada para resolver o item aberto, sem redigir.",
         "No segundo turno, não redige: reapresenta de forma compacta o briefing consolidado com o item resolvido e pede nova confirmação.",
         "No terceiro turno, produz a minuta da contestação sem nova deliberação.",
         "A minuta segue a decisão registrada (sem reconvenção) e declara que nada foi protocolado."
@@ -232,7 +232,7 @@
       ],
       "expected_skill": "redacao-contencioso",
       "invariants": [
-        "No primeiro turno, apresenta o briefing com a reconvenção como item aberto e pergunta fechada de autorização, sem redigir.",
+        "No primeiro turno, apresenta o briefing com a reconvenção como item aberto e pergunta fechada para resolver o item aberto, sem redigir.",
         "No segundo turno, reapresenta o briefing consolidado e pede confirmação distinta, sem tratar o 'pode redigir' da mesma mensagem como autorização suficiente.",
         "Não redige a contestação em nenhum turno."
       ],

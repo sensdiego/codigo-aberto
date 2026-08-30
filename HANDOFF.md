@@ -14,10 +14,13 @@ commit `7b6ecf0`, preservando toda a cadeia de avaliação. O workflow
 `Software release` criou o commit `632fa21`, a tag e o GitHub Release `v0.5.0`.
 A skill autônoma de deliberação continua no draft PR #26 e não foi incorporada.
 Sua branch foi sincronizada com a `v0.5.0` por merge commit, sem reescrever o
-commit experimental; os conflitos Git foram resolvidos, mas a aceitação
-comportamental permanece bloqueada em 3 PASS / 2 FAIL, sem regressão completa.
-A régua agora exige a skill esperada como primeira rota; a regressão integral
-abrange todos os 30 cenários da fixture atual, não os 19 anteriores à v0.5.0.
+commit experimental, e os conflitos Git foram resolvidos. A nova medição com
+subagentes Codex aprovou os sete cenários dirigidos e seus 31 invariantes. A
+regressão integral executou os 30 cenários: 22 PASS / 8 FAIL depois da correção
+de dois invariantes ambíguos, com 30/30 primeiras rotas corretas e nenhum gate
+mecânico violado. A triagem não encontrou defeito específico da PR #26, mas
+identificou dois defeitos reais preexistentes na baseline, cinco fixtures
+inelegíveis e um cenário condicionado ao conector Silo.
 
 O trabalho posterior à tutela está integrado e publicado. A release contém os
 sete bundles de skills e o manifesto produzidos pelo workflow; publicação,
@@ -41,8 +44,11 @@ instalação e uso humano continuam sendo recibos distintos.
   e protesto marítimo.
 - `indice-modulos.md` organiza o roteamento por fase e preserva um único
   módulo-base; tutela continua sendo o único complemento cumulativo.
-- Dez fixtures não executadas acrescentam cobertura futura para as famílias
-  novas e o gate de confirmação.
+- Dez fixtures acrescentam cobertura para as famílias novas. A primeira
+  execução encontrou quatro PASS e seis FAIL; a triagem classificou quatro
+  FAILs como conflito de fixture e dois como defeitos reais da baseline, em
+  agravo interno e interdição. Essa avaliação sintética não foi transformada
+  retroativamente em critério da release `v0.5.0`.
 - `references/mapa-visual-skills-modulos.md` representa as nove skills
   publicadas e a candidata deliberativa do PR #26, seus handoffs e gates, os
   modos não contenciosos e os 37 módulos contenciosos. O mapa é estritamente
@@ -156,7 +162,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 60 testes.
+- `make test`: PASS — 61 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 
@@ -180,15 +186,19 @@ passou e publicou sete ZIPs e `manifest.json` a partir de `632fa21`.
   `v0.5.0`, respectivamente.
 - A publicação `v0.5.0` contém sete bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
-- A sincronização do PR #26 não executou nova medição comportamental e não
-  autoriza merge, release ou anúncio da skill autônoma.
+- A nova medição do PR #26 usou apenas subagentes Codex e cenários sintéticos.
+  Ela comprova o comportamento dirigido, mas não dogfood, uso humano ou
+  aprendizagem em caso real.
+- A regressão integral da baseline não está verde: a leitura elegível é 22/24,
+  com dois defeitos reais preexistentes fora do escopo da PR #26.
 
 ## Próxima ação
 
-O próximo gate do PR #26 é reexecutar a rodada deliberativa dirigida sobre a
-base `v0.5.0`; somente um resultado integralmente verde permite considerar a
-regressão completa. Comparação externa da RFC, Fases 2 e 4, instalação, dogfood,
-merge do PR #26 e anúncio continuam fora do escopo concluído.
+Publicar os recibos e a correção da fixture na branch do PR #26, aguardar o CI
+e então decidir separadamente o landing da skill deliberativa. Os dois defeitos
+de baseline e as cinco fixtures inelegíveis devem seguir em frente própria; não
+são regressões da PR #26. Comparação externa da RFC, Fases 2 e 4, instalação,
+dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 

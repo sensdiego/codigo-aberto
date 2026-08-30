@@ -59,13 +59,15 @@ Estado dos itens:
   `codigo-aberto`; comparação externa, Fases 2 e 4 e dogfood não autorizados.
 - Camada deliberativa inicialmente decidida em 2026-08-26 como adaptação dos
   contratos. Duas rodadas acionaram a cláusula de promoção por falha repetida
-  de roteamento; a frente 3 implementa a skill autônoma sobre o mesmo protocolo
-  e handoff, ainda sem aceitação comportamental.
+  de roteamento; a frente 3 implementou e validou a skill autônoma sobre o
+  mesmo protocolo e handoff.
 - A cláusula de promoção da camada deliberativa disparou após duas rodadas. A
-  skill autônoma foi implementada no PR #26 e sincronizada com a `v0.5.0`, mas
-  permanece em rascunho e fora da `main`: os conflitos Git foram resolvidos,
-  enquanto a medição dirigida continua em 3 PASS / 2 FAIL, sem regressão
-  completa, merge ou publicação.
+  skill autônoma foi implementada no PR #26 e sincronizada com a `v0.5.0`. Os
+  conflitos Git foram resolvidos e a medição dirigida R3 passou 7/7, com 31/31
+  invariantes. A regressão integral registrou 22 PASS / 8 FAIL; a triagem
+  encontrou zero defeitos específicos da PR, dois defeitos reais preexistentes,
+  cinco fixtures inelegíveis e uma limitação de ambiente sem Silo. O PR ainda
+  não foi integrado nem publicado.
 - Régua da camada deliberativa entregue em 2026-08-27 (frente 1 de #22): o
   harness roda cenários multi-turno na mesma sessão e reprova mecanicamente a
   leitura de módulo de redação antes da fala autorizadora; seis cenários novos e
@@ -182,8 +184,10 @@ Status: a decisão de 2026-08-26 foi adaptar os contratos existentes e medir
 antes de promover uma nova porta. As duas rodadas da frente 2 falharam por
 omissão ou roteamento e acionaram a cláusula de promoção de
 [#22](https://github.com/sensdiego/codigo-aberto/issues/22). A frente 3 cria a
-skill autônoma reaproveitando protocolo e handoff; ela ainda não está aceita,
-porque a medição dirigida encontrou regressões na ponte com redação.
+skill autônoma reaproveitando protocolo e handoff. A rodada dirigida R3 passou
+7/7 depois que dois invariantes ambíguos foram corrigidos e os mesmos outputs
+congelados foram rejulgados; a ponte com redação não apresenta bloqueio
+comportamental reproduzível.
 
 Problema observado: as skills de análise entregam conclusões e a redação pede
 um briefing, mas nenhuma etapa é claramente responsável por apresentar ao
@@ -272,14 +276,14 @@ briefing ou contexto sejam tratados como autorização implícita.
       `analise-juridica-civel` (com `aprofundamento-audiencia` como controle
       de confusão) e gerador de bundles (`REWRITES` + cópia). Re-medir contra
       a frente 1. PR próprio. PR #25 integrado em 2026-08-28.
-- [~] Frente 3 — skill autônoma `deliberacao-juridica` (SEN-2408): porta
+- [x] Frente 3 — skill autônoma `deliberacao-juridica` (SEN-2408): porta
       própria sobre `references/deliberacao.md`, handoff `decisão`, oitavo
       bundle e roteamento das fixtures `deliberacao-*`. O PR #26 foi
       sincronizado com a `v0.5.0` e não tem mais conflitos Git. A medição
-      dirigida permanece em 3 PASS / 2 FAIL; as correções posteriores não
-      foram re-medidas e não houve regressão completa, merge ou publicação.
-      Antes da nova rodada, a régua passou a exigir a skill esperada como
-      primeira rota; a regressão integral corresponde aos 30 cenários atuais.
+      dirigida R3 passou 7/7 e 31/31 invariantes; a regressão integral executou
+      os 30 cenários, exigiu a primeira rota correta e não encontrou falha
+      específica da frente deliberativa. Merge e publicação permanecem etapas
+      separadas.
 - [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
       abandono.
@@ -287,10 +291,10 @@ briefing ou contexto sejam tratados como autorização implícita.
   por roteamento, a skill autônoma passa a ser a recomendação — embrulhando
   protocolo e artefato já existentes.
 
-- [~] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
+- [x] Módulo `tutela-urgencia-evidencia` em `redacao-contencioso`
       (SEN-2413): complemento do ato-base, recorte integral dos CPC arts.
-      294–311 e cenário multi-turno com gate mecânico. A régua fica pronta no
-      PR, sem execução paga nesta frente sem orçamento separado.
+      294–311 e cenário multi-turno com gate mecânico, integrado e publicado
+      antes da `v0.5.0`.
 - [x] Módulo `cumprimento-sentenca`, corrigido para o recorte dos CPC arts.
       513–538, com modos promover, impugnar e responder à impugnação.
 - [x] Módulo `execucao-titulo-extrajudicial`, com modos promover, embargar e
@@ -313,6 +317,15 @@ briefing ou contexto sejam tratados como autorização implícita.
       integração e eventual divisão em PRs ficam para instrução posterior.
 - [ ] Dogfood dos módulos ampliados: adiado expressamente pelo owner; fixtures
       e checks estruturais foram adicionados sem chamadas pagas a modelo.
+- [ ] Corrigir o contrato pré-redação do agravo interno: o briefing deve
+      explicitar efeito pretendido e risco de multa, sem automatismos, antes da
+      confirmação e sem antecipar o template do módulo.
+- [ ] Corrigir o contrato pré-redação da interdição: o briefing deve mapear
+      interessados, representação e intervenções institucionais obrigatórias,
+      incluindo a verificação da atuação do Ministério Público.
+- [ ] Tornar elegíveis as cinco fixtures que hoje exigem handoffs, documentos
+      e localizadores que não fornecem; manter o cenário de pesquisa Silo
+      condicionado a job com conector autenticado.
 
 ### Adaptação segura de casos reais — RFC aceita
 
