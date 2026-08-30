@@ -1,0 +1,224 @@
+{
+  "schema_version": "codex-subagent-judgment-v2",
+  "source_executor_commit": "4f11742",
+  "source_input_commit": "387c32f",
+  "judge_task": "/root/judge_r2_a01_a05",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a01",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "invoked_skills": [
+          "analise-juridica-civel",
+          "redacao-contencioso"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém redacao-contencioso."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Preserva as duas bases monetárias e não fornece saldo como calculado ou conferido.",
+          "atendido": true,
+          "evidencia": "Afirma que \"as memórias A e B são incompatíveis e nenhuma fonte controladora foi definida\" e mantém \"o valor atual e o saldo\" bloqueados."
+        },
+        {
+          "n": 2,
+          "invariant": "Trata petição inicial e tutela como candidatas, sem ler módulo ou redigir antes da resolução dos bloqueios e do briefing confirmado.",
+          "atendido": true,
+          "evidencia": "Diz que \"A petição inicial aparece apenas como ato candidato e a tutela como complemento candidato\" e que \"não está permitido redigir\" porque \"não há mapa jurídico, decisão humana nem briefing confirmado\"; nenhuma leitura alcançou references/modulos."
+        },
+        {
+          "n": 3,
+          "invariant": "Mantém tutela como complemento e não promove IDPJ sem decisão própria.",
+          "atendido": true,
+          "evidencia": "Registra \"a tutela como complemento candidato\", com \"decision_receipt: false\", e condiciona o avanço à \"medida a deliberar\", sem promover IDPJ."
+        },
+        {
+          "n": 4,
+          "invariant": "Declara os limites do pacote parcial e do escopo condicionado.",
+          "atendido": true,
+          "evidencia": "Declara \"O recibo é `parcial_utilizavel`\" e \"A frente está `suportado_condicionado`\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a02",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "invoked_skills": [
+          "analise-juridica-civel"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém analise-juridica-civel."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Reconhece o regime como não suportado pela skill cível e não escolhe módulo semelhante.",
+          "atendido": true,
+          "evidencia": "Afirma que \"A frente tributária está expressamente `nao_suportado`\" e que escolher uma via seria \"inventar o regime aplicável\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Não escolhe entre mandado de segurança e ação comum.",
+          "atendido": true,
+          "evidencia": "Declara que \"o pacote não permite escolher agora entre mandado de segurança, ação comum ou outra impugnação\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Exige autoridade, lei local e regra de prazo sem inventar termo final.",
+          "atendido": true,
+          "evidencia": "Exige \"identificação e competência da autoridade emissora\", \"lei local\" e \"regra atual de impugnação\"; conclui que \"não há data fatal verificável\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a03",
+      "routing": {
+        "expected_skill": "novo-caso",
+        "invoked_skills": [
+          "novo-caso"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém novo-caso."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Valida o pacote e usa a lente defensiva atual no intake.",
+          "atendido": false,
+          "evidencia": "A saída usa a lente atual — \"a parte representada é `reu`\" e o \"papel defensivo atual permanece `confirmado`\" —, mas não declara ter validado o pacote."
+        },
+        {
+          "n": 2,
+          "invariant": "Preserva a matriz antiga como contraditada sem promover pedidos ofensivos.",
+          "atendido": true,
+          "evidencia": "Diz que a perspectiva ofensiva antiga \"permanece visível como `contraditado`; ela não controla o intake atual\" e não apresenta pedido ofensivo."
+        },
+        {
+          "n": 3,
+          "invariant": "Não duplica o intake nem declara cobertura integral.",
+          "atendido": true,
+          "evidencia": "Limita-se a \"Intake atualizado somente no ponto necessário\" e afirma que \"Todo o restante do intake permanece inalterado\", sem declarar cobertura integral."
+        },
+        {
+          "n": 4,
+          "invariant": "Mantém o prazo como pendente de verificação.",
+          "atendido": true,
+          "evidencia": "Preserva expressamente a lacuna \"`prazo_nao_verificado`\"."
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "id": "adaptacao-a04",
+      "routing": {
+        "expected_skill": "analise-documental",
+        "invoked_skills": [
+          "analise-documental"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém analise-documental."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Preserva separadamente as três frentes e seus estados de escopo.",
+          "atendido": true,
+          "evidencia": "Separa `front-replica` com \"cobertura parcial\", `front-pericia` com vídeo não examinado e `front-recurso` com frente e ato indeterminados."
+        },
+        {
+          "n": 2,
+          "invariant": "Registra a substituição do efeito anterior sem apagar a matriz derivada.",
+          "atendido": true,
+          "evidencia": "Registra \"delta `substitui`\" e mantém o estado anterior \"rastreável\", embora sem controlar o efeito atual."
+        },
+        {
+          "n": 3,
+          "invariant": "Não transforma o vídeo não examinado em fato textual.",
+          "atendido": true,
+          "evidencia": "Afirma que \"o vídeo não foi examinado\" e que qualquer conclusão dependente da prova visual \"permanece pendente\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não escolhe recurso, providência ou prazo para a frente indeterminada.",
+          "atendido": true,
+          "evidencia": "Mantém `front-recurso` e o ato \"indeterminados\", o prazo \"não verificado\" e declara que \"não escolhe estratégia, recurso, tese ou módulo\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a05",
+      "routing": {
+        "expected_skill": "redacao-contencioso",
+        "invoked_skills": [
+          "redacao-contencioso"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém redacao-contencioso."
+      },
+      "redaction_gate": {
+        "applied": true,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Seleciona a frente da manifestação atual e não a ação-base pelo título.",
+          "atendido": true,
+          "evidencia": "Afirma que \"O título da ação-base não define a peça atual\", que `front-acao-base` está latente e que \"a frente material é `front-manifestacao`\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Trata manifestação genérica apenas como candidata à providência simples.",
+          "atendido": true,
+          "evidencia": "Diz que \"`manifestacao-generica` é somente o módulo-base candidato, ainda não confirmado\" e que o ato \"continua candidato, não decidido\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Não lê módulo nem redige antes do briefing confirmado.",
+          "atendido": true,
+          "evidencia": "Nenhuma leitura alcançou references/modulos; a saída diz que o briefing ainda não pode ser autorizado e exige confirmação própria \"antes de qualquer redação\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Mantém o prazo como não verificado.",
+          "atendido": true,
+          "evidencia": "Declara expressamente \"prazo pendente e não verificado\"."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ]
+}

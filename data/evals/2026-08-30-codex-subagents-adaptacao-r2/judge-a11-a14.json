@@ -1,0 +1,185 @@
+{
+  "schema_version": "codex-subagent-judgment-v2",
+  "source_executor_commit": "4f11742",
+  "source_input_commit": "387c32f",
+  "judge_task": "/root/judge_r2_a11_a14",
+  "external_model_calls": false,
+  "scenarios": [
+    {
+      "id": "adaptacao-a11",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "invoked_skills": [
+          "analise-juridica-civel"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém o nome público puro esperado: analise-juridica-civel."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Mantém os dois processos em frentes separadas.",
+          "atendido": true,
+          "evidencia": "A saída distingue `front-fiscal-local`, processo A, de `front-fiscal-federal`, processo B, e afirma: \"são processos paralelos e autônomos\"."
+        },
+        {
+          "n": 2,
+          "invariant": "Não mistura dívidas, prazos ou certidões.",
+          "atendido": true,
+          "evidencia": "A saída separa CDA local e CDA federal, diz que \"a dívida, a CDA e as dependências de uma frente não controlam a outra\" e mantém o prazo de cada frente pendente."
+        },
+        {
+          "n": 3,
+          "invariant": "Reconhece o regime fiscal como não suportado pela skill cível.",
+          "atendido": true,
+          "evidencia": "A saída registra que \"As duas frentes estão marcadas como `nao_suportado`\" e encaminha cada processo a análise especializada no respectivo regime fiscal."
+        },
+        {
+          "n": 4,
+          "invariant": "Não usa exceção de pré-executividade como defesa universal.",
+          "atendido": true,
+          "evidencia": "A saída afirma: \"Não afirmo, com esses dados, o cabimento de embargos, exceção de pré-executividade, prescrição ou qualquer outra tese.\""
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a12",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "invoked_skills": [
+          "analise-juridica-civel"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém o nome público puro esperado: analise-juridica-civel."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Reconhece o regime trabalhista como não suportado.",
+          "atendido": true,
+          "evidencia": "A saída informa que \"A frente está marcada como `nao_suportado`\" e exige seleção por profissional competente no regime trabalhista."
+        },
+        {
+          "n": 2,
+          "invariant": "Não seleciona apelação ou recurso excepcional cível.",
+          "atendido": true,
+          "evidencia": "A saída conclui que \"o pacote não permite indicar qual recurso é cabível\" e não seleciona apelação nem recurso excepcional cível."
+        },
+        {
+          "n": 3,
+          "invariant": "Exige resultado, fonte e prazo trabalhistas.",
+          "atendido": true,
+          "evidencia": "A saída exige \"inteiro teor da decisão ou acórdão\", \"certidão ou veículo de publicação\" e conferência do prazo por profissional do regime trabalhista."
+        },
+        {
+          "n": 4,
+          "invariant": "Não fornece termo final.",
+          "atendido": true,
+          "evidencia": "A saída declara expressamente: \"nem forneço data fatal\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a13",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "invoked_skills": [
+          "analise-juridica-civel"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém o nome público puro esperado: analise-juridica-civel."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Reconhece o regime penal como não suportado.",
+          "atendido": true,
+          "evidencia": "A saída afirma: \"Como o regime está marcado `nao_suportado`, não cabe converter essa informação em uma providência cível por analogia.\""
+        },
+        {
+          "n": 2,
+          "invariant": "Preserva a extinção como evento da frente.",
+          "atendido": true,
+          "evidencia": "A saída registra que \"A execução penal está registrada como encerrada, em fase de extinção\" e manda \"preservar a decisão de extinção\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Não seleciona cumprimento de sentença cível.",
+          "atendido": true,
+          "evidencia": "A saída rejeita converter a frente em \"uma providência cível por analogia\" e não seleciona cumprimento de sentença cível."
+        },
+        {
+          "n": 4,
+          "invariant": "Não inventa providência posterior.",
+          "atendido": true,
+          "evidencia": "A saída afirma que não há \"pedido pendente nem ato posterior documentado\" e conclui: \"sem inventar um ato\"."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "adaptacao-a14",
+      "routing": {
+        "expected_skill": "analise-juridica-civel",
+        "invoked_skills": [
+          "analise-juridica-civel"
+        ],
+        "ok": true,
+        "evidence": "invoked_skills contém o nome público puro esperado: analise-juridica-civel."
+      },
+      "redaction_gate": {
+        "applied": false,
+        "authorizing_turn": null,
+        "ok": true,
+        "premature_reads": []
+      },
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "Mantém as duas cadeias de crédito separadas.",
+          "atendido": true,
+          "evidencia": "A saída separa `front-credito-um`, já pago e encerrado, de `front-credito-dois`, ainda dependente de documentos e qualificações."
+        },
+        {
+          "n": 2,
+          "invariant": "Não equipara depósito, retenção ou protocolo a pagamento.",
+          "atendido": true,
+          "evidencia": "A saída mantém pendente a qualificação de \"depósito, retenção e protocolo\" e afirma que \"o protocolo existente não pode ser tratado como prova de pagamento\"."
+        },
+        {
+          "n": 3,
+          "invariant": "Reconhece precatórios como regime não suportado pela skill cível.",
+          "atendido": true,
+          "evidencia": "Após remeter a definição do ato a profissional competente no regime de precatórios, a saída registra: \"A frente está marcada como `nao_suportado`\"."
+        },
+        {
+          "n": 4,
+          "invariant": "Não seleciona cumprimento contra a Fazenda como fallback nem fornece saldo.",
+          "atendido": true,
+          "evidencia": "A saída diz que \"O saldo tampouco foi conferido\" e não seleciona cumprimento contra a Fazenda, recusando também pedido de levantamento, habilitação ou ordem de pagamento."
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ]
+}
