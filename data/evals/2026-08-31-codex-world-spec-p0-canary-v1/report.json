@@ -1,0 +1,218 @@
+{
+  "date": "2026-08-31",
+  "runner": "codex-cli",
+  "model": "gpt-5.6-sol",
+  "plugin_version": "0.6.1",
+  "counts": {
+    "total": 2,
+    "PASS": 1,
+    "FAIL": 1,
+    "JUDGE_ERROR": 0
+  },
+  "total_cost_usd": 0.0,
+  "scenarios": [
+    {
+      "id": "sintetico-m101-wa",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, sentença, trânsito, requerimento, intimação e alegação de pagamento com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra contrato (`01-contrato-fornecimento.md`), sentença (`06-sentenca.md`), trânsito (`07-certidao-transito.md`), requerimento (`08-peticao-cumprimento.md`), intimação (`10-despacho-intimacao.md`) e alegação de transferência (`13-email-executada.md`; `14-registro-bancario.md`)."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue afirmação da parte, documento comprobatório e reconhecimento judicial.",
+          "atendido": true,
+          "evidencia": "Distingue: “o e-mail afirma depósito judicial, corroborado pelo comprovante bancário, mas não por extrato oficial da conta judicial” e registra a ausência de “decisão homologando o cálculo”. Técnicamente, separa alegação, comprovação documental e reconhecimento judicial."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 523, 524 e 525 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita os arts. 219 e 224 à contagem em dias úteis, o art. 523 aos efeitos da falta de pagamento tempestivo, o art. 525 ao prazo de impugnação e o art. 524 ao demonstrativo discriminado e atualizado, sempre remetendo ao resumo autorizado da nota normativa."
+        },
+        {
+          "n": 4,
+          "invariant": "A ausência de decisão de satisfação ou extinção é registrada sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "Registra como ausente “decisão [...] extinguindo a obrigação” e pede decisão sobre “eventual extinção ou prosseguimento pelo saldo”, sem afirmar que o processo terminou."
+        },
+        {
+          "n": 5,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "Os fatos e movimentos são acompanhados de citações aos arquivos; a contagem usa o calendário fornecido, e o texto evita cálculo não documentado: “Não cabe recalculá-lo.”"
+        },
+        {
+          "n": 6,
+          "invariant": "Reconhece a convergência entre o e-mail e o comprovante, sem tratar isso como ordem judicial de extinção.",
+          "atendido": true,
+          "evidencia": "Afirma que “o e-mail afirma depósito judicial, corroborado pelo comprovante bancário”, mas ressalva que isso não foi confirmado “por extrato oficial da conta judicial” nem por decisão judicial."
+        },
+        {
+          "n": 7,
+          "invariant": "Pede confirmação do crédito na conta judicial e pronunciamento do juízo antes de encerrar o assunto.",
+          "atendido": true,
+          "evidencia": "Pede “extrato oficial da conta judicial” e “decisão judicial específica sobre tempestividade, suficiência, efeitos do art. 523 e eventual extinção ou prosseguimento pelo saldo” antes do encerramento."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 109319,
+        "cached_input_tokens": 85760,
+        "output_tokens": 3243,
+        "reasoning_output_tokens": 1125
+      },
+      "judge_token_usage": {
+        "input_tokens": 18446,
+        "cached_input_tokens": 0,
+        "output_tokens": 868,
+        "reasoning_output_tokens": 376
+      }
+    },
+    {
+      "id": "sintetico-m101-wb",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, sentença, trânsito, requerimento, intimação e alegação de pagamento com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "“sentença julgou procedente”; “trânsito em julgado”; “Aurora requereu cumprimento”; “o juízo determinou intimação”; “informou por e-mail ter transferido” — todos acompanhados de citações aos arquivos."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue afirmação da parte, documento comprobatório e reconhecimento judicial.",
+          "atendido": true,
+          "evidencia": "“Pagamento apenas alegado”; “falta prova da operação”; “decisão reconhecendo pagamento ou extinção” consta entre os elementos ausentes."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 523, 524 e 525 apenas no limite resumido na nota normativa.",
+          "atendido": false,
+          "evidencia": "A análise menciona “L219 e L224”, “L523” e “L525”, mas não utiliza nem examina o art. 524."
+        },
+        {
+          "n": 4,
+          "invariant": "A ausência de decisão de satisfação ou extinção é registrada sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "“Ausentes: [...] decisão reconhecendo pagamento ou extinção”, sem afirmar que o processo terminou."
+        },
+        {
+          "n": 5,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A saída ancora datas, valores, contagem, calendário e movimentações nos arquivos indicados e condiciona conclusões não comprovadas."
+        },
+        {
+          "n": 6,
+          "invariant": "Não promove a alegação a pagamento confirmado, reconhece que a busca negativa não prova inexistência da transferência e solicita comprovante ou extrato da conta judicial.",
+          "atendido": true,
+          "evidencia": "“não se pode concluir que houve pagamento tempestivo: falta prova da operação” e “Solicitar extrato ou certificação oficial da conta judicial”."
+        },
+        {
+          "n": 7,
+          "invariant": "Mantém aberto o estado processual e propõe verificação antes de recomendar extinção.",
+          "atendido": true,
+          "evidencia": "“requerer pronunciamento judicial sobre tempestividade, suficiência e eventual extinção” e verificar a prova antes de aplicar consequências processuais."
+        }
+      ],
+      "verdict": "FAIL",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 71167,
+        "cached_input_tokens": 49408,
+        "output_tokens": 3271,
+        "reasoning_output_tokens": 1452
+      },
+      "judge_token_usage": {
+        "input_tokens": 18580,
+        "cached_input_tokens": 0,
+        "output_tokens": 734,
+        "reasoning_output_tokens": 392
+      }
+    }
+  ],
+  "skill_coverage": [
+    {
+      "skill": "analise-documental",
+      "covered": false
+    },
+    {
+      "skill": "analise-juridica-civel",
+      "covered": true
+    },
+    {
+      "skill": "analise-jurisprudencial",
+      "covered": false
+    },
+    {
+      "skill": "aprofundamento-juridico",
+      "covered": false
+    },
+    {
+      "skill": "assinatura-silo",
+      "covered": false
+    },
+    {
+      "skill": "deliberacao-juridica",
+      "covered": false
+    },
+    {
+      "skill": "novo-caso",
+      "covered": false
+    },
+    {
+      "skill": "pesquisa-silo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-consultivo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-contencioso",
+      "covered": false
+    }
+  ],
+  "cost_basis": "Codex account usage; no external USD price reported"
+}

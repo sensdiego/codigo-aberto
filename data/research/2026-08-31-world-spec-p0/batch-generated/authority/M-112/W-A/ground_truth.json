@@ -1,0 +1,64 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente, com comprovante de pagamento presente e datas de publicação convergentes.",
+  "effective_spec_sha256": "8cf480c06240eb5964c01765d0f9223d66fcd7cbc6f3123ca350a20d99e6a76e",
+  "expected_observations": [
+    {
+      "claim": "A executada alegou e documentou transferência de R$ 102.650,00 em 2026-08-18.",
+      "class": "fact",
+      "evidence": [
+        "13-email-executada.md",
+        "14-registro-bancario.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre o e-mail e o comprovante, sem tratar isso como ordem judicial de extinção.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Pede confirmação do crédito na conta judicial e pronunciamento do juízo antes de encerrar o assunto.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-112",
+  "motif": "contrato_peticao_decisao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-112",
+    "F002": "4ª Vara Cível da Comarca Experimental de Nuvem",
+    "F003": "Boreal Isolamento Acústico Ltda.",
+    "F004": "Cobalto Estúdios Industriais S.A.",
+    "F010": "2025-10-04",
+    "F011": "fornecimento e instalação de módulos de isolamento acústico",
+    "F012": "91.250,00",
+    "F013": "2025-11-09",
+    "F014": "2025-12-09",
+    "F020": "2026-01-04",
+    "F021": "2026-04-16",
+    "F022": "pagar R$ 91.250,00, com atualização pelo IPCA-E desde 2025-12-09 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-06-11",
+    "F024": "2026-01-14",
+    "F030": "2026-07-24",
+    "F031": "102.650,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-07-24 e juros simples de 1% ao mês desde 2026-01-14",
+    "F040": "2026-07-24",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-07-29",
+    "F043": "2026-07-29",
+    "F050": "2026-08-18",
+    "F051": "102.650,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-112",
+    "F060": "2026-07-30 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-08-20 09:10",
+    "F070": "no período de 2026-07-27 a 2026-08-19, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-07-27 a 2026-08-19"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

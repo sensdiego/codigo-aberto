@@ -1,0 +1,64 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente, com comprovante de pagamento presente e datas de publicação convergentes.",
+  "effective_spec_sha256": "ce7c5d901c8098aa068c0e503fd2f04a527ee1a382c1189e98bd250ab178a41e",
+  "expected_observations": [
+    {
+      "claim": "A executada alegou e documentou transferência de R$ 142.390,00 em 2026-03-31.",
+      "class": "fact",
+      "evidence": [
+        "13-email-executada.md",
+        "14-registro-bancario.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre o e-mail e o comprovante, sem tratar isso como ordem judicial de extinção.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Pede confirmação do crédito na conta judicial e pronunciamento do juízo antes de encerrar o assunto.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-102",
+  "motif": "peticao_decisao_certidao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-102",
+    "F002": "2ª Vara Cível da Comarca Experimental de Brisa",
+    "F003": "Cedro Energia Modular Ltda.",
+    "F004": "Duna Alimentos Refrigerados S.A.",
+    "F010": "2025-05-17",
+    "F011": "fornecimento e instalação de inversores solares industriais",
+    "F012": "126.500,00",
+    "F013": "2025-06-22",
+    "F014": "2025-07-22",
+    "F020": "2025-08-17",
+    "F021": "2025-11-27",
+    "F022": "pagar R$ 126.500,00, com atualização pelo IPCA-E desde 2025-07-22 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-01-22",
+    "F024": "2025-08-27",
+    "F030": "2026-03-06",
+    "F031": "142.390,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-03-06 e juros simples de 1% ao mês desde 2025-08-27",
+    "F040": "2026-03-06",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-03-11",
+    "F043": "2026-03-11",
+    "F050": "2026-03-31",
+    "F051": "142.390,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-102",
+    "F060": "2026-03-12 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-04-02 09:10",
+    "F070": "no período de 2026-03-09 a 2026-04-01, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-03-09 a 2026-04-01"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

@@ -1,0 +1,39 @@
+{
+  "blind_before_submission": null,
+  "decision": "PENDING",
+  "decision_options": [
+    "CONSTRUIR P0",
+    "REDESENHAR",
+    "REMOVER"
+  ],
+  "decision_reason": "",
+  "reviewed_at": "",
+  "reviewer": "",
+  "schema_version": 1,
+  "worlds": {
+    "W-A": {
+      "identified_contradictions": [],
+      "identified_missing_evidence": [],
+      "implausible_or_leaking_documents": [],
+      "realism_1_to_5": null,
+      "recovered_material_facts": [],
+      "response_path": ""
+    },
+    "W-B": {
+      "identified_contradictions": [],
+      "identified_missing_evidence": [],
+      "implausible_or_leaking_documents": [],
+      "realism_1_to_5": null,
+      "recovered_material_facts": [],
+      "response_path": ""
+    },
+    "W-C": {
+      "identified_contradictions": [],
+      "identified_missing_evidence": [],
+      "implausible_or_leaking_documents": [],
+      "realism_1_to_5": null,
+      "recovered_material_facts": [],
+      "response_path": ""
+    }
+  }
+}

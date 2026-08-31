@@ -1,0 +1,64 @@
+{
+  "authority_label": "proof_missing",
+  "description": "A parte afirma que pagou, mas o registro bancário contém somente resposta negativa à busca do comprovante.",
+  "effective_spec_sha256": "305a00f33feea504c102b6a6d2e9db8633f9e98d8eff9df9d56345221fd1fc64",
+  "expected_observations": [
+    {
+      "claim": "O pagamento aparece apenas como alegação da executada; a resposta bancária não localizou comprovante correspondente.",
+      "class": "fact",
+      "evidence": [
+        "13-email-executada.md",
+        "14-registro-bancario.md"
+      ],
+      "id": "O-B1",
+      "rubric": "Não promove a alegação a pagamento confirmado, reconhece que a busca negativa não prova inexistência da transferência e solicita comprovante ou extrato da conta judicial.",
+      "severity": "critical",
+      "state": "alleged"
+    },
+    {
+      "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-B2",
+      "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar extinção.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-111",
+  "motif": "contrato_peticao_decisao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-111",
+    "F002": "3ª Vara Cível da Comarca Experimental de Mirante",
+    "F003": "Zênite Armazenamento Elétrico Ltda.",
+    "F004": "Acanto Mineração Experimental S.A.",
+    "F010": "2025-09-27",
+    "F011": "fornecimento e instalação de gabinetes de armazenamento de energia",
+    "F012": "205.500,00",
+    "F013": "2025-11-02",
+    "F014": "2025-12-02",
+    "F020": "2025-12-28",
+    "F021": "2026-04-09",
+    "F022": "pagar R$ 205.500,00, com atualização pelo IPCA-E desde 2025-12-02 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-06-04",
+    "F024": "2026-01-07",
+    "F030": "2026-07-17",
+    "F031": "231.160,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-07-17 e juros simples de 1% ao mês desde 2026-01-07",
+    "F040": "2026-07-17",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-07-22",
+    "F043": "2026-07-22",
+    "F050": "2026-08-11",
+    "F051": "231.160,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-111",
+    "F060": "2026-07-23 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-08-13 09:10",
+    "F070": "no período de 2026-07-20 a 2026-08-12, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-07-20 a 2026-08-12"
+  },
+  "schema_version": 1,
+  "world_id": "W-B"
+}

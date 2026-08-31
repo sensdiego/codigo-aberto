@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reviewer_label": "codex-b2",
+  "reviewer_backend": "codex-subagent",
+  "external_cost_usd": 0,
+  "matter_ids": [
+    "M-103",
+    "M-104",
+    "M-107",
+    "M-110"
+  ],
+  "world_ids": [
+    "W-A",
+    "W-B",
+    "W-C"
+  ],
+  "source_file_count": 216,
+  "authority_files_included": false,
+  "prior_reviews_included": false,
+  "review_sha256": "1918a5a2b4fa6a53c319981696f363176fe038522280f6a7d98f788d32ab180a",
+  "completed_at": "2026-08-31T20:04:29Z"
+}

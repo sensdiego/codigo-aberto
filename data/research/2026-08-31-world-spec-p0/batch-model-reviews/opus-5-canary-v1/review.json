@@ -1,0 +1,364 @@
+{
+  "batch_gate": "CONSTRUIR",
+  "batch_reason": "Os quatro assuntos apresentam corpus cego coerente e auditável: cada marco tem arquivo de suporte, os valores são estáveis entre requerimento, demonstrativo e alegação de pagamento, e a nota normativa somada ao calendário fornecido permite analisar o prazo do art. 523 sem regra externa. A variação entre mundos é funcional e recuperável (W-A prova completa; W-B pagamento apenas alegado com busca bancária negativa e autolimitada; W-C conflito entre certidão de publicação e Diário/ofício que inverte a tempestividade). Não identifiquei vazamento de gabarito, instruções embutidas em documentos nem contradições internas fora das deliberadamente inseridas. As ressalvas — forte padronização de template entre assuntos (mesmo 'NF-SYN-0001', mesmo horário de extrato, pagamento sempre no penúltimo dia útil), demonstrativos sem discriminação real frente ao art. 524 e calendários que declaram meses inteiros sem feriado — recomendam ajuste editorial futuro, mas não impedem a construção.",
+  "matters": [
+    {
+      "decision_reason": "Os três mundos são internamente auditáveis e discrimináveis apenas com os arquivos de documents/: W-A permite cadeia completa e prazo verificável; W-B isola uma lacuna probatória autolimitada sobre o pagamento; W-C insere conflito de datas entre 11-diario-justica.md e 12-certidao-publicacao.md que altera o resultado do art. 523 sem exigir regra externa. Não há vazamento de gabarito nem instrução embutida; as fragilidades são de padronização de modelo e de calendário estipulativo, insuficientes para redesenho.",
+      "matter_id": "M-101",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "Uniformidade de modelo entre os quatro assuntos (mesmo número 'NF-SYN-0001', mesma redação de despacho, extratos sempre 'emitidos às 09:10'), sinal de geração automatizada — ver 02-nota-fiscal.md e 15-extrato-andamentos.md.",
+            "O pagamento cai exatamente no penúltimo dia útil do prazo, padrão construído que facilita a resposta esperada (13-email-executada.md vs 12-certidao-publicacao.md).",
+            "17-calendario-forense.md é uma estipulação de fato genérica ('sem feriado local ou suspensão'), útil ao teste mas pouco realista como peça de autos."
+          ],
+          "material_findings": [
+            "Cadeia negocial completa e coerente: contrato de 2025-05-10 com preço de R$ 84.000,00 e vencimento em 2025-07-15 (M-101/W-A/documents/01-contrato-fornecimento.md), NF de mesmo valor e vencimento (02-nota-fiscal.md) e termo de entrega sem ressalvas em 2025-06-15 (03-termo-entrega.md).",
+            "Fase de conhecimento documentada: inicial protocolada em 2025-08-10 (04-peticao-inicial.md), AR de citação recebido em 2025-08-20 (05-aviso-recebimento-citacao.md), sentença de procedência em 2025-11-20 com IPCA-E desde 2025-07-15 e juros de 1% a.m. desde a citação (06-sentenca.md) e trânsito em 2026-01-15 (07-certidao-transito.md).",
+            "Cadeia destacada pela tarefa é internamente consistente: requerimento de cumprimento por R$ 94.780,00 protocolado em 2026-02-27 (08-peticao-cumprimento.md), despacho do art. 523 na mesma data (10-despacho-intimacao.md), publicação em 2026-03-04 no Diário (11-diario-justica.md) e certidão de publicação com a mesma data (12-certidao-publicacao.md), com juntada em 2026-03-05 (15-extrato-andamentos.md).",
+            "Aplicando apenas L219/L224 (16-nota-normativa.md) e o expediente regular de março de 2026 (17-calendario-forense.md), a contagem a partir do primeiro dia útil após 2026-03-04 coloca o décimo quinto dia útil em 2026-03-25; o pagamento alegado em 2026-03-24 (13-email-executada.md) situa-se dentro desse intervalo — conclusão que depende de reconhecimento judicial.",
+            "Pagamento tem suporte duplo: declaração da executada (13-email-executada.md) e comprovante bancário com status 'transferência efetivada' de R$ 94.780,00 em 2026-03-24 (14-registro-bancario.md), valor idêntico ao total declarado no demonstrativo (09-memoria-calculo.md).",
+            "O demonstrativo apenas declara critério (IPCA-E até 2026-02-27; juros desde 2025-08-20) e um total, sem memória discriminada parcela a parcela, o que é relevante frente a L524 (09-memoria-calculo.md; 16-nota-normativa.md).",
+            "A adoção de 2025-08-20 como termo inicial dos juros equipara recebimento do AR à citação; a sentença fala em 'desde a citação' sem fixar data (06-sentenca.md; 05-aviso-recebimento-citacao.md; 09-memoria-calculo.md)."
+          ],
+          "missing_evidence": [
+            "Petição informando o pagamento nos autos e respectiva decisão judicial de reconhecimento/extinção — o extrato emitido em 2026-03-26 não registra nenhum ato após a juntada de 2026-03-05 (M-101/W-A/documents/15-extrato-andamentos.md).",
+            "Guia de depósito judicial / extrato da conta vinculada que confirme o ingresso do valor no juízo; 14-registro-bancario.md indica apenas 'destino informado'.",
+            "Comprovação de quem foi intimado (advogado constituído, nome/OAB) no ato publicado (11-diario-justica.md e 12-certidao-publicacao.md nada dizem).",
+            "Cópia integral do Diário com o teor publicado, para conferir identidade entre o ato publicado e o despacho de 10-despacho-intimacao.md.",
+            "Documento que explique o intervalo entre trânsito (2026-01-15) e requerimento (2026-02-27), e eventual manifestação do exequente sobre o pagamento."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Afirmação de transferência efetuada em 2026-03-24 (13-email-executada.md) versus resultado negativo de busca bancária pelos mesmos dados (14-registro-bancario.md); o conflito é real, embora a segunda peça seja autolimitada."
+          ],
+          "implausible_or_leaking_documents": [
+            "É pouco usual que a própria executada solicite ao banco a busca de um comprovante que ela mesma afirma possuir e receba resposta negativa formal (14-registro-bancario.md).",
+            "Mesma padronização de modelo e datas dos demais assuntos do lote (02-nota-fiscal.md 'NF-SYN-0001'; 15-extrato-andamentos.md '09:10')."
+          ],
+          "material_findings": [
+            "A fase de conhecimento e a cadeia processual são idênticas às do cenário-base: requerimento e despacho em 2026-02-27 (M-101/W-B/documents/08-peticao-cumprimento.md; 10-despacho-intimacao.md), publicação em 2026-03-04 (11-diario-justica.md; 12-certidao-publicacao.md) e juntada em 2026-03-05 (15-extrato-andamentos.md).",
+            "O fato distintivo é probatório: a resposta bancária informa que 'não foi localizado comprovante com os dados fornecidos' para a transferência de 2026-03-24 no valor de R$ 94.780,00 (14-registro-bancario.md), enquanto o e-mail da executada afirma a transferência (13-email-executada.md).",
+            "A própria resposta bancária limita seu alcance ('a pesquisa foi realizada pelos identificadores informados... não afirma se houve operação com dados diferentes'), de modo que o pagamento é alegado e não confirmado, não sendo possível afirmar sua inexistência (14-registro-bancario.md).",
+            "Se o pagamento não for comprovado, a contagem do prazo (publicação 2026-03-04, primeiro dia útil seguinte 2026-03-05, expediente regular em março conforme 17-calendario-forense.md) leva ao esgotamento em 2026-03-25 e aos efeitos do art. 523 e ao início do prazo de impugnação (L523/L525 em 16-nota-normativa.md) — efeito que depende de pronunciamento judicial.",
+            "Valores permanecem coerentes entre requerimento, demonstrativo e valor alegadamente transferido (08-peticao-cumprimento.md; 09-memoria-calculo.md; 13-email-executada.md).",
+            "O extrato de andamentos emitido em 2026-03-26 não registra depósito, petição de pagamento nem decisão (15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Comprovante de transferência ou recibo bancário com identificadores completos (banco, agência, conta judicial, ID da operação) — ausente no conjunto (14-registro-bancario.md apenas nega localização).",
+            "Extrato da conta judicial vinculada ao processo emitido pela instituição depositária ou pelo juízo.",
+            "Nova consulta bancária por outros identificadores (CNPJ do ordenante, período, valor aproximado), já sugerida pela ressalva da própria resposta.",
+            "Petição do exequente ou certidão cartorária sobre existência/ausência de depósito nos autos.",
+            "Decisão judicial sobre a ocorrência ou não do pagamento tempestivo."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data de publicação: 2026-03-04 (11-diario-justica.md) versus 2026-03-02 (12-certidao-publicacao.md), com impacto direto sobre a tempestividade do pagamento de 2026-03-24 (13-email-executada.md; 14-registro-bancario.md)."
+          ],
+          "implausible_or_leaking_documents": [
+            "A divergência de exatamente dois dias foi calibrada para inverter o resultado do prazo, padrão de construção sintética perceptível (11-diario-justica.md vs 12-certidao-publicacao.md).",
+            "Repetição integral do modelo dos demais mundos e assuntos (mesmo texto de despacho, mesmo horário de consulta em 15-extrato-andamentos.md)."
+          ],
+          "material_findings": [
+            "Divergência documental central: o Diário indica publicação em 2026-03-04 (M-101/W-C/documents/11-diario-justica.md), enquanto a certidão cartorária certifica publicação em 2026-03-02 (12-certidao-publicacao.md).",
+            "O extrato registra a juntada da certidão de publicação em 2026-03-05 (15-extrato-andamentos.md), o que é temporalmente compatível com ambas as datas, mas mais próximo da data do Diário.",
+            "A divergência é determinante do resultado: contando pela regra L219/L224 (16-nota-normativa.md) com expediente regular em março (17-calendario-forense.md), a publicação em 2026-03-04 leva ao termo final em 2026-03-25 (pagamento de 2026-03-24 dentro do prazo), enquanto a publicação em 2026-03-02 leva ao termo final em 2026-03-23 (pagamento fora do prazo).",
+            "O pagamento em si tem suporte documental: e-mail da executada e comprovante bancário com status efetivado de R$ 94.780,00 em 2026-03-24 (13-email-executada.md; 14-registro-bancario.md).",
+            "Nenhum documento do conjunto resolve a antinomia entre certidão e Diário: não há decisão judicial nem certidão retificadora (nada em 15-extrato-andamentos.md).",
+            "Demais marcos permanecem confirmados: sentença 2025-11-20, trânsito 2026-01-15, requerimento e despacho em 2026-02-27 (06-sentenca.md; 07-certidao-transito.md; 08-peticao-cumprimento.md; 10-despacho-intimacao.md)."
+          ],
+          "missing_evidence": [
+            "Cópia da página/edição do Diário da Justiça com data de circulação e do respectivo caderno, para aferir qual data prevalece.",
+            "Certidão cartorária retificadora ou esclarecimento do cartório sobre a data de publicação (12-certidao-publicacao.md).",
+            "Registro do sistema com data de disponibilização e data de publicação (o extrato só menciona a juntada — 15-extrato-andamentos.md).",
+            "Decisão judicial fixando o termo inicial do prazo do art. 523 e apreciando a tempestividade do pagamento.",
+            "Comprovação do ingresso do valor na conta judicial (14-registro-bancario.md informa apenas o destino declarado)."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "O conjunto é recuperável e discrimina bem os três cenários: prova completa (W-A), lacuna probatória autolimitada (W-B) e antinomia de datas com efeito sobre o prazo do art. 523 (W-C). A cadeia exigida pela tarefa (inicial–sentença–cumprimento) é rastreável arquivo a arquivo. Ressalva de realismo: o calendário sintético declara abril de 2026 integralmente útil, o que enfraquece a verossimilhança, mas é estipulação interna coerente e não impede a análise.",
+      "matter_id": "M-105",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md afirma expediente regular em todo abril de 2026, sem qualquer suspensão, o que destoa da realidade forense brasileira para o período (a peça é estipulativa e sintética); registra-se apenas como sinal de artificialidade, sem recálculo.",
+            "Padronização entre assuntos: mesmo 'NF-SYN-0001' (02-nota-fiscal.md), mesmo texto de despacho (10-despacho-intimacao.md) e mesmo horário de consulta '09:10' (15-extrato-andamentos.md).",
+            "Pagamento posicionado exatamente no penúltimo dia útil do prazo (13-email-executada.md)."
+          ],
+          "material_findings": [
+            "Cadeia negocial coerente: contrato de 2025-06-07, R$ 152.000,00, vencimento 2025-08-12 (M-105/W-A/documents/01-contrato-fornecimento.md), NF de mesmo valor (02-nota-fiscal.md) e aceite sem ressalvas em 2025-07-13 (03-termo-entrega.md).",
+            "Cadeia destacada pela tarefa (inicial–sentença–cumprimento) fecha: inicial de 2025-09-07 pelo principal de R$ 152.000,00 (04-peticao-inicial.md), sentença de procedência em 2025-12-18 com IPCA-E desde 2025-08-12 e juros desde a citação (06-sentenca.md), trânsito em 2026-02-12 (07-certidao-transito.md) e requerimento de cumprimento em 2026-03-27 por R$ 170.920,00 (08-peticao-cumprimento.md).",
+            "Despacho do art. 523 em 2026-03-27 (10-despacho-intimacao.md), publicação em 2026-04-01 confirmada por Diário e certidão (11-diario-justica.md; 12-certidao-publicacao.md) e juntada em 2026-04-02 (15-extrato-andamentos.md).",
+            "Com L219/L224 (16-nota-normativa.md) e expediente regular de março e abril de 2026 (17-calendario-forense.md), o décimo quinto dia útil após 2026-04-01 recai em 2026-04-22; o pagamento alegado em 2026-04-21 estaria dentro do prazo (13-email-executada.md), sujeito a confirmação judicial.",
+            "Pagamento suportado por comprovante bancário com status efetivado de R$ 170.920,00 em 2026-04-21 (14-registro-bancario.md), valor idêntico ao do demonstrativo (09-memoria-calculo.md).",
+            "O demonstrativo declara critério e total, sem discriminação de parcelas, o que é ponto de atenção diante de L524 (09-memoria-calculo.md; 16-nota-normativa.md).",
+            "Juros contados de 2025-09-17 no demonstrativo correspondem à data do AR (05-aviso-recebimento-citacao.md), equiparação não explicitada na sentença."
+          ],
+          "missing_evidence": [
+            "Petição de comunicação do pagamento e decisão judicial correspondente — o extrato de 2026-04-23 nada registra após 2026-04-02 (15-extrato-andamentos.md).",
+            "Extrato/guia da conta judicial que confirme o ingresso do depósito (14-registro-bancario.md indica apenas destino informado).",
+            "Identificação do intimado (advogado/OAB) no ato publicado (11-diario-justica.md; 12-certidao-publicacao.md).",
+            "Justificativa documental do intervalo entre trânsito (2026-02-12) e requerimento (2026-03-27).",
+            "Memória de cálculo discriminada por período, índices e parcelas."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Transferência afirmada em 2026-04-21 (13-email-executada.md) contra resultado negativo da busca bancária pelos mesmos dados (14-registro-bancario.md)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Solicitação de busca de comprovante feita pela própria ordenante, com resposta negativa formal, é arranjo pouco usual (14-registro-bancario.md).",
+            "17-calendario-forense.md declara abril de 2026 integralmente útil, estipulação artificial.",
+            "Repetição do mesmo template dos demais assuntos do lote."
+          ],
+          "material_findings": [
+            "Marcos processuais idênticos ao cenário-base: requerimento e despacho em 2026-03-27 (M-105/W-B/documents/08-peticao-cumprimento.md; 10-despacho-intimacao.md), publicação em 2026-04-01 (11-diario-justica.md; 12-certidao-publicacao.md) e juntada em 2026-04-02 (15-extrato-andamentos.md).",
+            "O pagamento é apenas alegado: o e-mail afirma transferência de R$ 170.920,00 em 2026-04-21 (13-email-executada.md), mas a consulta bancária não localizou comprovante com os dados fornecidos (14-registro-bancario.md).",
+            "A resposta bancária é expressamente autolimitada e não permite concluir pela inexistência do pagamento (14-registro-bancario.md).",
+            "Na hipótese de ausência de pagamento tempestivo, o termo final calculado com L219/L224 e o calendário fornecido seria 2026-04-22, com incidência dos efeitos de L523 e início do prazo de impugnação de L525 (16-nota-normativa.md; 17-calendario-forense.md) — efeito ainda dependente de decisão.",
+            "Coerência de valores entre requerimento, demonstrativo e valor alegado (08-peticao-cumprimento.md; 09-memoria-calculo.md; 13-email-executada.md).",
+            "Nenhum registro de depósito ou petição consta do extrato emitido em 2026-04-23 (15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário com identificadores completos da operação alegada.",
+            "Extrato da conta judicial vinculada ao processo BR-CIV-EXEC-105.",
+            "Reiteração de pesquisa bancária por outros critérios, conforme ressalva da própria resposta (14-registro-bancario.md).",
+            "Certidão cartorária sobre existência de depósito nos autos.",
+            "Decisão judicial sobre tempestividade/ocorrência do pagamento."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data de publicação: 2026-04-01 (11-diario-justica.md) versus 2026-03-30 (12-certidao-publicacao.md), com efeito decisivo sobre a tempestividade do pagamento de 2026-04-21."
+          ],
+          "implausible_or_leaking_documents": [
+            "Diferença de exatamente dois dias entre Diário e certidão, calibrada para inverter o resultado do prazo — padrão de construção sintética (11-diario-justica.md; 12-certidao-publicacao.md).",
+            "17-calendario-forense.md afirma março e abril de 2026 sem qualquer suspensão de expediente.",
+            "Uniformidade de modelo com os demais assuntos do lote."
+          ],
+          "material_findings": [
+            "Conflito documental sobre a publicação: Diário indica 2026-04-01 (M-105/W-C/documents/11-diario-justica.md) e a certidão certifica 2026-03-30 (12-certidao-publicacao.md).",
+            "O extrato registra juntada da certidão em 2026-04-02 (15-extrato-andamentos.md), compatível com ambas, porém mais próximo da data do Diário.",
+            "O conflito altera o resultado: pela regra L219/L224 e pelo calendário fornecido (16-nota-normativa.md; 17-calendario-forense.md), publicação em 2026-04-01 conduz a termo final em 2026-04-22 (pagamento de 2026-04-21 tempestivo), enquanto publicação em 2026-03-30 conduz a termo final em 2026-04-20 (pagamento intempestivo).",
+            "O pagamento em si é documentado: e-mail e comprovante bancário efetivado de R$ 170.920,00 em 2026-04-21 (13-email-executada.md; 14-registro-bancario.md).",
+            "Nenhuma peça resolve a divergência: não há retificação de certidão nem decisão judicial sobre o termo inicial (ausente em 15-extrato-andamentos.md).",
+            "Cadeia inicial–sentença–cumprimento, foco da tarefa, permanece íntegra e sem contradição de valores (04-peticao-inicial.md; 06-sentenca.md; 08-peticao-cumprimento.md; 09-memoria-calculo.md)."
+          ],
+          "missing_evidence": [
+            "Edição do Diário da Justiça com data de disponibilização e de publicação.",
+            "Certidão retificadora ou esclarecimento do cartório sobre a data correta.",
+            "Registro sistêmico do ato de publicação, além da menção à juntada em 15-extrato-andamentos.md.",
+            "Decisão judicial fixando o termo inicial do prazo e apreciando o pagamento.",
+            "Confirmação do ingresso do valor na conta judicial."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "A variação exigida (despacho–ofício–certidão) é rastreável e os três mundos produzem estados de prova distintos e defensáveis sem apelo a regra externa. Ressalvas de verossimilhança — ofício que atesta publicação e calendário que declara abril/maio de 2026 sem qualquer feriado — reduzem o realismo, mas não comprometem a recuperabilidade nem introduzem gabarito ou instrução vazada.",
+      "matter_id": "M-108",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "Ofício que 'registra a publicação' em data futura ao próprio despacho e antecipa conteúdo de certidão é peça de tipologia híbrida, pouco usual (11-oficio-intimacao.md).",
+            "17-calendario-forense.md declara abril e maio de 2026 sem qualquer feriado ou suspensão, estipulação artificial.",
+            "Padrão comum a todo o lote: 'NF-SYN-0001' (02-nota-fiscal.md), mesmo texto de despacho e extrato '09:10' (15-extrato-andamentos.md); pagamento sempre no penúltimo dia útil do prazo."
+          ],
+          "material_findings": [
+            "Base negocial coerente: contrato de 2025-06-28 por R$ 73.900,00 com vencimento em 2025-09-02 (M-108/W-A/documents/01-contrato-fornecimento.md), NF equivalente (02-nota-fiscal.md) e aceite sem ressalvas em 2025-08-03 (03-termo-entrega.md).",
+            "Fase de conhecimento: inicial em 2025-09-28 (04-peticao-inicial.md), AR em 2025-10-08 (05-aviso-recebimento-citacao.md), sentença em 2026-01-08 (06-sentenca.md) e trânsito em 2026-03-05 (07-certidao-transito.md).",
+            "Cadeia despacho–ofício–certidão, foco da tarefa, é convergente: despacho de 2026-04-17 (10-despacho-intimacao.md), ofício que reproduz o despacho e registra publicação em 2026-04-22 (11-oficio-intimacao.md) e certidão com a mesma data de publicação (12-certidao-publicacao.md), com juntada em 2026-04-23 (15-extrato-andamentos.md).",
+            "Com L219/L224 (16-nota-normativa.md) e expediente regular de abril e maio de 2026 (17-calendario-forense.md), o décimo quinto dia útil após 2026-04-22 recai em 2026-05-13, de modo que o pagamento alegado em 2026-05-12 estaria no prazo (13-email-executada.md) — efeito sujeito a confirmação judicial.",
+            "Comprovante bancário registra transferência efetivada de R$ 83.140,00 em 2026-05-12, valor coincidente com requerimento e demonstrativo (14-registro-bancario.md; 08-peticao-cumprimento.md; 09-memoria-calculo.md).",
+            "O demonstrativo apenas declara critério (IPCA-E até 2026-04-17; juros desde 2025-10-08) e total, sem discriminação, ponto sensível diante de L524 (09-memoria-calculo.md).",
+            "O ofício funciona como peça de comunicação, mas atesta um fato de publicação que caberia à certidão; ainda assim as duas datas coincidem (11-oficio-intimacao.md; 12-certidao-publicacao.md)."
+          ],
+          "missing_evidence": [
+            "Comprovação de recebimento do ofício pela executada (AR, protocolo ou certidão de oficial).",
+            "Petição informando o pagamento e decisão judicial sobre extinção — extrato de 2026-05-14 nada registra após 2026-04-23 (15-extrato-andamentos.md).",
+            "Extrato/guia da conta judicial que confirme o ingresso do depósito (14-registro-bancario.md indica só destino informado).",
+            "Cópia da publicação no órgão oficial referida pelo cartório em 11-oficio-intimacao.md.",
+            "Memória de cálculo discriminada e identificação do advogado intimado."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Transferência afirmada em 2026-05-12 (13-email-executada.md) versus busca bancária negativa pelos mesmos dados (14-registro-bancario.md)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Ofício que registra publicação e reproduz o despacho, tipologia híbrida (11-oficio-intimacao.md).",
+            "Busca de comprovante requerida pela própria ordenante com resultado negativo formal (14-registro-bancario.md).",
+            "Calendário sintético declarando abril e maio de 2026 integralmente úteis (17-calendario-forense.md)."
+          ],
+          "material_findings": [
+            "Cadeia despacho–ofício–certidão idêntica à do cenário-base e convergente em 2026-04-22 (M-108/W-B/documents/10-despacho-intimacao.md; 11-oficio-intimacao.md; 12-certidao-publicacao.md), com juntada em 2026-04-23 (15-extrato-andamentos.md).",
+            "O pagamento é apenas alegado: e-mail afirma transferência de R$ 83.140,00 em 2026-05-12 (13-email-executada.md), enquanto a consulta bancária não localizou comprovante com os dados fornecidos (14-registro-bancario.md).",
+            "A resposta bancária ressalva expressamente que não afirma inexistência de operação com dados diversos, impedindo conclusão negativa definitiva (14-registro-bancario.md).",
+            "Se não comprovado o pagamento, a contagem com L219/L224 e o calendário fornecido situa o termo final em 2026-05-13, com incidência dos efeitos de L523 e do prazo de impugnação de L525 (16-nota-normativa.md; 17-calendario-forense.md), pendente de decisão judicial.",
+            "Valores permanecem coerentes entre 08-peticao-cumprimento.md, 09-memoria-calculo.md e 13-email-executada.md.",
+            "Nenhum depósito, petição de pagamento ou decisão consta do extrato emitido em 2026-05-14 (15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário com identificadores completos da operação alegada.",
+            "Extrato da conta judicial vinculada ao processo BR-CIV-EXEC-108.",
+            "Nova pesquisa bancária por critérios alternativos, como sugere a ressalva de 14-registro-bancario.md.",
+            "Certidão cartorária sobre existência de depósito nos autos.",
+            "Comprovação de recebimento do ofício de intimação (11-oficio-intimacao.md)."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data de publicação: 2026-04-22 (11-oficio-intimacao.md) versus 2026-04-20 (12-certidao-publicacao.md), com impacto decisivo sobre a tempestividade do pagamento de 2026-05-12."
+          ],
+          "implausible_or_leaking_documents": [
+            "Divergência de exatamente dois dias, calibrada para inverter o resultado do prazo (11-oficio-intimacao.md; 12-certidao-publicacao.md).",
+            "Ofício que atesta publicação, atribuição típica de certidão (11-oficio-intimacao.md).",
+            "Calendário estipulando abril e maio de 2026 sem feriados (17-calendario-forense.md) e uniformidade de modelo com os demais assuntos."
+          ],
+          "material_findings": [
+            "Conflito no eixo destacado pela tarefa: o ofício afirma que o cartório registra a publicação em 2026-04-22 (M-108/W-C/documents/11-oficio-intimacao.md), enquanto a certidão certifica publicação em 2026-04-20 (12-certidao-publicacao.md).",
+            "O extrato aponta juntada da certidão em 2026-04-23 (15-extrato-andamentos.md), compatível com ambas as datas, mas mais próximo da versão do ofício.",
+            "A divergência é determinante: com L219/L224 e o calendário fornecido (16-nota-normativa.md; 17-calendario-forense.md), publicação em 2026-04-22 leva a termo final em 2026-05-13 (pagamento de 2026-05-12 tempestivo); publicação em 2026-04-20 leva a termo final em 2026-05-11 (pagamento intempestivo).",
+            "O pagamento está documentado por e-mail e comprovante bancário efetivado de R$ 83.140,00 em 2026-05-12 (13-email-executada.md; 14-registro-bancario.md).",
+            "Nada nos autos resolve a divergência: não há certidão retificadora nem decisão judicial (15-extrato-andamentos.md).",
+            "Demais marcos permanecem confirmados e sem conflito de valores (04-peticao-inicial.md; 06-sentenca.md; 07-certidao-transito.md; 08-peticao-cumprimento.md; 09-memoria-calculo.md)."
+          ],
+          "missing_evidence": [
+            "Cópia da publicação no órgão oficial com data de disponibilização e de publicação.",
+            "Certidão retificadora ou esclarecimento cartorário sobre qual data prevalece (11-oficio-intimacao.md vs 12-certidao-publicacao.md).",
+            "Registro sistêmico do ato de publicação, além da juntada mencionada em 15-extrato-andamentos.md.",
+            "Decisão judicial fixando o termo inicial do prazo do art. 523 e apreciando a tempestividade.",
+            "Confirmação de ingresso do valor na conta judicial."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Os documentos permitem reconstruir integralmente a cronologia e sustentar cada marco por arquivo, e os três mundos geram estados de prova distintos: prova completa, lacuna probatória autolimitada e conflito de datas com efeito de um dia útil sobre o prazo do art. 523. Não há instrução embutida nem revelação de gabarito; as fragilidades são de padronização e de calendário estipulativo.",
+      "matter_id": "M-111",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "Padronização de todo o lote: 'NF-SYN-0001' (02-nota-fiscal.md), mesmo texto de despacho (10-despacho-intimacao.md), extrato sempre '09:10' (15-extrato-andamentos.md) e pagamento sempre no penúltimo dia útil do prazo (13-email-executada.md).",
+            "17-calendario-forense.md declara maio e junho de 2026 sem qualquer feriado ou suspensão, estipulação genérica e artificial.",
+            "Intervalos entre marcos processuais quase idênticos aos dos demais assuntos, sugerindo geração paramétrica."
+          ],
+          "material_findings": [
+            "Cadeia contrato–inicial–sentença, foco da tarefa, é consistente em partes, objeto e valor: contrato de 2025-07-19 por R$ 205.500,00 com vencimento em 2025-09-23 (M-111/W-A/documents/01-contrato-fornecimento.md), NF equivalente (02-nota-fiscal.md), aceite em 2025-08-24 (03-termo-entrega.md), inicial de 2025-10-19 pelo mesmo principal (04-peticao-inicial.md) e sentença de 2026-01-29 com IPCA-E desde 2025-09-23 e juros desde a citação (06-sentenca.md).",
+            "AR de citação recebido em 2025-10-29 (05-aviso-recebimento-citacao.md) e trânsito em 2026-03-26 (07-certidao-transito.md).",
+            "Fase de cumprimento: requerimento em 2026-05-08 por R$ 231.160,00 (08-peticao-cumprimento.md), despacho do art. 523 na mesma data (10-despacho-intimacao.md), publicação em 2026-05-13 confirmada por Diário e certidão (11-diario-justica.md; 12-certidao-publicacao.md) e juntada em 2026-05-14 (15-extrato-andamentos.md).",
+            "Com L219/L224 (16-nota-normativa.md) e expediente regular de maio e junho de 2026 (17-calendario-forense.md), o décimo quinto dia útil após 2026-05-13 recai em 2026-06-03; o pagamento alegado em 2026-06-02 estaria no prazo (13-email-executada.md), conclusão sujeita a confirmação judicial.",
+            "Comprovante bancário com status efetivado de R$ 231.160,00 em 2026-06-02, valor coincidente com requerimento e demonstrativo (14-registro-bancario.md; 09-memoria-calculo.md).",
+            "O demonstrativo declara critério e total sem discriminação de parcelas, ponto de atenção quanto a L524 (09-memoria-calculo.md).",
+            "Termo inicial dos juros adotado no demonstrativo (2025-10-29) coincide com a data do AR, equiparação não explicitada pela sentença (05-aviso-recebimento-citacao.md; 06-sentenca.md)."
+          ],
+          "missing_evidence": [
+            "Petição informando o pagamento e decisão judicial correspondente — extrato de 2026-06-04 nada registra após 2026-05-14 (15-extrato-andamentos.md).",
+            "Extrato/guia da conta judicial que confirme o ingresso do valor (14-registro-bancario.md indica só destino informado).",
+            "Identificação do advogado/parte intimada no ato publicado (11-diario-justica.md; 12-certidao-publicacao.md).",
+            "Documento que explique o intervalo entre trânsito (2026-03-26) e requerimento (2026-05-08).",
+            "Memória de cálculo discriminada por índices e períodos."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Transferência afirmada em 2026-06-02 (13-email-executada.md) contra resultado negativo da busca bancária pelos mesmos dados (14-registro-bancario.md)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Busca de comprovante solicitada pela própria ordenante, com resposta negativa formal, é arranjo pouco usual (14-registro-bancario.md).",
+            "Calendário estipulativo sem feriados para maio e junho de 2026 (17-calendario-forense.md).",
+            "Reuso integral do template dos demais assuntos do lote."
+          ],
+          "material_findings": [
+            "Cadeia contrato–inicial–sentença e fase de cumprimento idênticas ao cenário-base, com publicação em 2026-05-13 (M-111/W-B/documents/11-diario-justica.md; 12-certidao-publicacao.md) e juntada em 2026-05-14 (15-extrato-andamentos.md).",
+            "O pagamento é apenas alegado: e-mail informa transferência de R$ 231.160,00 em 2026-06-02 (13-email-executada.md), mas a resposta bancária não localizou comprovante com os dados fornecidos (14-registro-bancario.md).",
+            "A resposta bancária é autolimitada e não permite afirmar que o pagamento não ocorreu (14-registro-bancario.md).",
+            "Não comprovado o pagamento, a contagem com L219/L224 e o calendário fornecido situa o termo final em 2026-06-03, com os efeitos de L523 e o prazo de impugnação de L525 (16-nota-normativa.md; 17-calendario-forense.md), tudo dependente de pronunciamento judicial.",
+            "Coerência de valores entre 08-peticao-cumprimento.md, 09-memoria-calculo.md e 13-email-executada.md.",
+            "Nenhum depósito, petição ou decisão consta do extrato emitido em 2026-06-04 (15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário com identificadores completos da operação alegada.",
+            "Extrato da conta judicial vinculada ao processo BR-CIV-EXEC-111.",
+            "Nova consulta bancária por critérios alternativos, conforme ressalva de 14-registro-bancario.md.",
+            "Certidão cartorária sobre existência de depósito nos autos.",
+            "Decisão judicial sobre ocorrência e tempestividade do pagamento."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data de publicação: 2026-05-13 (11-diario-justica.md) versus 2026-05-11 (12-certidao-publicacao.md), com efeito determinante sobre a tempestividade do pagamento de 2026-06-02."
+          ],
+          "implausible_or_leaking_documents": [
+            "Diferença de exatamente dois dias entre Diário e certidão, calibrada para inverter o resultado do prazo (11-diario-justica.md; 12-certidao-publicacao.md).",
+            "Calendário sintético sem feriados para maio e junho de 2026 (17-calendario-forense.md).",
+            "Uniformidade de modelo e de intervalos com os demais assuntos do lote."
+          ],
+          "material_findings": [
+            "Divergência documental: o Diário indica publicação em 2026-05-13 (M-111/W-C/documents/11-diario-justica.md) e a certidão certifica publicação em 2026-05-11 (12-certidao-publicacao.md).",
+            "O extrato registra juntada da certidão em 2026-05-14 (15-extrato-andamentos.md), compatível com ambas, porém mais próximo da data do Diário.",
+            "A divergência decide o resultado: com L219/L224 e o calendário fornecido (16-nota-normativa.md; 17-calendario-forense.md), publicação em 2026-05-13 conduz a termo final em 2026-06-03 (pagamento de 2026-06-02 tempestivo); publicação em 2026-05-11 conduz a termo final em 2026-06-01 (pagamento intempestivo por um dia útil).",
+            "O pagamento está documentado por e-mail e comprovante bancário efetivado de R$ 231.160,00 em 2026-06-02 (13-email-executada.md; 14-registro-bancario.md).",
+            "Nenhuma peça resolve a antinomia: não há certidão retificadora nem decisão judicial (15-extrato-andamentos.md).",
+            "A cadeia contrato–inicial–sentença permanece íntegra e sem divergência de valores (01-contrato-fornecimento.md; 04-peticao-inicial.md; 06-sentenca.md)."
+          ],
+          "missing_evidence": [
+            "Edição do Diário da Justiça com datas de disponibilização e publicação.",
+            "Certidão retificadora ou esclarecimento do cartório sobre a data correta.",
+            "Registro sistêmico do ato de publicação, além da juntada indicada em 15-extrato-andamentos.md.",
+            "Decisão judicial fixando o termo inicial do prazo do art. 523 e apreciando a tempestividade.",
+            "Confirmação de ingresso do valor na conta judicial vinculada."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

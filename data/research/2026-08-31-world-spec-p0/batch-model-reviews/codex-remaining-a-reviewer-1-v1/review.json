@@ -1,0 +1,270 @@
+{
+  "matters": [
+    {
+      "matter_id": "M-102",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "A cronologia é recuperável: 01-contrato-fornecimento.md fixa contratação em 2025-05-17, 03-termo-entrega.md registra aceite em 2025-06-22, 01-contrato-fornecimento.md e 02-nota-fiscal.md indicam vencimento de R$ 126.500,00 em 2025-07-22, 04-peticao-inicial.md alega inadimplemento em 2025-08-17, 05-aviso-recebimento-citacao.md registra citação em 2025-08-27, 06-sentenca.md condena ao principal com atualização e juros, e 07-certidao-transito.md certifica trânsito em 2026-01-22.",
+            "08-peticao-cumprimento.md requer R$ 142.390,00 em 2026-03-06, 09-memoria-calculo.md declara principal, critérios e total, e 10-despacho-intimacao.md determina pagamento em quinze dias; o total é alegado pelo demonstrativo e não foi recalculado.",
+            "11-diario-justica.md e 12-certidao-publicacao.md convergem na publicação em 2026-03-11. Aplicando somente L219 e L224 de 16-nota-normativa.md ao calendário sem feriados de 17-calendario-forense.md, a contagem começa em 2026-03-12 e o 15º dia útil é 2026-04-01; a transferência de 2026-03-31 em 14-registro-bancario.md ocorreu no 14º dia útil e, portanto, dentro do prazo documental.",
+            "13-email-executada.md alega o pagamento e 14-registro-bancario.md confirma transferência efetivada de R$ 142.390,00 à conta judicial indicada, mas 15-extrato-andamentos.md, consultado em 2026-04-02, não registra depósito, baixa ou decisão; tempestividade e transferência estão documentadas, enquanto satisfação/extinção dependem de confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Extrato da conta judicial ou andamento que confirme o crédito e a vinculação do depósito ao processo.",
+            "Manifestação da exequente e decisão judicial sobre suficiência, satisfação ou eventual saldo.",
+            "Demonstrativo efetivamente discriminado que permita verificar os componentes do total declarado em 09-memoria-calculo.md, sem refazer índices ausentes."
+          ],
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "A cadeia obrigacional e judicial é coerente: 01-contrato-fornecimento.md, 02-nota-fiscal.md e 03-termo-entrega.md sustentam contratação, valor, vencimento e aceite; 04-peticao-inicial.md apenas alega o inadimplemento, que depois é alcançado pela condenação de 06-sentenca.md e pelo trânsito de 07-certidao-transito.md.",
+            "08-peticao-cumprimento.md requer R$ 142.390,00 em 2026-03-06, 09-memoria-calculo.md declara os critérios sem demonstrar toda a decomposição, e 10-despacho-intimacao.md, 11-diario-justica.md e 12-certidao-publicacao.md documentam despacho e publicação em 2026-03-11.",
+            "Pelas proposições L219 e L224 de 16-nota-normativa.md e pelo expediente de 17-calendario-forense.md, o prazo começa em 2026-03-12 e termina no 15º dia útil, 2026-04-01. Se a transferência alegada para 2026-03-31 em 13-email-executada.md ocorreu, ela seria tempestiva, no 14º dia útil.",
+            "O pagamento não está confirmado: 13-email-executada.md é uma afirmação da executada, enquanto 14-registro-bancario.md informa que não localizou comprovante para os mesmos data, valor, processo e destino pesquisados, embora ressalve a possibilidade de operação com dados diferentes. 15-extrato-andamentos.md também não contém depósito ou baixa; não é possível afirmar pagamento nem seus efeitos jurídicos."
+          ],
+          "missing_evidence": [
+            "Comprovante autêntico com identificador da operação ou extrato da conta judicial que confirme ingresso de R$ 142.390,00.",
+            "Pesquisa bancária ampliada por identificador da operação ou dados alternativos e conferência no processo.",
+            "Manifestação da exequente e decisão judicial sobre pagamento, suficiência e efeito extintivo.",
+            "Demonstrativo discriminado dos componentes do total declarado em 09-memoria-calculo.md."
+          ],
+          "contradictions": [
+            "Há tensão probatória, mas não contradição conclusiva, entre a afirmação de transferência em 13-email-executada.md e a busca negativa limitada de 14-registro-bancario.md."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "01-contrato-fornecimento.md, 02-nota-fiscal.md, 03-termo-entrega.md, 04-peticao-inicial.md, 05-aviso-recebimento-citacao.md, 06-sentenca.md e 07-certidao-transito.md formam uma cronologia consistente da contratação até o título transitado; 08-peticao-cumprimento.md e 09-memoria-calculo.md apresentam, sem recálculo independente, o total declarado de R$ 142.390,00.",
+            "10-despacho-intimacao.md determina pagamento em quinze dias, mas a data de publicação é contraditória: 11-diario-justica.md indica 2026-03-11 e 12-certidao-publicacao.md certifica 2026-03-09. 15-extrato-andamentos.md registra apenas a juntada da certidão em 2026-03-12 e não resolve qual data é eficaz.",
+            "Há dois resultados permitidos pela prova. Pela certidão de 2026-03-09, L219/L224 de 16-nota-normativa.md e 17-calendario-forense.md levam ao início em 2026-03-10 e ao 15º dia útil em 2026-03-30, tornando a transferência de 2026-03-31 um dia útil tardia. Pela data de 2026-03-11 do Diário, a contagem começa em 2026-03-12 e termina em 2026-04-01, tornando a mesma transferência tempestiva no 14º dia útil.",
+            "13-email-executada.md e 14-registro-bancario.md sustentam transferência efetivada de R$ 142.390,00 em 2026-03-31 para a conta judicial indicada; 15-extrato-andamentos.md não registra depósito, baixa ou decisão. O pagamento bancário está documentado, mas a tempestividade e os efeitos jurídicos dependem da resolução judicial da data de publicação e da confirmação do crédito judicial."
+          ],
+          "missing_evidence": [
+            "Inteiro teor ou metadados oficiais da publicação capazes de resolver a divergência entre 11-diario-justica.md e 12-certidao-publicacao.md.",
+            "Extrato da conta judicial e decisão sobre vinculação, tempestividade, suficiência e eventual extinção.",
+            "Demonstrativo discriminado dos componentes do total de 09-memoria-calculo.md."
+          ],
+          "contradictions": [
+            "11-diario-justica.md indica publicação em 2026-03-11, enquanto 12-certidao-publicacao.md certifica publicação em 2026-03-09; a diferença altera o resultado da análise do prazo."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        }
+      ],
+      "proposed_gate": "CONSTRUIR",
+      "decision_reason": "O corpus permite reconstruir obrigação, título, cumprimento, intimação, prazo e pagamento; W-B preserva corretamente a incerteza sobre a ocorrência da transferência e W-C exige resultados alternativos em razão de uma contradição documental material, sem depender de informação oculta."
+    },
+    {
+      "matter_id": "M-106",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "A cronologia é suficiente e coerente: 01-contrato-fornecimento.md registra contratação em 2025-08-23 e vencimento de R$ 97.300,00 em 2025-10-28, 03-termo-entrega.md registra aceite em 2025-09-28, 04-peticao-inicial.md alega inadimplemento em 2025-11-23, 05-aviso-recebimento-citacao.md confirma citação em 2025-12-03, 06-sentenca.md contém a condenação e 07-certidao-transito.md certifica trânsito em 2026-04-30.",
+            "08-peticao-cumprimento.md requer R$ 109.460,00 em 2026-06-12; 09-memoria-calculo.md declara principal, critérios e total, e 10-despacho-intimacao.md determina pagamento em quinze dias, sem que o total seja recalculado nesta revisão.",
+            "11-diario-justica.md e 12-certidao-publicacao.md convergem na publicação em 2026-06-17. Com L219/L224 de 16-nota-normativa.md e expediente regular em 17-calendario-forense.md, a contagem começa em 2026-06-18 e o 15º dia útil é 2026-07-08; a transferência de 2026-07-07 em 14-registro-bancario.md ocorreu no 14º dia útil e foi tempestiva segundo os documentos.",
+            "13-email-executada.md alega e 14-registro-bancario.md confirma a transferência efetivada de R$ 109.460,00 para a conta judicial indicada, mas 15-extrato-andamentos.md, consultado em 2026-07-09, não mostra depósito, baixa ou decisão; o efeito extintivo continua dependente de confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Extrato da conta judicial ou andamento que confirme crédito e vinculação do depósito.",
+            "Manifestação da exequente e decisão judicial sobre suficiência, saldo ou extinção.",
+            "Decomposição discriminada do total informado em 09-memoria-calculo.md."
+          ],
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "A cadeia entre cobrança e cumprimento é recuperável: 04-peticao-inicial.md alega inadimplemento do valor e vencimento documentados por 01-contrato-fornecimento.md, 02-nota-fiscal.md e 03-termo-entrega.md; 06-sentenca.md condena a executada, 07-certidao-transito.md certifica o trânsito, e 08-peticao-cumprimento.md requer o total declarado em 09-memoria-calculo.md.",
+            "10-despacho-intimacao.md, 11-diario-justica.md e 12-certidao-publicacao.md documentam despacho e publicação em 2026-06-17. Pelas regras L219/L224 de 16-nota-normativa.md e pelo calendário de 17-calendario-forense.md, o prazo vai do primeiro dia útil de contagem, 2026-06-18, ao 15º dia útil, 2026-07-08.",
+            "Se a transferência de 2026-07-07 alegada em 13-email-executada.md ocorreu, ela seria tempestiva no 14º dia útil. Contudo, 14-registro-bancario.md não localizou comprovante para os mesmos dados pesquisados e 15-extrato-andamentos.md não registra depósito ou baixa; o pagamento e seu efeito jurídico permanecem não confirmados.",
+            "09-memoria-calculo.md sustenta apenas como declaração o total de R$ 109.460,00 e seus critérios gerais; não há base para recalcular correção ou afirmar a suficiência econômica do valor."
+          ],
+          "missing_evidence": [
+            "Comprovante com identificador da operação ou extrato judicial que confirme o pagamento alegado.",
+            "Pesquisa bancária por dados alternativos e conferência da conta vinculada ao processo.",
+            "Manifestação da exequente e decisão sobre tempestividade, suficiência e extinção.",
+            "Demonstrativo discriminado do total declarado em 09-memoria-calculo.md."
+          ],
+          "contradictions": [
+            "13-email-executada.md afirma transferência em 2026-07-07, enquanto 14-registro-bancario.md não localiza o comprovante pelos dados fornecidos; a ressalva bancária impede tratar a tensão como desmentido absoluto."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "01-contrato-fornecimento.md, 02-nota-fiscal.md e 03-termo-entrega.md documentam contratação, valor, vencimento e aceite; 04-peticao-inicial.md alega inadimplemento, 06-sentenca.md o julga procedente, 07-certidao-transito.md certifica trânsito e 08-peticao-cumprimento.md requer R$ 109.460,00 conforme o total declarado em 09-memoria-calculo.md.",
+            "A cadeia de intimação contém divergência material: 11-diario-justica.md indica publicação em 2026-06-17, mas 12-certidao-publicacao.md certifica 2026-06-15. 15-extrato-andamentos.md apenas registra juntada da certidão em 2026-06-18 e não resolve a data eficaz.",
+            "Se prevalecer 12-certidao-publicacao.md, L219/L224 de 16-nota-normativa.md e 17-calendario-forense.md produzem início em 2026-06-16 e 15º dia útil em 2026-07-06; a transferência de 2026-07-07 seria um dia útil tardia. Se prevalecer a publicação de 2026-06-17 informada em 11-diario-justica.md, a contagem começa em 2026-06-18 e termina em 2026-07-08; a transferência seria tempestiva no 14º dia útil.",
+            "13-email-executada.md e 14-registro-bancario.md sustentam transferência efetivada de R$ 109.460,00 em 2026-07-07 à conta indicada. Ausentes registro judicial do crédito e decisão, a satisfação, a tempestividade e os efeitos de L523/L525 dependem de confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Metadados ou inteiro teor oficial da publicação que resolva a divergência entre 11-diario-justica.md e 12-certidao-publicacao.md.",
+            "Extrato da conta judicial e pronunciamento sobre vinculação, suficiência, tempestividade e extinção.",
+            "Decomposição discriminada do cálculo de 09-memoria-calculo.md."
+          ],
+          "contradictions": [
+            "11-diario-justica.md aponta publicação em 2026-06-17 e 12-certidao-publicacao.md em 2026-06-15; as datas produzem conclusões opostas sobre o pagamento de 2026-07-07."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        }
+      ],
+      "proposed_gate": "CONSTRUIR",
+      "decision_reason": "O assunto contém marcos suficientes da obrigação ao cumprimento e testa adequadamente a separação entre alegação, prova bancária e efeito judicial; a variante contraditória continua analisável mediante duas contagens expressas."
+    },
+    {
+      "matter_id": "M-109",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "A cronologia material é recuperável: 01-contrato-fornecimento.md registra contrato em 2025-09-13 e vencimento de R$ 264.000,00 em 2025-11-18, 03-termo-entrega.md registra aceite em 2025-10-19, 04-peticao-inicial.md alega inadimplemento em 2025-12-14, 05-aviso-recebimento-citacao.md registra citação em 2025-12-24, 06-sentenca.md contém a condenação e 07-certidao-transito.md certifica trânsito em 2026-05-21.",
+            "08-peticao-cumprimento.md requer R$ 296.970,00 em 2026-07-03 e 09-memoria-calculo.md declara critérios e total; 10-despacho-intimacao.md determina pagamento em quinze dias. O montante atualizado é documentalmente alegado e não foi recalculado.",
+            "11-oficio-informacao-diario.md e 12-certidao-publicacao.md convergem na publicação em 2026-07-08. Com L219/L224 de 16-nota-normativa.md e o expediente regular de 17-calendario-forense.md, a contagem começa em 2026-07-09 e o 15º dia útil é 2026-07-29; 14-registro-bancario.md registra transferência em 2026-07-28, no 14º dia útil, portanto tempestiva segundo o corpus.",
+            "13-email-executada.md alega e 14-registro-bancario.md confirma transferência efetivada de R$ 296.970,00 à conta judicial indicada, mas 15-extrato-andamentos.md, consultado em 2026-07-30, não registra depósito, baixa ou decisão; a transferência é provada, a extinção não."
+          ],
+          "missing_evidence": [
+            "Extrato da conta judicial que confirme crédito e vinculação da transferência.",
+            "Manifestação da exequente e decisão judicial sobre suficiência, eventual saldo e extinção.",
+            "Demonstrativo discriminado que detalhe os componentes de 09-memoria-calculo.md."
+          ],
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "01-contrato-fornecimento.md, 02-nota-fiscal.md e 03-termo-entrega.md sustentam a obrigação originária; 04-peticao-inicial.md formula alegação de inadimplemento, 06-sentenca.md condena a devedora, 07-certidao-transito.md certifica o trânsito e 08-peticao-cumprimento.md apresenta o total declarado em 09-memoria-calculo.md.",
+            "10-despacho-intimacao.md determina o pagamento e tanto 11-oficio-informacao-diario.md quanto 12-certidao-publicacao.md indicam publicação em 2026-07-08. Pelas proposições L219/L224 de 16-nota-normativa.md e 17-calendario-forense.md, o prazo começa em 2026-07-09 e termina em 2026-07-29.",
+            "A operação alegada para 2026-07-28 em 13-email-executada.md seria tempestiva no 14º dia útil. Porém, 14-registro-bancario.md não localizou comprovante com os mesmos dados pesquisados e 15-extrato-andamentos.md não contém depósito ou baixa; não se pode confirmar pagamento, satisfação ou extinção.",
+            "09-memoria-calculo.md declara R$ 296.970,00 e critérios gerais, mas não fornece decomposição suficiente para verificar o total nem autoriza novo cálculo."
+          ],
+          "missing_evidence": [
+            "Comprovante com identificador da operação ou extrato da conta judicial.",
+            "Pesquisa bancária ampliada por identificadores ou dados alternativos.",
+            "Manifestação da credora e decisão sobre existência, tempestividade e efeito do pagamento.",
+            "Memória discriminada dos componentes do total declarado."
+          ],
+          "contradictions": [
+            "A alegação de transferência em 13-email-executada.md enfrenta resultado negativo para os mesmos dados em 14-registro-bancario.md, mas a própria resposta limita o alcance da busca e não exclui operação com dados diferentes."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "A cadeia da obrigação ao cumprimento é consistente em 01-contrato-fornecimento.md, 02-nota-fiscal.md, 03-termo-entrega.md, 04-peticao-inicial.md, 05-aviso-recebimento-citacao.md, 06-sentenca.md, 07-certidao-transito.md e 08-peticao-cumprimento.md; 09-memoria-calculo.md declara, sem decomposição completa, total de R$ 296.970,00.",
+            "10-despacho-intimacao.md determina pagamento em quinze dias, mas 11-oficio-informacao-diario.md informa publicação em 2026-07-08 e 12-certidao-publicacao.md certifica 2026-07-06. A juntada em 2026-07-09 registrada por 15-extrato-andamentos.md não define qual data prevalece.",
+            "Pela certidão de 2026-07-06, L219/L224 de 16-nota-normativa.md e 17-calendario-forense.md levam ao início em 2026-07-07 e ao 15º dia útil em 2026-07-27; a transferência de 2026-07-28 seria um dia útil tardia. Pelo ofício que informa publicação em 2026-07-08, o início é 2026-07-09 e o vencimento 2026-07-29; a transferência seria tempestiva no 14º dia útil.",
+            "13-email-executada.md e 14-registro-bancario.md documentam transferência efetivada de R$ 296.970,00 em 2026-07-28 para a conta indicada, mas não há crédito judicial, baixa ou decisão em 15-extrato-andamentos.md; a tempestividade e o efeito extintivo continuam condicionais."
+          ],
+          "missing_evidence": [
+            "Registro oficial integral da veiculação que resolva a divergência entre 11-oficio-informacao-diario.md e 12-certidao-publicacao.md.",
+            "Extrato da conta judicial e decisão sobre crédito, suficiência, tempestividade e extinção.",
+            "Demonstrativo discriminado do total constante de 09-memoria-calculo.md."
+          ],
+          "contradictions": [
+            "11-oficio-informacao-diario.md informa publicação em 2026-07-08 e 12-certidao-publicacao.md certifica 2026-07-06; cada data conduz a resultado oposto sobre a tempestividade."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        }
+      ],
+      "proposed_gate": "CONSTRUIR",
+      "decision_reason": "O corpus sustenta análise completa da cadeia entre despacho, informação do Diário, certidão e pagamento, inclusive a conclusão condicional exigida pela divergência de datas em W-C e a insuficiência probatória de W-B."
+    },
+    {
+      "matter_id": "M-112",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "A cadeia contratual destacada na tarefa é consistente: 01-contrato-fornecimento.md registra contratação em 2025-10-04 e vencimento de R$ 91.250,00 em 2025-12-09, 03-termo-entrega.md registra aceite em 2025-11-09, 04-peticao-inicial.md alega inadimplemento em 2026-01-04, 05-aviso-recebimento-citacao.md registra citação em 2026-01-14, 06-sentenca.md contém condenação compatível com principal, vencimento e citação, e 07-certidao-transito.md certifica trânsito em 2026-06-11.",
+            "08-peticao-cumprimento.md requer R$ 102.650,00 em 2026-07-24, 09-memoria-calculo.md declara critérios e total, e 10-despacho-intimacao.md determina pagamento em quinze dias; o total é tratado como declarado, sem recálculo.",
+            "11-diario-justica.md e 12-certidao-publicacao.md fixam publicação em 2026-07-29. Por L219/L224 de 16-nota-normativa.md e pelo calendário regular de 17-calendario-forense.md, a contagem começa em 2026-07-30 e o 15º dia útil é 2026-08-19; a transferência de 2026-08-18 em 14-registro-bancario.md ocorreu no 14º dia útil e é tempestiva segundo a prova.",
+            "13-email-executada.md alega e 14-registro-bancario.md confirma transferência efetivada de R$ 102.650,00 à conta judicial indicada. 15-extrato-andamentos.md, consultado em 2026-08-20, não mostra o crédito, baixa ou decisão, de modo que satisfação e extinção ainda dependem de confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Extrato da conta judicial que confirme o crédito e a vinculação da transferência.",
+            "Manifestação da exequente e decisão sobre suficiência, saldo ou extinção.",
+            "Demonstrativo discriminado dos componentes do total de 09-memoria-calculo.md."
+          ],
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "01-contrato-fornecimento.md, 02-nota-fiscal.md e 03-termo-entrega.md confirmam contratação, valor, vencimento e aceite; 04-peticao-inicial.md apenas alega inadimplemento, posteriormente abrangido pela condenação de 06-sentenca.md e pelo trânsito de 07-certidao-transito.md.",
+            "08-peticao-cumprimento.md apresenta o total de R$ 102.650,00 declarado em 09-memoria-calculo.md; 10-despacho-intimacao.md, 11-diario-justica.md e 12-certidao-publicacao.md sustentam despacho e publicação em 2026-07-29.",
+            "Com L219/L224 de 16-nota-normativa.md e 17-calendario-forense.md, o prazo começa em 2026-07-30 e termina no 15º dia útil, 2026-08-19. A transferência alegada para 2026-08-18 em 13-email-executada.md seria tempestiva no 14º dia útil.",
+            "O pagamento permanece alegado, não confirmado: 14-registro-bancario.md não encontrou comprovante para os mesmos dados da afirmação de 13-email-executada.md, embora limite a busca aos identificadores fornecidos, e 15-extrato-andamentos.md não registra depósito, baixa ou decisão."
+          ],
+          "missing_evidence": [
+            "Comprovante com identificador de operação ou extrato da conta judicial que confirme a transferência.",
+            "Pesquisa bancária por dados alternativos e conferência da conta vinculada.",
+            "Manifestação da exequente e decisão sobre pagamento, suficiência e extinção.",
+            "Detalhamento discriminado do total de 09-memoria-calculo.md."
+          ],
+          "contradictions": [
+            "13-email-executada.md afirma a transferência, mas 14-registro-bancario.md não encontra comprovante com os dados pesquisados; a ressalva de escopo impede conclusão definitiva pela busca negativa."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "A cadeia entre contrato, cobrança e sentença é recuperável em 01-contrato-fornecimento.md, 02-nota-fiscal.md, 03-termo-entrega.md, 04-peticao-inicial.md, 05-aviso-recebimento-citacao.md, 06-sentenca.md e 07-certidao-transito.md; 08-peticao-cumprimento.md e 09-memoria-calculo.md apresentam o total declarado de R$ 102.650,00, sem base para recálculo independente.",
+            "A publicação é contraditória: 11-diario-justica.md indica 2026-07-29 e 12-certidao-publicacao.md certifica 2026-07-27. 15-extrato-andamentos.md informa apenas a juntada da certidão em 2026-07-30 e não resolve a data eficaz.",
+            "Se prevalecer a certidão de 2026-07-27, L219/L224 de 16-nota-normativa.md e 17-calendario-forense.md levam ao início em 2026-07-28 e ao 15º dia útil em 2026-08-17; a transferência de 2026-08-18 seria um dia útil tardia. Se prevalecer a data de 2026-07-29 do Diário, o início é 2026-07-30 e o 15º dia útil é 2026-08-19; a transferência seria tempestiva no 14º dia útil.",
+            "13-email-executada.md e 14-registro-bancario.md sustentam transferência efetivada de R$ 102.650,00 em 2026-08-18 à conta judicial indicada, mas não há no extrato processual prova de crédito, baixa ou decisão. Tempestividade e efeito extintivo dependem da resolução da divergência e de confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Metadados ou inteiro teor oficial da publicação que resolva 11-diario-justica.md versus 12-certidao-publicacao.md.",
+            "Extrato da conta judicial e decisão sobre crédito, tempestividade, suficiência e extinção.",
+            "Memória discriminada dos componentes do total declarado."
+          ],
+          "contradictions": [
+            "11-diario-justica.md indica publicação em 2026-07-29 e 12-certidao-publicacao.md certifica 2026-07-27, divergência que muda a classificação temporal do pagamento."
+          ],
+          "implausible_or_leaking_documents": [],
+          "realism_1_to_5": 4,
+          "confidence": "alta"
+        }
+      ],
+      "proposed_gate": "CONSTRUIR",
+      "decision_reason": "O conjunto liga de forma verificável contrato, pedido, sentença, cumprimento, intimação e pagamento, e suas variantes produzem incertezas juridicamente relevantes sem impedir a análise cega."
+    }
+  ],
+  "batch_gate": "CONSTRUIR",
+  "batch_reason": "Os quatro assuntos e doze mundos são recuperáveis exclusivamente pelo corpus cego: W-A oferece pagamento bancariamente documentado e tempestivo, W-B exige distinguir alegação de prova, e W-C exige duas contagens alternativas que levam a tempestividade oposta. As peças são sintéticas e enxutas, mas internamente plausíveis, não vazam autoridade oculta e sustentam os limites probatórios e jurídicos pedidos nas tarefas."
+}

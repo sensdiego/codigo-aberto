@@ -1,0 +1,91 @@
+{
+  "common": [
+    {
+      "authority_ids": [
+        "F010",
+        "F021",
+        "F023",
+        "F030",
+        "F040",
+        "F050"
+      ],
+      "class": "process",
+      "criterion": "A cronologia identifica contrato, sentença, trânsito, requerimento, intimação e alegação de pagamento com citação aos arquivos.",
+      "id": "R001",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F050",
+        "F061"
+      ],
+      "class": "fact",
+      "criterion": "O memorando distingue afirmação da parte, documento comprobatório e reconhecimento judicial.",
+      "id": "R002",
+      "severity": "critical",
+      "weight": 3
+    },
+    {
+      "authority_ids": [
+        "L219",
+        "L224",
+        "L523",
+        "L524",
+        "L525"
+      ],
+      "class": "law",
+      "criterion": "A análise usa os arts. 219, 224, 523, 524 e 525 apenas no limite resumido na nota normativa.",
+      "id": "R003",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F061"
+      ],
+      "class": "absence",
+      "criterion": "A ausência de decisão de satisfação ou extinção é registrada sem concluir que o processo terminou.",
+      "id": "R004",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "TASK"
+      ],
+      "class": "prohibition",
+      "criterion": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+      "id": "R005",
+      "severity": "critical",
+      "weight": 3
+    }
+  ],
+  "matter_id": "M-103",
+  "schema_version": 1,
+  "world_id": "W-C",
+  "world_specific": [
+    {
+      "authority_ids": [
+        "O-C1"
+      ],
+      "class": "contradiction",
+      "criterion": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência à tempestividade do pagamento.",
+      "expected_state": "contradictory",
+      "observation_id": "O-C1",
+      "severity": "critical",
+      "weight": 3
+    },
+    {
+      "authority_ids": [
+        "O-C2"
+      ],
+      "class": "relation",
+      "criterion": "Usa o calendário fornecido, expõe os dois resultados possíveis e pede conferência da publicação oficial antes de afirmar mora ou tempestividade.",
+      "expected_state": "uncertain",
+      "observation_id": "O-C2",
+      "severity": "critical",
+      "weight": 3
+    }
+  ]
+}

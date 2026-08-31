@@ -1,0 +1,495 @@
+[
+  {
+    "document_id": "D010",
+    "fact_ids": [
+      "F003",
+      "F004",
+      "F010",
+      "F011",
+      "F012",
+      "F014"
+    ],
+    "fact_locators": {
+      "F003": [
+        "01-contrato-fornecimento.md:6"
+      ],
+      "F004": [
+        "01-contrato-fornecimento.md:5"
+      ],
+      "F010": [
+        "01-contrato-fornecimento.md:10"
+      ],
+      "F011": [
+        "01-contrato-fornecimento.md:10"
+      ],
+      "F012": [
+        "01-contrato-fornecimento.md:11"
+      ],
+      "F014": [
+        "01-contrato-fornecimento.md:12"
+      ]
+    },
+    "filename": "01-contrato-fornecimento.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "contract",
+    "sha256": "013fd70e021f036affb6e94e2ee17434d4e31322042dd446c6126a30ccb27942"
+  },
+  {
+    "document_id": "D011",
+    "fact_ids": [
+      "F003",
+      "F004",
+      "F012",
+      "F014"
+    ],
+    "fact_locators": {
+      "F003": [
+        "02-nota-fiscal.md:3"
+      ],
+      "F004": [
+        "02-nota-fiscal.md:4"
+      ],
+      "F012": [
+        "02-nota-fiscal.md:5"
+      ],
+      "F014": [
+        "02-nota-fiscal.md:6"
+      ]
+    },
+    "filename": "02-nota-fiscal.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "invoice",
+    "sha256": "05d308e0edcfb3b483c7e87728a13fb2a5b9b87c1c5f8e4bc33bf60af9408371"
+  },
+  {
+    "document_id": "D012",
+    "fact_ids": [
+      "F003",
+      "F004",
+      "F011",
+      "F013"
+    ],
+    "fact_locators": {
+      "F003": [
+        "03-termo-entrega.md:4"
+      ],
+      "F004": [
+        "03-termo-entrega.md:3"
+      ],
+      "F011": [
+        "03-termo-entrega.md:4"
+      ],
+      "F013": [
+        "03-termo-entrega.md:3"
+      ]
+    },
+    "filename": "03-termo-entrega.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "delivery",
+    "sha256": "f6b445ae5badfcff8766e540755c826092ad5c67699867a0ff6b3cff12a59920"
+  },
+  {
+    "document_id": "D020",
+    "fact_ids": [
+      "F001",
+      "F002",
+      "F003",
+      "F004",
+      "F012",
+      "F014",
+      "F020"
+    ],
+    "fact_locators": {
+      "F001": [
+        "04-peticao-inicial.md:3"
+      ],
+      "F002": [
+        "04-peticao-inicial.md:4"
+      ],
+      "F003": [
+        "04-peticao-inicial.md:7"
+      ],
+      "F004": [
+        "04-peticao-inicial.md:8"
+      ],
+      "F012": [
+        "04-peticao-inicial.md:9"
+      ],
+      "F014": [
+        "04-peticao-inicial.md:9"
+      ],
+      "F020": [
+        "04-peticao-inicial.md:5"
+      ]
+    },
+    "filename": "04-peticao-inicial.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "initial_petition",
+    "sha256": "286c3c9558312dd81b30afc208a7f7e5938d3c822e5683cbe66aae5bbd709f3e"
+  },
+  {
+    "document_id": "D021",
+    "fact_ids": [
+      "F001",
+      "F004",
+      "F024"
+    ],
+    "fact_locators": {
+      "F001": [
+        "05-aviso-recebimento-citacao.md:3"
+      ],
+      "F004": [
+        "05-aviso-recebimento-citacao.md:4"
+      ],
+      "F024": [
+        "05-aviso-recebimento-citacao.md:5"
+      ]
+    },
+    "filename": "05-aviso-recebimento-citacao.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "service_receipt",
+    "sha256": "2242c9020f20d1b907417e6c82fbfca3c4f6cdb420265f927bd01e9406548783"
+  },
+  {
+    "document_id": "D022",
+    "fact_ids": [
+      "F001",
+      "F002",
+      "F003",
+      "F004",
+      "F021",
+      "F022"
+    ],
+    "fact_locators": {
+      "F001": [
+        "06-sentenca.md:3"
+      ],
+      "F002": [
+        "06-sentenca.md:4"
+      ],
+      "F003": [
+        "06-sentenca.md:7"
+      ],
+      "F004": [
+        "06-sentenca.md:8"
+      ],
+      "F021": [
+        "06-sentenca.md:5"
+      ],
+      "F022": [
+        "06-sentenca.md:8"
+      ]
+    },
+    "filename": "06-sentenca.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "judgment",
+    "sha256": "49cf1086a10e224a61621a0cab5c1bdf0cf77d026af499ec99f0fe1ad3492da0"
+  },
+  {
+    "document_id": "D023",
+    "fact_ids": [
+      "F001",
+      "F023"
+    ],
+    "fact_locators": {
+      "F001": [
+        "07-certidao-transito.md:3"
+      ],
+      "F023": [
+        "07-certidao-transito.md:4"
+      ]
+    },
+    "filename": "07-certidao-transito.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "finality_certificate",
+    "sha256": "93c6539f24918377ebdf6c0870f291d5a64c454e14c033156370340a76662251"
+  },
+  {
+    "document_id": "D030",
+    "fact_ids": [
+      "F001",
+      "F002",
+      "F003",
+      "F004",
+      "F030",
+      "F031"
+    ],
+    "fact_locators": {
+      "F001": [
+        "08-peticao-cumprimento.md:3"
+      ],
+      "F002": [
+        "08-peticao-cumprimento.md:4"
+      ],
+      "F003": [
+        "08-peticao-cumprimento.md:7"
+      ],
+      "F004": [
+        "08-peticao-cumprimento.md:8"
+      ],
+      "F030": [
+        "08-peticao-cumprimento.md:5"
+      ],
+      "F031": [
+        "08-peticao-cumprimento.md:8"
+      ]
+    },
+    "filename": "08-peticao-cumprimento.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "enforcement_petition",
+    "sha256": "8fc2d51937432459707d62e74e594619e4222e6ff3f253834447dc258451e536"
+  },
+  {
+    "document_id": "D031",
+    "fact_ids": [
+      "F001",
+      "F012",
+      "F031",
+      "F032"
+    ],
+    "fact_locators": {
+      "F001": [
+        "09-memoria-calculo.md:3"
+      ],
+      "F012": [
+        "09-memoria-calculo.md:4"
+      ],
+      "F031": [
+        "09-memoria-calculo.md:6"
+      ],
+      "F032": [
+        "09-memoria-calculo.md:5"
+      ]
+    },
+    "filename": "09-memoria-calculo.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "calculation",
+    "sha256": "c4a90b4360b57b5553530cb8981e24d0aed8ec2df04ffd1729a5fcc45329d378"
+  },
+  {
+    "document_id": "D040",
+    "fact_ids": [
+      "F001",
+      "F002",
+      "F040",
+      "F041"
+    ],
+    "fact_locators": {
+      "F001": [
+        "10-despacho-intimacao.md:3"
+      ],
+      "F002": [
+        "10-despacho-intimacao.md:4"
+      ],
+      "F040": [
+        "10-despacho-intimacao.md:5"
+      ],
+      "F041": [
+        "10-despacho-intimacao.md:7"
+      ]
+    },
+    "filename": "10-despacho-intimacao.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "notice_order",
+    "sha256": "8880be522cc809e567487950f32ba014fe6ea50158436a93f228f60dee40e491"
+  },
+  {
+    "document_id": "D041",
+    "fact_ids": [
+      "F001",
+      "F002",
+      "F004",
+      "F040",
+      "F041",
+      "F042"
+    ],
+    "fact_locators": {
+      "F001": [
+        "11-oficio-intimacao.md:3"
+      ],
+      "F002": [
+        "11-oficio-intimacao.md:4"
+      ],
+      "F004": [
+        "11-oficio-intimacao.md:7"
+      ],
+      "F040": [
+        "11-oficio-intimacao.md:5"
+      ],
+      "F041": [
+        "11-oficio-intimacao.md:8"
+      ],
+      "F042": [
+        "11-oficio-intimacao.md:8"
+      ]
+    },
+    "filename": "11-oficio-intimacao.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "notice_writ",
+    "sha256": "e15a2e37f868ff07fed983c3afdf0e69671b44feb5091bd8c8a945fa3d7ae3c1"
+  },
+  {
+    "document_id": "D042",
+    "fact_ids": [
+      "F001",
+      "F043"
+    ],
+    "fact_locators": {
+      "F001": [
+        "12-certidao-publicacao.md:4"
+      ],
+      "F043": [
+        "12-certidao-publicacao.md:4"
+      ]
+    },
+    "filename": "12-certidao-publicacao.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "publication_certificate",
+    "sha256": "c978f4db2fa84eb6293cb616065283445cd68133e05e26c8f7137beb2ef93103"
+  },
+  {
+    "document_id": "D050",
+    "fact_ids": [
+      "F001",
+      "F004",
+      "F050",
+      "F051",
+      "F052"
+    ],
+    "fact_locators": {
+      "F001": [
+        "13-email-executada.md:5",
+        "13-email-executada.md:8"
+      ],
+      "F004": [
+        "13-email-executada.md:3"
+      ],
+      "F050": [
+        "13-email-executada.md:4"
+      ],
+      "F051": [
+        "13-email-executada.md:7"
+      ],
+      "F052": [
+        "13-email-executada.md:8"
+      ]
+    },
+    "filename": "13-email-executada.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "debtor_email",
+    "sha256": "9b4a02423dfd695b39709cc0821ffa718af7ca7711653c4e54e80832af42e02d"
+  },
+  {
+    "document_id": "D051",
+    "fact_ids": [
+      "F001",
+      "F004",
+      "F050",
+      "F051",
+      "F052"
+    ],
+    "fact_locators": {
+      "F001": [
+        "14-registro-bancario.md:4",
+        "14-registro-bancario.md:6"
+      ],
+      "F004": [
+        "14-registro-bancario.md:3"
+      ],
+      "F050": [
+        "14-registro-bancario.md:5"
+      ],
+      "F051": [
+        "14-registro-bancario.md:5"
+      ],
+      "F052": [
+        "14-registro-bancario.md:6"
+      ]
+    },
+    "filename": "14-registro-bancario.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "payment_receipt_missing",
+    "sha256": "1988f00e6426e4f97603201c537a05e24798b04e28e4bec601f0ab221ce505a9"
+  },
+  {
+    "document_id": "D060",
+    "fact_ids": [
+      "F001",
+      "F060",
+      "F061"
+    ],
+    "fact_locators": {
+      "F001": [
+        "15-extrato-andamentos.md:3"
+      ],
+      "F060": [
+        "15-extrato-andamentos.md:11"
+      ],
+      "F061": [
+        "15-extrato-andamentos.md:5"
+      ]
+    },
+    "filename": "15-extrato-andamentos.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "docket",
+    "sha256": "146ee9cc3d6b8d11a33d913cf12a6409f41ef19d8fab30802d212adbe4b31261"
+  },
+  {
+    "document_id": "D070",
+    "fact_ids": [],
+    "fact_locators": {},
+    "filename": "16-nota-normativa.md",
+    "legal_source_ids": [
+      "L219",
+      "L224",
+      "L523",
+      "L524",
+      "L525"
+    ],
+    "legal_source_locators": [
+      "references/legislacao/cpc/parte-geral-e-prazos.md#cpc-art-219",
+      "references/legislacao/cpc/parte-geral-e-prazos.md#cpc-art-224",
+      "references/legislacao/cpc/cumprimento-e-execucao.md#cpc-art-523",
+      "references/legislacao/cpc/cumprimento-e-execucao.md#cpc-art-524",
+      "references/legislacao/cpc/cumprimento-e-execucao.md#cpc-art-525"
+    ],
+    "renderer": "legal_note",
+    "sha256": "386658bab2f3e75a2736ca007f4822c3db2405a37779307fda93670f9b7a6459"
+  },
+  {
+    "document_id": "D071",
+    "fact_ids": [
+      "F070",
+      "F071"
+    ],
+    "fact_locators": {
+      "F070": [
+        "17-calendario-forense.md:3"
+      ],
+      "F071": [
+        "17-calendario-forense.md:1",
+        "17-calendario-forense.md:3"
+      ]
+    },
+    "filename": "17-calendario-forense.md",
+    "legal_source_ids": [],
+    "legal_source_locators": [],
+    "renderer": "batch_calendar",
+    "sha256": "bee5aaa29b668f1f35ddeebcbd1ad55da636775a2025964a84384997f2ef0764"
+  }
+]

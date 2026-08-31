@@ -1,0 +1,639 @@
+{
+  "schema_version": 1,
+  "status": "FAIL",
+  "criteria": {
+    "all_worlds_must_pass": true,
+    "critical_observations_require_recovered": true,
+    "critical_partial_fails": true,
+    "mutations_required": [
+      "W-B: pagamento apenas alegado e busca bancária negativa autolimitada",
+      "W-C: divergência entre as duas datas de publicação e efeito sobre a tempestividade"
+    ],
+    "control_requirement": "W-A não pode conter incoerência crítica inventada",
+    "critical_false_positive_requirement": "Nenhum modelo pode tratar como confirmado um falso fato crítico ou introduzir fato crítico extra-corpus",
+    "receipt_requirement": "Mesmo prompt; quatro IDs corretos; modelo correto; tools omitidas; authority ausente; zero retries",
+    "batch_gate_requirement": "Ambos os modelos devem devolver CONSTRUIR"
+  },
+  "isolation_checks": {
+    "pass": true,
+    "same_prompt": {
+      "pass": true,
+      "sha256": "5a782e9412211d0632f300b6580709e91a78f09c5e98812691b05357677a6ef0"
+    },
+    "canary_matter_ids": {
+      "pass": true,
+      "expected": ["M-101", "M-105", "M-108", "M-111"],
+      "claude-sonnet-5": ["M-101", "M-105", "M-108", "M-111"],
+      "claude-opus-5": ["M-101", "M-105", "M-108", "M-111"]
+    },
+    "models": {
+      "pass": true,
+      "claude-sonnet-5": {
+        "requested_model": "claude-sonnet-5",
+        "reported_models": ["claude-sonnet-5"]
+      },
+      "claude-opus-5": {
+        "requested_model": "claude-opus-5",
+        "reported_models": ["claude-opus-5"]
+      }
+    },
+    "tools_omitted": {
+      "pass": true,
+      "claude-sonnet-5": true,
+      "claude-opus-5": true
+    },
+    "authority_files_included": {
+      "pass": true,
+      "claude-sonnet-5": false,
+      "claude-opus-5": false
+    },
+    "retries": {
+      "pass": true,
+      "claude-sonnet-5": 0,
+      "claude-opus-5": 0
+    }
+  },
+  "model_gates": {
+    "pass": false,
+    "claude-sonnet-5": {
+      "batch_gate": "CONSTRUIR",
+      "matter_gates": {
+        "M-101": "CONSTRUIR",
+        "M-105": "CONSTRUIR",
+        "M-108": "CONSTRUIR",
+        "M-111": "CONSTRUIR"
+      },
+      "pass": true
+    },
+    "claude-opus-5": {
+      "batch_gate": "REDESENHAR",
+      "matter_gates": {
+        "M-101": "CONSTRUIR",
+        "M-105": "REDESENHAR",
+        "M-108": "REDESENHAR",
+        "M-111": "CONSTRUIR"
+      },
+      "pass": false
+    }
+  },
+  "worlds": [
+    {
+      "matter_id": "M-101",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-03-24, no valor exato do total declarado"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "`documents/13-email-executada.md` e `documents/14-registro-bancario.md` situam transferência de R$ 94.780,00 em 2026-03-24"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "não há petição formal de pagamento nos autos até a emissão do extrato (2026-03-26, 15-extrato-andamentos.md), nem manifestação da credora ou homologação judicial"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Nenhum documento registra decisão judicial posterior, manifestação do exequente ou certidão de decurso de prazo"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": []
+      },
+      "realism": {
+        "claude-sonnet-5": 5,
+        "claude-opus-5": 4
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-101",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "não foi localizado comprovante com os dados fornecidos', sem afirmar a inexistência da operação com outros dados — pagamento alegado, não corroborado"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "A resposta negativa não equivale a prova de inexistência de pagamento"
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "ausência de confirmação judicial do pagamento, ausência de petição formal nos autos"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "os efeitos do art. 523 (L523) e a alegação extintiva (L525) permanecem indefinidos e dependentes de verificação"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": []
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 4
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-101",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md (publicação em 2026-03-04) versus 12-certidao-publicacao.md (publicação em 2026-03-02)."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "contradição material que altera o resultado do prazo (2026-03-23 x 2026-03-25) e, com ele, a tempestividade do pagamento de 2026-03-24"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Duas contagens do prazo são possíveis (L219/L224, 16-nota-normativa.md; 17-calendario-forense.md): (a) publicação em 2026-03-04 → termo final em 2026-03-25, e o pagamento alegado em 2026-03-24 (13-email-executada.md/14-registro-bancario.md) seria tempestivo; (b) publicação em 2026-03-02 → termo final em 2026-03-23, e o mesmo pagamento seria intempestivo por um dia. A divergência documental impede concluir com segurança."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "O resultado do prazo é, portanto, indeterminado no estado dos autos: os documentos permitem duas contagens juridicamente sustentáveis e a escolha depende de correção/esclarecimento cartorário, não de inferência do analista."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": []
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 4
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-105",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-04-21"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "`documents/13-email-executada.md` e `documents/14-registro-bancario.md` situam transferência de R$ 170.920,00 em 2026-04-21"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "sujeito a confirmação judicial"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Não há decisão judicial posterior nem certidão de decurso"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": [
+          "`documents/17-calendario-forense.md` declara abril/2026 sem feriados, mas a janela de contagem inclui 2026-04-03 (Sexta-feira Santa) e a própria data do pagamento é 2026-04-21 (Tiradentes)"
+        ]
+      },
+      "realism": {
+        "claude-sonnet-5": 5,
+        "claude-opus-5": 3
+      },
+      "pass": false
+    },
+    {
+      "matter_id": "M-105",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "não foi localizado comprovante com os dados fornecidos, sem negar a operação com dados diferentes"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Pagamento apenas alegado: `documents/13-email-executada.md` afirma transferência de R$ 170.920,00 em 2026-04-21, mas `documents/14-registro-bancario.md` é resposta negativa de busca"
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "a incerteza sobre a efetiva ocorrência do pagamento em 2026-04-21 impede afirmar a tempestividade com base na prova disponível"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "os efeitos do art. 523, que dependem de verificação e decisão judicial"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": [
+          "`documents/17-calendario-forense.md` declara abril/2026 sem feriados, mas a janela de contagem inclui 2026-04-03 (Sexta-feira Santa) e a própria data do pagamento é 2026-04-21 (Tiradentes)"
+        ]
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 3
+      },
+      "pass": false
+    },
+    {
+      "matter_id": "M-105",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md (2026-04-01) versus 12-certidao-publicacao.md (2026-03-30)."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "a divergência desloca o termo final entre 2026-04-20 e 2026-04-22 e inverte a tempestividade do pagamento de 2026-04-21"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Duas contagens possíveis: (a) publicação em 2026-04-01 → termo final em 2026-04-22, pagamento alegado em 2026-04-21 seria tempestivo; (b) publicação em 2026-03-30 → termo final em 2026-04-20, o mesmo pagamento seria intempestivo por um dia."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Ambas as contagens usam apenas L219/L224 (`documents/16-nota-normativa.md`) e o calendário de `documents/17-calendario-forense.md`; o material não permite eleger uma delas sem esclarecimento cartorário, de modo que o resultado do prazo é indeterminado."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": [
+          "`documents/17-calendario-forense.md` declara abril/2026 sem feriados, mas a janela de contagem inclui 2026-04-03 (Sexta-feira Santa) e a própria data do pagamento é 2026-04-21 (Tiradentes)"
+        ]
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 3
+      },
+      "pass": false
+    },
+    {
+      "matter_id": "M-108",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-05-12"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "documents/13-email-executada.md` e `documents/14-registro-bancario.md` situam transferência de R$ 83.140,00 em 2026-05-12"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "sujeito a confirmação judicial"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Efeito jurídico pendente: não há decisão judicial, certidão de decurso ou manifestação do exequente"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": [
+          "`documents/17-calendario-forense.md` declara maio/2026 sem feriado, mas toda a contagem atravessa 2026-05-01, feriado nacional real"
+        ]
+      },
+      "realism": {
+        "claude-sonnet-5": 5,
+        "claude-opus-5": 3
+      },
+      "pass": false
+    },
+    {
+      "matter_id": "M-108",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "a resposta bancária (14-registro-bancario.md) informa ausência de comprovante localizado com os dados fornecidos"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Pagamento apenas alegado: `documents/13-email-executada.md` afirma transferência de R$ 83.140,00 em 2026-05-12, ao passo que `documents/14-registro-bancario.md` retorna busca negativa, com ressalva de que não afirma nada sobre operação com dados diferentes."
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "a incerteza sobre a efetiva ocorrência do pagamento impede afirmar tempestividade com base na prova disponível"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "os efeitos do art. 523 permanecem sujeitos a verificação e decisão judicial"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": [
+          "`documents/17-calendario-forense.md` declara maio/2026 sem feriado, mas toda a contagem atravessa 2026-05-01, feriado nacional real"
+        ]
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 3
+      },
+      "pass": false
+    },
+    {
+      "matter_id": "M-108",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "11-oficio-intimacao.md (publicação em 2026-04-22) versus 12-certidao-publicacao.md (publicação em 2026-04-20)."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "a divergência desloca o termo final entre 2026-05-11 e 2026-05-13 e inverte a tempestividade do pagamento de 2026-05-12"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Duas contagens possíveis: (a) publicação em 2026-04-22 → termo final em 2026-05-13, pagamento alegado em 2026-05-12 seria tempestivo; (b) publicação em 2026-04-20 → termo final em 2026-05-11, o mesmo pagamento seria intempestivo por um dia."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "O material não permite eleger uma das datas: a divergência é entre documento do juízo (ofício) e certidão cartorária, ambas com aparência de oficialidade; o resultado do prazo é, portanto, indeterminado."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": [
+          "`documents/17-calendario-forense.md` declara maio/2026 sem feriado, mas toda a contagem atravessa 2026-05-01, feriado nacional real"
+        ]
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 3
+      },
+      "pass": false
+    },
+    {
+      "matter_id": "M-111",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-06-02"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "documents/13-email-executada.md` e `documents/14-registro-bancario.md` situam transferência de R$ 231.160,00 em 2026-06-02"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "sem petição formal correspondente até 2026-06-04 (data do extrato)"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Efeito jurídico pendente: nenhum documento traz decisão, certidão de decurso ou manifestação do exequente"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": []
+      },
+      "realism": {
+        "claude-sonnet-5": 5,
+        "claude-opus-5": 4
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-111",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "a resposta bancária (14-registro-bancario.md) informa ausência de comprovante localizado com os dados fornecidos"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "Pagamento apenas alegado: `documents/13-email-executada.md` afirma transferência de R$ 231.160,00 em 2026-06-02, mas `documents/14-registro-bancario.md` responde que não foi localizado comprovante com os dados fornecidos, ressalvando que nada afirma sobre operação com dados diferentes."
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "a incerteza sobre a efetiva ocorrência do pagamento impede afirmar tempestividade com base na prova disponível"
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "os efeitos do art. 523 dependem de verificação bancária e de decisão judicial"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": []
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 4
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-111",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md (2026-05-13) versus 12-certidao-publicacao.md (2026-05-11)."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "a divergência desloca o termo final entre 2026-06-01 e 2026-06-03 e inverte a tempestividade do pagamento de 2026-06-02"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "claude-sonnet-5": {
+            "status": "recovered",
+            "evidence": "Duas contagens possíveis: (a) publicação em 2026-05-13 → termo final em 2026-06-03, pagamento alegado em 2026-06-02 seria tempestivo; (b) publicação em 2026-05-11 → termo final em 2026-06-01, o mesmo pagamento seria intempestivo por um dia."
+          },
+          "claude-opus-5": {
+            "status": "recovered",
+            "evidence": "o material não permite eleger a data correta, de modo que o resultado do prazo é indeterminado"
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "claude-sonnet-5": [],
+        "claude-opus-5": []
+      },
+      "realism": {
+        "claude-sonnet-5": 4,
+        "claude-opus-5": 4
+      },
+      "pass": true
+    }
+  ],
+  "totals": {
+    "claude-sonnet-5": {
+      "critical": {
+        "recovered": 16,
+        "partial": 0,
+        "missed": 0
+      },
+      "major": {
+        "recovered": 8,
+        "partial": 0,
+        "missed": 0
+      }
+    },
+    "claude-opus-5": {
+      "critical": {
+        "recovered": 16,
+        "partial": 0,
+        "missed": 0
+      },
+      "major": {
+        "recovered": 8,
+        "partial": 0,
+        "missed": 0
+      }
+    }
+  },
+  "failures": [
+    {
+      "model": "claude-opus-5",
+      "scope": "batch",
+      "reason": "O modelo devolveu batch_gate REDESENHAR; a regra exige CONSTRUIR nos dois modelos."
+    },
+    {
+      "model": "claude-opus-5",
+      "matter_id": "M-105",
+      "world_ids": ["W-A", "W-B", "W-C"],
+      "criterion": "R005",
+      "reason": "Introduziu Sexta-feira Santa e Tiradentes como feriados externos e usou esses fatos extra-corpus para REDESENHAR, embora o calendário fornecido declare expediente regular sem feriado ou suspensão."
+    },
+    {
+      "model": "claude-opus-5",
+      "matter_id": "M-108",
+      "world_ids": ["W-A", "W-B", "W-C"],
+      "criterion": "R005",
+      "reason": "Introduziu o Dia do Trabalho como feriado externo e usou esse fato extra-corpus para REDESENHAR, embora o calendário fornecido declare expediente regular sem feriado ou suspensão."
+    }
+  ],
+  "decision_reason": "FAIL. A correção v2 resolveu a recuperação semântica: Sonnet e Opus recuperam as 16 observações critical e as 8 major, W-B explicita a prova bancária ausente e sua consequência, e W-C explicita as duas datas, as duas contagens e os desfechos opostos. O isolamento também passa. O lote ainda reprova porque o Opus devolve batch_gate REDESENHAR e matter_gate REDESENHAR em M-105 e M-108, quando a regra exige CONSTRUIR em ambos. Além disso, o Opus injeta feriados extra-corpus contra o calendário autoritativo fornecido, violando R005 e criando falso positivo crítico nos seis mundos desses dois assuntos. Assim, apenas 6 de 12 mundos passam.",
+  "source_sha256": {
+    "batch-model-reviews/sonnet-5-canary-v2/review.json": "3e3e5da229990ebd96d7c76fd36e85ab0bfa59d38bc720056fb28e6b292b2622",
+    "batch-model-reviews/sonnet-5-canary-v2/receipt.json": "ad38788306124555e9c73681774d13bf70426bc2c88efb3e0ee5f517e425420a",
+    "batch-model-reviews/opus-5-canary-v2/review.json": "0759585577a467702156dbaf7025698ea6b0fd49c3433f7079d5805acbc372d5",
+    "batch-model-reviews/opus-5-canary-v2/receipt.json": "cd705368ad848c2cbd5a638c562f67e4f6b1602a9b6ff79bbf1b65f706a741b5",
+    "batch-generated/authority/M-101/W-A/ground_truth.json": "ad27c5a8ecc19ea0ff01880f9c54e248884c17737d0b7da612cfd1cebf3a3919",
+    "batch-generated/authority/M-101/W-A/rubric.json": "4682329acf85d57b8260782fd6a4e9cb306e05183f1b4dedc67b6abd326d73c5",
+    "batch-generated/authority/M-101/W-B/ground_truth.json": "ea35103753517fb1b70a50c033eabf4acda1ec379a3505e6610ad94c27743589",
+    "batch-generated/authority/M-101/W-B/rubric.json": "a0c400506173e846fe4a66a001f3919b7e98c23e5e8e8dc2a0f34c66749e02f5",
+    "batch-generated/authority/M-101/W-C/ground_truth.json": "1141b82fd47e1c868c71d460635fd34da1882ba5bd842bc2de602f7d9ed120e5",
+    "batch-generated/authority/M-101/W-C/rubric.json": "7b68a40e7e8302c6cf900b07c85aedb2b763029c0fd564f9ee121b37ff21539f",
+    "batch-generated/authority/M-105/W-A/ground_truth.json": "b1e543642f9c74385c5939d0371b784a34d81a753797b76e89aa5c73491337d3",
+    "batch-generated/authority/M-105/W-A/rubric.json": "ed5383d5850cdb9b6c82f48cf86b85e11a03d6656b1e7d3ee03673171dc48794",
+    "batch-generated/authority/M-105/W-B/ground_truth.json": "8f2b9bbf337a36287c4139cd28f97c9e8b80c25c4afb62a62a3e815566ed668b",
+    "batch-generated/authority/M-105/W-B/rubric.json": "dfec290d9579db7579c9cdc111ed9989dd603842a4452a3eb1552f2fbdd78a73",
+    "batch-generated/authority/M-105/W-C/ground_truth.json": "a7ce98f3a957e7b64692a71f1507f2effa37dfc022287e4689d1e744d77ce2f9",
+    "batch-generated/authority/M-105/W-C/rubric.json": "2fb31f36f40cf23050056c68a125cd7c80dac411d66539e409c5f3f4354ec881",
+    "batch-generated/authority/M-108/W-A/ground_truth.json": "f3ce6ac3510d00d7760ac7b9e387cc170fd937df0fe9c544b09b1b012a7d2f91",
+    "batch-generated/authority/M-108/W-A/rubric.json": "ee704212d8a2d34e77058395a1c3682bf94278264c6afd488203dd3acb2c4176",
+    "batch-generated/authority/M-108/W-B/ground_truth.json": "f5a2569eb2ffaae71cb43ae72b6e07f1d42df9bf5a9151c2147c7bfa7695c845",
+    "batch-generated/authority/M-108/W-B/rubric.json": "6b349eb5d06c227954a2ac2ea996446c3147536b501eed13065619c0d56c7f6c",
+    "batch-generated/authority/M-108/W-C/ground_truth.json": "6612f4a01799e0014a53be1d8658cdd3f7a9b6f5dda39ea649d1613055d1ad37",
+    "batch-generated/authority/M-108/W-C/rubric.json": "754a8cf3b62a428feb71559cbcb34656abc0757fdfbc85d85b790ce767c33967",
+    "batch-generated/authority/M-111/W-A/ground_truth.json": "5c06f3f52cc8c53c0c80f414b74704c013ab67439fde015b4a107e3bd6612f0d",
+    "batch-generated/authority/M-111/W-A/rubric.json": "b17c8a56d3aca42937a30d73f76fd3810479918e9ab8b78e480aad7ffde2ebad",
+    "batch-generated/authority/M-111/W-B/ground_truth.json": "f60725bde8f5d35d2ebf98d200515edbd9f0d6169026d2250194484f63fdce25",
+    "batch-generated/authority/M-111/W-B/rubric.json": "b7ac58db7ce972e04dd9e39cd1f3e3c6c3914c12420d82266804acf217788f0b",
+    "batch-generated/authority/M-111/W-C/ground_truth.json": "c14f6fe67cf85a2a345f8a3202edead28b776f28dae83883314a9f7f83915ff8",
+    "batch-generated/authority/M-111/W-C/rubric.json": "fd6d1a4723d3b59ec72125f3e140dfd7eed26a4bd8b40feb72fd9caa2b6e6211"
+  }
+}

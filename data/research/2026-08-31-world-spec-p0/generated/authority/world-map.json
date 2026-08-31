@@ -1,0 +1,21 @@
+{
+  "W-A": {
+    "authority_label": "control",
+    "description": "Mundo coerente, com comprovante de pagamento presente e datas de publicação convergentes.",
+    "expected_changed_documents": []
+  },
+  "W-B": {
+    "authority_label": "proof_missing",
+    "description": "A parte afirma que pagou, mas o registro bancário contém somente resposta negativa à busca do comprovante.",
+    "expected_changed_documents": [
+      "14-registro-bancario.md"
+    ]
+  },
+  "W-C": {
+    "authority_label": "chronology_conflict",
+    "description": "O comprovante existe, mas diário e certidão divergem sobre a data da publicação, tornando ambígua a tempestividade.",
+    "expected_changed_documents": [
+      "12-certidao-publicacao.md"
+    ]
+  }
+}

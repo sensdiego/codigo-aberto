@@ -1,0 +1,26 @@
+{
+  "schema_version": "synthetic-world-workflows-v1",
+  "research_root": "data/research/2026-08-31-world-spec-p0",
+  "batch_manifest_sha256": "3db505902cdd568557260c3d968039ec7d061b288175574cf33fe4de1ca338ae",
+  "approval_receipts": {
+    "batch-model-reviews/canary-adjudication-v3.json": "284460044c9b8809c4a4f4281a5b897a024debcb3f036424b31187884cfddeca",
+    "batch-model-reviews/codex-remaining-a-adjudication-v1.json": "c8903112b15d2c04d989c9c7c8f9f46eda23dfd9e0abd48370c84bc4cde3c45d",
+    "batch-model-reviews/codex-remaining-b-adjudication-v1.json": "1d2a365669c52120e16813e645499ed56772a8e0b29a77f8137b66835aaf9d89"
+  },
+  "matter_ids": [
+    "M-101",
+    "M-102",
+    "M-103",
+    "M-104",
+    "M-105",
+    "M-106",
+    "M-107",
+    "M-108",
+    "M-109",
+    "M-110",
+    "M-111",
+    "M-112"
+  ],
+  "world_ids": ["W-A", "W-B", "W-C"],
+  "expected_skill": "analise-juridica-civel"
+}

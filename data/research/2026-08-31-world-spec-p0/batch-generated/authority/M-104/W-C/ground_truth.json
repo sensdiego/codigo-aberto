@@ -1,0 +1,69 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "O comprovante existe, mas diário e certidão divergem sobre a data da publicação, tornando ambígua a tempestividade.",
+  "effective_spec_sha256": "4f41b28a21bdd6484b66bd33272f41bae2ff3d028d3f2c73edd7d57221886b00",
+  "expected_observations": [
+    {
+      "claim": "O Diário registra publicação em 2026-05-13 e a certidão registra 2026-05-11.",
+      "class": "contradiction",
+      "evidence": [
+        "11-diario-justica.md",
+        "12-certidao-publicacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência à tempestividade do pagamento.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver o marco inicial, não é seguro concluir se o pagamento de 2026-06-02 ocorreu dentro do prazo.",
+      "class": "relation",
+      "evidence": [
+        "10-despacho-intimacao.md",
+        "11-diario-justica.md",
+        "12-certidao-publicacao.md",
+        "14-registro-bancario.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis e pede conferência da publicação oficial antes de afirmar mora ou tempestividade.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-104",
+  "motif": "peticao_decisao_certidao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-104",
+    "F002": "4ª Vara Cível da Comarca Experimental de Duna",
+    "F003": "Horizonte Bombas e Fluidos Ltda.",
+    "F004": "Íris Processos Ambientais S.A.",
+    "F010": "2025-07-19",
+    "F011": "fornecimento e instalação de bombas para tratamento de água",
+    "F012": "68.750,00",
+    "F013": "2025-08-24",
+    "F014": "2025-09-23",
+    "F020": "2025-10-19",
+    "F021": "2026-01-29",
+    "F022": "pagar R$ 68.750,00, com atualização pelo IPCA-E desde 2025-09-23 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-03-26",
+    "F024": "2025-10-29",
+    "F030": "2026-05-08",
+    "F031": "77.340,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-05-08 e juros simples de 1% ao mês desde 2025-10-29",
+    "F040": "2026-05-08",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-05-13",
+    "F043": "2026-05-11",
+    "F050": "2026-06-02",
+    "F051": "77.340,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-104",
+    "F060": "2026-05-14 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-06-04 09:10",
+    "F070": "no período de 2026-05-11 a 2026-06-03, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-05-11 a 2026-06-03"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

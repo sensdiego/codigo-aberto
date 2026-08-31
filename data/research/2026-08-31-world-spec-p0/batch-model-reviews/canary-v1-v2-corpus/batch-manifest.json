@@ -1,0 +1,30 @@
+{
+  "authority_tree_sha256": "610702270fc08aa00cabb6c0d28c43671d205a3698e9f219c4cab9021640f6bb",
+  "batch_id": "br-civel-cumprimento-calibrado-v1",
+  "batch_spec_sha256": "6c84ecb447fa3ec26d3b1d586d0ce3e3b31a966af5468dc20efb97f3fcf9d7a8",
+  "blind_tree_sha256": "3ea68b4ff6c226d5f13ef5957aeb0240a2ac28bbee8c0afb45e4c91455b19bbf",
+  "checks": [
+    "12 unique synthetic matters",
+    "four motifs match the empirical allocation",
+    "three controlled worlds per matter",
+    "17 documents per world",
+    "all declared facts have visible locators",
+    "only the declared document changes in each mutation",
+    "no authority identifiers leak into blind files",
+    "weekly timeline offsets preserve the reviewed weekday relation"
+  ],
+  "document_count": 612,
+  "empirical_basis_sha256": "e63c8444718ffa4819c186c78be3f1fc801c587e32ccc99be4efb250bfe9184a",
+  "matter_count": 12,
+  "motif_counts": {
+    "contrato_peticao_decisao": 2,
+    "decisao_oficio_certidao": 3,
+    "peticao_decisao_certidao": 4,
+    "peticao_decisao_peticao": 3
+  },
+  "owner_review": "PENDING",
+  "schema_version": 1,
+  "seed_spec_sha256": "bf5ac3aad1d3ef26da813e154a51a233180347605a55e2c1ca58a8f4f1402323",
+  "status": "STATIC_PASS",
+  "world_count": 36
+}

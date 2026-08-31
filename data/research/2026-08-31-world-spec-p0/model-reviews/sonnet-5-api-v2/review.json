@@ -1,0 +1,88 @@
+{
+  "decision_reason": "Os três mundos compartilham a mesma cadeia probatória até a publicação do despacho de intimação (docs 01 a 12 comuns), o que demonstra que a especificação curta consegue manter estável a matriz factual e introduzir mutações localizadas e detectáveis sem inferência externa: em W-A a alegação de pagamento (13-email-executada.md) é corroborada por comprovante bancário (14-registro-bancario.md); em W-B a mesma alegação é contraditada por uma resposta bancária negativa (14-registro-bancario.md, versão W-B), impedindo qualquer conclusão sobre quitação; em W-C surge divergência entre o Diário da Justiça e a certidão de publicação (11-diario-justica.md vs 12-certidao-publicacao.md), o que impede fixar com segurança o termo final do prazo do art.523 e a tempestividade do pagamento alegado. As três tarefas são juridicamente plausíveis e a diferenciação entre mundos não depende de fatos inventados pelo revisor. Entretanto, documentos de apoio comuns aos três mundos (00-aviso-dataset.md, 09-memoria-calculo.md, 15-extrato-andamentos.md e 17-calendario-forense.md) contêm marcas metatextuais atípicas de peças processuais reais — frases que declaram explicitamente a ausência de lançamentos ou pronunciamentos posteriores, e uma certidão de calendário cuja janela coincide exatamente com o período necessário ao cálculo do prazo em todos os cenários testados. Isso reduz o realismo documental e pode sinalizar ao leitor o recorte pretendido pela mutação em vez de exigir que ele o descubra a partir de evidência neutra. Recomenda-se REDESENHAR: preservar o mecanismo substantivo de contradição (pagamento não confirmado em W-B; divergência de data de publicação em W-C) e a nota normativa como recurso legítimo, mas reescrever os documentos de apoio para remover marcas metatextuais explícitas e ampliar/generalizar a janela do calendário forense, de modo que a robustez do teste não dependa de pistas textuais inadvertidas.",
+  "proposed_gate": "REDESENHAR",
+  "worlds": {
+    "W-A": {
+      "confidence": "moderada",
+      "identified_contradictions": [],
+      "identified_missing_evidence": [
+        "Extrato oficial da conta judicial confirmando o ingresso do valor",
+        "Petição formal da executada comunicando o pagamento nos autos (há apenas e-mail extrajudicial)",
+        "Decisão/certidão judicial homologando o demonstrativo ou declarando extinção do cumprimento",
+        "Manifestação do exequente sobre a suficiência do valor recebido"
+      ],
+      "implausible_or_leaking_documents": [
+        "00-aviso-dataset.md (aviso metatextual alheio aos autos)",
+        "09-memoria-calculo.md (frase de fechamento típica de anotação de teste, não de demonstrativo real)",
+        "15-extrato-andamentos.md (item 6 comenta explicitamente a ausência de registro posterior, atípico de extrato real)",
+        "17-calendario-forense.md (janela certificada coincide exatamente com o período necessário ao cálculo do prazo)"
+      ],
+      "memorandum": "MEMORANDO — Cumprimento de sentença BR-CIV-EXEC-001 (Mundo W-A)\n\nCronologia\n- 2025-05-10: contrato de fornecimento/instalação de quatro módulos de refrigeração, R$100.000,00, vencimento 2025-07-15 (01-contrato-fornecimento.md), valor replicado na nota fiscal (02-nota-fiscal.md).\n- 2025-06-15: entrega e aceite sem ressalvas (03-termo-entrega.md).\n- 2025-08-10: petição de cobrança alegando inadimplemento pós-vencimento (04-peticao-inicial.md).\n- 2025-08-20: citação recebida (05-aviso-recebimento-citacao.md).\n- 2025-11-20: sentença de procedência — R$100.000,00, IPCA-E desde 2025-07-15, juros 1%/mês desde a citação (06-sentenca.md).\n- 2026-01-15: trânsito em julgado (07-certidao-transito.md).\n- 2026-02-27: requerimento de cumprimento, valor declarado R$112.480,00 (08-peticao-cumprimento.md), com demonstrativo (09-memoria-calculo.md); despacho de intimação para pagar em 15 dias, art.523 CPC (10-despacho-intimacao.md).\n- 2026-03-04: publicação do despacho, de forma convergente entre Diário da Justiça (11-diario-justica.md) e certidão de publicação (12-certidao-publicacao.md).\n- 2026-03-24: e-mail da executada alegando transferência de R$112.480,00 (13-email-executada.md), com comprovante bancário indicando transferência efetivada à conta judicial (14-registro-bancario.md).\n- Último andamento: certidão de publicação, sem pronunciamento posterior sobre satisfação/extinção (15-extrato-andamentos.md).\n\nEstado da prova\nConfirmados: contrato, entrega, vencimento, citação, teor da sentença, trânsito, requerimento, despacho e sua publicação uniforme em 03-04, e existência de transferência bancária de R$112.480,00 em 03-24 com destino informado à conta judicial.\nAlegado/não homologado: o total de R$112.480,00 é cálculo unilateral do exequente (09-memoria-calculo.md).\nAusente: extrato oficial da conta judicial confirmando ingresso do valor; petição formal (não apenas e-mail) da executada nos autos; decisão judicial sobre satisfação/extinção.\nNão foram identificadas contradições internas neste mundo.\n\nAnálise\nA publicação em 2026-03-04 (quarta-feira) é atestada sem divergência por dois documentos. Pela nota normativa (16-nota-normativa.md — L219/L224), contam-se apenas dias úteis, excluindo o dia de início e iniciando no primeiro dia útil seguinte. A certidão de calendário forense (17-calendario-forense.md) confirma ausência de feriado/suspensão entre 03-02 e 03-25 e inatividade em fins de semana. Contando a partir de 03-05, o décimo quinto dia útil recai em 2026-03-25. A transferência alegada em 03-24 estaria, portanto, dentro do prazo — se confirmado seu efetivo ingresso. Contudo, o comprovante é emitido do lado da ordenante e apenas relata o destino \"informado\"; não é extrato da própria conta judicial nem certidão do juízo. Assim, prova-se a operação bancária alegada, mas o efeito jurídico da quitação (art.525) permanece pendente de confirmação judicial, já que os andamentos não registram qualquer manifestação após a publicação.\n\nPróximos passos\n1. Requerer extrato/certidão da conta judicial confirmando o ingresso do valor.\n2. Verificar se há petição formal da executada informando o pagamento nos autos.\n3. Provocar manifestação do exequente sobre a suficiência do valor recebido.\n4. Após confirmação, requerer extinção por satisfação (art.525) ou, na ausência, prosseguir com os atos executivos.",
+      "realism_1_to_5": 3,
+      "recovered_material_facts": [
+        "Contrato de fornecimento em 2025-05-10, R$100.000,00, vencimento 2025-07-15 (01-contrato-fornecimento.md)",
+        "Entrega e aceite sem ressalvas em 2025-06-15 (03-termo-entrega.md)",
+        "Petição de cobrança protocolada em 2025-08-10 (04-peticao-inicial.md)",
+        "Citação recebida em 2025-08-20 (05-aviso-recebimento-citacao.md)",
+        "Sentença de procedência em 2025-11-20 com critérios de atualização e juros (06-sentenca.md)",
+        "Trânsito em julgado em 2026-01-15 (07-certidao-transito.md)",
+        "Requerimento de cumprimento em 2026-02-27, valor declarado R$112.480,00 (08-peticao-cumprimento.md; 09-memoria-calculo.md)",
+        "Despacho de intimação art.523 em 2026-02-27 (10-despacho-intimacao.md)",
+        "Publicação convergente em 2026-03-04 (11-diario-justica.md; 12-certidao-publicacao.md)",
+        "Alegação e comprovante de transferência de R$112.480,00 em 2026-03-24 (13-email-executada.md; 14-registro-bancario.md)",
+        "Ausência de manifestação judicial posterior à publicação (15-extrato-andamentos.md)"
+      ]
+    },
+    "W-B": {
+      "confidence": "moderada",
+      "identified_contradictions": [
+        "Alegação de pagamento pela executada (13-email-executada.md) versus resultado negativo da busca bancária solicitada pela própria executada (14-registro-bancario.md), que não localizou o comprovante com os dados fornecidos"
+      ],
+      "identified_missing_evidence": [
+        "Comprovante bancário oficial (recibo/extrato do banco) da operação alegada",
+        "Dados completos utilizados na busca bancária, para saber se o insucesso foi de busca ou de inexistência da operação",
+        "Extrato da conta judicial do processo",
+        "Manifestação formal da executada nos autos e posição do exequente sobre a alegação de pagamento"
+      ],
+      "implausible_or_leaking_documents": [
+        "00-aviso-dataset.md (aviso metatextual alheio aos autos)",
+        "09-memoria-calculo.md (frase de fechamento típica de anotação de teste)",
+        "15-extrato-andamentos.md (comentário explícito sobre ausência de registro posterior, atípico de extrato real)",
+        "17-calendario-forense.md (janela certificada coincide exatamente com o período necessário ao cálculo)"
+      ],
+      "memorandum": "MEMORANDO — Cumprimento de sentença BR-CIV-EXEC-001 (Mundo W-B)\n\nCronologia\nOs marcos de 2025-05-10 até 2026-03-04 repetem a base do Mundo W-A, com os mesmos arquivos-suporte: contrato (01-contrato-fornecimento.md), nota fiscal (02-nota-fiscal.md), entrega (03-termo-entrega.md), petição inicial (04-peticao-inicial.md), citação (05-aviso-recebimento-citacao.md), sentença (06-sentenca.md), trânsito em julgado (07-certidao-transito.md), requerimento de cumprimento e demonstrativo (08-peticao-cumprimento.md; 09-memoria-calculo.md), despacho de intimação art.523 (10-despacho-intimacao.md) e publicação convergente em 2026-03-04 (11-diario-justica.md; 12-certidao-publicacao.md).\n- 2026-03-24: e-mail da executada alega transferência de R$112.480,00 (13-email-executada.md).\n- Na sequência, resposta bancária a pedido da própria executada informa que NÃO foi localizado comprovante com os dados fornecidos para essa operação (14-registro-bancario.md).\n- Último andamento: sem qualquer manifestação judicial posterior (15-extrato-andamentos.md).\n\nEstado da prova\nConfirmados: idênticos aos do Mundo W-A até a publicação.\nAlegado e não confirmado: pagamento de R$112.480,00 em 2026-03-24 — alegação exclusiva da própria executada.\nContraditório: a alegação de pagamento (13-email-executada.md) não é corroborada, e é diretamente contrariada, pela resposta bancária solicitada pela própria remetente, que não localizou comprovante com os dados fornecidos (14-registro-bancario.md).\nAusente: identificação completa dos dados usados na busca bancária; comprovante bancário oficial (recibo/extrato); extrato da conta judicial; manifestação judicial ou do exequente sobre a alegação.\n\nAnálise\nA contagem do prazo do art.523 segue idêntica à do Mundo W-A: publicação em 03-04, início em 03-05, décimo quinto dia útil em 2026-03-25 (nota normativa 16-nota-normativa.md; calendário 17-calendario-forense.md). Se o pagamento alegado em 03-24 tivesse ocorrido, seria tempestivo. Contudo, a única prova de sua ocorrência é a palavra da própria executada, contraditada pela busca bancária que ela mesma solicitou e que não localizou o comprovante. Isso não permite concluir nem que o pagamento ocorreu, nem que não ocorreu — pode haver erro nos dados de busca, sem prejuízo de outras hipóteses. Qualquer conclusão categórica seria suposição não autorizada pela tarefa. Os efeitos do art.523 (e a eventual abertura do prazo de impugnação do art.525) permanecem indefinidos até esclarecimento da real ocorrência do pagamento.\n\nPróximos passos\n1. Intimar a executada para apresentar comprovante bancário oficial (não e-mail) com identificadores completos da operação de 2026-03-24.\n2. Requerer extrato da conta judicial do processo para verificar eventual ingresso na data alegada.\n3. Diligenciar por sistema oficial de transferência/bloqueio judicial para confirmar o recebimento.\n4. Até a confirmação, tratar o prazo do art.523 como não satisfeito por prova idônea, sem presumir mora nem quitação.",
+      "realism_1_to_5": 4,
+      "recovered_material_facts": [
+        "Cadeia contratual, processual e sentencial idêntica à do Mundo W-A até a publicação de 2026-03-04 (docs 01 a 12)",
+        "E-mail da executada alegando transferência de R$112.480,00 em 2026-03-24 (13-email-executada.md)",
+        "Resposta bancária, solicitada pela própria executada, que não localizou comprovante com os dados fornecidos para a operação alegada (14-registro-bancario.md)",
+        "Ausência de manifestação judicial posterior à publicação (15-extrato-andamentos.md)"
+      ]
+    },
+    "W-C": {
+      "confidence": "moderada",
+      "identified_contradictions": [
+        "Data de publicação do despacho de intimação: 2026-03-04 segundo o Diário da Justiça (11-diario-justica.md) versus 2026-03-02 segundo a certidão de publicação (12-certidao-publicacao.md), o que altera o termo final do prazo do art.523 entre 2026-03-25 e 2026-03-23 e, por consequência, a tempestividade do pagamento alegado em 2026-03-24"
+      ],
+      "identified_missing_evidence": [
+        "Certidão retificadora ou extrato do sistema do Diário Eletrônico que confirme a data correta de publicação",
+        "Extrato oficial da conta judicial confirmando o ingresso do valor alegado",
+        "Manifestação judicial sobre a tempestividade do pagamento diante da divergência de datas"
+      ],
+      "implausible_or_leaking_documents": [
+        "00-aviso-dataset.md (aviso metatextual alheio aos autos)",
+        "09-memoria-calculo.md (frase de fechamento típica de anotação de teste)",
+        "15-extrato-andamentos.md (comentário explícito sobre ausência de registro posterior)",
+        "17-calendario-forense.md (janela certificada coincide exatamente com o período necessário para testar ambos os cenários de prazo)"
+      ],
+      "memorandum": "MEMORANDO — Cumprimento de sentença BR-CIV-EXEC-001 (Mundo W-C)\n\nCronologia\nOs marcos de 2025-05-10 até o despacho de intimação (2026-02-27) repetem a base comum: contrato (01-contrato-fornecimento.md), nota fiscal (02-nota-fiscal.md), entrega (03-termo-entrega.md), petição inicial (04-peticao-inicial.md), citação (05-aviso-recebimento-citacao.md), sentença (06-sentenca.md), trânsito em julgado (07-certidao-transito.md), requerimento de cumprimento e demonstrativo (08-peticao-cumprimento.md; 09-memoria-calculo.md) e despacho art.523 (10-despacho-intimacao.md).\n- O Diário da Justiça indica publicação do despacho em 2026-03-04 (11-diario-justica.md).\n- A certidão de publicação, porém, certifica que o ato ocorreu em 2026-03-02 (12-certidao-publicacao.md) — duas datas distintas para o mesmo ato.\n- 2026-03-24: e-mail da executada alega transferência de R$112.480,00 (13-email-executada.md), com comprovante bancário indicando transferência efetivada (14-registro-bancario.md).\n- Último andamento: sem manifestação judicial posterior (15-extrato-andamentos.md).\n\nEstado da prova\nConfirmados: fatos anteriores à publicação; existência de transferência bancária alegada e corroborada por comprovante do lado da ordenante (mesma qualidade probatória do Mundo W-A, sem confirmação da conta judicial).\nContraditório: a data de publicação do despacho — Diário da Justiça aponta 2026-03-04; certidão de publicação aponta 2026-03-02. Não há elemento nos autos indicando qual documento prevalece.\nAusente: certidão retificadora, extrato do Diário Eletrônico ou outro documento que resolva a divergência; extrato da conta judicial confirmando o pagamento.\n\nAnálise\nA divergência de datas de publicação é decisiva para a contagem do prazo de 15 dias úteis do art.523 (L219/L224, nota normativa 16-nota-normativa.md), à luz da certidão de calendário forense (17-calendario-forense.md), que cobre ambas as datas em disputa (02 a 25/03/2026) sem feriado ou suspensão de expediente.\n- Se a publicação ocorreu em 2026-03-04, a contagem inicia em 03-05 e o 15º dia útil recai em 2026-03-25; o pagamento alegado em 03-24 seria tempestivo.\n- Se a publicação ocorreu em 2026-03-02, a contagem inicia em 03-03 e o 15º dia útil recai em 2026-03-23; o pagamento alegado em 03-24 seria intempestivo por um dia útil.\nDiante da contradição direta entre dois documentos oficiais sobre o mesmo ato, não é possível, com os elementos disponíveis, afirmar a tempestividade ou a intempestividade do pagamento. Qualquer conclusão nesse sentido seria suposição não autorizada pela tarefa.\n\nPróximos passos\n1. Obter certidão retificadora ou extrato do sistema do Diário Eletrônico que ateste, de forma inequívoca, a data de publicação do despacho.\n2. Após dirimida a divergência, recalcular o termo final do prazo do art.523 conforme L219/L224 e confirmar a tempestividade do pagamento alegado.\n3. Buscar confirmação do efetivo ingresso do valor na conta judicial (extrato oficial).\n4. Caso confirmada a intempestividade, avaliar os efeitos do art.523 (e eventual prazo de impugnação do art.525) antes de reconhecer a satisfação da obrigação.",
+      "realism_1_to_5": 4,
+      "recovered_material_facts": [
+        "Cadeia contratual, processual e sentencial idêntica à base comum até o despacho de intimação (docs 01 a 10)",
+        "Divergência entre a data de publicação indicada no Diário da Justiça (2026-03-04) e a data certificada na certidão de publicação (2026-03-02)",
+        "Alegação e comprovante de transferência de R$112.480,00 em 2026-03-24 (13-email-executada.md; 14-registro-bancario.md)",
+        "Ausência de manifestação judicial posterior à publicação (15-extrato-andamentos.md)"
+      ]
+    }
+  }
+}

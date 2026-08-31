@@ -1,0 +1,64 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente, com comprovante de pagamento presente e datas de publicação convergentes.",
+  "effective_spec_sha256": "94c0a0ebdfa0e676cb22707dcc0a7c69a785d5ad4e9612c6cbdd0218965876e3",
+  "expected_observations": [
+    {
+      "claim": "A executada alegou e documentou transferência de R$ 231.160,00 em 2026-06-02.",
+      "class": "fact",
+      "evidence": [
+        "13-email-executada.md",
+        "14-registro-bancario.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre o e-mail e o comprovante, sem tratar isso como ordem judicial de extinção.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Pede confirmação do crédito na conta judicial e pronunciamento do juízo antes de encerrar o assunto.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-111",
+  "motif": "contrato_peticao_decisao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-111",
+    "F002": "3ª Vara Cível da Comarca Experimental de Mirante",
+    "F003": "Zênite Armazenamento Elétrico Ltda.",
+    "F004": "Acanto Mineração Experimental S.A.",
+    "F010": "2025-07-19",
+    "F011": "fornecimento e instalação de gabinetes de armazenamento de energia",
+    "F012": "205.500,00",
+    "F013": "2025-08-24",
+    "F014": "2025-09-23",
+    "F020": "2025-10-19",
+    "F021": "2026-01-29",
+    "F022": "pagar R$ 205.500,00, com atualização pelo IPCA-E desde 2025-09-23 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-03-26",
+    "F024": "2025-10-29",
+    "F030": "2026-05-08",
+    "F031": "231.160,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-05-08 e juros simples de 1% ao mês desde 2025-10-29",
+    "F040": "2026-05-08",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-05-13",
+    "F043": "2026-05-13",
+    "F050": "2026-06-02",
+    "F051": "231.160,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-111",
+    "F060": "2026-05-14 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-06-04 09:10",
+    "F070": "em maio de 2026 e junho de 2026, houve expediente regular de segunda a sexta-feira, sem feriado local ou suspensão",
+    "F071": "maio de 2026 e junho de 2026"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

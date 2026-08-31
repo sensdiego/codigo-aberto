@@ -1,0 +1,31 @@
+{
+  "authority_tree_sha256": "5e2df594de7de3f74b3cd116a6ffe04a947c154b29baccf92228bf1126b60cee",
+  "batch_id": "br-civel-cumprimento-calibrado-v1",
+  "batch_spec_sha256": "2b8ff013cb61f522f35c7eba7169c6878bae33dd8cfb7a76e7faa39d456bd9ac",
+  "blind_review_receipt": "SEPARATE_FROM_STATIC_BUILD",
+  "blind_tree_sha256": "523812efd755e3666dc3f33ab30d1d34e48dfafdffac8a2b49db589422062ddc",
+  "checks": [
+    "12 unique synthetic matters",
+    "four motifs match the empirical allocation",
+    "three controlled worlds per matter",
+    "17 documents per world",
+    "all declared facts have visible locators",
+    "only the declared document changes in each mutation",
+    "no authority identifiers leak into blind files",
+    "weekly timeline offsets preserve the reviewed weekday relation",
+    "known 2026 court closures are absent from deadline windows"
+  ],
+  "document_count": 612,
+  "empirical_basis_sha256": "e63c8444718ffa4819c186c78be3f1fc801c587e32ccc99be4efb250bfe9184a",
+  "matter_count": 12,
+  "motif_counts": {
+    "contrato_peticao_decisao": 2,
+    "decisao_oficio_certidao": 3,
+    "peticao_decisao_certidao": 4,
+    "peticao_decisao_peticao": 3
+  },
+  "schema_version": 1,
+  "seed_spec_sha256": "bf5ac3aad1d3ef26da813e154a51a233180347605a55e2c1ca58a8f4f1402323",
+  "status": "STATIC_PASS",
+  "world_count": 36
+}

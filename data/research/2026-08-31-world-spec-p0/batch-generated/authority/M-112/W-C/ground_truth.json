@@ -1,0 +1,69 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "O comprovante existe, mas diário e certidão divergem sobre a data da publicação, tornando ambígua a tempestividade.",
+  "effective_spec_sha256": "8cf480c06240eb5964c01765d0f9223d66fcd7cbc6f3123ca350a20d99e6a76e",
+  "expected_observations": [
+    {
+      "claim": "O Diário registra publicação em 2026-07-29 e a certidão registra 2026-07-27.",
+      "class": "contradiction",
+      "evidence": [
+        "11-diario-justica.md",
+        "12-certidao-publicacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência à tempestividade do pagamento.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver o marco inicial, não é seguro concluir se o pagamento de 2026-08-18 ocorreu dentro do prazo.",
+      "class": "relation",
+      "evidence": [
+        "10-despacho-intimacao.md",
+        "11-diario-justica.md",
+        "12-certidao-publicacao.md",
+        "14-registro-bancario.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis e pede conferência da publicação oficial antes de afirmar mora ou tempestividade.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-112",
+  "motif": "contrato_peticao_decisao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-112",
+    "F002": "4ª Vara Cível da Comarca Experimental de Nuvem",
+    "F003": "Boreal Isolamento Acústico Ltda.",
+    "F004": "Cobalto Estúdios Industriais S.A.",
+    "F010": "2025-10-04",
+    "F011": "fornecimento e instalação de módulos de isolamento acústico",
+    "F012": "91.250,00",
+    "F013": "2025-11-09",
+    "F014": "2025-12-09",
+    "F020": "2026-01-04",
+    "F021": "2026-04-16",
+    "F022": "pagar R$ 91.250,00, com atualização pelo IPCA-E desde 2025-12-09 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-06-11",
+    "F024": "2026-01-14",
+    "F030": "2026-07-24",
+    "F031": "102.650,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-07-24 e juros simples de 1% ao mês desde 2026-01-14",
+    "F040": "2026-07-24",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-07-29",
+    "F043": "2026-07-27",
+    "F050": "2026-08-18",
+    "F051": "102.650,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-112",
+    "F060": "2026-07-30 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-08-20 09:10",
+    "F070": "no período de 2026-07-27 a 2026-08-19, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-07-27 a 2026-08-19"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

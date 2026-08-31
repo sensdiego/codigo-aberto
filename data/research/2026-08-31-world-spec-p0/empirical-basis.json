@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "applies_to_dataset_revision": 3,
+  "pattern_report_path": "../2026-08-31-fsbrain-patterns/pattern-report.json",
+  "pattern_report_source_commit": "b1d871d7e489a6dacc0a9b60f2bfc38f9ecc99a2",
+  "coverage_snapshot": {
+    "eligible_cases": 237,
+    "cases_with_typed_sections": 231,
+    "cases_with_movements": 37,
+    "cases_with_any_full_autos_note": 4
+  },
+  "supported_topology": [
+    {
+      "pattern": "section_transitions",
+      "from": "peticao",
+      "to": "decisao",
+      "count": 668,
+      "case_support": 113
+    },
+    {
+      "pattern": "section_transitions",
+      "from": "decisao",
+      "to": "certidao",
+      "count": 653,
+      "case_support": 132
+    },
+    {
+      "pattern": "document_type_cooccurrences",
+      "left": "contrato",
+      "right": "peticao",
+      "case_support": 102
+    },
+    {
+      "pattern": "movement_transitions",
+      "from": "peticao_manifestacao",
+      "to": "decisao",
+      "count": 81,
+      "case_support": 29
+    },
+    {
+      "pattern": "movement_transitions",
+      "from": "despacho",
+      "to": "citacao_intimacao",
+      "count": 124,
+      "case_support": 22
+    }
+  ],
+  "limit": "A base sustenta a topologia documental do P0, não a representatividade de uma história processual integral nem a distribuição substantiva do litígio."
+}

@@ -1,0 +1,64 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente, com comprovante de pagamento presente e datas de publicação convergentes.",
+  "effective_spec_sha256": "945dc164323da40c2979eb6ad10c1a801f540acaaab265a39d0982ffc28b81de",
+  "expected_observations": [
+    {
+      "claim": "A executada alegou e documentou transferência de R$ 94.780,00 em 2026-03-24.",
+      "class": "fact",
+      "evidence": [
+        "13-email-executada.md",
+        "14-registro-bancario.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre o e-mail e o comprovante, sem tratar isso como ordem judicial de extinção.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Pede confirmação do crédito na conta judicial e pronunciamento do juízo antes de encerrar o assunto.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-101",
+  "motif": "peticao_decisao_certidao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-101",
+    "F002": "1ª Vara Cível da Comarca Experimental de Aurora",
+    "F003": "Aurora Sistemas Térmicos Ltda.",
+    "F004": "Bruma Centros Logísticos S.A.",
+    "F010": "2025-05-10",
+    "F011": "fornecimento e instalação de módulos de refrigeração para armazém",
+    "F012": "84.000,00",
+    "F013": "2025-06-15",
+    "F014": "2025-07-15",
+    "F020": "2025-08-10",
+    "F021": "2025-11-20",
+    "F022": "pagar R$ 84.000,00, com atualização pelo IPCA-E desde 2025-07-15 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-01-15",
+    "F024": "2025-08-20",
+    "F030": "2026-02-27",
+    "F031": "94.780,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-02-27 e juros simples de 1% ao mês desde 2025-08-20",
+    "F040": "2026-02-27",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-03-04",
+    "F043": "2026-03-04",
+    "F050": "2026-03-24",
+    "F051": "94.780,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-101",
+    "F060": "2026-03-05 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-03-26 09:10",
+    "F070": "no período de 2026-03-02 a 2026-03-25, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-03-02 a 2026-03-25"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

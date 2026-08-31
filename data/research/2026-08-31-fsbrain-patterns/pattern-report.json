@@ -1,0 +1,1328 @@
+{
+  "coverage": {
+    "cases_with_any_full_autos_note": 4,
+    "cases_with_movements": 37,
+    "cases_with_typed_sections": 231,
+    "deduplicated_movements": 6828,
+    "eligible_case_output_markdown": 8520,
+    "eligible_cases": 237,
+    "eligible_cases_with_source_notes": 237,
+    "full_autos_source_notes": 13,
+    "movement_identity_category_conflicts": 0,
+    "movements_without_numeric_major_order": 0,
+    "movements_without_proceeding_id": 0,
+    "output_markdown_parse_errors_global": 95,
+    "registered_cases": 259,
+    "source_notes_parse_errors": 0,
+    "source_notes_parsed": 7852,
+    "source_notes_with_movements": 43,
+    "structured_proceeding_sequences": 39,
+    "typed_sections": 8027
+  },
+  "coverage_limits": [
+    "document_and_section_patterns_apply_to_the_eligible_corpus_only",
+    "movement_patterns_apply_only_to_cases_with_structured_movements",
+    "full_procedural_history_must_not_be_inferred_from_partial_material",
+    "human_validation_status_is_not_a_ground_truth_label_for_each_extracted_pattern"
+  ],
+  "distributions": {
+    "document_types_by_source_note": [
+      {
+        "category": "outro",
+        "count": 3468
+      },
+      {
+        "category": "ata",
+        "count": 907
+      },
+      {
+        "category": "decisao",
+        "count": 896
+      },
+      {
+        "category": "nota",
+        "count": 717
+      },
+      {
+        "category": "contrato",
+        "count": 562
+      },
+      {
+        "category": "peticao",
+        "count": 506
+      },
+      {
+        "category": "comprovante",
+        "count": 371
+      },
+      {
+        "category": "procuracao",
+        "count": 204
+      },
+      {
+        "category": "matricula",
+        "count": 98
+      },
+      {
+        "category": "conversa",
+        "count": 81
+      },
+      {
+        "category": "audio_transcript",
+        "count": 22
+      },
+      {
+        "category": "email",
+        "count": 14
+      },
+      {
+        "category": "analise_interna",
+        "count": 4
+      },
+      {
+        "category": "mapa",
+        "count": 1
+      },
+      {
+        "category": "roteiro",
+        "count": 1
+      }
+    ],
+    "material_scopes_by_case": [
+      {
+        "category": "legal_one_ged_partial",
+        "count": 225
+      },
+      {
+        "category": "document_bundle_partial",
+        "count": 53
+      },
+      {
+        "category": "delta_only",
+        "count": 10
+      },
+      {
+        "category": "full_autos",
+        "count": 4
+      },
+      {
+        "category": "unset",
+        "count": 2
+      }
+    ],
+    "material_scopes_by_source_note": [
+      {
+        "category": "legal_one_ged_partial",
+        "count": 6853
+      },
+      {
+        "category": "document_bundle_partial",
+        "count": 889
+      },
+      {
+        "category": "delta_only",
+        "count": 95
+      },
+      {
+        "category": "full_autos",
+        "count": 13
+      },
+      {
+        "category": "unset",
+        "count": 2
+      }
+    ],
+    "movement_categories": [
+      {
+        "category": "citacao_intimacao",
+        "count": 2086
+      },
+      {
+        "category": "outro",
+        "count": 1950
+      },
+      {
+        "category": "peticao_manifestacao",
+        "count": 818
+      },
+      {
+        "category": "expedicao_oficio",
+        "count": 388
+      },
+      {
+        "category": "despacho",
+        "count": 366
+      },
+      {
+        "category": "certidao_secretaria",
+        "count": 261
+      },
+      {
+        "category": "prazo",
+        "count": 259
+      },
+      {
+        "category": "decisao",
+        "count": 232
+      },
+      {
+        "category": "prova_pericia",
+        "count": 187
+      },
+      {
+        "category": "remessa_retorno",
+        "count": 118
+      },
+      {
+        "category": "recurso",
+        "count": 43
+      },
+      {
+        "category": "financeiro_constricao",
+        "count": 41
+      },
+      {
+        "category": "suspensao",
+        "count": 39
+      },
+      {
+        "category": "audiencia",
+        "count": 22
+      },
+      {
+        "category": "distribuicao_autuacao",
+        "count": 11
+      },
+      {
+        "category": "arquivamento_baixa",
+        "count": 7
+      }
+    ],
+    "section_types": [
+      {
+        "category": "decisao",
+        "count": 3522
+      },
+      {
+        "category": "certidao",
+        "count": 1836
+      },
+      {
+        "category": "peticao",
+        "count": 1198
+      },
+      {
+        "category": "oficio",
+        "count": 1013
+      },
+      {
+        "category": "contrato",
+        "count": 458
+      }
+    ],
+    "source_systems_by_case": [
+      {
+        "category": "legal_one",
+        "count": 225
+      },
+      {
+        "category": "unset",
+        "count": 42
+      },
+      {
+        "category": "fs_archive",
+        "count": 6
+      },
+      {
+        "category": "local_import",
+        "count": 6
+      },
+      {
+        "category": "upload_inbox",
+        "count": 3
+      },
+      {
+        "category": "manual_upload",
+        "count": 2
+      },
+      {
+        "category": "reconstructed",
+        "count": 2
+      },
+      {
+        "category": "google_drive",
+        "count": 1
+      },
+      {
+        "category": "projudi",
+        "count": 1
+      }
+    ],
+    "source_systems_by_source_note": [
+      {
+        "category": "legal_one",
+        "count": 6853
+      },
+      {
+        "category": "upload_inbox",
+        "count": 650
+      },
+      {
+        "category": "local_import",
+        "count": 145
+      },
+      {
+        "category": "reconstructed",
+        "count": 67
+      },
+      {
+        "category": "manual_upload",
+        "count": 56
+      },
+      {
+        "category": "unset",
+        "count": 56
+      },
+      {
+        "category": "fs_archive",
+        "count": 23
+      },
+      {
+        "category": "google_drive",
+        "count": 1
+      },
+      {
+        "category": "projudi",
+        "count": 1
+      }
+    ]
+  },
+  "human_validation": [
+    {
+      "category": "rascunho_agente",
+      "count": 232
+    },
+    {
+      "category": "validado_responsavel",
+      "count": 5
+    }
+  ],
+  "patterns": {
+    "document_type_cooccurrences": [
+      {
+        "case_support": 189,
+        "left": "decisao",
+        "right": "outro"
+      },
+      {
+        "case_support": 171,
+        "left": "ata",
+        "right": "outro"
+      },
+      {
+        "case_support": 151,
+        "left": "ata",
+        "right": "decisao"
+      },
+      {
+        "case_support": 145,
+        "left": "contrato",
+        "right": "outro"
+      },
+      {
+        "case_support": 133,
+        "left": "outro",
+        "right": "peticao"
+      },
+      {
+        "case_support": 131,
+        "left": "contrato",
+        "right": "decisao"
+      },
+      {
+        "case_support": 121,
+        "left": "ata",
+        "right": "contrato"
+      },
+      {
+        "case_support": 119,
+        "left": "decisao",
+        "right": "peticao"
+      },
+      {
+        "case_support": 117,
+        "left": "ata",
+        "right": "peticao"
+      },
+      {
+        "case_support": 102,
+        "left": "comprovante",
+        "right": "outro"
+      },
+      {
+        "case_support": 102,
+        "left": "contrato",
+        "right": "peticao"
+      },
+      {
+        "case_support": 96,
+        "left": "ata",
+        "right": "comprovante"
+      },
+      {
+        "case_support": 91,
+        "left": "comprovante",
+        "right": "decisao"
+      },
+      {
+        "case_support": 88,
+        "left": "outro",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 75,
+        "left": "comprovante",
+        "right": "contrato"
+      },
+      {
+        "case_support": 74,
+        "left": "ata",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 74,
+        "left": "comprovante",
+        "right": "peticao"
+      },
+      {
+        "case_support": 70,
+        "left": "decisao",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 64,
+        "left": "contrato",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 62,
+        "left": "peticao",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 46,
+        "left": "comprovante",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 38,
+        "left": "conversa",
+        "right": "outro"
+      },
+      {
+        "case_support": 34,
+        "left": "matricula",
+        "right": "outro"
+      },
+      {
+        "case_support": 33,
+        "left": "ata",
+        "right": "conversa"
+      },
+      {
+        "case_support": 32,
+        "left": "ata",
+        "right": "matricula"
+      },
+      {
+        "case_support": 32,
+        "left": "conversa",
+        "right": "decisao"
+      },
+      {
+        "case_support": 31,
+        "left": "decisao",
+        "right": "matricula"
+      },
+      {
+        "case_support": 30,
+        "left": "contrato",
+        "right": "conversa"
+      },
+      {
+        "case_support": 28,
+        "left": "comprovante",
+        "right": "conversa"
+      },
+      {
+        "case_support": 28,
+        "left": "conversa",
+        "right": "peticao"
+      },
+      {
+        "case_support": 26,
+        "left": "contrato",
+        "right": "matricula"
+      },
+      {
+        "case_support": 26,
+        "left": "matricula",
+        "right": "peticao"
+      },
+      {
+        "case_support": 20,
+        "left": "comprovante",
+        "right": "matricula"
+      },
+      {
+        "case_support": 20,
+        "left": "conversa",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 20,
+        "left": "matricula",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 14,
+        "left": "audio_transcript",
+        "right": "outro"
+      },
+      {
+        "case_support": 12,
+        "left": "audio_transcript",
+        "right": "decisao"
+      },
+      {
+        "case_support": 11,
+        "left": "ata",
+        "right": "audio_transcript"
+      },
+      {
+        "case_support": 11,
+        "left": "audio_transcript",
+        "right": "peticao"
+      },
+      {
+        "case_support": 10,
+        "left": "audio_transcript",
+        "right": "comprovante"
+      },
+      {
+        "case_support": 10,
+        "left": "audio_transcript",
+        "right": "contrato"
+      },
+      {
+        "case_support": 9,
+        "left": "audio_transcript",
+        "right": "conversa"
+      },
+      {
+        "case_support": 8,
+        "left": "conversa",
+        "right": "matricula"
+      },
+      {
+        "case_support": 8,
+        "left": "decisao",
+        "right": "email"
+      },
+      {
+        "case_support": 7,
+        "left": "ata",
+        "right": "email"
+      },
+      {
+        "case_support": 7,
+        "left": "audio_transcript",
+        "right": "procuracao"
+      },
+      {
+        "case_support": 7,
+        "left": "email",
+        "right": "outro"
+      },
+      {
+        "case_support": 7,
+        "left": "email",
+        "right": "peticao"
+      },
+      {
+        "case_support": 6,
+        "left": "comprovante",
+        "right": "email"
+      },
+      {
+        "case_support": 5,
+        "left": "nota",
+        "right": "outro"
+      }
+    ],
+    "movement_transitions": [
+      {
+        "case_support": 35,
+        "count": 898,
+        "from": "outro",
+        "to": "outro"
+      },
+      {
+        "case_support": 35,
+        "count": 394,
+        "from": "outro",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 34,
+        "count": 938,
+        "from": "citacao_intimacao",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 34,
+        "count": 500,
+        "from": "citacao_intimacao",
+        "to": "outro"
+      },
+      {
+        "case_support": 31,
+        "count": 269,
+        "from": "citacao_intimacao",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 31,
+        "count": 154,
+        "from": "peticao_manifestacao",
+        "to": "outro"
+      },
+      {
+        "case_support": 30,
+        "count": 107,
+        "from": "decisao",
+        "to": "outro"
+      },
+      {
+        "case_support": 29,
+        "count": 212,
+        "from": "outro",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 29,
+        "count": 81,
+        "from": "peticao_manifestacao",
+        "to": "decisao"
+      },
+      {
+        "case_support": 29,
+        "count": 47,
+        "from": "outro",
+        "to": "remessa_retorno"
+      },
+      {
+        "case_support": 28,
+        "count": 196,
+        "from": "peticao_manifestacao",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 26,
+        "count": 46,
+        "from": "outro",
+        "to": "decisao"
+      },
+      {
+        "case_support": 25,
+        "count": 134,
+        "from": "peticao_manifestacao",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 22,
+        "count": 124,
+        "from": "despacho",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 21,
+        "count": 122,
+        "from": "certidao_secretaria",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 21,
+        "count": 97,
+        "from": "citacao_intimacao",
+        "to": "expedicao_oficio"
+      },
+      {
+        "case_support": 20,
+        "count": 88,
+        "from": "expedicao_oficio",
+        "to": "outro"
+      },
+      {
+        "case_support": 19,
+        "count": 92,
+        "from": "outro",
+        "to": "expedicao_oficio"
+      },
+      {
+        "case_support": 19,
+        "count": 68,
+        "from": "despacho",
+        "to": "outro"
+      },
+      {
+        "case_support": 19,
+        "count": 65,
+        "from": "decisao",
+        "to": "despacho"
+      },
+      {
+        "case_support": 19,
+        "count": 42,
+        "from": "peticao_manifestacao",
+        "to": "expedicao_oficio"
+      },
+      {
+        "case_support": 19,
+        "count": 35,
+        "from": "remessa_retorno",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 18,
+        "count": 94,
+        "from": "outro",
+        "to": "prazo"
+      },
+      {
+        "case_support": 18,
+        "count": 61,
+        "from": "citacao_intimacao",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 17,
+        "count": 93,
+        "from": "expedicao_oficio",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 17,
+        "count": 48,
+        "from": "prazo",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 17,
+        "count": 41,
+        "from": "citacao_intimacao",
+        "to": "decisao"
+      },
+      {
+        "case_support": 16,
+        "count": 36,
+        "from": "citacao_intimacao",
+        "to": "prova_pericia"
+      },
+      {
+        "case_support": 15,
+        "count": 77,
+        "from": "peticao_manifestacao",
+        "to": "despacho"
+      },
+      {
+        "case_support": 15,
+        "count": 63,
+        "from": "outro",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 15,
+        "count": 54,
+        "from": "prova_pericia",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 14,
+        "count": 94,
+        "from": "despacho",
+        "to": "despacho"
+      },
+      {
+        "case_support": 14,
+        "count": 17,
+        "from": "remessa_retorno",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 13,
+        "count": 44,
+        "from": "peticao_manifestacao",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 13,
+        "count": 39,
+        "from": "citacao_intimacao",
+        "to": "despacho"
+      },
+      {
+        "case_support": 13,
+        "count": 27,
+        "from": "outro",
+        "to": "prova_pericia"
+      },
+      {
+        "case_support": 13,
+        "count": 26,
+        "from": "expedicao_oficio",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 13,
+        "count": 16,
+        "from": "remessa_retorno",
+        "to": "outro"
+      },
+      {
+        "case_support": 12,
+        "count": 101,
+        "from": "expedicao_oficio",
+        "to": "expedicao_oficio"
+      },
+      {
+        "case_support": 12,
+        "count": 33,
+        "from": "peticao_manifestacao",
+        "to": "remessa_retorno"
+      },
+      {
+        "case_support": 12,
+        "count": 33,
+        "from": "prazo",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 12,
+        "count": 30,
+        "from": "outro",
+        "to": "despacho"
+      },
+      {
+        "case_support": 12,
+        "count": 23,
+        "from": "decisao",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 11,
+        "count": 91,
+        "from": "prazo",
+        "to": "prazo"
+      },
+      {
+        "case_support": 11,
+        "count": 35,
+        "from": "citacao_intimacao",
+        "to": "prazo"
+      },
+      {
+        "case_support": 11,
+        "count": 33,
+        "from": "prazo",
+        "to": "outro"
+      },
+      {
+        "case_support": 11,
+        "count": 28,
+        "from": "certidao_secretaria",
+        "to": "outro"
+      },
+      {
+        "case_support": 11,
+        "count": 22,
+        "from": "prova_pericia",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 10,
+        "count": 43,
+        "from": "expedicao_oficio",
+        "to": "prova_pericia"
+      },
+      {
+        "case_support": 10,
+        "count": 33,
+        "from": "despacho",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 10,
+        "count": 22,
+        "from": "certidao_secretaria",
+        "to": "despacho"
+      },
+      {
+        "case_support": 10,
+        "count": 20,
+        "from": "financeiro_constricao",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 10,
+        "count": 11,
+        "from": "distribuicao_autuacao",
+        "to": "remessa_retorno"
+      },
+      {
+        "case_support": 9,
+        "count": 25,
+        "from": "peticao_manifestacao",
+        "to": "prazo"
+      },
+      {
+        "case_support": 9,
+        "count": 17,
+        "from": "prova_pericia",
+        "to": "outro"
+      },
+      {
+        "case_support": 9,
+        "count": 16,
+        "from": "certidao_secretaria",
+        "to": "decisao"
+      },
+      {
+        "case_support": 9,
+        "count": 14,
+        "from": "decisao",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 9,
+        "count": 11,
+        "from": "citacao_intimacao",
+        "to": "financeiro_constricao"
+      },
+      {
+        "case_support": 8,
+        "count": 13,
+        "from": "certidao_secretaria",
+        "to": "peticao_manifestacao"
+      },
+      {
+        "case_support": 8,
+        "count": 10,
+        "from": "expedicao_oficio",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 8,
+        "count": 10,
+        "from": "prazo",
+        "to": "despacho"
+      },
+      {
+        "case_support": 7,
+        "count": 68,
+        "from": "prova_pericia",
+        "to": "prova_pericia"
+      },
+      {
+        "case_support": 7,
+        "count": 30,
+        "from": "certidao_secretaria",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 7,
+        "count": 18,
+        "from": "prazo",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 7,
+        "count": 15,
+        "from": "audiencia",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 7,
+        "count": 12,
+        "from": "outro",
+        "to": "recurso"
+      },
+      {
+        "case_support": 7,
+        "count": 12,
+        "from": "recurso",
+        "to": "outro"
+      },
+      {
+        "case_support": 7,
+        "count": 11,
+        "from": "prazo",
+        "to": "decisao"
+      },
+      {
+        "case_support": 7,
+        "count": 11,
+        "from": "remessa_retorno",
+        "to": "certidao_secretaria"
+      },
+      {
+        "case_support": 7,
+        "count": 10,
+        "from": "outro",
+        "to": "financeiro_constricao"
+      },
+      {
+        "case_support": 6,
+        "count": 13,
+        "from": "certidao_secretaria",
+        "to": "expedicao_oficio"
+      },
+      {
+        "case_support": 6,
+        "count": 13,
+        "from": "citacao_intimacao",
+        "to": "suspensao"
+      },
+      {
+        "case_support": 6,
+        "count": 13,
+        "from": "suspensao",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 6,
+        "count": 11,
+        "from": "citacao_intimacao",
+        "to": "recurso"
+      },
+      {
+        "case_support": 6,
+        "count": 8,
+        "from": "citacao_intimacao",
+        "to": "remessa_retorno"
+      },
+      {
+        "case_support": 6,
+        "count": 6,
+        "from": "outro",
+        "to": "distribuicao_autuacao"
+      },
+      {
+        "case_support": 6,
+        "count": 6,
+        "from": "remessa_retorno",
+        "to": "audiencia"
+      },
+      {
+        "case_support": 5,
+        "count": 16,
+        "from": "despacho",
+        "to": "expedicao_oficio"
+      },
+      {
+        "case_support": 5,
+        "count": 13,
+        "from": "expedicao_oficio",
+        "to": "despacho"
+      },
+      {
+        "case_support": 5,
+        "count": 11,
+        "from": "suspensao",
+        "to": "outro"
+      },
+      {
+        "case_support": 5,
+        "count": 10,
+        "from": "recurso",
+        "to": "citacao_intimacao"
+      },
+      {
+        "case_support": 5,
+        "count": 9,
+        "from": "peticao_manifestacao",
+        "to": "suspensao"
+      },
+      {
+        "case_support": 5,
+        "count": 8,
+        "from": "remessa_retorno",
+        "to": "decisao"
+      },
+      {
+        "case_support": 5,
+        "count": 7,
+        "from": "financeiro_constricao",
+        "to": "outro"
+      },
+      {
+        "case_support": 5,
+        "count": 7,
+        "from": "recurso",
+        "to": "decisao"
+      },
+      {
+        "case_support": 5,
+        "count": 7,
+        "from": "recurso",
+        "to": "despacho"
+      },
+      {
+        "case_support": 5,
+        "count": 6,
+        "from": "certidao_secretaria",
+        "to": "remessa_retorno"
+      },
+      {
+        "case_support": 5,
+        "count": 6,
+        "from": "prova_pericia",
+        "to": "despacho"
+      },
+      {
+        "case_support": 5,
+        "count": 5,
+        "from": "peticao_manifestacao",
+        "to": "prova_pericia"
+      }
+    ],
+    "section_transitions": [
+      {
+        "case_support": 132,
+        "count": 653,
+        "from": "decisao",
+        "to": "certidao"
+      },
+      {
+        "case_support": 113,
+        "count": 668,
+        "from": "peticao",
+        "to": "decisao"
+      },
+      {
+        "case_support": 105,
+        "count": 619,
+        "from": "decisao",
+        "to": "peticao"
+      },
+      {
+        "case_support": 89,
+        "count": 520,
+        "from": "certidao",
+        "to": "decisao"
+      },
+      {
+        "case_support": 83,
+        "count": 351,
+        "from": "decisao",
+        "to": "oficio"
+      },
+      {
+        "case_support": 81,
+        "count": 317,
+        "from": "oficio",
+        "to": "decisao"
+      },
+      {
+        "case_support": 54,
+        "count": 160,
+        "from": "oficio",
+        "to": "certidao"
+      },
+      {
+        "case_support": 54,
+        "count": 121,
+        "from": "peticao",
+        "to": "oficio"
+      },
+      {
+        "case_support": 52,
+        "count": 156,
+        "from": "peticao",
+        "to": "certidao"
+      },
+      {
+        "case_support": 46,
+        "count": 161,
+        "from": "certidao",
+        "to": "peticao"
+      },
+      {
+        "case_support": 45,
+        "count": 197,
+        "from": "contrato",
+        "to": "decisao"
+      },
+      {
+        "case_support": 45,
+        "count": 166,
+        "from": "decisao",
+        "to": "contrato"
+      },
+      {
+        "case_support": 38,
+        "count": 131,
+        "from": "certidao",
+        "to": "oficio"
+      },
+      {
+        "case_support": 33,
+        "count": 97,
+        "from": "oficio",
+        "to": "peticao"
+      },
+      {
+        "case_support": 32,
+        "count": 66,
+        "from": "contrato",
+        "to": "peticao"
+      },
+      {
+        "case_support": 27,
+        "count": 64,
+        "from": "peticao",
+        "to": "contrato"
+      },
+      {
+        "case_support": 27,
+        "count": 55,
+        "from": "contrato",
+        "to": "certidao"
+      },
+      {
+        "case_support": 20,
+        "count": 55,
+        "from": "certidao",
+        "to": "contrato"
+      },
+      {
+        "case_support": 14,
+        "count": 48,
+        "from": "contrato",
+        "to": "oficio"
+      },
+      {
+        "case_support": 10,
+        "count": 24,
+        "from": "oficio",
+        "to": "contrato"
+      }
+    ],
+    "section_type_cooccurrences": [
+      {
+        "case_support": 189,
+        "left": "certidao",
+        "right": "decisao"
+      },
+      {
+        "case_support": 151,
+        "left": "decisao",
+        "right": "peticao"
+      },
+      {
+        "case_support": 145,
+        "left": "decisao",
+        "right": "oficio"
+      },
+      {
+        "case_support": 141,
+        "left": "certidao",
+        "right": "peticao"
+      },
+      {
+        "case_support": 139,
+        "left": "certidao",
+        "right": "oficio"
+      },
+      {
+        "case_support": 120,
+        "left": "oficio",
+        "right": "peticao"
+      },
+      {
+        "case_support": 76,
+        "left": "certidao",
+        "right": "contrato"
+      },
+      {
+        "case_support": 76,
+        "left": "contrato",
+        "right": "decisao"
+      },
+      {
+        "case_support": 68,
+        "left": "contrato",
+        "right": "peticao"
+      },
+      {
+        "case_support": 65,
+        "left": "contrato",
+        "right": "oficio"
+      }
+    ]
+  },
+  "per_case_quantiles": {
+    "movements_all_eligible_cases": {
+      "max": 866,
+      "median": 0,
+      "min": 0,
+      "p25": 0,
+      "p75": 0,
+      "p95": 193
+    },
+    "movements_contributing_cases": {
+      "max": 866,
+      "median": 117,
+      "min": 1,
+      "p25": 48,
+      "p75": 258,
+      "p95": 466
+    },
+    "source_notes_all_eligible_cases": {
+      "max": 643,
+      "median": 24,
+      "min": 1,
+      "p25": 10,
+      "p75": 41,
+      "p95": 78
+    },
+    "typed_sections_all_eligible_cases": {
+      "max": 535,
+      "median": 20,
+      "min": 0,
+      "p25": 7,
+      "p75": 38,
+      "p95": 95
+    }
+  },
+  "privacy_contract": {
+    "excluded": [
+      "case_identifiers",
+      "client_or_party_names",
+      "process_numbers",
+      "document_text",
+      "dates",
+      "monetary_values",
+      "raw_titles",
+      "raw_movement_descriptions"
+    ],
+    "output": "aggregate_counts_and_fixed_categories_only"
+  },
+  "schema_version": "fsbrain-aggregate-patterns-v1",
+  "selection": {
+    "case_rule": "ingestion_status_liberada",
+    "min_case_support": 5,
+    "source_note_rule": "registered_case_output_under_source_documents"
+  },
+  "source_commit": "b1d871d7e489a6dacc0a9b60f2bfc38f9ecc99a2"
+}

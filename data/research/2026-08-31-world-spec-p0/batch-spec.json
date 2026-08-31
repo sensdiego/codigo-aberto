@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "batch_id": "br-civel-cumprimento-calibrado-v1",
+  "seed_spec_sha256": "bf5ac3aad1d3ef26da813e154a51a233180347605a55e2c1ca58a8f4f1402323",
+  "empirical_basis_sha256": "e63c8444718ffa4819c186c78be3f1fc801c587e32ccc99be4efb250bfe9184a",
+  "worlds_per_matter": 3,
+  "timeline_policy": "weekly_offsets_preserving_reviewed_weekday_relation",
+  "motifs": {
+    "peticao_decisao_certidao": {
+      "target_count": 4,
+      "evidence_document_ids": ["D030", "D040", "D042"],
+      "focus_instruction": "Dê atenção especial à cadeia entre o requerimento de cumprimento, o despacho de intimação e a certidão de publicação, sem ignorar os demais documentos."
+    },
+    "peticao_decisao_peticao": {
+      "target_count": 3,
+      "evidence_document_ids": ["D020", "D022", "D030"],
+      "focus_instruction": "Dê atenção especial à cadeia entre a petição inicial, a sentença e o requerimento de cumprimento, sem ignorar os demais documentos."
+    },
+    "decisao_oficio_certidao": {
+      "target_count": 3,
+      "evidence_document_ids": ["D040", "D041", "D042"],
+      "focus_instruction": "Dê atenção especial à cadeia entre o despacho, o ofício de intimação e a certidão de publicação, sem ignorar os demais documentos."
+    },
+    "contrato_peticao_decisao": {
+      "target_count": 2,
+      "evidence_document_ids": ["D010", "D020", "D022"],
+      "focus_instruction": "Dê atenção especial à cadeia entre o contrato, a petição inicial e a sentença, sem ignorar os demais documentos."
+    }
+  },
+  "matters": [
+    {
+      "id": "M-101",
+      "motif": "peticao_decisao_certidao",
+      "process": "BR-CIV-EXEC-101",
+      "court": "1ª Vara Cível da Comarca Experimental de Aurora",
+      "creditor": "Aurora Sistemas Térmicos Ltda.",
+      "debtor": "Bruma Centros Logísticos S.A.",
+      "object": "fornecimento e instalação de módulos de refrigeração para armazém",
+      "principal_brl": "84.000,00",
+      "updated_brl": "94.780,00",
+      "timeline_shift_weeks": 0
+    },
+    {
+      "id": "M-102",
+      "motif": "peticao_decisao_certidao",
+      "process": "BR-CIV-EXEC-102",
+      "court": "2ª Vara Cível da Comarca Experimental de Brisa",
+      "creditor": "Cedro Energia Modular Ltda.",
+      "debtor": "Duna Alimentos Refrigerados S.A.",
+      "object": "fornecimento e instalação de inversores solares industriais",
+      "principal_brl": "126.500,00",
+      "updated_brl": "142.390,00",
+      "timeline_shift_weeks": 1
+    },
+    {
+      "id": "M-103",
+      "motif": "peticao_decisao_certidao",
+      "process": "BR-CIV-EXEC-103",
+      "court": "3ª Vara Cível da Comarca Experimental de Cedro",
+      "creditor": "Estuário Automação Industrial Ltda.",
+      "debtor": "Fanal Distribuição Integrada S.A.",
+      "object": "fornecimento e instalação de unidades de automação de estoque",
+      "principal_brl": "215.000,00",
+      "updated_brl": "241.870,00",
+      "timeline_shift_weeks": 9
+    },
+    {
+      "id": "M-104",
+      "motif": "peticao_decisao_certidao",
+      "process": "BR-CIV-EXEC-104",
+      "court": "4ª Vara Cível da Comarca Experimental de Duna",
+      "creditor": "Horizonte Bombas e Fluidos Ltda.",
+      "debtor": "Íris Processos Ambientais S.A.",
+      "object": "fornecimento e instalação de bombas para tratamento de água",
+      "principal_brl": "68.750,00",
+      "updated_brl": "77.340,00",
+      "timeline_shift_weeks": 10
+    },
+    {
+      "id": "M-105",
+      "motif": "peticao_decisao_peticao",
+      "process": "BR-CIV-EXEC-105",
+      "court": "1ª Vara Cível da Comarca Experimental de Estrela",
+      "creditor": "Jatobá Instrumentação Ltda.",
+      "debtor": "Lume Diagnósticos Industriais S.A.",
+      "object": "fornecimento e instalação de scanners de precisão laboratorial",
+      "principal_brl": "152.000,00",
+      "updated_brl": "170.920,00",
+      "timeline_shift_weeks": 14
+    },
+    {
+      "id": "M-106",
+      "motif": "peticao_decisao_peticao",
+      "process": "BR-CIV-EXEC-106",
+      "court": "2ª Vara Cível da Comarca Experimental de Foz",
+      "creditor": "Mirante Docas Móveis Ltda.",
+      "debtor": "Nascente Operações Portuárias S.A.",
+      "object": "fornecimento e instalação de plataformas móveis de carregamento",
+      "principal_brl": "97.300,00",
+      "updated_brl": "109.460,00",
+      "timeline_shift_weeks": 15
+    },
+    {
+      "id": "M-107",
+      "motif": "peticao_decisao_peticao",
+      "process": "BR-CIV-EXEC-107",
+      "court": "3ª Vara Cível da Comarca Experimental de Horizonte",
+      "creditor": "Orbe Geradores Ltda.",
+      "debtor": "Prisma Centros de Dados S.A.",
+      "object": "fornecimento e instalação de geradores industriais de contingência",
+      "principal_brl": "188.400,00",
+      "updated_brl": "211.930,00",
+      "timeline_shift_weeks": 16
+    },
+    {
+      "id": "M-108",
+      "motif": "decisao_oficio_certidao",
+      "process": "BR-CIV-EXEC-108",
+      "court": "4ª Vara Cível da Comarca Experimental de Ipê",
+      "creditor": "Quina Telemetria Ltda.",
+      "debtor": "Riacho Saneamento Modular S.A.",
+      "object": "fornecimento e instalação de painéis de telemetria operacional",
+      "principal_brl": "73.900,00",
+      "updated_brl": "83.140,00",
+      "timeline_shift_weeks": 17
+    },
+    {
+      "id": "M-109",
+      "motif": "decisao_oficio_certidao",
+      "process": "BR-CIV-EXEC-109",
+      "court": "1ª Vara Cível da Comarca Experimental de Jasmim",
+      "creditor": "Senda Filtragem Ltda.",
+      "debtor": "Trama Componentes S.A.",
+      "object": "fornecimento e instalação de unidades de filtragem de ar",
+      "principal_brl": "264.000,00",
+      "updated_brl": "296.970,00",
+      "timeline_shift_weeks": 18
+    },
+    {
+      "id": "M-110",
+      "motif": "decisao_oficio_certidao",
+      "process": "BR-CIV-EXEC-110",
+      "court": "2ª Vara Cível da Comarca Experimental de Lagoa",
+      "creditor": "Umbra Esteiras Industriais Ltda.",
+      "debtor": "Valejar Embalagens S.A.",
+      "object": "fornecimento e instalação de esteiras transportadoras modulares",
+      "principal_brl": "119.800,00",
+      "updated_brl": "134.760,00",
+      "timeline_shift_weeks": 19
+    },
+    {
+      "id": "M-111",
+      "motif": "contrato_peticao_decisao",
+      "process": "BR-CIV-EXEC-111",
+      "court": "3ª Vara Cível da Comarca Experimental de Mirante",
+      "creditor": "Zênite Armazenamento Elétrico Ltda.",
+      "debtor": "Acanto Mineração Experimental S.A.",
+      "object": "fornecimento e instalação de gabinetes de armazenamento de energia",
+      "principal_brl": "205.500,00",
+      "updated_brl": "231.160,00",
+      "timeline_shift_weeks": 20
+    },
+    {
+      "id": "M-112",
+      "motif": "contrato_peticao_decisao",
+      "process": "BR-CIV-EXEC-112",
+      "court": "4ª Vara Cível da Comarca Experimental de Nuvem",
+      "creditor": "Boreal Isolamento Acústico Ltda.",
+      "debtor": "Cobalto Estúdios Industriais S.A.",
+      "object": "fornecimento e instalação de módulos de isolamento acústico",
+      "principal_brl": "91.250,00",
+      "updated_brl": "102.650,00",
+      "timeline_shift_weeks": 21
+    }
+  ]
+}

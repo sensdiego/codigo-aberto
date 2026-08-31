@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "three opaque blind worlds",
+    "10..20 documents per world",
+    "legal source files and anchors resolve",
+    "all fact and source references resolve",
+    "every expressed fact has an exact filename:line locator",
+    "every rubric criterion names class severity and authority",
+    "blind files contain no authority labels or ids",
+    "manifests and provenance match document hashes",
+    "all expected evidence exists",
+    "blind file inventory is identical across worlds",
+    "only declared documents differ from control",
+    "chronology mutation changes weekday-only timeliness"
+  ],
+  "human_review": "PENDING",
+  "schema_version": 1,
+  "spec_sha256": "bf5ac3aad1d3ef26da813e154a51a233180347605a55e2c1ca58a8f4f1402323",
+  "status": "PASS",
+  "world_document_counts": {
+    "W-A": 17,
+    "W-B": 17,
+    "W-C": 17
+  }
+}

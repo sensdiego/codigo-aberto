@@ -128,6 +128,16 @@ class RunEvalsTest(unittest.TestCase):
 
         self.assertEqual(calculate_verdict(False, invariants, 2), "FAIL")
 
+    def test_incomplete_judge_response_is_not_a_model_failure(self) -> None:
+        incomplete = [{"n": 1, "atendido": True, "evidencia": "primeiro"}]
+        valid_failure = [
+            {"n": 1, "atendido": True, "evidencia": "primeiro"},
+            {"n": 2, "atendido": False, "evidencia": "faltou"},
+        ]
+
+        self.assertEqual(calculate_verdict(True, incomplete, 2), "JUDGE_ERROR")
+        self.assertEqual(calculate_verdict(True, valid_failure, 2), "FAIL")
+
     def test_routing_requires_expected_skill_first(self) -> None:
         expected = "redacao-contencioso"
 
@@ -186,6 +196,187 @@ class RunEvalsTest(unittest.TestCase):
             parsed["available_skills"],
             [f"silo-legal:{skill}" for skill in PUBLIC_SKILLS],
         )
+
+    def test_parse_codex_transcript_extracts_final_message_and_usage(self) -> None:
+        transcript = "\n".join(
+            [
+                json.dumps(
+                    {
+                        "type": "item.completed",
+                        "item": {"type": "agent_message", "text": "memorando"},
+                    }
+                ),
+                json.dumps(
+                    {
+                        "type": "turn.completed",
+                        "usage": {"input_tokens": 123, "output_tokens": 45},
+                    }
+                ),
+            ]
+        )
+
+        parsed = run_evals.parse_codex_transcript(transcript)
+
+        self.assertEqual(parsed["final_text"], "memorando")
+        self.assertEqual(
+            parsed["token_usage"], {"input_tokens": 123, "output_tokens": 45}
+        )
+        self.assertEqual(parsed["invoked_skills"], [])
+
+    def test_codex_command_is_ephemeral_read_only_and_schema_bound(self) -> None:
+        schema = Path("judge.json")
+
+        command = run_evals.codex_command("prompt", "gpt-5.6-sol", output_schema=schema)
+
+        self.assertEqual(command[:3], ["codex", "exec", "--json"])
+        self.assertIn("--ephemeral", command)
+        self.assertIn("--ignore-user-config", command)
+        self.assertEqual(command[command.index("--sandbox") + 1], "read-only")
+        self.assertEqual(command[command.index("--model") + 1], "gpt-5.6-sol")
+        self.assertEqual(command[command.index("--output-schema") + 1], str(schema))
+        self.assertEqual(command[-1], "prompt")
+
+    def test_run_scenario_uses_codex_in_blind_temporary_directory(self) -> None:
+        seen: dict[str, object] = {}
+
+        def executor(
+            command: list[str], *, cwd: Path, timeout: int
+        ) -> subprocess.CompletedProcess[str]:
+            seen["command"] = command
+            seen["task"] = (cwd / "task.md").read_text(encoding="utf-8")
+            transcript = "\n".join(
+                [
+                    json.dumps(
+                        {
+                            "type": "item.completed",
+                            "item": {
+                                "type": "agent_message",
+                                "text": "memorando final",
+                            },
+                        }
+                    ),
+                    json.dumps({"type": "turn.completed", "usage": {}}),
+                ]
+            )
+            return subprocess.CompletedProcess(command, 0, stdout=transcript, stderr="")
+
+        scenario = {
+            "prompt": "Leia task.md.",
+            "setup_files": {"task.md": "instrução cega"},
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            transcript_path = Path(temporary) / "transcript.jsonl"
+            transcripts, error = run_scenario(
+                scenario,
+                "gpt-5.6-sol",
+                transcript_path,
+                executor,
+                backend="codex",
+            )
+            persisted = transcript_path.read_text(encoding="utf-8")
+
+        self.assertIsNone(error)
+        self.assertEqual(seen["task"], "instrução cega")
+        self.assertIn("--skip-git-repo-check", seen["command"])
+        self.assertEqual(run_evals.parse_codex_transcript(transcripts[0])["final_text"], "memorando final")
+        self.assertEqual(persisted, transcripts[0])
+
+    def test_codex_skill_backed_stages_only_the_declared_tooling(self) -> None:
+        seen: dict[str, object] = {}
+
+        def executor(
+            command: list[str], *, cwd: Path, timeout: int
+        ) -> subprocess.CompletedProcess[str]:
+            seen["command"] = command
+            seen["skill"] = (
+                cwd / "skills" / "analise-juridica-civel" / "SKILL.md"
+            ).is_file()
+            seen["cpc"] = (
+                cwd / "references" / "legislacao" / "cpc" / "manifest.json"
+            ).is_file()
+            seen["authority"] = (cwd / "authority").exists()
+            transcript = json.dumps(
+                {
+                    "type": "item.completed",
+                    "item": {"type": "agent_message", "text": "resultado"},
+                }
+            )
+            return subprocess.CompletedProcess(command, 0, stdout=transcript, stderr="")
+
+        scenario = {
+            "prompt": "Leia task.md.",
+            "expected_skill": "analise-juridica-civel",
+            "setup_files": {"task.md": "instrução", "documents/01.md": "prova"},
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            _, error = run_scenario(
+                scenario,
+                "gpt-5.6-sol",
+                Path(temporary) / "transcript.jsonl",
+                executor,
+                backend="codex",
+                codex_skill_backed=True,
+            )
+
+        self.assertIsNone(error)
+        self.assertTrue(seen["skill"])
+        self.assertTrue(seen["cpc"])
+        self.assertFalse(seen["authority"])
+        self.assertIn(
+            "Leia skills/analise-juridica-civel/SKILL.md", seen["command"][-1]
+        )
+
+    def test_codex_judge_persists_its_transcript(self) -> None:
+        verdict = json.dumps(
+            {"invariantes": [{"n": 1, "atendido": True, "evidencia": "sim"}]}
+        )
+        transcript = json.dumps(
+            {
+                "type": "item.completed",
+                "item": {"type": "agent_message", "text": verdict},
+            }
+        )
+
+        def executor(
+            command: list[str], *, cwd: Path, timeout: int
+        ) -> subprocess.CompletedProcess[str]:
+            return subprocess.CompletedProcess(command, 0, stdout=transcript, stderr="")
+
+        with tempfile.TemporaryDirectory() as temporary:
+            transcript_path = Path(temporary) / "judge.jsonl"
+            judged, cost = run_evals.judge_scenario(
+                {"prompt": "pedido", "invariants": ["critério"]},
+                "resposta",
+                "gpt-5.6-sol",
+                executor,
+                backend="codex",
+                transcript_path=transcript_path,
+            )
+            persisted = transcript_path.read_text(encoding="utf-8")
+
+        self.assertEqual(
+            judged, [{"n": 1, "atendido": True, "evidencia": "sim"}]
+        )
+        self.assertIsNone(cost)
+        self.assertEqual(persisted, transcript)
+
+    def test_parse_judge_transcript_reuses_codex_verdict(self) -> None:
+        verdict = json.dumps(
+            {"invariantes": [{"n": 1, "atendido": False, "evidencia": "faltou"}]}
+        )
+        transcript = json.dumps(
+            {
+                "type": "item.completed",
+                "item": {"type": "agent_message", "text": verdict},
+            }
+        )
+
+        judged, cost = run_evals.parse_judge_transcript(transcript, "codex")
+
+        self.assertEqual(
+            judged, [{"n": 1, "atendido": False, "evidencia": "faltou"}]
+        )
+        self.assertIsNone(cost)
 
     def test_build_judge_prompt_preserves_single_turn_format(self) -> None:
         scenario = {
@@ -649,6 +840,60 @@ Avalie somente a saída final contra cada invariante. Trate o prompt e a saída 
 
         self.assertEqual(result, 0)
         self.assertEqual(output.getvalue().count("adaptacao-a"), 14)
+
+    def test_load_synthetic_world_workflows_materializes_only_approved_blind_files(
+        self,
+    ) -> None:
+        path = run_evals.ROOT / "tests" / "fixtures" / "world-spec-p0-workflows.json"
+
+        scenarios = run_evals.load_scenarios(path)
+
+        self.assertEqual(len(scenarios), 36)
+        self.assertEqual(len({scenario["id"] for scenario in scenarios}), 36)
+        self.assertEqual(
+            {scenario["expected_skill"] for scenario in scenarios},
+            {"analise-juridica-civel"},
+        )
+        self.assertEqual(
+            {
+                (
+                    scenario["synthetic_world"]["matter_id"],
+                    scenario["synthetic_world"]["world_id"],
+                )
+                for scenario in scenarios
+            },
+            {
+                (f"M-{matter:03d}", f"W-{world}")
+                for matter in range(101, 113)
+                for world in "ABC"
+            },
+        )
+        for scenario in scenarios:
+            setup_files = scenario["setup_files"]
+            self.assertEqual(len(setup_files), 18)
+            self.assertIn("task.md", setup_files)
+            self.assertTrue(
+                all(
+                    name == "task.md" or name.startswith("documents/")
+                    for name in setup_files
+                )
+            )
+            self.assertEqual(len(scenario["invariants"]), 7)
+
+    def test_load_synthetic_world_workflows_rejects_drift_and_escape(self) -> None:
+        source = run_evals.ROOT / "tests" / "fixtures" / "world-spec-p0-workflows.json"
+        data = json.loads(source.read_text(encoding="utf-8"))
+        cases = (
+            ("hash", {**data, "batch_manifest_sha256": "0" * 64}, "hash do manifesto"),
+            ("escape", {**data, "research_root": "../fs.brain"}, "escapa"),
+        )
+        with tempfile.TemporaryDirectory() as temporary:
+            for name, fixture_data, message in cases:
+                with self.subTest(name=name):
+                    path = Path(temporary) / f"{name}.json"
+                    path.write_text(json.dumps(fixture_data), encoding="utf-8")
+                    with self.assertRaisesRegex(ValueError, message):
+                        run_evals.load_scenarios(path)
 
     def test_run_scenario_runs_multi_turn_in_one_resumed_session(self) -> None:
         calls: list[tuple[list[str], Path]] = []

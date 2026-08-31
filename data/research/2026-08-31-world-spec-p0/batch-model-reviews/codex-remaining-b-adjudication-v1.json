@@ -1,0 +1,711 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "criteria": {
+    "all_12_worlds_pass": "PASS",
+    "all_critical_observations_recovered_by_both_reviewers": "PASS",
+    "critical_partial_is_failure": "PASS",
+    "w_a_has_no_invented_critical_incoherence": "PASS",
+    "w_b_preserves_alleged_payment_and_limited_negative_bank_search": "PASS",
+    "w_c_preserves_publication_date_conflict_and_both_timeliness_outcomes": "PASS",
+    "no_critical_false_fact_or_critical_extra_corpus_fact": "PASS",
+    "receipts_and_review_hashes_verified": "PASS",
+    "batch_and_all_matter_gates_are_construir": "PASS"
+  },
+  "isolation_checks": {
+    "status": "PASS",
+    "read_scope": "Somente os quatro arquivos review/receipt indicados e os 24 arquivos authority ground_truth/rubric de M-103, M-104, M-107 e M-110 em W-A, W-B e W-C.",
+    "forbidden_sources_read": false,
+    "output_file_count": 1,
+    "source_hash_count": 28
+  },
+  "reviewer_gates": {
+    "codex-b1": {
+      "receipt": {
+        "matter_ids_exact": true,
+        "world_ids_exact": true,
+        "source_file_count": 216,
+        "authority_files_included": false,
+        "prior_reviews_included": false,
+        "external_cost_usd": 0,
+        "review_sha256_matches": true
+      },
+      "batch_gate": "CONSTRUIR",
+      "matter_gates": {
+        "M-103": "CONSTRUIR",
+        "M-104": "CONSTRUIR",
+        "M-107": "CONSTRUIR",
+        "M-110": "CONSTRUIR"
+      },
+      "pass": true
+    },
+    "codex-b2": {
+      "receipt": {
+        "matter_ids_exact": true,
+        "world_ids_exact": true,
+        "source_file_count": 216,
+        "authority_files_included": false,
+        "prior_reviews_included": false,
+        "external_cost_usd": 0,
+        "review_sha256_matches": true
+      },
+      "batch_gate": "CONSTRUIR",
+      "matter_gates": {
+        "M-103": "CONSTRUIR",
+        "M-104": "CONSTRUIR",
+        "M-107": "CONSTRUIR",
+        "M-110": "CONSTRUIR"
+      },
+      "pass": true
+    }
+  },
+  "worlds": [
+    {
+      "matter_id": "M-103",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md relata transferência em 2026-05-26 e 14-registro-bancario.md confirma transferência efetivada nessa data, por R$ 241.870,00, à conta judicial do processo."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md convergem em transferência efetivada de R$ 241.870,00 em 2026-05-26 à conta judicial do processo"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "não provam baixa judicial, disponibilidade definitiva do depósito ao credor, quitação integral nem decisão extinguindo o cumprimento"
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "não há confirmação do crédito pela conta judicial nem decisão reconhecendo quitação ou afastando efeitos do art. 523."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 5,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 5,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-103",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": [
+              "o corpus não confirma o pagamento; há alegação tempestiva sob evidência bancária negativa, não prova de quitação.",
+              "A ressalva do próprio 14-registro-bancario.md impede concluir inexistência absoluta de qualquer operação com dados diferentes."
+            ]
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "o próprio documento ressalva que pode ter existido operação com dados diferentes. Assim, o pagamento permanece alegado, não confirmado"
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "Sem confirmação de depósito, os efeitos da falta de pagamento e eventual extinção permanecem questões para apuração e decisão judicial."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "É necessário buscar a transação por identificadores alternativos, obter extrato da conta judicial e verificar eventual juntada posterior; somente então o juízo poderá definir satisfação, tempestividade e efeitos do art. 523."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-103",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md indica 2026-05-06, ao passo que 12-certidao-publicacao.md certifica 2026-05-04."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md indica publicação em 2026-05-06, mas 12-certidao-publicacao.md certifica publicação em 2026-05-04"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência de 2026-05-26 seria no 14º dia útil e tempestiva.",
+              "Pela hipótese de publicação em 2026-05-04, a contagem vai de 2026-05-05 a 2026-05-25; a transferência de 2026-05-26 seria posterior ao 15º dia útil."
+            ]
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência de 26/05 ocorre no 14º dia útil, sendo temporalmente tempestiva.",
+              "Se prevalecer 12-certidao-publicacao.md, que certifica publicação em 2026-05-04, a contagem começa em 05/05, vence no 15º dia útil, 2026-05-25, e a transferência de 26/05 ocorre no 16º dia útil, sendo temporalmente tardia."
+            ]
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-104",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md convergem em transferência efetivada em 2026-06-02, por R$ 77.340,00, à conta judicial."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md convergem em transferência efetivada de R$ 77.340,00 em 2026-06-02 à conta judicial do processo"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "baixa, suficiência do valor, quitação e extinção não aparecem em 15-extrato-andamentos.md nem em decisão judicial e não podem ser presumidas."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "Devem-se obter o extrato judicial, a juntada do comprovante e pronunciamento sobre quitação e efeitos do art. 523."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 5,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 5,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-104",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "O pagamento continua alegado, não confirmado; a ressalva sobre operações com dados diferentes impede transformar a busca negativa em prova categórica de inexistência."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "14-registro-bancario.md, contudo, não localizou comprovante com os identificadores fornecidos e ressalvou a possibilidade de operação com dados diferentes. O pagamento é apenas alegado: nem sua ocorrência nem sua ausência estão confirmadas."
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "Sem prova do crédito judicial, nem os efeitos da falta de pagamento nem a extinção por pagamento estão comprovados; ambos dependem de investigação e decisão judicial."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "A providência proporcional é repetir a busca com identificadores completos, obter extratos da origem e da conta judicial e levar a prova ao juízo para definição de quitação, tempestividade e efeitos."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-104",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md indica publicação em 2026-05-13, enquanto 12-certidao-publicacao.md certifica 2026-05-11."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md indica publicação em 2026-05-13, enquanto 12-certidao-publicacao.md certifica 2026-05-11"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": [
+              "o pagamento de 2026-06-02 seria o 14º dia útil e tempestivo.",
+              "Se a publicação foi em 2026-05-11, a contagem vai de 2026-05-12 a 2026-06-01; o pagamento de 2026-06-02 seria posterior ao 15º dia útil."
+            ]
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência em 02/06 ocorre no 14º dia útil, temporalmente tempestiva.",
+              "No cenário de 12-certidao-publicacao.md, publicação em 2026-05-11, a contagem começa em 12/05, vence no 15º dia útil, 2026-06-01, e a transferência em 02/06 ocorre no 16º dia útil, temporalmente tardia."
+            ]
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-107",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md confirmam transferência efetivada em 2026-07-14, por R$ 211.930,00, à conta judicial."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md convergem em transferência efetivada de R$ 211.930,00 em 2026-07-14 à conta judicial"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "não substitui extrato da conta judicial, manifestação do credor ou decisão sobre suficiência, quitação e extinção; esses efeitos permanecem não comprovados."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "Devem ser juntados ou localizados o comprovante e o extrato da conta judicial, seguidos de manifestação da credora e decisão."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 5,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 5,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-107",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "A alegação de pagamento não está confirmada, embora a própria resposta não exclua operação com parâmetros diversos."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "14-registro-bancario.md não localiza comprovante com os dados fornecidos, mas limita expressamente sua conclusão àqueles identificadores. Portanto, há alegação de pagamento em data tempestiva, não prova de pagamento tempestivo nem prova conclusiva de inadimplemento."
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "O corpus não autoriza afirmar pagamento, falta definitiva de pagamento, quitação ou efeitos do art. 523; a resolução exige prova bancária/judicial e pronunciamento do juízo."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "A busca deve ser repetida com identificadores completos, acompanhada de extratos da origem e da conta judicial; os efeitos dependem de confirmação judicial posterior."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-107",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md indica 2026-06-24, e 12-certidao-publicacao.md certifica 2026-06-22."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "11-diario-justica.md indica publicação em 2026-06-24, mas 12-certidao-publicacao.md certifica 2026-06-22"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência de 2026-07-14 seria tempestiva, no 14º dia útil.",
+              "Na hipótese de 2026-06-22, a contagem vai de 2026-06-23 a 2026-07-13; a transferência de 2026-07-14 seria posterior ao 15º dia útil."
+            ]
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência de 14/07 ocorre no 14º dia útil, temporalmente tempestiva.",
+              "Se prevalecer 12-certidao-publicacao.md, que certifica publicação em 2026-06-22, a contagem começa em 23/06, vence no 15º dia útil, 2026-07-13, e a transferência de 14/07 ocorre no 16º dia útil, temporalmente tardia."
+            ]
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-110",
+      "world_id": "W-A",
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md confirmam transferência efetivada em 2026-08-04 por R$ 134.760,00 à conta judicial"
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "13-email-executada.md e 14-registro-bancario.md convergem em transferência efetivada de R$ 134.760,00 em 2026-08-04 à conta judicial"
+          }
+        },
+        {
+          "id": "O-A2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "crédito definitivo, suficiência, baixa e extinção não constam de 15-extrato-andamentos.md nem de decisão e permanecem sujeitos a confirmação judicial."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "O passo proporcional é obter o extrato judicial, juntar ou localizar o comprovante e aguardar pronunciamento do juízo."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 5,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-110",
+      "world_id": "W-B",
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "A prova confirma a alegação e a busca negativa, não o pagamento; a ressalva do banco deixa aberta uma operação com dados diversos."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "14-registro-bancario.md não localiza comprovante com os dados pesquisados, embora ressalve operações com dados diferentes. O pagamento em data tempestiva é alegado, não confirmado; também não está confirmada a falta de pagamento."
+          }
+        },
+        {
+          "id": "O-B2",
+          "severity": "major",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "Não se pode concluir quitação, mora processual definitiva nem os efeitos do art. 523 sem obter prova do depósito e decisão judicial."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "Devem ser buscados identificadores alternativos, extratos da origem e da conta judicial e posterior pronunciamento judicial sobre existência, suficiência, tempestividade e efeitos."
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "matter_id": "M-110",
+      "world_id": "W-C",
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": "11-oficio-informacao-diario.md informa publicação em 2026-07-15, mas 12-certidao-publicacao.md certifica 2026-07-13."
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": "11-oficio-informacao-diario.md informa publicação em 2026-07-15, mas 12-certidao-publicacao.md certifica 2026-07-13"
+          }
+        },
+        {
+          "id": "O-C2",
+          "severity": "critical",
+          "codex-b1": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência de 2026-08-04 seria no 14º dia útil e tempestiva.",
+              "Se a publicação ocorreu em 2026-07-13, a contagem vai de 2026-07-14 a 2026-08-03; a transferência de 2026-08-04 seria posterior ao 15º dia útil."
+            ]
+          },
+          "codex-b2": {
+            "status": "recovered",
+            "evidence": [
+              "a transferência de 04/08 ocorre no 14º dia útil, temporalmente tempestiva.",
+              "Se prevalecer 12-certidao-publicacao.md, que certifica publicação em 2026-07-13, a contagem começa em 14/07, vence no 15º dia útil, 2026-08-03, e a transferência de 04/08 ocorre no 16º dia útil, temporalmente tardia."
+            ]
+          }
+        }
+      ],
+      "critical_false_positives": {
+        "codex-b1": [],
+        "codex-b2": []
+      },
+      "realism": {
+        "codex-b1": {
+          "score_1_to_5": 4,
+          "pass": true
+        },
+        "codex-b2": {
+          "score_1_to_5": 4,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "totals": {
+    "codex-b1": {
+      "critical": {
+        "total": 16,
+        "recovered": 16,
+        "partial": 0,
+        "missed": 0
+      },
+      "major": {
+        "total": 8,
+        "recovered": 8,
+        "partial": 0,
+        "missed": 0
+      },
+      "all_severities": {
+        "total": 24,
+        "recovered": 24,
+        "partial": 0,
+        "missed": 0
+      },
+      "worlds_passed": 12,
+      "worlds_failed": 0,
+      "critical_false_positives": 0
+    },
+    "codex-b2": {
+      "critical": {
+        "total": 16,
+        "recovered": 16,
+        "partial": 0,
+        "missed": 0
+      },
+      "major": {
+        "total": 8,
+        "recovered": 8,
+        "partial": 0,
+        "missed": 0
+      },
+      "all_severities": {
+        "total": 24,
+        "recovered": 24,
+        "partial": 0,
+        "missed": 0
+      },
+      "worlds_passed": 12,
+      "worlds_failed": 0,
+      "critical_false_positives": 0
+    }
+  },
+  "failures": [],
+  "decision_reason": "PASS: os 12 mundos passam. codex-b1 e codex-b2 recuperaram todas as 24 observações esperadas, inclusive as 16 críticas, sem partial ou missed; preservaram a ausência de incoerência crítica em W-A, a limitação probatória em W-B e os dois resultados temporais em W-C. Os receipts comprovam os IDs exatos, 216 fontes, authority=false, prior_reviews=false, external_cost_usd=0 e SHA real do review; ambos retornaram CONSTRUIR no lote e nos quatro assuntos.",
+  "source_sha256": {
+    "batch-model-reviews/codex-remaining-b-reviewer-1-v1/review.json": "3bd9c0975c3d6e7c58c20d297bb8058c79d973f2fb3ba9b804456b2481f28b98",
+    "batch-model-reviews/codex-remaining-b-reviewer-1-v1/receipt.json": "c0db60d41df7603b897f28ab6a43e287392561589701fff116d170ca8c83ec91",
+    "batch-model-reviews/codex-remaining-b-reviewer-2-v1/review.json": "1918a5a2b4fa6a53c319981696f363176fe038522280f6a7d98f788d32ab180a",
+    "batch-model-reviews/codex-remaining-b-reviewer-2-v1/receipt.json": "7ad8cfbc2b8265e8173c41fd0167cf54da120b5fad8f8c0c40c7e1d69d5534a5",
+    "batch-generated/authority/M-103/W-A/ground_truth.json": "50be0627ed4ebd4f7f17bc4a7ee885a885805bf97451d13d9022f3856cf80df8",
+    "batch-generated/authority/M-103/W-A/rubric.json": "85d35dc308025ef9f1a4e8a006682010e6b3c44b8c2a078d2699792f6f7f6eaf",
+    "batch-generated/authority/M-103/W-B/ground_truth.json": "41e07782a5ab43825efb86bf2d42ff1cb0dbefec4c2c9d5b6add0a1e96a1b1f8",
+    "batch-generated/authority/M-103/W-B/rubric.json": "0b83e48b40bcbee0b7e5a2806e934c1839b95f648d45861c51ea46c11de785ce",
+    "batch-generated/authority/M-103/W-C/ground_truth.json": "cedf4ad1b1b423cf365d3e5d38f189b64921b9dec53cbbb53fc217148e725a6c",
+    "batch-generated/authority/M-103/W-C/rubric.json": "59c850b200c3378dfdd840482382f9f0c1d8e9d8e9ce5461b43b8c1f1027d62e",
+    "batch-generated/authority/M-104/W-A/ground_truth.json": "743c1a833aabcee48be9002360b0df42bc120ada2b8d05485d8d82e38e3b79ea",
+    "batch-generated/authority/M-104/W-A/rubric.json": "752ce2dfd68e4d8a2ef6070a9c16fd1163e100b18e269ea6692bb1ebb2506286",
+    "batch-generated/authority/M-104/W-B/ground_truth.json": "b3aff00a1e35422e096ed0285679d8ed6e9cc485a9609c013a92df91c7b68223",
+    "batch-generated/authority/M-104/W-B/rubric.json": "e0545f481c7f26427dbf1238a475e92b55f9ee888d2ffc95add5113e608e9cb8",
+    "batch-generated/authority/M-104/W-C/ground_truth.json": "8198cb61268c348a0b66fdf170026ad6c45981e555d2ab06ee0dc86c199f6a7f",
+    "batch-generated/authority/M-104/W-C/rubric.json": "b927b89124c7fffae19ac97d082a2964fc46e5e25df2bd691d864f8c766b1323",
+    "batch-generated/authority/M-107/W-A/ground_truth.json": "b4e5b1afe938b8d3452739c15998f129cafcb09531f9128b6f4226555f0eaa66",
+    "batch-generated/authority/M-107/W-A/rubric.json": "074b9796e88b58a36203f1a19b65bde5b1bbded66101ceee7073d0c98bc81685",
+    "batch-generated/authority/M-107/W-B/ground_truth.json": "d6f3fec78ebe7a933855961a8a402eadd63864886bd156d2d1829b758b58e967",
+    "batch-generated/authority/M-107/W-B/rubric.json": "cabbd7623792cb377988820062a48a5fa6f5f061d116dd13536f91e396fb5da4",
+    "batch-generated/authority/M-107/W-C/ground_truth.json": "268b9539528c441ad7e07092597b8b237d6ea3771e36ee6b2065477747db8eb5",
+    "batch-generated/authority/M-107/W-C/rubric.json": "e05b9988c17c3b7e46f6ff02ce3a94884b0d1f16702557a6e887e99f1a9e094b",
+    "batch-generated/authority/M-110/W-A/ground_truth.json": "8f2eeff171324b0cd5b8e8d1b1bae8404ecc740b25d642f2745094db02d18a63",
+    "batch-generated/authority/M-110/W-A/rubric.json": "bd1cce3e2913e996950fa31bd7ddc4a137a3b553bb2e2b70b4e6505c471169cb",
+    "batch-generated/authority/M-110/W-B/ground_truth.json": "e69b495273c94856ef84ece7a9fc3f6dd1a43d7b4744398c9af2abd7e4694563",
+    "batch-generated/authority/M-110/W-B/rubric.json": "48ec1cd72ddadcca756580aef419601d90903069ed13ac0b7e82262e49cafe98",
+    "batch-generated/authority/M-110/W-C/ground_truth.json": "0836a2baa73c5efcab44c28a2795605a1b2f7188af7a03d74577d74ce3b2f1d0",
+    "batch-generated/authority/M-110/W-C/rubric.json": "c8c21deb599fab5c734def96120cac819f8aa41d570384640691a77db4ff3c29"
+  }
+}

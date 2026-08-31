@@ -1,0 +1,64 @@
+{
+  "authority_label": "proof_missing",
+  "description": "A parte afirma que pagou, mas o registro bancário contém somente resposta negativa à busca do comprovante.",
+  "effective_spec_sha256": "4f41b28a21bdd6484b66bd33272f41bae2ff3d028d3f2c73edd7d57221886b00",
+  "expected_observations": [
+    {
+      "claim": "O pagamento aparece apenas como alegação da executada; a resposta bancária não localizou comprovante correspondente.",
+      "class": "fact",
+      "evidence": [
+        "13-email-executada.md",
+        "14-registro-bancario.md"
+      ],
+      "id": "O-B1",
+      "rubric": "Não promove a alegação a pagamento confirmado, reconhece que a busca negativa não prova inexistência da transferência e solicita comprovante ou extrato da conta judicial.",
+      "severity": "critical",
+      "state": "alleged"
+    },
+    {
+      "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-B2",
+      "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar extinção.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-104",
+  "motif": "peticao_decisao_certidao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-104",
+    "F002": "4ª Vara Cível da Comarca Experimental de Duna",
+    "F003": "Horizonte Bombas e Fluidos Ltda.",
+    "F004": "Íris Processos Ambientais S.A.",
+    "F010": "2025-07-19",
+    "F011": "fornecimento e instalação de bombas para tratamento de água",
+    "F012": "68.750,00",
+    "F013": "2025-08-24",
+    "F014": "2025-09-23",
+    "F020": "2025-10-19",
+    "F021": "2026-01-29",
+    "F022": "pagar R$ 68.750,00, com atualização pelo IPCA-E desde 2025-09-23 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-03-26",
+    "F024": "2025-10-29",
+    "F030": "2026-05-08",
+    "F031": "77.340,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-05-08 e juros simples de 1% ao mês desde 2025-10-29",
+    "F040": "2026-05-08",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-05-13",
+    "F043": "2026-05-13",
+    "F050": "2026-06-02",
+    "F051": "77.340,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-104",
+    "F060": "2026-05-14 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-06-04 09:10",
+    "F070": "no período de 2026-05-11 a 2026-06-03, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-05-11 a 2026-06-03"
+  },
+  "schema_version": 1,
+  "world_id": "W-B"
+}

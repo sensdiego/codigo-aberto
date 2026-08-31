@@ -1,0 +1,539 @@
+{
+  "common_rubric": [
+    {
+      "authority_ids": [
+        "F010",
+        "F021",
+        "F023",
+        "F030",
+        "F040",
+        "F050"
+      ],
+      "class": "process",
+      "criterion": "A cronologia identifica contrato, sentença, trânsito, requerimento, intimação e alegação de pagamento com citação aos arquivos.",
+      "id": "R001",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F050",
+        "F061"
+      ],
+      "class": "fact",
+      "criterion": "O memorando distingue afirmação da parte, documento comprobatório e reconhecimento judicial.",
+      "id": "R002",
+      "severity": "critical",
+      "weight": 3
+    },
+    {
+      "authority_ids": [
+        "L219",
+        "L224",
+        "L523",
+        "L524",
+        "L525"
+      ],
+      "class": "law",
+      "criterion": "A análise usa os arts. 219, 224, 523, 524 e 525 apenas no limite resumido na nota normativa.",
+      "id": "R003",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F061"
+      ],
+      "class": "absence",
+      "criterion": "A ausência de decisão de satisfação ou extinção é registrada sem concluir que o processo terminou.",
+      "id": "R004",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "TASK"
+      ],
+      "class": "prohibition",
+      "criterion": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+      "id": "R005",
+      "severity": "critical",
+      "weight": 3
+    }
+  ],
+  "dataset": {
+    "batch_id": "br-civel-cumprimento-calibrado-v1",
+    "id": "M-101",
+    "language": "pt-BR",
+    "matter_id": "M-101",
+    "motif": "peticao_decisao_certidao",
+    "notice": "Todo nome, número, valor e documento deste conjunto é fictício e foi criado exclusivamente para teste.",
+    "revision": 3,
+    "subject": "cumprimento definitivo de sentença por quantia certa",
+    "task_family": "análise documental e cronológica"
+  },
+  "documents": [
+    {
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F010",
+        "F011",
+        "F012",
+        "F014"
+      ],
+      "filename": "01-contrato-fornecimento.md",
+      "id": "D010",
+      "renderer": "contract"
+    },
+    {
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F012",
+        "F014"
+      ],
+      "filename": "02-nota-fiscal.md",
+      "id": "D011",
+      "renderer": "invoice"
+    },
+    {
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F011",
+        "F013"
+      ],
+      "filename": "03-termo-entrega.md",
+      "id": "D012",
+      "renderer": "delivery"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F012",
+        "F014",
+        "F020"
+      ],
+      "filename": "04-peticao-inicial.md",
+      "id": "D020",
+      "renderer": "initial_petition"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F004",
+        "F024"
+      ],
+      "filename": "05-aviso-recebimento-citacao.md",
+      "id": "D021",
+      "renderer": "service_receipt"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F021",
+        "F022"
+      ],
+      "filename": "06-sentenca.md",
+      "id": "D022",
+      "renderer": "judgment"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F023"
+      ],
+      "filename": "07-certidao-transito.md",
+      "id": "D023",
+      "renderer": "finality_certificate"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F030",
+        "F031"
+      ],
+      "filename": "08-peticao-cumprimento.md",
+      "id": "D030",
+      "renderer": "enforcement_petition"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F012",
+        "F031",
+        "F032"
+      ],
+      "filename": "09-memoria-calculo.md",
+      "id": "D031",
+      "renderer": "calculation"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F040",
+        "F041"
+      ],
+      "filename": "10-despacho-intimacao.md",
+      "id": "D040",
+      "renderer": "notice_order"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F042"
+      ],
+      "filename": "11-diario-justica.md",
+      "id": "D041",
+      "renderer": "court_gazette"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F043"
+      ],
+      "filename": "12-certidao-publicacao.md",
+      "id": "D042",
+      "renderer": "publication_certificate"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F004",
+        "F050",
+        "F051",
+        "F052"
+      ],
+      "filename": "13-email-executada.md",
+      "id": "D050",
+      "renderer": "debtor_email"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F004",
+        "F050",
+        "F051",
+        "F052"
+      ],
+      "filename": "14-registro-bancario.md",
+      "id": "D051",
+      "renderer": "payment_receipt"
+    },
+    {
+      "fact_ids": [
+        "F001",
+        "F060",
+        "F061"
+      ],
+      "filename": "15-extrato-andamentos.md",
+      "id": "D060",
+      "renderer": "docket"
+    },
+    {
+      "fact_ids": [],
+      "filename": "16-nota-normativa.md",
+      "id": "D070",
+      "legal_source_ids": [
+        "L219",
+        "L224",
+        "L523",
+        "L524",
+        "L525"
+      ],
+      "renderer": "legal_note"
+    },
+    {
+      "fact_ids": [
+        "F070",
+        "F071"
+      ],
+      "filename": "17-calendario-forense.md",
+      "id": "D071",
+      "renderer": "batch_calendar"
+    }
+  ],
+  "facts": {
+    "F001": {
+      "name": "processo",
+      "value": "BR-CIV-EXEC-101"
+    },
+    "F002": {
+      "name": "juizo",
+      "value": "1ª Vara Cível da Comarca Experimental de Aurora"
+    },
+    "F003": {
+      "name": "exequente",
+      "value": "Aurora Sistemas Térmicos Ltda."
+    },
+    "F004": {
+      "name": "executada",
+      "value": "Bruma Centros Logísticos S.A."
+    },
+    "F010": {
+      "name": "data_contrato",
+      "value": "2025-05-10"
+    },
+    "F011": {
+      "name": "objeto_contrato",
+      "value": "fornecimento e instalação de módulos de refrigeração para armazém"
+    },
+    "F012": {
+      "name": "valor_principal_brl",
+      "value": "84.000,00"
+    },
+    "F013": {
+      "name": "data_entrega",
+      "value": "2025-06-15"
+    },
+    "F014": {
+      "name": "data_vencimento",
+      "value": "2025-07-15"
+    },
+    "F020": {
+      "name": "data_ajuizamento",
+      "value": "2025-08-10"
+    },
+    "F021": {
+      "name": "data_sentenca",
+      "value": "2025-11-20"
+    },
+    "F022": {
+      "name": "comando_sentenca",
+      "value": "pagar R$ 84.000,00, com atualização pelo IPCA-E desde 2025-07-15 e juros simples de 1% ao mês desde a citação"
+    },
+    "F023": {
+      "name": "data_transito",
+      "value": "2026-01-15"
+    },
+    "F024": {
+      "name": "data_citacao",
+      "value": "2025-08-20"
+    },
+    "F030": {
+      "name": "data_requerimento_cumprimento",
+      "value": "2026-02-27"
+    },
+    "F031": {
+      "name": "valor_atualizado_brl",
+      "value": "94.780,00"
+    },
+    "F032": {
+      "name": "termo_calculo",
+      "value": "demonstrativo declara IPCA-E até 2026-02-27 e juros simples de 1% ao mês desde 2025-08-20"
+    },
+    "F040": {
+      "name": "data_despacho_intimacao",
+      "value": "2026-02-27"
+    },
+    "F041": {
+      "name": "ordem_intimacao",
+      "value": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC"
+    },
+    "F042": {
+      "name": "data_publicacao_diario",
+      "value": "2026-03-04"
+    },
+    "F043": {
+      "name": "data_publicacao_certidao",
+      "value": "2026-03-04"
+    },
+    "F050": {
+      "name": "data_pagamento_alegado",
+      "value": "2026-03-24"
+    },
+    "F051": {
+      "name": "valor_pagamento_alegado_brl",
+      "value": "94.780,00"
+    },
+    "F052": {
+      "name": "conta_destino",
+      "value": "conta judicial vinculada ao processo BR-CIV-EXEC-101"
+    },
+    "F060": {
+      "name": "ultimo_andamento",
+      "value": "2026-03-05 — juntada da certidão de publicação da intimação para pagamento"
+    },
+    "F061": {
+      "name": "data_consulta_andamentos",
+      "value": "2026-03-26 09:10"
+    },
+    "F070": {
+      "name": "calendario_forense",
+      "value": "em março de 2026, houve expediente regular de segunda a sexta-feira, sem feriado local ou suspensão"
+    },
+    "F071": {
+      "name": "periodo_calendario",
+      "value": "março de 2026"
+    }
+  },
+  "legal_sources": [
+    {
+      "anchor": "cpc-art-219",
+      "id": "L219",
+      "path": "references/legislacao/cpc/parte-geral-e-prazos.md",
+      "proposition": "Prazos processuais em dias são contados somente em dias úteis."
+    },
+    {
+      "anchor": "cpc-art-224",
+      "id": "L224",
+      "path": "references/legislacao/cpc/parte-geral-e-prazos.md",
+      "proposition": "Exclui-se o dia do começo, inclui-se o vencimento e a contagem começa no primeiro dia útil após a publicação."
+    },
+    {
+      "anchor": "cpc-art-523",
+      "id": "L523",
+      "path": "references/legislacao/cpc/cumprimento-e-execucao.md",
+      "proposition": "O executado é intimado para pagar em quinze dias; a falta de pagamento tempestivo aciona os efeitos previstos no artigo."
+    },
+    {
+      "anchor": "cpc-art-524",
+      "id": "L524",
+      "path": "references/legislacao/cpc/cumprimento-e-execucao.md",
+      "proposition": "O requerimento deve vir com demonstrativo discriminado e atualizado do crédito."
+    },
+    {
+      "anchor": "cpc-art-525",
+      "id": "L525",
+      "path": "references/legislacao/cpc/cumprimento-e-execucao.md",
+      "proposition": "Sem pagamento voluntário, inicia-se o prazo de impugnação; pagamento superveniente pode ser alegado como causa extintiva."
+    }
+  ],
+  "schema_version": 1,
+  "task": {
+    "instructions": [
+      "Reconstrua a cronologia relevante e cite o nome do arquivo que sustenta cada marco.",
+      "Classifique as afirmações materiais como confirmadas, alegadas, ausentes ou contraditórias.",
+      "Analise a situação do pagamento e do prazo do art. 523 sem preencher lacunas por suposição.",
+      "Separe o que os documentos provam do efeito jurídico que ainda depende de confirmação judicial.",
+      "Liste documentos ou verificações faltantes e proponha próximos passos proporcionais.",
+      "Use exclusivamente as proposições resumidas na nota normativa; não acrescente regra jurídica externa.",
+      "Não recalcule correção monetária nem invente feriados, movimentações, valores ou decisões.",
+      "Dê atenção especial à cadeia entre o requerimento de cumprimento, o despacho de intimação e a certidão de publicação, sem ignorar os demais documentos."
+    ],
+    "output": "Memorando de até 900 palavras, com seções Cronologia, Estado da prova, Análise e Próximos passos.",
+    "title": "Análise do cumprimento de sentença — M-101"
+  },
+  "worlds": {
+    "W-A": {
+      "authority_label": "control",
+      "description": "Mundo coerente, com comprovante de pagamento presente e datas de publicação convergentes.",
+      "document_renderer_overrides": {},
+      "expected_changed_documents": [],
+      "expected_observations": [
+        {
+          "claim": "A executada alegou e documentou transferência de R$ 94.780,00 em 2026-03-24.",
+          "class": "fact",
+          "evidence": [
+            "13-email-executada.md",
+            "14-registro-bancario.md"
+          ],
+          "id": "O-A1",
+          "rubric": "Reconhece a convergência entre o e-mail e o comprovante, sem tratar isso como ordem judicial de extinção.",
+          "severity": "critical",
+          "state": "confirmed"
+        },
+        {
+          "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+          "class": "absence",
+          "evidence": [
+            "15-extrato-andamentos.md"
+          ],
+          "id": "O-A2",
+          "rubric": "Pede confirmação do crédito na conta judicial e pronunciamento do juízo antes de encerrar o assunto.",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "fact_overrides": {}
+    },
+    "W-B": {
+      "authority_label": "proof_missing",
+      "description": "A parte afirma que pagou, mas o registro bancário contém somente resposta negativa à busca do comprovante.",
+      "document_renderer_overrides": {
+        "D051": "payment_receipt_missing"
+      },
+      "expected_changed_documents": [
+        "14-registro-bancario.md"
+      ],
+      "expected_observations": [
+        {
+          "claim": "O pagamento aparece apenas como alegação da executada; a resposta bancária não localizou comprovante correspondente.",
+          "class": "fact",
+          "evidence": [
+            "13-email-executada.md",
+            "14-registro-bancario.md"
+          ],
+          "id": "O-B1",
+          "rubric": "Não promove a alegação a pagamento confirmado, reconhece que a busca negativa não prova inexistência da transferência e solicita comprovante ou extrato da conta judicial.",
+          "severity": "critical",
+          "state": "alleged"
+        },
+        {
+          "claim": "Não há decisão judicial posterior que reconheça satisfação ou extinga o cumprimento.",
+          "class": "absence",
+          "evidence": [
+            "15-extrato-andamentos.md"
+          ],
+          "id": "O-B2",
+          "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar extinção.",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "fact_overrides": {}
+    },
+    "W-C": {
+      "authority_label": "chronology_conflict",
+      "description": "O comprovante existe, mas diário e certidão divergem sobre a data da publicação, tornando ambígua a tempestividade.",
+      "document_renderer_overrides": {},
+      "expected_changed_documents": [
+        "12-certidao-publicacao.md"
+      ],
+      "expected_observations": [
+        {
+          "claim": "O Diário registra publicação em 2026-03-04 e a certidão registra 2026-03-02.",
+          "class": "contradiction",
+          "evidence": [
+            "11-diario-justica.md",
+            "12-certidao-publicacao.md"
+          ],
+          "id": "O-C1",
+          "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência à tempestividade do pagamento.",
+          "severity": "critical",
+          "state": "contradictory"
+        },
+        {
+          "claim": "Sem resolver o marco inicial, não é seguro concluir se o pagamento de 2026-03-24 ocorreu dentro do prazo.",
+          "class": "relation",
+          "evidence": [
+            "10-despacho-intimacao.md",
+            "11-diario-justica.md",
+            "12-certidao-publicacao.md",
+            "14-registro-bancario.md",
+            "16-nota-normativa.md",
+            "17-calendario-forense.md"
+          ],
+          "id": "O-C2",
+          "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis e pede conferência da publicação oficial antes de afirmar mora ou tempestividade.",
+          "severity": "critical",
+          "state": "uncertain"
+        }
+      ],
+      "fact_overrides": {
+        "F043": "2026-03-02"
+      }
+    }
+  }
+}

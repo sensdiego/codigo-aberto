@@ -40,6 +40,9 @@ handoff comum normalmente.
    [relogio-processual.md](references/relogio-processual.md).
 5. Com Silo conectado, siga
    [validacao-silo-planalto.md](references/validacao-silo-planalto.md).
+6. Antes de fechar, reconcilie todos os dispositivos que a fonte normativa
+   autorizada tornou materiais ao pedido: aplique cada um ou declare
+   explicitamente, com razão, que ele não incide. Não omita dispositivo material.
 
 Use IDs exatos do corpus para CPC. Para diploma material ainda ausente da
 biblioteca, não invente texto: valide pelo Silo quando disponível ou marque

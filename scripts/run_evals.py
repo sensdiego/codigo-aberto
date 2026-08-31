@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Harness de avaliação end-to-end das skills via `claude -p`, com juiz por invariantes."""
+"""Harness de avaliação end-to-end via Claude ou Codex, com juiz por invariantes."""
 
 from __future__ import annotations
 
@@ -18,7 +18,22 @@ from typing import Callable, Sequence
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE_PATH = ROOT / "tests" / "fixtures" / "workflows.json"
 ADAPTATION_FIXTURE_SCHEMA = "adaptation-behavior-workflows-v1"
+SYNTHETIC_WORLD_FIXTURE_SCHEMA = "synthetic-world-workflows-v1"
 PLUGIN_PATH = ROOT / ".claude-plugin" / "plugin.json"
+CODEX_JUDGE_SCHEMA_PATH = ROOT / "tests" / "fixtures" / "codex-judge-schema.json"
+CODEX_SKILL_BACKED_TARGET = "analise-juridica-civel"
+CODEX_DISABLED_FEATURES = (
+    "apps",
+    "browser_use",
+    "browser_use_external",
+    "image_generation",
+    "in_app_browser",
+    "memories",
+    "multi_agent",
+    "plugins",
+    "tool_suggest",
+    "workspace_dependencies",
+)
 PUBLIC_SKILLS = (
     "analise-documental",
     "analise-juridica-civel",
@@ -275,10 +290,170 @@ def _hydrate_adaptation_scenarios(
     return hydrated
 
 
+def _hydrate_synthetic_world_scenarios(
+    data: dict[str, object], path: Path
+) -> list[dict[str, object]]:
+    """Materializa o lote sintético aprovado sem duplicar seus documentos."""
+    research_root_value = data.get("research_root")
+    matter_ids = data.get("matter_ids")
+    world_ids = data.get("world_ids")
+    expected_skill = data.get("expected_skill")
+    manifest_sha256 = data.get("batch_manifest_sha256")
+    approval_receipts = data.get("approval_receipts")
+    if (
+        not isinstance(research_root_value, str)
+        or not research_root_value
+        or not isinstance(matter_ids, list)
+        or not matter_ids
+        or not all(
+            isinstance(item, str) and re.fullmatch(r"M-\d{3}", item)
+            for item in matter_ids
+        )
+        or len(matter_ids) != len(set(matter_ids))
+        or not isinstance(world_ids, list)
+        or not world_ids
+        or not all(
+            isinstance(item, str) and re.fullmatch(r"W-[A-Z]", item)
+            for item in world_ids
+        )
+        or len(world_ids) != len(set(world_ids))
+        or expected_skill not in PUBLIC_SKILLS
+        or not isinstance(manifest_sha256, str)
+        or re.fullmatch(r"[0-9a-f]{64}", manifest_sha256) is None
+        or not isinstance(approval_receipts, dict)
+        or not approval_receipts
+        or not all(
+            isinstance(name, str)
+            and isinstance(digest, str)
+            and re.fullmatch(r"[0-9a-f]{64}", digest)
+            for name, digest in approval_receipts.items()
+        )
+    ):
+        raise ValueError(f"fixture sintética inválida: {path}")
+
+    research_root = _contained_path(ROOT, research_root_value)
+    manifest_path = research_root / "batch-generated" / "batch-manifest.json"
+    if not research_root.is_dir() or not manifest_path.is_file():
+        raise ValueError("research_root não contém o lote sintético")
+    if hashlib.sha256(manifest_path.read_bytes()).hexdigest() != manifest_sha256:
+        raise ValueError("hash do manifesto sintético diverge do fixture")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if not isinstance(manifest, dict):
+        raise ValueError("manifesto sintético inválido")
+    expected_pairs = {
+        (matter_id, world_id) for matter_id in matter_ids for world_id in world_ids
+    }
+    if (
+        manifest.get("status") != "STATIC_PASS"
+        or manifest.get("matter_count") != len(matter_ids)
+        or manifest.get("world_count") != len(expected_pairs)
+    ):
+        raise ValueError("manifesto sintético não corresponde ao fixture")
+
+    approved_pairs: set[tuple[str, str]] = set()
+    approval_by_pair: dict[tuple[str, str], str] = {}
+    for relative, expected_sha256 in approval_receipts.items():
+        receipt_path = _contained_path(research_root, relative)
+        if not receipt_path.is_file():
+            raise ValueError(f"recibo de aprovação ausente: {relative}")
+        if hashlib.sha256(receipt_path.read_bytes()).hexdigest() != expected_sha256:
+            raise ValueError(f"hash do recibo de aprovação diverge: {relative}")
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        if not isinstance(receipt, dict):
+            raise ValueError(f"recibo de aprovação inválido: {relative}")
+        worlds = receipt.get("worlds")
+        if receipt.get("status") != "PASS" or not isinstance(worlds, list):
+            raise ValueError(f"recibo de aprovação inválido: {relative}")
+        for world in worlds:
+            if not isinstance(world, dict):
+                raise ValueError(f"mundo inválido em {relative}")
+            pair = (world.get("matter_id"), world.get("world_id"))
+            if (
+                not isinstance(pair[0], str)
+                or not isinstance(pair[1], str)
+                or world.get("pass") is not True
+                or pair in approved_pairs
+            ):
+                raise ValueError(f"mundo duplicado ou reprovado em {relative}")
+            approved_pairs.add(pair)
+            approval_by_pair[pair] = relative
+    if approved_pairs != expected_pairs:
+        raise ValueError("recibos não aprovam exatamente os mundos do fixture")
+
+    blind_root = research_root / "batch-generated" / "blind"
+    authority_root = research_root / "batch-generated" / "authority"
+    scenarios: list[dict[str, object]] = []
+    for matter_id in matter_ids:
+        for world_id in world_ids:
+            blind_world = blind_root / matter_id / world_id
+            task_path = blind_world / "task.md"
+            documents = sorted((blind_world / "documents").glob("*.md"))
+            rubric_path = authority_root / matter_id / world_id / "rubric.json"
+            if (
+                not task_path.is_file()
+                or len(documents) != 17
+                or not rubric_path.is_file()
+            ):
+                raise ValueError(f"mundo sintético incompleto: {matter_id}/{world_id}")
+            rubric = json.loads(rubric_path.read_text(encoding="utf-8"))
+            if not isinstance(rubric, dict) or not all(
+                isinstance(rubric.get(section), list)
+                for section in ("common", "world_specific")
+            ):
+                raise ValueError(f"rubrica sintética inválida: {matter_id}/{world_id}")
+            rubric_items = [
+                item
+                for section in ("common", "world_specific")
+                for item in rubric.get(section, [])
+                if isinstance(item, dict)
+            ]
+            invariants = [item.get("criterion") for item in rubric_items]
+            if (
+                rubric.get("matter_id") != matter_id
+                or rubric.get("world_id") != world_id
+                or len(invariants) != 7
+                or not all(
+                    isinstance(item, str) and item.strip() for item in invariants
+                )
+                or len(invariants) != len(set(invariants))
+            ):
+                raise ValueError(f"rubrica sintética inválida: {matter_id}/{world_id}")
+            setup_files = {"task.md": task_path.read_text(encoding="utf-8")}
+            setup_files.update(
+                {
+                    f"documents/{document.name}": document.read_text(encoding="utf-8")
+                    for document in documents
+                }
+            )
+            scenarios.append(
+                {
+                    "id": f"sintetico-{matter_id.lower().replace('-', '')}-{world_id.lower().replace('-', '')}",
+                    "prompt": (
+                        "Leia task.md como a instrução autorizada e execute-a integralmente. "
+                        "Use somente os arquivos em documents/ como evidência do caso."
+                    ),
+                    "expected_skill": expected_skill,
+                    "invariants": invariants,
+                    "setup_files": setup_files,
+                    "synthetic_world": {
+                        "matter_id": matter_id,
+                        "world_id": world_id,
+                        "approval_receipt": approval_by_pair[(matter_id, world_id)],
+                    },
+                }
+            )
+    return scenarios
+
+
 def load_scenarios(path: Path | None = None) -> list[dict[str, object]]:
     """Carrega os cenários de workflow."""
     path = path or FIXTURE_PATH
     data = json.loads(path.read_text(encoding="utf-8"))
+    if (
+        isinstance(data, dict)
+        and data.get("schema_version") == SYNTHETIC_WORLD_FIXTURE_SCHEMA
+    ):
+        return _hydrate_synthetic_world_scenarios(data, path)
     scenarios = data.get("scenarios") if isinstance(data, dict) else None
     if not isinstance(scenarios, list):
         raise ValueError("fixture de workflows sem lista de cenários")
@@ -319,6 +494,17 @@ def check_plugin_installed(executor: CommandExecutor = run_subprocess) -> bool:
     except (OSError, subprocess.TimeoutExpired):
         return False
     return result.returncode == 0 and "silo-legal" in result.stdout
+
+
+def check_codex_installed(executor: CommandExecutor = run_subprocess) -> bool:
+    """Confirma que o Codex CLI autenticado está disponível."""
+    try:
+        result = executor(
+            ["codex", "--version"], cwd=ROOT, timeout=RUNNER_TIMEOUT_SECONDS
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return result.returncode == 0 and "codex-cli" in result.stdout
 
 
 def _content_blocks(event: dict[str, object]) -> list[dict[str, object]]:
@@ -465,6 +651,40 @@ def parse_turns(transcripts: list[str]) -> dict[str, object]:
         "final_text": turn_outputs[-1] if turn_outputs else "",
         "cost_usd": sum(costs) if costs else None,
         "num_turns": num_turns,
+    }
+
+
+def parse_codex_transcript(transcript: str) -> dict[str, object]:
+    """Extrai a mensagem final e o uso do JSONL produzido por `codex exec`."""
+    final_text = ""
+    usage: dict[str, object] = {}
+    for line in transcript.splitlines():
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(event, dict):
+            continue
+        item = event.get("item")
+        if event.get("type") == "item.completed" and isinstance(item, dict):
+            text = item.get("text")
+            if item.get("type") == "agent_message" and isinstance(text, str):
+                final_text = text
+        candidate_usage = event.get("usage")
+        if event.get("type") == "turn.completed" and isinstance(
+            candidate_usage, dict
+        ):
+            usage = candidate_usage
+    return {
+        "available_skills": [],
+        "invoked_skills": [],
+        "read_files": [],
+        "read_files_by_turn": [[]],
+        "final_text": final_text,
+        "turn_outputs": [final_text],
+        "cost_usd": None,
+        "num_turns": 1,
+        "token_usage": usage,
     }
 
 
@@ -645,13 +865,13 @@ def calculate_verdict(
         return "JUDGE_ERROR"
     expected_numbers = set(range(1, expected_count + 1))
     returned_numbers = [invariant.get("n") for invariant in invariants]
-    all_attended = all(invariant.get("atendido") is True for invariant in invariants)
     if (
-        is_routing_ok
-        and len(invariants) == expected_count
-        and set(returned_numbers) == expected_numbers
-        and all_attended
+        len(invariants) != expected_count
+        or set(returned_numbers) != expected_numbers
     ):
+        return "JUDGE_ERROR"
+    all_attended = all(invariant.get("atendido") is True for invariant in invariants)
+    if is_routing_ok and all_attended:
         return "PASS"
     return "FAIL"
 
@@ -708,13 +928,50 @@ def _response_cost(output: str) -> float | None:
     return None
 
 
+def parse_judge_transcript(
+    transcript: str, backend: str
+) -> tuple[list[dict[str, object]] | None, float | None]:
+    """Extrai o veredito de um transcript de juiz já persistido."""
+    if backend == "codex":
+        parsed = parse_codex_transcript(transcript)
+        output = parsed["final_text"]
+        return (
+            parse_judge_verdict(output) if isinstance(output, str) else None,
+            None,
+        )
+    return parse_judge_response(transcript), _response_cost(transcript)
+
+
 def judge_scenario(
     scenario: dict[str, object],
     final_text: str | Sequence[str],
     model: str,
     executor: CommandExecutor = run_subprocess,
+    backend: str = "claude",
+    transcript_path: Path | None = None,
 ) -> tuple[list[dict[str, object]] | None, float | None]:
     """Julga um cenário, com uma única nova tentativa de parse."""
+    if backend == "codex":
+        command = codex_command(
+            build_judge_prompt(scenario, final_text),
+            model,
+            output_schema=CODEX_JUDGE_SCHEMA_PATH,
+        )
+        with tempfile.TemporaryDirectory(prefix="silo-legal-codex-judge-") as temporary:
+            try:
+                response = executor(
+                    command,
+                    cwd=Path(temporary),
+                    timeout=RUNNER_TIMEOUT_SECONDS,
+                )
+            except (OSError, subprocess.TimeoutExpired):
+                return None, None
+        if response.returncode != 0:
+            return None, None
+        if transcript_path is not None:
+            transcript_path.parent.mkdir(parents=True, exist_ok=True)
+            transcript_path.write_text(response.stdout, encoding="utf-8")
+        return parse_judge_transcript(response.stdout, backend)
     command = [
         "claude",
         "-p",
@@ -732,6 +989,9 @@ def judge_scenario(
             response = executor(command, cwd=ROOT, timeout=RUNNER_TIMEOUT_SECONDS)
         except (OSError, subprocess.TimeoutExpired):
             continue
+        if transcript_path is not None:
+            transcript_path.parent.mkdir(parents=True, exist_ok=True)
+            transcript_path.write_text(response.stdout, encoding="utf-8")
         if response.returncode == 0:
             verdict = parse_judge_response(response.stdout)
             if verdict is not None:
@@ -758,6 +1018,33 @@ def runner_command(prompt: str, model: str) -> list[str]:
         '{"mcpServers":{}}',
         "--strict-mcp-config",
     ]
+
+
+def codex_command(
+    prompt: str, model: str, *, output_schema: Path | None = None
+) -> list[str]:
+    """Monta uma execução Codex efêmera, local e sem superfícies externas."""
+    command = [
+        "codex",
+        "exec",
+        "--json",
+        "--ephemeral",
+        "--ignore-user-config",
+        "--ignore-rules",
+        "--skip-git-repo-check",
+        "--sandbox",
+        "read-only",
+        "--model",
+        model,
+        "-c",
+        'model_reasoning_effort="high"',
+    ]
+    for feature in CODEX_DISABLED_FEATURES:
+        command.extend(["--disable", feature])
+    if output_schema is not None:
+        command.extend(["--output-schema", str(output_schema)])
+    command.append(prompt)
+    return command
 
 
 def _turn_transcript_paths(transcript_path: Path, turn_count: int) -> list[Path]:
@@ -806,16 +1093,50 @@ def _contained_path(root: Path, relative: str) -> Path:
     return target
 
 
+def _codex_skill_setup_files(expected_skill: str) -> list[tuple[str, str]]:
+    """Monta o pacote mínimo da skill cível sem expor o restante do repo."""
+    if expected_skill != CODEX_SKILL_BACKED_TARGET:
+        raise ValueError(
+            f"modo skill-backed ainda não suporta {expected_skill!r}"
+        )
+    roots = [
+        ROOT / "skills" / expected_skill,
+        ROOT / "references" / "disciplina.md",
+        ROOT / "references" / "handoff.md",
+        ROOT / "references" / "legislacao" / "cpc",
+    ]
+    files: list[Path] = []
+    for root in roots:
+        files.extend(
+            sorted(path for path in root.rglob("*") if path.is_file())
+            if root.is_dir()
+            else [root]
+        )
+    if not files or any(not path.is_file() for path in files):
+        raise ValueError("pacote local da skill cível está incompleto")
+    return [
+        (str(path.relative_to(ROOT)), path.read_text(encoding="utf-8"))
+        for path in files
+    ]
+
+
 def run_scenario(
     scenario: dict[str, object],
     model: str,
     transcript_path: Path,
     executor: CommandExecutor = run_subprocess,
+    backend: str = "claude",
+    codex_skill_backed: bool = False,
 ) -> tuple[list[str], str | None]:
     """Executa os turnos de um cenário e persiste cada transcript."""
     prompts = prompt_turns(scenario)
     transcript_paths = _turn_transcript_paths(transcript_path, len(prompts))
     setup_files = _validated_setup_files(scenario)
+    if codex_skill_backed:
+        expected_skill = scenario.get("expected_skill")
+        if not isinstance(expected_skill, str):
+            raise ValueError("cenário sem skill esperada para o modo skill-backed")
+        setup_files.extend(_codex_skill_setup_files(expected_skill))
     transcripts: list[str] = []
     transcript_path.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -825,6 +1146,38 @@ def run_scenario(
                 target = _contained_path(workdir, name)
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text(content, encoding="utf-8")
+            if backend == "codex":
+                if len(prompts) != 1:
+                    return [], "backend codex aceita somente cenários de um turno"
+                skill_instruction = (
+                    "Leia skills/analise-juridica-civel/SKILL.md e siga integralmente "
+                    "a skill e somente as referências locais que ela indicar. "
+                    if codex_skill_backed
+                    else "Não use skills. "
+                )
+                command = codex_command(
+                    (
+                        "Você atua como executor jurídico cego. Não altere arquivos, "
+                        "não use rede, memória ou fontes externas. "
+                        f"{skill_instruction}{prompts[0]} "
+                        "Entregue somente o resultado final solicitado."
+                    ),
+                    model,
+                )
+                try:
+                    response = executor(
+                        command, cwd=workdir, timeout=RUNNER_TIMEOUT_SECONDS
+                    )
+                except (OSError, subprocess.TimeoutExpired) as exc:
+                    transcript_paths[0].write_text("", encoding="utf-8")
+                    return [""], f"codex exec falhou ({exc})"
+                transcript_paths[0].write_text(response.stdout, encoding="utf-8")
+                if response.returncode != 0:
+                    return [response.stdout], response.stderr.strip() or "codex exec falhou"
+                parsed = parse_codex_transcript(response.stdout)
+                if not parsed["final_text"]:
+                    return [response.stdout], "codex exec não retornou mensagem final"
+                return [response.stdout], None
             session_id = str(uuid.uuid4())
             for turn, prompt in enumerate(prompts, start=1):
                 command = runner_command(prompt, model)
@@ -920,7 +1273,13 @@ def build_report_markdown(report: dict[str, object]) -> str:
             else 0
         )
         total = len(invariants) if isinstance(invariants, list) else 0
-        routing = "OK" if scenario.get("routing_ok") else "FALHOU"
+        routing = (
+            "-"
+            if scenario.get("routing_applied") is False
+            else "OK"
+            if scenario.get("routing_ok")
+            else "FALHOU"
+        )
         redaction_gate = scenario.get("redaction_gate")
         if not isinstance(redaction_gate, dict) or not redaction_gate.get("applied"):
             gate = "-"
@@ -985,12 +1344,33 @@ def _parser() -> argparse.ArgumentParser:
         default=FIXTURE_PATH,
         help="fixture de cenários; padrão: tests/fixtures/workflows.json",
     )
-    parser.add_argument("--model", default="sonnet", help="modelo do Claude")
+    parser.add_argument(
+        "--backend",
+        choices=("claude", "codex"),
+        default="claude",
+        help="executor e juiz; padrão: claude",
+    )
+    parser.add_argument("--model", help="modelo; usa o padrão do backend se omitido")
     parser.add_argument("--out-dir", type=Path, help="diretório dos relatórios")
     parser.add_argument(
         "--resume",
         action="store_true",
-        help="reaproveita transcripts já gravados e os julga novamente",
+        help="reaproveita transcripts de execução e julgamento já gravados",
+    )
+    parser.add_argument(
+        "--rejudge",
+        action="store_true",
+        help="com --resume, reaproveita a execução e substitui o julgamento",
+    )
+    parser.add_argument(
+        "--fail-fast",
+        action="store_true",
+        help="interrompe o lote na primeira reprovação ou erro",
+    )
+    parser.add_argument(
+        "--codex-skill-backed",
+        action="store_true",
+        help="fornece a skill cível e suas referências ao executor Codex cego",
     )
     return parser
 
@@ -1053,12 +1433,27 @@ def main(
 ) -> int:
     """Executa o fluxo de avaliação e escreve seus relatórios."""
     args = _parser().parse_args(argv)
+    model = args.model or ("sonnet" if args.backend == "claude" else "gpt-5.6-sol")
+    if args.codex_skill_backed and args.backend != "codex":
+        print("Erro: --codex-skill-backed exige --backend codex", file=sys.stderr)
+        return 1
+    if args.rejudge and not args.resume:
+        print("Erro: --rejudge exige --resume", file=sys.stderr)
+        return 1
     try:
         fixture_scenarios = load_scenarios(args.fixture)
         for scenario in fixture_scenarios:
             _scenario_values(scenario)
-            _authorizing_turn(scenario, len(prompt_turns(scenario)))
+            turn_count = len(prompt_turns(scenario))
+            _authorizing_turn(scenario, turn_count)
             _validated_setup_files(scenario)
+            if args.codex_skill_backed:
+                expected_skill = scenario.get("expected_skill")
+                if not isinstance(expected_skill, str):
+                    raise ValueError("cenário sem skill esperada")
+                _codex_skill_setup_files(expected_skill)
+            if args.backend == "codex" and turn_count != 1:
+                raise ValueError("backend codex aceita somente cenários de um turno")
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Erro ao carregar os cenários: {exc}", file=sys.stderr)
         return 1
@@ -1093,7 +1488,11 @@ def main(
         ROOT
         / "data"
         / "evals"
-        / f"{run_date}-claude-{args.model}-v{plugin_version}{fixture_suffix}"
+        / (
+            f"{run_date}-{args.backend}"
+            f"{'-skill' if args.codex_skill_backed else ''}-{model}"
+            f"-v{plugin_version}{fixture_suffix}"
+        )
     )
     transcript_dir = output_dir / "transcripts"
     to_execute = [
@@ -1110,12 +1509,15 @@ def main(
     ]
     print(f"Executando {len(to_execute)} de {len(fixture_scenarios)} cenários")
 
-    if not check_plugin_installed(executor):
+    if args.backend == "claude" and not check_plugin_installed(executor):
         print(
             "Erro: o plugin silo-legal não está instalado no Claude Code. "
             "Instale-o antes de executar os evals.",
             file=sys.stderr,
         )
+        return 1
+    if args.backend == "codex" and not check_codex_installed(executor):
+        print("Erro: o Codex CLI autenticado não está disponível.", file=sys.stderr)
         return 1
 
     transcript_dir.mkdir(parents=True, exist_ok=True)
@@ -1131,12 +1533,24 @@ def main(
             transcripts = [path.read_text(encoding="utf-8") for path in transcript_paths]
         else:
             transcripts, execution_error = run_scenario(
-                scenario, args.model, transcript_path, executor
+                scenario,
+                model,
+                transcript_path,
+                executor,
+                backend=args.backend,
+                codex_skill_backed=args.codex_skill_backed,
             )
-        parsed = parse_turns(transcripts)
+        parsed = (
+            parse_codex_transcript(transcripts[0])
+            if args.backend == "codex" and transcripts
+            else parse_turns(transcripts)
+        )
         invoked_skills = parsed["invoked_skills"]
         assert isinstance(invoked_skills, list)
-        is_routing_ok = routing_ok(expected_skill, invoked_skills)
+        routing_applied = args.backend == "claude"
+        is_routing_ok = (
+            routing_ok(expected_skill, invoked_skills) if routing_applied else True
+        )
         read_files_by_turn = parsed["read_files_by_turn"]
         assert isinstance(read_files_by_turn, list)
         redaction_gate = check_redaction_gate(
@@ -1149,13 +1563,22 @@ def main(
             turn_outputs = parsed["turn_outputs"]
             assert isinstance(turn_outputs, list)
             judge_input = [str(output) for output in turn_outputs]
-        judged, judge_cost = (
-            (None, None)
-            if execution_error
-            else judge_scenario(
-                scenario, judge_input, args.model, executor
+        judge_transcript_path = transcript_dir / f"{scenario_id}.judge.jsonl"
+        if execution_error:
+            judged, judge_cost = None, None
+        elif args.resume and not args.rejudge and judge_transcript_path.is_file():
+            judged, judge_cost = parse_judge_transcript(
+                judge_transcript_path.read_text(encoding="utf-8"), args.backend
             )
-        )
+        else:
+            judged, judge_cost = judge_scenario(
+                scenario,
+                judge_input,
+                model,
+                executor,
+                backend=args.backend,
+                transcript_path=judge_transcript_path,
+            )
         verdict = (
             "FAIL"
             if execution_error
@@ -1172,7 +1595,9 @@ def main(
             "first_skill": invoked_skills[0] if invoked_skills else None,
             "invoked_skills": invoked_skills,
             "available_skills": parsed["available_skills"],
-            "routing_ok": is_routing_ok,
+            "routing_applied": routing_applied,
+            "routing_ok": is_routing_ok if routing_applied else None,
+            "skill_material_applied": args.codex_skill_backed,
             "invariants": materialize_invariants(invariants, judged),
             "verdict": verdict,
             "cost_usd": parsed["cost_usd"],
@@ -1183,6 +1608,13 @@ def main(
             "turns": len(transcripts),
             "redaction_gate": redaction_gate,
         }
+        if args.backend == "codex":
+            result["token_usage"] = parsed.get("token_usage", {})
+            if judged is not None and judge_transcript_path.is_file():
+                judge_parsed = parse_codex_transcript(
+                    judge_transcript_path.read_text(encoding="utf-8")
+                )
+                result["judge_token_usage"] = judge_parsed.get("token_usage", {})
         if execution_error:
             result["execution_error"] = execution_error
         results.append(result)
@@ -1196,10 +1628,15 @@ def main(
                 if isinstance(turn, int) and isinstance(path, str):
                     line += f" (gate mecânico: turno {turn} leu {Path(path).name})"
         print(line)
+        if args.fail_fast and verdict != "PASS":
+            break
 
     report = build_report(
-        run_date, args.model, plugin_version, results, fixture_scenarios
+        run_date, model, plugin_version, results, fixture_scenarios
     )
+    report["runner"] = "claude-code" if args.backend == "claude" else "codex-cli"
+    if args.backend == "codex":
+        report["cost_basis"] = "Codex account usage; no external USD price reported"
     write_reports(output_dir, report)
     counts = report["counts"]
     assert isinstance(counts, dict)

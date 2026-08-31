@@ -1,0 +1,69 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "O comprovante existe, mas diário e certidão divergem sobre a data da publicação, tornando ambígua a tempestividade.",
+  "effective_spec_sha256": "fbfdaba597df0799e239373ea7a062ce9a1994f848de896e39d490dd3ebdb900",
+  "expected_observations": [
+    {
+      "claim": "O Diário registra publicação em 2026-06-24 e a certidão registra 2026-06-22.",
+      "class": "contradiction",
+      "evidence": [
+        "11-diario-justica.md",
+        "12-certidao-publicacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência à tempestividade do pagamento.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver o marco inicial, não é seguro concluir se o pagamento de 2026-07-14 ocorreu dentro do prazo.",
+      "class": "relation",
+      "evidence": [
+        "10-despacho-intimacao.md",
+        "11-diario-justica.md",
+        "12-certidao-publicacao.md",
+        "14-registro-bancario.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis e pede conferência da publicação oficial antes de afirmar mora ou tempestividade.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-107",
+  "motif": "peticao_decisao_peticao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-107",
+    "F002": "3ª Vara Cível da Comarca Experimental de Horizonte",
+    "F003": "Orbe Geradores Ltda.",
+    "F004": "Prisma Centros de Dados S.A.",
+    "F010": "2025-08-30",
+    "F011": "fornecimento e instalação de geradores industriais de contingência",
+    "F012": "188.400,00",
+    "F013": "2025-10-05",
+    "F014": "2025-11-04",
+    "F020": "2025-11-30",
+    "F021": "2026-03-12",
+    "F022": "pagar R$ 188.400,00, com atualização pelo IPCA-E desde 2025-11-04 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-05-07",
+    "F024": "2025-12-10",
+    "F030": "2026-06-19",
+    "F031": "211.930,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-06-19 e juros simples de 1% ao mês desde 2025-12-10",
+    "F040": "2026-06-19",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-06-24",
+    "F043": "2026-06-22",
+    "F050": "2026-07-14",
+    "F051": "211.930,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-107",
+    "F060": "2026-06-25 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-07-16 09:10",
+    "F070": "no período de 2026-06-22 a 2026-07-15, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F071": "2026-06-22 a 2026-07-15"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

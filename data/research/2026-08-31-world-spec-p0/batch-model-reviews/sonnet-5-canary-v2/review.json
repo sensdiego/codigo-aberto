@@ -1,0 +1,251 @@
+{
+  "batch_gate": "CONSTRUIR",
+  "batch_reason": "Os quatro assuntos seguem um desenho consistente e plausível: W-A apresenta cadeia documental limpa e verificável, W-B insere contradição realista entre alegação de pagamento e resposta bancária negativa, e W-C insere divergência de datas entre o documento de publicação no Diário/Ofício e a certidão de publicação, permitindo duas contagens distintas do prazo do art. 523 e, portanto, dois desfechos de tempestividade. Não há vazamento de gabarito, valores e datas são internamente coerentes e proporcionais, e as lacunas de prova (ausência de confirmação judicial do pagamento, ausência de petição formal nos autos) são recuperáveis exclusivamente a partir dos documentos fornecidos, sem necessidade de suposições externas.",
+  "matters": [
+    {
+      "decision_reason": "O conjunto é internamente coerente, plausível e sem vazamento de gabarito; os três mundos testam competências distintas (leitura de cadeia probatória limpa, avaliação de alegação de pagamento não corroborada por documento bancário e resolução de contagem de prazo ante datas de publicação contraditórias), todas recuperáveis a partir dos arquivos e da nota normativa fornecida.",
+      "matter_id": "M-101",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada: contrato em 01-contrato-fornecimento.md (2025-05-10); entrega em 03-termo-entrega.md (2025-06-15); vencimento em 02-nota-fiscal.md (2025-07-15); petição de cobrança em 04-peticao-inicial.md (protocolo 2025-08-10); aviso de recebimento da citação em 05-aviso-recebimento-citacao.md (2025-08-20); sentença de procedência em 06-sentenca.md (2025-11-20); trânsito em julgado em 07-certidao-transito.md (2026-01-15); requerimento de cumprimento e demonstrativo em 08-peticao-cumprimento.md/09-memoria-calculo.md (protocolo 2026-02-27, total declarado R$94.780,00); despacho de intimação em 10-despacho-intimacao.md (2026-02-27); publicação convergente em 11-diario-justica.md e 12-certidao-publicacao.md (ambos 2026-03-04); juntada da certidão registrada em 15-extrato-andamentos.md (2026-03-05).",
+            "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-03-24, no valor exato do total declarado; não há petição formal de pagamento nos autos até a emissão do extrato (2026-03-26, 15-extrato-andamentos.md), nem manifestação da credora ou homologação judicial.",
+            "Aplicando L219/L224 (16-nota-normativa.md) ao calendário sem feriados (17-calendario-forense.md): publicação única em 2026-03-04 (quarta-feira) inicia contagem em 2026-03-05; 15 dias úteis se esgotam em 2026-03-25. O pagamento alegado em 2026-03-24 seria, nessa única contagem possível, um dia anterior ao termo final — compatível com tempestividade, sujeito a confirmação judicial do efetivo ingresso dos valores."
+          ],
+          "missing_evidence": [
+            "Confirmação do juízo/cartório do ingresso do valor na conta judicial (certidão de depósito ou extrato judicial), distinta do comprovante unilateral em 14-registro-bancario.md.",
+            "Petição formal informando o pagamento, protocolada nos autos, e manifestação da credora sobre a suficiência do depósito.",
+            "Detalhamento aritmético do demonstrativo (09-memoria-calculo.md) que permita auditoria do total sem necessidade de recálculo pelo revisor."
+          ],
+          "realism_1_to_5": 5,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Alegação de pagamento em 13-email-executada.md versus ausência de localização do comprovante pelo banco em 14-registro-bancario.md, para os mesmos dados (data, valor, destino)."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à W-A, sustentada pelos mesmos arquivos (01 a 12 e 15-extrato-andamentos.md), com publicação convergente em 2026-03-04 (11-diario-justica.md e 12-certidao-publicacao.md).",
+            "O e-mail da executada (13-email-executada.md) alega transferência de R$94.780,00 em 2026-03-24 para a conta judicial, mas a resposta bancária (14-registro-bancario.md) informa que 'não foi localizado comprovante com os dados fornecidos', sem afirmar a inexistência da operação com outros dados — pagamento alegado, não corroborado.",
+            "Contagem do prazo do art. 523 (L219/L224, 16-nota-normativa.md; 17-calendario-forense.md): publicação em 2026-03-04 gera termo final em 2026-03-25; contudo, como a própria ocorrência do pagamento em 2026-03-24 não é confirmada pelo único registro bancário disponível, a tempestividade não pode ser afirmada com base na prova reunida."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre eventual divergência de dados (conta, identificador, banco) usados na busca de 14-registro-bancario.md, e nova tentativa de localização com dados completos.",
+            "Comprovante bancário complementar (extrato de conta de origem, protocolo SPB/TED) que corrobore a transferência alegada.",
+            "Petição formal nos autos comunicando o pagamento e manifestação da credora."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "11-diario-justica.md (publicação em 2026-03-04) versus 12-certidao-publicacao.md (publicação em 2026-03-02)."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada pelos mesmos arquivos 01 a 10 e 13-15, idêntica à W-A até o despacho de intimação (10-despacho-intimacao.md, 2026-02-27).",
+            "Há contradição direta entre 11-diario-justica.md (publicação em 2026-03-04) e 12-certidao-publicacao.md (publicação em 2026-03-02) quanto à data do mesmo ato de intimação no mesmo processo.",
+            "A juntada da certidão registrada em 15-extrato-andamentos.md ocorreu em 2026-03-05, compatível com um intervalo de 1 dia após a data do Diário (03-04) e de 3 dias após a data da certidão (03-02); os documentos não permitem eleger uma data como correta.",
+            "Duas contagens do prazo são possíveis (L219/L224, 16-nota-normativa.md; 17-calendario-forense.md): (a) publicação em 2026-03-04 → termo final em 2026-03-25, e o pagamento alegado em 2026-03-24 (13-email-executada.md/14-registro-bancario.md) seria tempestivo; (b) publicação em 2026-03-02 → termo final em 2026-03-23, e o mesmo pagamento seria intempestivo por um dia. A divergência documental impede concluir com segurança."
+          ],
+          "missing_evidence": [
+            "Certidão cartorária de conferência/retificação entre a data efetivamente disponibilizada no Diário e a certificada, para eliminar a divergência antes de qualquer decisão sobre tempestividade.",
+            "Confirmação judicial do ingresso do valor pago e petição formal informando o pagamento nos autos."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Padrão consistente com M-101, testando leitura de cadeia limpa, contradição pagamento/banco e contagem dupla de prazo por divergência de data de publicação, sem vazamento de gabarito e com plausibilidade documental adequada.",
+      "matter_id": "M-105",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada: contrato em 01-contrato-fornecimento.md (2025-06-07); entrega em 03-termo-entrega.md (2025-07-13); vencimento em 02-nota-fiscal.md (2025-08-12); petição de cobrança em 04-peticao-inicial.md (protocolo 2025-09-07); citação recebida em 05-aviso-recebimento-citacao.md (2025-09-17); sentença em 06-sentenca.md (2025-12-18); trânsito em julgado em 07-certidao-transito.md (2026-02-12); requerimento de cumprimento/demonstrativo em 08-peticao-cumprimento.md/09-memoria-calculo.md (protocolo 2026-03-27, total declarado R$170.920,00); despacho em 10-despacho-intimacao.md (2026-03-27); publicação convergente em 11-diario-justica.md e 12-certidao-publicacao.md (ambos 2026-04-01); juntada em 15-extrato-andamentos.md (2026-04-02).",
+            "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-04-21, sem petição formal correspondente nos autos até 2026-04-23 (data do extrato).",
+            "Contagem do prazo (L219/L224, 16-nota-normativa.md; 17-calendario-forense.md): publicação única em 2026-04-01 (quarta-feira) inicia contagem em 2026-04-02; termo final em 2026-04-22. O pagamento alegado em 2026-04-21 seria, na única contagem possível, um dia anterior ao termo — compatível com tempestividade, sujeito a confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Confirmação judicial/cartorária do ingresso do valor na conta vinculada ao processo.",
+            "Petição formal de comunicação do pagamento e manifestação da credora.",
+            "Auditoria independente do demonstrativo de cálculo (09-memoria-calculo.md), sem recomputar a correção monetária."
+          ],
+          "realism_1_to_5": 5,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Alegação de pagamento em 13-email-executada.md versus ausência de localização do comprovante em 14-registro-bancario.md."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à W-A, com publicação convergente em 2026-04-01 (11-diario-justica.md e 12-certidao-publicacao.md).",
+            "O e-mail da executada (13-email-executada.md) alega transferência de R$170.920,00 em 2026-04-21, mas a resposta bancária (14-registro-bancario.md) informa que não foi localizado comprovante com os dados fornecidos, sem negar a operação com dados diferentes.",
+            "Termo final do prazo do art. 523 seria 2026-04-22 (mesma lógica da W-A), mas a incerteza sobre a efetiva ocorrência do pagamento em 2026-04-21 impede afirmar a tempestividade com base na prova disponível."
+          ],
+          "missing_evidence": [
+            "Esclarecimento de eventual divergência de dados bancários usados na busca e nova verificação.",
+            "Comprovante bancário complementar e petição formal de comunicação do pagamento."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "11-diario-justica.md (2026-04-01) versus 12-certidao-publicacao.md (2026-03-30)."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada pelos mesmos arquivos 01 a 10 e 13-15, idêntica à W-A até o despacho (10-despacho-intimacao.md, 2026-03-27).",
+            "Contradição entre 11-diario-justica.md (publicação em 2026-04-01) e 12-certidao-publicacao.md (publicação em 2026-03-30) quanto à data do mesmo ato.",
+            "A juntada em 15-extrato-andamentos.md (2026-04-02) é compatível com 1 dia após a data do Diário e 3 dias após a data da certidão, sem eleger uma como correta.",
+            "Duas contagens possíveis: (a) publicação em 2026-04-01 → termo final em 2026-04-22, pagamento alegado em 2026-04-21 seria tempestivo; (b) publicação em 2026-03-30 → termo final em 2026-04-20, o mesmo pagamento seria intempestivo por um dia."
+          ],
+          "missing_evidence": [
+            "Certidão de retificação/conferência da data de publicação.",
+            "Confirmação judicial do ingresso do valor pago e petição formal correspondente."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Variante da cadeia despacho/ofício/certidão mantém o mesmo padrão de qualidade dos demais assuntos, com contradição inserida no próprio texto do ofício versus certidão, testando atenção à cadeia específica pedida na tarefa sem vazar a resposta.",
+      "matter_id": "M-108",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada: contrato em 01-contrato-fornecimento.md (2025-06-28); entrega em 03-termo-entrega.md (2025-08-03); vencimento em 02-nota-fiscal.md (2025-09-02); petição de cobrança em 04-peticao-inicial.md (protocolo 2025-09-28); citação em 05-aviso-recebimento-citacao.md (2025-10-08); sentença em 06-sentenca.md (2026-01-08); trânsito em julgado em 07-certidao-transito.md (2026-03-05); requerimento de cumprimento/demonstrativo em 08-peticao-cumprimento.md/09-memoria-calculo.md (protocolo 2026-04-17, total declarado R$83.140,00); despacho em 10-despacho-intimacao.md (2026-04-17); ofício de intimação em 11-oficio-intimacao.md registrando publicação em 2026-04-22, confirmada por 12-certidao-publicacao.md (2026-04-22); juntada em 15-extrato-andamentos.md (2026-04-23).",
+            "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-05-12, sem petição formal correspondente até 2026-05-14 (data do extrato).",
+            "Contagem do prazo (L219/L224, 16-nota-normativa.md; 17-calendario-forense.md): publicação convergente em 2026-04-22 (quarta-feira) inicia contagem em 2026-04-23; termo final em 2026-05-13. O pagamento alegado em 2026-05-12 seria um dia anterior ao termo, compatível com tempestividade, sujeito a confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Confirmação judicial/cartorária do ingresso do valor.",
+            "Petição formal de comunicação do pagamento e manifestação da credora.",
+            "Auditoria independente do demonstrativo (09-memoria-calculo.md) sem recálculo pelo revisor."
+          ],
+          "realism_1_to_5": 5,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Alegação de pagamento em 13-email-executada.md versus ausência de localização do comprovante em 14-registro-bancario.md."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à W-A, com publicação convergente entre 11-oficio-intimacao.md e 12-certidao-publicacao.md (ambos 2026-04-22).",
+            "O e-mail da executada (13-email-executada.md) alega transferência de R$83.140,00 em 2026-05-12, mas a resposta bancária (14-registro-bancario.md) informa ausência de comprovante localizado com os dados fornecidos.",
+            "Termo final calculado em 2026-05-13 (mesma lógica da W-A), mas a incerteza sobre a efetiva ocorrência do pagamento impede afirmar tempestividade com base na prova disponível."
+          ],
+          "missing_evidence": [
+            "Esclarecimento de divergência de dados bancários e nova verificação.",
+            "Petição formal de comunicação do pagamento e comprovante complementar."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "11-oficio-intimacao.md (publicação em 2026-04-22) versus 12-certidao-publicacao.md (publicação em 2026-04-20)."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada pelos mesmos arquivos 01 a 10 e 13-15, idêntica à W-A até o despacho (10-despacho-intimacao.md, 2026-04-17).",
+            "Contradição entre o próprio texto do ofício de intimação (11-oficio-intimacao.md), que registra publicação em 2026-04-22, e a certidão de publicação (12-certidao-publicacao.md), que certifica publicação em 2026-04-20, para o mesmo ato.",
+            "A juntada em 15-extrato-andamentos.md (2026-04-23) é compatível com 1 dia após a data do ofício (04-22) e 3 dias após a data da certidão (04-20), sem eleger uma como correta.",
+            "Duas contagens possíveis: (a) publicação em 2026-04-22 → termo final em 2026-05-13, pagamento alegado em 2026-05-12 seria tempestivo; (b) publicação em 2026-04-20 → termo final em 2026-05-11, o mesmo pagamento seria intempestivo por um dia."
+          ],
+          "missing_evidence": [
+            "Certidão de retificação/conferência entre o registro do ofício e a certidão de publicação.",
+            "Confirmação judicial do ingresso do valor pago."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Mantém o padrão de qualidade e desenho dos demais assuntos, com foco declarado na cadeia contrato/petição/sentença mas preservando a mesma estrutura de contradição de datas de publicação nos três mundos, sem vazamento de gabarito.",
+      "matter_id": "M-111",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada: contrato em 01-contrato-fornecimento.md (2025-07-19); entrega em 03-termo-entrega.md (2025-08-24); vencimento em 02-nota-fiscal.md (2025-09-23); petição de cobrança em 04-peticao-inicial.md (protocolo 2025-10-19); citação em 05-aviso-recebimento-citacao.md (2025-10-29); sentença em 06-sentenca.md (2026-01-29); trânsito em julgado em 07-certidao-transito.md (2026-03-26); requerimento de cumprimento/demonstrativo em 08-peticao-cumprimento.md/09-memoria-calculo.md (protocolo 2026-05-08, total declarado R$231.160,00); despacho em 10-despacho-intimacao.md (2026-05-08); publicação convergente em 11-diario-justica.md e 12-certidao-publicacao.md (ambos 2026-05-13); juntada em 15-extrato-andamentos.md (2026-05-14).",
+            "Pagamento alegado em 13-email-executada.md e comprovante unilateral em 14-registro-bancario.md, ambos de 2026-06-02, sem petição formal correspondente até 2026-06-04 (data do extrato).",
+            "Contagem do prazo (L219/L224, 16-nota-normativa.md; 17-calendario-forense.md): publicação em 2026-05-13 (quarta-feira) inicia contagem em 2026-05-14; termo final em 2026-06-03. O pagamento alegado em 2026-06-02 seria um dia anterior ao termo, compatível com tempestividade, sujeito a confirmação judicial."
+          ],
+          "missing_evidence": [
+            "Confirmação judicial/cartorária do ingresso do valor.",
+            "Petição formal de comunicação do pagamento e manifestação da credora.",
+            "Auditoria independente do demonstrativo (09-memoria-calculo.md) sem recálculo pelo revisor."
+          ],
+          "realism_1_to_5": 5,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Alegação de pagamento em 13-email-executada.md versus ausência de localização do comprovante em 14-registro-bancario.md."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à W-A, com publicação convergente em 2026-05-13 (11-diario-justica.md e 12-certidao-publicacao.md).",
+            "O e-mail da executada (13-email-executada.md) alega transferência de R$231.160,00 em 2026-06-02, mas a resposta bancária (14-registro-bancario.md) informa ausência de comprovante localizado com os dados fornecidos.",
+            "Termo final calculado em 2026-06-03 (mesma lógica da W-A), mas a incerteza sobre a efetiva ocorrência do pagamento impede afirmar tempestividade com base na prova disponível."
+          ],
+          "missing_evidence": [
+            "Esclarecimento de divergência de dados bancários e nova verificação.",
+            "Petição formal de comunicação do pagamento e comprovante complementar."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "11-diario-justica.md (2026-05-13) versus 12-certidao-publicacao.md (2026-05-11)."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia sustentada pelos mesmos arquivos 01 a 10 e 13-15, idêntica à W-A até o despacho (10-despacho-intimacao.md, 2026-05-08).",
+            "Contradição entre 11-diario-justica.md (publicação em 2026-05-13) e 12-certidao-publicacao.md (publicação em 2026-05-11) quanto à data do mesmo ato.",
+            "A juntada em 15-extrato-andamentos.md (2026-05-14) é compatível com 1 dia após a data do Diário (05-13) e 3 dias após a data da certidão (05-11), sem eleger uma como correta.",
+            "Duas contagens possíveis: (a) publicação em 2026-05-13 → termo final em 2026-06-03, pagamento alegado em 2026-06-02 seria tempestivo; (b) publicação em 2026-05-11 → termo final em 2026-06-01, o mesmo pagamento seria intempestivo por um dia."
+          ],
+          "missing_evidence": [
+            "Certidão de retificação/conferência da data de publicação.",
+            "Confirmação judicial do ingresso do valor pago e petição formal correspondente."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

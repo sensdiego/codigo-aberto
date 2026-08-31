@@ -1,0 +1,274 @@
+{
+  "batch_gate": "CONSTRUIR",
+  "batch_reason": "As quatro matérias seguem um padrão consistente e bem controlado: World A apresenta cadeia documental coerente com pagamento tempestivo alegado e comprovado por documento bancário positivo (ainda que sem homologação judicial expressa); World B introduz um gap probatório realista ao substituir o comprovante por uma busca bancária negativa, sem contradizer abertamente a alegação; World C introduz uma contradição factual pontual e proporcional (divergência de um a três dias entre o diário/ofício e a certidão de publicação) que desloca o termo final do prazo do art. 523 o suficiente para inverter a tempestividade do pagamento, exigindo o relato de dois resultados possíveis conforme instruído. Todas as lacunas e contradições são identificáveis exclusivamente a partir dos documentos e da nota normativa, sem necessidade de suposições externas, e o calendário forense fornecido cobre exatamente o período relevante em cada caso (sinal de construção proposital, mas não de vazamento da resposta). Não há instruções ocultas nos documentos nem violação da separação entre instrução (task.md) e evidência.",
+  "matters": [
+    {
+      "decision_reason": "Os três mundos formam um espectro coerente e recuperável exclusivamente a partir dos documentos: pagamento confirmado e tempestivo (W-A), pagamento alegado mas não confirmado bancariamente (W-B) e divergência de datas que produz dois resultados possíveis de tempestividade (W-C). A nota normativa e o calendário permitem o cálculo sem suposições externas.",
+      "matter_id": "M-101",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md cobre exatamente a janela necessária para o cálculo do prazo (2026-03-02 a 2026-03-25), sem margem, sinal de construção sob medida do cenário"
+          ],
+          "material_findings": [
+            "Cronologia integralmente sustentada por arquivos: contrato 2025-05-10 e vencimento 2025-07-15 (01-contrato-fornecimento.md, 02-nota-fiscal.md); entrega 2025-06-15 (03-termo-entrega.md); petição inicial 2025-08-10 (04-peticao-inicial.md); citação recebida 2025-08-20 (05-aviso-recebimento-citacao.md); sentença 2025-11-20 com IPCA-E desde 2025-07-15 e juros de 1% a.m. desde a citação (06-sentenca.md); trânsito em julgado 2026-01-15 (07-certidao-transito.md); requerimento de cumprimento e despacho de intimação em 2026-02-27 (08 e 10); publicação convergente em 2026-03-04 entre 11-diario-justica.md e 12-certidao-publicacao.md; juntada da certidão em 2026-03-05 (15-extrato-andamentos.md).",
+            "Aplicando L219/L224 da nota normativa (16) e o calendário sem feriados (17): publicação em 2026-03-04 (quarta-feira); início do prazo no primeiro dia útil seguinte, 2026-03-05; os 15 dias úteis se esgotam em 2026-03-25.",
+            "Pagamento alegado por e-mail e comprovante bancário positivo em 2026-03-24 (13-email-executada.md, 14-registro-bancario.md), data anterior ao termo final (2026-03-25) — pagamento aparentemente tempestivo, mas sem qualquer manifestação nos autos ou confirmação judicial (o extrato de andamentos, consulta de 2026-03-26, não registra baixa ou petição informando o pagamento).",
+            "O efeito extintivo do art. 525 depende de confirmação judicial do efetivo ingresso do valor na conta vinculada, o que os documentos privados não comprovam por si só."
+          ],
+          "missing_evidence": [
+            "Petição da exequente ou certidão do juízo confirmando o recebimento do valor na conta judicial",
+            "Extrato/ofício bancário emitido pelo próprio juízo (o documento 14 é comprovante privado da executada)",
+            "Discriminação dos componentes de correção monetária e juros no demonstrativo (09-memoria-calculo.md traz apenas principal e total)"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Tensão entre a alegação de pagamento da executada (13-email-executada.md) e o resultado negativo da busca bancária (14-registro-bancario.md), que não confirma a transferência informada"
+          ],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md com janela exatamente coincidente com o prazo calculável, sugerindo construção artificial do cenário"
+          ],
+          "material_findings": [
+            "Mesma cronologia de W-A até a publicação (2026-03-04, convergente entre 11-diario-justica.md e 12-certidao-publicacao.md) e mesmo termo final de 15 dias úteis em 2026-03-25 (nota normativa 16 e calendário 17).",
+            "Executada alega, por e-mail, transferência de R$94.780,00 em 2026-03-24 (13-email-executada.md), dentro do prazo; porém 14-registro-bancario.md é uma resposta bancária negativa de busca de comprovante, informando que não foi localizada operação com os dados fornecidos.",
+            "Não há, portanto, confirmação independente de que o pagamento tenha efetivamente ocorrido, apesar da data alegada ser tempestiva caso confirmada."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário positivo ou extrato judicial confirmando o crédito",
+            "Esclarecimento sobre eventual divergência de dados que explique a busca negativa",
+            "Manifestação da exequente ou do juízo sobre a alegação de pagamento"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência de data de publicação entre 11-diario-justica.md (2026-03-04) e 12-certidao-publicacao.md (2026-03-02), que altera diretamente a tempestividade do pagamento alegado"
+          ],
+          "implausible_or_leaking_documents": [
+            "A certidão de publicação (12) diverge do diário (11) exatamente na medida necessária para colocar em dúvida a tempestividade do pagamento em 2026-03-24, sinal de cenário construído para testar a fronteira do prazo"
+          ],
+          "material_findings": [
+            "Mesma cronologia inicial de W-A/W-B até o despacho de intimação (2026-02-27).",
+            "Há divergência entre 11-diario-justica.md, que indica publicação em 2026-03-04, e 12-certidao-publicacao.md, que certifica publicação em 2026-03-02 — contradição direta na cadeia despacho/publicação exigida pelo item 8 do task.md.",
+            "Resultado 1: se a publicação correta for 2026-03-02 (segunda-feira), o prazo inicia em 2026-03-03 e os 15 dias úteis se esgotam em 2026-03-23; o pagamento alegado em 2026-03-24 (13 e 14) seria intempestivo (um dia útil após o termo).",
+            "Resultado 2: se prevalecer a data do diário (2026-03-04, quarta-feira), o prazo inicia em 2026-03-05 e se esgota em 2026-03-25; o pagamento em 2026-03-24 seria tempestivo.",
+            "O extrato de andamentos (15) apenas registra a juntada da certidão em 2026-03-05, sem indicar qual das duas datas de publicação prevalece."
+          ],
+          "missing_evidence": [
+            "Documento que esclareça qual data de publicação (03-02 ou 03-04) é a correta",
+            "Confirmação judicial do pagamento e do efetivo crédito na conta vinculada"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Os mundos reproduzem o mesmo padrão de M-101 com valores e datas próprios, permitindo cálculo integral do prazo e identificação de todas as hipóteses de tempestividade a partir apenas dos documentos apresentados.",
+      "matter_id": "M-105",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md cobre exatamente a janela necessária ao cálculo do prazo (2026-06-08 a 2026-07-01)"
+          ],
+          "material_findings": [
+            "Cronologia sustentada por arquivos: contrato 2025-08-16 e vencimento 2025-10-21 (01,02); entrega 2025-09-21 (03); petição inicial 2025-11-16 (04); citação recebida 2025-11-26 (05); sentença 2026-02-26 com IPCA-E desde 2025-10-21 e juros de 1% a.m. desde a citação (06); trânsito em julgado 2026-04-23 (07); requerimento e despacho em 2026-06-05 (08,10); publicação convergente em 2026-06-10 (11-diario-justica.md e 12-certidao-publicacao.md); juntada da certidão em 2026-06-11 (15).",
+            "Aplicando L219/L224 e o calendário sem feriados (17): publicação em 2026-06-10 (quarta-feira); início em 2026-06-11; os 15 dias úteis esgotam-se em 2026-07-01.",
+            "Pagamento alegado com comprovante bancário positivo em 2026-06-30 (13,14), anterior ao termo final — aparentemente tempestivo, mas sem confirmação nos autos (extrato de andamentos emitido em 2026-07-02 não registra baixa)."
+          ],
+          "missing_evidence": [
+            "Confirmação judicial/bancária oficial do crédito na conta vinculada",
+            "Discriminação separada de juros e correção no demonstrativo (09-memoria-calculo.md)"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Tensão entre a alegação de pagamento (13) e a busca bancária negativa (14)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Janela do calendário (17) exatamente coincidente com o prazo necessário ao cálculo"
+          ],
+          "material_findings": [
+            "Mesma cronologia e mesmo termo final de 15 dias úteis (2026-07-01), com publicação convergente em 2026-06-10 (11 e 12).",
+            "Executada alega pagamento de R$170.920,00 em 2026-06-30 (13-email-executada.md), mas 14-registro-bancario.md é resposta bancária negativa, não localizando o comprovante com os dados informados."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário positivo ou extrato judicial",
+            "Manifestação da exequente/juízo sobre a alegação de pagamento"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência entre a data de publicação do diário (11) e da certidão (12), que altera a tempestividade do pagamento"
+          ],
+          "implausible_or_leaking_documents": [
+            "Certidão de publicação (12) diverge do diário (11) exatamente na medida que coloca em dúvida a tempestividade do pagamento em 2026-06-30"
+          ],
+          "material_findings": [
+            "Mesma cronologia inicial até o despacho (2026-06-05).",
+            "Divergência entre 11-diario-justica.md (publicação indicada em 2026-06-10) e 12-certidao-publicacao.md (publicação certificada em 2026-06-08).",
+            "Resultado 1: se a publicação for 2026-06-08 (segunda-feira), início em 2026-06-09 e término dos 15 dias úteis em 2026-06-29; o pagamento alegado em 2026-06-30 (13,14) seria intempestivo.",
+            "Resultado 2: se prevalecer 2026-06-10 (diário), início em 2026-06-11 e término em 2026-07-01; o pagamento em 2026-06-30 seria tempestivo.",
+            "O extrato de andamentos (15) registra apenas a juntada da certidão em 2026-06-11, sem resolver a divergência."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre qual data de publicação prevalece",
+            "Confirmação judicial do pagamento"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "A variante com ofício de informação do Diário no lugar do extrato do Diário mantém a mesma estrutura recuperável de cálculo de prazo e produz o mesmo padrão de cenários (confirmado, com gap bancário, e com contradição de datas) exigido pela tarefa.",
+      "matter_id": "M-108",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md com janela exatamente igual ao período necessário ao cálculo (2026-06-29 a 2026-07-22)"
+          ],
+          "material_findings": [
+            "Cronologia: contrato 2025-09-06 e vencimento 2025-11-11 (01,02); entrega 2025-10-12 (03); petição inicial 2025-12-07 (04); citação recebida 2025-12-17 (05); sentença 2026-03-19 (06); trânsito em julgado 2026-05-14 (07); requerimento e despacho em 2026-06-26 (08,10); ofício de informação do Diário (11-oficio-informacao-diario.md) e certidão de publicação (12-certidao-publicacao.md) convergem na data 2026-07-01; juntada da certidão em 2026-07-02 (15).",
+            "Aplicando L219/L224 e calendário sem feriados (17): publicação em 2026-07-01 (quarta-feira); início em 2026-07-02; os 15 dias úteis esgotam-se em 2026-07-22.",
+            "Pagamento com comprovante positivo em 2026-07-21 (13,14), um dia útil antes do termo final — aparentemente tempestivo, sem confirmação judicial nos autos."
+          ],
+          "missing_evidence": [
+            "Confirmação judicial/bancária oficial do crédito",
+            "Detalhamento dos componentes de correção e juros no demonstrativo (09)"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Tensão entre a alegação de pagamento (13) e a busca bancária negativa (14)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Janela do calendário (17) exatamente coincidente com o prazo necessário"
+          ],
+          "material_findings": [
+            "Mesma cronologia e mesmo termo final (2026-07-22), com ofício (11) e certidão (12) convergentes em 2026-07-01.",
+            "Pagamento alegado em 2026-07-21 (13), mas 14-registro-bancario.md é busca bancária negativa, sem localizar o comprovante."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário positivo ou extrato judicial",
+            "Manifestação do juízo sobre a alegação de pagamento"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência entre o ofício de informação do Diário (11, data 2026-07-01) e a certidão de publicação (12, data 2026-06-29)"
+          ],
+          "implausible_or_leaking_documents": [
+            "A certidão (12) antecede em dois dias a data informada pelo próprio ofício (11) que responde à mesma consulta sobre a veiculação, sequência atípica para uma certidão de publicação"
+          ],
+          "material_findings": [
+            "Mesma cronologia inicial até o despacho (2026-06-26).",
+            "O ofício de informação do Diário (11) afirma que a publicação ocorreu em 2026-07-01, mas a certidão de publicação (12) certifica publicação em 2026-06-29 — contradição direta na cadeia despacho/ofício/certidão destacada pelo item 8 do task.md.",
+            "Resultado 1: se a publicação for 2026-06-29 (segunda-feira), início em 2026-06-30 e término dos 15 dias úteis em 2026-07-20; o pagamento alegado em 2026-07-21 (13,14) seria intempestivo.",
+            "Resultado 2: se prevalecer 2026-07-01 (ofício), início em 2026-07-02 e término em 2026-07-22; o pagamento em 2026-07-21 seria tempestivo.",
+            "O extrato de andamentos (15) registra a juntada da certidão em 2026-07-02, compatível com qualquer das duas datas, sem resolver a divergência."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre qual data de publicação prevalece (ofício x certidão)",
+            "Confirmação judicial do pagamento"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Repete-se o padrão consistente de cenários (confirmado, gap bancário, contradição de datas) com cronologia integralmente recuperável dos documentos e cálculo de prazo viável com a nota normativa e o calendário fornecidos.",
+      "matter_id": "M-111",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md com janela exatamente igual ao período necessário ao cálculo (2026-07-20 a 2026-08-12)"
+          ],
+          "material_findings": [
+            "Cronologia: contrato 2025-09-27 e vencimento 2025-12-02 (01,02); entrega 2025-11-02 (03); petição inicial 2025-12-28 (04); citação recebida 2026-01-07 (05); sentença 2026-04-09 (06); trânsito em julgado 2026-06-04 (07); requerimento e despacho em 2026-07-17 (08,10); publicação convergente em 2026-07-22 entre 11-diario-justica.md e 12-certidao-publicacao.md; juntada da certidão em 2026-07-23 (15).",
+            "Aplicando L219/L224 e calendário sem feriados (17): publicação em 2026-07-22 (quarta-feira); início em 2026-07-23; os 15 dias úteis esgotam-se em 2026-08-12.",
+            "Pagamento com comprovante positivo em 2026-08-11 (13,14), um dia útil antes do termo final — aparentemente tempestivo, sem confirmação judicial nos autos (extrato de 2026-08-13 não registra baixa)."
+          ],
+          "missing_evidence": [
+            "Confirmação judicial/bancária oficial do crédito",
+            "Detalhamento dos componentes de correção e juros no demonstrativo (09)"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Tensão entre a alegação de pagamento (13) e a busca bancária negativa (14)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Janela do calendário (17) exatamente coincidente com o prazo necessário"
+          ],
+          "material_findings": [
+            "Mesma cronologia e mesmo termo final (2026-08-12), com diário (11) e certidão (12) convergentes em 2026-07-22.",
+            "Pagamento alegado em 2026-08-11 (13), mas 14-registro-bancario.md é busca bancária negativa, sem localizar o comprovante com os dados informados."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário positivo ou extrato judicial",
+            "Manifestação do juízo sobre a alegação de pagamento"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência entre a data de publicação do diário (11, 2026-07-22) e da certidão (12, 2026-07-20)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Certidão de publicação (12) diverge do diário (11) exatamente na medida que coloca em dúvida a tempestividade do pagamento em 2026-08-11"
+          ],
+          "material_findings": [
+            "Mesma cronologia inicial até o despacho (2026-07-17).",
+            "Divergência entre 11-diario-justica.md (publicação indicada em 2026-07-22) e 12-certidao-publicacao.md (publicação certificada em 2026-07-20).",
+            "Resultado 1: se a publicação for 2026-07-20 (segunda-feira), início em 2026-07-21 e término dos 15 dias úteis em 2026-08-10; o pagamento alegado em 2026-08-11 (13,14) seria intempestivo.",
+            "Resultado 2: se prevalecer 2026-07-22 (diário), início em 2026-07-23 e término em 2026-08-12; o pagamento em 2026-08-11 seria tempestivo.",
+            "O extrato de andamentos (15) registra a juntada da certidão em 2026-07-23, compatível com ambas as hipóteses, sem resolver a divergência."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre qual data de publicação prevalece",
+            "Confirmação judicial do pagamento"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

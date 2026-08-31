@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "invariantes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "n": {"type": "integer"},
+          "atendido": {"type": "boolean"},
+          "evidencia": {"type": "string"}
+        },
+        "required": ["n", "atendido", "evidencia"]
+      }
+    }
+  },
+  "required": ["invariantes"]
+}

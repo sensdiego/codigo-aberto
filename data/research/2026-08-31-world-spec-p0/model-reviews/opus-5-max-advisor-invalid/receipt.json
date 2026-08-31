@@ -1,0 +1,129 @@
+{
+  "completed_at": "2026-08-31T16:36:08.048982+00:00",
+  "duration_ms": 494176,
+  "effort": "max",
+  "files": {
+    "INSTRUCOES-REVISOR.md": "9e527d799d1037cf3e2c4528e16fcca45200d87a784c455e2c1eeb857ee8451b",
+    "W-A/documents/00-aviso-dataset.md": "8c6a5684130ccaeed6ae559bbe372972f3648d385132df037eb7743a0b70c946",
+    "W-A/documents/01-contrato-fornecimento.md": "b49cb83bf015ff217f2f7609edbe2f267eb0627d1ccdd9a22bda242332e4ccb4",
+    "W-A/documents/02-nota-fiscal.md": "9a4a8f3e9f98d687fcbabefbdee675f8341f6a1c72a2ab9f763fbcd894ff2ee3",
+    "W-A/documents/03-termo-entrega.md": "6802421f32446da47e6c4664b7e6320bca352c0549977b01383ae36641b2b090",
+    "W-A/documents/04-peticao-inicial.md": "66adae1caf6a98c1c0e4137c5760375300abfa10dff91808b02f85e2b06a1aa8",
+    "W-A/documents/05-aviso-recebimento-citacao.md": "aebbd5bd7221aaabb632b63c4bec6e83b9c915277e196bb70886bbbe7bfb2e6d",
+    "W-A/documents/06-sentenca.md": "2e013dce696ef60453709de753646a340cc5c48e072a8b90f4c5d9a208cb96a9",
+    "W-A/documents/07-certidao-transito.md": "fbbe5defb696f414bebf6afb0e70621f9f80b9acd17019e5cb9a2156ed08f7c9",
+    "W-A/documents/08-peticao-cumprimento.md": "1c1448ee385549313d45b6e191287b5b6d26dc974e4dac970949740bc0619ae5",
+    "W-A/documents/09-memoria-calculo.md": "d9dcd0d956981f1622fabfc33ef2fe0c4ad8819f14f6cfb35afb3a0a0cef87be",
+    "W-A/documents/10-despacho-intimacao.md": "3253fe376f273ab4ce8b3c5984f24f3f5f9749cd99dd7781f890610858784620",
+    "W-A/documents/11-diario-justica.md": "a3997307b731f155f516119d3fd36c634b11203923b7c82a30c12eaac27f4d28",
+    "W-A/documents/12-certidao-publicacao.md": "37a977e0db6351f5676026bc4cb7058ca73567e6478c63d8cb270bacc4e04093",
+    "W-A/documents/13-email-executada.md": "eb8d79cd6b81d15edbe7cb8c4effc6d0425ddee70e5ec3af8ce29e836c06e57c",
+    "W-A/documents/14-comprovante-pagamento.md": "224ec45f7542498103c6ac6a8ef5cd2a796404cb4e54e0758bb921e751147c61",
+    "W-A/documents/15-extrato-andamentos.md": "6f3c4680233cec2774d4236a75eb2d4c95b44af2330246e71837e619f6c2c522",
+    "W-A/documents/16-nota-normativa.md": "d319b3f3118f935a3b060ba296f6e7d3fe58e15e92562f0669c54fb2a4b2855a",
+    "W-A/task.md": "aaab36ca01af24f4fa6c92c675cec4ca788c0029434664c16c5a9ab7ac0f7082",
+    "W-B/documents/00-aviso-dataset.md": "8c6a5684130ccaeed6ae559bbe372972f3648d385132df037eb7743a0b70c946",
+    "W-B/documents/01-contrato-fornecimento.md": "b49cb83bf015ff217f2f7609edbe2f267eb0627d1ccdd9a22bda242332e4ccb4",
+    "W-B/documents/02-nota-fiscal.md": "9a4a8f3e9f98d687fcbabefbdee675f8341f6a1c72a2ab9f763fbcd894ff2ee3",
+    "W-B/documents/03-termo-entrega.md": "6802421f32446da47e6c4664b7e6320bca352c0549977b01383ae36641b2b090",
+    "W-B/documents/04-peticao-inicial.md": "66adae1caf6a98c1c0e4137c5760375300abfa10dff91808b02f85e2b06a1aa8",
+    "W-B/documents/05-aviso-recebimento-citacao.md": "aebbd5bd7221aaabb632b63c4bec6e83b9c915277e196bb70886bbbe7bfb2e6d",
+    "W-B/documents/06-sentenca.md": "2e013dce696ef60453709de753646a340cc5c48e072a8b90f4c5d9a208cb96a9",
+    "W-B/documents/07-certidao-transito.md": "fbbe5defb696f414bebf6afb0e70621f9f80b9acd17019e5cb9a2156ed08f7c9",
+    "W-B/documents/08-peticao-cumprimento.md": "1c1448ee385549313d45b6e191287b5b6d26dc974e4dac970949740bc0619ae5",
+    "W-B/documents/09-memoria-calculo.md": "d9dcd0d956981f1622fabfc33ef2fe0c4ad8819f14f6cfb35afb3a0a0cef87be",
+    "W-B/documents/10-despacho-intimacao.md": "3253fe376f273ab4ce8b3c5984f24f3f5f9749cd99dd7781f890610858784620",
+    "W-B/documents/11-diario-justica.md": "a3997307b731f155f516119d3fd36c634b11203923b7c82a30c12eaac27f4d28",
+    "W-B/documents/12-certidao-publicacao.md": "37a977e0db6351f5676026bc4cb7058ca73567e6478c63d8cb270bacc4e04093",
+    "W-B/documents/13-email-executada.md": "eb8d79cd6b81d15edbe7cb8c4effc6d0425ddee70e5ec3af8ce29e836c06e57c",
+    "W-B/documents/15-extrato-andamentos.md": "6f3c4680233cec2774d4236a75eb2d4c95b44af2330246e71837e619f6c2c522",
+    "W-B/documents/16-nota-normativa.md": "d319b3f3118f935a3b060ba296f6e7d3fe58e15e92562f0669c54fb2a4b2855a",
+    "W-B/task.md": "aaab36ca01af24f4fa6c92c675cec4ca788c0029434664c16c5a9ab7ac0f7082",
+    "W-C/documents/00-aviso-dataset.md": "8c6a5684130ccaeed6ae559bbe372972f3648d385132df037eb7743a0b70c946",
+    "W-C/documents/01-contrato-fornecimento.md": "b49cb83bf015ff217f2f7609edbe2f267eb0627d1ccdd9a22bda242332e4ccb4",
+    "W-C/documents/02-nota-fiscal.md": "9a4a8f3e9f98d687fcbabefbdee675f8341f6a1c72a2ab9f763fbcd894ff2ee3",
+    "W-C/documents/03-termo-entrega.md": "6802421f32446da47e6c4664b7e6320bca352c0549977b01383ae36641b2b090",
+    "W-C/documents/04-peticao-inicial.md": "66adae1caf6a98c1c0e4137c5760375300abfa10dff91808b02f85e2b06a1aa8",
+    "W-C/documents/05-aviso-recebimento-citacao.md": "aebbd5bd7221aaabb632b63c4bec6e83b9c915277e196bb70886bbbe7bfb2e6d",
+    "W-C/documents/06-sentenca.md": "2e013dce696ef60453709de753646a340cc5c48e072a8b90f4c5d9a208cb96a9",
+    "W-C/documents/07-certidao-transito.md": "fbbe5defb696f414bebf6afb0e70621f9f80b9acd17019e5cb9a2156ed08f7c9",
+    "W-C/documents/08-peticao-cumprimento.md": "1c1448ee385549313d45b6e191287b5b6d26dc974e4dac970949740bc0619ae5",
+    "W-C/documents/09-memoria-calculo.md": "d9dcd0d956981f1622fabfc33ef2fe0c4ad8819f14f6cfb35afb3a0a0cef87be",
+    "W-C/documents/10-despacho-intimacao.md": "3253fe376f273ab4ce8b3c5984f24f3f5f9749cd99dd7781f890610858784620",
+    "W-C/documents/11-diario-justica.md": "a3997307b731f155f516119d3fd36c634b11203923b7c82a30c12eaac27f4d28",
+    "W-C/documents/12-certidao-publicacao.md": "dcd07a09d3120bbd001b689cac6c98b434ce65500e43319008a380505487598d",
+    "W-C/documents/13-email-executada.md": "eb8d79cd6b81d15edbe7cb8c4effc6d0425ddee70e5ec3af8ce29e836c06e57c",
+    "W-C/documents/14-comprovante-pagamento.md": "224ec45f7542498103c6ac6a8ef5cd2a796404cb4e54e0758bb921e751147c61",
+    "W-C/documents/15-extrato-andamentos.md": "6f3c4680233cec2774d4236a75eb2d4c95b44af2330246e71837e619f6c2c522",
+    "W-C/documents/16-nota-normativa.md": "d319b3f3118f935a3b060ba296f6e7d3fe58e15e92562f0669c54fb2a4b2855a",
+    "W-C/task.md": "aaab36ca01af24f4fa6c92c675cec4ca788c0029434664c16c5a9ab7ac0f7082"
+  },
+  "max_budget_usd": 5.0,
+  "num_turns": 2,
+  "prompt_sha256": "2cb189dcc5144288f7f451fdb7d08ccf980e4cadea1fe10335c1c7740a793d2c",
+  "reported_models": [
+    "claude-haiku-4-5-20251001",
+    "claude-opus-5"
+  ],
+  "requested_model": "claude-opus-5",
+  "schema_version": 1,
+  "session_persistence": false,
+  "tool_access": "none",
+  "total_cost_usd": 1.33034125,
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 18547
+    },
+    "cache_creation_input_tokens": 30955,
+    "cache_read_input_tokens": 18547,
+    "inference_geo": "global",
+    "input_tokens": 4,
+    "iterations": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 18547
+        },
+        "cache_creation_input_tokens": 18547,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 2,
+        "output_tokens": 10018,
+        "type": "message"
+      },
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 29827,
+        "model": "claude-opus-5",
+        "output_tokens": 10759,
+        "type": "advisor_message"
+      },
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 12408
+        },
+        "cache_creation_input_tokens": 12408,
+        "cache_read_input_tokens": 18547,
+        "input_tokens": 2,
+        "output_tokens": 17920,
+        "type": "message"
+      }
+    ],
+    "output_tokens": 27938,
+    "output_tokens_details": {
+      "thinking_tokens": 11972
+    },
+    "server_tool_use": {
+      "web_fetch_requests": 0,
+      "web_search_requests": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "O comprovante existe, mas ofício e certidão divergem sobre a data da publicação, tornando ambígua a tempestividade.",
+  "effective_spec_sha256": "c9d5d23878776838dd923e31ad51b65fb85bc1b4585fed1e8e16fb4367671c9f",
+  "expected_observations": [
+    {
+      "claim": "O ofício registra publicação em 2026-04-22 e a certidão registra 2026-04-20.",
+      "class": "contradiction",
+      "evidence": [
+        "11-oficio-intimacao.md",
+        "12-certidao-publicacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência à tempestividade do pagamento.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver o marco inicial, não é seguro concluir se o pagamento de 2026-05-12 ocorreu dentro do prazo.",
+      "class": "relation",
+      "evidence": [
+        "10-despacho-intimacao.md",
+        "11-oficio-intimacao.md",
+        "12-certidao-publicacao.md",
+        "14-registro-bancario.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis e pede conferência da publicação oficial antes de afirmar mora ou tempestividade.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-108",
+  "motif": "decisao_oficio_certidao",
+  "resolved_facts": {
+    "F001": "BR-CIV-EXEC-108",
+    "F002": "4ª Vara Cível da Comarca Experimental de Ipê",
+    "F003": "Quina Telemetria Ltda.",
+    "F004": "Riacho Saneamento Modular S.A.",
+    "F010": "2025-06-28",
+    "F011": "fornecimento e instalação de painéis de telemetria operacional",
+    "F012": "73.900,00",
+    "F013": "2025-08-03",
+    "F014": "2025-09-02",
+    "F020": "2025-09-28",
+    "F021": "2026-01-08",
+    "F022": "pagar R$ 73.900,00, com atualização pelo IPCA-E desde 2025-09-02 e juros simples de 1% ao mês desde a citação",
+    "F023": "2026-03-05",
+    "F024": "2025-10-08",
+    "F030": "2026-04-17",
+    "F031": "83.140,00",
+    "F032": "demonstrativo declara IPCA-E até 2026-04-17 e juros simples de 1% ao mês desde 2025-10-08",
+    "F040": "2026-04-17",
+    "F041": "intimar a executada para pagar em quinze dias, nos termos do art. 523 do CPC",
+    "F042": "2026-04-22",
+    "F043": "2026-04-20",
+    "F050": "2026-05-12",
+    "F051": "83.140,00",
+    "F052": "conta judicial vinculada ao processo BR-CIV-EXEC-108",
+    "F060": "2026-04-23 — juntada da certidão de publicação da intimação para pagamento",
+    "F061": "2026-05-14 09:10",
+    "F070": "em abril de 2026 e maio de 2026, houve expediente regular de segunda a sexta-feira, sem feriado local ou suspensão",
+    "F071": "abril de 2026 e maio de 2026"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}
