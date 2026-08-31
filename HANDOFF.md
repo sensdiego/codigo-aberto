@@ -14,8 +14,9 @@ avaliação A01–A14 e a publicação da skill autônoma de deliberação na
 
 ## Ponto de continuidade fixado pelo `/bye`
 
-- Branch canônica: `main`; trabalho integrado e publicado em `42eb0de`
-  (`feat: adiciona fábrica sintética e runner Codex`).
+- Branch canônica: `main`; trabalho integrado em `42eb0de`, correção de
+  integração em `b81735b`, closeout documental em `9e643c8` e release
+  automática ancorada em `a354700`.
 - Baseline congelada: `br-civel-cumprimento-calibrado-v1`, com 12 assuntos,
   três mundos por assunto, 612 documentos e 252 invariantes.
 - Recibo canônico:
@@ -23,9 +24,10 @@ avaliação A01–A14 e a publicação da skill autônoma de deliberação na
   36/36 mundos e 252/252 invariantes aprovados, sem custo externo.
 - Estado do gate: `STATIC_PASS / AGENT_FULL_BATCH_PASS / 36_OF_36_WORLDS /
   CODEX_SKILL_BACKED_FULL_PASS`.
-- Correção de produto pendente de release: fragmento `patch` para a regra geral
-  de cobertura normativa em `analise-juridica-civel`; o dossiê possui fragmento
-  `none`. Nenhuma release foi iniciada pelo encerramento.
+- Release automática concluída: `v0.6.2`, tag imutável em `a354700`, oito
+  bundles ZIP e `manifest.json`. Os fragments `patch` da cobertura normativa e
+  `none` do dossiê foram consumidos; `scripts/release.py plan` retorna
+  `changed=false`.
 - Não há execução de modelo pendente nesta família. Os incidentes de
   `M-105/W-A` e `M-110/W-C` estão preservados como tentativas supersedidas, não
   apagados nem contabilizados como sucesso de primeira passagem.
@@ -33,17 +35,19 @@ avaliação A01–A14 e a publicação da skill autônoma de deliberação na
 Próximo movimento recomendado: manter o P0 imutável como regressão e decidir,
 em uma sessão separada, se existe valor suficiente para construir uma segunda
 família jurídica P1. Não iniciar nova família, publicação do dataset,
-`SEN-1746`, dogfood, release ou anúncio por inferência deste handoff.
+`SEN-1746`, dogfood, nova release ou anúncio por inferência deste handoff.
 
 ## Estado do produto
 
-A versão publicada é `v0.6.1`. O PR #27 foi integrado a `main` pelo merge commit
+A versão publicada é `v0.6.2`. O PR #27 foi integrado a `main` pelo merge commit
 `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
 commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
 pelo merge commit `da41883`; e o PR #26 foi integrado pelo merge commit
 `c47555a`. O PR #32 corrigiu o estado publicado no mapa visual pelo merge commit
 `eb43e98`; o workflow `Software release` criou o commit `916db93`, a tag e o
-GitHub Release `v0.6.1`.
+GitHub Release `v0.6.1`. O push do lote P0 em `main` acionou o protocolo
+automático do repositório; após a correção da allowlist pública em `b81735b`, o
+workflow publicou `v0.6.2` no commit `a354700`.
 
 A skill autônoma de deliberação foi incorporada sobre a baseline `v0.5.1` sem
 reescrever a cadeia auditada. A rodada dirigida aprovou sete cenários e 31/31
@@ -198,6 +202,10 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
   `dogfood/pareado-deliberacao`, fragmento `none`), execução adiada.
 - `42eb0de` — fábrica sintética, lote P0 congelado, recibos completos, backend
   Codex, integridade do juiz e correção geral de cobertura normativa.
+- `b81735b` — reconhece `.gitattributes` na estrutura pública sem alterar os
+  bytes ou hashes do corpus congelado.
+- `a354700` — release automática `v0.6.2`, consumo dos fragments e publicação
+  dos oito bundles mais `manifest.json`.
 
 ## Verificação
 
@@ -209,8 +217,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `make test`: PASS — 71 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
-- release: tag imutável `v0.6.1` em `916db93`; oito bundles conferidos
-  contra o manifesto, sem asset ausente, extra ou SHA-256 divergente.
+- release: tag imutável `v0.6.2` em `a354700`; oito bundles ZIP e
+  `manifest.json` publicados pelo workflow `Software release`.
 
 Os comandos foram repetidos antes do landing do PR #26. O workflow de release
 passou e publicou oito ZIPs e `manifest.json` a partir de `e070f83`.
@@ -232,6 +240,8 @@ passou e publicou oito ZIPs e `manifest.json` a partir de `e070f83`.
   `v0.4.0`, `v0.5.0`, `v0.5.1`, `v0.6.0` e `v0.6.1`, respectivamente.
 - A publicação `v0.6.1` contém oito bundles ZIP e um manifesto. Não houve
   instalação das skills, dogfood, uso humano ou anúncio externo.
+- A publicação automática `v0.6.2` substitui `v0.6.1` como versão corrente; a
+  release não prova instalação, uso humano, dogfood ou anúncio.
 - A nova medição do PR #26 usou apenas subagentes Codex e cenários sintéticos.
   Ela comprova o comportamento dirigido, mas não dogfood, uso humano ou
   aprendizagem em caso real.
@@ -446,8 +456,8 @@ foram auditados: nenhuma leitura de `authority/`, rubrica ou gabarito e nenhuma
 chamada de rede. O resultado prova esta família e esta configuração, não
 generalização jurídica ampla nem roteamento automático.
 
-Continuam sem autorização: dataset público, SEN-1746, release, dogfood, anúncio
-e novas execuções pagas. A construção local do P0 e a futura adaptação ao
+Continuam sem autorização: dataset público, SEN-1746, nova release, dogfood,
+anúncio e novas execuções pagas. A construção local do P0 e sua adaptação ao
 `scripts/run_evals.py` não transformam o artefato em capacidade publicada.
 
 ## Comandos de retomada
