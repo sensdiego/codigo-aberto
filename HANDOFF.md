@@ -1,13 +1,39 @@
 # Handoff de sessão
 
-Atualizado em 2026-08-31 após a preparação completa do dogfood pareado da
-camada deliberativa (adiado por decisão do owner antes da execução) e o
-redirecionamento da próxima sessão para a análise dos datasets públicos de
-benchmark da Harvey no GitHub. A sessão anterior (2026-08-30) entregou a
+Atualizado em 2026-08-31 no encerramento `/bye`, após a preparação completa do
+dogfood pareado da camada deliberativa (adiado por decisão do owner antes da
+execução), a conclusão corrigida da pesquisa sobre a fábrica de datasets
+sintéticos da Harvey, a execução estática da investigação brasileira, a
+calibração agregada do P0 no acervo real do `fs.brain` e a aprovação funcional
+do lote completo por agentes Codex. A sessão anterior
+(2026-08-30) entregou a
 implementação integral da fila de módulos de redação contenciosa, o mapa
 visual, a validação estrutural anonimizada, a arquitetura de adaptação com a
 avaliação A01–A14 e a publicação da skill autônoma de deliberação na
 `v0.6.0`/`v0.6.1`.
+
+## Ponto de continuidade fixado pelo `/bye`
+
+- Branch canônica: `main`; trabalho integrado e publicado em `42eb0de`
+  (`feat: adiciona fábrica sintética e runner Codex`).
+- Baseline congelada: `br-civel-cumprimento-calibrado-v1`, com 12 assuntos,
+  três mundos por assunto, 612 documentos e 252 invariantes.
+- Recibo canônico:
+  `data/evals/2026-08-31-codex-skill-world-spec-p0-full-v1/report.json`, com
+  36/36 mundos e 252/252 invariantes aprovados, sem custo externo.
+- Estado do gate: `STATIC_PASS / AGENT_FULL_BATCH_PASS / 36_OF_36_WORLDS /
+  CODEX_SKILL_BACKED_FULL_PASS`.
+- Correção de produto pendente de release: fragmento `patch` para a regra geral
+  de cobertura normativa em `analise-juridica-civel`; o dossiê possui fragmento
+  `none`. Nenhuma release foi iniciada pelo encerramento.
+- Não há execução de modelo pendente nesta família. Os incidentes de
+  `M-105/W-A` e `M-110/W-C` estão preservados como tentativas supersedidas, não
+  apagados nem contabilizados como sucesso de primeira passagem.
+
+Próximo movimento recomendado: manter o P0 imutável como regressão e decidir,
+em uma sessão separada, se existe valor suficiente para construir uma segunda
+família jurídica P1. Não iniciar nova família, publicação do dataset,
+`SEN-1746`, dogfood, release ou anúncio por inferência deste handoff.
 
 ## Estado do produto
 
@@ -170,6 +196,8 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `916db93` — release `v0.6.1` e consumo do fragmento `patch`;
 - `7c38285` — preparação do dogfood pareado da deliberação (branch
   `dogfood/pareado-deliberacao`, fragmento `none`), execução adiada.
+- `42eb0de` — fábrica sintética, lote P0 congelado, recibos completos, backend
+  Codex, integridade do juiz e correção geral de cobertura normativa.
 
 ## Verificação
 
@@ -178,7 +206,7 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - manifesto: 869 IDs únicos, nenhuma referência ausente;
 - `make validate`: PASS;
 - `make lint`: PASS;
-- `make test`: PASS — 62 testes.
+- `make test`: PASS — 71 testes.
 - `make test-release`: PASS — 13 testes.
 - `git diff --check`: PASS.
 - release: tag imutável `v0.6.1` em `916db93`; oito bundles conferidos
@@ -237,44 +265,190 @@ material está pronto para retomada sem retrabalho:
 O dogfood continua sendo o critério de manutenção declarado da porta
 deliberativa antes de qualquer anúncio (ROADMAP, Fase 3; issue #22).
 
-## Próxima ação — análise dos benchmarks públicos da Harvey
+## Dossiê Harvey — investigação estática executada
 
-Definida pelo owner em 2026-08-31 para a próxima sessão. Objetivo: entender em
-profundidade como são constituídos os datasets de teste e benchmark que a
-Harvey (harvey.ai) disponibilizou publicamente no GitHub, para especificar um
-equivalente aberto focado no ambiente jurídico brasileiro.
+A análise foi produzida em
+`data/research/2026-08-31-harvey-benchmarks-e-equivalente-brasileiro.md` e
+reaberta no mesmo dia depois que o owner identificou corretamente que o ponto
+central da palestra de Gabe Pereyra não era apenas o benchmark publicado, mas a
+capacidade de gerar datasets sintéticos para avaliar e treinar o produto.
 
-Escopo da análise:
+A versão corrigida conclui:
 
-1. **Inventário** — mapear o que a organização da Harvey no GitHub publica de
-   fato (o benchmark conhecido é o BigLaw Bench; confirmar nome, repositórios,
-   versões e eventuais expansões antes de qualquer conclusão).
-2. **Estrutura dos dados** — formato dos arquivos, campos, granularidade,
-   exemplos por tarefa, o que acompanha cada item (instrução, contexto,
-   fontes, resposta de referência).
-3. **Metodologia de construção** — quem escreve as tarefas, como advogados
-   validam, critérios de amostragem, o que foi publicado versus retido do
-   benchmark interno.
-4. **Sistema de avaliação** — rubricas (de resposta e de fonte), pesos,
-   critérios negativos, métricas reportadas, como a avaliação é executada
-   (harness próprio, juiz humano, LLM-judge) e o que é reproduzível por
-   terceiros.
-5. **Taxonomia e cobertura** — categorias de tarefas jurídicas cobertas e o
-   racional da seleção.
-6. **Licença** — o que o caráter aberto permite reutilizar, adaptar ou apenas
-   referenciar.
+- o ativo investigável é a cadeia `world_spec → documentos → proveniência →
+  gabarito → rubrica`, não o contrato final de uma tarefa isolada;
+- a Harvey publicou três receitas complementares: rubrica primeiro em
+  Diligence, especificação primeiro em Firm Knowledge e distribuição do produto
+  primeiro em Review Table;
+- o repositório público contém mundos renderizados e harness, mas não expõe o
+  gerador, seus prompts, specs latentes, custos ou protocolo integral de QA;
+- a primeira contagem usou uma árvore Git marcada como truncada. A recontagem
+  por subárvores não truncadas preservou 2.010 tarefas e corrigiu o total para
+  60.979 documentos e 3.206.967.747 bytes; Firm Knowledge possui 9.288
+  arquivos, não 504;
+- o piloto manual de um assunto e três tarefas foi retirado: ele provaria o
+  consumidor local, não uma fábrica de datasets.
 
-Produto esperado da análise: um dossiê que responda "o que precisamos entender
-para construir o equivalente brasileiro" — tarefas de direito brasileiro, em
-português, com fontes brasileiras — indicando o que se traduz diretamente, o
-que muda por causa do sistema jurídico local e o que este repositório já
-possui de reutilizável (harness de evals com juiz por invariante, fixtures
-multi-turno, gate mecânico). Conexão de contexto: SEN-1746 (silo.legal —
-Laboratório: hub de benchmarks abertos) está no backlog e é o destino natural
-dessa capacidade; a análise, porém, executa-se neste workspace.
+Após autorização do owner, a investigação foi executada em
+`data/research/2026-08-31-world-spec-p0/`, fora do harness. Um único
+`world_spec.json` e um renderer/compiler/validator em biblioteca padrão geram
+três pastas cegas opacas com o mesmo inventário de 17 documentos. O revisor não
+recebe os rótulos semânticos.
 
-Comparação externa, Fases 2 e 4 da RFC-CA-001, instalação em superfícies
-restantes, dogfood e anúncio continuam fora do escopo concluído.
+O build e o check separados passam. A prova cobre fontes e âncoras locais do
+CPC, referências, hashes, proveniência com localizadores `arquivo:linha`,
+autoridade/classe/severidade das rubricas, ausência de IDs internos na view
+cega e isolamento das mutações. Entre controle e prova ausente muda somente
+`14-registro-bancario.md`; entre controle e cronologia controvertida muda
+somente `12-certidao-publicacao.md`. A mutação de data atravessa a
+tempestividade numa contagem mecânica apenas de dias úteis, sem alegar que isso
+resolve o prazo jurídico concreto.
+
+Estado do gate:
+`STATIC_PASS / MODEL_BLIND_COMPLETE / CONSENSUS_CONSTRUIR_P0 /
+OWNER_DIRECTED_BUILD`. O owner é advogado e esclareceu que não haverá entrega
+a revisor jurídico externo. O protocolo em
+`generated/blind/INSTRUCOES-REVISOR.md` permanece disponível como red-team
+opcional, não como bloqueio da construção.
+
+O primeiro transporte testado, Claude Code, foi rejeitado: o tool server-side
+`advisor` contaminou os dois braços. O recibo Sonnet registrou Sonnet 5, Opus 5
+e Haiku 4.5, enquanto o recibo Opus registrou Opus 5 e Haiku 4.5. Esses
+pareceres estão marcados como inválidos em `model-reviews/` e não entraram na
+comparação. O custo comprovado desse histórico é US$ 2,93889375; quatro
+inferências antigas sem recibo podem ter acrescentado até US$ 16,00 pelos tetos
+configurados.
+
+A primeira rodada defensável pela Messages API direta preservou dois pareceres
+puros e convergentes em `REDESENHAR`. Ela encontrou o salto estrutural de 13
+para 15 em W-B e linguagem metatextual nos documentos. O par custou
+US$ 0,662561.
+
+O corpus foi redesenhado antes da nova escalada: W-B passou a substituir o
+conteúdo de `14-registro-bancario.md` por resposta negativa de busca, sem
+retirar arquivo; a data dominical foi corrigida; o calendário forense foi
+materializado; e as autoexplicações probatórias foram removidas. Uma triagem
+Sonnet na revisão 2 recuperou os mundos, mas ainda propôs `REDESENHAR` por
+pistas no aviso, demonstrativo, extrato e janela exata do calendário. Essa
+chamada custou US$ 0,295094.
+
+A revisão 3 removeu o aviso de `documents/`, eliminou o fechamento artificial
+do demonstrativo, transformou o extrato em consulta datada e generalizou o
+calendário para março inteiro. Depois de build, check, validação, lint e testes,
+um novo Sonnet recebeu a revisão 3 e propôs `CONSTRUIR P0`; somente então um
+Opus isolado recebeu o mesmo prompt e também propôs `CONSTRUIR P0`.
+
+O par final usou 55 arquivos, 30.411 bytes e SHA-256
+`4e9acc204019951c4462d3f51bbacc6c4ca6b2815376265b74ca47f3568c05d5`.
+Sonnet custou US$ 0,223132 e Opus US$ 0,346955. Ambos retornaram apenas o modelo
+solicitado, sem tools, sem retry e com `end_turn`. Os dois recuperaram W-A como
+controle, W-B como pagamento alegado com busca bancária negativa de alcance
+limitado e W-C como conflito entre 02/03 e 04/03, com termos possíveis em 23/03
+e 25/03. Ambos atribuíram realismo 4/5 aos três mundos e não encontraram
+vazamento de gabarito.
+
+A sequência corretiva autorizada custou US$ 0,865181, abaixo do teto de US$ 2.
+As cinco chamadas diretas válidas somam US$ 1,527742. Incluído o histórico
+inválido com `advisor`, o custo comprovado total é US$ 4,46663575; os quatro
+ensaios antigos sem recibo continuam apenas limitados pelo teto adicional de
+US$ 16,00. Não foi criado placar ponderado post hoc.
+
+O relatório reproduzível, os controles, hashes, recibos, pareceres e ressalvas
+estão em `model-reviews/README.md`.
+
+Depois de autorização expressa do owner, o `fs.brain` foi lido globalmente e
+somente em modo read-only no commit
+`b1d871d7e489a6dacc0a9b60f2bfc38f9ecc99a2`; sua worktree permaneceu limpa. O
+censo registrou 259 casos, dos quais 237 estavam com ingestão liberada. A coorte
+possui 8.520 Markdown associados, mas o extrator seleciona somente 7.852 notas
+sob `source-documents`, evitando misturar fontes com manifestos, índices e
+análises derivadas.
+
+O relatório agregado contém 8.027 seções tipadas em 231 casos e 6.828
+movimentações deduplicadas em 39 sequências de 37 casos. Apenas quatro casos
+possuem alguma nota `full_autos`; portanto, o corpus sustenta com confiança alta
+a topologia documental, com confiança moderada as transições de movimentação e
+não sustenta a generalização de histórias processuais integrais.
+
+Os artefatos novos estão em
+`data/research/2026-08-31-fsbrain-patterns/`: `extract_patterns.py` produz e
+verifica `pattern-report.json` sem serializar dado identificável; `README.md`
+registra método, contagens, limites e o primeiro lote executado. O P0 recebeu
+`empirical-basis.json`; `build_worlds.py check` agora falha se commit, cobertura
+ou os cinco suportes estruturais congelados divergirem do relatório.
+
+A distribuição observada confirma `peticao → decisao` em 113 casos,
+`decisao → certidao` em 132 e coocorrência `contrato + peticao` em 102. Na
+subcoorte de movimentações, `peticao_manifestacao → decisao` aparece em 29 dos
+37 casos e `despacho → citacao_intimacao`, em 22. Isso confirma a espinha da
+revisão 3 sem copiar fatos de qualquer caso real.
+
+O lote `br-civel-cumprimento-calibrado-v1` foi materializado por
+`batch-spec.json` e `build_batch.py`: doze assuntos-base, quatro motivos
+estruturais, três mundos por assunto, 17 documentos por mundo e 612 documentos
+no total. Os 805 arquivos incluem as views cegas, 12 specs efetivos, fatos
+resolvidos, proveniência, rubricas e manifestos. Os assuntos variam partes,
+objeto, valores, juízo e identificador; doze deslocamentos semanais únicos entre
+zero e 21 semanas variam as datas de março a agosto sem perder a relação de
+tempestividade revisada. O build recusa fechamentos forenses conhecidos nas
+janelas de prazo.
+
+`build_batch.py check` reconstruiu o lote em diretório temporário e confirmou
+igualdade determinística. O canário cego por agentes selecionou `M-101`,
+`M-105`, `M-108` e `M-111`, um assunto por motivo. V1 falhou por contradição no
+harness; v2 recuperou toda a semântica, mas Opus encontrou feriados nas janelas
+de M-105/M-108 e um ofício híbrido; o spec e o renderer foram corrigidos e o
+lote regenerado. Na v3, Sonnet 5 e Opus 5 deram `CONSTRUIR` ao lote e aos quatro
+assuntos. O adjudicador registrou 12/12 mundos, 16/16 observações críticas e 8/8
+relevantes por modelo, sem falso positivo crítico. Os hashes dos 216 arquivos
+cegos por recibo e das 28 fontes de adjudicação foram reconferidos.
+
+O estado é `STATIC_PASS / AGENT_FULL_BATCH_PASS / 36_OF_36_WORLDS /
+CODEX_SKILL_BACKED_FULL_PASS`. Os recibos estáticos estão em
+`batch-model-reviews/`; o v3 custou US$ 1,172326 e as seis chamadas
+válidas do canário, US$ 3,368367. Sem nova chamada externa, os oito assuntos
+restantes foram divididos nos pacotes A (`M-102`, `M-106`, `M-109`, `M-112`) e
+B (`M-103`, `M-104`, `M-107`, `M-110`). Em cada pacote, dois subagentes Codex
+receberam 216 arquivos cegos e um terceiro adjudicou as respostas congeladas.
+Cada pacote aprovou 12/12 mundos; cada revisor recuperou 16/16 observações
+críticas e 8/8 relevantes, sem parcial, omissão ou falso positivo crítico. O
+operador raiz reconferiu os hashes e evidências. O custo externo desses dois
+pacotes foi US$ 0. A mesma família Codex nos oito assuntos limita diversidade de
+fornecedor, mas não o isolamento processual.
+
+Os 12 assuntos foram adaptados ao executor em
+`tests/fixtures/world-spec-p0-workflows.json`. O novo schema
+`synthetic-world-workflows-v1` congela o manifesto e os três recibos por hash;
+`scripts/run_evals.py` valida a aprovação integral e materializa 36 cenários em
+diretórios temporários, cada um com `task.md`, 17 documentos cegos e sete
+invariantes da rubrica. A listagem retornou 36/36 cenários para
+`analise-juridica-civel`. O backend Codex executa e julga em chamadas efêmeras,
+separadas e somente leitura; pode fornecer a skill e suas referências no
+diretório cego, mas não testa o roteamento automático do plugin. O runner passou
+em 35 testes focados, persiste executor e juiz, reaproveita recibos com
+`--resume`, permite `--rejudge` e interrompe com `--fail-fast`.
+
+O baseline bruto revelou a omissão do art. 524 em `M-101/W-B`. Com a skill
+fornecida, o canário M-101 passou 21/21. No lote integral, `M-105/W-A` expôs a
+mesma omissão de forma legítima; a skill recebeu uma regra geral para reconciliar
+todo dispositivo material da fonte autorizada, sem citar o dataset ou o art.
+524, e o cenário passou na reexecução. `M-110/W-C` produziu memorando correto,
+mas o juiz retornou apenas 3/7 itens; o runner passou a classificar veredito
+incompleto como `JUDGE_ERROR`, preservou a resposta inválida e o rejulgamento do
+mesmo transcript congelado passou 7/7.
+
+O recibo canônico está em
+`data/evals/2026-08-31-codex-skill-world-spec-p0-full-v1/report.json`: 36/36
+mundos e 252/252 invariantes, custo externo US$ 0. A franquia Codex registrou
+4.150.622 tokens de entrada dos executores e 666.345 dos juízes; 3.416.320
+tokens de entrada foram reaproveitados em cache. Todos os comandos dos agentes
+foram auditados: nenhuma leitura de `authority/`, rubrica ou gabarito e nenhuma
+chamada de rede. O resultado prova esta família e esta configuração, não
+generalização jurídica ampla nem roteamento automático.
+
+Continuam sem autorização: dataset público, SEN-1746, release, dogfood, anúncio
+e novas execuções pagas. A construção local do P0 e a futura adaptação ao
+`scripts/run_evals.py` não transformam o artefato em capacidade publicada.
 
 ## Comandos de retomada
 
@@ -291,5 +465,24 @@ make test-release
 git diff --check
 python3 scripts/release.py impact --ref-range origin/main...HEAD
 python3 scripts/release.py plan
+uv run --project /Users/sensdiego/Dev/fs.brain \
+  python -B data/research/2026-08-31-fsbrain-patterns/extract_patterns.py check \
+  --fsbrain-root /Users/sensdiego/Dev/fs.brain
+python3 data/research/2026-08-31-world-spec-p0/build_worlds.py check
+python3 -B data/research/2026-08-31-world-spec-p0/build_batch.py check
+python3 -B data/research/2026-08-31-world-spec-p0/run_batch_canary_review.py --check
+jq -e '.status == "PASS" and ([.worlds[].pass] | all)' \
+  data/research/2026-08-31-world-spec-p0/batch-model-reviews/canary-adjudication-v3.json
+jq -e '.status == "PASS" and ([.worlds[].pass] | all)' \
+  data/research/2026-08-31-world-spec-p0/batch-model-reviews/codex-remaining-a-adjudication-v1.json
+jq -e '.status == "PASS" and ([.worlds[].pass] | all)' \
+  data/research/2026-08-31-world-spec-p0/batch-model-reviews/codex-remaining-b-adjudication-v1.json
 python3 scripts/run_evals.py --fixture tests/fixtures/adaptacao-workflows.json --list
+python3 scripts/run_evals.py \
+  --fixture tests/fixtures/world-spec-p0-workflows.json --list
+jq -e '
+  .counts == {"total":36,"PASS":36,"FAIL":0,"JUDGE_ERROR":0}
+  and ([.scenarios[].invariants[].atendido] | all)
+' \
+  data/evals/2026-08-31-codex-skill-world-spec-p0-full-v1/report.json
 ```
