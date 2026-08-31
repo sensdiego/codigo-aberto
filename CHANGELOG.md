@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.6.2] - 2026-08-31
+
+### Fixed
+
+- Exige reconciliação explícita de todos os dispositivos materiais fornecidos à análise jurídica cível.
+
 ## [0.6.1] - 2026-08-30
 
 ### Fixed
