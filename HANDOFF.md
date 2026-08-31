@@ -1,12 +1,13 @@
 # Handoff de sessão
 
-Atualizado em 2026-08-30 após a implementação integral da fila de módulos de
-redação contenciosa, a elaboração do mapa visual, a validação estrutural
-anonimizada contra situações documentadas em casos reais e a adoção da
-arquitetura de adaptação, seus consumidores públicos locais e a avaliação
-comportamental A01–A14 com subagentes Codex, além da correção dirigida dos
-gates de briefing do agravo interno e da interdição e da publicação da skill
-autônoma de deliberação na `v0.6.0`.
+Atualizado em 2026-08-31 após a preparação completa do dogfood pareado da
+camada deliberativa (adiado por decisão do owner antes da execução) e o
+redirecionamento da próxima sessão para a análise dos datasets públicos de
+benchmark da Harvey no GitHub. A sessão anterior (2026-08-30) entregou a
+implementação integral da fila de módulos de redação contenciosa, o mapa
+visual, a validação estrutural anonimizada, a arquitetura de adaptação com a
+avaliação A01–A14 e a publicação da skill autônoma de deliberação na
+`v0.6.0`/`v0.6.1`.
 
 ## Estado do produto
 
@@ -166,7 +167,9 @@ lei material, regimento ou jurisprudência exigidos pelo caso.
 - `c47555a` — merge do PR #26, com a skill deliberativa e seus recibos;
 - `e070f83` — release `v0.6.0` e consumo do fragmento `minor`.
 - `eb43e98` — merge do PR #32, com o closeout e o mapa visual corrigido;
-- `916db93` — release `v0.6.1` e consumo do fragmento `patch`.
+- `916db93` — release `v0.6.1` e consumo do fragmento `patch`;
+- `7c38285` — preparação do dogfood pareado da deliberação (branch
+  `dogfood/pareado-deliberacao`, fragmento `none`), execução adiada.
 
 ## Verificação
 
@@ -210,10 +213,68 @@ passou e publicou oito ZIPs e `manifest.json` a partir de `e070f83`.
   fixtures continuam materialmente inelegíveis e um cenário depende de um job
   com conector Silo autenticado.
 
-## Próxima ação
+## Dogfood pareado da camada deliberativa — preparado e adiado
 
-Aguardar novas instruções. Comparação externa, Fases 2 e 4, instalação, dogfood
-e anúncio continuam fora do escopo concluído.
+Preparação concluída em 2026-08-31 na branch `dogfood/pareado-deliberacao`
+(commit `7c38285`), execução adiada por decisão do owner na mesma data. O
+material está pronto para retomada sem retrabalho:
+
+- `data/dogfood/2026-08-31-pareado-deliberacao/protocolo.md` — dois braços na
+  v0.6.1 (salto direto × protocolo deliberativo), ordem fixa A→B, métricas do
+  ROADMAP e veredicto mantém/redesenha/remove;
+- `caso/CASO.md` — caso sintético novo (cumprimento de sentença contra
+  fornecedora exclusiva em aperto financeiro, com proposta de acordo ruim);
+- `contexto-advogado.md` — folha privada do operador; nunca copiar para o
+  diretório das sessões;
+- `registro-sessao-a.md` e `registro-sessao-b.md` — templates de medição;
+- diretórios de execução criados em
+  `~/Dev/Habilidades/dogfood-sessoes-2026-08-31/sessao-{a,b}/` com cópias do
+  caso;
+- plugin local atualizado de 0.2.4 para 0.6.1 (`claude plugin update
+  silo-legal@codigo-aberto`), dez skills no cache, incluindo
+  `deliberacao-juridica` — primeiro recibo de instalação da versão corrente.
+
+O dogfood continua sendo o critério de manutenção declarado da porta
+deliberativa antes de qualquer anúncio (ROADMAP, Fase 3; issue #22).
+
+## Próxima ação — análise dos benchmarks públicos da Harvey
+
+Definida pelo owner em 2026-08-31 para a próxima sessão. Objetivo: entender em
+profundidade como são constituídos os datasets de teste e benchmark que a
+Harvey (harvey.ai) disponibilizou publicamente no GitHub, para especificar um
+equivalente aberto focado no ambiente jurídico brasileiro.
+
+Escopo da análise:
+
+1. **Inventário** — mapear o que a organização da Harvey no GitHub publica de
+   fato (o benchmark conhecido é o BigLaw Bench; confirmar nome, repositórios,
+   versões e eventuais expansões antes de qualquer conclusão).
+2. **Estrutura dos dados** — formato dos arquivos, campos, granularidade,
+   exemplos por tarefa, o que acompanha cada item (instrução, contexto,
+   fontes, resposta de referência).
+3. **Metodologia de construção** — quem escreve as tarefas, como advogados
+   validam, critérios de amostragem, o que foi publicado versus retido do
+   benchmark interno.
+4. **Sistema de avaliação** — rubricas (de resposta e de fonte), pesos,
+   critérios negativos, métricas reportadas, como a avaliação é executada
+   (harness próprio, juiz humano, LLM-judge) e o que é reproduzível por
+   terceiros.
+5. **Taxonomia e cobertura** — categorias de tarefas jurídicas cobertas e o
+   racional da seleção.
+6. **Licença** — o que o caráter aberto permite reutilizar, adaptar ou apenas
+   referenciar.
+
+Produto esperado da análise: um dossiê que responda "o que precisamos entender
+para construir o equivalente brasileiro" — tarefas de direito brasileiro, em
+português, com fontes brasileiras — indicando o que se traduz diretamente, o
+que muda por causa do sistema jurídico local e o que este repositório já
+possui de reutilizável (harness de evals com juiz por invariante, fixtures
+multi-turno, gate mecânico). Conexão de contexto: SEN-1746 (silo.legal —
+Laboratório: hub de benchmarks abertos) está no backlog e é o destino natural
+dessa capacidade; a análise, porém, executa-se neste workspace.
+
+Comparação externa, Fases 2 e 4 da RFC-CA-001, instalação em superfícies
+restantes, dogfood e anúncio continuam fora do escopo concluído.
 
 ## Comandos de retomada
 
