@@ -30,7 +30,7 @@ WORKFLOW_SKILLS = {
 }
 PUBLIC_SKILLS = WORKFLOW_SKILLS | {"assinatura-silo", "pesquisa-silo"}
 PUBLIC_ROOT_ENTRIES = {
-    ".changes", ".claude-plugin", ".git", ".github", ".gitignore", ".ruff_cache",
+    ".changes", ".claude-plugin", ".git", ".gitattributes", ".github", ".gitignore", ".ruff_cache",
     ".release-policy.toml", "CHANGELOG.md",
     "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "HANDOFF.md", "LICENSE", "QUICKSTART.md",
     "Makefile", "README.md", "RELEASING.md", "RFC-CA-001-adaptacao-casos-reais.md",
