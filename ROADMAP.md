@@ -176,8 +176,15 @@ edição futura de skills.
       P1 materializam 36 cenários cada; a fixture declara a contagem por mundo
       (7 invariantes no P0 e 8 no P1), e o P1 usa recibo final que autoriza o
       lote corrente sem reclassificar as correções estáticas como nova revisão
-      cega. Validado e publicado na `v0.6.4` em 2026-09-01; rodada
-      comportamental paga segue como decisão separada.
+      cega. Validado e publicado na `v0.6.4` em 2026-09-01.
+- [~] Medir a P1 comportamentalmente na configuração comparável ao P0. O
+      canário M-201 passou 3/3 e 24/24; a continuação parou em M-202/W-A com
+      7/8 por omitir a ligação explícita entre a alegação da inicial e o
+      registro que a corroborava. O painel de cinco execuções inalteradas de
+      M-202/W-A terminou em 3 PASS e 2 FAIL, sempre decidido pelo invariante 7:
+      variação crítica confirmada, status `STOP_VARIANCE`, 32 cenários não
+      executados. Próximo gate: reforçar o vínculo geral entre alegação,
+      documento e limite da prova e reiniciar desde o canário M-201.
 
 ## Fase 3 — Expansão de conteúdo
 
