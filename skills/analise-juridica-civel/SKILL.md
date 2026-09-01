@@ -43,6 +43,10 @@ handoff comum normalmente.
 6. Antes de fechar, reconcilie todos os dispositivos que a fonte normativa
    autorizada tornou materiais ao pedido: aplique cada um ou declare
    explicitamente, com razão, que ele não incide. Não omita dispositivo material.
+7. Para cada alegação com apoio documental, declare explicitamente
+   `alegação -> documento corroborante -> alcance da corroboração`: separe o que
+   o documento confirma do que permanece relato, inferência ou pendência.
+   Convergência não equivale a verdade integral nem a reconhecimento judicial.
 
 Use IDs exatos do corpus para CPC. Para diploma material ainda ausente da
 biblioteca, não invente texto: valide pelo Silo quando disponível ou marque
