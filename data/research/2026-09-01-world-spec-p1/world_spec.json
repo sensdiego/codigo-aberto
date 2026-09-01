@@ -1,0 +1,589 @@
+{
+  "schema_version": 1,
+  "dataset": {
+    "id": "br-civel-conhecimento-p1",
+    "revision": 1,
+    "language": "pt-BR",
+    "notice": "Todo nome, número, valor e documento deste conjunto é fictício e foi criado exclusivamente para teste.",
+    "subject": "ação de procedimento comum cível em fase de conhecimento, com disputa comercial sobre contrato",
+    "task_family": "análise documental e cronológica"
+  },
+  "legal_sources": [
+    {
+      "id": "L219",
+      "path": "references/legislacao/cpc/parte-geral-e-prazos.md",
+      "anchor": "cpc-art-219",
+      "proposition": "Prazos processuais em dias são contados somente em dias úteis."
+    },
+    {
+      "id": "L224",
+      "path": "references/legislacao/cpc/parte-geral-e-prazos.md",
+      "anchor": "cpc-art-224",
+      "proposition": "Exclui-se o dia do começo, inclui-se o vencimento e a contagem começa no primeiro dia útil após a publicação."
+    },
+    {
+      "id": "L330",
+      "path": "references/legislacao/cpc/procedimento-comum.md",
+      "anchor": "cpc-art-330",
+      "proposition": "A petição inicial será indeferida quando inepta, quando a parte for manifestamente ilegítima, quando o autor carecer de interesse processual ou quando não atendidas as prescrições legais sobre a propositura."
+    },
+    {
+      "id": "L335",
+      "path": "references/legislacao/cpc/procedimento-comum.md",
+      "anchor": "cpc-art-335",
+      "proposition": "O réu pode oferecer contestação no prazo de quinze dias, cujo termo inicial depende do modo como foi feita a citação."
+    },
+    {
+      "id": "L350",
+      "path": "references/legislacao/cpc/procedimento-comum.md",
+      "anchor": "cpc-art-350",
+      "proposition": "Se o réu alegar fato impeditivo, modificativo ou extintivo do direito do autor, este será ouvido em quinze dias, com produção de prova permitida."
+    },
+    {
+      "id": "L351",
+      "path": "references/legislacao/cpc/procedimento-comum.md",
+      "anchor": "cpc-art-351",
+      "proposition": "Se o réu alegar as matérias preliminares enumeradas em lei, o juiz determina a oitiva do autor em quinze dias, permitindo-lhe a produção de prova."
+    },
+    {
+      "id": "L373",
+      "path": "references/legislacao/cpc/provas.md",
+      "anchor": "cpc-art-373",
+      "proposition": "O ônus da prova incumbe ao autor quanto ao fato constitutivo de seu direito e ao réu quanto ao fato impeditivo, modificativo ou extintivo do direito do autor."
+    }
+  ],
+  "facts": {
+    "F001": {
+      "name": "processo",
+      "value": "BR-CIV-CON-001"
+    },
+    "F002": {
+      "name": "juizo",
+      "value": "2ª Vara Cível da Comarca Experimental de Aurora"
+    },
+    "F003": {
+      "name": "autora",
+      "value": "Serralheria Boreal Ltda."
+    },
+    "F004": {
+      "name": "re",
+      "value": "Vetor Automação Industrial S.A."
+    },
+    "F010": {
+      "name": "data_contrato",
+      "value": "2023-04-18"
+    },
+    "F011": {
+      "name": "objeto_contrato",
+      "value": "fornecimento e instalação de uma linha de corte automatizada"
+    },
+    "F012": {
+      "name": "valor_contrato_brl",
+      "value": "240.000,00"
+    },
+    "F013": {
+      "name": "data_instalacao",
+      "value": "2023-05-08"
+    },
+    "F014": {
+      "name": "sintoma_alegado",
+      "value": "paradas recorrentes por falha no módulo de alinhamento"
+    },
+    "F020": {
+      "name": "data_reclamacao",
+      "value": "2023-06-12"
+    },
+    "F021": {
+      "name": "protocolo_atendimento",
+      "value": "ATD-2023-7741"
+    },
+    "F030": {
+      "name": "data_ajuizamento",
+      "value": "2024-02-20"
+    },
+    "F031": {
+      "name": "pedido_resumido",
+      "value": "resolução do contrato por vício do objeto, com restituição de R$ 240.000,00 e indenização por lucros cessantes"
+    },
+    "F040": {
+      "name": "data_disponibilizacao_citacao",
+      "value": "2024-03-12"
+    },
+    "F041": {
+      "name": "data_disponibilizacao_certidao_efetivacao",
+      "value": "2024-03-12"
+    },
+    "F042": {
+      "name": "data_contestacao",
+      "value": "2024-04-03"
+    },
+    "F043": {
+      "name": "tese_contestacao",
+      "value": "o equipamento operava conforme o projeto e qualquer reclamação extrajudicial foi intempestiva"
+    },
+    "F050": {
+      "name": "data_replica",
+      "value": "2024-04-30"
+    },
+    "F060": {
+      "name": "data_saneamento",
+      "value": "2024-07-15"
+    },
+    "F061": {
+      "name": "prova_determinada",
+      "value": "perícia técnica na linha de corte instalada na planta da autora"
+    },
+    "F070": {
+      "name": "data_laudo",
+      "value": "2025-02-10"
+    },
+    "F071": {
+      "name": "conclusao_laudo",
+      "value": "a falha de alinhamento tem origem no projeto do equipamento e é anterior à instalação"
+    },
+    "F072": {
+      "name": "data_manifestacao_laudo",
+      "value": "2025-04-14"
+    },
+    "F080": {
+      "name": "data_sentenca",
+      "value": "2025-09-22"
+    },
+    "F081": {
+      "name": "comando_sentenca",
+      "value": "resolver o contrato e condenar a ré à restituição de R$ 240.000,00, com atualização monetária desde o ajuizamento"
+    },
+    "F090": {
+      "name": "ultimo_andamento",
+      "value": "2025-09-29 — juntada da certidão de intimação da sentença"
+    },
+    "F091": {
+      "name": "data_consulta_andamentos",
+      "value": "2026-01-15 10:40"
+    },
+    "F092": {
+      "name": "data_certidao_intimacao_sentenca",
+      "value": "2025-09-29"
+    },
+    "F093": {
+      "name": "data_pagamento_custas",
+      "value": "2024-02-20"
+    },
+    "F094": {
+      "name": "valor_custas_brl",
+      "value": "4.812,00"
+    },
+    "F100": {
+      "name": "calendario_forense",
+      "value": "no período de 2024-03-05 a 2024-04-03, houve expediente regular de segunda a sexta-feira, exceto em 2024-03-29 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão"
+    }
+  },
+  "documents": [
+    {
+      "id": "D010",
+      "filename": "01-contrato-prestacao.md",
+      "renderer": "contract",
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F010",
+        "F011",
+        "F012"
+      ]
+    },
+    {
+      "id": "D011",
+      "filename": "02-nota-fiscal.md",
+      "renderer": "invoice",
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F012"
+      ]
+    },
+    {
+      "id": "D012",
+      "filename": "03-termo-instalacao.md",
+      "renderer": "delivery",
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F011",
+        "F013"
+      ]
+    },
+    {
+      "id": "D013",
+      "filename": "04-registro-reclamacao.md",
+      "renderer": "complaint_record",
+      "fact_ids": [
+        "F003",
+        "F004",
+        "F014",
+        "F020",
+        "F021"
+      ]
+    },
+    {
+      "id": "D020",
+      "filename": "05-peticao-inicial.md",
+      "renderer": "initial_petition",
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F010",
+        "F012",
+        "F013",
+        "F014",
+        "F020",
+        "F030",
+        "F031"
+      ]
+    },
+    {
+      "id": "D021",
+      "filename": "06-certidao-disponibilizacao-citacao.md",
+      "renderer": "service_receipt",
+      "fact_ids": [
+        "F001",
+        "F004",
+        "F040"
+      ]
+    },
+    {
+      "id": "D022",
+      "filename": "07-certidao-citacao.md",
+      "renderer": "service_certificate",
+      "fact_ids": [
+        "F001",
+        "F041"
+      ]
+    },
+    {
+      "id": "D030",
+      "filename": "08-contestacao.md",
+      "renderer": "answer",
+      "fact_ids": [
+        "F001",
+        "F004",
+        "F014",
+        "F042",
+        "F043"
+      ]
+    },
+    {
+      "id": "D031",
+      "filename": "09-replica.md",
+      "renderer": "reply",
+      "fact_ids": [
+        "F001",
+        "F003",
+        "F050"
+      ]
+    },
+    {
+      "id": "D032",
+      "filename": "10-despacho-saneador.md",
+      "renderer": "case_management_order",
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F060",
+        "F061"
+      ]
+    },
+    {
+      "id": "D040",
+      "filename": "11-laudo-pericial.md",
+      "renderer": "expert_report",
+      "fact_ids": [
+        "F001",
+        "F011",
+        "F070",
+        "F071"
+      ]
+    },
+    {
+      "id": "D050",
+      "filename": "12-sentenca.md",
+      "renderer": "judgment",
+      "fact_ids": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F072",
+        "F080",
+        "F081"
+      ]
+    },
+    {
+      "id": "D060",
+      "filename": "13-certidao-intimacao.md",
+      "renderer": "intimation_certificate",
+      "fact_ids": [
+        "F001",
+        "F092"
+      ]
+    },
+    {
+      "id": "D061",
+      "filename": "14-comprovante-custas.md",
+      "renderer": "fee_receipt",
+      "fact_ids": [
+        "F001",
+        "F003",
+        "F093",
+        "F094"
+      ]
+    },
+    {
+      "id": "D062",
+      "filename": "15-extrato-andamentos.md",
+      "renderer": "docket",
+      "fact_ids": [
+        "F001",
+        "F030",
+        "F042",
+        "F050",
+        "F060",
+        "F070",
+        "F072",
+        "F080",
+        "F090",
+        "F091"
+      ]
+    },
+    {
+      "id": "D070",
+      "filename": "16-nota-normativa.md",
+      "renderer": "legal_note",
+      "fact_ids": [],
+      "legal_source_ids": [
+        "L219",
+        "L224",
+        "L330",
+        "L335",
+        "L350",
+        "L351",
+        "L373"
+      ]
+    },
+    {
+      "id": "D071",
+      "filename": "17-calendario-forense.md",
+      "renderer": "court_calendar",
+      "fact_ids": [
+        "F100"
+      ]
+    }
+  ],
+  "task": {
+    "title": "Análise da ação de conhecimento em procedimento comum",
+    "instructions": [
+      "Reconstrua a cronologia relevante e cite o nome do arquivo que sustenta cada marco.",
+      "Classifique as afirmações materiais como confirmadas, alegadas, ausentes ou contraditórias.",
+      "Analise a situação da reclamação extrajudicial e da tempestividade da contestação sem preencher lacunas por suposição.",
+      "Confronte a data de disponibilização da citação eletrônica registrada na certidão de disponibilização com a registrada na certidão de efetivação; se divergirem, apresente as duas contagens em dias úteis e o efeito de cada uma sobre a tempestividade da contestação, sem escolher uma data por suposição.",
+      "Separe os documentos de mérito (contrato, petições, laudo, sentença) da burocracia de andamento (intimações, certidões de ato, custas) e não trate esta última como prova do mérito.",
+      "Registre o que a história processual não contém (por exemplo, trânsito em julgado, acordo ou recurso) sem completar a lacuna por inferência.",
+      "Liste documentos ou verificações faltantes e proponha próximos passos proporcionais.",
+      "Use exclusivamente as proposições resumidas na nota normativa; não acrescente regra jurídica externa.",
+      "Não recalcule prazos por conta própria além da contagem em dias úteis indicada, não invente feriados, movimentações, valores ou decisões."
+    ],
+    "output": "Memorando de até 900 palavras, com seções Cronologia, Estado da prova, Análise e Próximos passos."
+  },
+  "common_rubric": [
+    {
+      "id": "R001",
+      "class": "process",
+      "severity": "major",
+      "authority_ids": [
+        "F010",
+        "F020",
+        "F030",
+        "F040",
+        "F042",
+        "F050",
+        "F060",
+        "F070",
+        "F080"
+      ],
+      "criterion": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+      "weight": 2
+    },
+    {
+      "id": "R002",
+      "class": "fact",
+      "severity": "critical",
+      "authority_ids": [
+        "F020",
+        "F071",
+        "F091"
+      ],
+      "criterion": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+      "weight": 3
+    },
+    {
+      "id": "R003",
+      "class": "law",
+      "severity": "major",
+      "authority_ids": [
+        "L219",
+        "L224",
+        "L330",
+        "L335",
+        "L350",
+        "L351",
+        "L373"
+      ],
+      "criterion": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+      "weight": 2
+    },
+    {
+      "id": "R004",
+      "class": "process",
+      "severity": "major",
+      "authority_ids": [
+        "F090",
+        "F092",
+        "F093",
+        "F094"
+      ],
+      "criterion": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+      "weight": 2
+    },
+    {
+      "id": "R005",
+      "class": "absence",
+      "severity": "major",
+      "authority_ids": [
+        "F091"
+      ],
+      "criterion": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+      "weight": 2
+    },
+    {
+      "id": "R006",
+      "class": "prohibition",
+      "severity": "critical",
+      "authority_ids": [
+        "TASK"
+      ],
+      "criterion": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+      "weight": 3
+    }
+  ],
+  "worlds": {
+    "W-A": {
+      "authority_label": "control",
+      "description": "Mundo coerente e completo, com sentença de procedência e datas de citação convergentes entre a certidão de disponibilização e a certidão de efetivação.",
+      "document_renderer_overrides": {},
+      "fact_overrides": {},
+      "expected_changed_documents": [],
+      "expected_observations": [
+        {
+          "id": "O-A1",
+          "state": "confirmed",
+          "class": "fact",
+          "severity": "critical",
+          "claim": "A autora alegou reclamação extrajudicial de 2023-06-12 e o registro de atendimento ATD-2023-7741 corrobora a data.",
+          "evidence": [
+            "04-registro-reclamacao.md",
+            "05-peticao-inicial.md"
+          ],
+          "rubric": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente."
+        },
+        {
+          "id": "O-A2",
+          "state": "absent",
+          "class": "absence",
+          "severity": "major",
+          "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+          "evidence": [
+            "15-extrato-andamentos.md"
+          ],
+          "rubric": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva."
+        }
+      ]
+    },
+    "W-B": {
+      "authority_label": "proof_missing",
+      "description": "A reclamação extrajudicial tempestiva aparece apenas como alegação da inicial; a resposta do serviço de atendimento não localizou registro correspondente.",
+      "document_renderer_overrides": {
+        "D013": "complaint_record_missing"
+      },
+      "fact_overrides": {},
+      "expected_changed_documents": [
+        "04-registro-reclamacao.md"
+      ],
+      "expected_observations": [
+        {
+          "id": "O-B1",
+          "state": "alleged",
+          "class": "fact",
+          "severity": "critical",
+          "claim": "A reclamação de 2023-06-12 consta apenas da petição inicial; a busca no serviço de atendimento não localizou registro correspondente.",
+          "evidence": [
+            "04-registro-reclamacao.md",
+            "05-peticao-inicial.md"
+          ],
+          "rubric": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração."
+        },
+        {
+          "id": "O-B2",
+          "state": "absent",
+          "class": "absence",
+          "severity": "major",
+          "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+          "evidence": [
+            "15-extrato-andamentos.md"
+          ],
+          "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva."
+        }
+      ]
+    },
+    "W-C": {
+      "authority_label": "chronology_conflict",
+      "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+      "document_renderer_overrides": {},
+      "fact_overrides": {
+        "F041": "2024-03-05"
+      },
+      "expected_changed_documents": [
+        "07-certidao-citacao.md"
+      ],
+      "expected_observations": [
+        {
+          "id": "O-C1",
+          "state": "contradictory",
+          "class": "contradiction",
+          "severity": "critical",
+          "claim": "A certidão de disponibilização registra a disponibilização da citação em 2024-03-12 e a certidão de efetivação registra disponibilização e visualização em 2024-03-05.",
+          "evidence": [
+            "06-certidao-disponibilizacao-citacao.md",
+            "07-certidao-citacao.md"
+          ],
+          "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação."
+        },
+        {
+          "id": "O-C2",
+          "state": "uncertain",
+          "class": "relation",
+          "severity": "critical",
+          "claim": "Sem resolver a data da citação, não é seguro concluir se a contestação de 2024-04-03 foi tempestiva na contagem em dias úteis.",
+          "evidence": [
+            "06-certidao-disponibilizacao-citacao.md",
+            "07-certidao-citacao.md",
+            "08-contestacao.md",
+            "16-nota-normativa.md",
+            "17-calendario-forense.md"
+          ],
+          "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia."
+        }
+      ]
+    }
+  }
+}

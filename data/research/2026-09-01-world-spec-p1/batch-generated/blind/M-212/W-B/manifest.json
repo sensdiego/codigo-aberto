@@ -1,0 +1,29 @@
+{
+  "batch_id": "br-civel-conhecimento-calibrado-v1",
+  "batch_spec_sha256": "cca8826e5cf769df453d0365d5a3043120bc4e3670a1319d9d8be8fe0bf719a4",
+  "document_count": 17,
+  "documents": {
+    "01-contrato-prestacao.md": "24eb22665b58114451c8e5ba12ff0e6e99f77464304d9b0480b2d8ea344e2dc5",
+    "02-nota-fiscal.md": "e8c7302bf6fdb85837ae15136f1f54bd4acce4b81d2b2a1400ebe850274ef525",
+    "03-relatorio-intermediacao.md": "ca6cbc422e40aa68d8e824df129d84a9dc00435048a36ca03fb82e77c572b445",
+    "04-registro-reclamacao.md": "080fb191f5fb9679d7d511a60a2a8c994d50e0bbb79c492a852d0fe535682b76",
+    "05-peticao-inicial.md": "3b0b69d1dcd7a1e0e2f61eef20b8a20dbfb65396f7b55084dbd4bea2fca280ce",
+    "06-certidao-disponibilizacao-citacao.md": "54b3cc542107d49f01cd9e27dc174672064db0fc1397d55a5ea0e8ea5eb9027c",
+    "07-certidao-citacao.md": "ab986d3003741e6f41b03138337df45a08550a836f79ed42e7acc0e64e908bd6",
+    "08-contestacao.md": "f8d38936cbf81cfbfeaaf1c25678ab69d4baecb26ff63c508754c40da79795b2",
+    "09-replica.md": "f16c5237053cf1127b9d0ed0556f14211b40cd453b172548ab4d357402feaacb",
+    "10-despacho-saneador.md": "1af1fe0140e5550e71eb4ad10fae27b75ce2b7830dae54baa579d35fb695227e",
+    "11-laudo-pericial.md": "58d43c2b4a6e559afd7370d50b9f0c83acd29774489584d4ea24563061276efa",
+    "12-sentenca.md": "97639a5146cbbdb00001e36092e3e6f7299b7c111ab49db316647f0501dc50d5",
+    "13-certidao-intimacao.md": "4466af93ac3659287197d4e6e95379e9e041bedb3d03ce592ed4edf75d9d5c10",
+    "14-comprovante-custas.md": "270308723c773a0a104ea89f68e40b0e78776d8109dc43b45269409e560315ca",
+    "15-extrato-andamentos.md": "69f25f70f3239391e83d166b14747bbbb5916dd2d537675fa27e717315575acf",
+    "16-nota-normativa.md": "91242ab206c54ab7455b2b8b4448db4fa6b4eeda3b2ad42f1b6e48b08fa4b02b",
+    "17-calendario-forense.md": "beeaecdc04f05db6a256d1bbfcda396ad39b52ddcee8e186efdcc80428ae8069"
+  },
+  "effective_spec_sha256": "d2832109fb6db1efcf9555d833fa4ac43acb54dc8b1fb9027e4e2b7d834c0d19",
+  "matter_id": "M-212",
+  "schema_version": 1,
+  "task_sha256": "ce6c0e36930ee312c9fbc3cb3a39bf692acc82424688aa55142bbf5841f446cd",
+  "world_id": "W-B"
+}

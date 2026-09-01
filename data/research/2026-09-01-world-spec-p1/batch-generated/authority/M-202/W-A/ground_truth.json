@@ -1,0 +1,69 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente e completo, com sentença de procedência e datas de citação convergentes entre a certidão de disponibilização e a certidão de efetivação.",
+  "effective_spec_sha256": "8a246c8b8b7480f50b7a05cd818397ab26fdaadd909e5a1f82f93421a9ca9362",
+  "expected_observations": [
+    {
+      "claim": "A autora alegou reclamação extrajudicial de 2023-06-20 e o registro de atendimento ATD-2023-7802 corrobora a data.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-202",
+  "motif": "perfil_probatorio",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-202",
+    "F002": "2ª Vara Cível da Comarca Experimental de Basalto",
+    "F003": "Coral Pescados Artesanais Ltda.",
+    "F004": "Fragata Refrigeração Naval S.A.",
+    "F010": "2023-04-26",
+    "F011": "fornecimento e instalação de câmaras frias para armazenamento de pescado",
+    "F012": "58.400,00",
+    "F013": "2023-05-16",
+    "F014": "perda de mercadoria por falha no sistema de refrigeração",
+    "F020": "2023-06-20",
+    "F021": "ATD-2023-7802",
+    "F030": "2024-02-28",
+    "F031": "condenação da ré ao ressarcimento de R$ 58.400,00 por dano material, correspondentes à mercadoria perdida",
+    "F040": "2024-03-20",
+    "F041": "2024-03-20",
+    "F042": "2024-04-11",
+    "F043": "a falha decorreu de mau uso pela autora e a perda de mercadoria não foi comprovada",
+    "F050": "2024-05-08",
+    "F060": "2024-07-23",
+    "F061": "perícia técnica sobre o sistema de refrigeração instalado na sede da autora",
+    "F070": "2025-02-18",
+    "F071": "a falha de refrigeração tem origem em defeito de fabricação do compressor, anterior à instalação",
+    "F072": "2025-04-22",
+    "F080": "2025-09-30",
+    "F081": "condenar a ré ao pagamento de R$ 58.400,00 a título de ressarcimento por dano material, valor correspondente ao preço pago pela autora conforme o contrato e a nota fiscal juntados aos autos, com atualização monetária desde o ajuizamento",
+    "F090": "2025-10-07 — juntada da certidão de intimação da sentença",
+    "F091": "2026-01-23 10:40",
+    "F092": "2025-10-07",
+    "F093": "2024-02-28",
+    "F094": "1.250,02",
+    "F100": "no período de 2024-03-13 a 2024-04-11, houve expediente regular de segunda a sexta-feira, exceto em 2024-03-29 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "indenização por dano material",
+    "F102": "2024-03-13 a 2024-04-11"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

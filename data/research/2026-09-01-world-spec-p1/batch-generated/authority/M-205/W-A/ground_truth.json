@@ -1,0 +1,69 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente e completo, com sentença de procedência e datas de citação convergentes entre a certidão de disponibilização e a certidão de efetivação.",
+  "effective_spec_sha256": "0c89219b17897595a676cd408c433579e7e7d5454f7e9d292231018d2e9e73cf",
+  "expected_observations": [
+    {
+      "claim": "A autora alegou reclamação extrajudicial de 2022-06-24 e o registro de atendimento ATD-2022-7805 corrobora a data.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-205",
+  "motif": "defesa_revelia",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-205",
+    "F002": "1ª Vara Cível da Comarca Experimental de Embaúba",
+    "F003": "Halite Cerâmica Artesanal Ltda.",
+    "F004": "Albatroz Seguros Patrimoniais S.A.",
+    "F010": "2022-04-29",
+    "F011": "implantação de sistema de monitoramento de fornos com apólice de seguro vinculada",
+    "F012": "74.900,00",
+    "F013": "2022-05-20",
+    "F014": "negativa de cobertura para sinistro declarado dentro da vigência",
+    "F020": "2022-06-24",
+    "F021": "ATD-2022-7805",
+    "F030": "2023-03-03",
+    "F031": "condenação da ré ao pagamento da indenização securitária de R$ 74.900,00",
+    "F040": "2023-03-24",
+    "F041": "2023-03-24",
+    "F042": "2023-04-17",
+    "F043": "o sinistro se enquadra em exclusão contratual e a negativa de cobertura foi regular",
+    "F050": "2023-05-12",
+    "F060": "2023-07-27",
+    "F061": "perícia técnica sobre o sistema de monitoramento de fornos instalado na sede da autora, com análise documental da apólice vinculada",
+    "F070": "2024-02-22",
+    "F071": "o sinistro ocorreu dentro da vigência e não se enquadra nas exclusões da apólice",
+    "F072": "2024-04-26",
+    "F080": "2024-10-04",
+    "F081": "condenar a ré ao pagamento de R$ 74.900,00 a título de indenização securitária, valor correspondente ao capital segurado contratado na apólice vinculada ao contrato, com atualização monetária desde o ajuizamento",
+    "F090": "2024-10-11 — juntada da certidão de intimação da sentença",
+    "F091": "2025-01-27 10:40",
+    "F092": "2024-10-11",
+    "F093": "2023-03-03",
+    "F094": "1.071,72",
+    "F100": "no período de 2023-03-17 a 2023-04-17, houve expediente regular de segunda a sexta-feira, exceto em 2023-04-07 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "cobrança de indenização securitária",
+    "F102": "2023-03-17 a 2023-04-17"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

@@ -1,0 +1,73 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+  "effective_spec_sha256": "3607e477b5b81b0ee74d1df7d419bd5cc5a5eddf30223623fc0b677cf8eecb33",
+  "expected_observations": [
+    {
+      "claim": "A certidão de disponibilização registra a disponibilização da citação em 2023-03-17 e a certidão de efetivação registra disponibilização e visualização em 2023-03-10.",
+      "class": "contradiction",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver a data da citação, não é seguro concluir se a contestação de 2023-04-10 foi tempestiva na contagem em dias úteis.",
+      "class": "relation",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md",
+        "08-contestacao.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-207",
+  "motif": "desfecho",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-207",
+    "F002": "3ª Vara Cível da Comarca Experimental de Gardênia",
+    "F003": "Litoral Mudas Florestais Ltda.",
+    "F004": "Rumo Transportes Rodoviários S.A.",
+    "F010": "2022-04-22",
+    "F011": "transporte rodoviário de estufas modulares com carga declarada",
+    "F012": "67.800,00",
+    "F013": "2022-05-13",
+    "F014": "avaria da carga em colisão rodoviária durante o transporte contratado",
+    "F020": "2022-06-17",
+    "F021": "ATD-2022-7807",
+    "F030": "2023-02-24",
+    "F031": "condenação da ré ao pagamento de R$ 67.800,00 por danos materiais decorrentes de acidente de trânsito",
+    "F040": "2023-03-17",
+    "F041": "2023-03-10",
+    "F042": "2023-04-10",
+    "F043": "a colisão foi causada por terceiro, a ré adotou todas as cautelas de transporte e o dano é inferior ao alegado pela autora",
+    "F050": "2023-05-05",
+    "F060": "2023-07-20",
+    "F061": "perícia técnica sobre a carga avariada e as condições do transporte contratado",
+    "F070": "2024-02-15",
+    "F071": "a avaria da carga é compatível com a colisão registrada no termo de ocorrência do transporte e ocorreu durante o transporte contratado, com dano apurado em 40% do valor declarado da carga, correspondentes a R$ 27.120,00",
+    "F072": "2024-04-19",
+    "F080": "2024-09-27",
+    "F081": "condenar a ré ao pagamento de R$ 27.120,00 por danos decorrentes do acidente, valor correspondente a 40% do valor da carga declarado no conhecimento de transporte, conforme apuração do laudo pericial, com atualização monetária desde o ajuizamento",
+    "F090": "2024-10-04 — juntada da certidão de intimação da sentença",
+    "F091": "2025-01-20 10:40",
+    "F092": "2024-10-04",
+    "F093": "2023-02-24",
+    "F094": "1.472,17",
+    "F100": "no período de 2023-03-10 a 2023-04-10, houve expediente regular de segunda a sexta-feira, exceto em 2023-04-07 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "indenização por acidente de trânsito",
+    "F102": "2023-03-10 a 2023-04-10"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

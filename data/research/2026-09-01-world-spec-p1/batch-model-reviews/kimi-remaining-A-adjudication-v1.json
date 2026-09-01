@@ -1,0 +1,511 @@
+{
+  "decision_reason": "PASS mecânico: nos 12 mundos do pacote A (M-205..M-208 × W-A/W-B/W-C), os dois revisores recuperaram todas as observações críticas (16/16 por revisor) e major (8/8 por revisor), com zero falso positivo crítico; as contagens de prazo nas duas hipóteses de W-C foram conferidas e estão corretas nos 4 matters. Ressalva para o owner: foi CONFIRMADO um defeito classe (a) em M-208 W-C — a mutação 'citação − 7 dias' caiu em 2023-02-20 (segunda de Carnaval, sem expediente pelo próprio doc 17), violando o requisito de que as duas certidões de W-C sejam causalmente possíveis; mesmo padrão do bug (a) do canário v3. Pela régua do canário, flag (a) confirmado justifica avaliar correção estática (snap de dia útil na mutação) — decisão fora desta adjudicação, que é apenas mecânica.",
+  "package": "A",
+  "reviewers": [
+    {
+      "critical_recovered": "16/16",
+      "false_positives_critical": 0,
+      "notes": "Realismo 2 e confiança alta nos 12 mundos. Deslize em M-206 W-B material_findings[1] (escreve '2022-06-24' e se autocorrige para 2022-06-06 na mesma frase; contradictions[0] traz a data correta) — sem impacto na recuperação. Contagens de prazo conferidas e corretas nos 4 matters e nas duas hipóteses de W-C.",
+      "relevant_recovered": "8/8",
+      "reviewer": "A revisor 1",
+      "source": "kimi-remaining-A revisor 1-frozen.json"
+    },
+    {
+      "critical_recovered": "16/16",
+      "false_positives_critical": 0,
+      "notes": "Realismo 2 e confiança alta nos 12 mundos. Contagens de prazo conferidas e corretas nos 4 matters e nas duas hipóteses de W-C (incluindo M-208 W-C a partir de 2023-02-22, pulando o Carnaval).",
+      "relevant_recovered": "8/8",
+      "reviewer": "A revisor 2",
+      "source": "kimi-remaining-A revisor 2-frozen.json"
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS",
+  "totals": {
+    "construction_defects_confirmed": {
+      "a": 1,
+      "b": 3,
+      "c": 4
+    },
+    "critical_recovered_per_reviewer": "16/16",
+    "false_positives_critical": 0,
+    "relevant_recovered_per_reviewer": "8/8",
+    "worlds_passed": "12/12"
+  },
+  "worlds": [
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-205",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-A"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Documento 04 de W-B é uma busca negativa com ressalva didática ('não afirma se houve contato por outro canal'), artificialmente explicativa",
+          "reason": "Verbatim conferido em M-205/W-B/documents/04-registro-reclamacao.md. A ressalva autolimitada é o instrumento deliberado da mutação W-B ('busca negativa autolimitada', previsto nos mutations_required do lote): artificialidade real, porém intencional e necessária à observação esperada O-B1."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-205",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-B"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        }
+      ],
+      "critical_recovered": "2/2",
+      "false_positives_critical": 0,
+      "matter_id": "M-205",
+      "pass": true,
+      "relevant_recovered": "0/0",
+      "world_id": "W-C"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-206",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-A"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Documento 04 de W-B é uma busca negativa com ressalva didática ('não afirma se houve contato por outro canal'), artificialmente explicativa",
+          "reason": "Verbatim conferido em M-205/W-B/documents/04-registro-reclamacao.md. A ressalva autolimitada é o instrumento deliberado da mutação W-B ('busca negativa autolimitada', previsto nos mutations_required do lote): artificialidade real, porém intencional e necessária à observação esperada O-B1."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-206",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-B"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        }
+      ],
+      "critical_recovered": "2/2",
+      "false_positives_critical": 0,
+      "matter_id": "M-206",
+      "pass": true,
+      "relevant_recovered": "0/0",
+      "world_id": "W-C"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "M-207: contrato de fornecimento/instalação de estufas modulares (01) × ação de indenização por acidente de trânsito sem nenhum documento de transporte/colisão; laudo (11) invoca 'colisão registrada' inexistente no acervo",
+          "reason": "Verificado em M-207/W-A/documents/01, 05 e 11: o contrato não documenta transporte, a inicial converte o objeto em acidente e o laudo fala em 'colisão registrada' sem registro nos autos. Incoerência de narrativa/realismo do matter; achado legítimo, não bloqueante."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-207",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-A"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "M-207: contrato de fornecimento/instalação de estufas modulares (01) × ação de indenização por acidente de trânsito sem nenhum documento de transporte/colisão; laudo (11) invoca 'colisão registrada' inexistente no acervo",
+          "reason": "Verificado em M-207/W-A/documents/01, 05 e 11: o contrato não documenta transporte, a inicial converte o objeto em acidente e o laudo fala em 'colisão registrada' sem registro nos autos. Incoerência de narrativa/realismo do matter; achado legítimo, não bloqueante."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Documento 04 de W-B é uma busca negativa com ressalva didática ('não afirma se houve contato por outro canal'), artificialmente explicativa",
+          "reason": "Verbatim conferido em M-205/W-B/documents/04-registro-reclamacao.md. A ressalva autolimitada é o instrumento deliberado da mutação W-B ('busca negativa autolimitada', previsto nos mutations_required do lote): artificialidade real, porém intencional e necessária à observação esperada O-B1."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-207",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-B"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "M-207: contrato de fornecimento/instalação de estufas modulares (01) × ação de indenização por acidente de trânsito sem nenhum documento de transporte/colisão; laudo (11) invoca 'colisão registrada' inexistente no acervo",
+          "reason": "Verificado em M-207/W-A/documents/01, 05 e 11: o contrato não documenta transporte, a inicial converte o objeto em acidente e o laudo fala em 'colisão registrada' sem registro nos autos. Incoerência de narrativa/realismo do matter; achado legítimo, não bloqueante."
+        }
+      ],
+      "critical_recovered": "2/2",
+      "false_positives_critical": 0,
+      "matter_id": "M-207",
+      "pass": true,
+      "relevant_recovered": "0/0",
+      "world_id": "W-C"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "M-208: contrato 'pago à vista na assinatura' (01) × causa de pedir revisional de encargos cobrados ao longo do tempo com capitalização (04/05), sem qualquer documento bancário; repetição de indébito igual ao preço total sem memória de cálculo",
+          "reason": "Verificado verbatim em M-208/W-A/documents/01 ('pago à vista na assinatura') e 05 (revisão de contrato bancário com repetição de R$ 93.600,00): pagamento à vista é incompatível com a lógica de encargos/capitalização reclamados e nenhum documento explica a estrutura do financiamento. Incoerência de narrativa do matter, não bloqueante."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-208",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-A"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "M-208: contrato 'pago à vista na assinatura' (01) × causa de pedir revisional de encargos cobrados ao longo do tempo com capitalização (04/05), sem qualquer documento bancário; repetição de indébito igual ao preço total sem memória de cálculo",
+          "reason": "Verificado verbatim em M-208/W-A/documents/01 ('pago à vista na assinatura') e 05 (revisão de contrato bancário com repetição de R$ 93.600,00): pagamento à vista é incompatível com a lógica de encargos/capitalização reclamados e nenhum documento explica a estrutura do financiamento. Incoerência de narrativa do matter, não bloqueante."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Documento 04 de W-B é uma busca negativa com ressalva didática ('não afirma se houve contato por outro canal'), artificialmente explicativa",
+          "reason": "Verbatim conferido em M-205/W-B/documents/04-registro-reclamacao.md. A ressalva autolimitada é o instrumento deliberado da mutação W-B ('busca negativa autolimitada', previsto nos mutations_required do lote): artificialidade real, porém intencional e necessária à observação esperada O-B1."
+        }
+      ],
+      "critical_recovered": "1/1",
+      "false_positives_critical": 0,
+      "matter_id": "M-208",
+      "pass": true,
+      "relevant_recovered": "1/1",
+      "world_id": "W-B"
+    },
+    {
+      "construction_defects": [
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Marcadores transversais de artificialidade: peças rotuladas 'sintéticas', task.md declarando ficção, numeração fora do padrão CNJ, comarca 'Experimental', nota normativa-instrução (16), calendário (17) cobrindo exatamente o intervalo da contagem, contestação sempre no 15º dia útil exato, divergência W-C de exatamente 7 dias",
+          "reason": "Verificado nos documentos cegos (títulos das 17 peças, 16-nota-normativa.md, 17-calendario-forense.md dos 4 matters). São marcas deliberadas do lote sintético e do desenho das contagens de prazo; não bloqueiam recuperação nem induzem erro."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Lacunas probatórias do corpus mínimo: apólice/contrato integral, documento do sinistro/colisão/encargos, procurações, certidão de intimação da contestação, quesitos e trânsito em julgado ausentes",
+          "reason": "Conferido contra o acervo de 17 peças: as ausências são reais e foram corretamente registradas como missing_evidence (não como fatos). São lacunas deliberadas do corpus mínimo sintético, não defeitos de construção."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "c",
+          "flag": "Extrato de andamentos (15) omite os atos de citação (salta de distribuição para contestação)",
+          "reason": "Verificado verbatim em M-208/W-A/documents/15-extrato-andamentos.md (itens 1 e 2). Lacuna deliberada que priva W-C de terceiro elemento dirimente — é parte do desenho da mutação; precedente do canário v3 classificado como (c)."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "Condenação/restituição sempre igual ao preço total do contrato, sem prova do quantum e com laudo silente sobre valor",
+          "reason": "Verificado nos docs 01/11/12 dos 4 matters (valores 74.900, 49.300, 67.800 e 93.600 repetidos do contrato na condenação, sem memória). Incoerência de narrativa legítima e não bloqueante — mesmo padrão do 'mercadoria × preço' de M-202 do canário, mantido como achado legítimo."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "b",
+          "flag": "M-208: contrato 'pago à vista na assinatura' (01) × causa de pedir revisional de encargos cobrados ao longo do tempo com capitalização (04/05), sem qualquer documento bancário; repetição de indébito igual ao preço total sem memória de cálculo",
+          "reason": "Verificado verbatim em M-208/W-A/documents/01 ('pago à vista na assinatura') e 05 (revisão de contrato bancário com repetição de R$ 93.600,00): pagamento à vista é incompatível com a lógica de encargos/capitalização reclamados e nenhum documento explica a estrutura do financiamento. Incoerência de narrativa do matter, não bloqueante."
+        },
+        {
+          "adjudicator_agrees": true,
+          "class": "a",
+          "flag": "M-208 W-C: certidão de efetivação (07) registra disponibilização e visualização da citação em 2023-02-20, segunda-feira de Carnaval, dia sem expediente segundo o próprio calendário forense (17) do mesmo acervo",
+          "reason": "Verificado verbatim em M-208/W-C/documents/07-certidao-citacao.md ('disponibilizada ... em 2023-02-20, com visualização registrada na mesma data') e 17-calendario-forense.md ('2023-02-20 (Carnaval (segunda-feira)) ... não houve expediente'). A mutação 'citação − 7 dias' (2023-02-27 → 2023-02-20) não recebeu snap de dia útil e viola o requisito do lote de que as duas certidões de W-C sejam 'causalmente possíveis' — mesmo padrão do bug (a) do canário v3, cuja correção na v4 incluía snap de dia útil nas datas cartorárias. Bug de construção/instrumento confirmado; não comprometeu a recuperação (os dois revisores recuperaram O-C1/O-C2 e flagraram a implausibilidade em vez de tratá-la como fato)."
+        }
+      ],
+      "critical_recovered": "2/2",
+      "false_positives_critical": 0,
+      "matter_id": "M-208",
+      "pass": true,
+      "relevant_recovered": "0/0",
+      "world_id": "W-C"
+    }
+  ]
+}

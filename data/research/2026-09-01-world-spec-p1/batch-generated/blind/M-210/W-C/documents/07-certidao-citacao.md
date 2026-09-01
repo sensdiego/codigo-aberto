@@ -1,0 +1,5 @@
+# Certidão sintética de efetivação da citação
+
+Certifico que a citação da ré no processo BR-CIV-CON-210 foi
+disponibilizada no sistema eletrônico do tribunal em 2022-03-14,
+com visualização registrada na mesma data, efetivando-se a citação.

@@ -1,0 +1,73 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+  "effective_spec_sha256": "6bb97af1514bc4785114ffa05d86c5970ca5ef7c796f1849db8ff9feb08aef09",
+  "expected_observations": [
+    {
+      "claim": "A certidão de disponibilização registra a disponibilização da citação em 2023-03-06 e a certidão de efetivação registra disponibilização e visualização em 2023-02-27.",
+      "class": "contradiction",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver a data da citação, não é seguro concluir se a contestação de 2023-03-27 foi tempestiva na contagem em dias úteis.",
+      "class": "relation",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md",
+        "08-contestacao.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-206",
+  "motif": "perfil_probatorio",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-206",
+    "F002": "2ª Vara Cível da Comarca Experimental de Fagulha",
+    "F003": "Inverna Hortifruti Congelado Ltda.",
+    "F004": "Junco Climatização Predial S.A.",
+    "F010": "2022-04-12",
+    "F011": "fornecimento e instalação de sistema de climatização para câmara de maturação",
+    "F012": "49.300,00",
+    "F013": "2022-05-02",
+    "F014": "descumprimento do cronograma de manutenção corretiva contratado",
+    "F020": "2022-06-06",
+    "F021": "ATD-2022-7806",
+    "F030": "2023-02-14",
+    "F031": "condenação da ré ao cumprimento da obrigação de fazer, com astreintes, e ao ressarcimento de R$ 49.300,00",
+    "F040": "2023-03-06",
+    "F041": "2023-02-27",
+    "F042": "2023-03-27",
+    "F043": "a manutenção não foi executada porque a autora impediu o acesso às instalações",
+    "F050": "2023-04-24",
+    "F060": "2023-07-07",
+    "F061": "perícia técnica sobre o sistema de climatização instalado na sede da autora, com verificação do cronograma de manutenção contratado",
+    "F070": "2024-02-02",
+    "F071": "não há registro de impedimento de acesso e as intervenções contratadas não foram realizadas",
+    "F072": "2024-04-08",
+    "F080": "2024-09-16",
+    "F081": "condenar a ré a executar a manutenção contratada em 30 dias, sob astreintes, e ao pagamento de R$ 49.300,00, valor correspondente ao preço dos serviços contratados conforme o contrato e a nota fiscal dos autos, com atualização monetária desde o ajuizamento",
+    "F090": "2024-09-23 — juntada da certidão de intimação da sentença",
+    "F091": "2025-01-09 10:40",
+    "F092": "2024-09-23",
+    "F093": "2023-02-14",
+    "F094": "888,18",
+    "F100": "no período de 2023-02-27 a 2023-03-27, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F101": "obrigação de fazer",
+    "F102": "2023-02-27 a 2023-03-27"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

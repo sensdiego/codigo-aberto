@@ -1,0 +1,69 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente e completo, com sentença de procedência e datas de citação convergentes entre a certidão de disponibilização e a certidão de efetivação.",
+  "effective_spec_sha256": "68d65a4c5171948e3683ef4f341642720d24c3cd9733baea50c14174870de932",
+  "expected_observations": [
+    {
+      "claim": "A autora alegou reclamação extrajudicial de 2022-05-30 e o registro de atendimento ATD-2022-7808 corrobora a data.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-208",
+  "motif": "tensao_temporal",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-208",
+    "F002": "4ª Vara Cível da Comarca Experimental de Horto",
+    "F003": "Marola Confecções Praianas Ltda.",
+    "F004": "Banco Serramar S.A.",
+    "F010": "2022-04-05",
+    "F011": "implantação de sistema de gestão financeira com financiamento bancário vinculado",
+    "F012": "93.600,00",
+    "F013": "2022-04-25",
+    "F014": "cobrança de encargos não contratados com capitalização não autorizada",
+    "F020": "2022-05-30",
+    "F021": "ATD-2022-7808",
+    "F030": "2023-02-07",
+    "F031": "revisão do contrato bancário com exclusão dos encargos abusivos e repetição de indébito de R$ 14.040,00, correspondentes aos encargos cobrados além do permitido",
+    "F040": "2023-02-27",
+    "F041": "2023-02-27",
+    "F042": "2023-03-20",
+    "F043": "os encargos estavam contratados e a capitalização foi expressamente autorizada",
+    "F050": "2023-04-17",
+    "F060": "2023-06-30",
+    "F061": "perícia contábil sobre os encargos lançados no contrato bancário e a capitalização aplicada",
+    "F070": "2024-01-26",
+    "F071": "os encargos questionados não constam do quadro resumo do contrato e a capitalização carece de autorização expressa",
+    "F072": "2024-04-01",
+    "F080": "2024-09-09",
+    "F081": "declarar abusivos os encargos e condenar a ré à restituição de R$ 14.040,00, correspondentes aos encargos cobrados além do permitido no período, conforme o quadro resumo de encargos anexo ao contrato e a memória de cálculo apresentada na inicial, com atualização monetária desde o ajuizamento",
+    "F090": "2024-09-16 — juntada da certidão de intimação da sentença",
+    "F091": "2025-01-02 10:40",
+    "F092": "2024-09-16",
+    "F093": "2023-02-07",
+    "F094": "1.526,72",
+    "F100": "no período de 2023-02-17 a 2023-03-20, houve expediente regular de segunda a sexta-feira, exceto em 2023-02-20 (Carnaval (segunda-feira)); 2023-02-21 (Carnaval (terça-feira)), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "revisão de contrato bancário",
+    "F102": "2023-02-17 a 2023-03-20"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

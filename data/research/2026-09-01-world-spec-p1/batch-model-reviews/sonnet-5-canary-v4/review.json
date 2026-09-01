@@ -1,0 +1,283 @@
+{
+  "batch_gate": "CONSTRUIR",
+  "batch_reason": "Os quatro assuntos seguem um desenho consistente e replicável entre os mundos: W-A apresenta cadeia de citação sem divergência e reclamação extrajudicial confirmada; W-B isola o efeito de uma reclamação extrajudicial não localizada, sem contradizer diretamente a petição; W-C introduz divergência proposital e cronologicamente incoerente entre a certidão de disponibilização e a certidão de efetivação da citação, exigindo exatamente a dupla contagem em dias úteis pedida pela tarefa. Em todos os casos, a nota normativa e o calendário forense fornecidos bastam para a contagem, sem necessidade de inventar feriados, valores ou movimentações. As lacunas identificadas (certidões de restrição, notas fiscais subsequentes, quesitos, manifestações autônomas) são proporcionais e não comprometem a recuperabilidade do corpus. Não foram encontrados documentos que revelem a resposta esperada de forma ilegítima (vazamento), apenas o material probatório e normativo necessário à análise.",
+  "matters": [
+    {
+      "decision_reason": "Os três mundos formam um conjunto coerente e testável: W-A apresenta cadeia de citação sem divergência e reclamação confirmada; W-B isola o efeito de uma reclamação extrajudicial não localizada; W-C introduz divergência proposital entre certidões de citação, exigindo exatamente a dupla contagem pedida pela tarefa, sem necessidade de suposições. A nota normativa e o calendário forense são suficientes para a contagem em dias úteis. As lacunas identificadas são proporcionais e não comprometem a recuperabilidade da análise.",
+      "matter_id": "M-201",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia: contrato 2023-04-14 (01-contrato-prestacao.md); NF emitida na mesma data (02-nota-fiscal.md); termo de instalação/aceite sem ressalvas em 2023-05-05 (03-termo-instalacao.md); reclamação extrajudicial registrada em 2023-06-09, protocolo ATD-2023-7801 (04-registro-reclamacao.md), compatível com a alegação da petição inicial (05); distribuição em 2024-02-16 (05, 14, 15); disponibilização da citação eletrônica em 2024-03-08 (06); certidão de efetivação também registra 2024-03-08, com visualização na mesma data (07) — datas coincidentes, sem divergência; contestação protocolada em 2024-04-01 (08); réplica em 2024-04-26 (09); despacho saneador em 2024-07-12 determinando perícia contábil (10); laudo entregue em 2025-02-07 (11); manifestação sobre laudo em 2025-04-11 (mencionada em 12 e 15, sem peça autônoma); sentença em 2025-09-19 (12); intimação da sentença em 2025-09-26 (13).",
+            "Reclamação extrajudicial: confirmada por documento próprio de atendimento com mesmo protocolo e data da alegação da petição inicial — classificação: confirmada.",
+            "Tempestividade da contestação: certidões de disponibilização (06) e de efetivação (07) trazem a mesma data (2024-03-08), não havendo divergência a contrapor.",
+            "Contagem em dias úteis (calendário 17, expediente regular exceto feriado em 2024-03-29): primeiro dia útil após 2024-03-08 é 2024-03-11; o 15º dia útil subsequente recai em 2024-04-01, coincidindo exatamente com o protocolo da contestação (08) — contestação tempestiva no limite do prazo.",
+            "Documentos de mérito: 01, 02, 03, 05, 08, 09, 11, 12. Documentos de andamento/burocracia: 06, 07, 13, 14, 15 — não tratados como prova do mérito.",
+            "A história processual não contém notícia de acordo, recurso ou trânsito em julgado; o extrato de andamentos (15) encerra na intimação da sentença (2025-09-26), sem ato posterior registrado."
+          ],
+          "missing_evidence": [
+            "Certidão do órgão de restrição mencionada no laudo (11) e na sentença (12), não juntada como documento autônomo.",
+            "Manifestação das partes sobre o laudo pericial (ato de 2025-04-11) não consta como peça própria.",
+            "Quesitos das partes mencionados no despacho saneador (10) não constam dos autos.",
+            "Informação sobre cumprimento/pagamento da condenação após a sentença."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Lacuna entre a alegação de reclamação extrajudicial na petição inicial (05) e a ausência de registro localizado no documento 04, sem que isso configure contradição direta (o próprio documento reconhece a limitação da busca)."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à do mundo W-A quanto a contrato, NF, termo de instalação, petição, citação e demais marcos processuais (mesmos arquivos 01,02,03,05-17).",
+            "Reclamação extrajudicial: alegada na petição inicial (05), porém o documento 04 (variante 'busca de registro') informa que não foi localizado registro com os dados fornecidos, ressalvando que isso não exclui contato por outro canal — classificação: alegada, não confirmada (não há contradição direta, mas lacuna probatória).",
+            "Tempestividade da contestação: certidões de disponibilização (06) e efetivação (07) coincidem em 2024-03-08; 15º dia útil (calendário 17) recai em 2024-04-01, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "Documentos de mérito: 01,02,03,05,08,09,11,12; burocracia de andamento: 06,07,13,14,15.",
+            "Não há notícia de acordo, recurso ou trânsito em julgado nos autos disponíveis."
+          ],
+          "missing_evidence": [
+            "Registro de reclamação por canal ou identificador alternativo, para confirmar ou infirmar a alegação de contato extrajudicial.",
+            "Certidão do órgão de restrição referida no laudo/sentença.",
+            "Manifestação das partes sobre o laudo (peça autônoma) e quesitos apresentados."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Certidão de disponibilização (06) x certidão de efetivação (07): a efetivação é registrada em data anterior à própria disponibilização do mesmo ato, o que é cronologicamente incoerente."
+          ],
+          "implausible_or_leaking_documents": [
+            "07-certidao-citacao.md — data de efetivação (2024-03-01) anterior à data de disponibilização informada em 06-certidao-disponibilizacao-citacao.md (2024-03-08), sequência temporalmente impossível para o mesmo ato de citação."
+          ],
+          "material_findings": [
+            "Cronologia igual à de W-A quanto aos demais marcos (01-05, 08-15).",
+            "Reclamação extrajudicial: confirmada por documento próprio de atendimento (04), como em W-A.",
+            "Citação eletrônica: a certidão de disponibilização (06) informa 2024-03-08, mas a certidão de efetivação (07) informa disponibilização em 2024-03-01, com visualização na mesma data — divergência interna quanto à data do mesmo ato.",
+            "Contagem A (a partir de 2024-03-08, conforme 06): primeiro dia útil seguinte é 2024-03-11; 15º dia útil recai em 2024-04-01 (calendário 17, com exceção do feriado de 2024-03-29), coincidindo com o protocolo da contestação (08) — tempestiva nesta hipótese.",
+            "Contagem B (a partir de 2024-03-01, conforme 07): primeiro dia útil seguinte é 2024-03-04; 15º dia útil recai em 2024-03-22; a contestação protocolada em 2024-04-01 seria, nesta hipótese, posterior ao termo final — intempestiva.",
+            "Não há elemento documental que permita escolher uma das datas como correta; a divergência deve ser objeto de diligência, não de suposição."
+          ],
+          "missing_evidence": [
+            "Certidão complementar, log do sistema eletrônico ou manifestação do cartório esclarecendo a data real de disponibilização/efetivação da citação.",
+            "Certidão do órgão de restrição referida no laudo/sentença; manifestação sobre laudo; quesitos das partes."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "O conjunto reproduz o mesmo padrão de W-201 (confirmação, não localização e divergência de citação) de forma consistente, permitindo a análise pedida sem suposições. A tensão entre causa de pedir e base de cálculo da sentença é um achado material relevante, não uma falha de recuperabilidade do corpus.",
+      "matter_id": "M-202",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia: contrato 2023-04-26 (01); NF na mesma data (02); termo de instalação/aceite em 2023-05-16 (03); reclamação extrajudicial registrada em 2023-06-20, protocolo ATD-2023-7802 (04), compatível com a petição (05); distribuição em 2024-02-28 (05,14,15); disponibilização da citação em 2024-03-20 (06); efetivação também em 2024-03-20, visualização na mesma data (07) — sem divergência; contestação em 2024-04-11 (08); réplica em 2024-05-08 (09); despacho saneador em 2024-07-23 determinando perícia técnica (10); laudo em 2025-02-18 (11), concluindo defeito de fabricação do compressor anterior à instalação; manifestação sobre laudo em 2025-04-22 (citada em 12 e 15); sentença em 2025-09-30 (12); intimação em 2025-10-07 (13).",
+            "Reclamação extrajudicial: confirmada por documento de atendimento coincidente com a alegação da petição — classificação: confirmada.",
+            "Tempestividade: certidões 06 e 07 coincidem em 2024-03-20; primeiro dia útil seguinte é 2024-03-21; 15º dia útil (calendário 17, exceto feriado de 2024-03-29) recai em 2024-04-11, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "Observação sobre o mérito: a causa de pedir é 'perda de mercadoria por falha no sistema de refrigeração' (dano material por perda de estoque), mas a sentença (12) fundamenta o valor da condenação como 'correspondente ao preço pago pela autora conforme o contrato e a nota fiscal', isto é, o preço do equipamento, não uma apuração do valor da mercadoria efetivamente perdida — trata-se de uma tensão entre a causa de pedir e a base de cálculo declarada na sentença, que não deve ser resolvida por suposição.",
+            "Documentos de mérito: 01,02,03,05,08,09,11,12; burocracia de andamento: 06,07,13,14,15.",
+            "Não há notícia de acordo, recurso ou trânsito em julgado nos documentos disponíveis; o extrato (15) encerra na intimação da sentença."
+          ],
+          "missing_evidence": [
+            "Laudo ou relatório de estoque comprovando a extensão e o valor da mercadoria efetivamente perdida.",
+            "Notas de entrada/saída ou inventário do pescado armazenado no período da falha.",
+            "Manifestação sobre laudo (peça autônoma) e quesitos das partes."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Lacuna entre a alegação de reclamação extrajudicial e a ausência de registro localizado (04), sem contradição direta."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à de W-A quanto aos demais marcos.",
+            "Reclamação extrajudicial: alegada na petição (05), mas o documento 04 (variante de busca) não localiza registro com os dados fornecidos, sem excluir contato por outro canal — classificação: alegada, não confirmada.",
+            "Tempestividade: certidões 06 e 07 coincidem em 2024-03-20; 15º dia útil recai em 2024-04-11, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "Mesma tensão entre causa de pedir (perda de mercadoria) e base de cálculo da sentença (preço do contrato/NF), conforme observado em W-A."
+          ],
+          "missing_evidence": [
+            "Registro de reclamação por canal/identificador alternativo.",
+            "Laudo ou inventário comprovando a perda de mercadoria.",
+            "Manifestação sobre laudo e quesitos das partes."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Certidão de disponibilização (06) x certidão de efetivação (07): efetivação registrada em data anterior à disponibilização do mesmo ato."
+          ],
+          "implausible_or_leaking_documents": [
+            "07-certidao-citacao.md — data de efetivação (2024-03-13) anterior à disponibilização informada em 06 (2024-03-20), sequência cronologicamente incoerente."
+          ],
+          "material_findings": [
+            "Cronologia igual à de W-A quanto aos demais marcos; reclamação extrajudicial confirmada como em W-A.",
+            "Citação eletrônica: certidão de disponibilização (06) informa 2024-03-20; certidão de efetivação (07) informa disponibilização em 2024-03-13, com visualização na mesma data — divergência interna quanto à data do mesmo ato.",
+            "Contagem A (a partir de 2024-03-20): 15º dia útil recai em 2024-04-11 (calendário 17), coincidindo com o protocolo da contestação (08) — tempestiva nesta hipótese.",
+            "Contagem B (a partir de 2024-03-13): primeiro dia útil seguinte é 2024-03-14; 15º dia útil recai em 2024-04-04; a contestação protocolada em 2024-04-11 seria, nesta hipótese, intempestiva (posterior ao termo final).",
+            "Sem elemento que permita eleger uma das datas sem suposição."
+          ],
+          "missing_evidence": [
+            "Esclarecimento documental (log do sistema, certidão complementar) sobre a data real de disponibilização/efetivação.",
+            "Laudo/inventário sobre a perda de mercadoria; manifestação sobre laudo; quesitos das partes."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "O padrão de confirmação/não confirmação da reclamação e de divergência controlada na citação repete-se de forma coerente, permitindo a cadeia réplica-saneador-sentença pedida na tarefa sem preenchimento de lacunas por suposição. A ausência de notas fiscais subsequentes é um achado relevante, mas não compromete a análise documental.",
+      "matter_id": "M-203",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia: contrato de assinatura com renovação automática em 2023-04-07 (01); NF em 2023-04-07 (02); termo de instalação/aceite em 2023-04-28 (03); reclamação extrajudicial em 2023-06-02, protocolo ATD-2023-7803 (04), compatível com a petição (05); distribuição em 2024-02-09 (05,14,15); disponibilização da citação em 2024-03-01 (06); efetivação também em 2024-03-01 (07) — sem divergência; contestação em 2024-03-22 (08); réplica em 2024-04-19 (09) requerendo perícia contábil/documental; despacho saneador em 2024-07-05 (10); laudo em 2025-01-31 (11), concluindo ausência de suporte contratual às cobranças pós-cancelamento; manifestação sobre laudo em 2025-04-04; sentença em 2025-09-12 (12) declarando abusividade e determinando restituição integral; intimação em 2025-09-19 (13).",
+            "Reclamação extrajudicial: confirmada por documento de atendimento.",
+            "Tempestividade: certidões 06 e 07 coincidem em 2024-03-01; primeiro dia útil seguinte é 2024-03-04; 15º dia útil (calendário 17, sem feriados no período) recai em 2024-03-22, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "Observação de mérito: o contrato (01) descreve cobrança mensal recorrente com renovação automática anual, mas há apenas uma nota fiscal (02), no valor total do contrato, emitida na mesma data da contratação — não há notas fiscais subsequentes que evidenciem as cobranças mensais alegadamente indevidas após o cancelamento, o que é uma lacuna relevante para a causa de pedir.",
+            "Documentos de mérito: 01,02,03,05,08,09,11,12; burocracia de andamento: 06,07,13,14,15.",
+            "Não há notícia de acordo, recurso ou trânsito em julgado; extrato (15) encerra na intimação da sentença."
+          ],
+          "missing_evidence": [
+            "Comprovante do próprio pedido de cancelamento pela autora (apenas mencionado indiretamente no assunto da reclamação).",
+            "Notas fiscais ou faturas subsequentes evidenciando as cobranças de renovação automática impugnadas.",
+            "Manifestação sobre laudo (peça autônoma) e quesitos das partes."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Lacuna entre alegação de reclamação extrajudicial e ausência de registro localizado (04), sem contradição direta."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à de W-A quanto aos demais marcos.",
+            "Reclamação extrajudicial: alegada na petição (05), mas o documento 04 (busca) não localiza registro com os dados fornecidos, sem excluir outro canal — classificação: alegada, não confirmada.",
+            "Tempestividade: certidões 06 e 07 coincidem em 2024-03-01; 15º dia útil recai em 2024-03-22, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "Mesma lacuna quanto à ausência de notas fiscais subsequentes das cobranças impugnadas, conforme W-A."
+          ],
+          "missing_evidence": [
+            "Registro de reclamação por canal/identificador alternativo.",
+            "Comprovante do pedido de cancelamento; notas fiscais subsequentes; manifestação sobre laudo e quesitos."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Certidão de disponibilização (06) x certidão de efetivação (07): efetivação registrada em data anterior à disponibilização do mesmo ato."
+          ],
+          "implausible_or_leaking_documents": [
+            "07-certidao-citacao.md — data de efetivação (2024-02-23) anterior à disponibilização informada em 06 (2024-03-01), sequência cronologicamente incoerente."
+          ],
+          "material_findings": [
+            "Cronologia igual à de W-A quanto aos demais marcos; reclamação extrajudicial confirmada como em W-A.",
+            "Citação eletrônica: certidão de disponibilização (06) informa 2024-03-01; certidão de efetivação (07) informa disponibilização em 2024-02-23, com visualização na mesma data — divergência interna quanto à data do mesmo ato.",
+            "Contagem A (a partir de 2024-03-01): 15º dia útil recai em 2024-03-22 (calendário 17, sem feriados no período), coincidindo com o protocolo da contestação (08) — tempestiva nesta hipótese.",
+            "Contagem B (a partir de 2024-02-23): primeiro dia útil seguinte é 2024-02-26; 15º dia útil recai em 2024-03-15; a contestação protocolada em 2024-03-22 seria, nesta hipótese, intempestiva.",
+            "Sem elemento que permita eleger uma das datas sem suposição."
+          ],
+          "missing_evidence": [
+            "Esclarecimento documental sobre a data real de disponibilização/efetivação.",
+            "Comprovante do pedido de cancelamento; notas fiscais subsequentes; manifestação sobre laudo e quesitos."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "O foco proposto (certidão de citação, protocolo da contestação e calendário forense) é plenamente respondível com os documentos fornecidos, incluindo a hipótese de divergência controlada em W-C e a alegação de mérito sem lastro normativo em W-A/W-B. Não há necessidade de suposição para cumprir a tarefa.",
+      "matter_id": "M-204",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia: contrato em 2023-04-19 (01); NF na mesma data (02); termo de instalação/aceite em 2023-05-09 (03); reclamação extrajudicial em 2023-06-13, protocolo ATD-2023-7804 (04), compatível com a petição (05); distribuição em 2024-02-21 (05,14,15); disponibilização da citação em 2024-03-13 (06); efetivação também em 2024-03-13 (07) — sem divergência; contestação em 2024-04-04 (08), que alega adicionalmente que a reclamação extrajudicial foi 'intempestiva'; réplica em 2024-05-01 (09); despacho saneador em 2024-07-16 (10); laudo em 2025-02-11 (11), atribuindo a variação de tonalidade ao sistema de dosagem fornecido, além da tolerância contratada; manifestação sobre laudo em 2025-04-15; sentença em 2025-09-23 (12) resolvendo o contrato e determinando restituição integral; intimação em 2025-09-30 (13).",
+            "Reclamação extrajudicial: confirmada por documento de atendimento coincidente com a petição.",
+            "Tempestividade da contestação: certidões 06 e 07 coincidem em 2024-03-13; primeiro dia útil seguinte é 2024-03-14; 15º dia útil (calendário 17, exceto feriado de 2024-03-29) recai em 2024-04-04, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "A alegação da ré, na contestação (08), de que a reclamação extrajudicial foi 'intempestiva' é uma afirmação de mérito não amparada por qualquer prazo definido no contrato (01) ou na nota normativa (16) — classificação: alegada, sem parâmetro normativo apresentado nos autos.",
+            "Documentos de mérito: 01,02,03,05,08,09,11,12; burocracia de andamento: 06,07,13,14,15.",
+            "Não há notícia de acordo, recurso ou trânsito em julgado; extrato (15) encerra na intimação da sentença."
+          ],
+          "missing_evidence": [
+            "Definição contratual ou normativa de prazo/tolerância para reclamação de vícios, referida genericamente na contestação sem lastro documental.",
+            "Especificação técnica da 'tolerância técnica contratada' mencionada na contestação e no laudo, ausente do extrato do contrato (01).",
+            "Manifestação sobre laudo (peça autônoma) e quesitos das partes."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Lacuna entre alegação de reclamação extrajudicial e ausência de registro localizado (04), sem contradição direta."
+          ],
+          "implausible_or_leaking_documents": [],
+          "material_findings": [
+            "Cronologia idêntica à de W-A quanto aos demais marcos.",
+            "Reclamação extrajudicial: alegada na petição (05), mas o documento 04 (busca) não localiza registro com os dados fornecidos, sem excluir outro canal — classificação: alegada, não confirmada.",
+            "Tempestividade: certidões 06 e 07 coincidem em 2024-03-13; 15º dia útil recai em 2024-04-04, coincidindo com o protocolo da contestação (08) — tempestiva no limite do prazo.",
+            "A alegação de intempestividade da reclamação extrajudicial feita pela ré na contestação (08) ganha relevância adicional neste mundo, já que a própria busca de registro (04) não confirma a reclamação, mas isso não prova a tese da ré quanto a prazo, pois nenhum parâmetro normativo consta dos autos."
+          ],
+          "missing_evidence": [
+            "Registro de reclamação por canal/identificador alternativo.",
+            "Parâmetro contratual/normativo de prazo para reclamação; especificação de tolerância técnica; manifestação sobre laudo e quesitos."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Certidão de disponibilização (06) x certidão de efetivação (07): efetivação registrada em data anterior à disponibilização do mesmo ato."
+          ],
+          "implausible_or_leaking_documents": [
+            "07-certidao-citacao.md — data de efetivação (2024-03-06) anterior à disponibilização informada em 06 (2024-03-13), sequência cronologicamente incoerente."
+          ],
+          "material_findings": [
+            "Cronologia igual à de W-A quanto aos demais marcos; reclamação extrajudicial confirmada como em W-A.",
+            "Citação eletrônica: certidão de disponibilização (06) informa 2024-03-13; certidão de efetivação (07) informa disponibilização em 2024-03-06, com visualização na mesma data — divergência interna quanto à data do mesmo ato.",
+            "Contagem A (a partir de 2024-03-13): 15º dia útil recai em 2024-04-04 (calendário 17, exceto feriado de 2024-03-29), coincidindo com o protocolo da contestação (08) — tempestiva nesta hipótese.",
+            "Contagem B (a partir de 2024-03-06): primeiro dia útil seguinte é 2024-03-07; 15º dia útil recai em 2024-03-27; a contestação protocolada em 2024-04-04 seria, nesta hipótese, intempestiva.",
+            "Sem elemento que permita eleger uma das datas sem suposição."
+          ],
+          "missing_evidence": [
+            "Esclarecimento documental sobre a data real de disponibilização/efetivação.",
+            "Parâmetro contratual/normativo de prazo para reclamação; especificação de tolerância técnica; manifestação sobre laudo e quesitos."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

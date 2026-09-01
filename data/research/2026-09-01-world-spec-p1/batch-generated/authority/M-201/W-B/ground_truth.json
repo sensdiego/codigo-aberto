@@ -1,0 +1,69 @@
+{
+  "authority_label": "proof_missing",
+  "description": "A reclamação extrajudicial tempestiva aparece apenas como alegação da inicial; a resposta do serviço de atendimento não localizou registro correspondente.",
+  "effective_spec_sha256": "df8a447f7dda63f1316a6bbe3576fb1682caf99d66bdf2f9f484bb09fe5d965b",
+  "expected_observations": [
+    {
+      "claim": "A reclamação de 2023-06-09 consta apenas da petição inicial; a busca no serviço de atendimento não localizou registro correspondente.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-B1",
+      "rubric": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração.",
+      "severity": "critical",
+      "state": "alleged"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-B2",
+      "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-201",
+  "motif": "defesa_revelia",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-201",
+    "F002": "1ª Vara Cível da Comarca Experimental de Alfazema",
+    "F003": "Safira Vidros Especiais Ltda.",
+    "F004": "Timbre Acústica Aplicada S.A.",
+    "F010": "2023-04-14",
+    "F011": "fornecimento e instalação de divisórias acústicas para salas de reunião",
+    "F012": "36.000,00",
+    "F013": "2023-05-05",
+    "F014": "cobranças indevidas reiteradas após o aceite, com anotação negativa sem suporte contratual",
+    "F020": "2023-06-09",
+    "F021": "ATD-2023-7801",
+    "F030": "2024-02-16",
+    "F031": "condenação da ré ao pagamento de indenização por dano moral de R$ 36.000,00, com cessação das cobranças indevidas",
+    "F040": "2024-03-08",
+    "F041": "2024-03-08",
+    "F042": "2024-04-01",
+    "F043": "as cobranças eram devidas e a anotação negativa foi regular, inexistindo dano moral indenizável",
+    "F050": "2024-04-26",
+    "F060": "2024-07-12",
+    "F061": "perícia contábil sobre os lançamentos de cobrança emitidos pela ré após o aceite do objeto",
+    "F070": "2025-02-07",
+    "F071": "as cobranças questionadas não têm suporte nas cláusulas contratuais e são posteriores ao aceite, e a anotação negativa da autora decorreu dessas mesmas cobranças, conforme certidão do órgão de restrição examinada no laudo",
+    "F072": "2025-04-11",
+    "F080": "2025-09-19",
+    "F081": "condenar a ré ao pagamento de R$ 36.000,00 a título de indenização por dano moral, quantum arbitrado em 100% do valor do contrato em razão da reiteração das cobranças indevidas após o aceite e da anotação negativa indevida comprovada pela certidão do órgão de restrição examinada no laudo pericial, com atualização monetária desde o ajuizamento",
+    "F090": "2025-09-26 — juntada da certidão de intimação da sentença",
+    "F091": "2026-01-12 10:40",
+    "F092": "2025-09-26",
+    "F093": "2024-02-16",
+    "F094": "637,33",
+    "F100": "no período de 2024-03-01 a 2024-04-01, houve expediente regular de segunda a sexta-feira, exceto em 2024-03-29 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "indenização por dano moral",
+    "F102": "2024-03-01 a 2024-04-01"
+  },
+  "schema_version": 1,
+  "world_id": "W-B"
+}

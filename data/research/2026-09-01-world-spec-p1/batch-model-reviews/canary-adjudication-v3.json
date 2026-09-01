@@ -1,0 +1,762 @@
+{
+  "canary_iteration": 3,
+  "cost_usd": {
+    "claude-opus-5": 1.051535,
+    "claude-sonnet-5": 0.381244,
+    "total": 1.432779,
+    "v1_plus_v2": 2.6677799999999996,
+    "v1_plus_v2_plus_v3": 4.100559
+  },
+  "criteria": {
+    "all_worlds_must_pass": true,
+    "batch_gate_requirement": "Ambos os modelos devem devolver CONSTRUIR",
+    "control_requirement": "W-A não pode conter incoerência crítica inventada",
+    "critical_false_positive_requirement": "Nenhum modelo pode tratar como confirmado um falso fato crítico ou introduzir fato crítico extra-corpus",
+    "critical_observations_require_recovered": true,
+    "critical_partial_fails": true,
+    "mutations_required": [
+      "W-B: reclamação apenas alegada com busca negativa autolimitada",
+      "W-C: divergência disponibilização/efetivação sobre a data da citação e efeito na tempestividade da contestação"
+    ],
+    "receipt_requirement": "Mesmo prompt; quatro IDs corretos; modelo correto; tools omitidas; authority ausente; zero retries; stop_reason end_turn; hashes dos arquivos cegos batendo com os manifests do lote atual"
+  },
+  "decision_reason": "PASS_WITH_REDESIGN_FLAG. Terceiro canário, sobre o lote do segundo redesenho: isolamento integral (mesmo prompt sha256 fad42278..., 216 hashes conferindo com os manifests, quatro IDs, modelos corretos, sem tools, sem authority, zero retries, end_turn; uma invocação inicial do sonnet morreu com HTTP 520 sem qualquer artefato ou uso cobrado, e a chamada congelada é invocação isolada posterior). Recuperação perfeita nos dois modelos: 16/16 critical e 8/8 major, sem falso positivo crítico; os dois excluem corretamente a Sexta-feira Santa nas contagens e expoem as duas datas e as duas contagens de W-C. Os 5 flags do v2 estão mortos. Mas o opus propõe REDESENHAR (M-201, M-203 e lote) por um flag NOVO classe (a): no modelo eletrônico, a mutação de W-C (efetivação = disponibilização − 7 dias) virou impossibilidade causal, contaminando a cadeia que o task manda examinar; somam-se flags (b) — certidões em sábado, NF única x cobrança mensal e termo de instalação físico em M-203 — e cheiros (c). O sonnet propõe CONSTRUIR pleno, tratando os mesmos pontos como fragilidades não bloqueantes. A régua de parada do owner (parar se REDESENHAR só com cosméticos) NÃO foi atingida: há flag classe (a). Nada foi redesenhado; decisão registrada para o owner.",
+  "failures": [
+    "claude-opus-5 propôs REDESENHAR para M-201, M-203 e o lote (classe (a): inversão causal em W-C); claude-sonnet-5 propôs CONSTRUIR pleno. Pela regra dura, nada foi redesenhado."
+  ],
+  "isolation_checks": {
+    "authority_files_included": {
+      "claude-opus-5": false,
+      "claude-sonnet-5": false,
+      "pass": true
+    },
+    "canary_matter_ids": {
+      "claude-opus-5": [
+        "M-201",
+        "M-202",
+        "M-203",
+        "M-204"
+      ],
+      "claude-sonnet-5": [
+        "M-201",
+        "M-202",
+        "M-203",
+        "M-204"
+      ],
+      "expected": [
+        "M-201",
+        "M-202",
+        "M-203",
+        "M-204"
+      ],
+      "pass": true
+    },
+    "manifest_hash_check": {
+      "claude-opus-5": true,
+      "claude-sonnet-5": true,
+      "pass": true
+    },
+    "models": {
+      "claude-opus-5": {
+        "reported_models": [
+          "claude-opus-5"
+        ],
+        "requested_model": "claude-opus-5"
+      },
+      "claude-sonnet-5": {
+        "reported_models": [
+          "claude-sonnet-5"
+        ],
+        "requested_model": "claude-sonnet-5"
+      },
+      "pass": true
+    },
+    "pass": true,
+    "retries": {
+      "claude-opus-5": 0,
+      "claude-sonnet-5": 0,
+      "pass": true
+    },
+    "same_prompt": {
+      "pass": true,
+      "sha256": "fad42278f2da290f31183cea88727f96a7aa937b29f0d91668f0478593dd58f2"
+    },
+    "stop_reason_end_turn": {
+      "claude-opus-5": "end_turn",
+      "claude-sonnet-5": "end_turn",
+      "pass": true
+    },
+    "tools_omitted": {
+      "claude-opus-5": true,
+      "claude-sonnet-5": true,
+      "pass": true
+    }
+  },
+  "model_gates": {
+    "claude-opus-5": {
+      "batch_gate": "REDESENHAR",
+      "matter_gates": {
+        "M-201": "REDESENHAR",
+        "M-202": "CONSTRUIR",
+        "M-203": "REDESENHAR",
+        "M-204": "CONSTRUIR"
+      },
+      "pass": false
+    },
+    "claude-sonnet-5": {
+      "batch_gate": "CONSTRUIR",
+      "matter_gates": {
+        "M-201": "CONSTRUIR",
+        "M-202": "CONSTRUIR",
+        "M-203": "CONSTRUIR",
+        "M-204": "CONSTRUIR"
+      },
+      "pass": true
+    },
+    "pass": false
+  },
+  "new_flags_classified": [
+    {
+      "class": "a",
+      "evidence": "opus: 'visualização registrada antes da disponibilização — impossível na cadeia de citação eletrônica; defeito de construção, não mera divergência'; sonnet: 'sequência incompatível com o funcionamento usual da citação eletrônica, embora funcional para testar a dupla contagem'.",
+      "flag": "W-C dos 4 matters: a certidão de efetivação (visualização) é anterior à disponibilização — impossibilidade causal gerada pela regra da mutação (data conflitante = citação − 7 dias) sob o novo  modelo eletrônico.",
+      "models": [
+        "claude-opus-5 (REDESENHAR M-201/M-203; ressalva em M-202/M-204)",
+        "claude-sonnet-5 (implausível, não bloqueante)"
+      ]
+    },
+    {
+      "class": "b",
+      "evidence": "opus: 'data de disponibilização/efetivação em 2024-03-09, que é sábado — ato de secretaria em dia não útil é pouco plausível e introduz ambiguidade evitável no termo inicial'.",
+      "flag": "Certidões citatórias datadas em sábado (M-201: disponibilização e efetivação em 2024-03-09; M-203: 2024-03-02 e 2024-02-24) — ato de secretaria em dia não útil, que força leitura suplementar do L224 não amparada pela nota normativa.",
+      "models": [
+        "claude-opus-5"
+      ]
+    },
+    {
+      "class": "b",
+      "evidence": "opus (decisão do lote): 'incoerência interna entre cobrança mensal recorrente (contrato) e nota fiscal única de valor total, e um termo de instalação físico para serviço digital'.",
+      "flag": "M-203: nota fiscal única de valor total convivendo com cobrança mensal recorrente; termo de 'instalação' físico para serviço digital.",
+      "models": [
+        "claude-opus-5"
+      ]
+    },
+    {
+      "class": "b",
+      "evidence": "sonnet: 'o quantum do dano material equivale ao preço do equipamento, não a uma avaliação do estoque perdido'; opus: 'condenação fixada pelo preço pago quando o pedido era o valor da mercadoria' — tratado como achado analítico válido.",
+      "flag": "Persistente do v2: M-202 pede o valor da mercadoria perdida e a sentença condena pelo preço pago, sem prova de equivalência.",
+      "models": [
+        "claude-sonnet-5 (fragilidade de mérito)",
+        "claude-opus-5 (achado legítimo, não bloqueante)"
+      ]
+    },
+    {
+      "class": "c",
+      "evidence": "opus: 'contestações sempre protocoladas no 15º dia útil exato', 'janela... delimita exatamente as duas hipóteses de contagem, sinal de calibração do gabarito', 'roteamento incoerente com o assunto, resíduo de modelo'.",
+      "flag": "Contestação sempre protocolada exatamente no 15º dia útil; calendário delimitando exatamente as duas hipóteses de contagem; reclamação sempre 'encaminhada à assistência técnica' (mesmo cobranças); extrato sem os atos citatórios (recorrente desde o v1); certidão de órgão de restrição citada e não juntada (padrão deliberado).",
+      "models": [
+        "claude-opus-5",
+        "claude-sonnet-5 (parcial)"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "source_sha256": {
+    "batch-generated/authority/M-201/W-A/ground_truth.json": "ce6547c03d617d2a883901f8b2543079f0f668ea34087ef901305de80493cfb3",
+    "batch-generated/authority/M-201/W-A/rubric.json": "151e6bb19747dbc29d38730bf73e3e09bdcdfa20e1cfdf4beffcd4f2611f56be",
+    "batch-generated/authority/M-201/W-B/ground_truth.json": "d71a5c740a21f0eef04f05c9590f11f80b2ee8843f8e93312a636502609038a1",
+    "batch-generated/authority/M-201/W-B/rubric.json": "59a952058480fca2035a8c7e27e10faefc31402c32bc6cadd5a0d2d503204a79",
+    "batch-generated/authority/M-201/W-C/ground_truth.json": "b0e1d25f017e57cc90651a473be85b981ada64731f76e1d0844699c678243d22",
+    "batch-generated/authority/M-201/W-C/rubric.json": "023bcaa2d490652f10937582d1e36aedf6e3857245018df7c06dcd8eb09a6fbb",
+    "batch-generated/authority/M-202/W-A/ground_truth.json": "5274694ba9ee6f95d4eb733846d98edca283e4cdcbadcf8ac49f20c130a70eb9",
+    "batch-generated/authority/M-202/W-A/rubric.json": "d8c7e7d1f105770cea2f84a671475a07fc8a8ea10af72dfca4806e62c4175bc6",
+    "batch-generated/authority/M-202/W-B/ground_truth.json": "5633208d67ec1c0657b1d80c37308165349f1b6be80ef954b79f97d45d8d8383",
+    "batch-generated/authority/M-202/W-B/rubric.json": "1a36b19befb81621edb0af4fe3946e3297958fe46a42c37f06669525186cc39e",
+    "batch-generated/authority/M-202/W-C/ground_truth.json": "f986ac01b511a129f262e2e5107f4865634790c1483f84b132e048e4810d6452",
+    "batch-generated/authority/M-202/W-C/rubric.json": "75f020d33ecbe118e9fc0f365f84d720645bb2b9ca4cb1ffe220e0269f44d175",
+    "batch-generated/authority/M-203/W-A/ground_truth.json": "8cdc4fc43f753872cb48b86263911171d7d55cbaaf0a30473bf078cd803af282",
+    "batch-generated/authority/M-203/W-A/rubric.json": "90ae6c89fdadea4eb303f1d266ab7238b690edcb371442f0d4616776a0675343",
+    "batch-generated/authority/M-203/W-B/ground_truth.json": "a7416519f461fb55362e046ab61dd9557017c1bf8d032fab9d36c8e0ef707c8d",
+    "batch-generated/authority/M-203/W-B/rubric.json": "cb81c788342028ab112c1462134bafb002af7b66578541612c83175f0751f195",
+    "batch-generated/authority/M-203/W-C/ground_truth.json": "4a019fb133942fa8cf4fd4c49ff27001e4ba651cc631f1f8af6c514d1564e71a",
+    "batch-generated/authority/M-203/W-C/rubric.json": "180bd4fa3a9cb4729198a8f5c40203379f1e924a529da7430d03558eaf976bd4",
+    "batch-generated/authority/M-204/W-A/ground_truth.json": "e02485fdd76ad896f7f72a7e1c7a8b96a6125ffb7b2d7fce097399a7ce5eb90b",
+    "batch-generated/authority/M-204/W-A/rubric.json": "f784dbea2419e021a613841238600ac56a3452c18f67d03996acd60676e95f53",
+    "batch-generated/authority/M-204/W-B/ground_truth.json": "da85bf7f415f221bc0d038570efe69cc021be5802291ba1c4fc08e7ed597150f",
+    "batch-generated/authority/M-204/W-B/rubric.json": "b96164b2bedc0b827076db3577ee736a75d53d4ba6bf7ef8030124ad7bcd7e78",
+    "batch-generated/authority/M-204/W-C/ground_truth.json": "2e7f24b61685f8585813b40dd262da472d6026069c64ffa666625ab6f9e60c9d",
+    "batch-generated/authority/M-204/W-C/rubric.json": "a795f9d321dffd950374d84912eaae6be0888b7adae08fb1169e232cfc5b4bc5",
+    "batch-model-reviews/opus-5-canary-v3/receipt.json": "576aaafa09e6ca745c07d7b91f33d8d32d8cc16fdc1215138db900190908f00b",
+    "batch-model-reviews/opus-5-canary-v3/review.json": "c48998d144113ab9cf0b68ea07cce220be76da13def5a68cccb3a16eb47fd4c5",
+    "batch-model-reviews/sonnet-5-canary-v3/receipt.json": "50cd9b08d99e44af7523e3fa0c47ba1a54c460ca32e64207e00498ff1e88e67e",
+    "batch-model-reviews/sonnet-5-canary-v3/review.json": "09ef2f7b98789ba125c7a88c1aa319a0b42be3ba505231b93a0a394ad83a9fe7"
+  },
+  "status": "PASS_WITH_REDESIGN_FLAG",
+  "stopping_rule": {
+    "assessment": "A condição de parada NÃO foi atingida: o opus propõe REDESENHAR com um flag classe (a) — a mutação de W-C gera efetivação anterior à disponibilização, impossibilidade causal no modelo eletrônico — além de flags (b). A decisão sobre nova iteração cabem ao owner.",
+    "only_cosmetic_flags": false,
+    "rule": "Se a v3 vier REDESENHAR só com flags de template/cosméticos, não haverá v4: documentar e encerrar como aceito-com-ressalvas.",
+    "stop_condition_met": false,
+    "v3_has_redesign": true
+  },
+  "supersedes": "batch-model-reviews/canary-adjudication-v2.json",
+  "totals": {
+    "claude-opus-5": {
+      "critical": {
+        "missed": 0,
+        "partial": 0,
+        "recovered": 16
+      },
+      "major": {
+        "missed": 0,
+        "partial": 0,
+        "recovered": 8
+      }
+    },
+    "claude-sonnet-5": {
+      "critical": {
+        "missed": 0,
+        "partial": 0,
+        "recovered": 16
+      },
+      "major": {
+        "missed": 0,
+        "partial": 0,
+        "recovered": 8
+      }
+    }
+  },
+  "v2_redesign_flags_resolution": [
+    {
+      "evidence": "Os dois modelos contam excluindo o feriado: sonnet ('excluindo o feriado de 2024-03-29 (calendário 17)') e opus ('29/03 (Sexta-feira Santa) não é útil'); M-203, cuja janela não tem feriado, é lida como tal sem queixa. Nenhum reviewer aponta erro de calendário no v3.",
+      "flag": "1. Calendário forense negava expediente em 2024-03-29 (Sexta-feira Santa)",
+      "status": "dead"
+    },
+    {
+      "evidence": "Nenhum reviewer reporta incoerência de modalidade: os dois leem a cadeia como disponibilização/efetivação eletrônica. ATENÇÃO: o redesenho 2 introduziu nesta mesma cadeia um NOVO defeito (efetivação anterior à disponibilização em W-C) — registrado como flag novo classe (a), não como reincidência deste.",
+      "flag": "2. Modalidade citatória incoerente (AR postal x retorno de mandado)",
+      "status": "dead"
+    },
+    {
+      "evidence": "O opus v3 lê o contrato como 'plano com cobrança mensal recorrente, renovação automática por períodos anuais em cláusula destacada e cancelamento pelo canal contratado' e o usa como evidência legítima contra a alegação de renovação 'não informada'. O sonnet não aponta incompatibilidade. Residuais menores (NF única x cobrança mensal; termo de instalação físico para serviço digital) classificados como flags novos (b).",
+      "flag": "3. Esqueleto de M-203 (contrato à vista incompatível com renovação automática)",
+      "status": "dead"
+    },
+    {
+      "evidence": "A sentença agora declara o critério ('quantum arbitrado em 100% do valor do contrato em razão da reiteração...'); o sonnet o reconhece e não bloqueia. A certidão do órgão de restrição segue citada e não juntada — o opus a trata como lacuna legítima ('Afirmação... ALEGADA/derivada'), coerente com o padrão deliberado de peça citada-não-anexa do lote.",
+      "flag": "4. Quantum de M-201 sem critério e anotação negativa sem prova",
+      "status": "dead"
+    },
+    {
+      "evidence": "Nenhum reviewer cita razão de custas constante nem datas de fase idênticas no v3 (as datas agora variam por matter e foram reconstruídas individualmente nas cronologias). Novos cheiros menores (contestação sempre no 15º dia útil; calendário delimitando exatamente as duas hipóteses; 'encaminhada à assistência técnica') classificados como (c).",
+      "flag": "5. Cheiros de template (razão custas/valor ~1,87% constante; datas de fase idênticas)",
+      "status": "dead"
+    }
+  ],
+  "worlds": [
+    {
+      "authority_label": "control",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "CONFIRMADA em fonte documental própria — protocolo ATD-2023-7801, com o mesmo assunto narrado na inicial (04-registro-reclamacao.md e 05-peticao-inicial.md); o registro comprova o contato, não o mérito das cobranças",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Reclamação extrajudicial está confirmada por documento próprio do canal de atendimento da ré (04), com protocolo, data e assunto idênticos aos narrados na petição inicial (05)",
+            "status": "recovered"
+          },
+          "id": "O-A1",
+          "severity": "critical",
+          "state": "confirmed"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "A história processual NÃO contém trânsito em julgado, recurso, acordo, cumprimento de sentença ou fixação de honorários; o extrato encerra-se na intimação, o que não autoriza inferir trânsito",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Não há certidão de trânsito em julgado, notícia de recurso ou de cumprimento de sentença/execução",
+            "status": "recovered"
+          },
+          "id": "O-A2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-201",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 3,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-A"
+    },
+    {
+      "authority_label": "proof_missing",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "ALEGADA e NÃO CORROBORADA: a resposta do SAC informa 'não foi localizado registro de reclamação com os dados fornecidos' para o protocolo ATD-2023-7801; o próprio documento ressalva que não afirma a inexistência de contato por outro canal — resultado negativo de busca, não prova de inexistência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "a reclamação extrajudicial deve ser classificada como 'alegada', não 'confirmada'; o documento 04 apenas nega o resultado da busca pelos dados fornecidos",
+            "status": "recovered"
+          },
+          "id": "O-B1",
+          "severity": "critical",
+          "state": "alleged"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Ausentes no acervo: trânsito em julgado, recurso, acordo e cumprimento de sentença; o extrato termina na intimação",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Mesmas lacunas de W-A quanto a AR de citação, quesitos periciais, trânsito em julgado e cumprimento de sentença",
+            "status": "recovered"
+          },
+          "id": "O-B2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-201",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 3,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-B"
+    },
+    {
+      "authority_label": "chronology_conflict",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "DIVERGÊNCIA na cadeia citatória: a certidão de disponibilização (06) e a certidão de efetivação (07) indicam datas distintas; visualização registrada antes da disponibilização — impossível na cadeia de citação eletrônica; defeito de construção, não mera divergência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Certidão de efetivação da citação (07) é anterior à certidão de disponibilização da citação eletrônica (06) — sequência incompatível com o funcionamento usual da citação eletrônica; as duas datas são expostas",
+            "status": "recovered"
+          },
+          "id": "O-C1",
+          "severity": "critical",
+          "state": "contradictory"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Consequência prática divergente: a mesma contestação é tempestiva por uma certidão e intempestiva pela outra, sem que qualquer peça do acervo resolva o conflito; ambas as contagens expostas com o calendário",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "As duas contagens conduzem a conclusões opostas sobre a tempestividade da contestação, sem que os documentos indiquem qual data deve prevalecer (contagem 1: tempestiva no último dia; contagem 2: intempestiva)",
+            "status": "recovered"
+          },
+          "id": "O-C2",
+          "severity": "critical",
+          "state": "uncertain"
+        }
+      ],
+      "matter_id": "M-201",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 2,
+        "claude-sonnet-5": 3
+      },
+      "world_id": "W-C"
+    },
+    {
+      "authority_label": "control",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "CONFIRMADA em fonte documental própria — protocolo ATD-2023-7802, com o mesmo assunto narrado na inicial (04-registro-reclamacao.md e 05-peticao-inicial.md); o registro comprova o contato, não o mérito das cobranças",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Reclamação extrajudicial está confirmada por documento próprio do canal de atendimento da ré (04), com protocolo, data e assunto idênticos aos narrados na petição inicial (05)",
+            "status": "recovered"
+          },
+          "id": "O-A1",
+          "severity": "critical",
+          "state": "confirmed"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "A história processual NÃO contém trânsito em julgado, recurso, acordo, cumprimento de sentença ou fixação de honorários; o extrato encerra-se na intimação, o que não autoriza inferir trânsito",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Não há certidão de trânsito em julgado, notícia de recurso ou de cumprimento de sentença/execução",
+            "status": "recovered"
+          },
+          "id": "O-A2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-202",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 4,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-A"
+    },
+    {
+      "authority_label": "proof_missing",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "ALEGADA e NÃO CORROBORADA: a resposta do SAC informa 'não foi localizado registro de reclamação com os dados fornecidos' para o protocolo ATD-2023-7802; o próprio documento ressalva que não afirma a inexistência de contato por outro canal — resultado negativo de busca, não prova de inexistência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "a reclamação extrajudicial deve ser classificada como 'alegada', não 'confirmada'; o documento 04 apenas nega o resultado da busca pelos dados fornecidos",
+            "status": "recovered"
+          },
+          "id": "O-B1",
+          "severity": "critical",
+          "state": "alleged"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Ausentes no acervo: trânsito em julgado, recurso, acordo e cumprimento de sentença; o extrato termina na intimação",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Mesmas lacunas de W-A quanto a AR de citação, quesitos periciais, trânsito em julgado e cumprimento de sentença",
+            "status": "recovered"
+          },
+          "id": "O-B2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-202",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 4,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-B"
+    },
+    {
+      "authority_label": "chronology_conflict",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "DIVERGÊNCIA na cadeia citatória: a certidão de disponibilização (06) e a certidão de efetivação (07) indicam datas distintas; visualização registrada antes da disponibilização — impossível na cadeia de citação eletrônica; defeito de construção, não mera divergência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Certidão de efetivação da citação (07) é anterior à certidão de disponibilização da citação eletrônica (06) — sequência incompatível com o funcionamento usual da citação eletrônica; as duas datas são expostas",
+            "status": "recovered"
+          },
+          "id": "O-C1",
+          "severity": "critical",
+          "state": "contradictory"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Consequência prática divergente: a mesma contestação é tempestiva por uma certidão e intempestiva pela outra, sem que qualquer peça do acervo resolva o conflito; ambas as contagens expostas com o calendário",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "As duas contagens conduzem a conclusões opostas sobre a tempestividade da contestação, sem que os documentos indiquem qual data deve prevalecer (contagem 1: tempestiva no último dia; contagem 2: intempestiva)",
+            "status": "recovered"
+          },
+          "id": "O-C2",
+          "severity": "critical",
+          "state": "uncertain"
+        }
+      ],
+      "matter_id": "M-202",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 3,
+        "claude-sonnet-5": 3
+      },
+      "world_id": "W-C"
+    },
+    {
+      "authority_label": "control",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "CONFIRMADA em fonte documental própria — protocolo ATD-2023-7803, com o mesmo assunto narrado na inicial (04-registro-reclamacao.md e 05-peticao-inicial.md); o registro comprova o contato, não o mérito das cobranças",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Reclamação extrajudicial está confirmada por documento próprio do canal de atendimento da ré (04), com protocolo, data e assunto idênticos aos narrados na petição inicial (05)",
+            "status": "recovered"
+          },
+          "id": "O-A1",
+          "severity": "critical",
+          "state": "confirmed"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "A história processual NÃO contém trânsito em julgado, recurso, acordo, cumprimento de sentença ou fixação de honorários; o extrato encerra-se na intimação, o que não autoriza inferir trânsito",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Não há certidão de trânsito em julgado, notícia de recurso ou de cumprimento de sentença/execução",
+            "status": "recovered"
+          },
+          "id": "O-A2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-203",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 3,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-A"
+    },
+    {
+      "authority_label": "proof_missing",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "ALEGADA e NÃO CORROBORADA: a resposta do SAC informa 'não foi localizado registro de reclamação com os dados fornecidos' para o protocolo ATD-2023-7803; o próprio documento ressalva que não afirma a inexistência de contato por outro canal — resultado negativo de busca, não prova de inexistência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "a reclamação extrajudicial deve ser classificada como 'alegada', não 'confirmada'; o documento 04 apenas nega o resultado da busca pelos dados fornecidos",
+            "status": "recovered"
+          },
+          "id": "O-B1",
+          "severity": "critical",
+          "state": "alleged"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Ausentes no acervo: trânsito em julgado, recurso, acordo e cumprimento de sentença; o extrato termina na intimação",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Mesmas lacunas de W-A quanto a AR de citação, quesitos periciais, trânsito em julgado e cumprimento de sentença",
+            "status": "recovered"
+          },
+          "id": "O-B2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-203",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 3,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-B"
+    },
+    {
+      "authority_label": "chronology_conflict",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "DIVERGÊNCIA na cadeia citatória: a certidão de disponibilização (06) e a certidão de efetivação (07) indicam datas distintas; visualização registrada antes da disponibilização — impossível na cadeia de citação eletrônica; defeito de construção, não mera divergência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Certidão de efetivação da citação (07) é anterior à certidão de disponibilização da citação eletrônica (06) — sequência incompatível com o funcionamento usual da citação eletrônica; as duas datas são expostas",
+            "status": "recovered"
+          },
+          "id": "O-C1",
+          "severity": "critical",
+          "state": "contradictory"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Consequência prática divergente: a mesma contestação é tempestiva por uma certidão e intempestiva pela outra, sem que qualquer peça do acervo resolva o conflito; ambas as contagens expostas com o calendário",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "As duas contagens conduzem a conclusões opostas sobre a tempestividade da contestação, sem que os documentos indiquem qual data deve prevalecer (contagem 1: tempestiva no último dia; contagem 2: intempestiva)",
+            "status": "recovered"
+          },
+          "id": "O-C2",
+          "severity": "critical",
+          "state": "uncertain"
+        }
+      ],
+      "matter_id": "M-203",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 2,
+        "claude-sonnet-5": 3
+      },
+      "world_id": "W-C"
+    },
+    {
+      "authority_label": "control",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "CONFIRMADA em fonte documental própria — protocolo ATD-2023-7804, com o mesmo assunto narrado na inicial (04-registro-reclamacao.md e 05-peticao-inicial.md); o registro comprova o contato, não o mérito das cobranças",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Reclamação extrajudicial está confirmada por documento próprio do canal de atendimento da ré (04), com protocolo, data e assunto idênticos aos narrados na petição inicial (05)",
+            "status": "recovered"
+          },
+          "id": "O-A1",
+          "severity": "critical",
+          "state": "confirmed"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "A história processual NÃO contém trânsito em julgado, recurso, acordo, cumprimento de sentença ou fixação de honorários; o extrato encerra-se na intimação, o que não autoriza inferir trânsito",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Não há certidão de trânsito em julgado, notícia de recurso ou de cumprimento de sentença/execução",
+            "status": "recovered"
+          },
+          "id": "O-A2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-204",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 4,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-A"
+    },
+    {
+      "authority_label": "proof_missing",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "ALEGADA e NÃO CORROBORADA: a resposta do SAC informa 'não foi localizado registro de reclamação com os dados fornecidos' para o protocolo ATD-2023-7804; o próprio documento ressalva que não afirma a inexistência de contato por outro canal — resultado negativo de busca, não prova de inexistência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "a reclamação extrajudicial deve ser classificada como 'alegada', não 'confirmada'; o documento 04 apenas nega o resultado da busca pelos dados fornecidos",
+            "status": "recovered"
+          },
+          "id": "O-B1",
+          "severity": "critical",
+          "state": "alleged"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Ausentes no acervo: trânsito em julgado, recurso, acordo e cumprimento de sentença; o extrato termina na intimação",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Mesmas lacunas de W-A quanto a AR de citação, quesitos periciais, trânsito em julgado e cumprimento de sentença",
+            "status": "recovered"
+          },
+          "id": "O-B2",
+          "severity": "major",
+          "state": "absent"
+        }
+      ],
+      "matter_id": "M-204",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 4,
+        "claude-sonnet-5": 4
+      },
+      "world_id": "W-B"
+    },
+    {
+      "authority_label": "chronology_conflict",
+      "critical_false_positives": {
+        "claude-opus-5": [],
+        "claude-sonnet-5": []
+      },
+      "expected_observations": [
+        {
+          "claude-opus-5": {
+            "evidence": "DIVERGÊNCIA na cadeia citatória: a certidão de disponibilização (06) e a certidão de efetivação (07) indicam datas distintas; visualização registrada antes da disponibilização — impossível na cadeia de citação eletrônica; defeito de construção, não mera divergência",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "Certidão de efetivação da citação (07) é anterior à certidão de disponibilização da citação eletrônica (06) — sequência incompatível com o funcionamento usual da citação eletrônica; as duas datas são expostas",
+            "status": "recovered"
+          },
+          "id": "O-C1",
+          "severity": "critical",
+          "state": "contradictory"
+        },
+        {
+          "claude-opus-5": {
+            "evidence": "Consequência prática divergente: a mesma contestação é tempestiva por uma certidão e intempestiva pela outra, sem que qualquer peça do acervo resolva o conflito; ambas as contagens expostas com o calendário",
+            "status": "recovered"
+          },
+          "claude-sonnet-5": {
+            "evidence": "As duas contagens conduzem a conclusões opostas sobre a tempestividade da contestação, sem que os documentos indiquem qual data deve prevalecer (contagem 1: tempestiva no último dia; contagem 2: intempestiva)",
+            "status": "recovered"
+          },
+          "id": "O-C2",
+          "severity": "critical",
+          "state": "uncertain"
+        }
+      ],
+      "matter_id": "M-204",
+      "pass": true,
+      "realism": {
+        "claude-opus-5": 3,
+        "claude-sonnet-5": 3
+      },
+      "world_id": "W-C"
+    }
+  ]
+}

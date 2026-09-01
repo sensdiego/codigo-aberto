@@ -1,0 +1,314 @@
+{
+  "batch_gate": "REDESENHAR",
+  "batch_reason": "O lote é altamente recuperável quanto à cronologia e à divergência proposital entre aviso de recebimento e certidão de citação (testada de forma consistente na variante W-C de todas as matérias) e quanto à ambiguidade da reclamação extrajudicial (variante W-B). Entretanto, duas das quatro matérias (M-202 e M-203) apresentam descompasso lógico entre a causa de pedir e o quantum pedido/sentenciado, o que é uma falha de desenho a corrigir; adicionalmente, todas as matérias compartilham um calendário forense que nega a existência de feriado em data notoriamente não útil (Sexta-feira Santa) e repetem exatamente os mesmos marcos temporais entre processos de objetos distintos, sinais de artificialidade que recomendam ajuste antes de uso em produção, sem impedir, contudo, a execução da tarefa nos termos propostos.",
+  "matters": [
+    {
+      "decision_reason": "A série documental permite reconstruir a cronologia, classificar afirmações e realizar a dupla contagem de prazo exigida pela tarefa sem necessidade de suposição; as divergências (reclamação e citação) parecem propositais e testáveis. Ressalvas de plausibilidade (calendário sem feriados, coincidência de valores) são secundárias e não impedem a análise solicitada.",
+      "matter_id": "M-201",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md afirma ausência de qualquer feriado entre 2024-03-05 e 2024-04-02, período que abrange 29/03/2024 (Sexta-feira Santa), data tipicamente sem expediente forense no Brasil — sinal de baixa plausibilidade.",
+            "Coincidência exata entre o valor do dano moral pedido/sentenciado (R$36.000,00) e o preço do contrato sugere padrão templático de geração sintética."
+          ],
+          "material_findings": [
+            "Contrato (01-contrato-prestacao.md) confirma relação Safira (contratante) x Timbre (contratada), objeto 'divisórias acústicas', data 2023-04-18, valor R$36.000,00, confirmado por 02-nota-fiscal.md (mesma data/valor).",
+            "Termo de instalação (03) confirma aceite sem ressalvas em 2023-05-08.",
+            "Registro de reclamação (04) confirma reclamação registrada em 2023-06-12, protocolo ATD-2023-7801, corroborando a narrativa da petição inicial (05).",
+            "Petição inicial (05) protocolada em 2024-02-20; pedido de indenização por dano moral fixado em R$36.000,00, valor idêntico ao preço do contrato, sem demonstração de cálculo do dano moral nos autos.",
+            "AR de citação (06) e certidão de citação (07) convergem na mesma data, 2024-03-12 — não há divergência nesta variante.",
+            "Contestação (08) protocolada em 2024-04-02; usando 2024-03-12 como termo inicial e o calendário forense (17, sem feriados no período 2024-03-05 a 2024-04-02), o 15º dia útil corresponde a 2024-04-02 — contestação tempestiva no limite exato do prazo (L219, L224, L335 da nota normativa, 16).",
+            "Réplica (09), despacho saneador (10), laudo pericial (11, que confirma cobranças sem suporte contratual) e sentença (12, procedência integral) formam cadeia de mérito coerente.",
+            "Documentos de burocracia de andamento (13-certidao-intimacao, 14-comprovante-custas) não constituem prova de mérito e foram tratados apenas como marcos processuais."
+          ],
+          "missing_evidence": [
+            "Mandado de citação original e indicação expressa do 'modo' de citação exigido por L335.",
+            "Procuração/instrumento de mandato das partes.",
+            "Quesitos periciais e eventuais esclarecimentos do perito.",
+            "Informação sobre trânsito em julgado, recurso ou cumprimento de sentença — ausente em toda a série documental.",
+            "O extrato de andamentos (15) não lista o ato de citação nem a juntada do AR/certidão, lacuna de rastreabilidade."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Alegação da petição inicial (05) de reclamação extrajudicial sem solução é colocada em xeque pelo resultado negativo da busca em 04-registro-reclamacao.md; classifica-se como alegação não confirmada, e não como falsidade comprovada, dada a ressalva do próprio documento sobre a limitação da busca."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmo problema de calendário forense de W-A.",
+            "O desenho do documento 04 como 'busca infrutífera com ressalva expressa' é claramente construído para gerar ambiguidade proposital de teste."
+          ],
+          "material_findings": [
+            "Documentos de mérito (01,02,03,05,08,09,10,11,12) idênticos à variante W-A.",
+            "04-registro-reclamacao.md (versão 'resposta de busca') relata que não foi localizado registro de reclamação com os identificadores fornecidos (protocolo ATD-2023-7801, 2023-06-12), mas expressamente ressalva que 'não afirma se houve contato por outro canal ou com dados diferentes'.",
+            "AR (06) e certidão de citação (07) convergem em 2024-03-12; usando o calendário forense (17), o 15º dia útil é 2024-04-02, coincidindo com o protocolo da contestação (08) — tempestiva no limite exato do prazo."
+          ],
+          "missing_evidence": [
+            "Registro de reclamação por canal alternativo ou com identificadores diferentes.",
+            "Log completo do sistema de atendimento da ré.",
+            "Mesmas lacunas de W-A quanto a mandado de citação, procuração, quesitos periciais, trânsito em julgado/recurso."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência direta e não resolvida entre a data de recebimento do AR (2024-03-12) e a data certificada de citação (2024-03-05)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmo problema do calendário forense (feriado de Sexta-feira Santa não contemplado).",
+            "É atípico que nenhuma parte ou o juízo tenha se manifestado sobre uma divergência de datas com potencial efeito sobre a tempestividade da defesa."
+          ],
+          "material_findings": [
+            "Documentos de mérito idênticos a W-A, incluindo confirmação da reclamação em 04-registro-reclamacao.md.",
+            "07-certidao-citacao.md indica citação em 2024-03-05, enquanto 06-aviso-recebimento-citacao.md indica recebimento em 2024-03-12 — divergência primária de datas quanto ao marco inicial da citação.",
+            "Duas contagens possíveis do prazo de 15 dias úteis (L219, L224, L335), com base no calendário forense (17): (a) partindo de 2024-03-12 (AR), o 15º dia útil é 2024-04-02, tornando a contestação (08, protocolada em 2024-04-02) tempestiva no limite exato; (b) partindo de 2024-03-05 (certidão), o 15º dia útil é 2024-03-26, tornando a mesma contestação intempestiva, com atraso de aproximadamente 5 dias úteis.",
+            "Nenhum documento resolve a divergência entre AR e certidão; a escolha de uma data sobre a outra não pode ser feita por suposição."
+          ],
+          "missing_evidence": [
+            "Esclarecimento cartorário ou decisão judicial sobre qual data de citação prevalece.",
+            "Mandado de citação original com data de cumprimento certificada por oficial de justiça.",
+            "Manifestação das partes sobre a divergência — a contestação (08) não suscita preliminar de intempestividade, apesar da discrepância documental disponível."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "A cadeia processual e a divergência de citação são recuperáveis e coerentes com a tarefa, mas a sentença (12) e a própria petição (05) fixam o quantum indenizatório no preço do equipamento em vez de vinculá-lo à mercadoria efetivamente perdida, criando um descompasso lógico relevante entre causa de pedir e dispositivo que compromete a plausibilidade do desfecho de mérito nesta matéria.",
+      "matter_id": "M-202",
+      "proposed_gate": "REDESENHAR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Descompasso entre a causa de pedir (perda de mercadoria) e o quantum pedido/sentenciado (preço do equipamento instalado), sem lastro documental que uma coisa equivalha à outra."
+          ],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md ignora feriado de Sexta-feira Santa (29/03/2024).",
+            "O quantum idêntico ao preço do contrato, dissociado do dano alegado, sugere artefato de geração sintética/templática."
+          ],
+          "material_findings": [
+            "Contrato (01) e nota fiscal (02) confirmam Coral (contratante) x Fragata (contratada), objeto 'câmaras frias', 2023-04-18, R$58.400,00.",
+            "Termo de instalação (03) confirma aceite sem ressalvas em 2023-05-08.",
+            "Registro de reclamação (04) confirma reclamação em 2023-06-12 sobre 'perda de mercadoria por falha no sistema de refrigeração'.",
+            "Petição inicial (05) pede ressarcimento de R$58.400,00 por dano material 'correspondentes à mercadoria perdida' — mas esse valor é idêntico ao preço do próprio equipamento, sem qualquer documento que quantifique a mercadoria efetivamente perdida (quantidade, valor de mercado do pescado).",
+            "AR (06) e certidão de citação (07) convergem em 2024-03-12; 15º dia útil = 2024-04-02 (calendário 17), coincidindo com a contestação (08) — tempestiva no limite exato.",
+            "Laudo pericial (11) conclui que a falha decorre de defeito de fabricação do compressor, anterior à instalação — contraria a tese de mau uso da contestação (08) e sustenta a tese autoral.",
+            "Sentença (12) condena a ré a pagar R$58.400,00 'valor correspondente ao preço pago pela autora conforme o contrato e a nota fiscal' — a própria fundamentação da sentença ancora o quantum no preço do equipamento, e não no valor da mercadoria (pescado) efetivamente perdida, o que é logicamente incompatível com a causa de pedir (dano material por perda de mercadoria)."
+          ],
+          "missing_evidence": [
+            "Qualquer documento que quantifique a mercadoria perdida (nota de estoque, laudo de perda, avaliação de mercado do pescado).",
+            "Mandado de citação, procuração, quesitos periciais.",
+            "Informação sobre trânsito em julgado, recurso ou cumprimento de sentença."
+          ],
+          "realism_1_to_5": 2,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Alegação de reclamação extrajudicial (05) não confirmada pela busca em 04, sem prova conclusiva de inexistência.",
+            "Mesmo descompasso de quantum entre dano alegado (perda de mercadoria) e valor sentenciado (preço do equipamento)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmos problemas de calendário e de quantum de W-A."
+          ],
+          "material_findings": [
+            "Mesma base documental de mérito de W-A.",
+            "04-registro-reclamacao.md (versão busca) não localiza registro de reclamação com os dados informados, com ressalva de que isso não exclui contato por outro canal.",
+            "AR (06) e certidão (07) convergem em 2024-03-12; contestação tempestiva no limite exato (2024-04-02).",
+            "Mesmo descompasso de quantum entre causa de pedir e sentença (12) identificado em W-A."
+          ],
+          "missing_evidence": [
+            "Mesmas lacunas de W-A, mais registro alternativo de reclamação."
+          ],
+          "realism_1_to_5": 2,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência primária entre AR e certidão de citação, não resolvida nos autos.",
+            "Descompasso de quantum entre dano material alegado e valor da condenação."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmo problema de calendário forense.",
+            "Ausência de qualquer manifestação das partes sobre a divergência de datas, apesar do potencial efeito sobre a tempestividade."
+          ],
+          "material_findings": [
+            "Reclamação confirmada como em W-A (04).",
+            "Divergência entre AR (06, 2024-03-12) e certidão de citação (07, 2024-03-05).",
+            "Duas contagens de prazo: (a) a partir de 2024-03-12, 15º dia útil = 2024-04-02, contestação tempestiva; (b) a partir de 2024-03-05, 15º dia útil = 2024-03-26, contestação (protocolada em 2024-04-02) intempestiva em cerca de 5 dias úteis.",
+            "Mesmo descompasso de quantum entre dano alegado e valor sentenciado identificado em W-A."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre qual data de citação prevalece.",
+            "Mandado original de citação com data certificada por oficial de justiça."
+          ],
+          "realism_1_to_5": 2,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Assim como em M-202, a sentença e a petição fixam o valor da restituição no preço integral do contrato em vez de vinculá-lo às cobranças indevidas efetivamente apuradas, e o laudo pericial não enfrenta um dos pontos centrais da defesa (canal de cancelamento), o que fragiliza a plausibilidade do desfecho de mérito, apesar de a cadeia de citação/prazo permanecer bem recuperável.",
+      "matter_id": "M-203",
+      "proposed_gate": "REDESENHAR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Descompasso entre o dano alegado (cobranças sucessivas após cancelamento) e o valor pedido/sentenciado (preço integral do contrato original), sem prova de equivalência.",
+            "Laudo pericial não enfrenta o argumento defensivo sobre o canal de comunicação do cancelamento, deixando controvérsia de fato sem exame."
+          ],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md ignora feriado de Sexta-feira Santa.",
+            "Coincidência do valor da restituição com o preço original do contrato sugere padrão templático."
+          ],
+          "material_findings": [
+            "Contrato (01) e nota fiscal (02) confirmam Andorinha (contratante) x Giralua (contratada), objeto 'sistema de assinaturas digitais', 2023-04-18, R$22.750,00.",
+            "Termo de instalação (03) confirma aceite sem ressalvas em 2023-05-08.",
+            "Registro de reclamação (04) confirma reclamação em 2023-06-12 sobre 'renovação automática não informada com cobranças sucessivas após pedido de cancelamento'.",
+            "Petição inicial (05) pede restituição de R$22.750,00 — valor idêntico ao preço original do contrato, embora o dano alegado seja 'cobranças sucessivas' adicionais após o cancelamento, e não o preço-base do serviço; nenhum documento quantifica o total das cobranças indevidas.",
+            "AR (06) e certidão (07) convergem em 2024-03-12; 15º dia útil = 2024-04-02, contestação (08) tempestiva no limite exato.",
+            "Laudo pericial (11) conclui que 'as cobranças posteriores ao pedido de cancelamento não têm suporte nas cláusulas contratuais', mas não aborda o argumento específico da contestação (08) sobre o canal de comunicação do cancelamento não ter sido utilizado — ponto de defesa que permanece sem exame pericial.",
+            "Sentença (12) declara abusividade e condena à restituição de R$22.750,00, reproduzindo o mesmo valor do contrato original, sem lastro em quantificação das cobranças indevidas apuradas pelo laudo."
+          ],
+          "missing_evidence": [
+            "Quantificação documental das cobranças de renovação efetivamente realizadas após o cancelamento.",
+            "Prova ou refutação de que o cancelamento foi comunicado pelo canal contratualmente exigido (ponto de defesa não analisado pelo laudo).",
+            "Mandado de citação, procuração, informações pós-sentença (trânsito em julgado/recurso)."
+          ],
+          "realism_1_to_5": 2,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Alegação de reclamação extrajudicial não confirmada pela busca (04).",
+            "Mesmo descompasso de quantum identificado em W-A."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmos problemas de calendário e de quantum de W-A."
+          ],
+          "material_findings": [
+            "Mesma base de mérito de W-A.",
+            "04-registro-reclamacao.md (busca) não localiza registro com os dados fornecidos, com ressalva de busca limitada.",
+            "AR/certidão convergem em 2024-03-12; contestação tempestiva no limite exato (2024-04-02).",
+            "Mesmo descompasso de quantum entre dano alegado e valor sentenciado de W-A."
+          ],
+          "missing_evidence": [
+            "Mesmas lacunas de W-A, mais registro alternativo de reclamação."
+          ],
+          "realism_1_to_5": 2,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência primária AR/certidão não resolvida.",
+            "Descompasso de quantum entre dano alegado e condenação."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmo problema de calendário forense.",
+            "Ausência de manifestação sobre a divergência de datas."
+          ],
+          "material_findings": [
+            "Reclamação confirmada como em W-A.",
+            "Divergência entre AR (2024-03-12) e certidão de citação (2024-03-05).",
+            "Duas contagens: (a) a partir de 2024-03-12, 15º dia útil = 2024-04-02, tempestiva; (b) a partir de 2024-03-05, 15º dia útil = 2024-03-26, intempestiva em cerca de 5 dias úteis.",
+            "Mesmo descompasso de quantum entre dano alegado e valor sentenciado de W-A."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre a data efetiva de citação.",
+            "Mandado original com data certificada."
+          ],
+          "realism_1_to_5": 2,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "A cadeia entre certidão de citação, protocolo da contestação e calendário forense é plenamente recuperável, e o quantum pedido/sentenciado é internamente coerente com a causa de pedir (resolução contratual com restituição do preço). Ressalvas pontuais (calendário sem feriado religioso, argumento de intempestividade extrajudicial sem lastro) não comprometem a utilidade do conjunto para a análise solicitada.",
+      "matter_id": "M-204",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Nenhuma contradição de datas nesta variante (AR e certidão coincidem)."
+          ],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md ignora feriado de Sexta-feira Santa (29/03/2024)."
+          ],
+          "material_findings": [
+            "Contrato (01) e nota fiscal (02) confirmam Enseada (contratante) x Matiz (contratada), objeto 'linha de tingimento contínuo', 2023-04-18, R$182.000,00.",
+            "Termo de instalação (03) confirma aceite sem ressalvas em 2023-05-08.",
+            "Registro de reclamação (04) confirma reclamação em 2023-06-12 sobre 'variação de tonalidade fora do padrão contratado em lotes sucessivos'.",
+            "Petição inicial (05) pede resolução do contrato com restituição de R$182.000,00 — coerente com a causa de pedir (resolução por inadimplemento gera restituição do preço integral pago), sem o descompasso de quantum observado em M-202/M-203.",
+            "AR (06) e certidão (07) convergem em 2024-03-12; 15º dia útil = 2024-04-02, contestação (08) tempestiva no limite exato.",
+            "Contestação (08) alega que a reclamação extrajudicial foi 'intempestiva', mas nenhum documento (inclusive o contrato, 01) estabelece prazo contratual para reclamação, tornando esse argumento defensivo sem lastro documental verificável.",
+            "Laudo pericial (11) confirma que a variação excede a tolerância contratada e tem origem no sistema de dosagem fornecido, contrariando a tese de tolerância técnica da contestação.",
+            "Sentença (12) resolve o contrato e condena à restituição integral, em linha com o pedido e com o laudo."
+          ],
+          "missing_evidence": [
+            "Cláusula contratual (se existente) que estabeleça prazo para reclamação, referida pela contestação mas não demonstrada em nenhum documento.",
+            "Mandado de citação, procuração, informações pós-sentença (trânsito em julgado/recurso/cumprimento)."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Alegação de reclamação extrajudicial não confirmada pela busca (04)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmo problema de calendário forense."
+          ],
+          "material_findings": [
+            "Mesma base de mérito de W-A.",
+            "04-registro-reclamacao.md (busca) não localiza registro com os dados fornecidos, com ressalva de busca limitada.",
+            "AR/certidão convergem em 2024-03-12; contestação tempestiva no limite exato.",
+            "Argumento defensivo de intempestividade da reclamação extrajudicial (08) permanece sem lastro documental, como em W-A."
+          ],
+          "missing_evidence": [
+            "Mesmas lacunas de W-A, mais registro alternativo de reclamação."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência primária AR/certidão não resolvida."
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmo problema de calendário forense.",
+            "Ausência de manifestação sobre a divergência de datas, mesmo havendo defesa expressa sobre intempestividade (ainda que referente à reclamação extrajudicial, não à contestação)."
+          ],
+          "material_findings": [
+            "Reclamação confirmada como em W-A.",
+            "Divergência entre AR (2024-03-12) e certidão de citação (2024-03-05).",
+            "Duas contagens: (a) a partir de 2024-03-12, 15º dia útil = 2024-04-02, tempestiva; (b) a partir de 2024-03-05, 15º dia útil = 2024-03-26, intempestiva em cerca de 5 dias úteis.",
+            "Argumento defensivo de intempestividade da reclamação extrajudicial permanece sem lastro documental."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre a data efetiva de citação.",
+            "Mandado original com data certificada."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

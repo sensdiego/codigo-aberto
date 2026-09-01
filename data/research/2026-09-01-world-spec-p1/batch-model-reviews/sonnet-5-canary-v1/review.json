@@ -1,0 +1,286 @@
+{
+  "batch_gate": "CONSTRUIR",
+  "batch_reason": "As quatro matérias seguem um padrão consistente e rastreável de documentos (contrato, NF, termo de instalação, registro de reclamação, peças processuais, laudo, sentença, burocracia de andamento e nota normativa), permitindo cronologia, classificação probatória e análise de tempestividade sem exigir suposições. As variações entre mundos A/B/C introduzem lacunas e uma contradição controlada (data de citação divergente entre AR e certidão em todos os W-C) que são plausíveis para testar tratamento de incerteza, e não configuram falhas do corpus. O único ponto de atenção transversal é a repetição de valores burocráticos idênticos (custas de R$4.812,00 e datas de andamento identicas) entre matérias de valores de causa muito distintos, o que é um sinal de artificialidade de baixo risco, mas não compromete a recuperabilidade ou a plausibilidade da análise solicitada em nenhum mundo individual.",
+  "matters": [
+    {
+      "decision_reason": "O conjunto permite reconstrução de cronologia, classificação de fatos e análise de tempestividade a partir de documentos citáveis; as lacunas (reclamação não confirmada em W-B; divergência de datas de citação em W-C) são estruturadas propositalmente para testar tratamento de incerteza sem exigir suposição, o que é compatível com o objetivo da tarefa.",
+      "matter_id": "M-201",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [],
+          "implausible_or_leaking_documents": [
+            "14-comprovante-custas.md registra valor fixo de R$4.812,00 idêntico em todos os processos revisados do lote, independentemente do valor da causa, o que sugere reaproveitamento de template mais do que cálculo real de custas proporcionais."
+          ],
+          "material_findings": [
+            "Cronologia reconstruída: contrato em 2023-04-18 (01-contrato-prestacao.md); pagamento à vista alegado no próprio contrato, sem comprovante bancário separado; NF emitida (02-nota-fiscal.md); instalação/aceite sem ressalvas em 2023-05-08 (03-termo-instalacao.md); reclamação registrada no canal de atendimento da ré em 2023-06-12, protocolo ATD-2023-7801 (04-registro-reclamacao.md) - CONFIRMADA por registro interno da própria ré; distribuição da inicial em 2024-02-20 (05-peticao-inicial.md e 15-extrato-andamentos.md); citação: AR recebido em 2024-03-12 (06-aviso-recebimento-citacao.md) e certidão de citação também em 2024-03-12 (07-certidao-citacao.md) - datas CONVERGENTES; contestação protocolada em 2024-04-02 (08-contestacao.md); réplica em 2024-04-30 (09-replica.md); saneador em 2024-07-15 determinando perícia (10-despacho-saneador.md); laudo entregue em 2025-02-10 confirmando ausência de suporte contratual para as cobranças (11-laudo-pericial.md); sentença de procedência em 2025-09-22 (12-sentenca.md); intimação da sentença em 2025-09-29 (13-certidao-intimacao.md).",
+            "Classificação: fato do contrato e valor - confirmados (01, 02); instalação/aceite sem ressalvas - confirmado (03); reclamação extrajudicial - confirmada por registro da própria ré (04); alegação de 'cobranças indevidas... sem suporte contratual' - alegada na inicial (05) e corroborada pelo laudo (11), portanto tornando-se comprovada tecnicamente; defesa da ré (regularidade das cobranças) - alegada e contrariada pelo laudo posterior; trânsito em julgado, acordo, recurso, cumprimento de sentença - ausentes em toda a documentação.",
+            "Contagem de prazo (dias úteis, sem feriados no período, conforme 17-calendario-forense.md): excluindo o dia da citação (2024-03-12) e contando somente dias úteis, o 15º dia útil recai em 2024-04-02, data exata do protocolo da contestação (08-contestacao.md) - contestação tempestiva no limite do prazo.",
+            "Documentos de mérito (01, 02, 03, 05, 08, 09, 11, 12) apartados corretamente da burocracia de andamento (06, 07, 13, 14, 15), que não comprovam por si o mérito, apenas atos processuais."
+          ],
+          "missing_evidence": [
+            "Comprovante bancário do pagamento à vista alegado no contrato (só há afirmação contratual, não comprovação financeira independente).",
+            "Indicação expressa do 'modo' pelo qual a citação foi realizada (postal, oficial de justiça, eletrônica) exigida pela nota normativa (L335) para fixar o termo inicial com precisão; há apenas AR e certidão, sem qualificação do meio.",
+            "Prova de trânsito em julgado, de eventual recurso ou de cumprimento/execução da sentença - inexistente nos autos apresentados.",
+            "Laudo pericial integral (apenas extrato foi juntado)."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Tensão (não necessariamente contradição plena) entre a narrativa da petição inicial, que afirma reclamação extrajudicial sem solução em 2023-06-12, e o resultado da busca em 04-registro-reclamacao.md, que não localiza tal registro com os dados informados - gera dúvida sobre a prova da reclamação extrajudicial, sem que se possa presumir qual versão prevalece."
+          ],
+          "implausible_or_leaking_documents": [
+            "14-comprovante-custas.md com valor fixo repetido (R$4.812,00) em contraste com valores de causa distintos entre processos do lote, sinal de artificialidade de geração."
+          ],
+          "material_findings": [
+            "Mesma cronologia contratual e de instalação (01, 02, 03) e mesma linha processual até a sentença (05 a 13, 15).",
+            "04-registro-reclamacao.md nesta variante é uma resposta de BUSCA que não localizou registro de reclamação com os identificadores fornecidos (protocolo ATD-2023-7801, data 2023-06-12) - portanto a reclamação extrajudicial alegada na petição inicial (05-peticao-inicial.md) permanece apenas ALEGADA, sem confirmação documental própria, embora o documento ressalve que não afirma inexistência por outro canal.",
+            "Datas de citação convergentes (06-aviso-recebimento-citacao.md e 07-certidao-citacao.md, ambas 2024-03-12), mesma contagem de 15 dias úteis até 2024-04-02 aponta contestação tempestiva.",
+            "Laudo pericial (11) permanece como prova técnica que sustenta o mérito da autora independentemente da confirmação (ou não) da reclamação extrajudicial, que é fato distinto do mérito principal."
+          ],
+          "missing_evidence": [
+            "Confirmação por outro canal (ex.: e-mail, carta, ouvidoria) de que a reclamação extrajudicial ocorreu, já que a busca no sistema de atendimento da ré não localizou registro correspondente.",
+            "Mesmas lacunas do mundo A: comprovante de pagamento, modo de citação, prova de trânsito em julgado/recurso/cumprimento, laudo integral."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência primária entre 06-aviso-recebimento-citacao.md (2024-03-12) e 07-certidao-citacao.md (2024-03-05) quanto à data da citação da ré, com impacto direto e não presumível sobre a tempestividade da contestação (08-contestacao.md)."
+          ],
+          "implausible_or_leaking_documents": [
+            "17-calendario-forense.md cobre precisamente o intervalo entre a data alternativa da certidão (03-05) e a contestação (04-02), o que pode indicar reaproveitamento do mesmo arquivo de calendário entre variantes, mas tambémcria uma pista que corresponde exatamente a uma das duas hipóteses em disputa."
+          ],
+          "material_findings": [
+            "Cronologia igual à do mundo A até a citação: AR recebido em 2024-03-12 (06-aviso-recebimento-citacao.md), mas a certidão de citação (07-certidao-citacao.md) desta variante indica citação em 2024-03-05 - DATA DIVERGENTE da constante no aviso de recebimento.",
+            "04-registro-reclamacao.md confirma a reclamação extrajudicial (mesmo padrão do mundo A).",
+            "Se considerada a data do AR (2024-03-12): o 15º dia útil (excluindo o dia do começo, sem feriados conforme 17-calendario-forense.md) recai em 2024-04-02, tornando a contestação (08-contestacao.md) tempestiva.",
+            "Se considerada a data da certidão (2024-03-05): o 15º dia útil recairia em 2024-03-26, e a contestação protocolada em 2024-04-02 seria APRESENTADA FORA DO PRAZO (por volta do 20º dia útil).",
+            "O calendário forense (17-calendario-forense.md) abrange exatamente o intervalo 2024-03-05 a 2024-04-02, cobrindo as duas datas conflitantes, o que permite verificar ambas as hipóteses de contagem sem exigir suposição adicional."
+          ],
+          "missing_evidence": [
+            "Esclarecimento documental (ex.: cópia do mandado, sistema eletrônico de citação) sobre qual das duas datas (03-05 ou 03-12) é a correta, pois os dois documentos de suporte (AR e certidão) são inconsistentes entre si.",
+            "Indicação do modo de citação para aplicar corretamente o termo inicial (L335), o que agrava a incerteza dada a divergência de datas.",
+            "Demais lacunas já apontadas nos mundos A/B (comprovante de pagamento, trânsito em julgado, laudo integral)."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Estrutura análoga a M-201, com cadeia contestação-laudo-sentença bem documentada e lacunas/contradições proporcionais e rastreáveis a arquivos específicos, sem necessidade de suposição para a análise solicitada.",
+      "matter_id": "M-202",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Tensão entre a tese defensiva da contestação (mau uso pela autora) e a conclusão pericial posterior (defeito de fabricação anterior à instalação) - não é contradição documental, mas incompatibilidade fática resolvida pela sentença com base no laudo."
+          ],
+          "implausible_or_leaking_documents": [
+            "Valor fixo de custas (14-comprovante-custas.md, R$4.812,00) desproporcional ao valor da causa (R$58.400,00) e idêntico a outros processos do lote com valores de causa distintos - sinal de template reaproveitado."
+          ],
+          "material_findings": [
+            "Cronologia: contrato em 2023-04-18 (01-contrato-prestacao.md, valor R$58.400,00); NF emitida (02-nota-fiscal.md); instalação/aceite sem ressalvas em 2023-05-08 (03-termo-instalacao.md); reclamação de 'perda de mercadoria por falha no sistema de refrigeração' registrada no canal da ré em 2023-06-12, protocolo ATD-2023-7802 (04-registro-reclamacao.md) - CONFIRMADA; inicial distribuída em 2024-02-20 (05, 15); citação por AR e certidão ambas em 2024-03-12 (06, 07) - convergentes; contestação em 2024-04-02 (08) negando a falha e alegando mau uso; réplica em 2024-04-30 (09); saneador em 2024-07-15 (10); laudo em 2025-02-10 concluindo por defeito de fabricação do compressor anterior à instalação (11) - contraria a tese defensiva; sentença de procedência em 2025-09-22 (12); intimação em 2025-09-29 (13).",
+            "Contagem de 15 dias úteis a partir de 2024-03-12 (excluindo o dia inicial, sem feriados conforme 17) recai em 2024-04-02, coincidindo com o protocolo da contestação - tempestiva.",
+            "Documentos de mérito (01,02,03,05,08,09,11,12) versus burocracia (06,07,13,14,15) corretamente separáveis; laudo é a peça central da cadeia contestação-laudo-sentença exigida pelo item 9 da tarefa."
+          ],
+          "missing_evidence": [
+            "Comprovante financeiro do pagamento à vista (apenas alegação contratual).",
+            "Especificação do modo de citação para aplicação precisa do L335.",
+            "Prova de recurso, trânsito em julgado ou cumprimento de sentença - ausente."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Divergência entre a alegação da petição inicial de reclamação sem solução em 2023-06-12 e o resultado negativo da busca em 04-registro-reclamacao.md, sem elemento para dirimir qual versão prevalece."
+          ],
+          "implausible_or_leaking_documents": [
+            "Valor de custas idêntico e destacado de qualquer proporcionalidade com o valor da causa, repetido em todo o lote."
+          ],
+          "material_findings": [
+            "Mesma cronologia contratual e processual (01-03,05-13,15).",
+            "04-registro-reclamacao.md é resultado de busca que NÃO localizou registro de reclamação com o protocolo ATD-2023-7802 e dados informados - a reclamação extrajudicial permanece apenas alegada na petição inicial (05), sem confirmação própria da ré.",
+            "Datas de citação convergentes (06 e 07, ambas 2024-03-12); contestação em 2024-04-02 tempestiva pela mesma contagem de 15 dias úteis.",
+            "Laudo pericial (11) mantém-se como prova técnica do mérito, independente da (não) confirmação da reclamação extrajudicial."
+          ],
+          "missing_evidence": [
+            "Confirmação alternativa da reclamação extrajudicial por outro canal ou identificador.",
+            "Demais lacunas recorrentes: comprovante de pagamento, modo de citação, trânsito em julgado/recurso."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência entre 06-aviso-recebimento-citacao.md (2024-03-12) e 07-certidao-citacao.md (2024-03-05) quanto à data de citação, com efeito direto sobre a tempestividade da contestação (08)."
+          ],
+          "implausible_or_leaking_documents": [
+            "Coincidência exata entre o início do calendário forense (03-05) e a data alternativa da certidão de citação, o que pode indicar reaproveitamento do arquivo entre variantes."
+          ],
+          "material_findings": [
+            "Mesma cronologia até a citação; 04-registro-reclamacao.md confirma a reclamação (padrão do mundo A).",
+            "07-certidao-citacao.md desta variante indica citação em 2024-03-05, divergindo do AR (06, 2024-03-12).",
+            "Pela data do AR (03-12): 15º dia útil recai em 2024-04-02 - contestação (08) tempestiva.",
+            "Pela data da certidão (03-05): 15º dia útil recai em 2024-03-26 - contestação de 2024-04-02 seria intempestiva (aprox. 20º dia útil).",
+            "17-calendario-forense.md cobre exatamente o intervalo 2024-03-05 a 2024-04-02, permitindo testar as duas hipóteses sem necessidade de dados externos."
+          ],
+          "missing_evidence": [
+            "Esclarecimento sobre qual documento de citação prevalece (AR vs certidão) - inexistente no dossiê.",
+            "Modo de citação para aplicar corretamente o L335.",
+            "Demais lacunas recorrentes do lote."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Mesma robustez estrutural das demais matérias, com foco adequado na cadeia réplica-saneador-sentença e tratamento apropriado das lacunas/contradições sem exigir suposição.",
+      "matter_id": "M-203",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Tensão entre a defesa da ré (cláusula destacada e falha de comunicação da autora) e a conclusão pericial de ausência de suporte contratual para as cobranças - resolvida pela sentença com base no laudo, não contradição documental em si."
+          ],
+          "implausible_or_leaking_documents": [
+            "Custas fixas de R$4.812,00 (14) repetidas no lote independentemente do valor da causa (aqui R$22.750,00)."
+          ],
+          "material_findings": [
+            "Cronologia: contrato em 2023-04-18 (01, valor R$22.750,00); NF emitida (02); instalação/aceite sem ressalvas em 2023-05-08 (03); reclamação de 'renovação automática não informada com cobranças sucessivas' registrada em 2023-06-12, protocolo ATD-2023-7803 (04) - CONFIRMADA; inicial em 2024-02-20 (05,15); citação por AR e certidão ambas em 2024-03-12 (06,07) - convergentes; contestação em 2024-04-02 (08) alegando cláusula destacada de renovação e falha de comunicação de cancelamento pela autora; réplica em 2024-04-30 (09); saneador em 2024-07-15 determinando perícia (10); laudo em 2025-02-10 concluindo que as cobranças pós-cancelamento não têm suporte contratual (11); sentença de procedência com declaração de abusividade e restituição em 2025-09-22 (12); intimação em 2025-09-29 (13).",
+            "Contagem de 15 dias úteis a partir de 2024-03-12 (sem feriados, 17-calendario-forense.md) recai em 2024-04-02 - contestação tempestiva.",
+            "Cadeia réplica-saneador-sentença (foco do item 9): réplica requer prova técnica (09); saneador acolhe e determina perícia (10); laudo (11) e sentença (12) fecham a cadeia de forma coerente."
+          ],
+          "missing_evidence": [
+            "Comprovante de pagamento efetivo do preço (apenas cláusula contratual).",
+            "Cópia da cláusula contratual de renovação automática mencionada na contestação (não juntada, apenas alegada por ambas as partes).",
+            "Modo de citação; prova de recurso/trânsito em julgado/cumprimento."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Divergência entre a alegação da inicial (reclamação sem solução em 2023-06-12) e o resultado negativo da busca em 04, sem elemento para dirimir."
+          ],
+          "implausible_or_leaking_documents": [
+            "Custas fixas idênticas ao restante do lote, dissociadas do valor da causa."
+          ],
+          "material_findings": [
+            "Mesma cronologia contratual e processual (01-03,05-13,15).",
+            "04-registro-reclamacao.md é busca que não localizou registro com o protocolo ATD-2023-7803 e dados informados; reclamação extrajudicial permanece apenas alegada (05).",
+            "Citação convergente em 06 e 07 (2024-03-12); contestação tempestiva pela contagem de 15 dias úteis até 2024-04-02.",
+            "Laudo (11) mantém-se como prova técnica independente da reclamação extrajudicial."
+          ],
+          "missing_evidence": [
+            "Confirmação alternativa da reclamação; cópia da cláusula de renovação automática; demais lacunas recorrentes."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência entre AR (03-12) e certidão de citação (03-05), com impacto direto sobre a tempestividade da contestação."
+          ],
+          "implausible_or_leaking_documents": [
+            "Coincidência entre o início do calendário forense e a data alternativa da certidão, possível artefato de reaproveitamento de arquivo entre variantes."
+          ],
+          "material_findings": [
+            "04-registro-reclamacao.md confirma a reclamação (padrão do mundo A).",
+            "07-certidao-citacao.md indica citação em 2024-03-05, divergente do AR (06, 2024-03-12).",
+            "Pela data do AR: 15º dia útil recai em 2024-04-02 - tempestiva.",
+            "Pela data da certidão: 15º dia útil recai em 2024-03-26 - contestação de 2024-04-02 seria intempestiva.",
+            "17-calendario-forense.md cobre exatamente 03-05 a 04-02, permitindo testar ambas hipóteses."
+          ],
+          "missing_evidence": [
+            "Esclarecimento documental sobre a data correta de citação; modo de citação; demais lacunas recorrentes."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Mantém a estrutura consistente das demais matérias, com o item adicional da alegação de intempestividade da reclamação extrajudicial na contestação, tratável como lacuna probatória legítima, e com a mesma contradição controlada de datas de citação em W-C, adequada ao objetivo do teste.",
+      "matter_id": "M-204",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Tensão entre a defesa técnica da ré (variação dentro da tolerância) e a conclusão pericial posterior (variação excede tolerância, origem no sistema de dosagem) - resolvida pela sentença com base no laudo."
+          ],
+          "implausible_or_leaking_documents": [
+            "Custas fixas de R$4.812,00 (14) chamativamente baixas e idênticas ao restante do lote para uma causa de R$182.000,00, o maior valor entre as matérias revisadas - forte indício de valor gerado por template, não calculado proporcionalmente."
+          ],
+          "material_findings": [
+            "Cronologia: contrato em 2023-04-18 (01, valor R$182.000,00); NF emitida (02); instalação/aceite sem ressalvas em 2023-05-08 (03); reclamação de 'variação de tonalidade fora do padrão' registrada em 2023-06-12, protocolo ATD-2023-7804 (04) - CONFIRMADA; inicial em 2024-02-20 (05,15); citação por AR e certidão ambas em 2024-03-12 (06,07) - convergentes; contestação em 2024-04-02 (08) alegando tolerância técnica e, adicionalmente, INTEMPESTIVIDADE DA RECLAMAÇÃO EXTRAJUDICIAL - alegação sem qualquer documento de suporte próprio quanto a essa intempestividade; réplica em 2024-04-30 (09); saneador em 2024-07-15 (10); laudo em 2025-02-10 concluindo que a variação excede a tolerância contratada, com origem no sistema de dosagem fornecido (11) - contraria a defesa; sentença de procedência com resolução contratual e restituição em 2025-09-22 (12); intimação em 2025-09-29 (13).",
+            "Contagem de 15 dias úteis a partir de 2024-03-12 (sem feriados, 17) recai em 2024-04-02 - contestação tempestiva quanto ao prazo processual (distinto da alegação de intempestividade da reclamação extrajudicial, que é tese de mérito da ré, não questão de prazo processual)."
+          ],
+          "missing_evidence": [
+            "Qualquer documento que sustente a alegação da contestação de que a reclamação extrajudicial foi intempestiva (não há prazo contratual de reclamação juntado nem cronograma de referência para tal alegação).",
+            "Comprovante de pagamento efetivo; modo de citação; prova de recurso/trânsito em julgado/cumprimento."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Divergência entre a alegação da inicial (reclamação sem solução em 2023-06-12) e o resultado negativo da busca em 04, sem elemento para dirimir; agrava a incerteza sobre a tese de intempestividade da reclamação levantada pela ré em 08, que também não tem prova própria."
+          ],
+          "implausible_or_leaking_documents": [
+            "Custas fixas idênticas ao restante do lote, desproporcionais ao valor da causa de R$182.000,00."
+          ],
+          "material_findings": [
+            "Mesma cronologia contratual e processual (01-03,05-13,15).",
+            "04-registro-reclamacao.md é busca que não localizou registro com protocolo ATD-2023-7804 e dados informados; reclamação extrajudicial permanece apenas alegada (05), o que é relevante em conjunto com a tese defensiva de intempestividade dessa mesma reclamação (08) - ambas as partes deixam a questão da reclamação extrajudicial sem prova documental conclusiva.",
+            "Citação convergente (06,07, 2024-03-12); contestação tempestiva pela contagem de 15 dias úteis até 2024-04-02."
+          ],
+          "missing_evidence": [
+            "Confirmação alternativa da reclamação extrajudicial; base documental para a alegação de intempestividade dessa reclamação feita pela ré; demais lacunas recorrentes."
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "moderada",
+          "contradictions": [
+            "Divergência entre AR (03-12) e certidão de citação (03-05) quanto à data de citação, com efeito direto e não presumível sobre a tempestividade da própria contestação que alega intempestividade da parte contrária."
+          ],
+          "implausible_or_leaking_documents": [
+            "Coincidência entre o início do calendário forense e a data alternativa da certidão, possível artefato de reaproveitamento de arquivo entre variantes."
+          ],
+          "material_findings": [
+            "04-registro-reclamacao.md confirma a reclamação (padrão do mundo A).",
+            "07-certidao-citacao.md indica citação em 2024-03-05, divergente do AR (06, 2024-03-12).",
+            "Pela data do AR: 15º dia útil recai em 2024-04-02 - tempestiva.",
+            "Pela data da certidão: 15º dia útil recai em 2024-03-26 - contestação de 2024-04-02 seria intempestiva.",
+            "17-calendario-forense.md cobre exatamente 03-05 a 04-02, permitindo testar as duas hipóteses.",
+            "A alegação da própria contestação (08) de que a reclamação extrajudicial da autora foi intempestiva soma-se, nesta variante, a uma incerteza adicional e não resolvida sobre a própria tempestividade da contestação, sem que qualquer documento estabeleça hierarquia entre AR e certidão."
+          ],
+          "missing_evidence": [
+            "Esclarecimento documental sobre a data correta de citação; base documental para a tese de intempestividade da reclamação extrajudicial; modo de citação."
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

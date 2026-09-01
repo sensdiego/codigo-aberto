@@ -1,0 +1,26 @@
+{
+  "document_count": 17,
+  "documents": {
+    "01-contrato-prestacao.md": "98fd00c8c18a822ab62910d1e56d7b8418b0003dc078e1f021fdfe39379655f6",
+    "02-nota-fiscal.md": "b92e8a330fa8b82f28828e67ecd0f6a6d0800310151df69b5b8a17e97f7a5e6e",
+    "03-termo-instalacao.md": "27046ee7cefe0f70b75f0ddd001dc4ee1e6ab0a99afe668e28ac9365fe87161e",
+    "04-registro-reclamacao.md": "d396f8425c7ba62f7aeec6bb7ec87d26c672b2d4e8539a8b2479b800030162f7",
+    "05-peticao-inicial.md": "10a2596410db1f700bf36c9980292cbf835178a3f8a5ba883cbcd142057eed72",
+    "06-certidao-disponibilizacao-citacao.md": "b35c6d8e4f1969e8941e9e23f061701504709fabc377873ff7a14b14845b3a35",
+    "07-certidao-citacao.md": "b97624d66b5e91429a754dbfccbaeb5ef7505f1a077ea36525efb988c7a0cde0",
+    "08-contestacao.md": "90b8bf9d62ffb9a5841378af8479c32e5f1ce6eafbe31a4620b25f5d8654fb3f",
+    "09-replica.md": "cd46016f5ef2b5d49bc22ec1ce0aa214d7ddf4b8447a395adc2812f3208d56c1",
+    "10-despacho-saneador.md": "273f160faa1f0be8cadfc2c5392444998b8e9c06829e028f0d7b7b7f080457e7",
+    "11-laudo-pericial.md": "a32a8797c7131646fb219486bf2878e59fa175b977279a272afee0c16ad0508c",
+    "12-sentenca.md": "3eb6a78a7daa9e286bfcd6b6d64338957b9f227cb8cc7f062b8b0b33b95f08d6",
+    "13-certidao-intimacao.md": "58d39367c85857f5d1776b14a6de173092e225ca566fb91bd0e3fded65065882",
+    "14-comprovante-custas.md": "0265d4bd1dd62ddb1ec6a5b9536b3f1d058e5cf618aed90da6dbedb33297d42e",
+    "15-extrato-andamentos.md": "2a82b64a0331907f9ea8cf237a28a96eb39ce5ba2cf4fdddf8ff777a5aeed9b5",
+    "16-nota-normativa.md": "91242ab206c54ab7455b2b8b4448db4fa6b4eeda3b2ad42f1b6e48b08fa4b02b",
+    "17-calendario-forense.md": "49607660a071043cb3ac82f6962c0224d6acc0c8c30ba2734e30c77015f964ff"
+  },
+  "schema_version": 1,
+  "spec_sha256": "af973dd726f93b9b65d9f2daf81517c858abfd5d908c83bc476d34eba8407f98",
+  "task_sha256": "4cd036e01513bc8e4f3d03bc6669be33d1732dcf9b32c4fb11939b2a9285129e",
+  "world_id": "W-A"
+}

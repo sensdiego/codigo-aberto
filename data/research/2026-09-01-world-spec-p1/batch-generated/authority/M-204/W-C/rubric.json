@@ -1,0 +1,110 @@
+{
+  "common": [
+    {
+      "authority_ids": [
+        "F010",
+        "F020",
+        "F030",
+        "F040",
+        "F042",
+        "F050",
+        "F060",
+        "F070",
+        "F080"
+      ],
+      "class": "process",
+      "criterion": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+      "id": "R001",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F020",
+        "F071",
+        "F091"
+      ],
+      "class": "fact",
+      "criterion": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+      "id": "R002",
+      "severity": "critical",
+      "weight": 3
+    },
+    {
+      "authority_ids": [
+        "L219",
+        "L224",
+        "L330",
+        "L335",
+        "L350",
+        "L351",
+        "L373"
+      ],
+      "class": "law",
+      "criterion": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+      "id": "R003",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F090",
+        "F092",
+        "F093",
+        "F094"
+      ],
+      "class": "process",
+      "criterion": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+      "id": "R004",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "F091"
+      ],
+      "class": "absence",
+      "criterion": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+      "id": "R005",
+      "severity": "major",
+      "weight": 2
+    },
+    {
+      "authority_ids": [
+        "TASK"
+      ],
+      "class": "prohibition",
+      "criterion": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+      "id": "R006",
+      "severity": "critical",
+      "weight": 3
+    }
+  ],
+  "matter_id": "M-204",
+  "schema_version": 1,
+  "world_id": "W-C",
+  "world_specific": [
+    {
+      "authority_ids": [
+        "O-C1"
+      ],
+      "class": "contradiction",
+      "criterion": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+      "expected_state": "contradictory",
+      "observation_id": "O-C1",
+      "severity": "critical",
+      "weight": 3
+    },
+    {
+      "authority_ids": [
+        "O-C2"
+      ],
+      "class": "relation",
+      "criterion": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+      "expected_state": "uncertain",
+      "observation_id": "O-C2",
+      "severity": "critical",
+      "weight": 3
+    }
+  ]
+}

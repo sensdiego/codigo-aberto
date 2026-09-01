@@ -1,0 +1,21 @@
+{
+  "W-A": {
+    "authority_label": "control",
+    "description": "Mundo coerente e completo, com sentença de procedência e datas de citação convergentes entre a certidão de disponibilização e a certidão de efetivação.",
+    "expected_changed_documents": []
+  },
+  "W-B": {
+    "authority_label": "proof_missing",
+    "description": "A reclamação extrajudicial tempestiva aparece apenas como alegação da inicial; a resposta do serviço de atendimento não localizou registro correspondente.",
+    "expected_changed_documents": [
+      "04-registro-reclamacao.md"
+    ]
+  },
+  "W-C": {
+    "authority_label": "chronology_conflict",
+    "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+    "expected_changed_documents": [
+      "07-certidao-citacao.md"
+    ]
+  }
+}

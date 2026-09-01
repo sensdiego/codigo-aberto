@@ -1,0 +1,69 @@
+{
+  "authority_label": "proof_missing",
+  "description": "A reclamação extrajudicial tempestiva aparece apenas como alegação da inicial; a resposta do serviço de atendimento não localizou registro correspondente.",
+  "document_renderer_overrides": {
+    "D013": "complaint_record_missing"
+  },
+  "expected_observations": [
+    {
+      "claim": "A reclamação de 2023-06-12 consta apenas da petição inicial; a busca no serviço de atendimento não localizou registro correspondente.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-B1",
+      "rubric": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração.",
+      "severity": "critical",
+      "state": "alleged"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-B2",
+      "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "fact_overrides": {},
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-001",
+    "F002": "2ª Vara Cível da Comarca Experimental de Aurora",
+    "F003": "Serralheria Boreal Ltda.",
+    "F004": "Vetor Automação Industrial S.A.",
+    "F010": "2023-04-18",
+    "F011": "fornecimento e instalação de uma linha de corte automatizada",
+    "F012": "240.000,00",
+    "F013": "2023-05-08",
+    "F014": "paradas recorrentes por falha no módulo de alinhamento",
+    "F020": "2023-06-12",
+    "F021": "ATD-2023-7741",
+    "F030": "2024-02-20",
+    "F031": "resolução do contrato por vício do objeto, com restituição de R$ 240.000,00 e indenização por lucros cessantes",
+    "F040": "2024-03-12",
+    "F041": "2024-03-12",
+    "F042": "2024-04-03",
+    "F043": "o equipamento operava conforme o projeto e qualquer reclamação extrajudicial foi intempestiva",
+    "F050": "2024-04-30",
+    "F060": "2024-07-15",
+    "F061": "perícia técnica na linha de corte instalada na planta da autora",
+    "F070": "2025-02-10",
+    "F071": "a falha de alinhamento tem origem no projeto do equipamento e é anterior à instalação",
+    "F072": "2025-04-14",
+    "F080": "2025-09-22",
+    "F081": "resolver o contrato e condenar a ré à restituição de R$ 240.000,00, com atualização monetária desde o ajuizamento",
+    "F090": "2025-09-29 — juntada da certidão de intimação da sentença",
+    "F091": "2026-01-15 10:40",
+    "F092": "2025-09-29",
+    "F093": "2024-02-20",
+    "F094": "4.812,00",
+    "F100": "no período de 2024-03-05 a 2024-04-03, houve expediente regular de segunda a sexta-feira, exceto em 2024-03-29 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão"
+  },
+  "schema_version": 1,
+  "spec_sha256": "af973dd726f93b9b65d9f2daf81517c858abfd5d908c83bc476d34eba8407f98",
+  "world_id": "W-B"
+}

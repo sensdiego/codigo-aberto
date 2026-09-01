@@ -1,0 +1,318 @@
+{
+  "reviewer": "A revisor 1",
+  "package": "A",
+  "blind_before_submission": true,
+  "matters": [
+    {
+      "matter_id": "M-205",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2022-04-29 entre Halite Cerâmica Artesanal Ltda. (contratante) e Albatroz Seguros Patrimoniais S.A. (contratada): implantação de sistema de monitoramento de fornos com apólice de seguro vinculada, preço R$ 74.900,00 pago à vista (01-contrato-prestacao.md)",
+            "NF-SYN-1005 emitida em 2022-04-29 por R$ 74.900,00 (02-nota-fiscal.md)",
+            "Instalação concluída e aceita sem ressalvas em 2022-05-20 (03-termo-instalacao.md)",
+            "Reclamação registrada em 2022-06-24, protocolo ATD-2022-7805, por negativa de cobertura de sinistro dentro da vigência (04-registro-reclamacao.md)",
+            "Ação de cobrança de indenização securitária protocolada em 2023-03-03, processo BR-CIV-CON-205, 1ª Vara Cível da Comarca Experimental de Embaúba (05-peticao-inicial.md); custas de R$ 1.071,72 pagas na mesma data (14-comprovante-custas.md)",
+            "Citação eletrônica disponibilizada em 2023-03-24 (06-certidao-disponibilizacao-citacao.md) e efetivada com visualização na mesma data (07-certidao-citacao.md)",
+            "Contestação protocolada em 2023-04-17 alegando exclusão contratual e regularidade da negativa (08-contestacao.md)",
+            "Réplica em 2023-05-12 com pedido de perícia (09-replica.md); despacho saneador de 2023-07-27 defere perícia técnica (10-despacho-saneador.md)",
+            "Laudo pericial de 2024-02-22: sinistro ocorreu dentro da vigência e não se enquadra nas exclusões da apólice (11-laudo-pericial.md)",
+            "Manifestação das partes sobre o laudo em 2024-04-26, sem pedido de esclarecimentos (12-sentenca.md; 15-extrato-andamentos.md)",
+            "Sentença de 2024-10-04 julga procedente e condena a ré em R$ 74.900,00 com correção desde o ajuizamento (12-sentenca.md); partes intimadas em 2024-10-11 (13-certidao-intimacao.md)"
+          ],
+          "missing_evidence": [
+            "Apólice e contrato integral não constam — apenas 'extratos sintéticos'; as exclusões contratuais invocadas pela ré não podem ser verificadas",
+            "Data, natureza e valor do sinistro nunca documentados; a indenização pedida e deferida é exatamente o preço integral do contrato, sem prova do quantum do dano",
+            "Procurações e documentos societários das partes ausentes",
+            "Extrato de andamentos (15) não registra a disponibilização nem a efetivação da citação — marco essencial só existe nas certidões avulsas",
+            "Sem certidão de intimação da contestação: o termo inicial do prazo de réplica não é verificável",
+            "Sem registro de trânsito em julgado, recurso, acordo ou fase de cumprimento após a intimação de 2024-10-11",
+            "Quesitos das partes e nomeação/aceite do perito não constam"
+          ],
+          "contradictions": [
+            "Nenhuma contradição interna relevante: 06 e 07 convergem em 2023-03-24; pela contagem em dias úteis do calendário (17, feriado em 2023-04-07), a contestação de 2023-04-17 cai exatamente no 15º dia útil — tempestiva no limite"
+          ],
+          "implausible_or_leaking_documents": [
+            "Todos os 17 documentos se autodenominam 'sintéticos' nos títulos — formato inexistente em acervo real",
+            "Número de processo fora do padrão CNJ (BR-CIV-CON-205) e 'Comarca Experimental de Embaúba' explicitam artificialidade",
+            "16-nota-normativa.md declara reunir 'somente as proposições normativas autorizadas para a análise' — vaza o andaime do teste",
+            "17-calendario-forense.md cobre cirurgicamente o intervalo exato da contagem do prazo de contestação",
+            "Contestação protocolada exatamente no 15º dia útil — caso-limite engendrado, não aleatório",
+            "Indenização securitária idêntica ao preço total do contrato, sem lastro"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 04: em vez do registro de atendimento, consta resposta do serviço de atendimento à busca de registro informando que NÃO foi localizado registro de reclamação com os dados fornecidos (protocolo ATD-2022-7805, contato de 2022-06-24), com a ressalva de que o resultado não afirma se houve contato por outro canal (04-registro-reclamacao.md)",
+            "Petição inicial continua alegando reclamação extrajudicial de 2022-06-24 'sem solução' (05-peticao-inicial.md)",
+            "Demais marcos processuais inalterados: contestação tempestiva em 2023-04-17 (15º dia útil), laudo favorável à autora, sentença de procedência em 2024-10-04"
+          ],
+          "missing_evidence": [
+            "A reclamação extrajudicial alegada na inicial carece de qualquer corroboração documental — a única peça sobre o tema é negativa",
+            "Mesmas lacunas de W-A: apólice integral, prova do sinistro e do quantum, procurações, certidão de intimação da contestação, trânsito em julgado"
+          ],
+          "contradictions": [
+            "05-peticao-inicial.md (reclamação extrajudicial de 2022-06-24 'sem solução') vs 04-registro-reclamacao.md (busca no canal da ré não localizou registro com protocolo, data e assunto informados) — afirmação da autora descorroborada, com a ressalva expressa da própria peça de que pode ter havido contato por outro canal"
+          ],
+          "implausible_or_leaking_documents": [
+            "04 é uma 'resposta à busca de registro' com ressalva metodologicamente didática ('não afirma se houve contato por outro canal') — peça desenhada para o teste, não um documento espontâneo de fluxo processual",
+            "Demais sinais de W-A: rótulos 'sintéticos', processo fora do padrão CNJ, comarca 'Experimental', nota normativa autoexplicativa, contestação exatamente no 15º dia útil"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 07: a certidão de efetivação registra disponibilização da citação em 2023-03-17, com visualização na mesma data (07-certidao-citacao.md), enquanto a certidão de disponibilização mantém 2023-03-24 (06-certidao-disponibilizacao-citacao.md)",
+            "Contestação protocolada em 2023-04-17 (08-contestacao.md)",
+            "Demais marcos inalterados (reclamação de 2022-06-24 corroborada pelo registro de atendimento, laudo favorável, sentença de procedência)"
+          ],
+          "missing_evidence": [
+            "Nenhum documento resolve qual data de disponibilização prevalece; extrato de andamentos (15) omite ambos os eventos de citação",
+            "Sem registro de alegação de intempestividade ou de decisão sobre revelia",
+            "Mesmas lacunas de W-A quanto a apólice, sinistro, procurações e trânsito"
+          ],
+          "contradictions": [
+            "06-certidao-disponibilizacao-citacao.md (disponibilização em 2023-03-24) vs 07-certidao-citacao.md (disponibilização em 2023-03-17): pela data de 06, a contestação de 2023-04-17 é tempestiva no limite (15º dia útil, excluído o feriado de 2023-04-07); pela data de 07, o prazo venceria em 2023-04-10 e a contestação estaria 5 dias úteis intempestiva"
+          ],
+          "implausible_or_leaking_documents": [
+            "A divergência de exatamente uma semana entre as duas certidões é cirúrgica — desenhada para inverter o resultado da tempestividade",
+            "Demais sinais de artificialidade de W-A (rótulos 'sintéticos', comarca 'Experimental', nota normativa, calendário forense sob medida)"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-206",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2022-04-12 entre Inverna Hortifruti Congelado Ltda. e Junco Climatização Predial S.A.: fornecimento e instalação de sistema de climatização para câmara de maturação, R$ 49.300,00 à vista (01-contrato-prestacao.md)",
+            "NF-SYN-1006 de 2022-04-12 pelo mesmo valor (02-nota-fiscal.md); instalação aceita sem ressalvas em 2022-05-02 (03-termo-instalacao.md)",
+            "Reclamação de 2022-06-06 (ATD-2022-7806) por descumprimento do cronograma de manutenção corretiva (04-registro-reclamacao.md)",
+            "Ação de obrigação de fazer protocolada em 2023-02-14, BR-CIV-CON-206, 2ª Vara Cível de Fagulha (05); custas R$ 888,18 na mesma data (14)",
+            "Citação disponibilizada e efetivada em 2023-03-06 (06; 07); contestação em 2023-03-27 alegando que a autora impediu o acesso às instalações (08)",
+            "Réplica 2023-04-24 (09); saneador 2023-07-10 defere perícia (10); laudo 2024-02-05: sem registro de impedimento de acesso e intervenções contratadas não realizadas (11)",
+            "Sentença de 2024-09-16: procedente — manutenção em 30 dias sob astreintes e R$ 49.300,00 (12); intimação em 2024-09-23 (13)"
+          ],
+          "missing_evidence": [
+            "Cronograma de manutenção corretiva e contrato integral não anexados — objeto da obrigação não verificável",
+            "Alegação central da ré (impedimento de acesso pela autora) sem qualquer prova documental",
+            "Laudo conclui 'não há registro de impedimento de acesso' — infere fato a partir de ausência de registro, sem indicar quais fontes examinou",
+            "Sem registro de ordens de serviço, relatórios de visita ou comunicações entre as partes",
+            "Extrato de andamentos (15) omite citação; sem certidão de intimação da contestação; sem trânsito, recurso ou cumprimento"
+          ],
+          "contradictions": [
+            "08-contestacao.md (autora impediu o acesso, por isso a manutenção não foi executada) vs 11-laudo-pericial.md de 2024-02-05 ('não há registro de impedimento de acesso e as intervenções contratadas não foram realizadas') — tese defensiva diretamente contrariada pela perícia",
+            "Prazo: 06 e 07 convergem em 2023-03-06; contestação de 2023-03-27 é o 15º dia útil exato (calendário 17 sem feriados) — tempestiva no limite"
+          ],
+          "implausible_or_leaking_documents": [
+            "Rótulos 'sintéticos' em todas as peças; processo BR-CIV-CON-206 fora do padrão CNJ; 'Comarca Experimental de Fagulha'",
+            "Nota normativa (16) com 'proposições autorizadas' vaza o andaime do teste",
+            "Contestação exatamente no 15º dia útil; ressarcimento igual ao preço total do contrato"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 04: resposta à busca informa que NÃO foi localizado registro de reclamação com protocolo ATD-2022-7806, data 2022-06-06 e assunto informados, com ressalva quanto a outros canais (04-registro-reclamacao.md)",
+            "Petição inicial mantém alegação de reclamação extrajudicial de 2022-06-24 sem solução — na verdade 2022-06-06 (05-peticao-inicial.md)",
+            "Demais marcos inalterados (contestação tempestiva no limite em 2023-03-27, laudo favorável, procedência)"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração — única peça sobre o tema é negativa",
+            "Mesmas lacunas de W-A (cronograma, prova do impedimento, intimação da contestação, trânsito)"
+          ],
+          "contradictions": [
+            "05-peticao-inicial.md (reclamação de 2022-06-06 'sem solução') vs 04-registro-reclamacao.md (busca não localizou registro com esses identificadores) — alegação descorroborada, com ressalva expressa da peça"
+          ],
+          "implausible_or_leaking_documents": [
+            "Documento 04 é peça de busca negativa com ressalva didática — desenhada para o teste",
+            "Sinais gerais de artificialidade idênticos a W-A"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 07: certidão de efetivação registra disponibilização em 2023-02-27 (07), enquanto a certidão de disponibilização mantém 2023-03-06 (06)",
+            "Contestação protocolada em 2023-03-27 (08)"
+          ],
+          "missing_evidence": [
+            "Nada resolve a divergência entre as certidões; extrato de andamentos omite a citação",
+            "Sem decisão sobre tempestividade/revelia; lacunas de mérito idênticas a W-A"
+          ],
+          "contradictions": [
+            "06 (disponibilização em 2023-03-06) vs 07 (disponibilização em 2023-02-27): pela data de 06, contestação de 2023-03-27 tempestiva no limite (15º dia útil); pela data de 07, o prazo venceria em 2023-03-20 e a contestação estaria 5 dias úteis intempestiva"
+          ],
+          "implausible_or_leaking_documents": [
+            "Divergência de exatamente uma semana entre certidões, calibrada para inverter a tempestividade",
+            "Sinais gerais de artificialidade idênticos a W-A"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-207",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2022-04-22 entre Litoral Mudas Florestais Ltda. e Rumo Transportes Rodoviários S.A.: fornecimento e instalação de estufas modulares com transporte contratado, R$ 67.800,00 à vista (01)",
+            "NF-SYN-1007 de 2022-04-22 pelo mesmo valor (02); instalação aceita sem ressalvas em 2022-05-13 (03)",
+            "Reclamação de 2022-06-17 (ATD-2022-7807) por avaria da carga em colisão rodoviária durante o transporte contratado (04)",
+            "Ação de indenização por acidente de trânsito protocolada em 2023-02-24, BR-CIV-CON-207, 3ª Vara Cível de Gardênia (05); custas R$ 1.472,17 (14)",
+            "Citação disponibilizada e efetivada em 2023-03-17 (06; 07); contestação em 2023-04-10: colisão causada por terceiro e cautelas adotadas (08)",
+            "Réplica 2023-05-05 (09); saneador 2023-07-20 (10); laudo 2024-02-15: avaria compatível com a colisão registrada e ocorrida durante o transporte contratado (11)",
+            "Sentença de 2024-09-27: procedente, R$ 67.800,00 (12); intimação em 2024-10-04 (13)"
+          ],
+          "missing_evidence": [
+            "Nenhum boletim de ocorrência, auto de infração, CT-e/conhecimento de transporte ou fotos da avaria — a colisão só existe nas alegações e na referência indireta do laudo ('colisão registrada', sem indicar onde)",
+            "Identificação do terceiro causador ausente, embora seja o núcleo da excludente alegada pela ré",
+            "Data da colisão nunca informada em nenhum documento",
+            "Extrato de andamentos omite a citação; sem certidão de intimação da contestação; sem trânsito ou recurso"
+          ],
+          "contradictions": [
+            "Nenhuma contradição interna de datas/valores; a tese da ré (culpa de terceiro, cautelas adotadas — 08) é afirmativa sem prova e fica contrariada pela conclusão do laudo (11), que vincula a avaria ao transporte contratado",
+            "Prazo: contestação de 2023-04-10 é o 15º dia útil exato após citação de 2023-03-17 (excluído feriado de 2023-04-07) — tempestiva no limite"
+          ],
+          "implausible_or_leaking_documents": [
+            "Laudo fala em 'colisão registrada' sem que exista registro da colisão no acervo — coerência forjada",
+            "Rótulos 'sintéticos', processo fora do padrão CNJ, 'Comarca Experimental de Gardênia', nota normativa autoexplicativa, contestação exatamente no 15º dia útil, indenização igual ao preço total"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 04: busca não localizou registro de reclamação com protocolo ATD-2022-7807, data 2022-06-17 e assunto informados, com ressalva quanto a outros canais (04)",
+            "Petição inicial mantém alegação de reclamação extrajudicial de 2022-06-17 'sem solução' (05)"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração — única peça é negativa",
+            "Mesmas lacunas de W-A (boletim de ocorrência, CT-e, terceiro causador, data da colisão, trânsito)"
+          ],
+          "contradictions": [
+            "05-peticao-inicial.md (reclamação de 2022-06-17 'sem solução') vs 04-registro-reclamacao.md (busca não localizou registro com esses dados) — alegação descorroborada"
+          ],
+          "implausible_or_leaking_documents": [
+            "Documento 04 de busca negativa com ressalva didática — peça de teste",
+            "Sinais gerais de artificialidade idênticos a W-A"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 07: certidão de efetivação registra disponibilização em 2023-03-10 (07), enquanto a certidão de disponibilização mantém 2023-03-17 (06)",
+            "Contestação protocolada em 2023-04-10 (08)"
+          ],
+          "missing_evidence": [
+            "Nada resolve a divergência entre certidões; extrato de andamentos omite a citação; sem decisão sobre tempestividade",
+            "Lacunas de mérito idênticas a W-A"
+          ],
+          "contradictions": [
+            "06 (disponibilização em 2023-03-17) vs 07 (disponibilização em 2023-03-10): pela data de 06, contestação de 2023-04-10 tempestiva no limite (15º dia útil, excluído 2023-04-07); pela data de 07, o prazo venceria em 2023-03-31 e a contestação estaria 5 dias úteis intempestiva"
+          ],
+          "implausible_or_leaking_documents": [
+            "Divergência de exatamente uma semana entre certidões, calibrada para inverter a tempestividade",
+            "Sinais gerais de artificialidade idênticos a W-A"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-208",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2022-04-05 entre Marola Confecções Praianas Ltda. e Banco Serramar S.A.: implantação de sistema de gestão financeira com financiamento bancário vinculado, R$ 93.600,00 à vista (01)",
+            "NF-SYN-1008 de 2022-04-05 pelo mesmo valor (02); instalação aceita sem ressalvas em 2022-04-25 (03)",
+            "Reclamação de 2022-05-30 (ATD-2022-7808) por cobrança de encargos não contratados com capitalização não autorizada (04)",
+            "Ação de revisão de contrato bancário protocolada em 2023-02-07, BR-CIV-CON-208, 4ª Vara Cível de Horto (05); custas R$ 1.526,72 (14)",
+            "Citação disponibilizada e efetivada em 2023-02-27 (06; 07); contestação em 2023-03-20: encargos contratados e capitalização autorizada (08)",
+            "Réplica 2023-04-17 (09); saneador 2023-07-03 defere perícia contábil (10); laudo 2024-01-29: encargos não constam do quadro resumo do contrato e capitalização carece de autorização expressa (11)",
+            "Sentença de 2024-09-09: declara abusivos os encargos e condena à restituição de R$ 93.600,00 (12); intimação em 2024-09-16 (13)"
+          ],
+          "missing_evidence": [
+            "Contrato de financiamento integral e quadro resumo não anexados — o laudo cita o 'quadro resumo do contrato', que não consta do acervo",
+            "Nenhum extrato bancário, boleto ou comprovante dos encargos efetivamente pagos — repetição de indébito de R$ 93.600,00 (igual ao preço total) sem discriminação de parcelas",
+            "Pagamento 'à vista' do financiamento (01) é incompatível com a lógica de encargos/capitalização reclamados — nenhum documento explica a estrutura do financiamento",
+            "Extrato de andamentos omite a citação; sem certidão de intimação da contestação; sem trânsito ou recurso"
+          ],
+          "contradictions": [
+            "08-contestacao.md (encargos contratados e capitalização expressamente autorizada) vs 11-laudo-pericial.md de 2024-01-29 (encargos não constam do quadro resumo e capitalização sem autorização expressa) — tese defensiva contrariada pela perícia",
+            "01-contrato-prestacao.md (preço pago à vista na assinatura) vs a própria causa de pedir de cobrança de encargos com capitalização ao longo do tempo (04; 05) — estrutura fática internamente tensa",
+            "Prazo: contestação de 2023-03-20 é o 15º dia útil exato após citação de 2023-02-27 (Carnaval de 20-21/02 fora do intervalo) — tempestiva no limite"
+          ],
+          "implausible_or_leaking_documents": [
+            "Restituição deferida igual ao preço total do contrato, sem lastro contábil — resultado engendrado",
+            "Rótulos 'sintéticos', processo fora do padrão CNJ, 'Comarca Experimental de Horto', nota normativa autoexplicativa, calendário sob medida, contestação exatamente no 15º dia útil"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 04: busca não localizou registro de reclamação com protocolo ATD-2022-7808, data 2022-05-30 e assunto informados, com ressalva quanto a outros canais (04)",
+            "Petição inicial mantém alegação de reclamação extrajudicial de 2022-05-30 'sem solução' (05)"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração — única peça é negativa",
+            "Mesmas lacunas de W-A (contrato integral, quadro resumo, extratos dos encargos, trânsito)"
+          ],
+          "contradictions": [
+            "05-peticao-inicial.md (reclamação de 2022-05-30 'sem solução') vs 04-registro-reclamacao.md (busca não localizou registro com esses dados) — alegação descorroborada"
+          ],
+          "implausible_or_leaking_documents": [
+            "Documento 04 de busca negativa com ressalva didática — peça de teste",
+            "Sinais gerais de artificialidade idênticos a W-A"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A, exceto o documento 07: certidão de efetivação registra disponibilização e visualização da citação em 2023-02-20 (07), enquanto a certidão de disponibilização mantém 2023-02-27 (06)",
+            "O próprio calendário forense (17) registra 2023-02-20 e 2023-02-21 como feriado de Carnaval, sem expediente",
+            "Contestação protocolada em 2023-03-20 (08)"
+          ],
+          "missing_evidence": [
+            "Nada resolve a divergência entre certidões; extrato de andamentos omite a citação; sem decisão sobre tempestividade",
+            "Lacunas de mérito idênticas a W-A"
+          ],
+          "contradictions": [
+            "06 (disponibilização em 2023-02-27) vs 07 (disponibilização em 2023-02-20): pela data de 06, contestação de 2023-03-20 tempestiva no limite (15º dia útil); pela data de 07, contagem a partir de 2023-02-22 (21/02 também feriado) levaria o vencimento a 2023-03-14 e a contestação estaria 4 dias úteis intempestiva",
+            "07-certidao-citacao.md (disponibilização e visualização em 2023-02-20) vs 17-calendario-forense.md (2023-02-20 é Carnaval, sem expediente) — ato judicial registrado em dia sem expediente"
+          ],
+          "implausible_or_leaking_documents": [
+            "A variante de W-C colide com o próprio calendário do acervo: citação eletrônica 'disponibilizada e visualizada' em feriado nacional — implausível e internamente contraditória",
+            "Divergência de exatamente uma semana entre certidões, calibrada para inverter a tempestividade; demais sinais de artificialidade de W-A"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    }
+  ]
+}

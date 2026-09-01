@@ -1,0 +1,69 @@
+{
+  "authority_label": "control",
+  "description": "Mundo coerente e completo, com sentença de procedência e datas de citação convergentes entre a certidão de disponibilização e a certidão de efetivação.",
+  "effective_spec_sha256": "881112faf681232ae31577294fb1c56fd7d4c88403629002276e6c4cdb8c27a6",
+  "expected_observations": [
+    {
+      "claim": "A autora alegou reclamação extrajudicial de 2021-06-02 e o registro de atendimento ATD-2021-7811 corrobora a data.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-A1",
+      "rubric": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+      "severity": "critical",
+      "state": "confirmed"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-A2",
+      "rubric": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-211",
+  "motif": "desfecho",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-211",
+    "F002": "3ª Vara Cível da Comarca Experimental de Luar",
+    "F003": "Xisto Rochas Ornamentais Ltda.",
+    "F004": "Zimbro Pedras Reconstituídas S.A.",
+    "F010": "2021-04-09",
+    "F011": "fornecimento e instalação de bancadas de pedra reconstituída",
+    "F012": "84.600,00",
+    "F013": "2021-04-29",
+    "F014": "vício de consentimento por informação técnica falsa sobre a resistência do material",
+    "F020": "2021-06-02",
+    "F021": "ATD-2021-7811",
+    "F030": "2022-02-11",
+    "F031": "anulação do negócio jurídico por vício de consentimento, com restituição de R$ 84.600,00",
+    "F040": "2022-03-03",
+    "F041": "2022-03-03",
+    "F042": "2022-03-24",
+    "F043": "as especificações técnicas foram entregues antes da contratação e não houve erro ou dolo",
+    "F050": "2022-04-20",
+    "F060": "2022-07-06",
+    "F061": "perícia técnica sobre a resistência das bancadas de pedra reconstituída instaladas na sede da autora",
+    "F070": "2023-02-01",
+    "F071": "a resistência real do material é inferior à informada na proposta que precedeu a contratação",
+    "F072": "2023-04-05",
+    "F080": "2023-09-13",
+    "F081": "anular o negócio jurídico e condenar a ré à restituição de R$ 84.600,00, valor correspondente ao preço pago pela autora conforme o contrato e a nota fiscal dos autos, com atualização monetária desde o ajuizamento, determinando a devolução das bancadas instaladas à ré",
+    "F090": "2023-09-20 — juntada da certidão de intimação da sentença",
+    "F091": "2024-01-05 10:40",
+    "F092": "2023-09-20",
+    "F093": "2022-02-11",
+    "F094": "1.549,61",
+    "F100": "no período de 2022-02-24 a 2022-03-24, houve expediente regular de segunda a sexta-feira, exceto em 2022-02-28 (Carnaval (segunda-feira)); 2022-03-01 (Carnaval (terça-feira)), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "anulação de negócio jurídico",
+    "F102": "2022-02-24 a 2022-03-24"
+  },
+  "schema_version": 1,
+  "world_id": "W-A"
+}

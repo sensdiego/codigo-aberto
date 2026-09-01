@@ -1,0 +1,69 @@
+{
+  "authority_label": "proof_missing",
+  "description": "A reclamação extrajudicial tempestiva aparece apenas como alegação da inicial; a resposta do serviço de atendimento não localizou registro correspondente.",
+  "effective_spec_sha256": "d2832109fb6db1efcf9555d833fa4ac43acb54dc8b1fb9027e4e2b7d834c0d19",
+  "expected_observations": [
+    {
+      "claim": "A reclamação de 2021-06-14 consta apenas da petição inicial; a busca no serviço de atendimento não localizou registro correspondente.",
+      "class": "fact",
+      "evidence": [
+        "04-registro-reclamacao.md",
+        "05-peticao-inicial.md"
+      ],
+      "id": "O-B1",
+      "rubric": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração.",
+      "severity": "critical",
+      "state": "alleged"
+    },
+    {
+      "claim": "Não há certidão de trânsito em julgado, acordo homologado ou recurso nos autos.",
+      "class": "absence",
+      "evidence": [
+        "15-extrato-andamentos.md"
+      ],
+      "id": "O-B2",
+      "rubric": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva.",
+      "severity": "major",
+      "state": "absent"
+    }
+  ],
+  "matter_id": "M-212",
+  "motif": "tensao_temporal",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-212",
+    "F002": "4ª Vara Cível da Comarca Experimental de Mangue",
+    "F003": "Sargaço Corretagem Náutica Ltda.",
+    "F004": "Solário Energia Distribuída S.A.",
+    "F010": "2021-04-20",
+    "F011": "intermediação comercial de contratos de energia distribuída",
+    "F012": "41.250,00",
+    "F013": "2021-05-10",
+    "F014": "não pagamento da comissão após o fechamento dos contratos intermediados",
+    "F020": "2021-06-14",
+    "F021": "ATD-2021-7812",
+    "F030": "2022-02-22",
+    "F031": "condenação da ré ao pagamento de comissão de corretagem de R$ 41.250,00",
+    "F040": "2022-03-14",
+    "F041": "2022-03-14",
+    "F042": "2022-04-04",
+    "F043": "a intermediação não foi concluída pela autora e os contratos foram fechados por canal direto",
+    "F050": "2022-05-02",
+    "F060": "2022-07-15",
+    "F061": "perícia documental e contábil sobre os contratos intermediados e a comissão ajustada",
+    "F070": "2023-02-10",
+    "F071": "os contratos intermediados foram efetivamente fechados por intermediação da autora, como demonstram o relatório de intermediação e a planilha de negócios concluídos, e a comissão ajustada não foi paga",
+    "F072": "2023-04-14",
+    "F080": "2023-09-22",
+    "F081": "condenar a ré ao pagamento de R$ 41.250,00 a título de comissão, valor correspondente à comissão ajustada no contrato de intermediação e faturada na nota fiscal dos autos, com atualização monetária desde o ajuizamento",
+    "F090": "2023-09-29 — juntada da certidão de intimação da sentença",
+    "F091": "2024-01-17 10:40",
+    "F092": "2023-09-29",
+    "F093": "2022-02-22",
+    "F094": "909,06",
+    "F100": "no período de 2022-03-07 a 2022-04-04, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F101": "cobrança de comissão de corretagem",
+    "F102": "2022-03-07 a 2022-04-04"
+  },
+  "schema_version": 1,
+  "world_id": "W-B"
+}

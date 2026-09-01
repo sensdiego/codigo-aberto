@@ -1,0 +1,33 @@
+{
+  "authority_tree_sha256": "c30843713440545adec93ca3cbb4bc98a6af30e47549c139d15f47c6f520cbbc",
+  "batch_id": "br-civel-conhecimento-calibrado-v1",
+  "batch_spec_sha256": "cca8826e5cf769df453d0365d5a3043120bc4e3670a1319d9d8be8fe0bf719a4",
+  "blind_review_receipt": "SEPARATE_FROM_STATIC_BUILD",
+  "blind_tree_sha256": "372e78c596323da955c317dc938af33662ff9d01eab4b1cffb284cbf65aaf454",
+  "checks": [
+    "12 unique synthetic matters",
+    "four motifs match the empirical allocation",
+    "three controlled worlds per matter",
+    "17 documents per world",
+    "all declared facts have visible locators",
+    "only the declared document changes in each mutation",
+    "no authority identifiers leak into blind files",
+    "yearly timeline offsets preserve the spine ordering",
+    "chronology mutation keeps the weekday timeliness split per matter",
+    "calendar marks every national holiday in each contestation window",
+    "the answer lands exactly on the shared holiday-aware court deadline"
+  ],
+  "document_count": 612,
+  "empirical_basis_sha256": "b081deaf588d065ec2889cd9d6f47ea4d4e14835c590aa6b999c31cd6ef47647",
+  "matter_count": 12,
+  "motif_counts": {
+    "defesa_revelia": 3,
+    "desfecho": 3,
+    "perfil_probatorio": 3,
+    "tensao_temporal": 3
+  },
+  "schema_version": 1,
+  "seed_spec_sha256": "af973dd726f93b9b65d9f2daf81517c858abfd5d908c83bc476d34eba8407f98",
+  "status": "STATIC_PASS",
+  "world_count": 36
+}

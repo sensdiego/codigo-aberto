@@ -1,0 +1,435 @@
+{
+  "batch_gate": "REDESENHAR",
+  "batch_reason": "O lote é tecnicamente coerente e recuperável: em todos os doze mundos a cadeia citação–contestação é auditável com o calendário fornecido, os mundos W-C isolam corretamente a divergência de datas (2024-03-12 no AR x 2024-03-05 na certidão), produzindo duas contagens com efeitos opostos, e os mundos W-B substituem o registro de reclamação por resultado negativo de busca, com ressalva bem redigida. Contudo, dois assuntos exigem retrabalho antes da construção: M-201 aloja cobranças indevidas e negativação na fórmula de 'vício apresentado pelo objeto instalado' e não junta prova alguma da anotação negativa, arbitrando dano moral idêntico ao preço; M-203 é internamente incompatível, pois o contrato consta 'pago à vista na assinatura' e sem cláusula de renovação, mas todo o mérito e a sentença tratam de renovação automática e cobranças sucessivas não documentadas. Há ainda dois sinais transversais de artificialidade a corrigir: identidade absoluta de datas e da razão custas/valor da causa (~1,87%) nos quatro assuntos e incoerência sistemática entre AR postal (documents/06) e certidão que refere 'retorno do mandado' (documents/07) em todos os mundos, o que enfraquece justamente o ponto normativo de L335.",
+  "matters": [
+    {
+      "decision_reason": "A espinha probatória é recuperável nos três mundos e o eixo de raciocínio funciona bem (W-C produz duas contagens em dias úteis com efeitos opostos: tempestiva se 2024-03-12, intempestiva se 2024-03-05; W-B transforma a reclamação em alegação não corroborada). Persistem, porém, defeitos de coerência substantiva do modelo: a inicial narra cobranças indevidas e anotação negativa como vício 'apresentado pelo objeto' (divisórias acústicas), o laudo contábil diz ter 'examinado o objeto', não há nenhum documento da anotação negativa e o dano moral arbitrado replica exatamente o preço do contrato sem critério. Recomenda-se ajustar a narrativa do vício e inserir prova mínima da negativação antes de construir.",
+      "matter_id": "M-201",
+      "proposed_gate": "REDESENHAR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Modalidade de citação: AR postal (documents/06-aviso-recebimento-citacao.md) x 'retorno do mandado' (documents/07-certidao-citacao.md)",
+            "Versões de fato antagônicas entre documents/08-contestacao.md e documents/11-laudo-pericial.md sobre a regularidade das cobranças e da anotação negativa"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/05-peticao-inicial.md descreve que 'o objeto, instalado em 2023-05-08, passou a apresentar cobranças indevidas... com anotação negativa': o vício narrado é de cobrança, não do bem instalado — sinal de preenchimento de modelo",
+            "documents/11-laudo-pericial.md afirma que perícia contábil sobre lançamentos foi feita 'examinando o objeto' (divisórias acústicas), mistura incoerente entre objeto físico e prova contábil",
+            "documents/17-calendario-forense.md abre a janela em 2024-03-05, data que não corresponde a nenhum marco deste mundo (citação em 2024-03-12), sugerindo calendário desenhado para variante com data alternativa"
+          ],
+          "material_findings": [
+            "Cronologia confirmada por documentos: contrato em 2023-04-18 (documents/01-contrato-prestacao.md), nota fiscal NF-SYN-1001 de mesma data e valor R$ 36.000,00 (documents/02-nota-fiscal.md), aceite sem ressalvas em 2023-05-08 (documents/03-termo-instalacao.md), reclamação ao canal da ré em 2023-06-12 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), citação em 2024-03-12 (documents/06-aviso-recebimento-citacao.md e documents/07-certidao-citacao.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Item 4 da task: não há divergência neste mundo — AR (documents/06) e certidão (documents/07) indicam 2024-03-12; logo há uma única contagem possível.",
+            "Contagem única em dias úteis com base em documents/17-calendario-forense.md (expediente regular de segunda a sexta entre 2024-03-05 e 2024-04-02, sem feriado ou suspensão) e no prazo de 15 dias de L335/L219/L224 (documents/16-nota-normativa.md): excluído 2024-03-12, os dias úteis são 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 28 e 29 de março e 1º e 2 de abril, encerrando-se o prazo em 2024-04-02; a contestação protocolada em 2024-04-02 (documents/08-contestacao.md) é tempestiva no último dia.",
+            "Reclamação extrajudicial: confirmada por registro do próprio canal da ré, protocolo ATD-2023-7801, assunto idêntico ao narrado na inicial (documents/04-registro-reclamacao.md x documents/05-peticao-inicial.md); o documento registra encaminhamento à assistência técnica, mas não registra resposta, de modo que a afirmação de que ficou 'sem solução' permanece apenas alegada.",
+            "Documentos de mérito: 01-contrato-prestacao.md, 02-nota-fiscal.md, 03-termo-instalacao.md, 04-registro-reclamacao.md, 05-peticao-inicial.md, 08-contestacao.md, 09-replica.md, 11-laudo-pericial.md, 12-sentenca.md. Burocracia de andamento (não é prova do mérito): 06-aviso-recebimento-citacao.md, 07-certidao-citacao.md, 13-certidao-intimacao.md, 14-comprovante-custas.md, 15-extrato-andamentos.md; 10-despacho-saneador.md é ato decisório de instrução.",
+            "Classificação material: confirmados o contrato, o valor, o aceite sem ressalvas, o registro da reclamação e todos os protocolos judiciais; alegado o dano moral e a existência de anotação negativa (só na narrativa de documents/05-peticao-inicial.md); contraditório o ponto de fato entre documents/08-contestacao.md (cobranças devidas e anotação regular) e documents/11-laudo-pericial.md (cobranças sem suporte contratual e posteriores ao aceite), resolvido pelo juízo em documents/12-sentenca.md.",
+            "Incoerência de modalidade citatória: documents/06 é aviso de recebimento postal, enquanto documents/07 certifica citação 'conforme anotação de retorno do mandado' (oficial de justiça); como L335 (documents/16-nota-normativa.md) condiciona o termo inicial ao modo da citação, a divergência de modalidade é relevante ainda que as datas coincidam.",
+            "A história processual não contém trânsito em julgado, recurso, acordo, cumprimento de sentença ou qualquer ato posterior a 2025-09-29, embora o extrato tenha sido emitido em 2026-01-15 (documents/15-extrato-andamentos.md); a ausência não autoriza inferir estabilidade da sentença.",
+            "O extrato de andamentos (documents/15) salta de 2024-02-20 para 2024-04-02 e não registra expedição/juntada do AR nem a certidão de citação, de modo que não serve de reforço à cadeia citatória.",
+            "A condenação por dano moral em R$ 36.000,00 (documents/12-sentenca.md) coincide exatamente com o preço do contrato (documents/01/02) e o extrato do julgado não expõe critério de arbitramento; o valor não é recalculável com o material disponível."
+          ],
+          "missing_evidence": [
+            "Comprovante de pagamento do preço: a nota fiscal (documents/02) está apenas 'emitida' e não há recibo ou extrato bancário",
+            "Documento que comprove a anotação negativa alegada (extrato de órgão de proteção ao crédito) e as faturas/cobranças posteriores ao aceite",
+            "Laudo pericial integral, quesitos das partes e manifestação das partes sobre o laudo de 2025-04-14 (citada em documents/12 e documents/15, mas não juntada em documents/)",
+            "Mandado de citação e certidão do oficial que esclareçam a modalidade da citação (postal x mandado)",
+            "Calendário forense posterior a 2024-04-02, indispensável para qualquer aferição do prazo da réplica",
+            "Certidão de trânsito em julgado ou de interposição de recurso"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Tensão entre a alegação de reclamação extrajudicial em 2023-06-12 (documents/05-peticao-inicial.md) e o resultado negativo de busca (documents/04-registro-reclamacao.md), sem que qualquer peça a resolva",
+            "Modalidade de citação divergente entre documents/06-aviso-recebimento-citacao.md e documents/07-certidao-citacao.md"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/05-peticao-inicial.md narra que o objeto instalado 'passou a apresentar' cobranças indevidas e anotação negativa — descrição de modelo incompatível com o objeto (divisórias acústicas)",
+            "documents/11-laudo-pericial.md descreve perícia contábil realizada 'examinando o objeto' físico",
+            "documents/17-calendario-forense.md inicia em 2024-03-05, data sem correspondência com os marcos deste mundo"
+          ],
+          "material_findings": [
+            "Mesma cronologia documental do processo BR-CIV-CON-201, salvo o documento de atendimento: contrato 2023-04-18 (documents/01-contrato-prestacao.md), NF 2023-04-18 (documents/02-nota-fiscal.md), aceite 2023-05-08 (documents/03-termo-instalacao.md), inicial e custas 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), citação 2024-03-12 (documents/06 e documents/07), contestação 2024-04-02 (documents/08-contestacao.md), réplica 2024-04-30 (documents/09), saneador 2024-07-15 (documents/10), laudo 2025-02-10 (documents/11), sentença 2025-09-22 (documents/12), intimação 2025-09-29 (documents/13).",
+            "Item 4: AR e certidão indicam a mesma data (2024-03-12), logo há contagem única; pelo calendário de documents/17-calendario-forense.md e por L219/L224/L335 (documents/16-nota-normativa.md), o 15º dia útil após 2024-03-12 é 2024-04-02, tornando tempestiva a contestação protocolada nessa data (documents/08-contestacao.md).",
+            "Reclamação extrajudicial: NÃO confirmada. documents/04-registro-reclamacao.md é resposta de busca que informa 'não foi localizado registro de reclamação' para o protocolo ATD-2023-7801 e o contato de 2023-06-12; o próprio documento ressalva que não afirma inexistência de contato por outro canal ou com outros dados. A alegação de documents/05-peticao-inicial.md permanece, portanto, alegada e não corroborada — resultado negativo de busca não equivale a prova de inexistência.",
+            "Nenhuma peça posterior enfrenta o resultado negativo de busca: documents/08-contestacao.md não invoca ausência de reclamação, e documents/12-sentenca.md julga procedente sem qualquer referência ao ponto — lacuna de coerência interna do conjunto.",
+            "Separação de camadas: mérito em 01, 02, 03, 05, 08, 09, 11 e 12; andamento/burocracia em 06, 07, 13, 14 e 15; 04-registro-reclamacao.md é prova negativa de mérito com alcance limitado ao critério de busca informado.",
+            "Contraditório de mérito preservado: documents/08-contestacao.md nega as cobranças indevidas e a irregularidade da anotação, e documents/11-laudo-pericial.md conclui em sentido oposto; o ônus probatório segue L373 (documents/16-nota-normativa.md).",
+            "Divergência de modalidade citatória entre AR postal (documents/06) e certidão que remete a 'retorno do mandado' (documents/07), relevante para o termo inicial segundo L335.",
+            "Não constam trânsito em julgado, recurso, acordo ou cumprimento de sentença; o extrato emitido em 2026-01-15 encerra-se em 2025-09-29 (documents/15-extrato-andamentos.md), sem que se possa inferir o desfecho."
+          ],
+          "missing_evidence": [
+            "Prova documental do contato extrajudicial alegado (protocolo, e-mail, gravação) diante do resultado negativo de documents/04-registro-reclamacao.md",
+            "Comprovante de pagamento do preço e das cobranças/anotação negativa alegadas",
+            "Manifestação das partes sobre o laudo (2025-04-14) e laudo integral",
+            "Mandado de citação/esclarecimento da modalidade citatória",
+            "Certidão de trânsito em julgado ou de recurso"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data da citação: 2024-03-12 (documents/06-aviso-recebimento-citacao.md) x 2024-03-05 (documents/07-certidao-citacao.md)",
+            "Modalidade de citação: AR postal (documents/06) x retorno de mandado (documents/07)",
+            "Fatos de mérito antagônicos entre documents/08-contestacao.md e documents/11-laudo-pericial.md"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/05-peticao-inicial.md descreve cobranças indevidas como vício 'apresentado pelo objeto' instalado — artefato de modelo",
+            "documents/11-laudo-pericial.md fala em perícia contábil feita 'examinando o objeto' físico",
+            "documents/12-sentenca.md julga procedente sem mencionar a divergência das datas de citação, o que é pouco verossímil em processo com contestação no limite do prazo"
+          ],
+          "material_findings": [
+            "Cronologia igual à das demais variantes quanto a contrato (documents/01), NF (documents/02), aceite (documents/03), reclamação registrada em 2023-06-12 com protocolo ATD-2023-7801 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05; documents/14), contestação em 2024-04-02 (documents/08), réplica em 2024-04-30 (documents/09), saneador em 2024-07-15 (documents/10), laudo em 2025-02-10 (documents/11), sentença em 2025-09-22 (documents/12) e intimação em 2025-09-29 (documents/13).",
+            "DIVERGÊNCIA CENTRAL (item 4): o AR informa recebimento em 2024-03-12 (documents/06-aviso-recebimento-citacao.md) e a certidão certifica citação em 2024-03-05 (documents/07-certidao-citacao.md). O extrato (documents/15) não registra o ato citatório e não permite desempate.",
+            "Contagem A — citação em 2024-03-12 (AR): pelo calendário de documents/17-calendario-forense.md e por L219/L224/L335 (documents/16-nota-normativa.md), excluído o dia do começo, os 15 dias úteis são 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 28 e 29/03 e 1º e 2/04, vencendo em 2024-04-02; a contestação de 2024-04-02 (documents/08) seria TEMPESTIVA, no último dia.",
+            "Contagem B — citação em 2024-03-05 (certidão): os 15 dias úteis são 6, 7, 8, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 25 e 26/03, vencendo em 2024-03-26; a contestação de 2024-04-02 seria INTEMPESTIVA, protocolada cinco dias úteis após o termo final.",
+            "O resultado sobre tempestividade é, portanto, indeterminado com o material disponível: ambos os cenários devem ser reportados, sem eleger data por suposição; nenhuma peça dos autos (inclusive documents/12-sentenca.md) trata da tempestividade da contestação nem certifica qual data prevaleceu.",
+            "Agrava a indeterminação a incoerência de modalidade: documents/06 é AR postal e documents/07 refere 'anotação de retorno do mandado'; como L335 vincula o termo inicial ao modo de citação, a divergência é de data e de forma.",
+            "Reclamação extrajudicial confirmada pelo registro do canal da própria ré (documents/04-registro-reclamacao.md), com assunto coincidente com a inicial; a ausência de solução, contudo, é apenas alegada (documents/05-peticao-inicial.md).",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; burocracia de andamento em 06, 07, 13, 14 e 15 — esta última só é relevante à contagem de prazo, não ao mérito.",
+            "Não há trânsito em julgado, recurso, acordo ou execução no conjunto; o extrato consultado em 2026-01-15 termina em 2025-09-29 (documents/15-extrato-andamentos.md).",
+            "O calendário forense (documents/17) cobre exatamente 2024-03-05 a 2024-04-02, permitindo as duas contagens sem suposição de feriados."
+          ],
+          "missing_evidence": [
+            "Mandado de citação, certidão do oficial de justiça e cópia integral do AR para dirimir a divergência 2024-03-05 x 2024-03-12",
+            "Certidão cartorária ou decisão que declare a tempestividade/intempestividade da contestação",
+            "Comprovante de pagamento do preço; documentos das cobranças e da anotação negativa",
+            "Laudo integral, quesitos e manifestação de 2025-04-14",
+            "Certidão de trânsito em julgado ou de recurso"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "O conjunto é internamente recuperável e oferece eixos analíticos ricos e verificáveis: contagem única e tempestividade no limite em W-A/W-B, duas contagens com efeitos opostos em W-C (tempestiva pelo AR de 2024-03-12; intempestiva pela certidão de 2024-03-05), prova negativa de reclamação em W-B e descompasso entre a causa de pedir (mercadoria perdida) e a fundamentação do quantum (preço pago) na sentença. As fragilidades — ausência de quantificação do dano e incoerência de modalidade citatória — são achados legítimos e detectáveis, não defeitos que impeçam a construção.",
+      "matter_id": "M-202",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Base do dano material: 'mercadoria perdida' no pedido (documents/05-peticao-inicial.md) x 'preço pago' na condenação (documents/12-sentenca.md), com valor idêntico",
+            "Modalidade citatória: AR postal (documents/06-aviso-recebimento-citacao.md) x retorno de mandado (documents/07-certidao-citacao.md)",
+            "Mau uso alegado (documents/08-contestacao.md) x defeito de fabricação anterior à instalação (documents/11-laudo-pericial.md)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Coincidência exata entre o valor da mercadoria perdida alegada e o preço do contrato (documents/05 x documents/01), sem qualquer memória de cálculo",
+            "documents/17-calendario-forense.md inicia em 2024-03-05, data estranha aos marcos deste mundo (citação em 2024-03-12)"
+          ],
+          "material_findings": [
+            "Cronologia sustentada por: contrato de câmaras frias em 2023-04-18 por R$ 58.400,00 (documents/01-contrato-prestacao.md), NF-SYN-1002 de mesma data e valor (documents/02-nota-fiscal.md), aceite sem ressalvas em 2023-05-08 (documents/03-termo-instalacao.md), reclamação registrada em 2023-06-12, protocolo ATD-2023-7802 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), citação em 2024-03-12 (documents/06-aviso-recebimento-citacao.md; documents/07-certidao-citacao.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Item 4: não há divergência de datas entre AR e certidão (ambas 2024-03-12), de modo que só cabe uma contagem.",
+            "Contagem em dias úteis (L219/L224/L335 de documents/16-nota-normativa.md, com o calendário de documents/17-calendario-forense.md, que exclui feriado ou suspensão entre 2024-03-05 e 2024-04-02): excluído 2024-03-12, o 15º dia útil é 2024-04-02; a contestação protocolada em 2024-04-02 (documents/08-contestacao.md) é tempestiva, no último dia do prazo.",
+            "Cadeia contestação–laudo–sentença (foco do item 10): a ré alegou mau uso e ausência de comprovação da perda (documents/08-contestacao.md); o laudo concluiu por defeito de fabricação do compressor anterior à instalação (documents/11-laudo-pericial.md), afastando o mau uso, mas NÃO se pronunciou sobre a existência ou o valor da mercadoria perdida; a sentença julgou procedente (documents/12-sentenca.md).",
+            "Descompasso material relevante: o pedido é de ressarcimento de R$ 58.400,00 'correspondentes à mercadoria perdida' (documents/05-peticao-inicial.md), enquanto a sentença condena no mesmo valor declarando-o 'correspondente ao preço pago pela autora conforme o contrato e a nota fiscal' (documents/12-sentenca.md) — dano material deferido com base diversa da causa de pedir e sem prova de quantificação da mercadoria.",
+            "Reclamação extrajudicial confirmada pelo registro do canal da própria ré (documents/04-registro-reclamacao.md), com assunto idêntico ao da inicial; a afirmação de que ficou 'sem solução' é apenas alegada, pois o registro indica encaminhamento à assistência técnica sem desfecho.",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; andamento em 06, 07, 13, 14 e 15; o comprovante de custas (documents/14) prova apenas recolhimento, não o dano.",
+            "A incoerência de modalidade citatória persiste: AR postal (documents/06) x 'retorno do mandado' (documents/07), o que importa ao termo inicial conforme L335.",
+            "Não constam trânsito em julgado, recurso, acordo ou cumprimento; o extrato consultado em 2026-01-15 encerra-se em 2025-09-29 (documents/15-extrato-andamentos.md), sem registro dos atos citatórios."
+          ],
+          "missing_evidence": [
+            "Prova da existência, quantidade e valor da mercadoria perdida (inventário, notas de compra, laudo de perda) — inexistente no conjunto",
+            "Comprovante de pagamento do preço (a NF consta apenas como 'emitida')",
+            "Laudo integral e manifestação das partes de 2025-04-14, referida em documents/12 e documents/15 mas não juntada",
+            "Mandado/certidão que esclareça a modalidade de citação",
+            "Certidão de trânsito em julgado ou interposição de recurso"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Alegação de reclamação em 2023-06-12 (documents/05-peticao-inicial.md) x resultado negativo de busca (documents/04-registro-reclamacao.md)",
+            "Fundamento do valor: mercadoria perdida (documents/05) x preço pago (documents/12-sentenca.md)",
+            "Modalidade citatória divergente (documents/06 x documents/07)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Valor da perda idêntico ao preço do contrato, sem memória de cálculo (documents/05 x documents/01)",
+            "documents/17-calendario-forense.md abre em 2024-03-05, data sem correspondência neste mundo"
+          ],
+          "material_findings": [
+            "Cronologia idêntica quanto aos marcos documentais: documents/01-contrato-prestacao.md (2023-04-18, R$ 58.400,00), documents/02-nota-fiscal.md, documents/03-termo-instalacao.md (2023-05-08), documents/05-peticao-inicial.md e documents/14-comprovante-custas.md (2024-02-20), documents/06 e documents/07 (citação em 2024-03-12), documents/08-contestacao.md (2024-04-02), documents/09-replica.md (2024-04-30), documents/10-despacho-saneador.md (2024-07-15), documents/11-laudo-pericial.md (2025-02-10), documents/12-sentenca.md (2025-09-22), documents/13-certidao-intimacao.md (2025-09-29).",
+            "Item 4: AR e certidão convergem em 2024-03-12; contagem única. Com o calendário de documents/17-calendario-forense.md e L219/L224/L335 (documents/16-nota-normativa.md), o 15º dia útil vence em 2024-04-02, sendo tempestiva a contestação protocolada nessa data (documents/08-contestacao.md).",
+            "Reclamação extrajudicial não confirmada: documents/04-registro-reclamacao.md é resposta de busca com resultado 'não foi localizado registro de reclamação' para o protocolo ATD-2023-7802 e o contato de 2023-06-12, com ressalva expressa de que nada afirma sobre outros canais ou dados; a alegação de documents/05-peticao-inicial.md permanece meramente alegada.",
+            "Cadeia contestação–laudo–sentença: mau uso e ausência de prova da perda (documents/08-contestacao.md) versus defeito de fabricação do compressor anterior à instalação (documents/11-laudo-pericial.md); o laudo não quantifica perda de mercadoria, e a sentença condena em R$ 58.400,00 qualificando-os como 'preço pago' (documents/12-sentenca.md), embora o pedido os descreva como valor da mercadoria perdida (documents/05-peticao-inicial.md).",
+            "Nenhuma peça posterior discute o resultado negativo da busca de atendimento, embora a defesa e o julgado tivessem espaço para fazê-lo (documents/08; documents/12).",
+            "Separação de camadas: mérito em 01, 02, 03, 05, 08, 09, 11 e 12; documents/04 é prova negativa limitada; andamento em 06, 07, 13, 14 e 15.",
+            "Incoerência de modalidade citatória entre AR postal (documents/06) e certidão que menciona retorno de mandado (documents/07), relevante ao termo inicial (L335).",
+            "Ausência de trânsito em julgado, recurso, acordo ou cumprimento; extrato consultado em 2026-01-15 termina em 2025-09-29 (documents/15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Comprovação do contato extrajudicial alegado, diante do resultado negativo de documents/04-registro-reclamacao.md",
+            "Prova e quantificação da mercadoria perdida",
+            "Comprovante de pagamento do preço",
+            "Laudo integral, quesitos e manifestação de 2025-04-14",
+            "Documento que esclareça a modalidade da citação",
+            "Certidão de trânsito em julgado ou recurso"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data de citação: 2024-03-12 (documents/06-aviso-recebimento-citacao.md) x 2024-03-05 (documents/07-certidao-citacao.md)",
+            "Modalidade: AR postal (documents/06) x retorno de mandado (documents/07)",
+            "Base do valor condenatório: mercadoria perdida (documents/05) x preço pago (documents/12)",
+            "Mau uso (documents/08) x defeito de fabricação anterior à instalação (documents/11)"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/12-sentenca.md julga sem qualquer referência à contestação protocolada possivelmente fora do prazo pela contagem da certidão",
+            "Coincidência exata entre valor da perda e preço contratado (documents/05 x documents/01)"
+          ],
+          "material_findings": [
+            "Marcos documentais: contrato e NF em 2023-04-18 por R$ 58.400,00 (documents/01-contrato-prestacao.md; documents/02-nota-fiscal.md), aceite em 2023-05-08 (documents/03-termo-instalacao.md), reclamação registrada em 2023-06-12 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Divergência de citação (item 4): AR indica recebimento em 2024-03-12 (documents/06-aviso-recebimento-citacao.md); a certidão certifica citação em 2024-03-05 (documents/07-certidao-citacao.md). O extrato (documents/15-extrato-andamentos.md) não lista o ato citatório e não resolve o conflito.",
+            "Contagem A (2024-03-12, AR): 15 dias úteis, excluído o dia do começo e conforme documents/17-calendario-forense.md — 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 28 e 29/03 e 1º e 2/04 —, vencimento em 2024-04-02; contestação de 2024-04-02 TEMPESTIVA no último dia.",
+            "Contagem B (2024-03-05, certidão): 6, 7, 8, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 25 e 26/03, vencimento em 2024-03-26; contestação de 2024-04-02 INTEMPESTIVA por cinco dias úteis.",
+            "Resultado sobre tempestividade indeterminado; nenhum documento (inclusive documents/12-sentenca.md) enfrenta a divergência ou certifica a data prevalente.",
+            "Cadeia contestação–laudo–sentença: mau uso alegado (documents/08-contestacao.md) foi afastado pelo laudo, que apontou defeito de fabricação do compressor anterior à instalação (documents/11-laudo-pericial.md); a sentença condenou em R$ 58.400,00 descritos como 'preço pago' (documents/12-sentenca.md), embora o pedido os vinculasse à mercadoria perdida (documents/05-peticao-inicial.md), sem prova de quantificação.",
+            "Reclamação extrajudicial confirmada em documents/04-registro-reclamacao.md (protocolo ATD-2023-7802), com desfecho não documentado.",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; andamento em 06, 07, 13, 14 e 15.",
+            "Nada nos autos indica trânsito em julgado, recurso, acordo ou cumprimento de sentença até a consulta de 2026-01-15 (documents/15-extrato-andamentos.md).",
+            "O calendário de documents/17 cobre exatamente 2024-03-05 a 2024-04-02, viabilizando as duas contagens sem invenção de feriados."
+          ],
+          "missing_evidence": [
+            "Mandado e certidão do oficial que expliquem a divergência 2024-03-05 x 2024-03-12 e a modalidade citatória",
+            "Decisão ou certidão sobre tempestividade da contestação",
+            "Prova e quantificação da mercadoria perdida",
+            "Comprovante de pagamento do preço",
+            "Laudo integral e manifestação de 2025-04-14",
+            "Certidão de trânsito em julgado ou de recurso"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "Os eixos processuais funcionam (contagem única com vencimento em 2024-04-02 em W-A/W-B; dupla contagem em W-C, tempestiva pelo AR e intempestiva pela certidão de 2024-03-05; prova negativa de reclamação em W-B). O mérito, porém, é internamente incompatível: o contrato juntado prevê preço 'pago à vista na assinatura' e não contém cláusula de renovação automática, mas a inicial, a defesa, o laudo e a sentença giram em torno de cobranças de renovação e de cláusula abusiva não documentada, e a restituição corresponde ao preço integral sem relação com as cobranças alegadas. Recomenda-se reescrever o extrato contratual (plano com mensalidades e cláusula de renovação) e juntar as cobranças antes de construir.",
+      "matter_id": "M-203",
+      "proposed_gate": "REDESENHAR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Contrato com preço 'pago à vista na assinatura' (documents/01-contrato-prestacao.md) x narrativa de renovação automática com cobranças sucessivas (documents/05-peticao-inicial.md) e cláusula destacada de renovação alegada pela ré (documents/08-contestacao.md)",
+            "Modalidade citatória: documents/06-aviso-recebimento-citacao.md x documents/07-certidao-citacao.md",
+            "Existência de cláusula de renovação afirmada pela ré (documents/08) x ausência dessa cláusula no extrato contratual juntado (documents/01)"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/05-peticao-inicial.md descreve 'renovação automática... após pedido de cancelamento' como vício que o objeto 'passou a apresentar' depois de instalado — encaixe forçado de modelo",
+            "documents/11-laudo-pericial.md diz examinar 'o objeto descrito como fornecimento e instalação de sistema de assinaturas digitais' em perícia contábil-documental",
+            "documents/17-calendario-forense.md começa em 2024-03-05, data alheia aos marcos deste mundo"
+          ],
+          "material_findings": [
+            "Cronologia: contrato em 2023-04-18 por R$ 22.750,00 (documents/01-contrato-prestacao.md), NF-SYN-1003 de mesma data e valor (documents/02-nota-fiscal.md), aceite sem ressalvas em 2023-05-08 (documents/03-termo-instalacao.md), reclamação registrada em 2023-06-12, protocolo ATD-2023-7803 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), citação em 2024-03-12 (documents/06-aviso-recebimento-citacao.md; documents/07-certidao-citacao.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Item 4: AR e certidão apontam a mesma data (2024-03-12), logo há uma só contagem. Aplicando L219/L224/L335 (documents/16-nota-normativa.md) ao calendário de documents/17-calendario-forense.md, o 15º dia útil após 2024-03-12 é 2024-04-02, sendo tempestiva a contestação protocolada em 2024-04-02 (documents/08-contestacao.md).",
+            "Cadeia réplica–saneador–sentença (item 10): a réplica requereu perícia contábil e documental sobre cobranças posteriores ao cancelamento (documents/09-replica.md); o saneador deferiu exatamente essa prova (documents/10-despacho-saneador.md); o laudo concluiu que tais cobranças não têm suporte contratual (documents/11-laudo-pericial.md); a sentença declarou abusiva a renovação automática e condenou à restituição integral de R$ 22.750,00 (documents/12-sentenca.md).",
+            "Lacuna material relevante nessa cadeia: o extrato contratual (documents/01-contrato-prestacao.md) não contém cláusula de renovação automática nem menciona mensalidades — descreve preço 'pago à vista na assinatura'; a cláusula declarada abusiva em documents/12-sentenca.md não está documentada nos autos, e o laudo (documents/11) refere-se a cobranças posteriores ao cancelamento sem exibi-las.",
+            "Descompasso de quantum: a condenação restitui o preço integral do contrato (R$ 22.750,00), enquanto o dano narrado consiste em cobranças de renovação posteriores ao pedido de cancelamento (documents/05-peticao-inicial.md), cujo valor não é apurado em nenhum documento.",
+            "Reclamação extrajudicial confirmada pelo registro do canal da ré, com assunto idêntico ao da inicial (documents/04-registro-reclamacao.md); a ausência de solução é apenas alegada.",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; andamento em 06, 07, 13, 14 e 15; documents/10 é decisão de instrução, não prova de fato.",
+            "Incoerência de modalidade citatória: AR postal (documents/06) x 'retorno do mandado' (documents/07), com impacto potencial no termo inicial (L335).",
+            "Não há trânsito em julgado, recurso, acordo ou cumprimento; extrato emitido em 2026-01-15 encerra em 2025-09-29 (documents/15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Instrumento contratual completo com a cláusula de renovação automática e o canal de cancelamento",
+            "Prova do pedido de cancelamento (data, canal, protocolo) e das faturas emitidas depois dele",
+            "Memória de cálculo do valor restituído e sua relação com as cobranças indevidas",
+            "Laudo integral, quesitos e manifestação das partes de 2025-04-14",
+            "Esclarecimento da modalidade de citação",
+            "Certidão de trânsito em julgado ou recurso"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Reclamação alegada em 2023-06-12 (documents/05-peticao-inicial.md) x busca sem registro (documents/04-registro-reclamacao.md)",
+            "Preço pago à vista na assinatura (documents/01) x cobranças sucessivas de renovação automática (documents/05; documents/08)",
+            "Modalidade citatória divergente (documents/06 x documents/07)"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/05-peticao-inicial.md aloja a prática de renovação automática na fórmula de 'vício apresentado pelo objeto instalado'",
+            "documents/11-laudo-pericial.md descreve perícia contábil-documental 'examinando o objeto' instalado",
+            "documents/17-calendario-forense.md com janela iniciada em 2024-03-05, sem correspondência neste mundo"
+          ],
+          "material_findings": [
+            "Marcos documentais idênticos: documents/01-contrato-prestacao.md (2023-04-18, R$ 22.750,00), documents/02-nota-fiscal.md, documents/03-termo-instalacao.md (2023-05-08), documents/05-peticao-inicial.md e documents/14-comprovante-custas.md (2024-02-20), documents/06 e documents/07 (citação em 2024-03-12), documents/08-contestacao.md (2024-04-02), documents/09-replica.md (2024-04-30), documents/10-despacho-saneador.md (2024-07-15), documents/11-laudo-pericial.md (2025-02-10), documents/12-sentenca.md (2025-09-22), documents/13-certidao-intimacao.md (2025-09-29).",
+            "Item 4: sem divergência (AR e certidão em 2024-03-12); contagem única. Pelo calendário de documents/17-calendario-forense.md e L219/L224/L335 (documents/16-nota-normativa.md), o prazo de 15 dias úteis vence em 2024-04-02, tornando tempestiva a contestação de 2024-04-02 (documents/08-contestacao.md).",
+            "Reclamação extrajudicial não corroborada: documents/04-registro-reclamacao.md registra que não foi localizado registro para o protocolo ATD-2023-7803 e o contato de 2023-06-12, ressalvando que nada afirma sobre outros canais; assim, a afirmação de documents/05-peticao-inicial.md fica no plano do alegado.",
+            "Cadeia réplica–saneador–sentença coerente em forma (documents/09 → documents/10 → documents/11 → documents/12), mas a cláusula de renovação automática declarada abusiva na sentença não consta do extrato contratual juntado (documents/01-contrato-prestacao.md), que registra preço 'pago à vista na assinatura'.",
+            "A restituição de R$ 22.750,00 (documents/12-sentenca.md) equivale ao preço integral do contrato, enquanto o prejuízo narrado são as cobranças posteriores ao cancelamento (documents/05-peticao-inicial.md), sem apuração de valor em qualquer peça.",
+            "Nenhuma peça posterior enfrenta a ausência de registro da reclamação (documents/08-contestacao.md e documents/12-sentenca.md são silentes).",
+            "Separação de camadas: mérito em 01, 02, 03, 05, 08, 09, 11 e 12; prova negativa em 04; andamento em 06, 07, 13, 14 e 15.",
+            "Incoerência entre AR postal (documents/06) e certidão que remete a retorno de mandado (documents/07).",
+            "Ausentes trânsito em julgado, recurso, acordo e cumprimento; extrato consultado em 2026-01-15 encerra-se em 2025-09-29 (documents/15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Prova do contato extrajudicial diante do resultado negativo de documents/04-registro-reclamacao.md",
+            "Cláusula contratual de renovação automática e prova do pedido de cancelamento",
+            "Extrato das cobranças posteriores e memória de cálculo do valor restituído",
+            "Laudo integral e manifestação de 2025-04-14",
+            "Esclarecimento da modalidade citatória",
+            "Certidão de trânsito em julgado ou recurso"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data de citação: documents/06-aviso-recebimento-citacao.md (2024-03-12) x documents/07-certidao-citacao.md (2024-03-05)",
+            "Modalidade: AR postal x retorno de mandado (documents/06 x documents/07)",
+            "Pagamento à vista na assinatura (documents/01-contrato-prestacao.md) x cobranças sucessivas de renovação (documents/05; documents/08; documents/11)"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/12-sentenca.md declara abusiva cláusula que não figura em nenhum documento do conjunto",
+            "documents/05-peticao-inicial.md descreve prática comercial abusiva como vício do objeto instalado — artefato de modelo",
+            "documents/11-laudo-pericial.md refere exame 'do objeto' em perícia contábil-documental"
+          ],
+          "material_findings": [
+            "Marcos: contrato e NF em 2023-04-18 por R$ 22.750,00 (documents/01-contrato-prestacao.md; documents/02-nota-fiscal.md), aceite em 2023-05-08 (documents/03-termo-instalacao.md), reclamação registrada em 2023-06-12 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Divergência de datas de citação (item 4): 2024-03-12 no AR (documents/06-aviso-recebimento-citacao.md) e 2024-03-05 na certidão (documents/07-certidao-citacao.md); o extrato (documents/15) não registra o ato e não desempata.",
+            "Contagem A (AR, 2024-03-12): 15 dias úteis conforme documents/17-calendario-forense.md e L219/L224 — 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 28 e 29/03 e 1º e 2/04 — vencimento em 2024-04-02; contestação de 2024-04-02 TEMPESTIVA no último dia.",
+            "Contagem B (certidão, 2024-03-05): 6, 7, 8, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 25 e 26/03 — vencimento em 2024-03-26; contestação de 2024-04-02 INTEMPESTIVA por cinco dias úteis.",
+            "A tempestividade permanece indeterminada; nenhum documento decide a questão, e documents/12-sentenca.md sequer a menciona.",
+            "Cadeia réplica–saneador–sentença: pedido de perícia contábil e documental (documents/09-replica.md) deferido no saneador (documents/10-despacho-saneador.md), laudo concluindo pela ausência de suporte contratual das cobranças posteriores ao cancelamento (documents/11-laudo-pericial.md) e sentença declarando abusiva a renovação automática com restituição integral do preço (documents/12-sentenca.md), sem que a cláusula ou as cobranças estejam documentadas.",
+            "Reclamação extrajudicial confirmada por documents/04-registro-reclamacao.md (protocolo ATD-2023-7803), sem prova de resposta ou de solução.",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; andamento em 06, 07, 13, 14 e 15.",
+            "Não constam trânsito em julgado, recurso, acordo ou cumprimento até a consulta de 2026-01-15 (documents/15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Mandado/certidão do oficial que expliquem a divergência 2024-03-05 x 2024-03-12 e a modalidade citatória",
+            "Pronunciamento judicial sobre tempestividade da contestação",
+            "Cláusula de renovação automática, prova do pedido de cancelamento e das cobranças subsequentes",
+            "Memória de cálculo do valor restituído",
+            "Laudo integral e manifestação de 2025-04-14",
+            "Certidão de trânsito em julgado ou recurso"
+          ],
+          "realism_1_to_5": 3,
+          "world_id": "W-C"
+        }
+      ]
+    },
+    {
+      "decision_reason": "O assunto entrega com clareza o eixo pedido no item 10: em W-A e W-B há uma única contagem (vencimento no 15º dia útil, 2024-04-02, com contestação tempestiva no limite) e em W-C duas contagens completas e verificáveis pelo calendário juntado (tempestiva se 2024-03-12; intempestiva por cinco dias úteis se 2024-03-05). Em W-B a prova negativa de atendimento cria tensão útil com a defesa que pressupõe a reclamação. As falhas apontadas (modalidade citatória incoerente, ausência da cláusula de tolerância, silêncio da sentença sobre a divergência) são achados legítimos e não comprometem a recuperabilidade do corpus.",
+      "matter_id": "M-204",
+      "proposed_gate": "CONSTRUIR",
+      "worlds": [
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Modalidade citatória: documents/06-aviso-recebimento-citacao.md (AR postal) x documents/07-certidao-citacao.md (retorno de mandado)",
+            "Tolerância técnica: documents/08-contestacao.md (dentro do padrão) x documents/11-laudo-pericial.md (excede a tolerância contratada)"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/17-calendario-forense.md delimita a janela em 2024-03-05 a 2024-04-02, embora a citação neste mundo seja de 2024-03-12 — indício de calendário desenhado para variante com data diversa",
+            "documents/08-contestacao.md invoca intempestividade da reclamação extrajudicial sem que exista, na nota normativa autorizada, regra de prazo aplicável"
+          ],
+          "material_findings": [
+            "Cronologia: contrato de linha de tingimento contínuo em 2023-04-18 por R$ 182.000,00 (documents/01-contrato-prestacao.md), NF-SYN-1004 de mesma data e valor (documents/02-nota-fiscal.md), aceite sem ressalvas em 2023-05-08 (documents/03-termo-instalacao.md), reclamação registrada em 2023-06-12, protocolo ATD-2023-7804 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), citação em 2024-03-12 (documents/06-aviso-recebimento-citacao.md; documents/07-certidao-citacao.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Item 4: AR e certidão convergem em 2024-03-12; há apenas uma contagem possível.",
+            "Cadeia certidão–contestação–calendário (item 10): pelo calendário de documents/17-calendario-forense.md (expediente de segunda a sexta entre 2024-03-05 e 2024-04-02, sem feriado ou suspensão) e por L219/L224/L335 (documents/16-nota-normativa.md), excluído 2024-03-12 contam-se 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 28 e 29/03 e 1º e 2/04; o 15º dia útil é 2024-04-02, data do protocolo da contestação (documents/08-contestacao.md), que é portanto tempestiva no limite.",
+            "A ré alega em documents/08-contestacao.md que 'a reclamação extrajudicial foi intempestiva'; a nota normativa (documents/16-nota-normativa.md) não contém norma sobre prazo de reclamação, decadência ou garantia, de modo que essa alegação não pode ser avaliada com o material autorizado — permanece alegada e indecidida, e documents/12-sentenca.md não a enfrenta.",
+            "Reclamação extrajudicial confirmada pelo registro do canal da própria ré em 2023-06-12 (documents/04-registro-reclamacao.md), com assunto coincidente com a inicial; a 'ausência de solução' é apenas alegada.",
+            "Mérito: contestação sustenta variação dentro da tolerância técnica (documents/08-contestacao.md) e o laudo conclui que a variação excede a tolerância contratada, com origem no sistema de dosagem fornecido (documents/11-laudo-pericial.md); a sentença resolve o contrato e condena à restituição de R$ 182.000,00 (documents/12-sentenca.md).",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; burocracia de andamento em 06, 07, 13, 14 e 15; documents/10 é decisão de instrução.",
+            "Incoerência de modalidade citatória: AR postal (documents/06) x certidão que menciona 'retorno do mandado' (documents/07), ponto sensível porque L335 vincula o termo inicial ao modo de citação.",
+            "Não constam trânsito em julgado, recurso, acordo, cumprimento de sentença ou determinação de restituição recíproca do bem; o extrato consultado em 2026-01-15 encerra-se em 2025-09-29 (documents/15-extrato-andamentos.md), sem registrar os atos citatórios.",
+            "O extrato de andamentos não registra intimação do saneador nem juntada de quesitos, embora documents/10 os tenha determinado — lacuna de registro que não pode ser suprida por inferência."
+          ],
+          "missing_evidence": [
+            "Cláusula de tolerância técnica invocada por ambas as partes (não consta do extrato contratual documents/01)",
+            "Comprovante de pagamento do preço (a NF consta apenas como 'emitida')",
+            "Laudo integral, quesitos e manifestação das partes de 2025-04-14",
+            "Mandado/certidão que esclareçam a modalidade citatória",
+            "Definição sobre devolução do equipamento em caso de resolução",
+            "Certidão de trânsito em julgado ou de recurso"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-A"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Reclamação alegada em 2023-06-12 (documents/05-peticao-inicial.md) e pressuposta pela defesa (documents/08-contestacao.md) x busca sem registro (documents/04-registro-reclamacao.md)",
+            "Modalidade citatória divergente (documents/06 x documents/07)",
+            "Tolerância técnica: documents/08-contestacao.md x documents/11-laudo-pericial.md"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/08-contestacao.md sustenta intempestividade da reclamação extrajudicial no mesmo mundo em que a ré não localiza o registro dessa reclamação (documents/04-registro-reclamacao.md), combinação argumentativa incoerente para a mesma parte",
+            "documents/17-calendario-forense.md com janela iniciada em 2024-03-05, sem correspondência com os marcos deste mundo"
+          ],
+          "material_findings": [
+            "Marcos: documents/01-contrato-prestacao.md (2023-04-18, R$ 182.000,00), documents/02-nota-fiscal.md, documents/03-termo-instalacao.md (aceite em 2023-05-08), documents/05-peticao-inicial.md e documents/14-comprovante-custas.md (2024-02-20), documents/06 e documents/07 (citação em 2024-03-12), documents/08-contestacao.md (2024-04-02), documents/09-replica.md (2024-04-30), documents/10-despacho-saneador.md (2024-07-15), documents/11-laudo-pericial.md (2025-02-10), documents/12-sentenca.md (2025-09-22), documents/13-certidao-intimacao.md (2025-09-29).",
+            "Item 4: não há divergência de datas (AR e certidão em 2024-03-12); contagem única. Com documents/17-calendario-forense.md e L219/L224/L335 (documents/16-nota-normativa.md), o 15º dia útil após 2024-03-12 é 2024-04-02, de modo que a contestação protocolada em 2024-04-02 (documents/08-contestacao.md) é tempestiva no último dia.",
+            "Reclamação extrajudicial não confirmada: documents/04-registro-reclamacao.md informa que não foi localizado registro para o protocolo ATD-2023-7804 e o contato de 2023-06-12, ressalvando que nada diz sobre outros canais; a alegação de documents/05-peticao-inicial.md permanece alegada.",
+            "Tensão específica deste mundo: a contestação afirma que 'a reclamação extrajudicial foi intempestiva' (documents/08-contestacao.md), o que pressupõe a existência do contato, em sentido oposto ao resultado negativo de busca (documents/04-registro-reclamacao.md); nenhum documento resolve o ponto.",
+            "A alegação de intempestividade da reclamação não é aferível: a nota normativa (documents/16-nota-normativa.md) não traz regra de prazo para reclamação extrajudicial, e não se pode importar norma externa.",
+            "Mérito: tolerância técnica alegada (documents/08) x laudo que aponta variação excedente com origem no sistema de dosagem fornecido (documents/11-laudo-pericial.md); sentença resolve o contrato e condena à restituição integral (documents/12-sentenca.md).",
+            "Separação de camadas: mérito em 01, 02, 03, 05, 08, 09, 11 e 12; prova negativa em 04; andamento em 06, 07, 13, 14 e 15.",
+            "Incoerência entre AR postal (documents/06) e certidão que refere retorno de mandado (documents/07).",
+            "Não há trânsito em julgado, recurso, acordo, cumprimento nem deliberação sobre devolução do equipamento; extrato consultado em 2026-01-15 encerra em 2025-09-29 (documents/15-extrato-andamentos.md)."
+          ],
+          "missing_evidence": [
+            "Prova do contato extrajudicial alegado, diante do resultado negativo de documents/04-registro-reclamacao.md",
+            "Cláusula contratual de tolerância técnica",
+            "Comprovante de pagamento do preço",
+            "Laudo integral, quesitos e manifestação de 2025-04-14",
+            "Esclarecimento da modalidade de citação",
+            "Certidão de trânsito em julgado ou recurso"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-B"
+        },
+        {
+          "confidence": "alta",
+          "contradictions": [
+            "Data da citação: 2024-03-12 (documents/06-aviso-recebimento-citacao.md) x 2024-03-05 (documents/07-certidao-citacao.md)",
+            "Modalidade citatória: AR postal x retorno de mandado (documents/06 x documents/07)",
+            "Tolerância técnica: documents/08-contestacao.md x documents/11-laudo-pericial.md"
+          ],
+          "implausible_or_leaking_documents": [
+            "documents/12-sentenca.md ignora completamente a divergência citatória e a possível intempestividade, o que é pouco verossímil em processo cuja contestação pode ter sido protocolada cinco dias úteis após o prazo",
+            "documents/08-contestacao.md alega intempestividade da reclamação extrajudicial, mas não da própria contagem citatória que lhe favoreceria pela certidão de 2024-03-05"
+          ],
+          "material_findings": [
+            "Marcos: contrato e NF em 2023-04-18 por R$ 182.000,00 (documents/01-contrato-prestacao.md; documents/02-nota-fiscal.md), aceite em 2023-05-08 (documents/03-termo-instalacao.md), reclamação registrada em 2023-06-12 (documents/04-registro-reclamacao.md), inicial e custas em 2024-02-20 (documents/05-peticao-inicial.md; documents/14-comprovante-custas.md), contestação em 2024-04-02 (documents/08-contestacao.md), réplica em 2024-04-30 (documents/09-replica.md), saneador em 2024-07-15 (documents/10-despacho-saneador.md), laudo em 2025-02-10 (documents/11-laudo-pericial.md), sentença em 2025-09-22 (documents/12-sentenca.md), intimação em 2025-09-29 (documents/13-certidao-intimacao.md).",
+            "Divergência central (itens 4 e 10): o AR aponta recebimento em 2024-03-12 (documents/06-aviso-recebimento-citacao.md) e a certidão certifica citação em 2024-03-05 (documents/07-certidao-citacao.md); o extrato (documents/15-extrato-andamentos.md) não lista o ato citatório.",
+            "Contagem A (2024-03-12): com o calendário de documents/17-calendario-forense.md e L219/L224/L335, os 15 dias úteis são 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 28 e 29/03 e 1º e 2/04, vencendo em 2024-04-02 — contestação de 2024-04-02 TEMPESTIVA no último dia.",
+            "Contagem B (2024-03-05): os 15 dias úteis são 6, 7, 8, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 25 e 26/03, vencendo em 2024-03-26 — contestação de 2024-04-02 INTEMPESTIVA, com atraso de cinco dias úteis (27, 28 e 29/03 e 1º e 2/04).",
+            "Consequência a registrar sem escolher data: pela contagem B abre-se questão de revelia/desentranhamento que nenhum documento aborda; documents/12-sentenca.md julga o mérito sem qualquer menção à tempestividade ou à divergência.",
+            "A defesa alega intempestividade da reclamação extrajudicial (documents/08-contestacao.md), matéria não avaliável com a nota normativa autorizada (documents/16-nota-normativa.md), que não contém prazo para reclamação.",
+            "Reclamação extrajudicial confirmada pelo registro do canal da ré em 2023-06-12 (documents/04-registro-reclamacao.md); a inexistência de solução é apenas alegada.",
+            "Mérito: tolerância técnica alegada (documents/08) x laudo apontando variação superior à tolerância com origem no sistema de dosagem fornecido (documents/11-laudo-pericial.md); sentença resolve o contrato com restituição de R$ 182.000,00 (documents/12-sentenca.md), sem tratar da devolução do equipamento instalado.",
+            "Separação de camadas: mérito em 01, 02, 03, 04, 05, 08, 09, 11 e 12; andamento em 06, 07, 13, 14 e 15.",
+            "Não constam trânsito em julgado, recurso, acordo ou cumprimento até a consulta de 2026-01-15 (documents/15-extrato-andamentos.md); a janela do calendário (2024-03-05 a 2024-04-02) cobre exatamente as duas contagens, sem necessidade de supor feriados."
+          ],
+          "missing_evidence": [
+            "Mandado de citação e certidão detalhada do oficial para dirimir 2024-03-05 x 2024-03-12 e a modalidade citatória",
+            "Certidão ou decisão sobre a tempestividade da contestação e eventual efeito de revelia",
+            "Cláusula de tolerância técnica do contrato",
+            "Comprovante de pagamento do preço",
+            "Laudo integral, quesitos e manifestação de 2025-04-14",
+            "Deliberação sobre restituição recíproca do equipamento",
+            "Certidão de trânsito em julgado ou recurso"
+          ],
+          "realism_1_to_5": 4,
+          "world_id": "W-C"
+        }
+      ]
+    }
+  ]
+}

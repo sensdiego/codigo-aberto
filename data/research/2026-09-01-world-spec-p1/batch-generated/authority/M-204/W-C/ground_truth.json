@@ -1,0 +1,73 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+  "effective_spec_sha256": "16e24818c5eff59071536cefdd23ee813c371dbc49b3fcd214b0608eeec4e65c",
+  "expected_observations": [
+    {
+      "claim": "A certidão de disponibilização registra a disponibilização da citação em 2024-03-13 e a certidão de efetivação registra disponibilização e visualização em 2024-03-06.",
+      "class": "contradiction",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver a data da citação, não é seguro concluir se a contestação de 2024-04-04 foi tempestiva na contagem em dias úteis.",
+      "class": "relation",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md",
+        "08-contestacao.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-204",
+  "motif": "tensao_temporal",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-204",
+    "F002": "4ª Vara Cível da Comarca Experimental de Delta",
+    "F003": "Enseada Tecelagem Fina Ltda.",
+    "F004": "Matiz Tintas Têxteis S.A.",
+    "F010": "2023-04-19",
+    "F011": "fornecimento e instalação de linha de tingimento contínuo",
+    "F012": "182.000,00",
+    "F013": "2023-05-09",
+    "F014": "variação de tonalidade fora do padrão contratado em lotes sucessivos",
+    "F020": "2023-06-13",
+    "F021": "ATD-2023-7804",
+    "F030": "2024-02-21",
+    "F031": "resolução do contrato por inadimplemento, com restituição de R$ 182.000,00",
+    "F040": "2024-03-13",
+    "F041": "2024-03-06",
+    "F042": "2024-04-04",
+    "F043": "a variação está dentro da tolerância técnica contratada e a reclamação extrajudicial foi intempestiva",
+    "F050": "2024-04-30",
+    "F060": "2024-07-16",
+    "F061": "perícia técnica sobre a linha de tingimento contínuo instalada na sede da autora",
+    "F070": "2025-02-11",
+    "F071": "a variação de tonalidade excede a tolerância contratada e tem origem no sistema de dosagem fornecido",
+    "F072": "2025-04-15",
+    "F080": "2025-09-23",
+    "F081": "resolver o contrato e condenar a ré à restituição de R$ 182.000,00, valor correspondente ao preço pago pela autora conforme o contrato e a nota fiscal dos autos, com atualização monetária desde o ajuizamento",
+    "F090": "2025-09-30 — juntada da certidão de intimação da sentença",
+    "F091": "2026-01-16 10:40",
+    "F092": "2025-09-30",
+    "F093": "2024-02-21",
+    "F094": "3.585,92",
+    "F100": "no período de 2024-03-06 a 2024-04-04, houve expediente regular de segunda a sexta-feira, exceto em 2024-03-29 (Sexta-feira Santa), quando não houve expediente por feriado nacional; não incidiu feriado local ou suspensão",
+    "F101": "resolução de contrato",
+    "F102": "2024-03-06 a 2024-04-04"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

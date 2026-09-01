@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "applies_to_dataset_revision": 1,
+  "pattern_report_path": "autos-anatomy.json",
+  "pattern_report_schema": "autos-anatomy-v1",
+  "coverage_snapshot": {
+    "procedimento_comum.n_casos": 39,
+    "procedimento_comum.movs_por_caso.p50": 406,
+    "procedimento_comum.marcos_presenca_pct.contestacao": 59,
+    "procedimento_comum.marcos_presenca_pct.sentenca": 36,
+    "procedimento_comum.marcos_presenca_pct.laudo_pericia": 10,
+    "procedimento_comum.marcos_presenca_pct.acordo_homologacao": 5,
+    "procedimento_comum.docs_por_familia_media.intimacao": 68.7,
+    "procedimento_comum.docs_por_familia_media.certidao": 16.9,
+    "procedimento_comum.docs_por_familia_media.custas": 13.7
+  },
+  "limit": "A base sustenta a anatomia documental e a distribuição de marcos do procedimento comum (ruído burocrático dominante, histórias incompletas como norma), não a representatividade substantiva do litígio sintético."
+}

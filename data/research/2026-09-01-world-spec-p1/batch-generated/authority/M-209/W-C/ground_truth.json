@@ -1,0 +1,73 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+  "effective_spec_sha256": "f1ce6ef8b6c1dfd2f9cc0c0aad703dc85acd88572319fa62d60e2e857450c437",
+  "expected_observations": [
+    {
+      "claim": "A certidão de disponibilização registra a disponibilização da citação em 2022-03-10 e a certidão de efetivação registra disponibilização e visualização em 2022-03-03.",
+      "class": "contradiction",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver a data da citação, não é seguro concluir se a contestação de 2022-03-31 foi tempestiva na contagem em dias úteis.",
+      "class": "relation",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md",
+        "08-contestacao.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-209",
+  "motif": "defesa_revelia",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-209",
+    "F002": "1ª Vara Cível da Comarca Experimental de Ilha",
+    "F003": "Neblina Panificadora Artesanal Ltda.",
+    "F004": "Maré Alta Crédito Fiduciário S.A.",
+    "F010": "2021-04-16",
+    "F011": "fornecimento de fornos industriais com alienação fiduciária em garantia",
+    "F012": "128.000,00",
+    "F013": "2021-05-06",
+    "F014": "cobrança de parcelas já quitadas com ameaça de busca e apreensão",
+    "F020": "2021-06-10",
+    "F021": "ATD-2021-7809",
+    "F030": "2022-02-18",
+    "F031": "declaração de quitação das parcelas vencidas do contrato de alienação fiduciária e repetição de indébito de R$ 32.000,00 por duas parcelas cobradas em duplicidade",
+    "F040": "2022-03-10",
+    "F041": "2022-03-03",
+    "F042": "2022-03-31",
+    "F043": "há parcelas em aberto e a cobrança é regular, não havendo duplicidade",
+    "F050": "2022-04-28",
+    "F060": "2022-07-13",
+    "F061": "perícia contábil sobre o histórico de pagamentos do contrato de alienação fiduciária",
+    "F070": "2023-02-08",
+    "F071": "os comprovantes demonstram o pagamento em duplicidade de duas parcelas de R$ 16.000,00 do plano de pagamento",
+    "F072": "2023-04-12",
+    "F080": "2023-09-20",
+    "F081": "declarar quitadas as parcelas vencidas do contrato de alienação fiduciária e condenar a ré à restituição de R$ 32.000,00, correspondentes a duas parcelas de R$ 16.000,00 cobradas em duplicidade conforme os comprovantes examinados no laudo pericial, com atualização monetária desde o ajuizamento",
+    "F090": "2023-09-27 — juntada da certidão de intimação da sentença",
+    "F091": "2024-01-12 10:40",
+    "F092": "2023-09-27",
+    "F093": "2022-02-18",
+    "F094": "2.561,17",
+    "F100": "no período de 2022-03-03 a 2022-03-31, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F101": "repetição de indébito por cobrança em duplicidade",
+    "F102": "2022-03-03 a 2022-03-31"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

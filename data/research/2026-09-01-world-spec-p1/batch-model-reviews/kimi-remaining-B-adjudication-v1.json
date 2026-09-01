@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "package": "B",
+  "status": "PASS",
+  "adjudication": {
+    "date": "2026-09-01",
+    "method": "Adjudicação mecânica/operador, sem rede e sem nova chamada paga. Cada revisor cego congelado comparado observation a observation com os gabaritos de batch-generated/authority/<matter>/<mundo>/ (ground_truth.json e rubric.json). Recuperação exige correspondência material com a claim e as evidências; contagens separadas por severidade (critical x major). Defeitos de construção verificados um a um nos documentos cegos de batch-generated/blind/<matter>/<mundo>/documents/ antes da classificação em (a) bug de construção/instrumento, (b) incoerência de narrativa de um matter, (c) cosmético/template.",
+    "inputs": [
+      "batch-model-reviews/kimi-remaining-B revisor 1-frozen.json",
+      "batch-model-reviews/kimi-remaining-B revisor 2-frozen.json",
+      "batch-generated/authority/M-209..M-212/{W-A,W-B,W-C}/ground_truth.json",
+      "batch-generated/authority/M-209..M-212/{W-A,W-B,W-C}/rubric.json",
+      "batch-generated/blind/M-209..M-212/{W-A,W-B,W-C}/documents/ (verificação dos flags)"
+    ],
+    "counting_convention": "critical_recovered e relevant_recovered por mundo somam os dois revisores (y = observações esperadas x 2 revisores). W-A e W-B: 1 critical + 1 major por revisor; W-C: 2 critical + 0 major por revisor.",
+    "pass_rule": "pass = todas as críticas recuperadas por ambos os revisores, sem falso positivo crítico.",
+    "arithmetic_checks": "Todas as contagens em dias úteis reportadas pelos revisores foram refeitas e conferem: M-209 W-C (03-10->03-31 tempestiva; 03-03->03-24, 5 dias úteis além), M-210 W-C (03-21->04-11; 03-14->04-04, 5 além), M-211 W-C (03-03->03-24; 02-24->03-21 descontando Carnaval 2022-02-28 e 2022-03-01, 3 além), M-212 W-C (03-14->04-04; 03-07->03-28, 5 além). Feriados de Carnaval do calendário de M-211 conferem com a data real (terça-feira de Carnaval 2022 = 2022-03-01).",
+    "package_result": "PASS. 12/12 mundos com pass=true. Recuperação perfeita dos dois revisores: 16/16 critical e 8/8 major cada, zero falso positivo crítico. Nenhum flag classe (a). Flags classe (b) confirmados em M-209, M-210 e M-212 (incoerências de narrativa dos matters, não do instrumento de mundos); classe (c) cosméticos transversais; elementos deliberados do protocolo (declaração de ficção no task.md, nota normativa, ressalva autolimitada do 04 em W-B, divergência limpa de 7 dias em W-C) NÃO são defeitos — são o desenho do instrumento."
+  },
+  "worlds": [
+    {
+      "matter_id": "M-209",
+      "world_id": "W-A",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-A1 (critical): R1 'Reclamação extrajudicial protocolo ATD-2021-7809 de 2021-06-10 ... registrada e encaminhada (04)'; R2 idem ('registrada e encaminhada à assistência técnica (04)') — ambos documentam o registro corroborante com data/protocolo corretos e nenhum promove a reclamação a fato judicialmente reconhecido; a convergência com a alegação da inicial é implícita na listagem conjunta de 04 e 05 com o mesmo objeto (o tratamento explícito alegação x registro aparece no W-B dos dois). O-A2 (major): R1 'Sem registro de recurso, trânsito em julgado ou cumprimento; a história processual termina na intimação de 2023-09-27'; R2 'sem certidão de trânsito em julgado, sem recurso, sem acordo'.",
+      "construction_defects": [
+        {
+          "flag": "Petição intitulada 'rescisão de contrato de alienação fiduciária' com pedido de 'declaração de quitação' + repetição de indébito; sentença acolhe a quitação sem enfrentar a rescisão (R1).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Verificado em blind/M-209/W-A/documents/05-peticao-inicial.md: título/classe 'rescisão...' x pedido 'declaração de quitação...' — tensão textual real entre teses (resilição x extinção por pagamento), coerente com F101/F031 do gabarito. Não bloqueia a análise pedida; é incoerência de narrativa do matter, não do instrumento."
+        },
+        {
+          "flag": "Contrato com parcelas mensais conforme plano anexo (01) x narrativa de quitação integral e repetição do valor cheio R$ 128.000,00 ~2 meses após a contratação (04/05) (R2).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Verificado em 01 ('pago em parcelas mensais conforme plano de pagamento anexo'): quitação integral + duplicidade do valor integral até 2021-06-10 é incompatível com plano mensal sem antecipação documentada. Tensão legítima e não bloqueante (achado de coerência material, não falha de recuperabilidade)."
+        },
+        {
+          "flag": "Credora fiduciária emitindo NF de venda de fornos industriais; reclamação 'encaminhada à assistência técnica' (R2).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Cheiro de template (nome da parte x papel econômico); 'assistência técnica' genérico já classificado (c) no canário v3. Não bloqueante."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-209",
+      "world_id": "W-B",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-B1 (critical): ambos expõem que a reclamação de 2021-06-10 consta só da inicial e que a busca não localizou registro, sem promover a alegação a fato; R1 pede 'verificação complementar (outros canais, e-mails, notificações)' e registra que a resposta 'não afirma inexistência de contato por outro canal'; R2: 'não é negação categórica da ocorrência, mas deixa a alegação sem suporte'. O-B2 (major): ausência de trânsito/recurso/acordo registrada pelos dois.",
+      "construction_defects": [
+        {
+          "flag": "Persiste a tensão parcelas mensais x quitação integral do valor cheio (R2).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Mesma verificação do W-A (documentos 01/04/05 idênticos exceto o 04)."
+        },
+        {
+          "flag": "04 artificialmente explicativo: ressalva 'não afirma se houve contato por outro canal ou com dados diferentes' entrega a lição do teste (ambos).",
+          "class": "c",
+          "adjudicator_agrees": false,
+          "reason": "A ressalva autolimitada É a mutação W-B deliberada do instrumento ('busca negativa autolimitada' nos mutations_required do canário): sem ela, a busca negativa provaria inexistência e destruiria o desenho. Não é defeito; é o mecanismo da mutação."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-209",
+      "world_id": "W-C",
+      "pass": true,
+      "critical_recovered": "4/4",
+      "relevant_recovered": "0/0",
+      "false_positives_critical": 0,
+      "notes": "O-C1 (critical): ambos expõem as duas datas (06: 2022-03-10; 07: disponibilização e visualização 2022-03-03) sem escolher uma. O-C2 (critical): ambos apresentam as duas contagens com o calendário (03-10->15º dia útil 03-31 tempestiva; 03-03->03-24, contestação 5 dias úteis além) e registram que nenhum documento dirime a divergência (R2 pede extrato do sistema/log/certidão retificadora). Contagens refeitas e corretas.",
+      "construction_defects": [
+        {
+          "flag": "Persiste a tensão parcelas mensais x quitação integral (R2).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Mesma verificação do W-A."
+        },
+        {
+          "flag": "Calendário 17 recortado exatamente de 2022-03-03 (data divergente anterior) a 2022-03-31 (protocolo da contestação) — janela sob medida (ambos).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Cheiro de template real (precedente do canário: 'janelas de calendário sempre uma semana antes da citação', (c)); é deliberado para viabilizar a contagem pedida no task.md e não bloqueia."
+        },
+        {
+          "flag": "Divergência 06/07 de exatos 7 dias corridos — 'padrão limpo típico de manipulação deliberada' (R1).",
+          "class": "c",
+          "adjudicator_agrees": false,
+          "reason": "A divergência de 7 dias é a própria mutação W-C do instrumento (deliberada, com desfechos opostos de tempestividade). O padrão limpo é característica do desenho, não defeito a corrigir."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-210",
+      "world_id": "W-A",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-A1 (critical): R1 'Reclamação ATD-2021-7810 de 2021-06-21 sobre atraso na entrega das unidades, registrada (04)'; R2 idem — registro corroborante documentado com data/protocolo, sem promoção a fato judicial. O-A2 (major): R1 'Sem recurso, trânsito em julgado ou cumprimento'; R2 'trânsito/recurso/acordo após 2023-10-09 — ausentes'.",
+      "construction_defects": [
+        {
+          "flag": "Termo de instalação/aceite sem ressalvas (03, 2021-05-17) x reclamação de atraso na entrega (04, 2021-06-21), pedido resolutório por atraso (05) e laudo de não entrega na data ajustada (11); ré admite adimplemento apenas parcial (08) (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Verificado nos cegos: 03 declara recebimento e 'instalação concluída, sem ressalvas técnicas no aceite'; 04 reclama 'atraso na entrega' um mês depois; 11 conclui 'unidades permutadas não foram entregues na data ajustada'; 08 fala em 'permuta parcialmente adimplida'. O próprio termo de aceite da autora desmente a tese de não entrega — incoerência de narrativa do matter (a 'contradição aceite x atraso' é real)."
+        },
+        {
+          "flag": "Permuta (troca) com preço à vista integral em dinheiro e NF de venda, em documento intitulado 'contrato de prestação de serviços' (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Verificado em 01/02: 'contrataram o permuta... O preço ajustado foi de R$ 340.000,00, pago à vista na assinatura'. Permuta com torna não cobre preço integral em dinheiro; figura híbrida não resolvida nos documentos — incoerência de narrativa do matter, não bloqueante."
+        },
+        {
+          "flag": "Contestação autocontraditória: sustenta que 'o atraso decorreu de caso fortuito climático' e ao mesmo tempo 'nega a existência de atraso' (R2).",
+          "class": "c",
+          "adjudicator_agrees": false,
+          "reason": "Verificado em 08: a ré nega o atraso 'nos termos alegados pela autora' e subsidiariamente invoca o fortuito — fórmula de defesa alternativa usual na prática, não contradição material. Cheiro de molde no máximo cosmético."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-210",
+      "world_id": "W-B",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-B1 (critical): ambos expõem alegação (05) x busca negativa (04) sem promover a fato; R1 nota que a resposta 'admite possibilidade de contato por outro canal — verificação complementar pendente'; R2: 'alegação sem suporte documental'. O-B2 (major): ausência de trânsito/recurso/acordo registrada pelos dois.",
+      "construction_defects": [
+        {
+          "flag": "Persistem aceite sem ressalvas x atraso/não entrega e permuta x preço à vista (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Mesmas verificações do W-A (03/05/08/11 e 01/02 idênticos)."
+        },
+        {
+          "flag": "04 com ressalva protetiva artificialmente explicativa (ambos).",
+          "class": "c",
+          "adjudicator_agrees": false,
+          "reason": "Ressalva autolimitada é a mutação W-B deliberada do instrumento; não é defeito."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-210",
+      "world_id": "W-C",
+      "pass": true,
+      "critical_recovered": "4/4",
+      "relevant_recovered": "0/0",
+      "false_positives_critical": 0,
+      "notes": "O-C1: ambos expõem 06 (2022-03-21) x 07 (2022-03-14) sem escolher. O-C2: duas contagens corretas (03-21->04-11 tempestiva; 03-14->04-04, 5 dias úteis além), com pedido de log/retificação (R2) e registro de que nada dirime a divergência (ambos).",
+      "construction_defects": [
+        {
+          "flag": "Persistem aceite sem ressalvas x atraso/não entrega e permuta x preço à vista (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Mesmas verificações do W-A."
+        },
+        {
+          "flag": "Calendário 17 recortado exatamente de 2022-03-14 a 2022-04-11 (as duas datas em conflito + protocolo) (ambos).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Cheiro de template deliberado para viabilizar a contagem; não bloqueante."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-211",
+      "world_id": "W-A",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-A1 (critical): R1 'Reclamação ATD-2021-7811 de 2021-06-03 sobre vício de consentimento por informação técnica falsa sobre resistência do material, registrada (04)'; R2 idem — corroboração documentada, sem promoção a fato judicial. O-A2 (major): R1 'Sem recurso, trânsito em julgado ou cumprimento'; R2 'Sem trânsito em julgado, recurso ou acordo após a intimação de 2023-09-20'.",
+      "construction_defects": [
+        {
+          "flag": "Registro de SAC redigido em linguagem jurídica ('vício de consentimento por informação técnica falsa') (R2).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Verificado em 04: assunto registrado usa a fórmula jurídica exata — artificial para um canal de atendimento; cheiro de template, não bloqueante."
+        },
+        {
+          "flag": "Fórmula-t na petição: o objeto 'passou a apresentar vício de consentimento' — encaixe de defeito jurídico na estrutura de defeito físico (R1).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Verificado o padrão 'passou a apresentar' nas petições do lote (template gramatical); cosmético."
+        },
+        {
+          "flag": "Marcos processuais em intervalos redondos de 28 dias (R2).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Verdadeiro para vários marcos (p. ex. contestação 2022-03-24 -> réplica 2022-04-21), embora 'todos' seja exagero; padrão de template, cosmético."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-211",
+      "world_id": "W-B",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-B1 (critical): ambos expõem alegação (05) x busca negativa (04) sem promover a fato e pedem outras fontes; R1: 'admite possível contato por outro canal — verificação complementar pendente'. O-B2 (major): ausência de trânsito/recurso/acordo registrada pelos dois.",
+      "construction_defects": [
+        {
+          "flag": "Linguagem jurídica no registro de SAC (R2).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Mesma verificação do W-A."
+        },
+        {
+          "flag": "04 com ressalva protetiva de exercício (ambos).",
+          "class": "c",
+          "adjudicator_agrees": false,
+          "reason": "Ressalva autolimitada é a mutação W-B deliberada; não é defeito."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-211",
+      "world_id": "W-C",
+      "pass": true,
+      "critical_recovered": "4/4",
+      "relevant_recovered": "0/0",
+      "false_positives_critical": 0,
+      "notes": "O-C1: ambos expõem 06 (2022-03-03) x 07 (2022-02-24) sem escolher. O-C2: duas contagens corretas, com os feriados de Carnaval 2022-02-28 e 2022-03-01 do calendário 17 descontados na contagem alternativa (02-24->15º dia útil 03-21, contestação 3 dias úteis além; 03-03->03-24 tempestiva). Datas de Carnaval conferem com o calendário real de 2022 (terça-feira de Carnaval = 2022-03-01) — nenhum revisor as questionou e não há defeito aí.",
+      "construction_defects": [
+        {
+          "flag": "Calendário 17 recortado exatamente de 2022-02-24 a 2022-03-24, incluindo justamente os dois feriados que diferenciam as contagens (ambos).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Verificado em 17: janela sob medida com os feriados de Carnaval necessários à mutação; cheiro de template deliberado para viabilizar a contagem; não bloqueante."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-212",
+      "world_id": "W-A",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-A1 (critical): R1 'Reclamação ATD-2021-7812 de 2021-06-14 sobre não pagamento da comissão após fechamento dos contratos intermediados, registrada (04)'; R2 idem — corroboração documentada sem promoção a fato judicial. O-A2 (major): R1 'sem recurso, trânsito ou cumprimento'; R2 'Sem trânsito, recurso ou acordo após 2023-10-02'. Realismo 1/5 dos dois reflete a inversão de papéis (defeito de narrativa do matter, não do instrumento de mundos).",
+      "construction_defects": [
+        {
+          "flag": "Inversão de papéis: 01 descreve Solário como CONTRATADA para prestar 'intermediação comercial' e Sargaço pagando R$ 41.250,00 à vista (com NF emitida por Solário contra Sargaço, 02); 05 trata Sargaço como corretora que cobra comissão do mesmo valor de Solário (ambos, os 3 mundos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Verificado nos cegos 01/02/05: o contrato e a NF fazem o valor fluir de Sargaço para Solário; a petição o faz fluir de Solário para Sargaço a título de comissão — quem pagou conforme os documentos comerciais é quem ajuíza a cobrança do mesmo valor. Incoerência de narrativa do matter confirmada (a 'incoerência de papéis de M-212' é real)."
+        },
+        {
+          "flag": "'Instalação inclusa no objeto' (01) e 'termo de instalação e aceite' (03) aplicados a serviço de intermediação comercial (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Template de bem físico aplicado a serviço imaterial; precedente do canário v3 classificou 'termo de instalação físico para serviço digital' como (b). Verificado em 01/03."
+        },
+        {
+          "flag": "Contratante chamada 'Corretagem Náutica' atuando como corretora de contratos de energia (R2).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Colagem de nomes de template; cosmético."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-212",
+      "world_id": "W-B",
+      "pass": true,
+      "critical_recovered": "2/2",
+      "relevant_recovered": "2/2",
+      "false_positives_critical": 0,
+      "notes": "O-B1 (critical): ambos expõem alegação (05) x busca negativa (04) sem promover a fato, com a ressalva de outros canais. O-B2 (major): ausência de trânsito/recurso/acordo registrada pelos dois.",
+      "construction_defects": [
+        {
+          "flag": "Persistem inversão de papéis e 'instalação' de serviço de intermediação (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Mesmas verificações do W-A (01/02/03/05 idênticos)."
+        },
+        {
+          "flag": "04 com ressalva protetiva artificial (ambos).",
+          "class": "c",
+          "adjudicator_agrees": false,
+          "reason": "Ressalva autolimitada é a mutação W-B deliberada; não é defeito."
+        }
+      ]
+    },
+    {
+      "matter_id": "M-212",
+      "world_id": "W-C",
+      "pass": true,
+      "critical_recovered": "4/4",
+      "relevant_recovered": "0/0",
+      "false_positives_critical": 0,
+      "notes": "O-C1: ambos expõem 06 (2022-03-14) x 07 (2022-03-07) sem escolher. O-C2: duas contagens corretas (03-14->04-04 tempestiva; 03-07->03-28, 5 dias úteis além), com registro de que nada dirime a divergência.",
+      "construction_defects": [
+        {
+          "flag": "Persistem inversão de papéis e 'instalação' de serviço de intermediação (ambos).",
+          "class": "b",
+          "adjudicator_agrees": true,
+          "reason": "Mesmas verificações do W-A."
+        },
+        {
+          "flag": "Calendário 17 recortado exatamente de 2022-03-07 a 2022-04-04 (ambos).",
+          "class": "c",
+          "adjudicator_agrees": true,
+          "reason": "Cheiro de template deliberado para viabilizar a contagem; não bloqueante."
+        }
+      ]
+    }
+  ],
+  "transversal_defects": [
+    {
+      "flag": "Rótulos 'sintético' em todas as peças, 'Comarca Experimental de <X>', IDs mecânicos espelhando o lote (BR-CIV-CON-2xx = M-2xx, NF-SYN-10xx, ATD-2021-78xx) (ambos, todos os mundos).",
+      "class": "c",
+      "adjudicator_agrees": true,
+      "reason": "Vazamento deliberado e já conhecido do desenho cego (o task.md declara a ficção); cheiro de template não bloqueante."
+    },
+    {
+      "flag": "Contestação sempre protocolada exatamente no 15º dia útil; laudo conclusivo em uma única frase sem metodologia/quesitos; extrato de andamentos (15) sem atos citatórios; manifestações/plano/cronograma/proposta citados e não juntados (ambos, transversal).",
+      "class": "c",
+      "adjudicator_agrees": true,
+      "reason": "Mesma família dos cosméticos (c) do canário v3/v4; as lacunas citadas-não-juntadas são padrão deliberado de missing_evidence legítimo; não bloqueia."
+    },
+    {
+      "flag": "task.md declara expressamente o conjunto fictício; 16-nota-normativa.md é meta-documento do teste; itens 4/10 do task.md apontam a cadeia da divergência (R2, todos os mundos).",
+      "class": "c",
+      "adjudicator_agrees": false,
+      "reason": "São elementos do protocolo cego (declaração de ficção, nota normativa com as proposições autorizadas e instrução explícita de confrontar as certidões fazem parte do instrumento desde o canário); não são defeitos."
+    }
+  ],
+  "reviewers": [
+    {
+      "reviewer": "B revisor 1",
+      "source": "batch-model-reviews/kimi-remaining-B revisor 1-frozen.json",
+      "critical_recovered": "16/16",
+      "major_recovered": "8/8",
+      "false_positives_critical": 0,
+      "realism_1_to_5": {"M-209": "2/2/2", "M-210": "2/2/2", "M-211": "2/2/2", "M-212": "1/1/1"},
+      "notes": "Classificações de estado corretas nos 12 mundos (confirmada em W-A, alegada sem corroboração em W-B, contraditória em W-C); contagens em dias úteis todas corretas; nenhum fato inventado. Achado adicional legítimo: tensão rescisão x quitação em M-209 (classe b, confirmada)."
+    },
+    {
+      "reviewer": "B revisor 2",
+      "source": "batch-model-reviews/kimi-remaining-B revisor 2-frozen.json",
+      "critical_recovered": "16/16",
+      "major_recovered": "8/8",
+      "false_positives_critical": 0,
+      "realism_1_to_5": {"M-209": "2/2/2", "M-210": "2/2/2", "M-211": "2/2/2", "M-212": "1/1/1"},
+      "notes": "Mesma recuperação perfeita; explicita a convergência/divergência das certidões em todos os mundos e pede log do sistema/retificação nos W-C. Achados adicionais legítimos: parcelas mensais x quitação integral em M-209 (b), permuta x preço à vista em M-210 (b), inversão de papéis em M-212 (b). Flag 'contestação autocontraditória' em M-210 NÃO confirmado (defesa alternativa padrão; classe c, adjudicador discorda)."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "authority_label": "chronology_conflict",
+  "description": "A certidão de disponibilização e a certidão de efetivação divergem sobre a data em que a citação foi disponibilizada, tornando ambígua a tempestividade da contestação na contagem em dias úteis.",
+  "effective_spec_sha256": "9e8feee02e604e6d411f33676fded48f7ed34b7249a9663d88e41b3296af2490",
+  "expected_observations": [
+    {
+      "claim": "A certidão de disponibilização registra a disponibilização da citação em 2024-03-01 e a certidão de efetivação registra disponibilização e visualização em 2024-02-23.",
+      "class": "contradiction",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md"
+      ],
+      "id": "O-C1",
+      "rubric": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+      "severity": "critical",
+      "state": "contradictory"
+    },
+    {
+      "claim": "Sem resolver a data da citação, não é seguro concluir se a contestação de 2024-03-22 foi tempestiva na contagem em dias úteis.",
+      "class": "relation",
+      "evidence": [
+        "06-certidao-disponibilizacao-citacao.md",
+        "07-certidao-citacao.md",
+        "08-contestacao.md",
+        "16-nota-normativa.md",
+        "17-calendario-forense.md"
+      ],
+      "id": "O-C2",
+      "rubric": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+      "severity": "critical",
+      "state": "uncertain"
+    }
+  ],
+  "matter_id": "M-203",
+  "motif": "desfecho",
+  "resolved_facts": {
+    "F001": "BR-CIV-CON-203",
+    "F002": "3ª Vara Cível da Comarca Experimental de Cipreste",
+    "F003": "Andorinha Papelaria Criativa Ltda.",
+    "F004": "Giralua Assinaturas Digitais S.A.",
+    "F010": "2023-04-06",
+    "F011": "fornecimento e instalação de sistema de assinaturas digitais em plano de fidelidade",
+    "F012": "22.750,00",
+    "F013": "2023-04-28",
+    "F014": "renovação automática não informada com cobranças sucessivas após pedido de cancelamento",
+    "F020": "2023-06-02",
+    "F021": "ATD-2023-7803",
+    "F030": "2024-02-09",
+    "F031": "declaração de abusividade das cláusulas de renovação automática e condenação da ré à restituição de R$ 22.750,00",
+    "F040": "2024-03-01",
+    "F041": "2024-02-23",
+    "F042": "2024-03-22",
+    "F043": "a renovação automática estava prevista em cláusula destacada e o cancelamento não foi comunicado pelo canal contratado",
+    "F050": "2024-04-19",
+    "F060": "2024-07-05",
+    "F061": "perícia contábil e documental sobre as cobranças de renovação automática posteriores ao pedido de cancelamento",
+    "F070": "2025-01-31",
+    "F071": "as cobranças posteriores ao pedido de cancelamento não têm suporte nas cláusulas contratuais",
+    "F072": "2025-04-04",
+    "F080": "2025-09-12",
+    "F081": "declarar abusiva a renovação automática e condenar a ré à restituição de R$ 22.750,00, valor correspondente ao total das cobranças do plano de assinatura conforme o contrato e a nota fiscal dos autos, com atualização monetária desde o ajuizamento",
+    "F090": "2025-09-19 — juntada da certidão de intimação da sentença",
+    "F091": "2026-01-05 10:40",
+    "F092": "2025-09-19",
+    "F093": "2024-02-09",
+    "F094": "364,39",
+    "F100": "no período de 2024-02-23 a 2024-03-22, houve expediente regular de segunda a sexta-feira; não incidiu feriado nacional, feriado local ou suspensão",
+    "F101": "indenização por práticas abusivas",
+    "F102": "2024-02-23 a 2024-03-22"
+  },
+  "schema_version": 1,
+  "world_id": "W-C"
+}

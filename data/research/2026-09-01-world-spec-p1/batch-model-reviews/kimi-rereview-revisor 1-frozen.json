@@ -1,0 +1,468 @@
+{
+  "reviewer": "revisor 1",
+  "package": "rereview-M207-M212",
+  "blind_before_submission": true,
+  "matters": [
+    {
+      "matter_id": "M-207",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de transporte rodoviário de estufas modulares em 2022-04-22, carga declarada de R$ 67.800,00, contratante Litoral Mudas (remetente) e contratada Rumo Transportes (01-contrato-prestacao.md; 02-cte-conhecimento-carga.md)",
+            "CT-e-1007 emitido em 2022-04-22 pelo mesmo valor declarado, situação 'emitido' (02-cte-conhecimento-carga.md)",
+            "Colisão rodoviária em 2022-05-13 com avaria PARCIAL da carga, expressamente 'sem conclusão sobre o valor dos danos' (03-termo-ocorrencia-transporte.md)",
+            "Reclamação extrajudicial registrada em 2022-06-17, protocolo ATD-2022-7807 (04-registro-reclamacao.md)",
+            "Ação ajuizada em 2023-02-24 pedindo R$ 67.800,00 (valor integral da carga declarada) (05-peticao-inicial.md)",
+            "Citação disponibilizada e visualizada em 2023-03-17 (06-certidao-disponibilizacao-citacao.md; 07-certidao-citacao.md); contestação em 2023-04-10 — contando da disponibilização (17/03, sexta): início 20/03, 15º dia útil em 10/04 (com 07/04 feriado), contestação no exato último dia, tempestiva (08-contestacao.md; 17-calendario-forense.md)",
+            "Réplica em 2023-05-05, saneador em 2023-07-20, laudo em 2024-02-15 concluindo avaria compatível com a colisão e ocorrida durante o transporte, sentença procedente em 2024-09-27, intimação em 2024-10-04 (09 a 13; 15-extrato-andamentos.md)",
+            "Custas iniciais de R$ 1.472,17 pagas em 2023-02-24 (14-comprovante-custas.md)"
+          ],
+          "missing_evidence": [
+            "Nenhuma prova do valor do dano: o termo declara avaria parcial sem valor (03) e o laudo não quantifica (11), mas a condenação é pelo valor integral da carga declarada — faltam orçamentos, NF de reparo ou avaliação de perda",
+            "Termo de guarda/conservação da carga avariada: perícia 'sobre a carga' entregue 21 meses após o acidente (2022-05-13 → 2024-02-15) sem registro de onde/como a carga foi preservada",
+            "Boletim de ocorrência ou documento oficial da colisão; apólice/averbação de seguro de transporte; canhoto de entrega da carga",
+            "Manifestação das partes sobre o laudo (citada no extrato, item 6, e na sentença) não consta como documento do conjunto; quesitos das partes também ausentes",
+            "Extrato de andamentos (15) omite a citação: salta da distribuição (2023-02-24) direto para a contestação (2023-04-10)",
+            "Trânsito em julgado, recurso ou acordo: o extrato termina na intimação da sentença (2024-10-04)"
+          ],
+          "contradictions": [
+            "Tensão interna da contestação (08): sustenta que 'a colisão foi causada por terceiro' (admitindo a colisão) e ao mesmo tempo 'nega a existência de avaria da carga em colisão rodoviária' — defesa que admite o evento e nega o evento na mesma peça",
+            "Divergência de rotulagem: ação qualificada como 'indenização por acidente de trânsito' (05) sobre relação contratual de transporte de carga (01), e pedido do valor integral declarado contra termo que registra apenas avaria parcial (03 vs. 05/12)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Todos os 17 documentos se autodenominam 'sintético(s)' no título; task.md declara expressamente que tudo é fictício",
+            "'3ª Vara Cível da Comarca Experimental de Gardênia' — comarca fictícia declarada",
+            "IDs padronizados em sequência (BR-CIV-CON-207, CT-e-1007, ATD-2022-7807) e extrato de consulta sempre às 10:40 — marca de geração",
+            "Frases-template repetidas em todas as peças ('Nega a existência de ... nos termos alegados', 'com base nos documentos comerciais anexados', 'o objeto ... passou a apresentar')",
+            "Condenação de valor cheio sem lastro probatório do quantum é o ponto mais artificial do mérito (12 vs. 03/11)"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, CT-e, ocorrência, ação, citação (2023-03-17), contestação (2023-04-10), réplica, saneador, laudo, sentença, intimação e custas (01-03; 05-15)",
+            "Diferença material: a reclamação extrajudicial de 2022-06-17, alegada na inicial (05), NÃO foi localizada — a resposta do SAC registra 'não foi localizado registro de reclamação com os dados fornecidos', protocolo ATD-2022-7807 (04-registro-reclamacao.md)"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial: afirmação da inicial (05) sem corroboração — o único documento sobre o tema (04) é negativo; a própria resposta ressalva que pode ter havido contato por outro canal, mas nada nos autos o demonstra",
+            "Demais ausências de W-A: prova do valor do dano, termo de guarda da carga, BO da colisão, canhoto de entrega, manifestação sobre o laudo, quesitos, trânsito/recurso",
+            "Extrato de andamentos (15) omite a citação"
+          ],
+          "contradictions": [
+            "Inicial (05) alega reclamação de 2022-06-17 'sem solução'; resposta do SAC (04) não localiza registro com os mesmos identificadores (protocolo ATD-2022-7807, data e assunto) — não é contradição lógica formal (a busca não prova a inexistência), mas deixa a alegação órfã de prova",
+            "Mesma tensão interna da contestação de W-A (08: admite colisão por terceiro, nega avaria)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: títulos 'sintéticos', comarca 'Experimental', IDs sequenciais, 10:40 fixo, frases-template",
+            "Conveniência de template: a inicial cita protocolo exato (ATD-2022-7807) para uma reclamação que o sistema da ré não encontra — situação possível na prática, mas aqui desenhada como contraste binário limpo",
+            "Condenação de valor integral sem quantificação do dano (12 vs. 03/11)"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, CT-e, ocorrência, reclamação (registrada, 04), ação, contestação (2023-04-10), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: a certidão de efetivação (07) registra a disponibilização da citação em 2023-03-10, enquanto a certidão de disponibilização (06) registra 2023-03-17"
+          ],
+          "missing_evidence": [
+            "Comprovante de visualização pelo advogado da ré que pudesse dirimir qual das duas datas de disponibilização é correta",
+            "Demais ausências de W-A: prova do valor do dano, termo de guarda, BO, canhoto, manifestação sobre o laudo, trânsito/recurso; extrato (15) omite a citação"
+          ],
+          "contradictions": [
+            "Certidão de disponibilização (06: 2023-03-17) vs. certidão de efetivação (07: 2023-03-10) — datas divergentes para o mesmo ato. Efeito na tempestividade: com 17/03, o 15º dia útil é 10/04 (contestação tempestiva no último dia); com 10/03, o prazo vence 31/03 (contagem: 13-17, 20-24, 27-31) e a contestação de 10/04 seria intempestiva",
+            "Inversão cronológica implícita: a efetivação (07) antecede em 7 dias a disponibilização oficial (06) — a citação não pode ser efetivada antes de disponibilizada"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: títulos 'sintéticos', comarca 'Experimental', IDs sequenciais, template de redação",
+            "A divergência de datas é o tipo de erro que ocorre em autos reais, mas aqui aparece como única variável alterada do mundo — padrão de experimento controlado"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-208",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2022-04-05: implantação de sistema de gestão financeira com financiamento bancário vinculado, preço R$ 93.600,00 financiado pela própria contratada (Banco Serramar) em parcelas mensais, com quadro resumo de encargos anexo (01-contrato-prestacao.md; 02-nota-fiscal.md)",
+            "Instalação concluída sem ressalvas em 2022-04-25 (03-termo-instalacao.md); reclamação por encargos não contratados/capitalização em 2022-05-30 (04-registro-reclamacao.md)",
+            "Ação revisional ajuizada em 2023-02-07 com pedido de exclusão de encargos e repetição de indébito de R$ 93.600,00 (05-peticao-inicial.md)",
+            "Citação disponibilizada/visualizada em 2023-02-27 (06, 07); contestação em 2023-03-20 — início 28/02, 15º dia útil em 20/03: tempestiva no último dia (08; 17-calendario-forense.md)",
+            "Réplica 2023-04-17; saneador 2023-06-30; laudo contábil 2024-01-26 concluindo que os encargos não constam do quadro resumo e a capitalização carece de autorização; sentença 2024-09-09 declarando abusivos os encargos e condenando à restituição de R$ 93.600,00; intimação 2024-09-16 (09-13; 15)",
+            "Custas de R$ 1.526,72 em 2023-02-07 (14)"
+          ],
+          "missing_evidence": [
+            "Nenhum comprovante de pagamento de parcelas: a sentença (12) fala em 'total pago pela autora', mas não há extrato, boletos compensados ou débitos nos autos — repetição de indébito sem prova de pagamento",
+            "Quadro resumo de encargos e memória de cálculo da inicial: ambos invocados pela sentença (12) como base do quantum, nenhum dos dois consta do conjunto; o laudo (11) também conclui pela ausência dos encargos 'no quadro resumo' sem que o quadro esteja nos autos",
+            "Evolução do contrato: parcelas pagas × em aberto, saldo devedor, demonstrativo das cobranças questionadas",
+            "Manifestação sobre o laudo (extrato item 6) e quesitos ausentes; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Descolamento tese × quantum: a tese é revisão de encargos abusivos (05, 11), mas a condenação é pela restituição de R$ 93.600,00 — o preço TOTAL do contrato, incluindo o principal do sistema que a autora recebeu e aceitou sem ressalvas (03 vs. 12). Revisão de encargos não comporta devolução do preço integral; a sentença equipara 'total pago' a 'indébito' sem fundamentar essa identidade",
+            "A sentença (12) invoca como base 'o quadro resumo de encargos anexo ao contrato e a memória de cálculo apresentada na inicial', documentos que não existem no conjunto"
+          ],
+          "implausible_or_leaking_documents": [
+            "Banco Serramar S.A. como implantador de sistema de gestão e emissor de nota fiscal de R$ 93.600,00 pelo serviço (02) — atividade atípica para instituição bancária",
+            "Títulos 'sintéticos', 'Comarca Experimental de Horto', IDs sequenciais (BR-CIV-CON-208, NF-SYN-1008, ATD-2022-7808), 10:40 fixo, frases-template",
+            "Aceite 'sem ressalvas' em 25/04 seguido de reclamação de encargos já em 30/05 (03, 04) — plausível, mas encadeamento cronologicamente enxuto típico de caso desenhado"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, instalação, ação, citação (2023-02-27), contestação tempestiva (2023-03-20), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: a resposta do SAC (04) não localiza a reclamação de 2022-05-30 alegada na inicial (05), protocolo ATD-2022-7808"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração: único documento sobre ela (04) é negativo",
+            "Ausências de W-A: comprovantes de pagamento, quadro resumo, memória de cálculo, extrato do financiamento, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Inicial (05: reclamação de 2022-05-30 'sem solução') vs. resposta do SAC (04: 'não foi localizado registro') — alegação sem prova, sem ser contradição lógica formal",
+            "Descolamento tese × quantum de W-A (03/05 vs. 12: restituição do preço integral em ação revisional)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: banco-vendedor de software com NF própria, títulos 'sintéticos', comarca 'Experimental', IDs sequenciais, template",
+            "Conveniência binária reclamação-sim/não como única variável do mundo — padrão de experimento"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, instalação, reclamação (registrada, 04), ação, contestação (2023-03-20), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: certidão de efetivação (07) registra disponibilização em 2023-02-17, contra 2023-02-27 na certidão de disponibilização (06)"
+          ],
+          "missing_evidence": [
+            "Comprovante de visualização que dirimisse a divergência de datas",
+            "Ausências de W-A: comprovantes de pagamento, quadro resumo, memória de cálculo, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Certidão de disponibilização (06: 2023-02-27) vs. certidão de efetivação (07: 2023-02-17). Efeito: com 27/02, 15º dia útil é 20/03 (contestação tempestiva no último dia); com 17/02, o início desliza para 22/02 (20-21/02 Carnaval, conforme 17-calendario-forense.md) e o prazo vence 14/03 — contestação de 20/03 intempestiva",
+            "Inversão cronológica: efetivação (17/02) dez dias ANTES da disponibilização oficial (27/02)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A; divergência de datas como única variável — padrão de experimento controlado",
+            "Descolamento tese × quantum (restituição do preço total) mantido nos três mundos"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-209",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2021-04-16: fornecimento de fornos industriais com alienação fiduciária, R$ 128.000,00 em 8 parcelas mensais de R$ 16.000,00 (01-contrato-prestacao.md; 02-nota-fiscal.md)",
+            "Instalação sem ressalvas em 2021-05-06 (03); reclamação por cobrança de parcelas já quitadas com ameaça de busca e apreensão em 2021-06-10 (04)",
+            "Ação de repetição de indébito ajuizada em 2022-02-18: quitação das parcelas vencidas + repetição de R$ 32.000,00 (duas parcelas em duplicidade) (05)",
+            "Citação disponibilizada/visualizada em 2022-03-10 (06, 07); contestação em 2022-03-31 — início 11/03, 15º dia útil em 31/03: tempestiva no último dia (08; 17-calendario-forense.md)",
+            "Réplica 2022-04-28; saneador 2022-07-13; laudo 2023-02-08: 'os comprovantes demonstram o pagamento em duplicidade de duas parcelas'; sentença 2023-09-20 declarando quitação e condenando à restituição de R$ 32.000,00; intimação 2023-09-27 (09-13; 15)",
+            "Custas de R$ 2.561,17 em 2022-02-18 (14)"
+          ],
+          "missing_evidence": [
+            "Os comprovantes de pagamento: o laudo (11) e a sentença (12) se apoiam inteiramente em 'comprovantes examinados' que NÃO constam do conjunto — a prova primária da duplicidade está fora do dossiê",
+            "Documentos da cobrança indevida: boletos, cartas, notificações ou qualquer registro da 'ameaça de busca e apreensão' alegada (04, 05)",
+            "Plano de pagamento anexo ao contrato (mencionado em 01, não juntado); extrato de conta corrente do financiamento",
+            "Manifestação sobre o laudo (extrato item 6), quesitos; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Contestação (08) afirma 'há parcelas em aberto e a cobrança é regular'; sentença (12) declara 'quitadas as parcelas vencidas' — divergência resolvida pelo laudo, mas o laudo se baseia em comprovantes não juntados (11 vs. conjunto documental)",
+            "Sem contradição interna de datas ou valores entre os documentos do mundo"
+          ],
+          "implausible_or_leaking_documents": [
+            "'Maré Alta Crédito Fiduciário S.A.' como FORNECEDORA de fornos industriais e emissora da nota fiscal de venda do bem (01, 02) — financeira vendendo equipamento industrial é atípico; o usual seria fornecedor + agente financeiro",
+            "Alienação fiduciária de R$ 128.000 em 8 × R$ 16.000,00 exatos, sem qualquer encargo/juros (01) — comercialmente irreal para operação de crédito",
+            "Títulos 'sintéticos', 'Comarca Experimental de Ilha', IDs sequenciais (BR-CIV-CON-209, NF-SYN-1009, ATD-2021-7809), 10:40 fixo, frases-template"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, instalação, ação, citação (2022-03-10), contestação tempestiva (2022-03-31), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: a resposta do SAC (04) não localiza a reclamação de 2021-06-10 alegada na inicial (05), protocolo ATD-2021-7809"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração (04 negativo)",
+            "Ausências de W-A: comprovantes de pagamento (base do laudo), documentos da cobrança/ameaça de B&A, plano de pagamento, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Inicial (05) vs. resposta do SAC (04) sobre a existência da reclamação — alegação órfã, sem contradição lógica formal",
+            "Contestação (08: parcelas em aberto) vs. sentença (12: quitação declarada) com base em prova não juntada"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: financeira-fornecedora, financiamento sem juros, títulos 'sintéticos', IDs sequenciais",
+            "Única variável do mundo: reclamação não localizada — padrão binário de experimento"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, instalação, reclamação (registrada, 04), ação, contestação (2022-03-31), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: certidão de efetivação (07) registra disponibilização em 2022-03-03, contra 2022-03-10 na certidão de disponibilização (06)"
+          ],
+          "missing_evidence": [
+            "Comprovante de visualização para dirimir a divergência",
+            "Ausências de W-A: comprovantes de pagamento, documentos de cobrança, plano de pagamento, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Certidão de disponibilização (06: 2022-03-10) vs. certidão de efetivação (07: 2022-03-03). Efeito: com 10/03, 15º dia útil é 31/03 (contestação tempestiva no último dia); com 03/03, o prazo vence 24/03 — contestação de 31/03 intempestiva",
+            "Inversão cronológica: efetivação sete dias antes da disponibilização oficial"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: financeira-fornecedora, crédito sem juros, títulos 'sintéticos', IDs sequenciais",
+            "Divergência de datas como única variável — padrão de experimento controlado"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-210",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2021-04-27: permuta de galpão industrial por unidades habitacionais modulares, com torna de R$ 340.000,00 paga à vista pela contratante (Taquara) à contratada (Várzea) (01-contrato-prestacao.md; 02-nota-fiscal.md)",
+            "Aceite PARCIAL em 2021-05-17, com ressalva expressa de pendências de entrega das unidades (03-termo-aceite-parcial.md); reclamação por atraso em 2021-06-21 (04)",
+            "Ação de resolução ajuizada em 2022-02-25 com pedido de restituição do equivalente a R$ 340.000,00 (05)",
+            "Citação disponibilizada/visualizada em 2022-03-21 (06, 07); contestação em 2022-04-11 — início 22/03, 15º dia útil em 11/04: tempestiva no último dia (08; 17-calendario-forense.md)",
+            "Réplica 2022-05-09; saneador 2022-07-22; laudo 2023-02-17: unidades não entregues na data ajustada e sem registro de causa impeditiva; sentença 2023-09-29 resolvendo o contrato e condenando à restituição de R$ 340.000,00; intimação 2023-10-06 (09-13; 15)",
+            "Custas de R$ 4.965,30 em 2022-02-25 (14)"
+          ],
+          "missing_evidence": [
+            "Comprovante do pagamento da torna de R$ 340.000,00: contrato declara e NF registra (01, 02), mas não há comprovante bancário; NF não prova pagamento",
+            "O prazo ajustado de entrega: nenhum documento do conjunto registra a 'data ajustada' que o laudo (11) declara descumprida — o contrato-extrato (01) não fixa prazo; faltam cronograma contratual e planilha de entregas",
+            "Destino do galpão: escritura/registro da transferência do galpão à ré e, resolvido o contrato, a retransferência — a sentença (12) nada dispõe sobre o bem dado em permuta",
+            "Documentos do 'caso fortuito climático' alegado pela ré (08): nenhum registro meteorológico ou de sinistro",
+            "Manifestação sobre o laudo (extrato item 6), quesitos; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Contradição interna literal da contestação (08): 'o atraso decorreu de caso fortuito climático' seguido de 'nega a existência de atraso na entrega' — a ré confessa o atraso ao justificá-lo e o nega na frase seguinte",
+            "Restituições recíprocas incompletas: pedido (05) e sentença (12) limitam a restituição à torna de R$ 340.000,00, omitindo o galpão permutado (transferido à ré) e as unidades parcialmente recebidas (aceite parcial, 03) — resolução sem retorno ao status quo"
+          ],
+          "implausible_or_leaking_documents": [
+            "Nota fiscal 'torna do contrato de permuta' (02): torna em permuta imobiliária se documenta em escritura, não em NF de R$ 340.000,00 emitida pela construtora",
+            "Títulos 'sintéticos', 'Comarca Experimental de Jacarandá', IDs sequenciais (BR-CIV-CON-210, NF-SYN-1010, ATD-2021-7810), 10:40 fixo, frases-template",
+            "Laudo afirma descumprimento de data que não consta de nenhum documento dos autos (11 vs. 01)"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, aceite parcial, ação, citação (2022-03-21), contestação tempestiva (2022-04-11), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: a resposta do SAC (04) não localiza a reclamação de 2021-06-21 alegada na inicial (05), protocolo ATD-2021-7810"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração (04 negativo)",
+            "Ausências de W-A: comprovante da torna, prazo ajustado de entrega, destino do galpão, prova do caso fortuito, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Inicial (05) vs. resposta do SAC (04) sobre a reclamação — alegação órfã",
+            "Contradição interna da contestação (08: confessa e nega o atraso) e restituições recíprocas incompletas (03/05 vs. 12), como em W-A"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: NF de torna, títulos 'sintéticos', IDs sequenciais",
+            "Única variável do mundo: reclamação não localizada — padrão binário de experimento"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, aceite parcial, reclamação (registrada, 04), ação, contestação (2022-04-11), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: certidão de efetivação (07) registra disponibilização em 2022-03-14, contra 2022-03-21 na certidão de disponibilização (06)"
+          ],
+          "missing_evidence": [
+            "Comprovante de visualização para dirimir a divergência",
+            "Ausências de W-A: comprovante da torna, prazo ajustado, destino do galpão, prova do caso fortuito, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Certidão de disponibilização (06: 2022-03-21) vs. certidão de efetivação (07: 2022-03-14). Efeito: com 21/03, 15º dia útil é 11/04 (contestação tempestiva no último dia); com 14/03, o prazo vence 04/04 — contestação de 11/04 intempestiva",
+            "Inversão cronológica: efetivação sete dias antes da disponibilização oficial",
+            "Contradição interna da contestação (08: confessa e nega o atraso)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: NF de torna, títulos 'sintéticos', IDs sequenciais",
+            "Divergência de datas como única variável — padrão de experimento controlado"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-211",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2021-04-09: fornecimento e instalação de bancadas de pedra reconstituída, R$ 84.600,00 pagos à vista (01-contrato-prestacao.md; 02-nota-fiscal.md)",
+            "Instalação concluída sem ressalvas em 2021-04-29 (03); reclamação por 'vício de consentimento por informação técnica falsa sobre a resistência do material' em 2021-06-02 (04)",
+            "Ação de anulação ajuizada em 2022-02-11 com restituição de R$ 84.600,00 (05)",
+            "Citação disponibilizada/visualizada em 2022-03-03 (06, 07); contestação em 2022-03-24 — início 04/03, 15º dia útil em 24/03: tempestiva no último dia (08; 17-calendario-forense.md)",
+            "Réplica 2022-04-20; saneador 2022-07-06; laudo 2023-02-01: 'resistência real inferior à informada na proposta que precedeu a contratação'; sentença 2023-09-13 anulando o negócio e condenando à restituição de R$ 84.600,00; intimação 2023-09-20 (09-13; 15)",
+            "Custas de R$ 1.549,61 em 2022-02-11 (14)"
+          ],
+          "missing_evidence": [
+            "A 'proposta que precedeu a contratação': o laudo (11) compara a resistência real com a informada na proposta, mas a proposta/folheto técnico não consta do conjunto — sem ela, o termo de comparação do vício de informação não está provado",
+            "Comprovante do pagamento à vista de R$ 84.600,00 (01 declara, 02 é NF; nenhum comprovante bancário)",
+            "Restituições recíprocas: anulado o negócio (12), nada se dispõe sobre a devolução das bancadas instaladas (03)",
+            "Manifestação sobre o laudo (extrato item 6), quesitos; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Sem contradição interna de datas ou valores; a tensão relevante é entre a inicial (05: anulação por vício de consentimento, vício anterior ao contrato) e o termo de aceite sem ressalvas (03) — não contraditórios (vício de informação é pré-contratual), mas a inicial (05) diz que 'o objeto passou a apresentar vício de consentimento', erro conceitual: vício de consentimento é da declaração de vontade, não do objeto"
+          ],
+          "implausible_or_leaking_documents": [
+            "Protocolo de SAC com assunto 'vício de consentimento por informação técnica falsa' (04) — juridiquês de petição em canal de atendimento ao cliente; atendente não classifica vício de consentimento",
+            "Títulos 'sintéticos', 'Comarca Experimental de Luar', IDs sequenciais (BR-CIV-CON-211, NF-SYN-1011, ATD-2021-7811), 10:40 fixo, frases-template ('o objeto ... passou a apresentar vício de consentimento')",
+            "Sentença de anulação sem dispor sobre restituição das bancadas (12 vs. 03)"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, instalação, ação, citação (2022-03-03), contestação tempestiva (2022-03-24), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: a resposta do SAC (04) não localiza a reclamação de 2021-06-02 alegada na inicial (05), protocolo ATD-2021-7811"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração (04 negativo)",
+            "Ausências de W-A: proposta técnica (base do laudo), comprovante de pagamento, destino das bancadas, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Inicial (05) vs. resposta do SAC (04) sobre a reclamação — alegação órfã",
+            "Erro conceitual da inicial (05: objeto que 'apresenta vício de consentimento'), como em W-A"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: juridiquês no SAC, títulos 'sintéticos', IDs sequenciais",
+            "Única variável do mundo: reclamação não localizada — padrão binário de experimento"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, instalação, reclamação (registrada, 04), ação, contestação (2022-03-24), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: certidão de efetivação (07) registra disponibilização em 2022-02-24, contra 2022-03-03 na certidão de disponibilização (06)"
+          ],
+          "missing_evidence": [
+            "Comprovante de visualização para dirimir a divergência",
+            "Ausências de W-A: proposta técnica, comprovante de pagamento, destino das bancadas, manifestação sobre o laudo; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Certidão de disponibilização (06: 2022-03-03) vs. certidão de efetivação (07: 2022-02-24). Efeito: com 03/03, 15º dia útil é 24/03 (contestação tempestiva no último dia); com 24/02, o início é 25/02 e, com o Carnaval (28/02 e 01/03 sem expediente, conforme 17-calendario-forense.md), o prazo vence 21/03 — contestação de 24/03 intempestiva",
+            "Inversão cronológica: efetivação sete dias antes da disponibilização oficial"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: juridiquês no SAC, títulos 'sintéticos', IDs sequenciais",
+            "Divergência de datas como única variável — padrão de experimento controlado"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    },
+    {
+      "matter_id": "M-212",
+      "worlds": [
+        {
+          "world_id": "W-A",
+          "material_findings": [
+            "Contrato de 2021-04-20: intermediação comercial de contratos de energia distribuída, comissão de R$ 41.250,00 devida pela contratante (Solário) à contratada (Sargaço) 'após o fechamento dos contratos intermediados' (01-contrato-prestacao.md)",
+            "Nota fiscal da comissão emitida em 2021-04-20 — mesmo dia do contrato (02-nota-fiscal.md)",
+            "Relatório de intermediação concluída apresentado em 2021-05-10, com planilha de negócios anexa (03-relatorio-intermediacao.md); reclamação por não pagamento em 2021-06-14 (04)",
+            "Ação de cobrança ajuizada em 2022-02-22 pedindo R$ 41.250,00 (05)",
+            "Citação disponibilizada/visualizada em 2022-03-14 (06, 07); contestação em 2022-04-04 — início 15/03, 15º dia útil em 04/04: tempestiva no último dia (08; 17-calendario-forense.md)",
+            "Réplica 2022-05-02; saneador 2022-07-15; laudo 2023-02-10: contratos fechados e comissão não paga; sentença 2023-09-22 condenando ao pagamento de R$ 41.250,00; intimação 2023-09-29 (09-13; 15)",
+            "Custas de R$ 909,06 em 2022-02-22 (14)"
+          ],
+          "missing_evidence": [
+            "Planilha de negócios concluídos (anexa ao relatório, 03) e os próprios contratos intermediados: o nexo entre a atuação da corretora e os fechamentos — ponto central da defesa ('canal direto', 08) — não tem prova documental no conjunto",
+            "O laudo (11) conclui que os contratos 'foram efetivamente fechados', mas não examina se foram fechados PELA intermediação da autora — não responde à controvérsia posta na contestação (08)",
+            "Aceite da Solário ao relatório unilateral de 03; comprovantes da cobrança da comissão",
+            "Manifestação sobre o laudo (extrato item 6), quesitos; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Nota fiscal da comissão emitida em 2021-04-20 (02), dia do contrato, quando a comissão só era devida 'após o fechamento dos contratos intermediados' (01), ocorrido em 2021-05-10 (03) — fatura emitida 20 dias antes do fato gerador; a sentença (12) trata a NF como comprovação da comissão 'faturada', ignorando a antecipação",
+            "Direção dos fluxos preservada (corretora cobra da contratante), mas a defesa (08) admite o fechamento dos contratos 'por canal direto' — o laudo confirma o fechamento sem enfrentar o canal (11 vs. 08)"
+          ],
+          "implausible_or_leaking_documents": [
+            "'Sargaço Corretagem Náutica Ltda.' intermediando contratos de ENERGIA DISTRIBUÍDA (01) — descompasso completo entre ramo da corretora e objeto intermediado",
+            "Títulos 'sintéticos', 'Comarca Experimental de Mangue', IDs sequenciais (BR-CIV-CON-212, NF-SYN-1012, ATD-2021-7812), 10:40 fixo, frases-template",
+            "Condenação (12) apoiada em NF antecipada ao fato gerador e laudo que não enfrenta o nexo de intermediação"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-B",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, relatório, ação, citação (2022-03-14), contestação tempestiva (2022-04-04), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: a resposta do SAC (04) não localiza a reclamação de 2021-06-14 alegada na inicial (05), protocolo ATD-2021-7812"
+          ],
+          "missing_evidence": [
+            "Reclamação extrajudicial sem corroboração (04 negativo)",
+            "Ausências de W-A: planilha de negócios, contratos intermediados, nexo de intermediação, aceite do relatório; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Inicial (05) vs. resposta do SAC (04) sobre a reclamação — alegação órfã",
+            "NF de 2021-04-20 (02) anterior ao fato gerador de 2021-05-10 (01, 03), como em W-A"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: corretora náutica de energia, NF antecipada, títulos 'sintéticos', IDs sequenciais",
+            "Única variável do mundo: reclamação não localizada — padrão binário de experimento"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        },
+        {
+          "world_id": "W-C",
+          "material_findings": [
+            "Idênticos a W-A quanto a contrato, NF, relatório, reclamação (registrada, 04), ação, contestação (2022-04-04), réplica, saneador, laudo, sentença, intimação e custas",
+            "Diferença material: certidão de efetivação (07) registra disponibilização em 2022-03-07, contra 2022-03-14 na certidão de disponibilização (06)"
+          ],
+          "missing_evidence": [
+            "Comprovante de visualização para dirimir a divergência",
+            "Ausências de W-A: planilha de negócios, contratos intermediados, nexo de intermediação, aceite do relatório; extrato (15) omite a citação; sem trânsito/recurso"
+          ],
+          "contradictions": [
+            "Certidão de disponibilização (06: 2022-03-14) vs. certidão de efetivação (07: 2022-03-07). Efeito: com 14/03, 15º dia útil é 04/04 (contestação tempestiva no último dia); com 07/03, o prazo vence 28/03 — contestação de 04/04 intempestiva",
+            "Inversão cronológica: efetivação sete dias antes da disponibilização oficial",
+            "NF de 2021-04-20 (02) anterior ao fato gerador de 2021-05-10 (01, 03)"
+          ],
+          "implausible_or_leaking_documents": [
+            "Mesmas marcas de W-A: corretora náutica de energia, NF antecipada, títulos 'sintéticos', IDs sequenciais",
+            "Divergência de datas como única variável — padrão de experimento controlado"
+          ],
+          "realism_1_to_5": 2,
+          "confidence": "alta"
+        }
+      ]
+    }
+  ]
+}
