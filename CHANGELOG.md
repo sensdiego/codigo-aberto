@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.6.4] - 2026-09-01
+
+### Fixed
+
+- Conecta a família sintética P1 de 36 mundos à régua compartilhada, preservando sua contagem declarativa de oito invariantes.
+
 ## [0.6.3] - 2026-09-01
 
 ### Fixed
