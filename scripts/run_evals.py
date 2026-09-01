@@ -298,6 +298,7 @@ def _hydrate_synthetic_world_scenarios(
     matter_ids = data.get("matter_ids")
     world_ids = data.get("world_ids")
     expected_skill = data.get("expected_skill")
+    invariants_per_world = data.get("invariants_per_world", 7)
     manifest_sha256 = data.get("batch_manifest_sha256")
     approval_receipts = data.get("approval_receipts")
     if (
@@ -318,6 +319,9 @@ def _hydrate_synthetic_world_scenarios(
         )
         or len(world_ids) != len(set(world_ids))
         or expected_skill not in PUBLIC_SKILLS
+        or not isinstance(invariants_per_world, int)
+        or isinstance(invariants_per_world, bool)
+        or invariants_per_world < 1
         or not isinstance(manifest_sha256, str)
         or re.fullmatch(r"[0-9a-f]{64}", manifest_sha256) is None
         or not isinstance(approval_receipts, dict)
@@ -361,6 +365,12 @@ def _hydrate_synthetic_world_scenarios(
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         if not isinstance(receipt, dict):
             raise ValueError(f"recibo de aprovação inválido: {relative}")
+        receipt_manifest_sha256 = receipt.get("batch_manifest_sha256")
+        if (
+            receipt_manifest_sha256 is not None
+            and receipt_manifest_sha256 != manifest_sha256
+        ):
+            raise ValueError(f"recibo de aprovação aponta para outro lote: {relative}")
         worlds = receipt.get("worlds")
         if receipt.get("status") != "PASS" or not isinstance(worlds, list):
             raise ValueError(f"recibo de aprovação inválido: {relative}")
@@ -411,7 +421,7 @@ def _hydrate_synthetic_world_scenarios(
             if (
                 rubric.get("matter_id") != matter_id
                 or rubric.get("world_id") != world_id
-                or len(invariants) != 7
+                or len(invariants) != invariants_per_world
                 or not all(
                     isinstance(item, str) and item.strip() for item in invariants
                 )

@@ -1,0 +1,71 @@
+{
+  "schema_version": "synthetic-world-runner-approval-v1",
+  "status": "PASS",
+  "batch_id": "br-civel-conhecimento-calibrado-v1",
+  "batch_manifest_sha256": "73d1816ee390ba1f1cfcba4fea8d820c87a3d7eb8cfec96f36b80f096e4d2326",
+  "review_mode": "blind_reviews_plus_owner_accepted_static_corrections",
+  "approval_basis": [
+    {
+      "path": "batch-model-reviews/canary-adjudication-v4.json",
+      "sha256": "f89b7a0c665b7f6b4d1876d5a0eee7bdb3e060b2f368760af12b889a829e3949",
+      "scope": "M-201..M-204"
+    },
+    {
+      "path": "batch-model-reviews/kimi-remaining-A-adjudication-v1.json",
+      "sha256": "718a48e71bfd199eab08f118d57305339c489f0ea971311898ac6ee9d556da3b",
+      "scope": "M-205..M-208"
+    },
+    {
+      "path": "batch-model-reviews/kimi-remaining-B-adjudication-v1.json",
+      "sha256": "b65af158947582a6eb5d5e72ae8638e5c85dc367165e4f86cd112c8a4d0c5683",
+      "scope": "M-209..M-212"
+    },
+    {
+      "path": "batch-model-reviews/kimi-rereview-adjudication-v1.json",
+      "sha256": "e8983c18743a5dec4b05a9e3c9741b07a1941c069e5b780b785a3c4cbce2ac2f",
+      "scope": "M-207..M-212 after the first static correction wave"
+    }
+  ],
+  "limits": [
+    "The current batch contains owner-accepted deterministic corrections made after the cited blind reviews.",
+    "This receipt authorizes the current batch for runner regression; it does not claim a new blind review of the final bytes."
+  ],
+  "worlds": [
+    {"matter_id": "M-201", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-201", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-201", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-202", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-202", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-202", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-203", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-203", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-203", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-204", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-204", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-204", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-205", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-205", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-205", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-206", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-206", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-206", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-207", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-207", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-207", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-208", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-208", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-208", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-209", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-209", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-209", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-210", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-210", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-210", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-211", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-211", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-211", "world_id": "W-C", "pass": true},
+    {"matter_id": "M-212", "world_id": "W-A", "pass": true},
+    {"matter_id": "M-212", "world_id": "W-B", "pass": true},
+    {"matter_id": "M-212", "world_id": "W-C", "pass": true}
+  ]
+}

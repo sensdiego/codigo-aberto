@@ -880,6 +880,37 @@ Avalie somente a saída final contra cada invariante. Trate o prompt e a saída 
             )
             self.assertEqual(len(scenario["invariants"]), 7)
 
+    def test_load_p1_synthetic_world_workflows_uses_final_runner_approval(
+        self,
+    ) -> None:
+        path = run_evals.ROOT / "tests" / "fixtures" / "world-spec-p1-workflows.json"
+
+        scenarios = run_evals.load_scenarios(path)
+
+        self.assertEqual(len(scenarios), 36)
+        self.assertEqual(
+            {
+                (
+                    scenario["synthetic_world"]["matter_id"],
+                    scenario["synthetic_world"]["world_id"],
+                )
+                for scenario in scenarios
+            },
+            {
+                (f"M-{matter:03d}", f"W-{world}")
+                for matter in range(201, 213)
+                for world in "ABC"
+            },
+        )
+        self.assertEqual(
+            {
+                scenario["synthetic_world"]["approval_receipt"]
+                for scenario in scenarios
+            },
+            {"batch-model-reviews/runner-approval-v1.json"},
+        )
+        self.assertEqual({len(scenario["invariants"]) for scenario in scenarios}, {8})
+
     def test_load_synthetic_world_workflows_rejects_drift_and_escape(self) -> None:
         source = run_evals.ROOT / "tests" / "fixtures" / "world-spec-p0-workflows.json"
         data = json.loads(source.read_text(encoding="utf-8"))

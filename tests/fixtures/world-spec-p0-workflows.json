@@ -22,5 +22,6 @@
     "M-112"
   ],
   "world_ids": ["W-A", "W-B", "W-C"],
+  "invariants_per_world": 7,
   "expected_skill": "analise-juridica-civel"
 }

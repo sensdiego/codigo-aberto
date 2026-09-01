@@ -1,0 +1,25 @@
+{
+  "schema_version": "synthetic-world-workflows-v1",
+  "research_root": "data/research/2026-09-01-world-spec-p1",
+  "batch_manifest_sha256": "73d1816ee390ba1f1cfcba4fea8d820c87a3d7eb8cfec96f36b80f096e4d2326",
+  "approval_receipts": {
+    "batch-model-reviews/runner-approval-v1.json": "6b9cb8977af617c589e698fcdc5cb39c135afec97fd982b41cc7f3892914af54"
+  },
+  "matter_ids": [
+    "M-201",
+    "M-202",
+    "M-203",
+    "M-204",
+    "M-205",
+    "M-206",
+    "M-207",
+    "M-208",
+    "M-209",
+    "M-210",
+    "M-211",
+    "M-212"
+  ],
+  "world_ids": ["W-A", "W-B", "W-C"],
+  "invariants_per_world": 8,
+  "expected_skill": "analise-juridica-civel"
+}
