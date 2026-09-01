@@ -286,9 +286,18 @@ briefing ou contexto sejam tratados como autorização implícita.
       os 30 cenários, exigiu a primeira rota correta e não encontrou falha
       específica da frente deliberativa. Merge e publicação foram concluídos
       na `v0.6.0`; dogfood permanece separado.
-- [ ] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
+- [x] Dogfood pareado antes de anúncio: mesmo caso sintético, salto direto ×
       protocolo, medindo decisões alteradas, lacunas descobertas, turnos e
-      abandono.
+      abandono. Executado em 2026-09-01 sobre a v0.6.1
+      ([veredicto](data/dogfood/2026-08-31-pareado-deliberacao/veredicto.md)):
+      **MANTÉM**. A decisão do braço B (contraproposta com garantia em janela
+      datada + execução condicional) diferiu materialmente da embutida no
+      braço A (executar em silêncio) e é a que o mandato do cliente endossa;
+      o gate recusou autorização combinada nos dois braços; custo A US$ 3,18,
+      B US$ 2,34. Ressalvas: operador foi agente aplicando a folha do
+      advogado (não Diego digitando) e o desfecho "não redigir" segue sem
+      recibo de uso. A porta deliberativa sai de "experimento sem aceitação"
+      para capacidade aceita para uso interno.
 - Cláusula de promoção: se em duas rodadas o protocolo falhar por omissão ou
   por roteamento, a skill autônoma passa a ser a recomendação — embrulhando
   protocolo e artefato já existentes.
