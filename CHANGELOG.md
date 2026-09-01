@@ -4,6 +4,12 @@ Mudanças publicadas do plugin `silo-legal`, da mais recente para a mais antiga.
 Alterações ainda não publicadas ficam em [`.changes/`](.changes/) e são reunidas
 automaticamente quando uma versão é criada.
 
+## [0.6.3] - 2026-09-01
+
+### Fixed
+
+- Família sintética P1 (fase de conhecimento) com lote calibrado, canário cego CONSTRUIR e adjudicação completa dos 36 mundos; skills distribuídas inalteradas.
+
 ## [0.6.2] - 2026-08-31
 
 ### Fixed
