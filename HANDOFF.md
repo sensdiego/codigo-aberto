@@ -1,19 +1,13 @@
 # Handoff de sessão
 
-Atualizado em 2026-09-01 no encerramento `/bye`, após a execução do dogfood
-pareado da camada deliberativa (veredicto **MANTÉM**), a construção de uma
-base empírica de autos completos a partir da pasta do Drive do escritório, a
-cross-validação autos × fs.brain, o estudo de uso probatório TJ×STJ sobre o
-índice servido do Valter e a **construção completa da família sintética P1**
-(fase de conhecimento), autorizada e encerrada nesta sessão.
+Atualizado em 2026-09-01 após conectar a família sintética P1 à régua
+compartilhada e publicar a `v0.6.4`.
 
-## Ponto de continuidade fixado pelo `/bye`
+## Ponto de continuidade
 
-- Branch canônica: `main`. Commits da sessão: `64b5077` (dogfood pareado,
-  veredicto MANTÉM) e `f4c9d14` (família P1 completa com recibos). Ambos
-  **locais, sem push** — o push dispara a release automática; há dois
-  fragments pendentes: `patch` (P1, skills inalteradas) e `none` (dogfood).
-  **Decisão de push/release fica com o owner.**
+- Branch canônica: `main`. A adaptação entrou no commit `1db8dd2`; o workflow
+  `Software release` publicou a tag imutável `v0.6.4` no commit `490936e`.
+  O sincronismo posterior destes documentos é `none` e não cria nova versão.
 - Dogfood pareado da deliberação: **executado e registrado** — veredicto
   MANTÉM; a porta deliberativa sai de "experimento sem aceitação" para
   capacidade aceita para uso interno. Ressalva registrada: operador foi
@@ -30,9 +24,15 @@ cross-validação autos × fs.brain, o estudo de uso probatório TJ×STJ sobre o
   (subagentes Kimi, não Codex): **PASS 36/36 mundos**, 16/16 críticas e
   8/8 relevantes, zero falso positivo crítico. Limitação declarada: mesma
   família de modelo nos revisores; isolamento processual integral.
-- Estado dos gates: `make validate` PASS; `make lint` PASS; `make test`
-  PASS (71); `build_worlds.py check` PASS (P0 e P1); `build_batch.py check`
-  PASS (P0 e P1); release probe `trusted`, impact `ok` com 2 fragments.
+- Adaptação P1 da régua: `tests/fixtures/world-spec-p1-workflows.json`
+  materializa os 36 cenários aprovados; P0 declara 7 invariantes por mundo e
+  P1 declara 8. O recibo final autoriza o lote corrente para regressão sem
+  fingir uma nova revisão cega dos bytes corrigidos pelo owner.
+- Estado dos gates: `make lint` PASS; `make test` PASS (72); `make validate`
+  PASS; `make test-release` PASS (13); `build_worlds.py check` PASS (P0 e
+  P1); `build_batch.py check` PASS (P0 e P1). O `--list` da fixture P1 expõe
+  36/36 cenários. Workflow de release PASS; GitHub Release final com oito
+  ZIPs e `manifest.json`, todos com digest publicado.
 - Material empírico privado em `~/Dev/Habilidades/procs-copias-drive/`
   (fora do repo): 254 PDFs de autos completos (173 processos), extrator
   (Projudi + Recurso + eproc), 162 casos estruturados, 103 pares
@@ -43,31 +43,25 @@ cross-validação autos × fs.brain, o estudo de uso probatório TJ×STJ sobre o
 
 ## Próximas tarefas fixadas (nesta ordem, salvo decisão do owner)
 
-1. **Decisão de push** dos commits `64b5077` + `f4c9d14`: dispara a release
-   automática (patch, provável `v0.6.3`; as oito bundles de skills não
-   mudam). Sem push, nada sai do local.
-2. **Adaptação da P1 ao `scripts/run_evals.py`**: fixture
-   `world-spec-p1-workflows.json` materializando os 36 cenários, espelho do
-   `world-spec-p0-workflows.json` — transforma o lote em régua executável.
-   Trabalho estático, sem custo; a rodada com backend (Codex ou outro) é
-   decisão separada.
-3. **Decisão de anúncio da camada deliberativa** — destravada pelo
+1. **Decidir uma rodada comportamental paga sobre a P1**: a régua está
+   pronta, mas nenhuma chamada de modelo foi feita nesta adaptação. Backend,
+   modelo, orçamento e escopo exigem autorização separada.
+2. **Decisão de anúncio da camada deliberativa** — destravada pelo
    veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
-4. **Estacionadas (não reabrir sem decisão):** execução da camada
+3. **Estacionadas (não reabrir sem decisão):** execução da camada
    probatória do cross-validation (âncoras factuais no texto dos autos);
    recorte só-cível do estudo Valter e associação com resultado; execução
    de skills sobre autos reais (exige protocolo de privacidade próprio).
-5. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
+4. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
    andamento", trabalho publicado); branches `codex/*` antigas já merged
    permanecem locais — deletar somente com autorização.
 
 ## Estado do produto
 
-A versão publicada continua sendo `v0.6.2` (tag imutável em `a354700`,
-oito bundles ZIP e `manifest.json`). Os commits desta sessão ainda não foram
-publicados; se o push for autorizado, o workflow consumirá os fragments
-`patch` + `none` e publicará a próxima versão (provável `v0.6.3`), sem
-alteração nas skills distribuídas.
+A versão publicada é `v0.6.4` (tag imutável em `490936e`, oito bundles ZIP
+e `manifest.json`). A adaptação da régua está incluída; as skills distribuídas
+permanecem byte a byte iguais à `v0.6.3`. Publicação não prova execução
+comportamental da P1, que continua sem chamada paga nesta etapa.
 
 ## Sessão de 2026-09-01 — o que foi entregue
 

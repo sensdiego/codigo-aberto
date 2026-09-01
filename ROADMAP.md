@@ -10,16 +10,16 @@ Estado dos itens:
 - `[~]` em andamento;
 - `[x]` concluído.
 
-## Estado atual (2026-08-30, v0.6.1)
+## Estado atual (2026-09-01, v0.6.4)
 
 - Dez skills publicadas, com disciplina compartilhada, contrato de handoff e
-  recorte versionado do CPC. Versão corrente `v0.6.1`, publicada em 2026-08-30
-  com o mapa visual alinhado à porta autônoma de deliberação jurídica.
+  recorte versionado do CPC. Versão corrente `v0.6.4`, publicada em 2026-09-01
+  com a família sintética P1 conectada à régua compartilhada.
 - Protocolo de release validado ponta a ponta: fragmentos, semver, tag imutável,
-  GitHub Release e publicação idempotente de assets (onze GitHub Releases
+  GitHub Release e publicação idempotente de assets (quatorze GitHub Releases
   publicadas, todas finais).
 - Oito bundles ChatGPT e o manifesto de checksums publicados na
-  [release v0.6.1](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.6.1).
+  [release v0.6.4](https://github.com/sensdiego/codigo-aberto/releases/tag/v0.6.4).
   O último recibo de atualização do acervo do projeto de smoke no ChatGPT é da
   v0.2.4, em 2026-08-24; release publicada não prova atualização do projeto.
 - Smoke completo do Claude Code aprovado em 2026-08-24
@@ -172,6 +172,12 @@ edição futura de skills.
       [`CONTRIBUTING.md`](CONTRIBUTING.md). Seção "Cenários de avaliação"
       cobre estrutura, uso do harness, leitura dos vereditos e regra de não
       alterar skill e régua no mesmo pull request sem justificativa.
+- [x] Conectar as famílias sintéticas aprovadas à régua compartilhada. P0 e
+      P1 materializam 36 cenários cada; a fixture declara a contagem por mundo
+      (7 invariantes no P0 e 8 no P1), e o P1 usa recibo final que autoriza o
+      lote corrente sem reclassificar as correções estáticas como nova revisão
+      cega. Validado e publicado na `v0.6.4` em 2026-09-01; rodada
+      comportamental paga segue como decisão separada.
 
 ## Fase 3 — Expansão de conteúdo
 
