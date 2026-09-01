@@ -1,46 +1,117 @@
 # Handoff de sessão
 
-Atualizado em 2026-08-31 no encerramento `/bye`, após a preparação completa do
-dogfood pareado da camada deliberativa (adiado por decisão do owner antes da
-execução), a conclusão corrigida da pesquisa sobre a fábrica de datasets
-sintéticos da Harvey, a execução estática da investigação brasileira, a
-calibração agregada do P0 no acervo real do `fs.brain` e a aprovação funcional
-do lote completo por agentes Codex. A sessão anterior
-(2026-08-30) entregou a
-implementação integral da fila de módulos de redação contenciosa, o mapa
-visual, a validação estrutural anonimizada, a arquitetura de adaptação com a
-avaliação A01–A14 e a publicação da skill autônoma de deliberação na
-`v0.6.0`/`v0.6.1`.
+Atualizado em 2026-09-01 no encerramento `/bye`, após a execução do dogfood
+pareado da camada deliberativa (veredicto **MANTÉM**), a construção de uma
+base empírica de autos completos a partir da pasta do Drive do escritório, a
+cross-validação autos × fs.brain, o estudo de uso probatório TJ×STJ sobre o
+índice servido do Valter e a **construção completa da família sintética P1**
+(fase de conhecimento), autorizada e encerrada nesta sessão.
 
 ## Ponto de continuidade fixado pelo `/bye`
 
-- Branch canônica: `main`; trabalho integrado em `42eb0de`, correção de
-  integração em `b81735b`, closeout documental em `9e643c8` e release
-  automática ancorada em `a354700`.
-- Baseline congelada: `br-civel-cumprimento-calibrado-v1`, com 12 assuntos,
-  três mundos por assunto, 612 documentos e 252 invariantes.
-- Recibo canônico:
-  `data/evals/2026-08-31-codex-skill-world-spec-p0-full-v1/report.json`, com
-  36/36 mundos e 252/252 invariantes aprovados, sem custo externo.
-- Estado do gate: `STATIC_PASS / AGENT_FULL_BATCH_PASS / 36_OF_36_WORLDS /
-  CODEX_SKILL_BACKED_FULL_PASS`.
-- Release automática concluída: `v0.6.2`, tag imutável em `a354700`, oito
-  bundles ZIP e `manifest.json`. Os fragments `patch` da cobertura normativa e
-  `none` do dossiê foram consumidos; `scripts/release.py plan` retorna
-  `changed=false`.
-- Não há execução de modelo pendente nesta família. Os incidentes de
-  `M-105/W-A` e `M-110/W-C` estão preservados como tentativas supersedidas, não
-  apagados nem contabilizados como sucesso de primeira passagem.
+- Branch canônica: `main`. Commits da sessão: `64b5077` (dogfood pareado,
+  veredicto MANTÉM) e `f4c9d14` (família P1 completa com recibos). Ambos
+  **locais, sem push** — o push dispara a release automática; há dois
+  fragments pendentes: `patch` (P1, skills inalteradas) e `none` (dogfood).
+  **Decisão de push/release fica com o owner.**
+- Dogfood pareado da deliberação: **executado e registrado** — veredicto
+  MANTÉM; a porta deliberativa sai de "experimento sem aceitação" para
+  capacidade aceita para uso interno. Ressalva registrada: operador foi
+  agente aplicando a folha do advogado, não Diego; o desfecho "não redigir"
+  segue sem recibo. Recibos em
+  `data/dogfood/2026-08-31-pareado-deliberacao/` (veredicto, registros,
+  transcripts); comentário na issue #22.
+- Família P1 `br-civel-conhecimento-calibrado-v1` **construída e fechada**
+  em `data/research/2026-09-01-world-spec-p1/`: 12 assuntos, 36 mundos, 612
+  documentos cegos, cronologia multi-ano com feriados reais, gate de base
+  empírica real (39 casos de procedimento comum da carteira). Canário cego
+  em 4 rodadas até CONSTRUIR dos dois modelos (custo total US$ 5,63);
+  adjudicação dos 8 assuntos restantes por revisores cegos independentes
+  (subagentes Kimi, não Codex): **PASS 36/36 mundos**, 16/16 críticas e
+  8/8 relevantes, zero falso positivo crítico. Limitação declarada: mesma
+  família de modelo nos revisores; isolamento processual integral.
+- Estado dos gates: `make validate` PASS; `make lint` PASS; `make test`
+  PASS (71); `build_worlds.py check` PASS (P0 e P1); `build_batch.py check`
+  PASS (P0 e P1); release probe `trusted`, impact `ok` com 2 fragments.
+- Material empírico privado em `~/Dev/Habilidades/procs-copias-drive/`
+  (fora do repo): 254 PDFs de autos completos (173 processos), extrator
+  (Projudi + Recurso + eproc), 162 casos estruturados, 103 pares
+  cross-validados com o fs.brain (82% de concordância processual),
+  anatomia por classe, estudo de uso probatório TJ×STJ (149.220 decisões
+  servidas), spec P1 e dinâmica de leitura. Dado confidencial: alimenta
+  calibração local; nunca publicar cru.
 
-Próximo movimento recomendado: manter o P0 imutável como regressão e decidir,
-em uma sessão separada, se existe valor suficiente para construir uma segunda
-família jurídica P1. Não iniciar nova família, publicação do dataset,
-`SEN-1746`, dogfood, nova release ou anúncio por inferência deste handoff.
+## Próximas tarefas fixadas (nesta ordem, salvo decisão do owner)
+
+1. **Decisão de push** dos commits `64b5077` + `f4c9d14`: dispara a release
+   automática (patch, provável `v0.6.3`; as oito bundles de skills não
+   mudam). Sem push, nada sai do local.
+2. **Adaptação da P1 ao `scripts/run_evals.py`**: fixture
+   `world-spec-p1-workflows.json` materializando os 36 cenários, espelho do
+   `world-spec-p0-workflows.json` — transforma o lote em régua executável.
+   Trabalho estático, sem custo; a rodada com backend (Codex ou outro) é
+   decisão separada.
+3. **Decisão de anúncio da camada deliberativa** — destravada pelo
+   veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
+4. **Estacionadas (não reabrir sem decisão):** execução da camada
+   probatória do cross-validation (âncoras factuais no texto dos autos);
+   recorte só-cível do estudo Valter e associação com resultado; execução
+   de skills sobre autos reais (exige protocolo de privacidade próprio).
+5. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
+   andamento", trabalho publicado); branches `codex/*` antigas já merged
+   permanecem locais — deletar somente com autorização.
 
 ## Estado do produto
 
-A versão publicada é `v0.6.2`. O PR #27 foi integrado a `main` pelo merge commit
-`0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
+A versão publicada continua sendo `v0.6.2` (tag imutável em `a354700`,
+oito bundles ZIP e `manifest.json`). Os commits desta sessão ainda não foram
+publicados; se o push for autorizado, o workflow consumirá os fragments
+`patch` + `none` e publicará a próxima versão (provável `v0.6.3`), sem
+alteração nas skills distribuídas.
+
+## Sessão de 2026-09-01 — o que foi entregue
+
+- **Dogfood pareado da deliberação executado** (adiado em 2026-08-31):
+  braço A (salto direto, US$ 3,18) produziu minuta em 3 turnos com a
+  decisão estratégica implícita e errada para o mandato; braço B
+  (protocolo, US$ 2,34) produziu decisão materialmente diferente e
+  endossada pela folha do advogado, com handoff de decisão e condição de
+  reabertura. Gate recusou autorização combinada nos dois braços — o
+  incidente de 2026-08-25 não se reproduziu. Veredicto MANTÉM no ROADMAP e
+  na issue #22. Desvio registrado: operador foi um agente (Kimi) aplicando
+  `contexto-advogado.md`, não Diego digitando.
+- **Base empírica de autos completos:** pasta "PROCS E CÓPIAS" do Drive do
+  escritório (265 PDFs, 173 processos únicos, TJPR/TJSC/TRF4/STJ/TRT).
+  Download manual do owner após quota do Drive. Extrator determinístico
+  (rodapé `PROJUDI - Processo:/Recurso:` e rodapé de evento eproc): 162 de
+  176 processos estruturados em sequências de movimentos com datas, tipos e
+  complementos; 14 fora de escopo por formato (PJe/TRT, TJSP avulso, STJ,
+  TJCE, TJMG) — registrados.
+- **Cross-validação autos × fs.brain:** pareamento por CNJ (o pareamento
+  por número de pasta estava errado em 75/138 casos): 123 pares fortes,
+  103 com timeline utilizável. 82% das entradas processuais da timeline do
+  advogado verificadas nos autos (±7 dias); os 18% têm causa estrutural
+  identificada, sem contradição factual genuína. Cobertura reversa de 37%:
+  timelines humanas são curadorias — lição incorporada à fábrica.
+- **Uso probatório TJ×STJ** (índice servido do Valter, acesso read-only
+  via SSH no container, 149.220 decisões): TJ decide por documento
+  (contrato em 59%) e moldura de ônus (27%); STJ discute a fronteira do
+  reexame (48%). Insumo para o realismo probatório da fábrica.
+- **Família P1 construída:** especificação aprovada pelo owner
+  (`ESPEC-P1.md` no diretório privado), semente + lote implementados
+  espelhando a arquitetura do P0, quatro rodadas de canário com 13
+  defeitos corrigidos (2 de instrumento: calendário que negava feriado;
+  citação causalmente impossível no modelo eletrônico), adjudicação
+  completa e rodada final de coerência. Resíduos aceitos e documentados
+  como convenção do fixture.
+- **Dinâmica de leitura destilada** (`DINAMICA-LEITURA.md` privado):
+  sete princípios empíricos para evolução futura das skills — insumo,
+  nenhuma skill editada.
+
+## Estado anterior (2026-08-31)
+
+A sessão de 2026-08-31 encerrou com a `v0.6.2` publicada. O PR #27 foi
+integrado a `main` pelo merge commit `0d9c04c`, preservando o commit `86a28eb`; o PR #28 foi integrado pelo merge
 commit `7b6ecf0`, preservando toda a cadeia de avaliação; o PR #30 foi integrado
 pelo merge commit `da41883`; e o PR #26 foi integrado pelo merge commit
 `c47555a`. O PR #32 corrigiu o estado publicado no mapa visual pelo merge commit
@@ -495,4 +566,12 @@ jq -e '
   and ([.scenarios[].invariants[].atendido] | all)
 ' \
   data/evals/2026-08-31-codex-skill-world-spec-p0-full-v1/report.json
+python3 data/research/2026-09-01-world-spec-p1/build_worlds.py check
+python3 -B data/research/2026-09-01-world-spec-p1/build_batch.py check
+jq -e '.status == "PASS" and ([.worlds[].pass] | all)' \
+  data/research/2026-09-01-world-spec-p1/batch-model-reviews/kimi-remaining-a-adjudication-v1.json
+jq -e '.status == "PASS" and ([.worlds[].pass] | all)' \
+  data/research/2026-09-01-world-spec-p1/batch-model-reviews/kimi-remaining-b-adjudication-v1.json
+jq -e '.status == "PASS" and ([.worlds[].pass] | all)' \
+  data/research/2026-09-01-world-spec-p1/batch-model-reviews/kimi-rereview-adjudication-v1.json
 ```
