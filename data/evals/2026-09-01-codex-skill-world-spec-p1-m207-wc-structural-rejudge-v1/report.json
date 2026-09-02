@@ -1,0 +1,145 @@
+{
+  "date": "2026-09-01",
+  "runner": "codex-cli",
+  "model": "gpt-5.6-sol",
+  "plugin_version": "0.6.4",
+  "counts": {
+    "total": 1,
+    "PASS": 1,
+    "FAIL": 0,
+    "JUDGE_ERROR": 0
+  },
+  "total_cost_usd": 0.0,
+  "scenarios": [
+    {
+      "id": "sintetico-m207-wc",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra contratação (`01-contrato-prestacao.md`), reclamação (`04-registro-reclamacao.md`), ajuizamento (`05-peticao-inicial.md`), as duas certidões de citação (`06` e `07`), contestação (`08`), réplica (`09`), saneamento (`10`), laudo (`11`) e sentença (`12`)."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "A seção “Estado da prova” separa expressamente “Confirmado documentalmente”, “Alegado”, “Contraditório” e “Ausente”, além de distinguir que “o laudo quantificou o dano e a sentença adotou essa quantificação”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise emprega somente L219, L224, L330, L335, L350, L351 e L373, limitando-os à contagem do prazo, resposta aos fatos defensivos, preliminares, indeferimento da inicial e ônus probatório."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Certidões de comunicação, custas e extrato são burocracia de andamento: demonstram atos e datas, mas não provam responsabilidade ou dano.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "A saída classifica como ausentes “recurso, acordo, trânsito em julgado, cumprimento ou pagamento” e determina verificá-los “sem presumir qualquer deles”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "Os fatos e cálculos apresentados são vinculados aos arquivos citados; a saída explicita as lacunas documentais e afirma: “Não há base para preferir uma certidão.”"
+        },
+        {
+          "n": 7,
+          "invariant": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+          "atendido": true,
+          "evidencia": "Expõe “Cenário 10/03” como intempestivo e “Cenário 17/03” como tempestivo, afirmando que “a tempestividade da contestação depende da contradição entre as duas certidões”."
+        },
+        {
+          "n": 8,
+          "invariant": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+          "atendido": true,
+          "evidencia": "Usa `17-calendario-forense.md`, apresenta os vencimentos possíveis em 31/03 e 10/04 e recomenda “obter o histórico técnico do sistema [...] e certidão retificadora para resolver a data da citação” antes de definir tempestividade."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 88724,
+        "cached_input_tokens": 75776,
+        "output_tokens": 4676,
+        "reasoning_output_tokens": 2586
+      },
+      "judge_token_usage": {
+        "input_tokens": 18716,
+        "cached_input_tokens": 15104,
+        "output_tokens": 964,
+        "reasoning_output_tokens": 423
+      }
+    }
+  ],
+  "skill_coverage": [
+    {
+      "skill": "analise-documental",
+      "covered": false
+    },
+    {
+      "skill": "analise-juridica-civel",
+      "covered": true
+    },
+    {
+      "skill": "analise-jurisprudencial",
+      "covered": false
+    },
+    {
+      "skill": "aprofundamento-juridico",
+      "covered": false
+    },
+    {
+      "skill": "assinatura-silo",
+      "covered": false
+    },
+    {
+      "skill": "deliberacao-juridica",
+      "covered": false
+    },
+    {
+      "skill": "novo-caso",
+      "covered": false
+    },
+    {
+      "skill": "pesquisa-silo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-consultivo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-contencioso",
+      "covered": false
+    }
+  ],
+  "cost_basis": "Codex account usage; no external USD price reported"
+}

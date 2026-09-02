@@ -176,8 +176,19 @@ edição futura de skills.
       P1 materializam 36 cenários cada; a fixture declara a contagem por mundo
       (7 invariantes no P0 e 8 no P1), e o P1 usa recibo final que autoriza o
       lote corrente sem reclassificar as correções estáticas como nova revisão
-      cega. Validado e publicado na `v0.6.4` em 2026-09-01; rodada
-      comportamental paga segue como decisão separada.
+      cega. Validado e publicado na `v0.6.4` em 2026-09-01.
+- [~] Medir a P1 comportamentalmente na configuração comparável ao P0. O
+      baseline e duas correções textuais oscilaram no invariante de ligação
+      probatória. O candidato estrutural `5af4a27` passou o painel crítico 9/9
+      e os 36 cenários únicos da P1 por adjudicação; `M-207/W-C` teve uma
+      divergência de juiz resolvida por rejulgamento do transcript congelado,
+      pois a data questionada existia no documento-fonte. A regressão P0 foi
+      pausada após 8/36 PASS. O candidato foi encerrado sem promoção e o delta
+      de produto foi neutralizado antes do closeout. Status
+      `CLOSED_NOT_PROMOTED`: antes de gastar mais tokens ou abrir novo
+      candidato, decidir qual resultado útil se busca, que evidência mudaria
+      uma decisão, custo/teto e stop rule. Os 28 cenários P0 restantes não são
+      o próximo passo automático.
 
 ## Fase 3 — Expansão de conteúdo
 

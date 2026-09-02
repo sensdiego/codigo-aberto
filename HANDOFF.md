@@ -1,7 +1,8 @@
 # Handoff de sessão
 
-Atualizado em 2026-09-01 após conectar a família sintética P1 à régua
-compartilhada e publicar a `v0.6.4`.
+Atualizado em 2026-09-01 após pausar a regressão P0 do candidato estrutural.
+A próxima sessão começa por uma decisão de valor e custo, não pela retomada
+automática dos testes.
 
 ## Ponto de continuidade
 
@@ -28,6 +29,20 @@ compartilhada e publicar a `v0.6.4`.
   materializa os 36 cenários aprovados; P0 declara 7 invariantes por mundo e
   P1 declara 8. O recibo final autoriza o lote corrente para regressão sem
   fingir uma nova revisão cega dos bytes corrigidos pelo owner.
+- Rodada comportamental P1: depois de duas correções textuais instáveis, o
+  commit experimental `5af4a27` tornou obrigatório um quadro estrutural de
+  relações probatórias. O painel crítico repetido passou 9/9; a P1 cobriu os 36
+  cenários únicos e ficou 36/36 por adjudicação. Não foi uma passagem
+  automatizada limpa: o primeiro juiz reprovou `M-207/W-C` por considerar
+  inventada a data 20/01/2025, embora ela conste literalmente no extrato do
+  cenário; o mesmo transcript congelado passou no rejulgamento. A P0 começou e
+  foi interrompida a pedido do owner após 8/36 PASS (`M-101` W-A/W-B/W-C,
+  `M-102` W-A/W-B/W-C e `M-103` W-A/W-B); `M-103/W-C` não foi concluído.
+  Antes do closeout, o delta de produto foi integralmente neutralizado: a
+  evidência será preservada, mas a skill publicada não muda. Status:
+  `CLOSED_NOT_PROMOTED`; não há prontidão de release.
+  Recibo em
+  `data/evals/2026-09-01-codex-skill-world-spec-p1-full-v1/ADJUDICATION.md`.
 - Estado dos gates: `make lint` PASS; `make test` PASS (72); `make validate`
   PASS; `make test-release` PASS (13); `build_worlds.py check` PASS (P0 e
   P1); `build_batch.py check` PASS (P0 e P1). O `--list` da fixture P1 expõe
@@ -43,16 +58,24 @@ compartilhada e publicar a `v0.6.4`.
 
 ## Próximas tarefas fixadas (nesta ordem, salvo decisão do owner)
 
-1. **Decidir uma rodada comportamental paga sobre a P1**: a régua está
-   pronta, mas nenhuma chamada de modelo foi feita nesta adaptação. Backend,
-   modelo, orçamento e escopo exigem autorização separada.
-2. **Decisão de anúncio da camada deliberativa** — destravada pelo
+1. **Antes de executar qualquer avaliação, decidir se esta frente ainda merece
+   existir.** Produzir uma análise curta com: resultado útil pretendido para
+   Diego e usuários futuros; o que a evidência atual já prova e não prova;
+   alternativas concretas (parar, piloto humano direcionado, concluir P0 ou
+   redesenhar produto/régua); resultado provável, custo estimado e critério
+   falsificável de sucesso de cada alternativa; menor próximo passo capaz de
+   mudar uma decisão. Sem esse gate, não retomar os 28 cenários P0 pendentes.
+2. **Somente se a decisão de valor justificar promoção:** definir novo teto de
+   consumo e decidir se a evidência necessária é concluir a P0, testar uso
+   humano ou abandonar/reformular o candidato. P1 aprovada por adjudicação não
+   basta, isoladamente, para publicação.
+3. **Decisão de anúncio da camada deliberativa** — destravada pelo
    veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
-3. **Estacionadas (não reabrir sem decisão):** execução da camada
+4. **Estacionadas (não reabrir sem decisão):** execução da camada
    probatória do cross-validation (âncoras factuais no texto dos autos);
    recorte só-cível do estudo Valter e associação com resultado; execução
    de skills sobre autos reais (exige protocolo de privacidade próprio).
-4. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
+5. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
    andamento", trabalho publicado); branches `codex/*` antigas já merged
    permanecem locais — deletar somente com autorização.
 
@@ -60,8 +83,10 @@ compartilhada e publicar a `v0.6.4`.
 
 A versão publicada é `v0.6.4` (tag imutável em `490936e`, oito bundles ZIP
 e `manifest.json`). A adaptação da régua está incluída; as skills distribuídas
-permanecem byte a byte iguais à `v0.6.3`. Publicação não prova execução
-comportamental da P1, que continua sem chamada paga nesta etapa.
+permanecem byte a byte iguais à `v0.6.3`. A rodada P1 e seus candidatos ficam
+preservados como evidência histórica, sem alteração líquida nas skills. O
+candidato estrutural produziu passagem P1 adjudicada, mas sua regressão P0
+ficou incompleta e, por isso, não foi promovido.
 
 ## Sessão de 2026-09-01 — o que foi entregue
 
