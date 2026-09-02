@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "kind": "patch",
-  "category": "Fixed",
-  "summary": "Exige que a análise cível explicite a ligação entre alegação, documento corroborante e limite da prova."
+  "kind": "none",
+  "category": "Changed",
+  "summary": "Registra o candidato experimental de ligação probatória, encerrado sem promoção após revisão de valor."
 }

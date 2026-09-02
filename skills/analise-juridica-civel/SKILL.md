@@ -43,8 +43,6 @@ handoff comum normalmente.
 6. Antes de fechar, reconcilie todos os dispositivos que a fonte normativa
    autorizada tornou materiais ao pedido: aplique cada um ou declare
    explicitamente, com razão, que ele não incide. Não omita dispositivo material.
-7. Preencha o bloco obrigatório de relações probatórias do mapa. Não o substitua
-   por uma classificação geral de fatos e alegações.
 
 Use IDs exatos do corpus para CPC. Para diploma material ainda ausente da
 biblioteca, não invente texto: valide pelo Silo quando disponível ou marque

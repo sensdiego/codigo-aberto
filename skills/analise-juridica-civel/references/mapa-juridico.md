@@ -14,21 +14,6 @@ estados dos quais a conclusão depende; não esconda condição ou contradição
 
 Natureza: `direito civil material`, `processo civil` ou `mista`.
 
-## Relações probatórias
-
-Na seção probatória da saída, inclua uma linha para cada relato material
-presente em duas ou mais fontes. Se o usuário impuser outros títulos, incorpore
-o bloco ao título equivalente; não o omita.
-
-| Relato material | Fonte que alega | Fonte relacionada | Relação | O que confirma | O que não confirma |
-|---|---|---|---|---|---|
-
-Nomeie a relação como `converge`, `contradiz`, `complementa` ou `não resolve`.
-Convergência inclui o documento que confirma somente a existência ou o
-conteúdo da alegação: isso não prova automaticamente o fato relatado nem seu
-reconhecimento judicial. Listas gerais de fatos confirmados e alegados não
-substituem este bloco.
-
 ## Enquadramento
 
 Para cada questão:
