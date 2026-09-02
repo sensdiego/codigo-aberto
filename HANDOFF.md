@@ -1,7 +1,8 @@
 # Handoff de sessão
 
-Atualizado em 2026-09-01 após conectar a família sintética P1 à régua,
-publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
+Atualizado em 2026-09-01 após pausar a regressão P0 do candidato estrutural.
+A próxima sessão começa por uma decisão de valor e custo, não pela retomada
+automática dos testes.
 
 ## Ponto de continuidade
 
@@ -28,14 +29,17 @@ publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
   materializa os 36 cenários aprovados; P0 declara 7 invariantes por mundo e
   P1 declara 8. O recibo final autoriza o lote corrente para regressão sem
   fingir uma nova revisão cega dos bytes corrigidos pelo owner.
-- Rodada comportamental P1: `gpt-5.6-sol` com a skill fornecida diretamente.
-  A linha de base oscilou em M-202/W-A: painel de cinco com 3 PASS e 2 FAIL.
-  Duas correções textuais gerais foram testadas sob fixture e juiz congelados.
-  A primeira passou M-202/W-A 5/5, mas a P1 parou em M-203/W-A (6 PASS,
-  1 FAIL); a segunda passou M-203/W-A 5/5, mas a P1 parou em M-204/W-A
-  (9 PASS, 1 FAIL). Todas as reprovações foram no invariante 7, sem
-  `JUDGE_ERROR`, e foram confirmadas por auditoria manual. Status:
-  `STOP_VARIANCE_PERSISTS`; P0 não executada, sem push ou PR. Recibo em
+- Rodada comportamental P1: depois de duas correções textuais instáveis, o
+  commit local `5af4a27` tornou obrigatório um quadro estrutural de relações
+  probatórias. O painel crítico repetido passou 9/9; a P1 cobriu os 36
+  cenários únicos e ficou 36/36 por adjudicação. Não foi uma passagem
+  automatizada limpa: o primeiro juiz reprovou `M-207/W-C` por considerar
+  inventada a data 20/01/2025, embora ela conste literalmente no extrato do
+  cenário; o mesmo transcript congelado passou no rejulgamento. A P0 começou e
+  foi interrompida a pedido do owner após 8/36 PASS (`M-101` W-A/W-B/W-C,
+  `M-102` W-A/W-B/W-C e `M-103` W-A/W-B); `M-103/W-C` não foi concluído.
+  Status: `PAUSED_FOR_VALUE_REVIEW`; não há prontidão de release, push ou PR.
+  Recibo em
   `data/evals/2026-09-01-codex-skill-world-spec-p1-full-v1/ADJUDICATION.md`.
 - Estado dos gates: `make lint` PASS; `make test` PASS (72); `make validate`
   PASS; `make test-release` PASS (13); `build_worlds.py check` PASS (P0 e
@@ -52,17 +56,24 @@ publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
 
 ## Próximas tarefas fixadas (nesta ordem, salvo decisão do owner)
 
-1. **Decidir se reabre a P1 sob novo desenho experimental**: não fazer uma
-   terceira troca de redação na mesma regra. O próximo candidato deve testar
-   uma superfície estrutural obrigatória no mapa jurídico para relações
-   probatórias, com novo mandato, teto de consumo e regressão desde M-201.
-2. **Decisão de anúncio da camada deliberativa** — destravada pelo
+1. **Antes de executar qualquer avaliação, decidir se esta frente ainda merece
+   existir.** Produzir uma análise curta com: resultado útil pretendido para
+   Diego e usuários futuros; o que a evidência atual já prova e não prova;
+   alternativas concretas (parar, piloto humano direcionado, concluir P0 ou
+   redesenhar produto/régua); resultado provável, custo estimado e critério
+   falsificável de sucesso de cada alternativa; menor próximo passo capaz de
+   mudar uma decisão. Sem esse gate, não retomar os 28 cenários P0 pendentes.
+2. **Somente se a decisão de valor justificar promoção:** definir novo teto de
+   consumo e decidir se a evidência necessária é concluir a P0, testar uso
+   humano ou abandonar/reformular o candidato. P1 aprovada por adjudicação não
+   basta, isoladamente, para publicação.
+3. **Decisão de anúncio da camada deliberativa** — destravada pelo
    veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
-3. **Estacionadas (não reabrir sem decisão):** execução da camada
+4. **Estacionadas (não reabrir sem decisão):** execução da camada
    probatória do cross-validation (âncoras factuais no texto dos autos);
    recorte só-cível do estudo Valter e associação com resultado; execução
    de skills sobre autos reais (exige protocolo de privacidade próprio).
-4. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
+5. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
    andamento", trabalho publicado); branches `codex/*` antigas já merged
    permanecem locais — deletar somente com autorização.
 
@@ -70,9 +81,10 @@ publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
 
 A versão publicada é `v0.6.4` (tag imutável em `490936e`, oito bundles ZIP
 e `manifest.json`). A adaptação da régua está incluída; as skills distribuídas
-permanecem byte a byte iguais à `v0.6.3`. A rodada P1 e os dois candidatos
-corretivos estão somente na branch local `codex/p1-evidence-linkage`; nenhum
-candidato produziu passagem integral ou foi enviado ao remoto.
+permanecem byte a byte iguais à `v0.6.3`. A rodada P1, os dois candidatos
+textuais e o candidato estrutural estão somente na branch local
+`codex/p1-evidence-linkage`. O candidato estrutural produziu passagem P1
+adjudicada, mas sua regressão P0 está incompleta e nada foi enviado ao remoto.
 
 ## Sessão de 2026-09-01 — o que foi entregue
 

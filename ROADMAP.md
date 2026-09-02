@@ -178,13 +178,15 @@ edição futura de skills.
       lote corrente sem reclassificar as correções estáticas como nova revisão
       cega. Validado e publicado na `v0.6.4` em 2026-09-01.
 - [~] Medir a P1 comportamentalmente na configuração comparável ao P0. O
-      baseline oscilou em M-202/W-A: 3 PASS e 2 FAIL. A primeira correção
-      passou o painel M-202/W-A 5/5, mas a P1 parou em M-203/W-A; a segunda
-      passou o painel M-203/W-A 5/5, mas a P1 parou em M-204/W-A. As duas
-      falhas integrais foram no invariante 7, sem `JUDGE_ERROR`, e a stop rule
-      de duas alterações foi atingida. Status `STOP_VARIANCE_PERSISTS`; P0 e PR
-      bloqueados. Se reaberta, testar uma superfície estrutural obrigatória para
-      relações probatórias, não uma terceira reformulação textual da regra.
+      baseline e duas correções textuais oscilaram no invariante de ligação
+      probatória. O candidato estrutural `5af4a27` passou o painel crítico 9/9
+      e os 36 cenários únicos da P1 por adjudicação; `M-207/W-C` teve uma
+      divergência de juiz resolvida por rejulgamento do transcript congelado,
+      pois a data questionada existia no documento-fonte. A regressão P0 foi
+      pausada após 8/36 PASS. Status `PAUSED_FOR_VALUE_REVIEW`: antes de gastar
+      mais tokens ou promover o candidato, decidir qual resultado útil se
+      busca, que evidência mudaria uma decisão, custo/teto e stop rule. Os 28
+      cenários P0 restantes não são o próximo passo automático.
 
 ## Fase 3 — Expansão de conteúdo
 
