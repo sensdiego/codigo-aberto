@@ -29,13 +29,13 @@ publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
   P1 declara 8. O recibo final autoriza o lote corrente para regressão sem
   fingir uma nova revisão cega dos bytes corrigidos pelo owner.
 - Rodada comportamental P1: `gpt-5.6-sol` com a skill fornecida diretamente.
-  O canário M-201 passou 3/3 e 24/24; a continuação parou por `--fail-fast`
-  em M-202/W-A, com 7/8, total de 3 PASS, 1 FAIL, zero `JUDGE_ERROR` e 31/32
-  invariantes. A falha crítica foi não declarar expressamente a convergência
-  entre a alegação da inicial e o registro de atendimento. Painel de cinco
-  execuções inalteradas de M-202/W-A: 3 PASS e 2 FAIL, sempre com decisão no
-  invariante 7 e sem `JUDGE_ERROR`. A oscilação sob artefatos congelados está
-  confirmada. Status: `STOP_VARIANCE`; 32 cenários não executados. Recibo em
+  A linha de base oscilou em M-202/W-A: painel de cinco com 3 PASS e 2 FAIL.
+  Duas correções textuais gerais foram testadas sob fixture e juiz congelados.
+  A primeira passou M-202/W-A 5/5, mas a P1 parou em M-203/W-A (6 PASS,
+  1 FAIL); a segunda passou M-203/W-A 5/5, mas a P1 parou em M-204/W-A
+  (9 PASS, 1 FAIL). Todas as reprovações foram no invariante 7, sem
+  `JUDGE_ERROR`, e foram confirmadas por auditoria manual. Status:
+  `STOP_VARIANCE_PERSISTS`; P0 não executada, sem push ou PR. Recibo em
   `data/evals/2026-09-01-codex-skill-world-spec-p1-full-v1/ADJUDICATION.md`.
 - Estado dos gates: `make lint` PASS; `make test` PASS (72); `make validate`
   PASS; `make test-release` PASS (13); `build_worlds.py check` PASS (P0 e
@@ -52,10 +52,10 @@ publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
 
 ## Próximas tarefas fixadas (nesta ordem, salvo decisão do owner)
 
-1. **Fortalecer a regra geral exposta pelo `STOP_VARIANCE` da P1**: tornar
-   explícito o vínculo `alegação -> documento corroborante -> limite da prova`
-   e reiniciar a regressão desde o canário M-201. O painel de estabilidade já
-   foi executado; não retomar diretamente os 32 cenários restantes.
+1. **Decidir se reabre a P1 sob novo desenho experimental**: não fazer uma
+   terceira troca de redação na mesma regra. O próximo candidato deve testar
+   uma superfície estrutural obrigatória no mapa jurídico para relações
+   probatórias, com novo mandato, teto de consumo e regressão desde M-201.
 2. **Decisão de anúncio da camada deliberativa** — destravada pelo
    veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
 3. **Estacionadas (não reabrir sem decisão):** execução da camada
@@ -70,8 +70,9 @@ publicar a `v0.6.4` e fechar o painel de estabilidade da rodada comportamental.
 
 A versão publicada é `v0.6.4` (tag imutável em `490936e`, oito bundles ZIP
 e `manifest.json`). A adaptação da régua está incluída; as skills distribuídas
-permanecem byte a byte iguais à `v0.6.3`. A rodada P1 posterior à release
-está apenas local, sem commit ou publicação, e não produziu passagem integral.
+permanecem byte a byte iguais à `v0.6.3`. A rodada P1 e os dois candidatos
+corretivos estão somente na branch local `codex/p1-evidence-linkage`; nenhum
+candidato produziu passagem integral ou foi enviado ao remoto.
 
 ## Sessão de 2026-09-01 — o que foi entregue
 

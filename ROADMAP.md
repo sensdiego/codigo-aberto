@@ -178,13 +178,13 @@ edição futura de skills.
       lote corrente sem reclassificar as correções estáticas como nova revisão
       cega. Validado e publicado na `v0.6.4` em 2026-09-01.
 - [~] Medir a P1 comportamentalmente na configuração comparável ao P0. O
-      canário M-201 passou 3/3 e 24/24; a continuação parou em M-202/W-A com
-      7/8 por omitir a ligação explícita entre a alegação da inicial e o
-      registro que a corroborava. O painel de cinco execuções inalteradas de
-      M-202/W-A terminou em 3 PASS e 2 FAIL, sempre decidido pelo invariante 7:
-      variação crítica confirmada, status `STOP_VARIANCE`, 32 cenários não
-      executados. Próximo gate: reforçar o vínculo geral entre alegação,
-      documento e limite da prova e reiniciar desde o canário M-201.
+      baseline oscilou em M-202/W-A: 3 PASS e 2 FAIL. A primeira correção
+      passou o painel M-202/W-A 5/5, mas a P1 parou em M-203/W-A; a segunda
+      passou o painel M-203/W-A 5/5, mas a P1 parou em M-204/W-A. As duas
+      falhas integrais foram no invariante 7, sem `JUDGE_ERROR`, e a stop rule
+      de duas alterações foi atingida. Status `STOP_VARIANCE_PERSISTS`; P0 e PR
+      bloqueados. Se reaberta, testar uma superfície estrutural obrigatória para
+      relações probatórias, não uma terceira reformulação textual da regra.
 
 ## Fase 3 — Expansão de conteúdo
 

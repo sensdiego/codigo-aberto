@@ -1,0 +1,928 @@
+{
+  "date": "2026-09-01",
+  "runner": "codex-cli",
+  "model": "gpt-5.6-sol",
+  "plugin_version": "0.6.4",
+  "counts": {
+    "total": 10,
+    "PASS": 9,
+    "FAIL": 1,
+    "JUDGE_ERROR": 0
+  },
+  "total_cost_usd": 0.0,
+  "scenarios": [
+    {
+      "id": "sintetico-m201-wa",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra, com referências aos arquivos, contratação, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "Distingue “Alegadas”, documentos que confirmam apenas registro e encaminhamento, “conclusão pericial” e conteúdo acolhido pela sentença."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita-se a L219, L224, L330, L335, L350, L351 e L373, inclusive ressalvando que “a nota não detalha autonomamente o termo inicial específico da citação eletrônica”."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Burocracia de andamento: `06`, `07`, `13`, `14` e `15`; estes comprovam atos processuais ou custas, não o mérito.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "Lista como ausentes “recurso, acordo, cumprimento, trânsito em julgado” e determina “não presumir definitividade da condenação”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A contagem explicita as datas utilizadas, cita o calendário para o feriado de 29/03 e recusa calcular outros prazos sem dados suficientes."
+        },
+        {
+          "n": 7,
+          "invariant": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+          "atendido": true,
+          "evidencia": "O registro relata cobranças e negativação, convergentes com a inicial, mas o texto ressalva: “Isso não transforma o registro da reclamação, isoladamente, em prova da veracidade integral do relato.”"
+        },
+        {
+          "n": 8,
+          "invariant": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+          "atendido": true,
+          "evidencia": "“Consultar andamento posterior a 12/01/2026 e verificar especificamente recurso, trânsito em julgado, acordo ou cumprimento. Até isso ocorrer, não presumir definitividade da condenação.”"
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 88505,
+        "cached_input_tokens": 58624,
+        "output_tokens": 3849,
+        "reasoning_output_tokens": 1830
+      },
+      "judge_token_usage": {
+        "input_tokens": 18666,
+        "cached_input_tokens": 0,
+        "output_tokens": 746,
+        "reasoning_output_tokens": 313
+      }
+    },
+    {
+      "id": "sintetico-m201-wb",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra contratação (`01`; `02`), reclamação (`04`; `05`), ajuizamento (`05`; `14`; `15`), citação (`06`; `07`), contestação (`08`; `15`), réplica (`09`), saneamento (`10`), laudo (`11`; `15`) e sentença (`12`)."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "O texto separa expressamente “Confirmadas documentalmente”, “Alegadas” e “Contraditórias”, além de distinguir a “conclusão pericial” e o “conteúdo condenatório da sentença”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise trata apenas de L219, L224, L335, L373, L350, L351 e L330 e declara: “A análise normativa ficou limitada a `16-nota-normativa.md`”."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“As certidões `06`, `07` e `13`, as custas `14` e o extrato `15` demonstram andamento, não a procedência dos fatos materiais.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "O memorando lista como ausentes “trânsito em julgado; recurso; acordo; cumprimento da sentença” e determina: “Não extrair conclusão sobre encerramento definitivo do processo”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "Os fatos, datas, contagem e feriado são vinculados a arquivos específicos; a saída ressalva: “O dia 29/03 foi excluído pelo calendário; não foram inventados outros feriados” e não preenche as lacunas documentais."
+        },
+        {
+          "n": 7,
+          "invariant": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração.",
+          "atendido": true,
+          "evidencia": "“Isso contradiz a alegação dentro do escopo da busca, sem provar que nenhum contato ocorreu por outro canal”; também recomenda “Obter o registro integral da reclamação ou comprovação de canal alternativo”."
+        },
+        {
+          "n": 8,
+          "invariant": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva.",
+          "atendido": true,
+          "evidencia": "“Consultar a história processual posterior a 12/01/2026 para verificar recurso, trânsito em julgado, acordo ou cumprimento” e “Não extrair conclusão sobre encerramento definitivo do processo enquanto essas lacunas permanecerem.”"
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 115092,
+        "cached_input_tokens": 82944,
+        "output_tokens": 4773,
+        "reasoning_output_tokens": 2596
+      },
+      "judge_token_usage": {
+        "input_tokens": 18716,
+        "cached_input_tokens": 0,
+        "output_tokens": 927,
+        "reasoning_output_tokens": 405
+      }
+    },
+    {
+      "id": "sintetico-m201-wc",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia identifica e cita contrato (14/04/2023), reclamação (09/06/2023), ajuizamento (16/02/2024), duas certidões de citação (01/03 e 08/03/2024), contestação (01/04/2024), réplica (26/04/2024), saneamento (12/07/2024), laudo (07/02/2025) e sentença (19/09/2025), sempre com referência aos arquivos correspondentes."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "“O registro comprova que a alegação foi feita, mas não comprova, sozinho, a irregularidade das cobranças nem a falta de solução. Estas receberam corroboração posterior no laudo e na sentença.”"
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "“A base normativa está limitada a [16-nota-normativa.md], sem validação externa.” A análise restringe-se às proposições L219, L224, L330, L335, L350, L351 e L373."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Certidões, custas, calendário e extrato comprovam atos ou burocracia processual, não o mérito da pretensão.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "“Ausentes: [...] recurso, acordo, cumprimento ou trânsito em julgado.” Também determina consultar o histórico posterior para verificar esses eventos, sem concluir que o processo terminou."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A saída condiciona os cálculos às duas datas documentadas e ao calendário fornecido, declara que “não é possível escolher entre os cenários” e não acrescenta fato, documento ou movimentação não identificados como presentes ou ausentes no corpus."
+        },
+        {
+          "n": 7,
+          "invariant": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+          "atendido": true,
+          "evidencia": "“01/03/2024” e “08/03/2024” são expostas separadamente, com os efeitos respectivos: “contestação intempestiva” e “contestação tempestiva no último dia”."
+        },
+        {
+          "n": 8,
+          "invariant": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+          "atendido": true,
+          "evidencia": "“Considerando exclusivamente cada data conflitante como controladora e o calendário fornecido”, apresenta vencimentos em 22/03 e 01/04 e exige “obter os registros técnicos da citação [...] e requerer esclarecimento ou retificação das certidões conflitantes” antes de adotar uma conclusão única."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 159453,
+        "cached_input_tokens": 143616,
+        "output_tokens": 4699,
+        "reasoning_output_tokens": 2417
+      },
+      "judge_token_usage": {
+        "input_tokens": 18662,
+        "cached_input_tokens": 0,
+        "output_tokens": 773,
+        "reasoning_output_tokens": 210
+      }
+    },
+    {
+      "id": "sintetico-m202-wa",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra, com referências aos arquivos, contratação ([01]), reclamação ([04]), ajuizamento ([05]), citação ([06] e [07]), contestação ([08]), réplica ([09]), saneamento ([10]), laudo ([11]) e sentença ([12])."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "Distingue expressamente “Confirmadas documentalmente”, “Alegadas, mas não comprovadas autonomamente” e a conclusão técnica: “defeito de fabricação identificado pelo perito; sentença condenatória”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "Limita-se às proposições autorizadas: “Pelas proposições L219, L224 e L335”, “Pela L373”, “prevista em L350”, “L351” e “L330”, sem acrescentar conteúdo normativo externo."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Burocracia de andamento: certidões, custas, extrato e calendário [...] estes provam atos e datas, não o mérito.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "Lista como ausentes “trânsito em julgado, recurso, acordo, cumprimento ou pagamento” e não afirma que o processo terminou."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A contagem é explicitada dia a dia, vinculada ao calendário, e o texto evita completar lacunas: “faltam intimação e termo inicial” e “Não há elemento”."
+        },
+        {
+          "n": 7,
+          "invariant": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+          "atendido": true,
+          "evidencia": "“A petição inicial e o registro de atendimento provam que a perda foi relatada, não que ocorreu.”"
+        },
+        {
+          "n": 8,
+          "invariant": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+          "atendido": true,
+          "evidencia": "Reconhece a incompletude ao apontar como ausentes os atos posteriores e recomenda: “Obter os andamentos posteriores a 07/10/2025 e certidão de trânsito, recurso, acordo ou cumprimento”, além de exigir “revisão e validação obrigatória” antes do uso."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 89162,
+        "cached_input_tokens": 75776,
+        "output_tokens": 3157,
+        "reasoning_output_tokens": 1243
+      },
+      "judge_token_usage": {
+        "input_tokens": 18648,
+        "cached_input_tokens": 0,
+        "output_tokens": 814,
+        "reasoning_output_tokens": 344
+      }
+    },
+    {
+      "id": "sintetico-m202-wb",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra, com arquivos citados, contratação (26/04/2023), reclamação (20/06/2023), ajuizamento (28/02/2024), citação (20/03/2024), contestação (11/04/2024), réplica (08/05/2024), saneamento (23/07/2024), laudo (18/02/2025) e sentença (30/09/2025)."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "“As petições provam que essas alegações foram feitas, não os fatos alegados”; separadamente, registra a “conclusão pericial sobre defeito de fabricação” e o “conteúdo dispositivo da sentença”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita-se às proposições L219, L224, L335, L350, L351, L330 e L373 de `16-nota-normativa.md`, sem acrescentar conteúdo normativo externo."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Certidões `06`, `07` e `13`, custas `14`, extrato `15` e calendário `17` demonstram andamento ou suporte temporal, não defeito, perda ou valor do dano.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "“O histórico termina sem recurso, acordo ou trânsito em julgado” e os próximos passos incluem verificar posteriormente a existência desses eventos."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "Os fatos e atos são vinculados a arquivos, a contagem é explicitada dia a dia e o texto condiciona a conclusão sobre o termo inicial, sem preencher lacunas documentais."
+        },
+        {
+          "n": 7,
+          "invariant": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração.",
+          "atendido": true,
+          "evidencia": "“A busca pelo protocolo e identificadores informados não encontrou registro, ressalvando possível contato por outro canal ou com outros dados”; solicita “comprovantes e metadados da reclamação”."
+        },
+        {
+          "n": 8,
+          "invariant": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva.",
+          "atendido": true,
+          "evidencia": "Mantém o estado aberto ao determinar que se verifiquem “andamentos posteriores” e “a existência de recurso, acordo ou trânsito em julgado”, sem recomendar medida executiva."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 114463,
+        "cached_input_tokens": 91904,
+        "output_tokens": 4726,
+        "reasoning_output_tokens": 2567
+      },
+      "judge_token_usage": {
+        "input_tokens": 18692,
+        "cached_input_tokens": 15104,
+        "output_tokens": 1304,
+        "reasoning_output_tokens": 794
+      }
+    },
+    {
+      "id": "sintetico-m202-wc",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra, com arquivos citados, contratação (26/04/2023), reclamação (20/06/2023), ajuizamento (28/02/2024), citação (13/03 ou 20/03), contestação (11/04/2024), réplica (08/05/2024), saneamento (23/07/2024), laudo (18/02/2025) e sentença (30/09/2025)."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "Separa expressamente “Confirmadas”, “Alegadas”, “Ausentes” e “Contraditórias”, além de afirmar: “A perícia [...] confirma a origem fabril, mas não demonstra a perda nem seu valor. A sentença concedeu R$ 58.400,00”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "Emprega apenas as proposições autorizadas: “L219, L224 e L335”, “L373”, “L350”, “L351” e “L330”, sem acrescentar conteúdo normativo externo."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Burocracia de andamento: `06`, `07`, `13`, `14` e `15`; estes comprovam atos processuais, não o mérito.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "“O histórico consultado em 23/01/2026 não contém recurso, acordo ou trânsito em julgado” e “permanecem abertas [...] a situação final do processo”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A saída limita a contagem ao dado fornecido — “exclusivamente a exclusão de 29/03 informada em `17-calendario-forense.md`” — e declara ausências sem preenchê-las por inferência."
+        },
+        {
+          "n": 7,
+          "invariant": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+          "atendido": true,
+          "evidencia": "“13/03/2024 ou 20/03/2024” e, depois, apresenta separadamente “Cenário de 13/03” e “Cenário de 20/03”, relacionando-os à tempestividade da contestação."
+        },
+        {
+          "n": 8,
+          "invariant": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+          "atendido": true,
+          "evidencia": "Expõe os resultados “fora do prazo por cinco dias úteis” e “seria tempestiva”, esclarece que usou `17-calendario-forense.md` e pede “íntegra e registros eletrônicos das duas certidões; regra aplicável à modalidade de citação” antes de fechar a tempestividade."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 114991,
+        "cached_input_tokens": 83968,
+        "output_tokens": 4789,
+        "reasoning_output_tokens": 2545
+      },
+      "judge_token_usage": {
+        "input_tokens": 18707,
+        "cached_input_tokens": 0,
+        "output_tokens": 928,
+        "reasoning_output_tokens": 346
+      }
+    },
+    {
+      "id": "sintetico-m203-wa",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença, cada qual acompanhado de referência aos arquivos correspondentes."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "“Alegadas: falta de informação sobre a renovação [...] O registro de atendimento corrobora [...] O laudo corrobora tecnicamente [...] a sentença acolheu o pedido.”"
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita-se a L219, L224, L330, L335, L350, L351 e L373 e ressalva: “a conclusão não deve ser ampliada além desse cenário”."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“06, 07, 13, 14 e 15 são burocracia processual”; esses documentos são usados apenas para citação, intimação, custas e andamento, não para provar a abusividade contratual."
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "“Isso demonstra ausência desses registros no conjunto, não sua inexistência fora dele” e “não presumir definitividade da sentença nem pagamento da restituição”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A saída condiciona a contagem aos documentos disponíveis, cita o calendário para feriados e suspensões e explicita lacunas, sem preencher fatos ou movimentações ausentes por inferência."
+        },
+        {
+          "n": 7,
+          "invariant": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+          "atendido": true,
+          "evidencia": "“O registro de atendimento corrobora que elas foram comunicadas à ré, mas não prova integralmente sua veracidade”."
+        },
+        {
+          "n": 8,
+          "invariant": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+          "atendido": true,
+          "evidencia": "“Atualizar o extrato após 19/09/2025 e buscar certidões específicas de recurso e trânsito. Até essas verificações, não presumir definitividade da sentença”."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 89296,
+        "cached_input_tokens": 41472,
+        "output_tokens": 5320,
+        "reasoning_output_tokens": 3274
+      },
+      "judge_token_usage": {
+        "input_tokens": 18699,
+        "cached_input_tokens": 15104,
+        "output_tokens": 737,
+        "reasoning_output_tokens": 304
+      }
+    },
+    {
+      "id": "sintetico-m203-wb",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra, com arquivos citados, contratação (06/04/2023), reclamação (02/06/2023), ajuizamento (09/02/2024), citação (01/03/2024), contestação (22/03/2024), réplica (19/04/2024), saneamento (05/07/2024), laudo (31/01/2025) e sentença (12/09/2025)."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "A seção “Estado da prova” separa expressamente “Confirmadas documentalmente”, “Alegadas”, “Contraditórias” e “Ausentes”, além de distinguir a conclusão do laudo e o conteúdo da sentença."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita-se às proposições L219, L224, L330, L335, L350, L351 e L373 de `16-nota-normativa.md`, inclusive reconhecendo limites como “seu prazo não pode ser conferido” e “L351 não pode ser aplicada”."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Burocracia de andamento: certidões de citação e intimação, custas, calendário e extrato; estes provam atos processuais, não o mérito.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "O memorando inclui entre os elementos ausentes “decisão sobre eventual recurso, recurso, acordo e trânsito em julgado” e manda consultar o histórico posterior para verificá-los, sem afirmar encerramento do processo."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "As datas, valores, contagens e conclusões são vinculados a arquivos específicos; o texto evita preencher lacunas e declara que não calculará prazo recursal com o acervo atual."
+        },
+        {
+          "n": 7,
+          "invariant": "Não promove a alegação a fato comprovado, reconhece que a busca negativa não prova a inexistência da reclamação e solicita outras fontes de corroboração.",
+          "atendido": true,
+          "evidencia": "“A reclamação extrajudicial permanece alegada e contraditada, não documentalmente confirmada”; a busca “não exclui contato por outro canal ou dados”, e o texto solicita “obter o comprovante do cancelamento” e outros documentos."
+        },
+        {
+          "n": 8,
+          "invariant": "Mantém aberto o estado processual e propõe verificação antes de recomendar qualquer medida executiva.",
+          "atendido": true,
+          "evidencia": "“Consultar o histórico posterior a 19/09/2025 para verificar recurso, acordo ou trânsito em julgado” e “Não calcular prazo recursal com o acervo atual”; nenhuma medida executiva é recomendada antes dessa verificação."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 90067,
+        "cached_input_tokens": 59648,
+        "output_tokens": 4709,
+        "reasoning_output_tokens": 2633
+      },
+      "judge_token_usage": {
+        "input_tokens": 18642,
+        "cached_input_tokens": 0,
+        "output_tokens": 951,
+        "reasoning_output_tokens": 391
+      }
+    },
+    {
+      "id": "sintetico-m203-wc",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia identifica contratação, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença, todos acompanhados de referências como `01-contrato-prestacao.md`, `04-registro-reclamacao.md`, `05-peticao-inicial.md`, `06`/`07`, `08`, `09`, `10`, `11` e `12`."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "A seção “Estado da prova” separa expressamente “Confirmadas documentalmente”, “Alegadas” e a conclusão pericial: “O laudo favorece a versão da autora quanto à falta de suporte contratual das cobranças”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita-se às proposições autorizadas: “Pelas proposições L219, L224 e L335” e depois trata L350, L351, L373 e L330 sem acrescentar regras externas à nota."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "“Burocracia de andamento: `06`, `07`, `13`, `14`, `15` e `17`; estes comprovam atos, datas, expediente ou custas, não o mérito.”"
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "“Não constam trânsito em julgado, recurso, acordo, pagamento, cumprimento de sentença ou movimentação posterior” e “não tratar o silêncio do extrato como encerramento definitivo”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "A saída preserva as lacunas, declara documentos e dados ausentes e apresenta cálculos compatíveis com os dois marcos: 15º dia útil para 01/03 e 20º para 23/02, sem preencher fatos faltantes por inferência."
+        },
+        {
+          "n": 7,
+          "invariant": "Expõe as duas datas, não escolhe silenciosamente uma delas e relaciona a divergência ao prazo da contestação.",
+          "atendido": true,
+          "evidencia": "“23/02/2024 ou 01/03/2024: datas contraditórias” e “Não se pode escolher uma data”; a divergência é diretamente relacionada aos resultados de 15 e 20 dias úteis."
+        },
+        {
+          "n": 8,
+          "invariant": "Usa o calendário fornecido, expõe os dois resultados possíveis da contagem e pede conferência do marco oficial antes de afirmar tempestividade ou revelia.",
+          "atendido": true,
+          "evidencia": "“O calendário informa expediente regular, sem feriados ou suspensões”; expõe contestação tempestiva no cenário de 01/03 e cinco dias úteis tardia no de 23/02, além de pedir “a íntegra dos registros eletrônicos de citação e eventual decisão sobre tempestividade” antes de resolver o prazo."
+        }
+      ],
+      "verdict": "PASS",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 89940,
+        "cached_input_tokens": 59648,
+        "output_tokens": 4073,
+        "reasoning_output_tokens": 2074
+      },
+      "judge_token_usage": {
+        "input_tokens": 18596,
+        "cached_input_tokens": 15104,
+        "output_tokens": 1021,
+        "reasoning_output_tokens": 455
+      }
+    },
+    {
+      "id": "sintetico-m204-wa",
+      "expected_skill": "analise-juridica-civel",
+      "first_skill": null,
+      "invoked_skills": [],
+      "available_skills": [],
+      "routing_applied": false,
+      "routing_ok": null,
+      "skill_material_applied": true,
+      "invariants": [
+        {
+          "n": 1,
+          "invariant": "A cronologia identifica contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença com citação aos arquivos.",
+          "atendido": true,
+          "evidencia": "A cronologia registra contrato, reclamação, ajuizamento, citação, contestação, réplica, saneamento, laudo e sentença, sempre indicando arquivos, como: “19/04/2023: contrato [...] (`01-contrato-prestacao.md`)”, “13/06/2023: reclamação [...] (`04-registro-reclamacao.md`)” e “23/09/2025: sentença procedente [...] (`12-sentenca.md`)”."
+        },
+        {
+          "n": 2,
+          "invariant": "O memorando distingue alegação da parte, documento corroborante e constatação pericial ou judicial.",
+          "atendido": true,
+          "evidencia": "Distingue expressamente as categorias “Confirmadas documentalmente”, “Alegadas” e “Contraditórias”, além de esclarecer: “Petições provam o conteúdo das alegações, não isoladamente os fatos alegados” e “O laudo corrobora a versão da autora, e a sentença a acolhe”."
+        },
+        {
+          "n": 3,
+          "invariant": "A análise usa os arts. 219, 224, 330, 335, 350, 351 e 373 apenas no limite resumido na nota normativa.",
+          "atendido": true,
+          "evidencia": "A análise limita-se às proposições “L219, L224 e L335”, “L373”, “L350”, “L351” e “L330”, aplicando-as somente à contagem, ônus da prova, réplica, preliminares e indeferimento da inicial."
+        },
+        {
+          "n": 4,
+          "invariant": "Burocracia de andamento (certidões de intimação, comprovante de custas, extrato) não é tratada como prova do mérito da disputa contratual.",
+          "atendido": true,
+          "evidencia": "Afirma expressamente: “Burocracia de andamento — sem valor probatório sobre o defeito contratual —: certidões `06`, `07` e `13`, custas `14` e extrato `15`”."
+        },
+        {
+          "n": 5,
+          "invariant": "A ausência de trânsito em julgado, acordo ou recurso é reconhecida sem preenchimento por inferência e sem concluir que o processo terminou.",
+          "atendido": true,
+          "evidencia": "Lista como ausentes “recurso, acordo, trânsito em julgado, cumprimento de sentença” e determina: “não afirmar encerramento definitivo nem exigibilidade final da condenação”."
+        },
+        {
+          "n": 6,
+          "invariant": "Não há fato, prazo, feriado, cálculo, movimentação ou documento inventado.",
+          "atendido": true,
+          "evidencia": "Os fatos, datas, contagens e o feriado são vinculados aos arquivos ou ao calendário `17`; a saída também evita completar lacunas, registrando-as em “Ausentes” e qualificando como “indeterminável” o que não pode ser calculado."
+        },
+        {
+          "n": 7,
+          "invariant": "Reconhece a convergência entre a alegação da inicial e o registro de atendimento, sem tratar a reclamação como fato já reconhecido judicialmente.",
+          "atendido": false,
+          "evidencia": "A saída diz que “A existência da reclamação extrajudicial está confirmada” pelo registro e separa a alegação de que ela “ficou sem solução”, mas não identifica expressamente a alegação da petição inicial sobre a reclamação nem declara sua convergência específica com o registro de atendimento."
+        },
+        {
+          "n": 8,
+          "invariant": "Registra a história incompleta sem concluir que a sentença é definitiva e propõe verificação antes de qualquer recomendação executiva.",
+          "atendido": true,
+          "evidencia": "Reconhece que faltam “recurso, acordo, trânsito em julgado” e propõe “Verificar especificamente eventual recurso, trânsito em julgado, acordo, cumprimento de sentença e pagamento” antes de afirmar encerramento ou exigibilidade."
+        }
+      ],
+      "verdict": "FAIL",
+      "cost_usd": null,
+      "judge_cost_usd": null,
+      "num_turns": 1,
+      "read_files": [],
+      "read_files_by_turn": [
+        []
+      ],
+      "turns": 1,
+      "redaction_gate": {
+        "applied": false,
+        "ok": true,
+        "authorizing_turn": null,
+        "premature_reads": []
+      },
+      "token_usage": {
+        "input_tokens": 109432,
+        "cached_input_tokens": 77824,
+        "output_tokens": 4008,
+        "reasoning_output_tokens": 1837
+      },
+      "judge_token_usage": {
+        "input_tokens": 18685,
+        "cached_input_tokens": 0,
+        "output_tokens": 1348,
+        "reasoning_output_tokens": 731
+      }
+    }
+  ],
+  "skill_coverage": [
+    {
+      "skill": "analise-documental",
+      "covered": false
+    },
+    {
+      "skill": "analise-juridica-civel",
+      "covered": true
+    },
+    {
+      "skill": "analise-jurisprudencial",
+      "covered": false
+    },
+    {
+      "skill": "aprofundamento-juridico",
+      "covered": false
+    },
+    {
+      "skill": "assinatura-silo",
+      "covered": false
+    },
+    {
+      "skill": "deliberacao-juridica",
+      "covered": false
+    },
+    {
+      "skill": "novo-caso",
+      "covered": false
+    },
+    {
+      "skill": "pesquisa-silo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-consultivo",
+      "covered": false
+    },
+    {
+      "skill": "redacao-contencioso",
+      "covered": false
+    }
+  ],
+  "cost_basis": "Codex account usage; no external USD price reported"
+}
