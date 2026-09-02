@@ -30,15 +30,17 @@ automática dos testes.
   P1 declara 8. O recibo final autoriza o lote corrente para regressão sem
   fingir uma nova revisão cega dos bytes corrigidos pelo owner.
 - Rodada comportamental P1: depois de duas correções textuais instáveis, o
-  commit local `5af4a27` tornou obrigatório um quadro estrutural de relações
-  probatórias. O painel crítico repetido passou 9/9; a P1 cobriu os 36
+  commit experimental `5af4a27` tornou obrigatório um quadro estrutural de
+  relações probatórias. O painel crítico repetido passou 9/9; a P1 cobriu os 36
   cenários únicos e ficou 36/36 por adjudicação. Não foi uma passagem
   automatizada limpa: o primeiro juiz reprovou `M-207/W-C` por considerar
   inventada a data 20/01/2025, embora ela conste literalmente no extrato do
   cenário; o mesmo transcript congelado passou no rejulgamento. A P0 começou e
   foi interrompida a pedido do owner após 8/36 PASS (`M-101` W-A/W-B/W-C,
   `M-102` W-A/W-B/W-C e `M-103` W-A/W-B); `M-103/W-C` não foi concluído.
-  Status: `PAUSED_FOR_VALUE_REVIEW`; não há prontidão de release, push ou PR.
+  Antes do closeout, o delta de produto foi integralmente neutralizado: a
+  evidência será preservada, mas a skill publicada não muda. Status:
+  `CLOSED_NOT_PROMOTED`; não há prontidão de release.
   Recibo em
   `data/evals/2026-09-01-codex-skill-world-spec-p1-full-v1/ADJUDICATION.md`.
 - Estado dos gates: `make lint` PASS; `make test` PASS (72); `make validate`
@@ -81,10 +83,10 @@ automática dos testes.
 
 A versão publicada é `v0.6.4` (tag imutável em `490936e`, oito bundles ZIP
 e `manifest.json`). A adaptação da régua está incluída; as skills distribuídas
-permanecem byte a byte iguais à `v0.6.3`. A rodada P1, os dois candidatos
-textuais e o candidato estrutural estão somente na branch local
-`codex/p1-evidence-linkage`. O candidato estrutural produziu passagem P1
-adjudicada, mas sua regressão P0 está incompleta e nada foi enviado ao remoto.
+permanecem byte a byte iguais à `v0.6.3`. A rodada P1 e seus candidatos ficam
+preservados como evidência histórica, sem alteração líquida nas skills. O
+candidato estrutural produziu passagem P1 adjudicada, mas sua regressão P0
+ficou incompleta e, por isso, não foi promovido.
 
 ## Sessão de 2026-09-01 — o que foi entregue
 

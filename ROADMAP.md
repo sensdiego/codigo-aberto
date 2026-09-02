@@ -183,10 +183,12 @@ edição futura de skills.
       e os 36 cenários únicos da P1 por adjudicação; `M-207/W-C` teve uma
       divergência de juiz resolvida por rejulgamento do transcript congelado,
       pois a data questionada existia no documento-fonte. A regressão P0 foi
-      pausada após 8/36 PASS. Status `PAUSED_FOR_VALUE_REVIEW`: antes de gastar
-      mais tokens ou promover o candidato, decidir qual resultado útil se
-      busca, que evidência mudaria uma decisão, custo/teto e stop rule. Os 28
-      cenários P0 restantes não são o próximo passo automático.
+      pausada após 8/36 PASS. O candidato foi encerrado sem promoção e o delta
+      de produto foi neutralizado antes do closeout. Status
+      `CLOSED_NOT_PROMOTED`: antes de gastar mais tokens ou abrir novo
+      candidato, decidir qual resultado útil se busca, que evidência mudaria
+      uma decisão, custo/teto e stop rule. Os 28 cenários P0 restantes não são
+      o próximo passo automático.
 
 ## Fase 3 — Expansão de conteúdo
 

@@ -1,6 +1,6 @@
 # Adjudicação da rodada comportamental P1 v1
 
-Status: `PAUSED_FOR_VALUE_REVIEW`.
+Status: `CLOSED_NOT_PROMOTED`.
 
 ## Configuração
 
@@ -201,5 +201,8 @@ ausência de regressão.
 Por decisão do owner, a próxima sessão não retoma automaticamente a P0. Antes
 de qualquer nova chamada de modelo, deve comparar resultados prováveis,
 utilidade concreta, alternativas, custo, critério de sucesso e stop rule; só
-então escolher o menor experimento capaz de mudar uma decisão. Nenhum push, PR,
-merge, tag ou release foi autorizado ou realizado nesta rodada.
+então escolher o menor experimento capaz de mudar uma decisão. Para encerrar a
+sessão sem promover capacidade incompletamente validada, o delta final dos
+arquivos de produto foi devolvido ao estado de `v0.6.4`. Os relatórios e esta
+decisão permanecem como evidência; nenhuma tag ou release de produto decorre do
+closeout.
