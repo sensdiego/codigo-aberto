@@ -34,12 +34,45 @@ capacidade, a skill informa a limitação e não apresenta pesquisa simulada.
 
 ## Instalação
 
+O plugin `silo-legal` reúne as dez skills. Escolha o caminho pelo aplicativo
+que você usa.
+
+### Aplicativo do Claude (Cowork)
+
+O aplicativo instala o plugin completo a partir deste repositório, que já é um
+marketplace no formato esperado ([`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json)).
+
+1. Abra o aplicativo do Claude e entre na aba **Cowork**.
+2. Na barra lateral, abra **Customize** e depois a aba **Plugins**.
+3. Em **Personal plugins**, clique em **+** e escolha **Add marketplace**.
+4. Escolha **Add from a repository** e informe `sensdiego/codigo-aberto`
+   (ou `https://github.com/sensdiego/codigo-aberto`).
+5. Quando o plugin **Silo Legal** aparecer na lista, clique em **Install**.
+6. Abra o plugin e confira a aba **Skills**: as dez skills devem estar ligadas.
+
+Para atualizar, clique em **Update** no marketplace `codigo-aberto`; para
+remover, abra o plugin e clique em **Uninstall**. Disponível nos planos Pro,
+Max, Team e Enterprise. Use o plugin pelo Cowork; segundo a central de ajuda,
+as skills instaladas por plugin também ficam disponíveis no chat do
+aplicativo, enquanto agentes e hooks ficam restritos ao Cowork.
+
+Se a sua conta não mostrar o botão **+** em Personal plugins, use os ZIPs da
+[release mais recente](https://github.com/sensdiego/codigo-aberto/releases/latest):
+**Customize → Skills → + → Create skill → Upload a skill**, um ZIP por skill,
+sem descompactar. Esse caminho instala oito skills; `pesquisa-silo` e
+`assinatura-silo` só vêm pelo plugin.
+
+Fontes: [Install plugins](https://claude.com/docs/cowork/guide/plugins) e
+[Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
+
 ### Claude Code
 
 ```bash
 claude plugin marketplace add sensdiego/codigo-aberto
 claude plugin install silo-legal@codigo-aberto
 ```
+
+Para atualizar: `claude plugin update silo-legal@codigo-aberto`.
 
 ### ChatGPT
 

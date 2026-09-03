@@ -45,13 +45,17 @@ Confirmar uma minuta não autoriza protocolo, envio ou contato externo.
 ```text
 skills/                 produto utilizável
 references/             disciplina, handoff e recorte legislativo necessário
-.claude-plugin/          manifestos de distribuição
-scripts/                 validação e geração de bundles
-tests/fixtures/          cenários sintéticos de roteamento
+.claude-plugin/          manifestos de distribuição (plugin e marketplace)
+scripts/                 validação, avaliação, geração de bundles e release
+tests/fixtures/          cenários sintéticos de roteamento e avaliação
+data/                    relatórios de avaliação, pesquisa e dogfood, todos sintéticos
 ```
 
-Não fazem parte deste repositório materiais de pesquisa interna, decisões de
-desenvolvimento, transcrições de testes, casos reais ou configurações pessoais.
+Os documentos de engenharia ([roadmap](ROADMAP.md), [handoff](HANDOFF.md),
+[RFC](RFC-CA-001-adaptacao-casos-reais.md)) e a pasta `data/` registram o
+desenvolvimento e as avaliações; não são guia de uso. Casos reais, documentos
+de clientes, dados pessoais e configurações pessoais nunca entram neste
+repositório: toda evidência publicada é sintética ou agregada e anonimizada.
 
 ## Origem e primeiro uso
 
@@ -74,8 +78,19 @@ Certidão do antecessor:
 
 ## Uso
 
-As skills podem ser lidas diretamente em [`skills/`](skills/) ou carregadas em
-aplicativos compatíveis com Agent Skills. Veja o [guia rápido](QUICKSTART.md).
+Três caminhos de instalação, detalhados no [guia rápido](QUICKSTART.md#instalação):
+
+- **Aplicativo do Claude (Cowork):** Customize → Plugins → Add marketplace →
+  `sensdiego/codigo-aberto` → Install. Instala o plugin completo, com as dez
+  skills, e atualiza com um clique.
+- **Claude Code:** `claude plugin marketplace add sensdiego/codigo-aberto` e
+  `claude plugin install silo-legal@codigo-aberto`.
+- **ChatGPT:** oito ZIPs autossuficientes publicados em cada
+  [release](https://github.com/sensdiego/codigo-aberto/releases/latest),
+  montados pelo modelo dentro da conversa ou de um projeto.
+
+As skills também podem ser lidas diretamente em [`skills/`](skills/) ou
+carregadas em qualquer aplicativo compatível com Agent Skills.
 
 O corpus local contém o recorte do CPC necessário ao workflow. Pesquisa
 jurisprudencial e validações externas usam o conector autenticado do Silo quando
