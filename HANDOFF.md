@@ -1,11 +1,22 @@
 # Handoff de sessão
 
-Atualizado em 2026-09-01 após pausar a regressão P0 do candidato estrutural.
-A próxima sessão começa por uma decisão de valor e custo, não pela retomada
-automática dos testes.
+Atualizado em 2026-09-03 após o gate de valor da fábrica sintética, a
+documentação do caminho de instalação no aplicativo do Claude e o merge do
+PR #37. A próxima sessão começa pelos recibos que dependem do owner
+(instalação no aplicativo, leitura comparada, uso humano), não por nova
+rodada de avaliação.
 
 ## Ponto de continuidade
 
+- Sessão de 2026-09-03: PR #37 integrado em `main` (merge `6d2bbe7`; o
+  workflow consumiu o fragmento `none` em `9c193ef`). Versão corrente
+  continua `v0.6.4`; skills distribuídas inalteradas. README, QUICKSTART e
+  RELEASING documentam a instalação do plugin completo no aplicativo do
+  Claude por marketplace. Memorando de decisão da fábrica sintética em
+  `data/research/2026-09-03-fabrica-sintetica-valor.md`; conselho registrado
+  no ledger (Sol indisponível por franquia; K3 material). Issues criadas:
+  SEN-2427 (Receita C, brainstorm no Valter) e SEN-2428 (revisita da fábrica
+  em 2026-10-05, filha de SEN-2381).
 - Branch canônica: `main`. A adaptação entrou no commit `1db8dd2`; o workflow
   `Software release` publicou a tag imutável `v0.6.4` no commit `490936e`.
   O sincronismo posterior destes documentos é `none` e não cria nova versão.
@@ -74,21 +85,50 @@ automática dos testes.
    estrutural, concluir a regressão P0 (28 cenários) após 2026-09-07 e só
    então decidir promoção. Se equivalentes, o invariante 7 fica como
    diagnóstico.
-2a. **Recibo de uso humano do plugin (pendente, sessão própria):** o owner usa
-   o plugin no aplicativo desktop do Claude, instalado manualmente pelos
-   ZIPs da release, num caso que não desenhou (caso do dogfood da
+2a. **Recibo de instalação no aplicativo do Claude (pendente, owner):**
+   instalar o plugin completo pelo Cowork (`Customize → Plugins → Add
+   marketplace → sensdiego/codigo-aberto → Install`), com os ZIPs como
+   alternativa. Roteiro, pacotes `v0.6.4` (hashes conferidos) e caso de
+   teste em `~/Desktop/plugin-silo-legal/` (fora do repo). O owner deve
+   informar se o botão de marketplace apareceu na conta; esse recibo fecha o
+   item em andamento da Fase 1 do ROADMAP.
+2b. **Recibo de uso humano do plugin (pendente, sessão própria):** o owner usa
+   o plugin no aplicativo num caso que não desenhou (caso do dogfood da
    deliberação em `data/dogfood/2026-08-31-pareado-deliberacao/caso/`, ou
    caso real sob protocolo de privacidade a definir). Não usar os mundos
-   sintéticos para esse recibo.
+   sintéticos para esse recibo. Veredito em cinco linhas entra no ROADMAP.
 3. **Decisão de anúncio da camada deliberativa** — destravada pelo
    veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
 4. **Estacionadas (não reabrir sem decisão):** execução da camada
    probatória do cross-validation (âncoras factuais no texto dos autos);
    recorte só-cível do estudo Valter e associação com resultado; execução
    de skills sobre autos reais (exige protocolo de privacidade próprio).
-5. **Governança:** reconciliar SEN-2384/SEN-2381 no Linear (constam "em
-   andamento", trabalho publicado); branches `codex/*` antigas já merged
-   permanecem locais — deletar somente com autorização.
+5. **Governança (pendente de autorização do owner, registrado em
+   2026-09-03):**
+   - Linear: SEN-2384 (frente 2 da deliberação) segue "In Progress" apesar
+     de superada por SEN-2408 (Done); SEN-2381 (guarda-chuva) não recebeu o
+     estado de 2026-09-03. Reconciliar só com o ok do owner.
+   - Dez branches locais já integradas em `main` continuam no checkout
+     (`codex/SEN-2408-deliberacao-juridica`,
+     `codex/SEN-2413-tutela-urgencia-evidencia`,
+     `codex/baseline-briefing-gates`, `codex/closeout-v0.5.0`,
+     `codex/closeout-v0.5.1`, `codex/closeout-v0.6.0`,
+     `codex/closeout-v0.6.1`, `codex/handoff-stable-v0.6.1`,
+     `codex/p1-evidence-linkage`,
+     `codex/redacao-contencioso-cobertura-integral`). Deletar somente com
+     autorização.
+   - Sigilo: este HANDOFF menciona, em seções anteriores, o nome da pasta
+     privada do Drive do escritório e caminhos locais da máquina do owner
+     (material empírico e fs.brain). São nomes de pasta e contagens
+     agregadas, sem partes ou números de processo, já presentes no
+     histórico público. Remover ou manter é decisão do owner.
+   - Conselho: o guard do agente `conselho-sol` não bloqueia a memória
+     persistente do Codex; o owner decidiu em 2026-09-03 não corrigir agora
+     e apenas aguardar a franquia. Franquia Codex esgotada até 2026-09-07
+     07:21: `codex-exec`, `conselho-sol` e o backend Codex da régua ficam
+     indisponíveis até lá.
+   - Anúncio da camada deliberativa: continua dependendo só do owner (item
+     3), agora condicionado pelo próprio ROADMAP ao recibo de uso humano.
 
 ## Estado do produto
 
@@ -98,6 +138,33 @@ permanecem byte a byte iguais à `v0.6.3`. A rodada P1 e seus candidatos ficam
 preservados como evidência histórica, sem alteração líquida nas skills. O
 candidato estrutural produziu passagem P1 adjudicada, mas sua regressão P0
 ficou incompleta e, por isso, não foi promovido.
+
+## Sessão de 2026-09-03 — o que foi entregue
+
+- **Gate de valor da fábrica sintética:** memorando com a explicação da
+  construção (cadeia ficha oculta → renderer → mundos cegos → gabarito →
+  rubrica → juiz), contagens, custo real (≈ US$ 13,50 externos e ≈ 15 M
+  tokens de franquia Codex, um achado promovido ao produto), diagnóstico da
+  deriva de objetivo, análise de usos e opções. Conselho convocado: Sol
+  falhou por franquia esgotada; K3 devolveu contribuição material (suíte P1
+  vermelha sobre a skill publicada; dogfood nos mundos não prova valor;
+  custo por achado). Decisões do owner: régua de regressão com painel e
+  defeito conhecido; leitura comparada; uso humano em caso não desenhado;
+  Receita C no Valter (SEN-2427); standby com revisita (SEN-2428); nenhuma
+  família nova; guard do Sol não alterado.
+- **Material para o owner (fora do repo):** `~/Desktop/leitura-m202-wa/`
+  (memorandos A/B com rótulos cegos, caso cego e gabarito separado) e
+  `~/Desktop/plugin-silo-legal/` (roteiro de instalação, oito ZIPs da
+  `v0.6.4` com hashes conferidos, caso de teste do dogfood).
+- **Documentação pública:** QUICKSTART e README com o caminho do plugin
+  completo no aplicativo do Claude (marketplace por repositório), Claude Code
+  e ChatGPT; README passa a descrever `data/` e os documentos de engenharia
+  e a regra de que nada real entra no repo; RELEASING corrige para oito
+  bundles. ROADMAP registra o gate de valor e o caminho de instalação
+  documentado, com recibo pendente. PR #37 mergeado; fragmento `none`;
+  nenhuma versão publicada.
+- **Sem alteração de produto:** skills, referências e fixtures inalteradas.
+  Nenhuma chamada paga de modelo; nenhuma rodada de avaliação.
 
 ## Sessão de 2026-09-01 — o que foi entregue
 
