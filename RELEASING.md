@@ -57,7 +57,7 @@ Em um push elegível para `main`, o workflow
 5. cria e envia `chore(release): vX.Y.Z`;
 6. cria a tag anotada `vX.Y.Z` no SHA exato;
 7. publica o GitHub Release com as notas extraídas do changelog;
-8. anexa os sete bundles do ChatGPT e o manifesto de checksums.
+8. anexa os oito bundles do ChatGPT e o manifesto de checksums.
 
 A primeira publicação mantém a versão já declarada no manifesto (`0.2.0`). As
 seguintes aplicam o maior incremento existente nos fragmentos do lote.

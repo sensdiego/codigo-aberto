@@ -58,17 +58,28 @@ automática dos testes.
 
 ## Próximas tarefas fixadas (nesta ordem, salvo decisão do owner)
 
-1. **Antes de executar qualquer avaliação, decidir se esta frente ainda merece
-   existir.** Produzir uma análise curta com: resultado útil pretendido para
-   Diego e usuários futuros; o que a evidência atual já prova e não prova;
-   alternativas concretas (parar, piloto humano direcionado, concluir P0 ou
-   redesenhar produto/régua); resultado provável, custo estimado e critério
-   falsificável de sucesso de cada alternativa; menor próximo passo capaz de
-   mudar uma decisão. Sem esse gate, não retomar os 28 cenários P0 pendentes.
-2. **Somente se a decisão de valor justificar promoção:** definir novo teto de
-   consumo e decidir se a evidência necessária é concluir a P0, testar uso
-   humano ou abandonar/reformular o candidato. P1 aprovada por adjudicação não
-   basta, isoladamente, para publicação.
+1. **Gate de valor da fábrica sintética: decidido em 2026-09-03.** Memorando
+   em `data/research/2026-09-03-fabrica-sintetica-valor.md` (conselho
+   registrado no ledger; Sol indisponível por franquia, K3 material). Decisão
+   do owner: P0 e P1 viram régua de regressão com painel de 3 nos 9 cenários
+   críticos e suíte completa só em release, sob teto de tokens; invariante 7
+   da P1 registrado como defeito conhecido da v0.6.4; nenhuma família nova
+   (SEN-2428, revisita em 2026-10-05); Receita C para o Valter em brainstorm
+   próprio (SEN-2427). Franquia Codex esgotada até 2026-09-07 07:21: nenhuma
+   rodada com backend Codex antes disso.
+2. **Leitura comparada pelo owner (pendente, custo zero):** os dois memorandos
+   congelados de `M-202/W-A` (skill publicada × candidato estrutural) e o
+   caso cego foram copiados para `~/Desktop/leitura-m202-wa/` com rótulos
+   cegos A/B e gabarito em arquivo separado. Se o owner preferir o candidato
+   estrutural, concluir a regressão P0 (28 cenários) após 2026-09-07 e só
+   então decidir promoção. Se equivalentes, o invariante 7 fica como
+   diagnóstico.
+2a. **Recibo de uso humano do plugin (pendente, sessão própria):** o owner usa
+   o plugin no aplicativo desktop do Claude, instalado manualmente pelos
+   ZIPs da release, num caso que não desenhou (caso do dogfood da
+   deliberação em `data/dogfood/2026-08-31-pareado-deliberacao/caso/`, ou
+   caso real sob protocolo de privacidade a definir). Não usar os mundos
+   sintéticos para esse recibo.
 3. **Decisão de anúncio da camada deliberativa** — destravada pelo
    veredicto MANTÉM; depende só do owner (ROADMAP Fase 3, issue #22).
 4. **Estacionadas (não reabrir sem decisão):** execução da camada

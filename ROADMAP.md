@@ -50,6 +50,10 @@ Estado dos itens:
   limpa nem adoção externa. Também revelou dois achados de produto: gates
   críticos precisam de confirmação inequívoca e há uma lacuna deliberativa
   entre receber a análise e autorizar a redação.
+- Caminho de instalação do plugin completo no aplicativo do Claude (Cowork)
+  documentado em 2026-09-03 a partir da documentação oficial: marketplace por
+  repositório, sem terminal. Recibo de instalação limpa pelo owner ainda
+  pendente; release publicada não prova instalação no aplicativo.
 - Validação estrutural anonimizada contra 14 classes de situações documentadas
   em casos reais concluída em 2026-08-30. O núcleo cível mostrou encaixe, mas
   nenhum cenário provou o fluxo end-to-end; a
@@ -134,8 +138,12 @@ consegue instalar e usar as skills nos aplicativos suportados.
       caminho comprovado (a seção do ChatGPT foi corrigida em 2026-08-24 para o
       fluxo real de montagem do ZIP anexado). No Claude Cowork, um dogfood
       interno manual em projeto já montado comprovou leitura do acervo e
-      execução do fluxo, mas ainda falta documentar e testar o caminho limpo de
-      preparação do projeto; por isso o item continua em andamento.
+      execução do fluxo. Em 2026-09-03 a seção do aplicativo do Claude foi
+      reescrita a partir da documentação oficial: o Cowork instala o plugin
+      completo por marketplace apontando para este repositório
+      (Customize → Plugins → Add marketplace → `sensdiego/codigo-aberto`),
+      com os ZIPs como alternativa. Falta o recibo de instalação limpa pelo
+      owner no aplicativo; por isso o item continua em andamento.
 - [x] Anexar os bundles como artefatos da GitHub Release no
       [`software-release.yml`](.github/workflows/software-release.yml).
       Critério atendido: `gh release view v0.2.3` lista os sete ZIPs e o
@@ -189,6 +197,22 @@ edição futura de skills.
       candidato, decidir qual resultado útil se busca, que evidência mudaria
       uma decisão, custo/teto e stop rule. Os 28 cenários P0 restantes não são
       o próximo passo automático.
+      Gate de valor decidido pelo owner em 2026-09-03
+      ([memorando](data/research/2026-09-03-fabrica-sintetica-valor.md)):
+      P0 e P1 ficam como régua de regressão da `analise-juridica-civel`,
+      com painel de 3 amostras nos 9 cenários críticos (`M-202/W-A`,
+      `M-203/W-A`, `M-204/W-A` e equivalentes) como gate barato e suíte
+      completa só em release, sob teto de tokens declarado por rodada. O
+      invariante 7 da P1 (ligação explícita entre alegação e documento
+      corroborante) fica registrado como **defeito conhecido da v0.6.4**: a
+      skill publicada oscila (3 PASS / 2 FAIL sob entrada congelada) por
+      omissão da ligação, nunca por invenção ou promoção indevida a fato
+      provado. A promoção do candidato estrutural depende de leitura
+      comparada pelo owner dos dois memorandos congelados de `M-202/W-A` e,
+      se preferido, da conclusão da regressão P0 após o retorno da franquia
+      Codex (2026-09-07). Novas famílias e generalização do gerador ficam em
+      standby com rotina de revisita (SEN-2428, retorno em 2026-10-05); a
+      transferência do método ao Valter vira brainstorm próprio (SEN-2427).
 
 ## Fase 3 — Expansão de conteúdo
 
