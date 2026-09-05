@@ -377,6 +377,14 @@ briefing ou contexto sejam tratados como autorização implícita.
       localizadores que não fornecem; manter o cenário de pesquisa Silo
       condicionado a job com conector autenticado.
 
+- [~] Protocolo de privacidade para uso do plugin em caso real, escrito em
+      2026-09-05
+      ([`data/dogfood/protocolo-caso-real.md`](data/dogfood/protocolo-caso-real.md)):
+      caso encerrado com desfecho conhecido, cópia pseudonimizada, sessão no
+      aplicativo do Claude, gabarito fora da sessão e recibo sem conteúdo do
+      caso. A execução depende do recibo de instalação limpa (Fase 1) e de
+      ficha assinada pelo owner; nenhum caso real foi lido para escrevê-lo.
+
 ### Adaptação segura de casos reais — RFC aceita
 
 Problema confirmado pela
