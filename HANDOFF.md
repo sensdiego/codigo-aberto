@@ -1,13 +1,23 @@
 # Handoff de sessão
 
-Atualizado em 2026-09-03 após o gate de valor da fábrica sintética, a
-documentação do caminho de instalação no aplicativo do Claude e o merge do
-PR #37. A próxima sessão começa pelos recibos que dependem do owner
-(instalação no aplicativo, leitura comparada, uso humano), não por nova
-rodada de avaliação.
+Atualizado em 2026-09-05 após o protocolo de privacidade para uso do plugin
+em caso real (PR #39) e a reconciliação de governança autorizada pelo owner.
+A próxima sessão começa pelos recibos que dependem do owner (leitura
+comparada, instalação no aplicativo, uso humano), não por nova rodada de
+avaliação; a franquia Codex volta em 2026-09-07 07:21.
 
 ## Ponto de continuidade
 
+- Sessão de 2026-09-05: PR #39 integrado em `main` (merge `eef627a`; o
+  workflow consumiu o fragmento `none` em `29174fe`). Versão corrente
+  continua `v0.6.4`; skills inalteradas. Protocolo de uso em caso real em
+  `data/dogfood/protocolo-caso-real.md` (caso encerrado pseudonimizado,
+  aplicativo do Claude, gabarito fora da sessão, ficha obrigatória); ROADMAP
+  com item `[~]` na Fase 3. Conselho: K3 material, Sol indisponível por
+  franquia; ledger registrado. Linear reconciliado (SEN-2384 Done; SEN-2381
+  com estado de 2026-09-05) e onze branches locais integradas apagadas, com
+  autorização do owner. Plugin local do Claude Code atualizado de 0.6.1 para
+  0.6.4.
 - Sessão de 2026-09-03: PR #37 integrado em `main` (merge `6d2bbe7`; o
   workflow consumiu o fragmento `none` em `9c193ef`). Versão corrente
   continua `v0.6.4`; skills distribuídas inalteradas. README, QUICKSTART e
@@ -91,7 +101,8 @@ rodada de avaliação.
    alternativa. Roteiro, pacotes `v0.6.4` (hashes conferidos) e caso de
    teste em `~/Desktop/plugin-silo-legal/` (fora do repo). O owner deve
    informar se o botão de marketplace apareceu na conta; esse recibo fecha o
-   item em andamento da Fase 1 do ROADMAP.
+   item em andamento da Fase 1 do ROADMAP. *(Desde 2026-09-05 este recibo é
+   também pré-requisito bloqueante do protocolo de caso real.)*
 2b. **Recibo de uso humano do plugin (pendente, sessão própria):** o owner usa
    o plugin no aplicativo num caso que não desenhou (caso do dogfood da
    deliberação em `data/dogfood/2026-08-31-pareado-deliberacao/caso/`, ou
@@ -102,12 +113,17 @@ rodada de avaliação.
 4. **Estacionadas (não reabrir sem decisão):** execução da camada
    probatória do cross-validation (âncoras factuais no texto dos autos);
    recorte só-cível do estudo Valter e associação com resultado; execução
-   de skills sobre autos reais (exige protocolo de privacidade próprio).
+   de skills sobre autos reais (exige protocolo de privacidade próprio)
+   *(protocolo escrito em 2026-09-05: `data/dogfood/protocolo-caso-real.md`;
+   a execução continua dependente de ficha assinada pelo owner e do recibo
+   2a)*.
 5. **Governança (pendente de autorização do owner, registrado em
    2026-09-03):**
    - Linear: SEN-2384 (frente 2 da deliberação) segue "In Progress" apesar
      de superada por SEN-2408 (Done); SEN-2381 (guarda-chuva) não recebeu o
-     estado de 2026-09-03. Reconciliar só com o ok do owner.
+     estado de 2026-09-03. Reconciliar só com o ok do owner. *(Feito em
+     2026-09-05 com autorização: SEN-2384 Done com comentário; SEN-2381 com
+     seção "Estado em 2026-09-05".)*
    - Dez branches locais já integradas em `main` continuam no checkout
      (`codex/SEN-2408-deliberacao-juridica`,
      `codex/SEN-2413-tutela-urgencia-evidencia`,
@@ -116,7 +132,8 @@ rodada de avaliação.
      `codex/closeout-v0.6.1`, `codex/handoff-stable-v0.6.1`,
      `codex/p1-evidence-linkage`,
      `codex/redacao-contencioso-cobertura-integral`). Deletar somente com
-     autorização.
+     autorização. *(Apagadas em 2026-09-05 com autorização, junto com
+     `docs/protocolo-caso-real` após o merge; resta só `main`.)*
    - Sigilo: este HANDOFF menciona, em seções anteriores, o nome da pasta
      privada do Drive do escritório e caminhos locais da máquina do owner
      (material empírico e fs.brain). São nomes de pasta e contagens
@@ -138,6 +155,47 @@ permanecem byte a byte iguais à `v0.6.3`. A rodada P1 e seus candidatos ficam
 preservados como evidência histórica, sem alteração líquida nas skills. O
 candidato estrutural produziu passagem P1 adjudicada, mas sua regressão P0
 ficou incompleta e, por isso, não foi promovido.
+
+## Sessão de 2026-09-05 — o que foi entregue
+
+- **Protocolo de privacidade para uso do plugin em caso real**
+  (`data/dogfood/protocolo-caso-real.md`; PR #39; merge `eef627a`; fragmento
+  `none` consumido em `29174fe`): caso encerrado com desfecho conhecido,
+  cópia pseudonimizada com conferência em três camadas e teste mecânico de
+  reidentificação, sessão no aplicativo do Claude com controles declarados
+  na ficha, folha do advogado com fontes contemporâneas, critérios
+  pré-registrados de falseabilidade, regra de condução para o Silo, parada
+  por risco, recibo estrutural sem conteúdo, retenção honesta quanto a
+  cópias de segurança e incidente de nível 2. Fundamentos verificados no
+  Planalto pelo conector Silo (LGPD arts. 6, 7, 10 e 12; Lei 8.906/1994 art.
+  34; CPC art. 189). Decisões do owner: caso encerrado pseudonimizado;
+  aplicativo do Claude; legítimo interesse como base presumida, com a troca
+  por consentimento disponível na ficha caso a verificação do owner conclua
+  diferente.
+- **Conselho convocado (canon):** K3 devolveu contribuição material (recibo
+  falseável só para baixo; folha com "memória" como fonte; retenção
+  ignorando Time Machine e snapshots; Silo como canal de saída; grep literal
+  sem cobrir datas e valores; pré-requisito de instalação inexistente; base
+  legal delegada; analogia com o art. 13). Todas as propostas materiais foram
+  incorporadas antes do commit; a afirmação de que o lado do fornecedor
+  ficaria fora da LGPD não foi adotada; o DataJud não foi nomeado como
+  ferramenta do teste por causa da restrição de uso do termo (SEN-2431).
+  Sol indisponível por franquia. Ledger do projeto registrado.
+- **Governança executada com autorização do owner:** SEN-2384 fechada como
+  Done com comentário (havia sido mantida In Progress deliberadamente em
+  2026-08-30 para marcar entrega parcial; o critério comportamental foi
+  cumprido pela sucessora SEN-2408); SEN-2381 recebeu a seção "Estado em
+  2026-09-05" acima da de agosto, preservada, e o link para o protocolo;
+  dez branches locais integradas apagadas com exclusão segura, mais a do PR
+  #39. Nomes de pastas privadas neste HANDOFF mantidos por decisão do owner.
+- **Plugin local do Claude Code atualizado de 0.6.1 para 0.6.4**; a
+  `analise-juridica-civel` distribuída diferia em três linhas.
+- **Boot restrito ao workspace** por instrução do owner: nenhum commit, PR
+  ou issue deste repositório na janela de 48h anterior; nenhum alerta
+  operacional; rito semanal não devido.
+- **Sem alteração de produto**, sem chamada paga de modelo, sem rodada de
+  avaliação. Recibos do owner continuam pendentes: leitura comparada de
+  `M-202/W-A`, instalação limpa no aplicativo e uso humano.
 
 ## Sessão de 2026-09-03 — o que foi entregue
 
