@@ -1,13 +1,31 @@
 # Handoff de sessão
 
-Atualizado em 2026-09-05 após o protocolo de privacidade para uso do plugin
-em caso real (PR #39) e a reconciliação de governança autorizada pelo owner.
-A próxima sessão começa pelos recibos que dependem do owner (leitura
-comparada, instalação no aplicativo, uso humano), não por nova rodada de
-avaliação; a franquia Codex volta em 2026-09-07 07:21.
+Atualizado em 2026-09-09 após a sessão exploratória de integração com o Silo
+Agent (tese "silo aberto" registrada, sem decisão). A próxima sessão de
+implementação acontece no workspace `silo-mcp`, por SEN-2464 (re-freeze do
+contrato MCP da /audit) e SEN-2463 (piloto /audit com prova A→B→C); neste
+repo, seguem pendentes os recibos que dependem do owner (leitura comparada,
+instalação no aplicativo, uso humano).
 
 ## Ponto de continuidade
 
+- Sessão de 2026-09-09 (exploratória, sem mudança de produto): mapeados os
+  três workspaces (codigo-aberto, `silo-mcp`, `fs.archive`). Descoberta-chave:
+  o Silo Agent já tem ~80% do skill runtime construído e gateado
+  (`orgSkills.mjs`, injeção `# Skill ativa`, gate `CAPABILITY_NOT_VERIFIED`
+  em `agent/worker.mjs`); a RFC-002 §4.1 já cita este repo como origem de
+  skills. Piloto escolhido: `/audit` do fs.archive (v1.1 org é a canônica;
+  contrato MCP congelado em 2026-06-17 está dessincronizado — enum sem
+  `nao_verificavel`, side-effect de memória obsoleto pós-SEN-2273). Issues
+  criadas no Linear: SEN-2463 (silo-mcp, piloto) e SEN-2464 (fs.archive,
+  re-freeze), cruzadas com SEN-2452. Tese "silo aberto" (repo público como
+  distribuição multi-plataforma, execução completa no Silo Agent) registrada
+  como exploração datada em
+  `data/research/2026-09-09-integracao-silo-agent.md` e na SEN-2452 — vira
+  RFC própria só quando o piloto precificar a conversão skill→capability e o
+  Agent tiver multiusuário no horizonte. Fragmento `none`
+  (`.changes/exploracao-integracao-silo-agent.json`); versão corrente
+  continua `v0.6.4`, skills inalteradas.
 - Sessão de 2026-09-05: PR #39 integrado em `main` (merge `eef627a`; o
   workflow consumiu o fragmento `none` em `29174fe`). Versão corrente
   continua `v0.6.4`; skills inalteradas. Protocolo de uso em caso real em
